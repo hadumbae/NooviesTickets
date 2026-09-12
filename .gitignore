@@ -1,0 +1,7 @@
+.idea
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+
+.env
+.env.*

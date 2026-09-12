@@ -1,7 +1,7 @@
 services:
   frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile
       args:
         VITE_API_URL: ${VITE_API_URL:-http://localhost:8080}
@@ -14,3 +14,12 @@ services:
         VITE_LOG_FETCH_RESULT_TO_CONSOLE: ${VITE_LOG_FETCH_RESULT_TO_CONSOLE:-false}
     ports:
       - "3000:80"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8080:8080"
