@@ -1,0 +1,68 @@
+/**
+ * @fileoverview Express router defining endpoints for updating, canceling, and refunding reservations.
+ */
+
+import {Router} from "express";
+import {isAuth} from "@/domains/authentication/_middleware/isAuth";
+import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
+import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
+import {ReservationNotesInputSchema} from "@/domains/reservations/_feat/update-reservations/schemas";
+import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import {
+    patchCancelReservation,
+    patchRefundReservation,
+    patchResetReservationExpiry,
+    patchUpdateReservationNotes
+} from "@/domains/reservations/_feat/update-reservations/controller";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {IDRouteConfigSchema} from "@/shared/_schema";
+
+const routes = Router();
+
+routes.patch(
+    "/update/:_id/notes",
+    [
+        isAuth,
+        isAdmin,
+        validateRequestConfig({schema: IDRouteConfigSchema}),
+        validateZodSchema(ReservationNotesInputSchema),
+    ],
+    asyncHandler(patchUpdateReservationNotes),
+);
+
+routes.patch(
+    "/update/:_id/expiry",
+    [
+        isAuth,
+        isAdmin,
+        validateRequestConfig({schema: IDRouteConfigSchema}),
+    ],
+    asyncHandler(patchResetReservationExpiry),
+);
+
+routes.patch(
+    "/update/:_id/cancel",
+    [
+        isAuth,
+        isAdmin,
+        validateRequestConfig({schema: IDRouteConfigSchema}),
+        validateZodSchema(ReservationNotesInputSchema),
+    ],
+    asyncHandler(patchCancelReservation),
+);
+
+routes.patch(
+    "/update/:_id/refund",
+    [
+        isAuth,
+        isAdmin,
+        validateRequestConfig({schema: IDRouteConfigSchema}),
+        validateZodSchema(ReservationNotesInputSchema),
+    ],
+    asyncHandler(patchRefundReservation),
+);
+
+/** Express router instance for reservation update operations. */
+export {
+        routes as ReservationUpdateRoutes
+}

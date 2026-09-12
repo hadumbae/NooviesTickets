@@ -1,0 +1,85 @@
+/**
+ * @fileoverview Express controller handlers for retrieving movie reviews.
+ */
+
+import type {Request, Response} from "express";
+import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
+import {QueryUtils} from "@/shared/services/query-utils/QueryUtils";
+import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
+import {
+    fetchFeaturedReviewsByMovie,
+    fetchPaginatedReviewsByMovie,
+    fetchReviewDetailsForMovie
+} from "@/domains/movies/_feat/fetch-reviews-by-movie/service";
+
+/**
+ * Handles paginated movie review retrieval.
+ */
+export async function getReviewsByMovie(
+    req: Request, res: Response
+): Promise<Response> {
+    const {_id} = req.params;
+    const movieID = isValidObjectId(_id);
+
+    const {page, perPage} = QueryUtils.fetchPaginationFromQuery(req);
+    const options = QueryUtils.fetchOptionsFromQuery(req);
+
+    const data = await fetchPaginatedReviewsByMovie({
+        movieID,
+        page,
+        perPage,
+        options,
+    })
+
+    return res
+        .status(200)
+        .json(data)
+}
+
+/**
+ * Returns featured reviews for a movie and the requesting user's review.
+ */
+export async function getFeaturedReviewsByMovie(
+    req: Request, res: Response
+): Promise<Response> {
+    const {_id} = req.params;
+
+    const userID = fetchRequestUserId(req);
+    const movieID = isValidObjectId(_id);
+    const options = QueryUtils.fetchOptionsFromQuery(req);
+
+    const data = await fetchFeaturedReviewsByMovie({
+        movieID,
+        userID,
+        options,
+    });
+
+    return res.status(200).json(data)
+}
+
+/**
+ * Handles paginated movie review retrieval with aggregate stats and the requesting user's review.
+ */
+export async function getReviewDetailsByMovie(
+    req: Request, res: Response
+): Promise<Response> {
+    const {_id} = req.params;
+
+    const userID = fetchRequestUserId(req);
+    const movieID = isValidObjectId(_id);
+
+    const {page, perPage} = QueryUtils.fetchPaginationFromQuery(req);
+    const options = QueryUtils.fetchOptionsFromQuery(req);
+
+    const data = await fetchReviewDetailsForMovie({
+        userID,
+        movieID,
+        page,
+        perPage,
+        options,
+    });
+
+    return res
+        .status(200)
+        .json(data)
+}

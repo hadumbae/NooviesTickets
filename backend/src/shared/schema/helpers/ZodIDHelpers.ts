@@ -1,0 +1,61 @@
+import {Showing} from "@/domains/showing/_models/showing/Showing.model.js";
+import {ObjectIdStringSchema} from "../mongoose/ObjectIdStringSchema.js";
+import {Genre} from "@/domains/genres/_models/genre";
+import {Person} from "@/domains/persons/_models/person";
+import {Screen} from "@/domains/screen/_models/screen";
+import {Theatre} from "@/domains/theatre/model/theatre";
+import {Seat} from "@/domains/seat/_models";
+
+export const GenreAsyncIDString = ObjectIdStringSchema
+    .refine(
+        async (genreID) => {
+            const genre = await Genre.findById(genreID);
+            return !!genre;
+        },
+        "404. Invalid ID."
+    );
+
+export const PersonAsyncIDString = ObjectIdStringSchema
+    .refine(
+        async (personID) => {
+            const genre = await Person.findById(personID);
+            return !!genre;
+        },
+        "404. Invalid ID."
+    );
+
+export const TheatreAsyncIDString = ObjectIdStringSchema
+    .refine(
+        async (theatreID) => {
+            const theatre = await Theatre.findById(theatreID);
+            return !!theatre;
+        },
+        "404. Screen not found."
+    );
+
+export const SeatAsyncIDString = ObjectIdStringSchema
+    .refine(
+        async (seatID) => {
+            const seat = await Seat.findById(seatID);
+            return !!seat;
+        },
+        "404. Screen not found."
+    );
+
+export const ScreenAsyncIDString = ObjectIdStringSchema
+    .refine(
+        async (screenID) => {
+            const screen = await Screen.findById(screenID);
+            return !!screen;
+        },
+        "404. Screen not found."
+    );
+
+export const ShowingAsyncIDString = ObjectIdStringSchema
+    .refine(
+        async (showingID) => {
+            const showing = await Showing.findById(showingID);
+            return !!showing;
+        },
+        "404. Showing not found."
+    );

@@ -1,0 +1,37 @@
+/**
+ * @fileoverview Validation schema for direct attribute filtering of MovieCredit entities.
+ * These filters target properties persisted directly on the MovieCredit document.
+ */
+
+import {z} from "zod";
+import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
+import {RoleTypeDepartmentSchema} from "@/domains/role-types/_validation/schema/RoleTypeDepartmentSchema";
+import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
+import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
+import {URLParamNumberSchema} from "@/shared/schema/url/URLParamNumberSchema";
+
+/**
+ * Zod schema defining match-level filters for MovieCredit queries.
+ */
+export const MovieCreditQueryMatchFiltersSchema = z.object({
+    _id: URLParamObjectIDSchema,
+    movie: URLParamObjectIDSchema,
+    person: URLParamObjectIDSchema,
+    roleType: URLParamObjectIDSchema,
+    department: RoleTypeDepartmentSchema.optional(),
+    displayRoleName: URLParamObjectIDSchema,
+    creditedAs: URLParamObjectIDSchema,
+    isPrimary: URLParamBooleanSchema,
+    characterName: URLParamRegexPatternSchema,
+    billingOrder: URLParamNumberSchema,
+    uncredited: URLParamBooleanSchema,
+    voiceOnly: URLParamBooleanSchema,
+    cameo: URLParamBooleanSchema,
+    motionCapture: URLParamBooleanSchema,
+    archiveFootage: URLParamBooleanSchema,
+});
+
+/**
+ * TypeScript type inferred from MovieCreditQueryMatchFiltersSchema.
+ */
+export type MovieCreditQueryMatchFilters = z.infer<typeof MovieCreditQueryMatchFiltersSchema>;

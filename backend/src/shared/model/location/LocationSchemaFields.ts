@@ -1,0 +1,43 @@
+import type {IANATimezone} from "../../schema/date-time/IANATimezoneSchema.js";
+import type {CoordinateSchemaFields} from "@/shared/model/coordinate/Coordinate.types";
+import type {ISO3166Alpha2CountryCode} from "../../schema/enums/ISO3166Alpha2CountryCodeSchema.js";
+
+/**
+ * Interface representing a physical location.
+ */
+export interface LocationSchemaFields {
+    /**
+     * Street address (e.g., "123 Main St").
+     */
+    street?: string;
+
+    /**
+     * City name (e.g., "Bangkok").
+     */
+    city: string;
+
+    /**
+     * State or region (e.g., "California").
+     */
+    state?: string;
+
+    /**
+     * Country code in ISO 3166-1 alpha-2 format (e.g., "US", "TH").
+     */
+    country: ISO3166Alpha2CountryCode;
+
+    /**
+     * Postal or ZIP code.
+     */
+    postalCode?: string;
+
+    /**
+     * IANA timezone name (e.g., "Asia/Bangkok").
+     */
+    timezone: IANATimezone;
+
+    /**
+     * Optional GeoJSON Point for precise geolocation.
+     */
+    coordinates?: CoordinateSchemaFields;
+}
