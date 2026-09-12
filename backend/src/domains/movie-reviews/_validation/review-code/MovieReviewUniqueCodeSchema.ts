@@ -2,8 +2,8 @@
  * @fileoverview Zod validation schema for movie review unique tracking codes.
  */
 
-import {StringValueSchema} from "@/shared/schema/strings/StringValueSchema";
 import {z} from "zod";
+import {StringValueSchema} from "@noovies-tickets/common";
 
 /** Zod schema to validate the format of a movie review tracking code. */
 export const MovieReviewUniqueCodeSchema = StringValueSchema.regex(
