@@ -1,0 +1,17 @@
+@layer components {
+    .default-container {
+        @apply bg-white dark:bg-neutral-900
+    }
+
+    .rounded-container-border {
+        @apply border border-neutral-200 dark:border-neutral-600 rounded-xl
+    }
+
+    .default-card {
+        @apply rounded-xl default-container shadow
+    }
+
+    .default-pill {
+        @apply py-1 px-2 border rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700
+    }
+}

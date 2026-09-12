@@ -1,0 +1,46 @@
+/**
+ * @file AdminBoundary.tsx
+ *
+ * Access boundary for admin-only routes.
+ *
+ * Prevents rendering of protected content when the
+ * current user is unauthenticated or lacks admin rights.
+ */
+
+import {NotAdminWarning} from "@/views/common/_layout/admin-layout/warnings/NotAdminWarning.tsx";
+import {ReactNode} from "react";
+import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {useAuthContext} from "@/domains/auth";
+
+/**
+ * Props for {@link AdminBoundary}.
+ */
+type BoundaryProps = {
+    /** Protected content */
+    children: ReactNode;
+};
+
+/**
+ * Admin access boundary component.
+ *
+ * - Requires an authenticated admin user
+ * - Renders {@link NotAdminWarning} when access is denied
+ * - Otherwise renders protected children
+ *
+ * @component
+ */
+const AdminBoundary = ({children}: BoundaryProps) => {
+    const {user, isAdmin} = useAuthContext();
+
+    if (!user || !isAdmin) {
+        return (
+            <PageFlexWrapper className="justify-center items-center">
+                <NotAdminWarning user={user} isAdmin={isAdmin}/>
+            </PageFlexWrapper>
+        );
+    }
+
+    return children;
+};
+
+export default AdminBoundary;

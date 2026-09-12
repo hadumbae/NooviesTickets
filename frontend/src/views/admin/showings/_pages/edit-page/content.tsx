@@ -1,0 +1,55 @@
+/**
+ * @fileoverview Content layout for the showing edit page.
+ */
+
+import {ReactElement} from "react";
+import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {Card, CardContent} from "@/views/common/_comp/ui";
+import {PageHeader} from "@/views/common/_comp";
+
+import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
+import {buildShowingEditData, useNavigateToShowingDetails} from "@/domains/showings/_feat";
+import {ShowingSubmitForm, ShowingSubmitFormView, ShowingSubmitStorageKey} from "@/views/admin/showings/_feat";
+import {ShowingEditBreadcrumbs} from "@/views/admin/showings/_pages/edit-page/breadcrumbs.tsx";
+
+/** Props for the ShowingEditPageContent component. */
+type ContentProps = {
+    showing: ShowingDetails;
+};
+
+/** Renders the editor form and header for a specific movie showing. */
+export function ShowingEditPageContent(
+    {showing}: ContentProps
+): ReactElement {
+    const navigate = useNavigateToShowingDetails();
+
+    const {
+        movie: {title},
+        screen: {name: screenName},
+        theatre: {name: theatreName},
+    } = showing;
+
+    const editEntity = buildShowingEditData({showing});
+
+    return (
+        <PageFlexWrapper>
+            <PageHeader
+                title={`Edit ${title}`}
+                description={`Edit showing on ${screenName} at ${theatreName}`}
+                breadcrumbs={<ShowingEditBreadcrumbs showing={showing}/>}
+            />
+
+            <Card>
+                <CardContent className="p-3">
+                    <ShowingSubmitForm
+                        localStorageKey={ShowingSubmitStorageKey}
+                        onSubmitSuccess={(updated: ShowingDetails) => navigate({slug: updated.slug})}
+                        editEntity={editEntity}
+                    >
+                        <ShowingSubmitFormView/>
+                    </ShowingSubmitForm>
+                </CardContent>
+            </Card>
+        </PageFlexWrapper>
+    );
+}

@@ -1,0 +1,54 @@
+/**
+ * @fileoverview Presentation component for the Movie Details page.
+ */
+
+import {ReactElement} from 'react';
+import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
+import {MovieDetailsHeader} from "@/views/admin/movies/_pages/details-page/elements/header.tsx";
+import {MovieDetailsCard} from "@/views/admin/movies/_comp/details-display";
+import {MovieDetailsPageItemActions} from "@/views/admin/movies/_pages/details-page/actions/itemActions.tsx";
+import {SROnly} from "@/views/common/_comp/screen-readers";
+import {MovieDetailsPageCreditSection} from "@/views/admin/movies/_pages/details-page/sections/creditSection.tsx";
+import {MovieDetailsPageShowingSection} from "@/views/admin/movies/_pages/details-page/sections/showingSection.tsx";
+import {useSetAdminPageTitle} from "@/common/_feat";
+import {
+    MovieDetailsPageBannerActions,
+    MovieDetailsPagePosterActions
+} from "@/views/admin/movies/_pages/details-page/actions";
+
+export type MovieDetailsPageContentProps = {
+    movie: MovieDetails;
+};
+
+/**
+ * Renders the primary administrative view for a specific movie.
+ */
+export function MovieDetailsPageContent(
+    {movie}: MovieDetailsPageContentProps
+): ReactElement {
+    const {_id, slug, title} = movie;
+    useSetAdminPageTitle({presetTitle: `Movie • ${title}`});
+
+    return (
+        <PageFlexWrapper>
+            <MovieDetailsHeader movie={movie}/>
+
+            <section className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
+                <div>
+                    <SROnly text="Details & Credits"/>
+                    <MovieDetailsCard movie={movie}/>
+                </div>
+
+                <div className="2xl:col-span-2 space-y-4">
+                    <MovieDetailsPageCreditSection _id={_id} slug={slug}/>
+                    <MovieDetailsPageShowingSection _id={_id}/>
+                </div>
+            </section>
+
+            <MovieDetailsPageItemActions movieID={_id} className="hidden"/>
+            <MovieDetailsPageBannerActions movieID={_id} className="hidden"/>
+            <MovieDetailsPagePosterActions movieID={_id} className="hidden"/>
+        </PageFlexWrapper>
+    );
+}

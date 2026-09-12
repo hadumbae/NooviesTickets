@@ -1,0 +1,53 @@
+/**
+ * @fileoverview Mutation hook for resetting reservation expiration (TTL) using centralized handlers.
+ *
+ */
+
+import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
+import {ObjectId} from "@/common/_schemas";
+import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+
+import {AdminReservation, AdminReservationSchema} from "@/domains/reservations/_schema";
+import {FetchByCodeQueryKeys} from "@/domains/reservations/_feat/fetch-reservation-by-code/fetch/queryKeys.ts";
+import {patchResetReservationExpiry} from "@/domains/reservations/_feat/update-reservations/repository";
+import {
+    ReservationUpdateMutationKeys
+} from "@/domains/reservations/_feat/update-reservations/mutations/mutationKeys.ts";
+import {EmptyFormData} from "@/common/_feat";
+
+/** Props for the useResetReservationExpiryMutation hook. */
+export type UseResetReservationExpiryMutationConfig = {
+    reservationID: ObjectId;
+}
+
+/**
+ * TanStack Query mutation hook that extends the Time-To-Live (TTL) of a reservation.
+ */
+export function useResetReservationExpiryMutation(
+    {reservationID}: UseResetReservationExpiryMutationConfig
+): UseMutationResult<AdminReservation, unknown, EmptyFormData> {
+    const queryClient = useQueryClient();
+
+    const resetExpiry = async () => {
+        const {result} = await patchResetReservationExpiry({_id: reservationID});
+
+        const {success, data, error} = validateData({
+            data: result,
+            schema: AdminReservationSchema,
+            message: "Invalid data structure returned after resetting reservation expiry.",
+        });
+
+        if (!success) throw error;
+        return data;
+    }
+
+    const onSuccess = () => {
+        queryClient.invalidateQueries({queryKey: FetchByCodeQueryKeys.fetchByCode(), exact: false});
+    }
+
+    return useMutation({
+        mutationKey: ReservationUpdateMutationKeys.expiry({reservationID}),
+        mutationFn: resetExpiry,
+        onSuccess,
+    });
+}

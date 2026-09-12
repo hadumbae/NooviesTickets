@@ -1,0 +1,32 @@
+/**
+ * @fileoverview Mutation hook for deleting RoleType entities.
+ */
+
+import {ObjectId} from "@/common/_schemas";
+import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
+import {destroy} from "@/domains/roletypes/_feat/crud";
+import {RoleTypeCRUDMutationKeys, RoleTypeCRUDQueryKeys} from "@/domains/roletypes/_feat/crud-hooks/keys";
+
+/** Input parameters for the RoleType deletion mutation. */
+type DeletePrompt = {
+    _id: ObjectId
+};
+
+/** Provides a mutation function for deleting a RoleType and handles cache invalidation. */
+export function useRoleTypeDeleteMutation(): UseMutationResult<void, unknown, DeletePrompt> {
+    const queryClient = useQueryClient();
+
+    const deleteRoleType = async ({_id}: DeletePrompt) => {
+        await destroy({_id});
+    };
+
+    const onSuccess = () => {
+        queryClient.invalidateQueries({queryKey: RoleTypeCRUDQueryKeys.list(), exact: false});
+    };
+
+    return useMutation({
+        mutationKey: RoleTypeCRUDMutationKeys.deleteSingle(),
+        mutationFn: deleteRoleType,
+        onSuccess,
+    });
+}

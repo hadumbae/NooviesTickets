@@ -1,0 +1,39 @@
+/**
+ * @fileoverview Component that displays the language and subtitle options for a movie.
+ */
+
+import {ReactElement} from "react";
+import {MovieDetails} from "@/domains/movies/_schema/movie";
+import {Separator} from "@/views/common/_comp/ui";
+import {BadgeLabelContent} from "@/views/common/_comp/badges/BadgeLabelContent.tsx";
+import {ISO6391LanguageCode} from "@/common/_schemas/enums/ISO6391LanguageCodeSchema.ts";
+import {ISO6391LanguageLabels} from "@/common/_const/languages/ISO6391LanguageLabels.ts";
+
+/** Props for the MovieDetailsCardLanguageSection component. */
+type SectionProps = {
+    movie: MovieDetails;
+};
+
+/** Renders a section containing badges for movie languages and subtitles. */
+export function MovieDetailsCardLanguageSection(
+    {movie: {languages, subtitles}}: SectionProps
+): ReactElement {
+    const mapLanguages = (lanStrings: ISO6391LanguageCode[]) => lanStrings.map(lan => ({
+        key: lan,
+        text: ISO6391LanguageLabels[lan] ?? lan?.toUpperCase() ?? "Unknown"
+    }));
+
+    return (
+        <section className="space-y-3">
+            <div>
+                <h2 className="primary-text text-lg font-bold">Language Options</h2>
+                <Separator/>
+            </div>
+
+            <div className="space-y-5">
+                <BadgeLabelContent label="Languages" orientation="horizontal" items={mapLanguages(languages)}/>
+                <BadgeLabelContent label="Subtitles" orientation="horizontal" items={mapLanguages(subtitles)}/>
+            </div>
+        </section>
+    );
+}

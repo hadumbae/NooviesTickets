@@ -1,0 +1,32 @@
+/**
+ * @fileoverview Data retrieval function for the administrative theatre screen details view.
+ */
+
+import {buildURL} from "@/common/_feat/fetch-api";
+import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
+import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+
+import {
+    TheatreScreenAdminViewDataBaseURL,
+} from "@/domains/theatre-screens/_feat/admin-view-data/repository/baseURL.ts";
+import {
+    TheatreScreenDetailsViewData
+} from "@/domains/theatre-screens/_feat/admin-view-data/theatre-screen-details/viewDataSchema.ts";
+import {
+    FetchTheatreScreenAdminViewDataConfig
+} from "@/domains/theatre-screens/_feat/admin-view-data/repository/repository.types.ts";
+
+/**
+ * Retrieves the aggregated theatre, screen, and seat data for a specific screen from the API.
+ */
+export async function getFetchTheatreScreenAdminViewData(
+    {theatreSlug, screenSlug, recentShowingsCount}: FetchTheatreScreenAdminViewDataConfig
+): Promise<FetchRequestReturns<TheatreScreenDetailsViewData>> {
+    const url = buildURL({
+        baseURL: TheatreScreenAdminViewDataBaseURL,
+        path: `/theatre/${theatreSlug}/screen/${screenSlug}/details`,
+        queries: {recentShowingsCount}
+    });
+
+    return useFetchAPI({url, method: "GET"});
+}

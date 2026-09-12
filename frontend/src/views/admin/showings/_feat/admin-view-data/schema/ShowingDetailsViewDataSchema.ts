@@ -1,0 +1,23 @@
+/**
+ * @fileoverview Defines the schema and type for the composite data required by the Showing Details admin view.
+ */
+
+import {z} from "zod";
+import {ShowingDetailsSchema} from "@/domains/showings/_schema/showing";
+import {MovieWithGenresSchema} from "@/domains/movies/_schema/movie";
+import {TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre";
+import {TheatreScreenDetailsSchema} from "@/domains/theatre-screens/_schema/model";
+import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {SeatMapDetailsSchema} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSchema";
+
+/** Zod schema for validating the aggregated showing details view data. */
+export const ShowingDetailsViewDataSchema = z.object({
+    showing: z.lazy(() => ShowingDetailsSchema),
+    movie: MovieWithGenresSchema,
+    theatre: TheatreDetailsSchema,
+    screen: TheatreScreenDetailsSchema,
+    seating: generateArraySchema(SeatMapDetailsSchema),
+});
+
+/** Type definition inferred from the ShowingDetailsViewDataSchema. */
+export type ShowingDetailsViewData = z.infer<typeof ShowingDetailsViewDataSchema>;

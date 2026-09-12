@@ -1,0 +1,42 @@
+/**
+ * @fileoverview Hook for fetching and validating paginated movie review data for the client view.
+ */
+
+import {SlugString} from "@/common/_schemas";
+import {useQuery, UseQueryResult} from "@tanstack/react-query";
+import {getReviewsForMovieInfoView} from "@/domains/movies/_feat/client-view-data/repository/repository.ts";
+import {MovieClientViewDataQueryKeys} from "@/domains/movies/_feat/client-view-data/hooks/queryKeys.ts";
+import {
+    MovieInfoReviewsViewData,
+    MovieInfoReviewsViewSchema
+} from "@/domains/movies/_feat/client-view-data/schemas/MovieInfoReviewsViewSchema.ts";
+import HttpResponseError from "@/common/_err/HttpResponseError.ts";
+import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
+import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+
+/** Configuration for the movie reviews fetch hook. */
+type FetchConfig = {
+    slug: SlugString;
+    queries?: {
+        reviewPage?: number;
+        reviewPerPage?: number;
+    };
+    options?: FetchQueryOptions<MovieInfoReviewsViewData>;
+}
+
+/** Fetches and validates paginated review data for a specific movie. */
+export function useFetchMovieInfoReviewsData(
+    {slug, queries, options}: FetchConfig
+): UseQueryResult<MovieInfoReviewsViewData, HttpResponseError> {
+    const fetchReviewData = buildQueryFn<MovieInfoReviewsViewData>({
+        action: () => getReviewsForMovieInfoView({slug, queries}),
+        schema: MovieInfoReviewsViewSchema,
+    });
+
+    return useQuery({
+        queryKey: MovieClientViewDataQueryKeys.infoReviews({slug, ...queries}),
+        queryFn: fetchReviewData,
+        ...useQueryOptionDefaults(options),
+    });
+}

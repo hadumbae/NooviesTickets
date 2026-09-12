@@ -1,0 +1,28 @@
+/**
+ * @fileoverview Mutation configuration types for standardized feedback and form state.
+ */
+
+import {FieldValues, UseFormReturn} from "react-hook-form";
+
+/** UI feedback and lifecycle callbacks. */
+export type MutationResponseConfig<TReturn = void, TSubmit = void> = {
+    submitMessage?: string;
+    onSubmit?: (data: TSubmit) => void;
+    successMessage?: string;
+    onSubmitSuccess?: (data: TReturn) => void;
+    errorMessage?: string;
+    onSubmitError?: (error: unknown) => void;
+};
+
+/** Form reset triggers. */
+export type MutationFormResetConfig = {
+    resetOnSubmit?: boolean;
+    resetOnSuccess?: boolean;
+    resetOnError?: boolean;
+};
+
+/** Form-based mutation integration. */
+export type MutationFormConfig<TFormValues extends FieldValues, TForm extends FieldValues = TFormValues> = {
+    form: UseFormReturn<TFormValues, unknown, TForm>;
+    resetForm?: MutationFormResetConfig;
+};

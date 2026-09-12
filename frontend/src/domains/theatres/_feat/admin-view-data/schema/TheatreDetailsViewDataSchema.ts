@@ -1,0 +1,23 @@
+/**
+ * @fileoverview Zod validation schema for the Theatre Details administrative view.
+ */
+
+import {z} from "zod";
+import {generateArraySchema, generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {ShowingDetailsSchema} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
+import {TheatreScreenWithVirtualsSchema} from "@/domains/theatre-screens/_schema/model";
+import {TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
+
+/**
+ * Validates the full data payload required for the Theatre Details dashboard.
+ */
+export const TheatreDetailsViewDataSchema = z.object({
+    theatre: TheatreDetailsSchema,
+    screens: generatePaginationSchema(TheatreScreenWithVirtualsSchema),
+    showings: z.lazy(() => generateArraySchema(ShowingDetailsSchema)),
+});
+
+/**
+ * Type definition for the Theatre Details view data, inferred from the Zod schema.
+ */
+export type TheatreDetailsViewData = z.infer<typeof TheatreDetailsViewDataSchema>;

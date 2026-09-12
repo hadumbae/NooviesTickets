@@ -1,0 +1,51 @@
+/**
+ * @fileoverview Displays metadata and a link for a movie within the showing information view.
+ */
+
+import {ReactElement} from "react";
+import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
+import {buildString} from "@/common/_feat/formatters/buildString.ts";
+import {Movie, MovieDetails, MovieWithGenres} from "@/domains/movies/_schema/movie";
+
+/** Props for the ShowingInfoMovieMeta component. */
+type MetaProps = {
+    movie: Movie | MovieDetails | MovieWithGenres;
+    isSpecialEvent?: boolean;
+    canReserveSeats?: boolean;
+};
+
+/** Renders the movie title, release year, runtime, and admission type. */
+export function ShowingInfoMovieMeta(
+    {movie, isSpecialEvent, canReserveSeats}: MetaProps
+): ReactElement {
+    const {title, runtime, releaseDate, slug} = movie;
+
+    const releaseYear = releaseDate?.toFormat("yyyy") ?? "Unreleased";
+    const formattedMovieTitle = `${title} (${releaseYear})`;
+
+    const movieRuntime = formatMovieRuntime(runtime, true);
+    const showingType = canReserveSeats ? "Seat Reservation" : "General Admission";
+
+    const metaString = buildString([
+        movieRuntime,
+        showingType,
+        isSpecialEvent && "Special",
+    ], " • ");
+
+    return (
+        <div>
+            <LoggedLink
+                className="primary-text font-bold max-md:text-sm hover:underline underline-offset-4 line-clamp-2"
+                to={`/browse/movies/${slug}`}
+            >
+                {formattedMovieTitle}
+            </LoggedLink>
+
+            <h3 className="text-sm font-semibold secondary-text">
+                {metaString}
+            </h3>
+        </div>
+    )
+        ;
+}

@@ -1,0 +1,43 @@
+/**
+ * @fileoverview Section component for displaying movie multimedia links in the admin dashboard.
+ */
+
+import {ReactElement} from "react";
+import {Separator} from "@/views/common/_comp/ui/separator.tsx";
+import {Link} from "react-router-dom";
+import {LabelContent} from "@/views/common/_comp/label-content/LabelContent.tsx";
+import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
+
+/** Props for the MovieDetailsCardMultimediaSection component. */
+type SectionProps = {
+    movie: MovieDetails;
+};
+
+/**
+ * Renders a section containing multimedia links, such as the movie trailer, for a specific movie.
+ */
+export function MovieDetailsCardMultimediaSection(
+    {movie: {trailerURL}}: SectionProps
+): ReactElement {
+    return (
+        <section className="space-y-3">
+            <section>
+                <h2 className="primary-text text-lg font-bold">Multimedia</h2>
+                <Separator/>
+            </section>
+
+            <LabelContent label="Trailer" orientation="horizontal">
+                {trailerURL ? (
+                    <Link
+                        to={trailerURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-neutral-500 hover:underline hover:text-black"
+                    >
+                        Link
+                    </Link>
+                ) : "None"}
+            </LabelContent>
+        </section>
+    );
+}

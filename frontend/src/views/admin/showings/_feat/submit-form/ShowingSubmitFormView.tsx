@@ -1,0 +1,95 @@
+/**
+ * @fileoverview Multi-step form view for creating or updating movie showings.
+ */
+
+import {ReactElement} from "react";
+import {DisableFields, HideFields} from "@/common/_types";
+import {ShowingFormValues} from "@/domains/showings/_schema/form/form-values/ShowingFormValues.ts";
+import {FormStep, FormStepMeta} from "@/common/_feat/multi-step-form/types.ts";
+import {ChevronRight, Clock, Languages, ListCollapse} from "lucide-react";
+import {getSchemaFieldKeys} from "@/common/_feat/zod-utils/getSchemaFieldKeys.ts";
+import {
+    ShowingSubmitFormDetailsFieldset
+} from "@/views/admin/showings/_feat/submit-form/fieldsets/ShowingSubmitFormDetailsFieldset.tsx";
+import {
+    ShowingFormDateTimeSchema,
+    ShowingFormDetailSchema,
+    ShowingFormLanguageSchema,
+    ShowingFormStatusSchema
+} from "@/domains/showings/_schema/form";
+import {
+    ShowingSubmitFormLanguagesFieldset
+} from "@/views/admin/showings/_feat/submit-form/fieldsets/ShowingSubmitFormLanguagesFieldset.tsx";
+import {
+    ShowingSubmitFormDateTimeFieldset
+} from "@/views/admin/showings/_feat/submit-form/fieldsets/ShowingSubmitFormDateTimeFieldset.tsx";
+import {
+    ShowingSubmitFormStatusFieldset
+} from "@/views/admin/showings/_feat/submit-form/fieldsets/ShowingSubmitFormStatusFieldset.tsx";
+import {MultiStepForm, MultiStepFormCurrentStep, MultiStepFormView} from "@/views/common/_feat";
+
+/** Props for the ShowingSubmitFormView component. */
+type ViewProps = {
+    disableFields?: DisableFields<ShowingFormValues>;
+    hideFields?: HideFields<ShowingFormValues>;
+};
+
+/**
+ * Orchestrates the multi-step submission process for showings.
+ */
+export function ShowingSubmitFormView(
+    {disableFields, hideFields}: ViewProps
+): ReactElement {
+    const steps: FormStep<ShowingFormValues>[] = [
+        {
+            title: "Details",
+            stepCount: 1,
+            icon: ListCollapse,
+            fields: getSchemaFieldKeys(ShowingFormDetailSchema),
+            component: <ShowingSubmitFormDetailsFieldset
+                hideFields={hideFields}
+                disableFields={disableFields}
+            />,
+        },
+        {
+            title: "Languages",
+            stepCount: 2,
+            icon: Languages,
+            fields: getSchemaFieldKeys(ShowingFormLanguageSchema),
+            component: <ShowingSubmitFormLanguagesFieldset
+                hideFields={hideFields}
+                disableFields={disableFields}
+            />,
+        },
+        {
+            title: "Date & Time",
+            stepCount: 3,
+            icon: Clock,
+            fields: getSchemaFieldKeys(ShowingFormDateTimeSchema),
+            component: <ShowingSubmitFormDateTimeFieldset
+                hideFields={hideFields}
+                disableFields={disableFields}
+            />,
+        },
+        {
+            title: "Status",
+            stepCount: 4,
+            icon: ChevronRight,
+            fields: getSchemaFieldKeys(ShowingFormStatusSchema),
+            component: <ShowingSubmitFormStatusFieldset
+                hideFields={hideFields}
+                disableFields={disableFields}
+            />,
+        },
+    ];
+
+    const stepMeta = steps.map(({component, ...rest}): FormStepMeta<ShowingFormValues> => rest);
+
+    return (
+        <MultiStepForm stepMeta={stepMeta}>
+            <MultiStepFormView>
+                <MultiStepFormCurrentStep steps={steps}/>
+            </MultiStepFormView>
+        </MultiStepForm>
+    );
+}

@@ -1,0 +1,21 @@
+@layer components {
+    .primary-button {
+        @apply
+        bg-purple-700 hover:bg-purple-500
+        dark:bg-purple-800 dark:hover:bg-purple-500
+        text-white dark:text-white dark:hover:text-black
+    }
+
+    .link-button {
+        @apply
+        text-neutral-400 hover:text-black
+        dark:text-neutral-500 dark:hover:text-white
+        hover:underline hover:underline-offset-8
+    }
+
+    .hover-button {
+        @apply
+        text-neutral-400 hover:text-black
+        dark:text-neutral-500 dark:hover:text-white
+    }
+}

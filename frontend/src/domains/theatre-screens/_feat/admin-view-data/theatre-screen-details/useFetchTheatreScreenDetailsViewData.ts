@@ -1,0 +1,46 @@
+/**
+ * @fileoverview Hook for fetching validated administrative theatre screen details.
+ */
+
+import {useQuery, UseQueryResult} from "@tanstack/react-query";
+import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
+import HttpResponseError from "@/common/_err/HttpResponseError.ts";
+import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
+import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+
+import {TheatreScreenAdminViewDataQueryKeys} from "@/domains/theatre-screens/_feat/admin-view-data/keys";
+import {getFetchTheatreScreenAdminViewData,} from "@/domains/theatre-screens/_feat/admin-view-data/repository";
+import {
+    TheatreScreenDetailsViewData,
+    TheatreScreenDetailsViewDataSchema
+} from "@/domains/theatre-screens/_feat/admin-view-data/theatre-screen-details/viewDataSchema.ts";
+
+/** Props for the useFetchTheatreScreenDetailsViewData hook. */
+type FetchConfig = {
+    theatreSlug: SlugString;
+    screenSlug: SlugString;
+    recentShowingsCount?: number;
+    options?: FetchQueryOptions<TheatreScreenDetailsViewData>;
+}
+
+/**
+ * Fetches and validates aggregated theatre, screen, and seat data for the admin details view.
+ */
+export function useFetchTheatreScreenDetailsViewData(
+    {theatreSlug, screenSlug, recentShowingsCount, options}: FetchConfig
+): UseQueryResult<TheatreScreenDetailsViewData, HttpResponseError> {
+    const payload = {theatreSlug, screenSlug, recentShowingsCount};
+
+    const fetchViewData = buildQueryFn({
+        action: () => getFetchTheatreScreenAdminViewData(payload),
+        schema: TheatreScreenDetailsViewDataSchema,
+    });
+
+    return useQuery({
+        queryKey: TheatreScreenAdminViewDataQueryKeys.details(payload),
+        queryFn: fetchViewData,
+        ...useQueryOptionDefaults(options),
+        structuralSharing: false,
+    });
+}

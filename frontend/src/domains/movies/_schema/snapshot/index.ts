@@ -1,0 +1,1 @@
+export * from "@/domains/movies/_schema/snapshot/MovieSnapshotSchema.ts";

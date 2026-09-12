@@ -1,0 +1,87 @@
+/**
+ * @fileoverview Dialog component for the administrative Reset Display Name action.
+ */
+
+import {useFormContext} from "react-hook-form";
+import {ReactElement, ReactNode} from "react";
+import {cn} from "@/common/_feat";
+import {useBaseFormContext} from "@/common/_feat/generic-form-context";
+import {HookFormInput} from "@/views/common/_feat";
+import {
+    Button,
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
+} from "@/views/common/_comp/ui";
+import {UIOpenStateProps} from "@/common/_types";
+
+/** Props for the ResetReviewDisplayNameDialog component. */
+type DialogProps = UIOpenStateProps & {
+    children?: ReactNode;
+    className?: string;
+};
+
+/**
+ * Interface for administrators to modify a review author's display name.
+ */
+export function ResetReviewDisplayNameDialog(
+    {children, isOpen, setIsOpen, className}: DialogProps
+): ReactElement {
+    const {formID} = useBaseFormContext();
+    const {control} = useFormContext();
+
+    return (
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            <DialogTrigger asChild>
+                {children}
+            </DialogTrigger>
+
+            <DialogContent className="space-y-2">
+                <DialogHeader>
+                    <DialogTitle>Reset Review's Display Name</DialogTitle>
+                    <DialogDescription>
+                        Modify the review's display name and provide a moderation reason.
+                        This action cannot be reversed.
+                    </DialogDescription>
+                </DialogHeader>
+
+                <div className={cn("space-y-2", className)}>
+                    <HookFormInput
+                        type="text"
+                        label="Display Name"
+                        name="displayName"
+                        control={control}
+                        placeholder="e.g. John Doe"
+                    />
+
+                    <HookFormInput
+                        type="text"
+                        label="Moderation Message"
+                        name="message"
+                        control={control}
+                        placeholder="Reason for name reset..."
+                    />
+                </div>
+
+                <DialogFooter className="max-md:gap-2">
+                    <DialogClose asChild>
+                        <Button variant="secondary">Cancel</Button>
+                    </DialogClose>
+
+                    <Button
+                        form={formID}
+                        variant="primary"
+                        type="submit"
+                    >
+                        Reset
+                    </Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+    );
+}

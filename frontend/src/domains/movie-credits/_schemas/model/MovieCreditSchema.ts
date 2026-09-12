@@ -1,0 +1,82 @@
+/**
+ * @fileoverview Base and discriminated schemas for cast and crew movie credits.
+ * Defines the validation logic and TypeScript types for movie participation records.
+ */
+
+import {z} from "zod";
+import {NonEmptyStringSchema} from "@/common/_schemas";
+import {RoleTypeDepartmentSchema} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
+import {
+    preprocessEmptyToUndefined
+} from "@/common/_feat/validation-preprocessors";
+import {IDStringSchema} from "@/common/_schemas";
+import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
+import {
+    UndefinedForCrewFieldSchema
+} from "@/domains/movie-credits/_schemas/model/UndefinedForCrewFieldSchema.ts";
+import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
+
+/**
+ * Base schema shared by cast and crew credits.
+ */
+export const MovieCreditBaseSchema = z.object({
+    _id: IDStringSchema.readonly(),
+    slug: NonEmptyStringSchema.max(75, "Must be 75 characters or less."),
+    department: RoleTypeDepartmentSchema,
+    displayRoleName: preprocessEmptyToUndefined(
+        NonEmptyStringSchema.max(150, "Must be 150 characters or less.").optional()
+    ).optional(),
+    creditedAs: preprocessEmptyToUndefined(
+        NonEmptyStringSchema.max(150, "Must be 150 characters or less.").optional()
+    ).optional(),
+    uncredited: CoercedBooleanValueSchema.optional(),
+    notes: NonEmptyStringSchema.nullable().optional(),
+    movie: IDStringSchema,
+    person: IDStringSchema,
+    roleType: IDStringSchema,
+});
+
+/**
+ * Schema for non-performance based credits (e.g., Directing, Production).
+ */
+export const MovieCreditCrewSchema = MovieCreditBaseSchema.extend({
+    department: z.literal("CREW"),
+    billingOrder: UndefinedForCrewFieldSchema,
+    characterName: UndefinedForCrewFieldSchema,
+    isPrimary: UndefinedForCrewFieldSchema,
+    voiceOnly: UndefinedForCrewFieldSchema,
+    cameo: UndefinedForCrewFieldSchema,
+    motionCapture: UndefinedForCrewFieldSchema,
+    archiveFootage: UndefinedForCrewFieldSchema,
+});
+
+/**
+ * Schema for performance-based credits.
+ */
+export const MovieCreditCastSchema = MovieCreditBaseSchema.extend({
+    department: z.literal("CAST"),
+    characterName: NonEmptyStringSchema,
+    billingOrder: PositiveNumberSchema.optional(),
+    isPrimary: CoercedBooleanValueSchema,
+    voiceOnly: CoercedBooleanValueSchema,
+    cameo: CoercedBooleanValueSchema,
+    motionCapture: CoercedBooleanValueSchema,
+    archiveFootage: CoercedBooleanValueSchema,
+});
+
+/**
+ * Discriminated union of movie credit variants.
+ */
+export const MovieCreditSchema = z.discriminatedUnion("department", [
+    MovieCreditCrewSchema,
+    MovieCreditCastSchema,
+]);
+
+/** Represents a validated crew movie credit. */
+export type CrewMovieCredit = z.infer<typeof MovieCreditCrewSchema>;
+
+/** Represents a validated cast movie credit. */
+export type CastMovieCredit = z.infer<typeof MovieCreditCastSchema>;
+
+/** Represents a validated movie credit (either cast or crew). */
+export type MovieCredit = z.infer<typeof MovieCreditSchema>;

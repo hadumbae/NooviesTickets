@@ -1,0 +1,27 @@
+/**
+ * @fileoverview Route-level page component for browsing administrative RoleType records.
+ */
+
+import {ReactElement} from 'react';
+import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
+import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {QueryDataLoader} from "@/views/common/_feat";
+import {RoleType, RoleTypeSchema} from "@/domains/roletypes/_schema";
+import {RoleTypeQueryOptionsSchema, useFetchRoleTypes} from "@/domains/roletypes/_feat";
+import {RoleTypeListPageContent} from "@/views/admin/role-types/_pages/list-page/content.tsx";
+
+/** Primary entry point for the Role Type List administrative view. */
+export function RoleTypeListPage(): ReactElement {
+    const {searchParams: queryOptions} = useParsedSearchParams({schema: RoleTypeQueryOptionsSchema});
+
+    const query = useFetchRoleTypes({
+        queries: queryOptions,
+        schema: generateArraySchema(RoleTypeSchema),
+    });
+
+    return (
+        <QueryDataLoader query={query}>
+            {(data: RoleType[]) => <RoleTypeListPageContent roleTypes={data}/>}
+        </QueryDataLoader>
+    );
+}

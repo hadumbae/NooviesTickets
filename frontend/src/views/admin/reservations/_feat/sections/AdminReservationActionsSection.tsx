@@ -1,0 +1,61 @@
+/**
+ * @fileoverview Layout section for administrative management controls and actions on a customer reservation.
+ */
+
+import {ReactElement} from "react";
+import {cn} from "@/common/_feat";
+import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationSchema.ts";
+import {PageSectionHeader} from "@/views/common/_comp";
+import {ReservationStatusBadge} from "@/views/client/reservations/_comp/reservation-badges/ReservationStatusBadge.tsx";
+import {
+    AdminReservationCancelAction
+} from "@/views/admin/reservations/_feat/reservation-actions/cancel/AdminReservationCancelAction.tsx";
+import {
+    AdminReservationRefundAction
+} from "@/views/admin/reservations/_feat/reservation-actions/refund/AdminReservationRefundAction.tsx";
+import {
+    AdminReservationResetExpiryAction
+} from "@/views/admin/reservations/_feat/reservation-actions/reset-expiry/AdminReservationResetExpiryAction.tsx";
+
+/** Props for the AdminReservationActionsSection component. */
+type SectionProps = {
+    reservation: AdminReservation;
+};
+
+/**
+ * Renders a suite of workflow action triggers such as cancellation, refunds, and expiry adjustments for a reservation.
+ */
+export function AdminReservationActionsSection(
+    {reservation}: SectionProps
+): ReactElement {
+    const {uniqueCode, isPaid, status} = reservation;
+    const hasNoActions = status === "EXPIRED" || (status === "CANCELLED" && !isPaid) || status === "REFUNDED";
+
+
+    return (
+        <section className="space-y-4">
+            <PageSectionHeader text="Actions"/>
+
+            {
+                hasNoActions &&
+                <div className={cn(
+                    "p-4 md:p-10 h-10 border-2 rounded-3xl",
+                    "flex justify-between items-center",
+                    "primary-text select-none",
+                )}>
+                    <span className="max-xl:hidden">{uniqueCode}</span>
+                    <span className="max-md:text-sm font-semibold tracking-wide uppercase">
+                        THERE ARE NO VALID ACTIONS
+                    </span>
+                    <ReservationStatusBadge status={status}/>
+                </div>
+            }
+
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                <AdminReservationResetExpiryAction reservation={reservation}/>
+                <AdminReservationCancelAction reservation={reservation}/>
+                <AdminReservationRefundAction reservation={reservation}/>
+            </div>
+        </section>
+    );
+}

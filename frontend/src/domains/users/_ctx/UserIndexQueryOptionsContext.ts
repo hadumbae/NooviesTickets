@@ -1,0 +1,19 @@
+/**
+ * @fileoverview Context provider and hook for managing user index query options.
+ */
+
+import {createQueryOptionsContext} from "@/common/_feat";
+import {UserQueryOptionsSchema} from "@/domains/users/_schema/query-options/UserQueryOptionsSchema.ts";
+
+const {Provider, useQueryOptionsContext} = createQueryOptionsContext({
+    name: "UserIndexQueryOptionsContext",
+    schema: UserQueryOptionsSchema,
+    arrayKeyOverride: ["roles"],
+});
+
+export {
+    /** Provider component for the UserIndexQueryOptionsContext. */
+    Provider as UserIndexQueryOptionsContextProvider,
+    /** Hook to access the UserIndexQueryOptionsContext. */
+    useQueryOptionsContext as useUserIndexQueryOptionsContext,
+}

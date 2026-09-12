@@ -1,0 +1,65 @@
+/**
+ * @fileoverview Summary card component for listing genres within an administrative or index view.
+ */
+
+import {ReactElement} from 'react';
+import {Clapperboard, Star} from "lucide-react";
+import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
+import {cn} from "@/common/_feat";
+import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
+import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
+import usePaginationSearchParams
+    from "@/common/_feat/fetch-pagination-search-params/hooks/usePaginationSearchParams.ts";
+
+/** Props for the {@link GenreIndexCard} component. */
+type IndexProps = {
+    genre: Genre;
+    className?: string;
+    orientation?: "horizontal" | "vertical";
+};
+
+/**
+ * Renders a clickable summary card for a genre, including its name and movie count.
+ */
+export function GenreIndexCard(
+    {genre, orientation = "horizontal", className}: IndexProps
+): ReactElement {
+    const navigate = useLoggedNavigate();
+    const {slug, name, movieCount, isFeatured} = genre;
+
+    const {page, perPage, hasPaginationValues} = usePaginationSearchParams();
+
+    const flexClasses = orientation === "horizontal"
+        ? "flex justify-between items-center"
+        : "flex flex-col items-center gap-2";
+
+    /**
+     * Navigates to the genre details page while preserving the current pagination context.
+     */
+    const openGenre = (): void => {
+        const state = hasPaginationValues ? {page, perPage} : {};
+
+        navigate({
+            to: `/admin/genres/get/${slug}`,
+            component: "GenreIndexCard",
+            options: {state},
+        });
+    };
+
+    return (
+        <Card
+            className={cn("hover:bg-accent/50 transition-colors cursor-pointer", className)}
+            onClick={openGenre}
+        >
+            <CardContent className={cn("p-4", flexClasses)}>
+                <span className="text-md font-extrabold tracking-tight">{name}</span>
+
+                <section className="flex items-center gap-2 text-muted-foreground">
+                    <span className="text-sm font-medium">{movieCount}</span>
+                    <Clapperboard size={15} aria-hidden="true"/>
+                    {isFeatured && <Star size={15} aria-hidden="true" className="text-green-500 fill-green-500"/>}
+                </section>
+            </CardContent>
+        </Card>
+    );
+}

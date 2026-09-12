@@ -1,0 +1,86 @@
+@layer components {
+    .ghost-ring-button {
+        @apply
+        text-neutral-600 hover:text-black
+        dark:text-neutral-500 dark:hover:text-neutral-100
+        hover:border hover:border-black
+        dark:border-neutral-500 dark:hover:border dark:hover:border-neutral-100;
+    }
+
+    .shadcn-default-button {
+        @apply
+        bg-neutral-900 text-neutral-50 shadow hover:bg-neutral-900/90
+        dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-50/90
+    }
+
+    .shadcn-primary-button {
+        @apply
+        bg-purple-700 hover:bg-purple-500
+        dark:bg-purple-800 dark:hover:bg-purple-500
+        text-white dark:text-white dark:hover:text-black
+    }
+
+    .shadcn-secondary-button {
+        @apply
+        shadow-sm
+        text-neutral-900 bg-neutral-200 hover:bg-neutral-400/80 hover:text-neutral-200
+        dark:text-neutral-50 dark:hover:text-black dark:bg-neutral-600 dark:hover:bg-neutral-500
+    }
+
+    .shadcn-success-button {
+        @apply
+        bg-green-700 hover:bg-green-500
+        dark:bg-green-800 dark:hover:bg-green-500
+        text-white dark:text-white dark:hover:text-black
+    }
+
+    .shadcn-warning-button {
+        @apply
+        bg-yellow-700 hover:bg-yellow-500
+        dark:bg-yellow-800 dark:hover:bg-yellow-500
+        text-white dark:text-white dark:hover:text-black
+    }
+
+    .shadcn-error-button {
+        @apply
+        bg-red-700 hover:bg-red-500
+        dark:bg-red-800 dark:hover:bg-red-500
+        text-white dark:text-white dark:hover:text-black
+    }
+
+    .shadcn-info-button {
+        @apply
+        bg-blue-700 hover:bg-blue-500
+        dark:bg-blue-800 dark:hover:bg-blue-500
+        text-white dark:text-white dark:hover:text-black
+    }
+
+    .shadcn-ghost-button {
+        @apply
+        hover:bg-neutral-100 hover:text-neutral-900
+        dark:hover:bg-neutral-800 dark:hover:text-neutral-50
+    }
+
+    .shadcn-link-button {
+        @apply
+        text-neutral-500 hover:text-black
+        dark:text-neutral-400 dark:hover:text-white
+        underline-offset-4 hover:underline
+    }
+
+    .shadcn-destructive-button {
+        @apply
+        shadow-sm
+        text-neutral-50 dark:text-neutral-50
+        bg-red-500 hover:bg-red-500/90
+        dark:bg-red-900  dark:hover:bg-red-900/90
+    }
+
+    .shadcn-outline-button {
+        @apply
+        shadow-sm
+        border border-neutral-200 dark:border-neutral-800
+        bg-white hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800
+        dark:text-white hover:text-neutral-900 dark:hover:text-neutral-50
+    }
+}

@@ -1,0 +1,1 @@
+export * from "@/views/admin/theatres/_feat/model-options/TheatreDeleteWarningDialog.tsx";

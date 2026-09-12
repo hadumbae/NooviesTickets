@@ -1,0 +1,51 @@
+/**
+ * @fileoverview Orchestrator component for the Toggle Review Publicity administrative action.
+ */
+
+import {ReactElement, useState} from "react";
+import {ObjectId} from "@/common/_schemas";
+import {ModerationMessageFormData} from "@/common/_feat/moderation/forms";
+import {Button} from "@/views/common/_comp/ui";
+import {ToggleReviewPublicityForm} from "@/views/admin/customers/_feat/toggle-publicity/ToggleReviewPublicityForm.tsx";
+import {
+    ToggleReviewPublicityDialog
+} from "@/views/admin/customers/_feat/toggle-publicity/ToggleReviewPublicityDialog.tsx";
+
+import {MovieReview} from "@/domains/movie-reviews/_schema/model";
+import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
+
+/** Props for the ToggleReviewPublicityAction component. */
+type ActionProps = {
+    reviewID: ObjectId;
+    presetValues?: Partial<ModerationMessageFormData>;
+    submitConfig?: MutationResponseConfig<MovieReview, ModerationMessageFormData> & MutationFormResetConfig;
+};
+
+/**
+ * Encapsulates the state, form logic, and dialog for toggling review visibility.
+ */
+export function ToggleReviewPublicityAction(
+    {reviewID, presetValues, submitConfig}: ActionProps
+): ReactElement {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const closeOnSuccess = (review: MovieReview) => {
+        setIsOpen(false);
+        submitConfig?.onSubmitSuccess?.(review);
+    };
+
+    return (
+        <ToggleReviewPublicityForm
+            mutConfig={{reviewID}}
+            presetValues={presetValues}
+            {...submitConfig}
+            onSubmitSuccess={closeOnSuccess}
+        >
+            <ToggleReviewPublicityDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+                <Button variant="outline" size="tile">
+                    Toggle Review Publicity
+                </Button>
+            </ToggleReviewPublicityDialog>
+        </ToggleReviewPublicityForm>
+    );
+}

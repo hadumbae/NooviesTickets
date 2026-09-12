@@ -1,0 +1,76 @@
+/**
+ * @fileoverview Slide-over panel (Sheet) component for Theatre Screen data submission.
+ */
+
+import {ReactElement, ReactNode} from 'react';
+import {
+    Button,
+    ScrollArea,
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger
+} from "@/views/common/_comp/ui";
+import {UIOpenStateProps} from "@/common/_types";
+import {useBaseFormContext} from "@/common/_feat/generic-form-context";
+import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
+
+import {TheatreScreenFormValues} from "@/domains/theatre-screens";
+import {TheatreScreenFormView} from "@/views/admin/theatre-screens/_feat/submit-data/TheatreScreenFormView.tsx";
+import {useLockForFormUI} from "@/common/_feat";
+
+/**
+ * Props for the ScreenSubmitFormPanel component.
+ */
+type FormPanelProps = UIOpenStateProps & FormViewProps<TheatreScreenFormValues> & {
+    children?: ReactNode;
+    title?: string;
+    description?: string;
+};
+
+/**
+ * A side-drawer panel that renders Theatre Screen form inputs.
+ */
+export function TheatreScreenFormPanel(
+    {children, title, description, isOpen, setIsOpen, disableFields, hideFields, className}: FormPanelProps
+): ReactElement {
+    const {formID, isPending, isError} = useBaseFormContext();
+    const {isUILocked} = useLockForFormUI({
+        isContentOpen: isOpen,
+        isMutationError: isError,
+        isMutationPending: isPending
+    });
+
+    return (
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>{children ?? <Button variant="outline">Open</Button>}</SheetTrigger>
+
+            <SheetContent className="flex flex-col">
+                <SheetHeader>
+                    <SheetTitle>{title ?? "Submit Screen Data"}</SheetTitle>
+                    <SheetDescription>{description ?? "Input screen data and submit it."}</SheetDescription>
+                </SheetHeader>
+
+                <ScrollArea className="flex-grow px-1 mt-4">
+                    <TheatreScreenFormView
+                        disableFields={disableFields}
+                        hideFields={hideFields}
+                        className={className}
+                    />
+
+                    <Button
+                        form={formID}
+                        type="submit"
+                        variant="default"
+                        className="w-full bg-primary"
+                        disabled={isUILocked}
+                    >
+                        {isPending ? "Submitting..." : "Submit"}
+                    </Button>
+                </ScrollArea>
+            </SheetContent>
+        </Sheet>
+    );
+}

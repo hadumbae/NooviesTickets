@@ -1,0 +1,113 @@
+/**
+ * @fileoverview Dropdown menu for movie administration actions.
+ */
+
+import {ReactElement, ReactNode, useState} from 'react';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/views/common/_comp/ui";
+import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
+import {RoleTypeDepartment} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
+import {
+    useIsDeletingMovieBannerUIActions,
+    useIsDeletingMoviePosterUIActions,
+    useIsUpdatingMovieBannerUIActions,
+    useIsUpdatingMoviePosterUIActions
+} from "@/domains/movies/_ctx/ui";
+
+/** Props for the MovieDetailsDropdown component. */
+type OptionProps = {
+    children: ReactNode;
+    slug: string;
+    hasPoster?: boolean;
+    hasBanner?: boolean;
+};
+
+/**
+ * Dropdown menu providing admin actions for a movie.
+ */
+export function MovieDetailsDropdown(
+    {children, slug, hasPoster = false, hasBanner = false}: OptionProps
+): ReactElement {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const navigate = useLoggedNavigate();
+
+    const {open: openIsDeleting} = useIsDeletingMoviePosterUIActions();
+    const {open: openIsUpdatingPoster} = useIsUpdatingMoviePosterUIActions();
+    const {open: openIsDeletingPoster} = useIsDeletingMoviePosterUIActions();
+    const {open: openIsUpdatingBanner} = useIsUpdatingMovieBannerUIActions();
+    const {open: openIsDeletingBanner} = useIsDeletingMovieBannerUIActions();
+
+    const closeOnAction = (action: () => void) => {
+        action();
+        setIsOpen(false);
+    };
+
+    const navigateToCredits = (department: RoleTypeDepartment) => {
+        navigate({
+            to: `/admin/movies/get/${slug}/people/${department.toLowerCase()}`,
+            component: MovieDetailsDropdown.name,
+            message: `Navigate to movie's "${department}" credits.`,
+        });
+    };
+
+    const navigateToEdit = () => {
+        navigate({
+            to: `/admin/movies/edit/${slug}`,
+            component: MovieDetailsDropdown.name,
+            message: `Navigate to movie's editing page.`,
+        });
+    };
+
+    return (
+        <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+            <DropdownMenuTrigger asChild>
+                {children}
+            </DropdownMenuTrigger>
+
+            <DropdownMenuContent>
+                <DropdownMenuGroup>
+                    <DropdownMenuLabel className="select-none">Credits</DropdownMenuLabel>
+                    <DropdownMenuItem onClick={() => navigateToCredits("CAST")}>Cast</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => navigateToCredits("CREW")}>Crew</DropdownMenuItem>
+                </DropdownMenuGroup>
+
+                <DropdownMenuSeparator/>
+
+                <DropdownMenuGroup>
+                    <DropdownMenuLabel className="select-none">Images</DropdownMenuLabel>
+                    <DropdownMenuItem onClick={() => closeOnAction(openIsUpdatingPoster)}>
+                        Update Poster
+                    </DropdownMenuItem>
+                    {hasPoster && (
+                        <DropdownMenuItem onClick={() => closeOnAction(openIsDeletingPoster)}>
+                            Remove Poster
+                        </DropdownMenuItem>
+                    )}
+                    <DropdownMenuItem onClick={() => closeOnAction(openIsUpdatingBanner)}>
+                        Update Banner
+                    </DropdownMenuItem>
+                    {hasBanner && (
+                        <DropdownMenuItem onClick={() => closeOnAction(openIsDeletingBanner)}>
+                            Remove Banner
+                        </DropdownMenuItem>
+                    )}
+                </DropdownMenuGroup>
+
+                <DropdownMenuSeparator/>
+
+                <DropdownMenuGroup>
+                    <DropdownMenuLabel className="select-none">Movie</DropdownMenuLabel>
+                    <DropdownMenuItem onClick={navigateToEdit}>Edit</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => closeOnAction(openIsDeleting)}>Delete</DropdownMenuItem>
+                </DropdownMenuGroup>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
+}

@@ -1,0 +1,1 @@
+export * from "@/views/admin/theatres/_comp/index-page/TheatreIndexCard.tsx";

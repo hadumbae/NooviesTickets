@@ -1,0 +1,59 @@
+/**
+ * @fileoverview Dropdown navigation menu for client profile and account-related links in the desktop layout.
+ */
+
+import {ReactElement} from 'react';
+import {cn} from "@/common/_feat";
+import {ChevronDown} from "lucide-react";
+import {Button, DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, Separator} from "@/views/common/_comp/ui";
+import {useCurrentURLPath} from "@/common/_feat/navigation/useCurrentURLPath.ts";
+import {DropdownMenuLink} from "@/views/common/_feat/navigation/DropdownMenuLink.tsx";
+
+/**
+ * A dropdown menu providing navigation links to the user's profile, favorites, reviews, and reservations.
+ */
+export function BaseLayoutClientProfileNavigationDropdown(): ReactElement {
+    const pathNames = [
+        "/account/profile",
+        "/account/favourites",
+        "/account/reviews",
+        "/account/reservations",
+    ];
+
+    const url = useCurrentURLPath();
+    const isActive = pathNames.includes(url);
+
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button
+                    variant="link"
+                    size="sm"
+                    className={cn(!isActive && "hover-button")}
+                >
+                    Profile <ChevronDown/>
+                </Button>
+            </DropdownMenuTrigger>
+
+            <DropdownMenuContent>
+                <DropdownMenuLink to="/account/profile">
+                    My Profile
+                </DropdownMenuLink>
+
+                <Separator/>
+
+                <DropdownMenuLink to="/account/favourites">
+                    My Favourites
+                </DropdownMenuLink>
+
+                <DropdownMenuLink to="/account/reviews">
+                    My Reviews
+                </DropdownMenuLink>
+
+                <DropdownMenuLink to="/account/reservations">
+                    My Reservations
+                </DropdownMenuLink>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
+}
