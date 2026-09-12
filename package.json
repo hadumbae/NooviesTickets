@@ -1,0 +1,11 @@
+{
+  "name": "noovies-tickets",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "common",
+    "mobile"
+  ]
+}

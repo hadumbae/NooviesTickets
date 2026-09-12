@@ -3,12 +3,13 @@
 FROM node:20-alpine AS build
 WORKDIR /app
 
-# Install deps first so this layer is cached unless package*.json changes
 COPY package.json package-lock.json ./
-RUN npm ci
+COPY frontend/package.json ./frontend/
+COPY backend/package.json ./backend/
+COPY common/package.json ./common/
+COPY mobile/package.json ./mobile/
+RUN npm ci --workspace=frontend --include-workspace-root
 
-# Vite bakes VITE_* vars into the bundle at build time, not at container
-# start time — so they have to arrive as build args, not runtime env vars.
 ARG VITE_API_URL
 ARG VITE_DEV_MODE=false
 ARG VITE_DEV_LOG_TO_CONSOLE=false
@@ -27,15 +28,16 @@ ENV VITE_API_URL=$VITE_API_URL \
     VITE_PAGINATION_PER_PAGE_DEFAULT=$VITE_PAGINATION_PER_PAGE_DEFAULT \
     VITE_LOG_FETCH_RESULT_TO_CONSOLE=$VITE_LOG_FETCH_RESULT_TO_CONSOLE
 
-COPY . .
-RUN npm run build
+COPY common ./common
+COPY frontend ./frontend
+RUN npm run build --workspace=frontend
 
 # ---- SERVE ----
 
 FROM nginx:1.27-alpine AS runtime
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/frontend/dist /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

@@ -2,9 +2,16 @@ FROM node:20-alpine
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm ci
+COPY frontend/package.json ./frontend/
+COPY backend/package.json ./backend/
+COPY common/package.json ./common/
+COPY mobile/package.json ./mobile/
+RUN npm ci --workspace=backend --include-workspace-root
 
-COPY . .
+COPY common ./common
+COPY backend ./backend
+
+WORKDIR /app/backend
 
 USER node
 

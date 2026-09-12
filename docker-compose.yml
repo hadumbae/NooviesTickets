@@ -1,8 +1,8 @@
 services:
   frontend:
     build:
-      context: ./frontend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: frontend/Dockerfile
       args:
         VITE_API_URL: ${VITE_API_URL:-http://localhost:8080}
         VITE_DEV_MODE: ${VITE_DEV_MODE:-false}
@@ -17,8 +17,8 @@ services:
 
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/Dockerfile
     env_file:
       - ./backend/.env
     ports:
