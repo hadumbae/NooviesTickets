@@ -5,10 +5,9 @@
 
 import {MovieReleaseDateRefinement} from "@/domains/movies/_schema/movie/MovieSchemaUtilities.ts";
 import {z} from "zod";
-import {IDStringSchema, preprocessEmptyToUndefined, DateTimeInstanceSchema, UTCDayOnlyDateTimeSchema, PositiveNumberSchema, ISO3166Alpha2CountryCodeSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {CloudinaryImageSchema} from "@/common/_schemas/cloudinary-image/CloudinaryImageSchema.ts";
+import {BooleanValueSchema, IDStringSchema, preprocessEmptyToUndefined, DateTimeInstanceSchema, UTCDayOnlyDateTimeSchema, PositiveNumberSchema, ISO3166Alpha2CountryCodeSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {CloudinaryImageSchema} from "@noovies-tickets/common";
 
 import {
     MovieGenreIDsSchema,
@@ -39,8 +38,8 @@ export const MovieBaseSchema = z.object({
     originalLanguage: ISO6391LanguageCodeSchema,
 
     releaseDate: z.union([DateTimeInstanceSchema, UTCDayOnlyDateTimeSchema]).optional().nullable(),
-    isReleased: CoercedBooleanValueSchema,
-    isAvailable: CoercedBooleanValueSchema,
+    isReleased: BooleanValueSchema,
+    isAvailable: BooleanValueSchema,
 });
 
 /** Final validated Movie schema incorporating release date lifecycle logic. */

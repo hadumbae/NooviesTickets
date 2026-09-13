@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas/strings";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {IpSchema} from "@noovies-tickets/common";
 import {IpifyLocationSchema} from "@/common/_feat/external/ipify-country/schema/IpifyLocationSchema.ts";
 

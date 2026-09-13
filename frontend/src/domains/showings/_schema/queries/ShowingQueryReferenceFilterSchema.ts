@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {SlugStringSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating reference-based filter criteria for Showings. */
 export const ShowingQueryReferenceFilterSchema = z.object({

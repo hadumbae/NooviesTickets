@@ -4,15 +4,12 @@
  */
 
 import {z} from "zod";
-import {SlugStringSchema} from "@noovies-tickets/common";
-import {
-    RequestPaginationOptionsSchema
-} from "@/shared/_feat/fetch-request-options/schemas/RequestPaginationOptionsSchema";
+import {PaginationOptionsSchema, SlugStringSchema} from "@noovies-tickets/common";
 
 /**
  * Validation schema for the Genre-specific browsing endpoint.
  */
-export const BrowseGenreWithMoviesRouteParamSchema = RequestPaginationOptionsSchema.extend({
+export const BrowseGenreWithMoviesRouteParamSchema = PaginationOptionsSchema.extend({
     slug: SlugStringSchema,
 });
 

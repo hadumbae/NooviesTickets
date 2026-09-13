@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, SlugStringSchema} from "@noovies-tickets/common";
-import {LocationSchema} from "@/common/_models/location/LocationSchema.ts";
+import {IDStringSchema, LocationSchema, SlugStringSchema} from "@noovies-tickets/common";
 import {TheatreNameSchema, TheatreSeatCapacitySchema} from "@/domains/theatres/_schema/fields";
 
 /**

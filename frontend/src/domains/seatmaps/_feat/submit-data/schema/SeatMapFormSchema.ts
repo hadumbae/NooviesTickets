@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {AnyValues} from "@/common/_types";
 import {IDStringSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
-import {SeatMapStatusSchema} from "@/domains/seatmaps/_schema/fields";
+import {SeatMapStatusSchema} from "@noovies-tickets/common";
 
 /**
  * Base schema for validating raw SeatMap form input including seat, showing, pricing, and status.

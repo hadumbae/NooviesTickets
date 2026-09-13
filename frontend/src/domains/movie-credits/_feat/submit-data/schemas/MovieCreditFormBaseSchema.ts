@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {IDStringSchema, preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for core movie credit fields common to both cast and crew. */
 export const MovieCreditFormBaseSchema = z.object({

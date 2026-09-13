@@ -5,7 +5,7 @@
 import {ISO6391LanguageLabels as ISO6391LanguageConstant} from "@/common/_const/languages/ISO6391LanguageLabels.ts";
 import {buildString} from "@/common/_feat/formatters/buildString.ts";
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
-import {CloudinaryImage} from "@/common/_schemas/cloudinary-image/CloudinaryImageSchema.ts";
+import {CloudinaryImage} from "@noovies-tickets/common";
 import {PopulatedShowing, ShowingDetails} from "@/domains/showings/_schema";
 import {ReservationType} from "@noovies-tickets/common";
 

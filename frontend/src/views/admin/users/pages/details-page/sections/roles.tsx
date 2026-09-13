@@ -5,7 +5,7 @@
 import {ReactElement, useState} from "react";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {AdminActionButton, PageSectionHeader} from "@/views/common/_comp";
-import {UserRole, UserStatus} from "@/domains/users/_schema/fields";
+import {UserRole, UserStatus} from "@noovies-tickets/common";
 import {useInvalidateUserQueriesOnModeration} from "@/domains/users/_feat/user-moderation-actions";
 import {UpdateUserAdminRoleForm} from "@/domains/users/_feat/manage-user-roles/manage-admin-role/forms";
 import {GenericFormDialog} from "@/views/common/_feat";

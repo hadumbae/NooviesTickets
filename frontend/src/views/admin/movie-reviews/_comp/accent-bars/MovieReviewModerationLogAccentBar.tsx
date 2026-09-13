@@ -4,7 +4,7 @@
  */
 
 import {ReactElement} from "react";
-import {MovieReviewModerationAction} from "@/domains/movie-reviews/_feat/moderation/schema";
+import {MovieReviewModerationAction} from "@noovies-tickets/common";
 import {cn} from "@/common/_feat";
 
 type BarProps = {

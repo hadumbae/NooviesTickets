@@ -2,7 +2,7 @@
  * @fileoverview Validation schemas and types for user moderation log entry inputs.
  */
 
-import {ModerationLogMessageSchema} from "@/shared/_schema";
+import {ModerationLogMessageSchema} from "@noovies-tickets/common";
 import { UserModerationLogActionSchema } from "@noovies-tickets/common";
 import {z} from "zod";
 

@@ -10,15 +10,15 @@ import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {AggregateBaseConfig} from "@/shared/_feat/generic-aggregate/configTypes";
 import {buildPaginationPipelines} from "@/shared/_feat/pagination-pipelines";
 import type {
-    RequestPaginationOptions
-} from "@/shared/_feat/fetch-request-options/schemas/RequestPaginationOptionsSchema";
+    PaginationOptions
+} from "@noovies-tickets/common";
 import {buildBaseStages} from "@/shared/_feat/generic-aggregate/buildBaseStages";
 
 /**
  * Configuration for paginated aggregation.
  */
 export type AggregatePaginationConfig<TSchema extends BaseModel> = AggregateBaseConfig<TSchema> & {
-    options: Omit<RequestOptions, "limit" | "page" | "perPage"> & RequestPaginationOptions;
+    options: Omit<RequestOptions, "limit" | "page" | "perPage"> & PaginationOptions;
 };
 
 /**

@@ -9,8 +9,8 @@ import type {
 import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import {MovieReviewModerationLogModel} from "@/domains/movie-reviews/_models/moderationLogs/MovieReviewModerationLog.model";
 import type {
-    RequestPaginationOptions
-} from "@/shared/_feat/fetch-request-options/schemas/RequestPaginationOptionsSchema";
+    PaginationOptions
+} from "@noovies-tickets/common";
 import {Types} from "mongoose";
 import {LeanUserQuerySelectFields, UserModel, type UserSchemaFields} from "@/domains/users";
 import {MovieReviewPopulatePaths, type MovieReviewSchemaFields} from "@/domains/movie-reviews";
@@ -20,7 +20,7 @@ import createHttpError from "http-errors";
 export type FetchCustomerReviewLogsViewDataConfig = {
     userId: Types.ObjectId;
     reviewId: Types.ObjectId;
-    pagination: RequestPaginationOptions
+    pagination: PaginationOptions
 }
 
 /** Paginated moderation log entries for administrative oversight. */

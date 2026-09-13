@@ -3,8 +3,8 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@noovies-tickets/common";
-import {UserPersonalNameSchema, UserStatusSchema, UserUniqueCodeSchema} from "@/domains/users/_schema/fields";
+import {IDStringSchema, UserStatusSchema} from "@noovies-tickets/common";
+import {UserPersonalNameSchema, UserUniqueCodeSchema} from "@/domains/users/_schema/fields";
 
 /** Zod schema for identifying a user with minimal metadata. */
 export const LeanUserSchema = z.object({

@@ -4,9 +4,8 @@
 
 import {z} from "zod";
 import generateArraySchema from "@/shared/utility/schema/generateArraySchema";
-import {ValidDateInstanceSchema, PositiveNumberSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
-import {BooleanValueSchema} from "@/shared/_schema/booleans/BooleanValueSchema";
-import {ReservationTypeSchema} from "@/domains/reservations/_validation";
+import {BooleanValueSchema, ValidDateInstanceSchema, PositiveNumberSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
+import {ReservationTypeSchema} from "@noovies-tickets/common";
 import {ReservedSeatSnapshotInputSchema} from "@/domains/seatmap/_feat/validate-submit/ReservedSeatSnapshotInputSchema";
 import {ScreenSnapshotInputSchema} from "@/domains/screen/_feat/validate-submit";
 import {TheatreSnapshotInputSchema} from "@/domains/theatre/validation";

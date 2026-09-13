@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /** Schema for validating movie synopsis strings with a maximum length. */
 export const MovieSynopsisSchema = NonEmptyStringSchema.max(2000, "Synopsis must be 2000 characters or less.");

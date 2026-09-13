@@ -6,7 +6,7 @@ import {z} from "zod";
 import {IDStringSchema, SlugStringSchema, UTCDayOnlyDateTimeSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {PersonNameSchema} from "@/domains/persons/_schema/fields/PersonNameSchema";
 import {PersonBiographySchema} from "@/domains/persons/_schema/fields/PersonBiographySchema";
-import {CloudinaryImageSchema} from "@/common/_schemas/cloudinary-image/CloudinaryImageSchema";
+import {CloudinaryImageSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema for validating person objects.

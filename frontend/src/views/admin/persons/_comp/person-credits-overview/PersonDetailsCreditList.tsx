@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from 'react';
-import {RoleTypeDepartment} from "@/domains/roletypes";
+import {RoleTypeDepartment} from "@noovies-tickets/common";
 import {PersonFilmography} from "@/domains/movie-credits";
 import {PersonDetailsCreditCard} from "@/views/admin/persons/_comp/person-credits-overview/PersonDetailsCreditCard.tsx";
 

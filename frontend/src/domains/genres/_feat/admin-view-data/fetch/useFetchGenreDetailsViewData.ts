@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {SlugString} from "@noovies-tickets/common";
 import {getFetchGenreDetails} from "@/domains/genres/_feat/admin-view-data/repository";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
@@ -16,7 +16,7 @@ import {GenreDetailsViewData, GenreDetailsViewDataSchema} from "@/domains/genres
 /** Parameters for the useFetchGenreDetailsViewData hook. */
 type FetchParams = {
     slug: SlugString;
-    queries: PaginationValues;
+    queries: PaginationOptions;
     options?: FetchQueryOptions<unknown>;
 };
 

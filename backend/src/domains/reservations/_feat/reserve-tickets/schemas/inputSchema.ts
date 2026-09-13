@@ -6,7 +6,7 @@ import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
 import generateArraySchema from "@/shared/utility/schema/generateArraySchema";
 import {PositiveNumberSchema, ISO4217CurrencyCodeSchema} from "@noovies-tickets/common";
-import {ReservationTypeConstant, ReservationTypeSchema} from "@/domains/reservations/_validation";
+import {ReservationTypeConstant, ReservationTypeSchema} from "@noovies-tickets/common";
 
 /** Base checkout submission schema providing shared structural validation. */
 export const ReserveTicketInputBaseSchema = z.object({

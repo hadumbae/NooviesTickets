@@ -7,8 +7,8 @@ import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema
 import {URLParamDateOnlySchema} from "@/shared/schema/url/URLParamDateOnlySchema";
 import generateURLParamArraySchema from "@/shared/utility/schema/url-params/generateURLParamArraySchema";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
 import {ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
+import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 
 /** Zod schema for validating and parsing movie filter criteria from URL parameters. */

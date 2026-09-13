@@ -2,7 +2,7 @@
  * @fileoverview Utility for resolving the user's country code using IP location data.
  */
 
-import {ISO3166Alpha2CountryCode} from "@/common/_schemas";
+import {ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
 import {getIpifyStorageData} from "@/common/_feat/external/ipify-country/utils/getIpifyStorageData.ts";
 
 type CountryConfig = {

@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 
 /** Validates the justification message provided in administrative moderation forms. */

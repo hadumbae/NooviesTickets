@@ -3,9 +3,8 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/common/_schemas";
-import {IDStringSchema, preprocessOptionalField} from "@noovies-tickets/common";
-import {ReservationStatusSchema, ReservationTypeSchema} from "@/domains/reservations/_schema/model/fields";
+import {StringValueSchema} from "@noovies-tickets/common";
+import {IDStringSchema, preprocessOptionalField, ReservationStatusSchema, ReservationTypeSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating base reservation query filter parameters. */
 export const ReservationBaseQueryFilterSchema = z.object({

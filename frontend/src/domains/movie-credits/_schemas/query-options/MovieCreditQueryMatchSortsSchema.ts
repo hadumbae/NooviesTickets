@@ -5,7 +5,7 @@
  */
 
 import {z} from "zod";
-import {MongooseNumericSortOrderSchema} from "@/common/_schemas/enums/MongooseNumericSortOrderSchema.ts";
+import {MongooseNumericSortOrderSchema} from "@noovies-tickets/common";
 
 /**
  * Sort options for MovieCredit queries.

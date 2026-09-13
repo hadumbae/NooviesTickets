@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {AnyValues} from "@/common/_types";
-import {StringValueSchema} from "@/common/_schemas";
+import {StringValueSchema} from "@noovies-tickets/common";
 import {preprocessEmptyToUndefined, EmailStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating user login credentials. */

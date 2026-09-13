@@ -5,7 +5,7 @@
 import {Types} from "mongoose";
 import type {PaginationReturns} from "@/shared/_types/pagination";
 import {LeanUserQuerySelectFields, type LeanUserSchemaFields, UserModel} from "@/domains/users";
-import type {RequestPaginationOptions} from "@/shared/_feat/fetch-request-options";
+import type {PaginationOptions} from "@noovies-tickets/common";
 import createHttpError from "http-errors";
 import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations";
 import type {
@@ -16,7 +16,7 @@ import type {
 /** Configuration for fetching customer reservation view data. */
 export type FetchCustomerReservationsViewDataConfig = {
     userId: Types.ObjectId;
-    pagination: RequestPaginationOptions;
+    pagination: PaginationOptions;
     filters?: CustomerReservationQueryFilters;
     sorts?: CustomerReservationQuerySorts;
 }

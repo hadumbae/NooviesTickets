@@ -6,7 +6,7 @@ import {z} from "zod";
 import {NonEmptyStringSchema, DateInstanceSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import {ReserveTicketInputSchema} from "@/domains/reservations/_feat/reserve-tickets/schemas";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {ReservationStatusSchema} from "@/domains/reservations/_validation";
+import {ReservationStatusSchema} from "@noovies-tickets/common";
 
 /** Validation schema for the internal persistence layer of a ticket reservation. */
 export const ReserveTicketPersistenceSchema =

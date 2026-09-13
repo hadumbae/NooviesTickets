@@ -4,7 +4,7 @@
  */
 
 import {z} from "zod";
-import {MongooseSortOrderSchema} from "@/common/_schemas/enums/MongooseSortOrderSchema.ts";
+import {MongooseSortOrderSchema} from "@noovies-tickets/common";
 
 /**
  * Sort criteria for movie review queries.

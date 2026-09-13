@@ -11,7 +11,7 @@ import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showin
 import {createReservedSeatSnapshot} from "@/domains/seatmap/_feat/manage-snapshots/createReservedSeatSnapshot";
 import {ReservedShowingSnapshotInputSchema} from "@/domains/reservations/_feat/reserve-tickets/schemas";
 import {createScreenSnapshot} from "@/domains/screen/_feat/build-snapshot";
-import type {ReservationType} from "@/domains/reservations/_validation";
+import type {ReservationType} from "@noovies-tickets/common";
 import type {ReservedShowingSnapshotSchemaFields} from "@/domains/reservations/_model/showing-snapshot";
 
 type ShowingWithReferences = Omit<ShowingSchemaFields, "movie" | "theatre" | "screen"> & {

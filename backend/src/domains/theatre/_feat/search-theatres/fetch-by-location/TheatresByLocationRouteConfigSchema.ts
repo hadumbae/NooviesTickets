@@ -4,15 +4,15 @@
 
 import { z } from "zod";
 import {
-    RequestPaginationOptionsSchema
-} from "@/shared/_feat/fetch-request-options/schemas/RequestPaginationOptionsSchema";
+    PaginationOptionsSchema
+} from "@noovies-tickets/common";
 import { RequestOptionsSchema } from "@/shared/_feat/fetch-request-options/schemas";
 import { LocationTargetObjectSchema } from "@/shared/schema/features/location-query-options/LocationQueryOptions.schema";
 
 /**
  * Validation schema for theatre location queries, merging pagination, result limits, and geographic target fields.
  */
-export const TheatresByLocationRouteConfigSchema = RequestPaginationOptionsSchema
+export const TheatresByLocationRouteConfigSchema = PaginationOptionsSchema
     .merge(RequestOptionsSchema.pick({ limit: true }))
     .merge(LocationTargetObjectSchema);
 

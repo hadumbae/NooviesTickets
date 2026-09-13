@@ -4,8 +4,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {BooleanValueSchema} from "@/common/_schemas/boolean/BooleanValueSchema.ts";
+import {BooleanValueSchema, IDStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 
 
 /**

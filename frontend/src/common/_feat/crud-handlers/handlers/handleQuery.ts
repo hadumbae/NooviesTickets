@@ -4,7 +4,7 @@
  * filters, and global request configuration into a single versioned URL.
  */
 
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
@@ -15,7 +15,7 @@ import {buildURL} from "@/common/_feat/fetch-api";
  */
 export type FindDocumentsByQueryConfig<TQueries extends Record<string, unknown>> = {
     queries?: TQueries;
-    pagination?: Partial<PaginationValues>;
+    pagination?: Partial<PaginationOptions>;
     config?: RequestOptions;
 };
 

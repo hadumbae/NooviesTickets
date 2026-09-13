@@ -7,7 +7,7 @@ import {Control, FieldValues, Path} from "react-hook-form";
 import {HookFormMultiSelect} from "@/views/common/_comp/form-select/HookFormMultiSelect.tsx";
 import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
 import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
-import {ScreenTypeConstant} from "@/domains/theatre-screens";
+import {ScreenTypeConstant} from "@noovies-tickets/common";
 
 /** Props for the ScreenTypeHookFormSelect component. */
 type Props<TSubmit extends FieldValues> = {

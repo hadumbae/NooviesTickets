@@ -5,9 +5,8 @@
 
 import {z} from "zod";
 
-import {PositiveNumberSchema, NonEmptyStringSchema, RoleTypeDepartmentSchema} from "@noovies-tickets/common";
+import {BooleanValueSchema, PositiveNumberSchema, NonEmptyStringSchema, RoleTypeDepartmentSchema} from "@noovies-tickets/common";
 import {ObjectIdStringSchema} from "@/shared/schema/mongoose/ObjectIdStringSchema";
-import {CoercedBooleanValueSchema} from "@/shared/_schema/booleans/CoercedBooleanValueSchema";
 
 /**
  * Base schema for a movie credit input (common fields for both CAST and CREW)
@@ -56,12 +55,12 @@ const CastSchema = MovieCreditBaseSchema.extend({
     department: z.literal("CAST"),
     characterName: NonEmptyStringSchema.max(150, "Job must be 150 characters or less."),
     billingOrder: PositiveNumberSchema.optional(),
-    uncredited: CoercedBooleanValueSchema.optional(),
-    isPrimary: CoercedBooleanValueSchema.optional(),
-    voiceOnly: CoercedBooleanValueSchema.optional(),
-    cameo: CoercedBooleanValueSchema.optional(),
-    motionCapture: CoercedBooleanValueSchema.optional(),
-    archiveFootage: CoercedBooleanValueSchema.optional(),
+    uncredited: BooleanValueSchema.optional(),
+    isPrimary: BooleanValueSchema.optional(),
+    voiceOnly: BooleanValueSchema.optional(),
+    cameo: BooleanValueSchema.optional(),
+    motionCapture: BooleanValueSchema.optional(),
+    archiveFootage: BooleanValueSchema.optional(),
 });
 
 /**

@@ -3,9 +3,9 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, preprocessEmptyToUndefined, NonNegativeNumberSchema, PositiveNumberSchema, SlugStringSchema} from "@noovies-tickets/common";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {SeatLabelSchema, SeatLayoutTypeSchema, SeatRowSchema, SeatTypeSchema} from "@/domains/seats/_schema/fields";
+import {BooleanValueSchema, IDStringSchema, preprocessEmptyToUndefined, NonNegativeNumberSchema, PositiveNumberSchema, SlugStringSchema} from "@noovies-tickets/common";
+import {SeatLabelSchema, SeatRowSchema} from "@/domains/seats/_schema/fields";
+import {SeatLayoutTypeSchema, SeatTypeSchema} from "@noovies-tickets/common";
 
 /** Base layout entry shared across all structure types. */
 export const SeatBaseSchema = z.object({
@@ -29,7 +29,7 @@ export const SeatingStructureSchema = SeatReferenceSchema.extend({
     seatNumber: PositiveNumberSchema,
     seatLabel: SeatLabelSchema.optional(),
     seatType: SeatTypeSchema,
-    isAvailable: CoercedBooleanValueSchema,
+    isAvailable: BooleanValueSchema,
     priceMultiplier: preprocessEmptyToUndefined(NonNegativeNumberSchema),
 });
 

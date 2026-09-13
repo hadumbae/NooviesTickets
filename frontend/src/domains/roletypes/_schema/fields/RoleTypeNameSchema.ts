@@ -2,7 +2,7 @@
  * @fileoverview Zod schema and type definition for the RoleType name field.
  */
 
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Schema for validating a RoleType name string. */

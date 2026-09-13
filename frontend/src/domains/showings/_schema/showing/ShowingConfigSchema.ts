@@ -3,16 +3,15 @@
  */
 
 import {z} from "zod";
-import {BooleanValueSchema} from "@/common/_schemas/boolean/BooleanValueSchema.ts";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
+import {BooleanValueSchema} from "@noovies-tickets/common";
 
 /**
  * Optional configuration flags for a showing.
  */
 export const ShowingConfigSchema = z.object({
-    isActive: CoercedBooleanValueSchema,
+    isActive: BooleanValueSchema,
     canReserveSeats: BooleanValueSchema.optional(),
-    isSpecialEvent: CoercedBooleanValueSchema.optional(),
+    isSpecialEvent: BooleanValueSchema.optional(),
 });
 
 /**

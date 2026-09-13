@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {BooleanValueSchema} from "@/shared/_schema/booleans/BooleanValueSchema";
+import {BooleanValueSchema, NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /** Validates Genre data for creation or updates. */
 export const GenreInputSchema = z.object({

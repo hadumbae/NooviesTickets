@@ -7,7 +7,8 @@ import {
     ReservationActiveDateCard
 } from "@/views/admin/reservations/_comp/active-date-card/ReservationActiveDateCard.tsx";
 import {Check, Coins, Cross, Receipt, Timer} from "lucide-react";
-import {AdminReservation, Reservation, ReservationStatus} from "@/domains/reservations/_schema";
+import {AdminReservation, Reservation} from "@/domains/reservations/_schema";
+import {ReservationStatus} from "@noovies-tickets/common";
 
 /** Props for the CustomerReservationDateList component. */
 type ListProps = {

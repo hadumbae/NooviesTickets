@@ -7,9 +7,8 @@ import {MovieSnapshotSchema} from "@/domains/movies/_schema";
 import {TheatreSnapshotSchema} from "@/domains/theatres/_schema";
 import {TheatreScreenSnapshotSchema} from "@/domains/theatre-screens/_schema";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
-import {ISO8601DateTimeSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas/strings";
-import {BooleanValueSchema} from "@/common/_schemas/boolean";
+import {BooleanValueSchema, ISO8601DateTimeSchema, PositiveNumberSchema} from "@noovies-tickets/common";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {ReservedSeatSnapshotSchema} from "@/domains/reservations/_schema/snapshot/ReservedSeatSnapshotSchema.ts";
 
 

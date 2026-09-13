@@ -6,7 +6,8 @@ import {ReactElement} from "react";
 import {FieldValues} from "react-hook-form";
 import {HookFormRadioGroup} from "@/views/common/_feat";
 import {HookRadioOption} from "@/common/_types/input/HookRadioOption.ts";
-import {SeatLayoutTypeConstant, SeatLayoutTypeLabelMap} from "@/domains/seats";
+import {SeatLayoutTypeLabelMap} from "@/domains/seats";
+import {SeatLayoutTypeConstant} from "@noovies-tickets/common";
 import {HookFormInputProps} from "@/common/_types/input/HookFormInputProps.ts";
 
 /**

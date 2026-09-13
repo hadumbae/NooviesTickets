@@ -6,9 +6,9 @@
 import {useSearchParams} from "react-router-dom";
 import {updateSearchParams} from "@/common/_feat/fetch-search-params";
 import {
-    PaginationValues,
-    PaginationValuesSchema
-} from "@/common/_feat/fetch-pagination-search-params/schemas/PaginationValuesSchema.ts";
+    PaginationOptions,
+    PaginationOptionsSchema
+} from "@noovies-tickets/common";
 import {Logger} from "@/common/_feat/logger/Logger.ts";
 import {getPaginationDefaultValue} from "@/common/_feat/fetch-pagination-search-params/getPaginationDefaultValue.ts";
 
@@ -48,7 +48,7 @@ type UsePaginationSearchParamsReturn = {
  * @throws {Error} If the combined parameters fail Zod validation.
  */
 export default function usePaginationSearchParams(
-    fallbackValues?: PaginationValues
+    fallbackValues?: PaginationOptions
 ): UsePaginationSearchParamsReturn {
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -71,7 +71,7 @@ export default function usePaginationSearchParams(
             getPaginationDefaultValue("perPage"),
     }
 
-    const {data, success, error} = PaginationValuesSchema.safeParse(rawValues);
+    const {data, success, error} = PaginationOptionsSchema.safeParse(rawValues);
 
     if (!success || error) {
         Logger.error({
@@ -84,7 +84,7 @@ export default function usePaginationSearchParams(
         throw new Error("Invalid pagination search params.");
     }
 
-    const setParam = (key: keyof PaginationValues, value: number | string) => {
+    const setParam = (key: keyof PaginationOptions, value: number | string) => {
         setSearchParams(
             updateSearchParams({
                 searchParams,

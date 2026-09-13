@@ -2,13 +2,13 @@
  * @fileoverview Parameter types for current user movie review repository operations.
  */
 
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {MovieReviewForm} from "@/domains/movie-reviews/_feat/submit-form/schema/MovieReviewFormSchema.ts";
 
 /** Parameters for fetching the current user's movie reviews. */
-export type CurrentUserMovieReviewsConfig = PaginationValues & {
+export type CurrentUserMovieReviewsConfig = PaginationOptions & {
     config?: Omit<RequestOptions, "limit">;
 };
 

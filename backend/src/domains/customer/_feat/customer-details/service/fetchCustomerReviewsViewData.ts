@@ -8,13 +8,13 @@ import type {PaginationReturns} from "@/shared/_types/pagination";
 import {LeanUserQuerySelectFields, type LeanUserSchemaFields, UserModel} from "@/domains/users";
 import {MoviePopulationPipelines} from "@/domains/movies/_feat/query-population";
 import {buildPaginationPipelines} from "@/shared/_feat/pagination-pipelines";
-import type {RequestPaginationOptions} from "@/shared/_feat/fetch-request-options";
+import type {PaginationOptions} from "@noovies-tickets/common";
 import createHttpError from "http-errors";
 
 /** Configuration for paginated retrieval of all reviews authored by a specific customer. */
 export type FetchCustomerReviewsViewDataConfig = {
     userId: Types.ObjectId;
-    pagination: RequestPaginationOptions
+    pagination: PaginationOptions
 }
 /** Paginated response structure for a customer's review history. */
 export type FetchCustomerReviewsViewData = {

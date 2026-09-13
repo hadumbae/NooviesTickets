@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {IDStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {SeatMapStatusSchema} from "@/domains/seatmaps/_schema/fields";
+import {SeatMapStatusSchema} from "@noovies-tickets/common";
 
 /** Zod schema for the reservation and pricing state of a seat within a showing. */
 export const SeatMapSchema = z.object({

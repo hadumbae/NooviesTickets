@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessOptionalField} from "@noovies-tickets/common";
-import {MongooseSortOrderSchema} from "@/common/_schemas/enums/MongooseSortOrderSchema.ts";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema for defining sort order on Person fields. */
 export const PersonQuerySortSchema = z.object({

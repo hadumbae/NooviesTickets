@@ -6,8 +6,8 @@
 
 import {z} from "zod";
 import {IDStringSchema, PositiveNumberSchema, RoleTypeDepartmentSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
+import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /**
  * Match-level filters for MovieCredit queries.
@@ -20,12 +20,12 @@ export const MovieCreditQueryMatchFiltersSchema = z.object({
     department: RoleTypeDepartmentSchema.optional(),
     characterName: NonEmptyStringSchema.optional(),
     billingOrder: PositiveNumberSchema.optional(),
-    uncredited: CoercedBooleanValueSchema.optional(),
-    voiceOnly: CoercedBooleanValueSchema.optional(),
-    cameo: CoercedBooleanValueSchema.optional(),
-    motionCapture: CoercedBooleanValueSchema.optional(),
-    isPrimary: CoercedBooleanValueSchema.optional(),
-    archiveFootage: CoercedBooleanValueSchema.optional(),
+    uncredited: URLParamBooleanSchema,
+    voiceOnly: URLParamBooleanSchema,
+    cameo: URLParamBooleanSchema,
+    motionCapture: URLParamBooleanSchema,
+    isPrimary: URLParamBooleanSchema,
+    archiveFootage: URLParamBooleanSchema,
     displayRoleName: NonEmptyStringSchema
         .max(150, {message: "Must be 150 characters or less."})
         .optional(),

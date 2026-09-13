@@ -1,7 +1,7 @@
 /**
  * @fileoverview Defines the validation schema and type for movie titles.
  */
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Zod schema for validating a movie title string. */

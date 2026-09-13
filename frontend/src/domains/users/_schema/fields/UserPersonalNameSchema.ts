@@ -2,7 +2,7 @@
  * @fileoverview Zod schema and type definition for a user's personal name field.
  */
 
-import {StringValueSchema} from "@/common/_schemas";
+import {StringValueSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Validation schema for a user's personal name requiring a specific length range. */

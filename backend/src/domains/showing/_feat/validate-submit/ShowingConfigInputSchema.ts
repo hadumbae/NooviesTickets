@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {BooleanValueSchema}
-    from "@/shared/_schema/booleans/BooleanValueSchema.js";
+import {BooleanValueSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating showing configuration settings. */
 export const ShowingConfigInputSchema = z.object({

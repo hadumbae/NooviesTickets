@@ -4,9 +4,8 @@
 
 import { z } from "zod";
 import {IDStringSchema, NonEmptyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import { SeatTypeSchema } from "@/domains/seats/_schema/fields";
-import { SeatLayoutTypeSchema } from "@/domains/seats/_schema/fields";
-import { CoercedBooleanValueSchema } from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
+import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
+import { SeatTypeSchema, SeatLayoutTypeSchema } from "@noovies-tickets/common";
 
 
 /**
@@ -18,7 +17,7 @@ export const SeatQueryFiltersSchema = z.object({
     seatNumber: NonEmptyStringSchema.optional(),
     seatType: SeatTypeSchema.optional(),
     layoutType: SeatLayoutTypeSchema.optional(),
-    isAvailable: CoercedBooleanValueSchema.optional(),
+    isAvailable: URLParamBooleanSchema,
     priceMultiplier: PositiveNumberSchema.optional(),
     theatre: IDStringSchema.optional(),
     theatreSlug: NonEmptyStringSchema.optional(),

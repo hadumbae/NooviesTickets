@@ -5,8 +5,7 @@
 
 import {z} from "zod";
 import {PopulatedMovieReviewSchema} from "@/domains/movie-reviews/_schema/model/PopulatedMovieReviewSchema.ts";
-import {BooleanValueSchema} from "@/common/_schemas/boolean/BooleanValueSchema.ts";
-import {NonNegativeNumberSchema} from "@noovies-tickets/common";
+import {BooleanValueSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /** Zod schema for a movie review with expanded relational data and interaction states. */
 export const MovieReviewDetailsSchema = PopulatedMovieReviewSchema.extend({

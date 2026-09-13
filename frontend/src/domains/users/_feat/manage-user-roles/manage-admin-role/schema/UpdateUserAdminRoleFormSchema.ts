@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {AnyValues} from "@/common/_types";
-import {UserRoleSchema} from "@/domains/users/_schema/fields";
+import {UserRoleSchema} from "@noovies-tickets/common";
 import {UserRoleUpdateActionSchema} from "@/domains/users/_feat/manage-user-roles/schema";
 import {
     UserModerationLogFormSchema

@@ -3,16 +3,10 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas/strings";
-import {IDStringSchema, SlugStringSchema, ISO8601DateTimeSchema, NonNegativeNumberSchema, PositiveNumberSchema, ISO4217CurrencyCodeSchema} from "@noovies-tickets/common";
-import {ModelTimestampsSchema} from "@/common/_schemas/models/time-stamps/ModelTimestampsSchema.ts";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {BooleanValueSchema, IDStringSchema, MongooseTimestampsSchema, SlugStringSchema, ISO8601DateTimeSchema, NonNegativeNumberSchema, PositiveNumberSchema, ISO4217CurrencyCodeSchema, ReservationStatusSchema, ReservationTypeSchema} from "@noovies-tickets/common";
 import {ReservedShowingSnapshotSchema} from "@/domains/reservations/_schema/snapshot";
-import {BooleanValueSchema} from "@/common/_schemas/boolean/BooleanValueSchema.ts";
-import {
-    ReservationStatusSchema,
-    ReservationTypeSchema,
-    ReservationUniqueCodeSchema
-} from "@/domains/reservations/_schema/model/fields";
+import {ReservationUniqueCodeSchema} from "@/domains/reservations/_schema/model/fields";
 
 /** Zod schema for the temporal lifecycle and deadlines of a reservation. */
 const ReservationBaseDateSchema = z.object({
@@ -54,7 +48,7 @@ const ReservationBaseMetaSchema = z.object({
 });
 
 /** Core validation schema defining the comprehensive structure of a Reservation record. */
-export const ReservationBaseSchema = ModelTimestampsSchema.extend({
+export const ReservationBaseSchema = MongooseTimestampsSchema.extend({
     ...ReservationBaseDateSchema.shape,
     ...ReservationBasePaymentSchema.shape,
     ...ReservationBaseRelatedSchema.shape,

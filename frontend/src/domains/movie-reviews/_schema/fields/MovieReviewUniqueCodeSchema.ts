@@ -3,7 +3,7 @@
  * @filename MovieReviewUniqueCodeSchema.ts
  */
 
-import {StringValueSchema} from "@/common/_schemas";
+import {StringValueSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /**

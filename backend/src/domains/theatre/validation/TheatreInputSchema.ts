@@ -3,8 +3,7 @@
  */
 
 import { z } from "zod";
-import {NonEmptyStringSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
-import { LocationSchema } from "@/shared/schema/theatre/Location.schema";
+import {LocationSchema, NonEmptyStringSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /**
  * Zod validation schema for creating or updating a theatre.

@@ -4,8 +4,8 @@
  */
 
 import {IDStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas";
-import {SeatTypeSchema} from "@/domains/seats/_schema/fields";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {SeatTypeSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /**

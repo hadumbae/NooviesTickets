@@ -6,7 +6,8 @@ import {ReactElement} from "react";
 import {FieldValues} from "react-hook-form";
 import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
 import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
-import {SeatTypeConstant, SeatTypeLabelMap} from "@/domains/seats";
+import {SeatTypeLabelMap} from "@/domains/seats";
+import {SeatTypeConstant} from "@noovies-tickets/common";
 
 /**
  * Renders a selection input for seat types with labels mapped from SeatTypeLabelMap.

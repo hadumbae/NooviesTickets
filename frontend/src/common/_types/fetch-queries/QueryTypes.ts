@@ -2,7 +2,7 @@
  * @fileoverview Configuration types for data fetching operations involving pagination, validation, and filtering.
  */
 
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {ZodType, ZodTypeDef} from "zod";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
@@ -37,4 +37,4 @@ export type ListQueryConfig<
 export type PaginatedQueryConfig<
     TData = unknown,
     TQueries extends Record<string, unknown> = Record<string, unknown>
-> = PaginationValues & ListQueryConfig<TData, TQueries>;
+> = PaginationOptions & ListQueryConfig<TData, TQueries>;

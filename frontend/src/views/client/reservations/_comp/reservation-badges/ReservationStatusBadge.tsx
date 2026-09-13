@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 import {cn} from "@/common/_feat";
 import {Badge} from "@/views/common/_comp/ui";
-import {ReservationStatus} from "@/domains/reservations/_schema/model";
+import {ReservationStatus} from "@noovies-tickets/common";
 
 /** Props for the ReservationStatusBadge component. */
 type BadgeProps = {

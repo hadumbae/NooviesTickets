@@ -3,9 +3,7 @@
  */
 
 import {z} from "zod";
-import {
-    MongooseNumericSortSchema,
-} from "@/shared/schema/url/URLParamMongooseSortOrderSchema";
+import {MongooseNumericSortSchema} from "@/shared/schema/url/URLParamMongooseSortOrderSchema";
 
 /**
  * Zod schema for defining sort criteria in Screen queries.

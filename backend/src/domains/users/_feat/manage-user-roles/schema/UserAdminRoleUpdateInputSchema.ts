@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {UserRoleSchema} from "@/domains/users/validation/fields";
+import {UserRoleSchema} from "@noovies-tickets/common";
 import {UserModerationLogInputSchema} from "@/domains/users/_feat/user-moderation";
 import {UserRoleUpdateActionSchema} from "@/domains/users/_feat/manage-user-roles/schema/UserRoleUpdateActionSchema";
 

@@ -32,7 +32,7 @@ type PaginationValueReturn = {
  * @returns An object containing the current numeric value, a setter, and a presence flag.
  * @throws {Error} If the resolved value fails to meet the schema requirements.
  */
-export default function useParsedPaginationValue(
+export function useParsedPaginationValue(
     key: "page" | "perPage",
     fallbackValue?: number,
 ): PaginationValueReturn {
@@ -72,3 +72,5 @@ export default function useParsedPaginationValue(
         hasValue: searchParamValue !== null,
     };
 }
+
+export default useParsedPaginationValue;

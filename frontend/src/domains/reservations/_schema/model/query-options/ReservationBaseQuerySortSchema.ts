@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {MongooseSortOrderSchema} from "@/common/_schemas/enums/MongooseSortOrderSchema.ts";
-import {preprocessOptionalField} from "@noovies-tickets/common";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema for reservation sorting parameters. */
 export const ReservationBaseQuerySortSchema = z.object({

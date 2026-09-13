@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {SlugString} from "@noovies-tickets/common";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
@@ -19,7 +19,7 @@ import {GenreClientViewDataQueryKeys} from "@/domains/genres/_feat/client-view-d
 /** Parameters for the useFetchGenreWithMoviesViewData hook. */
 type FetchParams = {
     slug: SlugString;
-    moviePagination: PaginationValues;
+    moviePagination: PaginationOptions;
     options?: FetchQueryOptions<BrowseGenreWithMoviesViewData>;
 };
 

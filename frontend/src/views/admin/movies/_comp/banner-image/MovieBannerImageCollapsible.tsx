@@ -2,7 +2,7 @@ import {ReactElement, useState} from 'react';
 import {cn} from "@/common/_feat";
 import {ChevronDown, ChevronUp} from "lucide-react";
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/common/_comp/ui";
-import {URLString} from "@/common/_schemas";
+import {URLString} from "@noovies-tickets/common";
 import {Image} from "@/views/common/_comp";
 
 type TextblockProps = {

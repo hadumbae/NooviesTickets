@@ -3,7 +3,7 @@
  */
 
 import {ObjectIdString} from "@noovies-tickets/common";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
@@ -12,12 +12,12 @@ import {getFetchReviewsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-mov
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 import {FetchByMovieQueryKeys} from "@/domains/movie-reviews/_feat/fetch-by-movie/fetch/queryKeys.ts";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data/buildQueryFn.ts";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders/generatePaginationSchema.ts";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 import {PopulatedMovieReview, PopulatedMovieReviewSchema} from "@/domains/movie-reviews/_schema/model/PopulatedMovieReviewSchema.ts";
 import {PaginatedItems} from "@/common/_types";
 
 /** Parameters required to fetch paginated reviews for a specific movie. */
-type FetchParams = PaginationValues & {
+type FetchParams = PaginationOptions & {
     movieID: ObjectIdString;
     config?: Omit<RequestOptions, "limit">;
     options?: FetchQueryOptions<PaginatedItems<PopulatedMovieReview>>;

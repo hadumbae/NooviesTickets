@@ -6,7 +6,7 @@
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {ScreenTypeSchema} from "@/domains/screen/_validation";
+import {ScreenTypeSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema for validating the payload used to create a Screen snapshot.

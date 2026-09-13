@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {RoleTypeDepartmentSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import {
     PersonCastCredit,

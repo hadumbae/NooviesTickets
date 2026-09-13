@@ -1,6 +1,6 @@
 /** @fileoverview Data-fetching component that manages a paginated list of movie credits. */
 
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {MovieCreditQueryOptions} from "@/domains/movie-credits/_schemas/query-options/MovieCreditQueryOptionsSchema.ts";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {ReactElement, ReactNode} from "react";
@@ -10,7 +10,7 @@ import {MovieCreditDetails, MovieCreditDetailsSchema} from "@/domains/movie-cred
 import {generatePaginationSchema} from "@/common/_feat/validation-builders";
 
 /** Props for the MovieCreditPaginatedListQuery component. */
-type QueryProps = PaginationValues & MovieCreditQueryOptions & {
+type QueryProps = PaginationOptions & MovieCreditQueryOptions & {
     children: (params: PaginatedItems<MovieCreditDetails>) => ReactNode;
 };
 

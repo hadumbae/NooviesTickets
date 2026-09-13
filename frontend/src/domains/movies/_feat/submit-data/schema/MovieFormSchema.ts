@@ -4,8 +4,8 @@
 
 import {z} from "zod";
 import {preprocessEmptyToUndefined, preprocessOptionalField, preprocessToNumber, NonFutureDateStringSchema, PositiveNumberSchema, IDStringSchema, ISO3166Alpha2CountryCodeSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {CloudinaryImageSchema} from "@/common/_schemas/cloudinary-image/CloudinaryImageSchema.ts";
+import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
+import {CloudinaryImageSchema} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 import {
     MovieGenreIDsSchema,
@@ -34,8 +34,8 @@ export const MovieFormSchema = z.object({
     languages: z.array(ISO6391LanguageCodeSchema).optional(),
     subtitles: z.array(ISO6391LanguageCodeSchema).optional(),
 
-    isReleased: preprocessEmptyToUndefined(CoercedBooleanValueSchema),
-    isAvailable: preprocessEmptyToUndefined(CoercedBooleanValueSchema),
+    isReleased: preprocessEmptyToUndefined(URLParamBooleanSchema),
+    isAvailable: preprocessEmptyToUndefined(URLParamBooleanSchema),
     releaseDate: preprocessEmptyToUndefined(NonFutureDateStringSchema.optional()).optional()
 }).superRefine((values, ctx) => {
     const {releaseDate, isReleased} = values;

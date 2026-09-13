@@ -3,9 +3,9 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {IDStringSchema, preprocessEmptyToUndefined, preprocessToNumber, NonNegativeNumberSchema} from "@noovies-tickets/common";
-import {ScreenTypeSchema} from "@/domains/theatre-screens/_schema";
+import {ScreenTypeSchema} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 
 /**

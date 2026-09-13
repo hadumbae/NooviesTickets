@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/common/_schemas";
+import {StringValueSchema} from "@noovies-tickets/common";
 import {PositiveIntegerSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema for validating and parsing showings page query strings. */

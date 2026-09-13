@@ -3,8 +3,8 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
 import {MovieCreditFormBaseSchema} from "@/domains/movie-credits/_feat/submit-data/schemas/MovieCreditFormBaseSchema.ts";
 import {PositiveNumberSchema} from "@noovies-tickets/common";
 
@@ -20,12 +20,12 @@ export const MovieCreditFormCastSchema = MovieCreditFormBaseSchema.extend({
         },
         PositiveNumberSchema.optional(),
     ),
-    isPrimary: CoercedBooleanValueSchema.optional(),
-    uncredited: CoercedBooleanValueSchema.optional(),
-    voiceOnly: CoercedBooleanValueSchema.optional(),
-    cameo: CoercedBooleanValueSchema.optional(),
-    motionCapture: CoercedBooleanValueSchema.optional(),
-    archiveFootage: CoercedBooleanValueSchema.optional(),
+    isPrimary: URLParamBooleanSchema,
+    uncredited: URLParamBooleanSchema,
+    voiceOnly: URLParamBooleanSchema,
+    cameo: URLParamBooleanSchema,
+    motionCapture: URLParamBooleanSchema,
+    archiveFootage: URLParamBooleanSchema,
 });
 
 /** Type representing a full cast credit form inferred from MovieCreditFormCastSchema. */

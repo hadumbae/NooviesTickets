@@ -5,7 +5,7 @@
 import type {BaseModel} from "@/shared/_types";
 import {Types} from "mongoose";
 import type {AdminModerationMessage} from "@/shared/_feat/admin-users/schema";
-import type {UserModerationLogAction} from "@/domains/users";
+import type {UserModerationLogAction} from "@noovies-tickets/common";
 
 /** Represents the database schema fields for a user moderation log entry. */
 export type UserModerationLogSchemaFields = BaseModel & {

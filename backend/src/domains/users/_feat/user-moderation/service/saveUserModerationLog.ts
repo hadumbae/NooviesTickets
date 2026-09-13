@@ -3,8 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import type {ModerationLogMessage} from "@/shared/_schema";
-import {type UserModerationLogAction} from "@/domains/users/validation/fields";
+import type {ModerationLogMessage, UserModerationLogAction} from "@noovies-tickets/common";
 import {UserModerationLogModel, type UserModerationLogSchemaFields} from "@/domains/users/model";
 
 /** Configuration parameters required to persist a user moderation log. */

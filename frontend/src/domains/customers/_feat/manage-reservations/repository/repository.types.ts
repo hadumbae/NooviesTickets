@@ -3,10 +3,10 @@
  */
 
 import {ObjectIdString} from "@noovies-tickets/common";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 
 /** Configuration for fetching a paginated list of reviews by a customer. */
 export type GetFetchCustomerReservationsViewDataConfig = {
     customerID: ObjectIdString;
-    pagination: PaginationValues;
+    pagination: PaginationOptions;
 }

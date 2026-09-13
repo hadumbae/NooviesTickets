@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import createHttpError from "http-errors";
-import type {UserStatus} from "@/domains/users/validation/fields";
+import type {UserStatus} from "@noovies-tickets/common";
 import {type UserModerationLogSchemaFields} from "@/domains/users/model/moderation-log";
 import {UserModel, type UserSchemaFields,} from "@/domains/users/model/user";
 import {LeanUserQuerySelectFields} from "@/domains/users/_feat/query-population";

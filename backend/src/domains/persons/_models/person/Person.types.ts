@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import type {ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
-import type {CloudinaryImageObject} from "@/shared/schema/cloudinary/CloudinaryImageObjectSchema";
+import type {CloudinaryImage as CloudinaryImageObject} from "@noovies-tickets/common";
 import type {BaseModelWithSlug} from "@/shared/_types/model/BaseModel";
 import type {ModelTimestamps} from "@/shared/_types/model/ModelTimestamps";
 

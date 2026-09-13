@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
 import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
 
@@ -13,7 +13,7 @@ import {TheatreBrowseListCard} from "@/views/client/theatres/_comp";
 import {TheatreLocationQueryOptionsFormSection} from "@/views/client/theatres/_feat/theatre-location";
 
 /** Props for the BrowseTheatreListPageContent component. */
-type ContentProps = PaginationValues & {
+type ContentProps = PaginationOptions & {
     setPage: (page: number) => void;
     totalTheatres: number;
     theatres: TheatreWithRecentShowings[];

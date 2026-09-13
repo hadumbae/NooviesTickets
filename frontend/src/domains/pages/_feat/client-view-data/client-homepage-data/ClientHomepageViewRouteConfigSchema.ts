@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas";
+import {ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {PositiveIntegerSchema} from "@noovies-tickets/common";
 
 /** Zod schema for parsing and validating client homepage view query parameters with defaults. */

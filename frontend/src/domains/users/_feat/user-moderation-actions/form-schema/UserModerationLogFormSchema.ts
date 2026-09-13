@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {ModerationLogMessageSchema, preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {UserModerationLogActionSchema} from "@/domains/users/_schema/fields";
+import {ModerationLogMessageSchema, preprocessEmptyToUndefined, UserModerationLogActionSchema} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 
 /** Zod schema validating form input data for recording a user moderation log entry. */

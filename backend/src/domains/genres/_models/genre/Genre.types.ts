@@ -3,7 +3,7 @@
  * Defines the database shape, including assets, metrics, and identity.
  */
 
-import type {CloudinaryImageObject} from "@/shared/schema/cloudinary/CloudinaryImageObjectSchema";
+import type {CloudinaryImage as CloudinaryImageObject} from "@noovies-tickets/common";
 import {Types} from "mongoose";
 import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {ModelTimestamps} from "@/shared/_types/model/ModelTimestamps";

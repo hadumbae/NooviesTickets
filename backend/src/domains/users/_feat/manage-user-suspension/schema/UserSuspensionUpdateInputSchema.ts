@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {BooleanValueSchema} from "@/shared/_schema/booleans/BooleanValueSchema";
+import {BooleanValueSchema} from "@noovies-tickets/common";
 import {UserModerationLogInputSchema} from "@/domains/users/_feat/user-moderation";
 import {
     UserSuspensionUpdateActionSchema

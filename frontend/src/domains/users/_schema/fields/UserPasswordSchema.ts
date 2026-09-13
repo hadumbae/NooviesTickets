@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/common/_schemas";
+import {StringValueSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating user password strength and length requirements. */
 export const UserPasswordSchema = StringValueSchema

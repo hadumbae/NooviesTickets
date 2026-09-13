@@ -7,7 +7,7 @@ import {FieldValues} from "react-hook-form";
 import {HookFormRadioGroup} from "@/views/common/_feat";
 import {HookRadioOption} from "@/common/_types/input/HookRadioOption.ts";
 import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
-import {SeatMapStatusConstant} from "@/domains/seatmaps";
+import {SeatMapStatusConstant} from "@noovies-tickets/common";
 import {HookFormInputProps} from "@/common/_types/input/HookFormInputProps.ts";
 
 /**

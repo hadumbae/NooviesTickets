@@ -2,7 +2,7 @@
  * @fileoverview Zod schema for validating system-generated reservation verification codes.
  */
 
-import {StringValueSchema} from "@/common/_schemas";
+import {StringValueSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Zod schema for validating the unique reservation identifier format. */

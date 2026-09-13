@@ -4,7 +4,7 @@
  */
 
 import {z} from "zod"
-import {MovieReviewModerationActionSchema} from "@/domains/movie-reviews/_feat/moderation/schema/actions"
+import {MovieReviewModerationActionSchema} from "@noovies-tickets/common"
 import {IDStringSchema, NonEmptyStringSchema, ISO8601DateTimeSchema} from "@noovies-tickets/common";
 
 /**

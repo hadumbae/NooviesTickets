@@ -3,9 +3,9 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {IDStringSchema, DateOnlyStringSchema, preprocessOptionalField, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
+import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
 
 /** Zod schema defining available filter parameters for querying movie documents. */
 export const MovieQueryFilterSchema = z.object({
@@ -13,8 +13,8 @@ export const MovieQueryFilterSchema = z.object({
     title: preprocessOptionalField(NonEmptyStringSchema),
     originalTitle: preprocessOptionalField(NonEmptyStringSchema),
     releaseDate: preprocessOptionalField(DateOnlyStringSchema),
-    isReleased: preprocessOptionalField(CoercedBooleanValueSchema),
-    isAvailable: preprocessOptionalField(CoercedBooleanValueSchema),
+    isReleased: preprocessOptionalField(URLParamBooleanSchema),
+    isAvailable: preprocessOptionalField(URLParamBooleanSchema),
     country: preprocessOptionalField(ISO3166Alpha2CountryCodeSchema),
 });
 

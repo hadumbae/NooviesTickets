@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {ISO3166Alpha2CountryCodeSchema, NonEmptyStringSchema} from "@noovies-tickets/common";
-import {CityStringSchema, StateStringSchema} from "@/shared/_schema";
+import {CityStringSchema, ISO3166Alpha2CountryCodeSchema, NonEmptyStringSchema, StateStringSchema} from "@noovies-tickets/common";
 
 /**
  * Schema for validating free-form or standardized location targets.

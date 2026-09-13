@@ -1,7 +1,7 @@
 import {Schema} from "mongoose";
 
 import {URLStringSchema} from "@noovies-tickets/common";
-import type {CloudinaryImageObject} from "../../schema/cloudinary/CloudinaryImageObjectSchema.js";
+import type {CloudinaryImage as CloudinaryImageObject} from "@noovies-tickets/common";
 
 export const CloudinaryImageSchema = new Schema<CloudinaryImageObject>({
     public_id: {

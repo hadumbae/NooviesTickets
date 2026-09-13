@@ -3,7 +3,7 @@
 import {z} from "zod";
 import {CoordinateFormSchema,} from "@/common/_models/coordinate-form/CoordinateFormSchema.ts";
 import {IANATimezoneSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {CityStringSchema, PostalCodeSchema, StateStringSchema, StreetStringSchema} from "@/common/_models/location";
+import {CityStringSchema, PostalCodeSchema, StateStringSchema, StreetStringSchema} from "@noovies-tickets/common";
 
 /** Base validation schema for location and address fields. */
 export const LocationFormBaseSchema = z.object({

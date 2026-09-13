@@ -4,7 +4,7 @@
 
 import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 import {IsFavouriteMovieMetadata} from "@/domains/users/_feat/manage-user-favourites/schema";
@@ -26,7 +26,7 @@ export async function getCheckIsFavouriteMovie(
 
 /** Retrieves a paginated list of movies favourited by the current user. */
 export async function getUserFavourites(
-    params: PaginationValues
+    params: PaginationOptions
 ): Promise<FetchRequestReturns<PaginatedItems<MovieDetails>>> {
     const url = buildURL({
         baseURL: ManageUserFavouritesBaseURL,

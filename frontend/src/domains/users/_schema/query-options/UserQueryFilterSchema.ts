@@ -4,8 +4,8 @@
 
 import {z} from "zod";
 import {generateArraySchema} from "@/common/_feat";
-import {preprocessOptionalField} from "@noovies-tickets/common";
-import {UserPersonalNameSchema, UserRoleSchema, UserUniqueCodeSchema, UserEmailSchema} from "@/domains/users/_schema/fields";
+import {preprocessOptionalField, UserRoleSchema} from "@noovies-tickets/common";
+import {UserPersonalNameSchema, UserUniqueCodeSchema, UserEmailSchema} from "@/domains/users/_schema/fields";
 
 /** Zod schema for validating user search and filter parameters. */
 export const UserQueryFilterSchema = z.object({

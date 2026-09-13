@@ -1,7 +1,7 @@
 /** @fileoverview Zod schema and type definitions for immutable theatre snapshots. */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {ISO3166Alpha2CountryCodeSchema, IANATimezoneSchema} from "@noovies-tickets/common";
 
 /** Zod schema for a finalized theatre state used in historical records. */

@@ -5,8 +5,8 @@
 
 import {z} from "zod";
 import {IDStringSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas";
-import {ScreenTypeSchema} from "@/domains/theatre-screens/_schema/fields";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {ScreenTypeSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema for validating screen query filters.

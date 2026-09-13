@@ -6,7 +6,7 @@ import {ObjectIdString} from "@noovies-tickets/common";
 import {useQuery, UseQueryResult} from "@tanstack/react-query"
 import HttpResponseError from "@/common/_err/HttpResponseError.ts"
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data"
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params"
+import {PaginationOptions} from "@noovies-tickets/common"
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts"
 import {CustomerReviewLogsQueryKeys} from "@/domains/customers/_feat/movie-review-logs/fetch/queryKeys.ts"
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts"
@@ -20,7 +20,7 @@ import {
 type FetchConfig = {
     customerID: ObjectIdString;
     reviewID: ObjectIdString;
-    pagination: PaginationValues
+    pagination: PaginationOptions
     options?: FetchQueryOptions<CustomerReviewLogsViewData>
 }
 

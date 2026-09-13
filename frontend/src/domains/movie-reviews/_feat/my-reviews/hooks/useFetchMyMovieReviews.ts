@@ -5,14 +5,14 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 import {getFetchMovieReviewsByCurrentUser} from "@/domains/movie-reviews/_feat/my-reviews/repository/repository.ts";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {MyReviewsQueryKeys} from "@/domains/movie-reviews/_feat/my-reviews/hooks/queryKeys.ts";
 import {QueryConfig} from "@/common/_types";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
 
 /** Parameters for useFetchMyMovieReviews. */
-type FetchParams<TData = unknown> = PaginationValues & QueryConfig<TData>;
+type FetchParams<TData = unknown> = PaginationOptions & QueryConfig<TData>;
 
 /**
  * Fetches a paginated collection of MovieReviews belonging to the currently authenticated user.

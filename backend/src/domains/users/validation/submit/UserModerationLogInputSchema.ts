@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {UserModerationLogActionSchema} from "@/domains/users";
-import {ModerationLogMessageSchema} from "@/shared/_schema";
+import {ModerationLogMessageSchema, UserModerationLogActionSchema} from "@noovies-tickets/common";
 
 /** Zod schema validating the input object data required to log a user moderation action. */
 export const UserModerationLogInputSchema = z.object({

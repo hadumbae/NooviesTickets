@@ -3,9 +3,9 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas/strings";
-import {URLStringSchema} from "@/common/_schemas/strings";
-import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {URLStringSchema} from "@noovies-tickets/common";
+import {ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
 import {ISO8601DateTimeSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {MovieTaglineSchema, MovieTitleSchema} from "@/domains/movies/_schema/fields";

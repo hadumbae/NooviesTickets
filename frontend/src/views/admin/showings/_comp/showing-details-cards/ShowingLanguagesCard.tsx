@@ -9,7 +9,7 @@ import {LabelContent} from "@/views/common/_comp/label-content/LabelContent.tsx"
 import {cn} from "@/common/_feat";
 import {CardClassNames} from "@/common/_types/card";
 import {ISO6391LanguageLabels} from "@/common/_const";
-import {ISO6391LanguageCode} from "@/common/_schemas";
+import {ISO6391LanguageCode} from "@noovies-tickets/common";
 import {BadgeEntry, BadgeList} from "@/views/common/_comp/badges";
 
 /** Props for the ShowingLanguagesCard component. */

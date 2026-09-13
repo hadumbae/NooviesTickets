@@ -2,7 +2,7 @@
  * @fileoverview Zod schema and type definition for seat labels.
  */
 
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Zod schema for validating a seat label string. */

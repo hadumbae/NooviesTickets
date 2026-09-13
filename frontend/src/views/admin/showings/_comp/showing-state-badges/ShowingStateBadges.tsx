@@ -9,7 +9,7 @@ import {
     ShowingStatusBadge,
     ShowingTypeBadge
 } from "@/views/admin/showings/_comp/badges";
-import {ShowingStatus} from "@/domains/showings/_schema/fields";
+import {ShowingStatus} from "@noovies-tickets/common";
 import {cn} from "@/common/_feat";
 
 /** Props for the ShowingStateBadges component. */

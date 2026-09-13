@@ -2,7 +2,7 @@
  * @fileoverview Hook for fetching paginated reservations for the authenticated user.
  */
 
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
@@ -23,7 +23,7 @@ type CurrentUserReservations = PaginatedItems<PopulatedReservation>;
 
 /** Parameters for the useFetchReservationsForCurrentUser hook. */
 type FetchParams = {
-    pagination: PaginationValues;
+    pagination: PaginationOptions;
     queries?: CurrentUserReservationsQueryOptions;
     options?: FetchQueryOptions<CurrentUserReservations>;
 };

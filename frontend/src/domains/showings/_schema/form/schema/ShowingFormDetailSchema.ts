@@ -3,7 +3,7 @@
  */
 
 import {preprocessEmptyToUndefined, IDStringSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /**

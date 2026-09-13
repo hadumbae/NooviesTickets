@@ -4,14 +4,10 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {BooleanValueSchema} from "@/shared/_schema/booleans/BooleanValueSchema";
-import {UserStatusSchema} from "@/domains/users";
-import {StringValueSchema} from "@noovies-tickets/common";
-import {RequestIpSchema} from "@/shared/schema/request/RequestIpSchema";
+import {BooleanValueSchema, StringValueSchema, UserStatusSchema} from "@noovies-tickets/common";
 
 /** Zod validation schema for request-scoped authentication data properties. */
 export const RequestAuthenticationSchema = z.object({
-    ip: RequestIpSchema,
     authUserID: ObjectIdSchema,
     authUserIsAdmin: BooleanValueSchema,
     authUserStatus: UserStatusSchema,

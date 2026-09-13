@@ -4,7 +4,7 @@
  */
 
 import {Types} from "mongoose";
-import type {ScreenType} from "@/domains/screen/_validation";
+import type {ScreenType} from "@noovies-tickets/common";
 
 /**
  * Type representing the structure of a Screen snapshot.

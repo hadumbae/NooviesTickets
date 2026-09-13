@@ -9,7 +9,7 @@ import { MovieSnapshotSchema } from "@/domains/movies/_models/movie-snapshot/Mov
 import { ReservedSeatSnapshotSchema } from "@/domains/seatmap/_model/seat-map-snapshot/ReservedSeatSnapshot.schema";
 import { ScreenSnapshotSchema } from "@/domains/screen/_models/screen-snapshot";
 import {TheatreSnapshotSchema} from "@/domains/theatre/model/theatre-snapshot";
-import {ReservationTypeConstant} from "@/domains/reservations/_validation";
+import {ReservationTypeConstant} from "@noovies-tickets/common";
 
 /**
  * Reusable ISO 639-1 language field definition.

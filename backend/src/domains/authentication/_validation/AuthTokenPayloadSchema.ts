@@ -4,8 +4,7 @@
 
 import {z} from "zod";
 import {AuthUserSchema} from "@/domains/authentication/_validation/AuthUserSchema";
-import {BooleanValueSchema} from "@/shared/_schema/booleans/BooleanValueSchema";
-import {UserStatusSchema} from "@/domains/users";
+import {BooleanValueSchema, UserStatusSchema} from "@noovies-tickets/common";
 
 /** Zod validation schema for JWT authentication token payloads. */
 export const AuthTokenPayloadSchema = z.object({

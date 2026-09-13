@@ -4,14 +4,12 @@
  */
 
 import {z} from "zod";
-import {ModelTimestampsSchema} from "@/common/_schemas/models/time-stamps/ModelTimestampsSchema.ts";
-import {IDStringSchema, SlugStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@/common/_schemas";
-import {BooleanValueSchema} from "@/common/_schemas/boolean/BooleanValueSchema.ts";
+import {BooleanValueSchema, IDStringSchema, MongooseTimestampsSchema, SlugStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {MovieReviewUniqueCodeSchema} from "@/domains/movie-reviews/_schema/fields";
 
 /** Zod validation schema for a movie review document. */
-export const MovieReviewSchema = ModelTimestampsSchema.extend({
+export const MovieReviewSchema = MongooseTimestampsSchema.extend({
     _id: IDStringSchema,
     user: IDStringSchema,
     movie: IDStringSchema,

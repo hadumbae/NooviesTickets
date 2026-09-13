@@ -6,14 +6,14 @@
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {buildURL} from "@/common/_feat/fetch-api";
 
 /**
  * Composite parameters for requesting paginated document sets.
  */
 export type FindPaginatedDocumentsConfig<TQueries extends Record<string, unknown>> = {
-    pagination: PaginationValues;
+    pagination: PaginationOptions;
     queries?: TQueries;
     config?: RequestOptions;
 };

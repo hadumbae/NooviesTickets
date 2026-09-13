@@ -5,7 +5,7 @@
  */
 
 import {Schema} from "mongoose";
-import {ScreenTypeConstant} from "@/domains/screen/_validation";
+import {ScreenTypeConstant} from "@noovies-tickets/common";
 import type {ScreenSnapshotSchemaFields} from "@/domains/screen/_models/screen-snapshot/ScreenSnapshot.types.js";
 
 /**

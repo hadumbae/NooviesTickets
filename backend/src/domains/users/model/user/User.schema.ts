@@ -3,7 +3,7 @@
  */
 
 import {Schema} from "mongoose";
-import {UserRoleConstant, UserStatusConstant} from "@/domains/users/_const";
+import {UserRoleConstant, UserStatusConstant} from "@noovies-tickets/common";
 import type {UserSchemaFields} from "@/domains/users/model/user/User.types.js";
 import type {UserRole} from "@noovies-tickets/common";
 

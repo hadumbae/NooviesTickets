@@ -4,8 +4,7 @@
 
 import {z} from "zod";
 import {AnyUnionValues} from "@/common/_types";
-import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {UserStatusSchema} from "@/domains/users/_schema/fields";
+import {preprocessEmptyToUndefined, UserStatusSchema} from "@noovies-tickets/common";
 import {UserModerationLogFormSchema} from "@/domains/users/_feat/user-moderation-actions";
 import {
     UserStatusUpdateActionSchema

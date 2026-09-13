@@ -3,7 +3,7 @@
  */
 
 import {SlugString, ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 
 /** Configuration for fetching movie overview information. */
 export type GetOverviewDataForMovieInfoViewConfig = {
@@ -29,7 +29,7 @@ export type GetCreditsForMovieInfoViewConfig = {
 };
 
 /** Query string parameters for fetching movie showings. */
-export type GetShowingsForMovieViewQueryStrings = PaginationValues & {
+export type GetShowingsForMovieViewQueryStrings = PaginationOptions & {
     near?: string;
     country: ISO3166Alpha2CountryCode;
 };

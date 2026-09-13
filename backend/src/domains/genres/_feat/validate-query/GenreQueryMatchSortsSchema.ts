@@ -3,9 +3,7 @@
  */
 
 import {z} from "zod";
-import {
-    MongooseNumericSortSchema,
-} from "@/shared/schema/url/URLParamMongooseSortOrderSchema";
+import {MongooseNumericSortSchema} from "@/shared/schema/url/URLParamMongooseSortOrderSchema";
 
 /** Schema for validating sort key parameters for genre queries. */
 export const GenreQueryMatchSortsSchema = z.object({

@@ -4,11 +4,10 @@
 
 import {z} from "zod";
 import {SeatBaseSchema} from "./SeatSchema.ts";
-import {NonEmptyStringSchema} from "@/common/_schemas";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {NumberValueSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {BooleanValueSchema, NumberValueSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
 
-import {SeatTypeSchema} from "@/domains/seats/_schema/fields";
+import {SeatTypeSchema} from "@noovies-tickets/common";
 import {TheatreScreenSchema} from "@/domains/theatre-screens/_schema";
 import {TheatreSchema} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
 
@@ -24,7 +23,7 @@ const SeatingSchema = SeatDetailsReferenceSchema.extend({
     seatNumber: PositiveNumberSchema,
     seatLabel: NonEmptyStringSchema.optional(),
     seatType: SeatTypeSchema,
-    isAvailable: CoercedBooleanValueSchema,
+    isAvailable: BooleanValueSchema,
     priceMultiplier: preprocessToNumber(NumberValueSchema.gte(0, "Must be 0 or greater.")),
 });
 

@@ -4,8 +4,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema, PositiveIntegerSchema} from "@noovies-tickets/common";
-import {BooleanValueSchema} from "@/shared/_schema/booleans/BooleanValueSchema.js";
+import {BooleanValueSchema, NonEmptyStringSchema, PositiveIntegerSchema} from "@noovies-tickets/common";
 
 /**
  * Input schema for updating MovieReview records.

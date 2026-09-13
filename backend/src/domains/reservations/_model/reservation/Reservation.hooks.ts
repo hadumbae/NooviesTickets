@@ -7,7 +7,7 @@ import type {HydratedDocument} from "mongoose";
 import type {ReservationDoc, ReservationSchemaFields} from "./Reservation.types.js";
 import {DateTime} from "luxon";
 import {generateReservationUniqueCode} from "@/domains/reservations/_feat/generate-reservation-code/index.js";
-import type {ReservationStatus} from "@/domains/reservations/_validation";
+import type {ReservationStatus} from "@noovies-tickets/common";
 import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import {generateSlug} from "@/shared/utility/generateSlug";
 import type {PopulatedShowing} from "@/domains/showing/_models/showing/Showing.types";

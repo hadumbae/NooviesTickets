@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {Badge} from "@/views/common/_comp/ui/badge.tsx";
-import {MovieReviewModerationAction} from "@/domains/movie-reviews/_feat/moderation/schema";
+import {MovieReviewModerationAction} from "@noovies-tickets/common";
 import {MovieReviewModerationActionLabels} from "@/domains/movie-reviews/_feat/moderation/schema/actions/labels.ts";
 import {cn} from "@/common/_feat";
 

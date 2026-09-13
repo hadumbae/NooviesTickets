@@ -3,8 +3,8 @@
  */
 
 import {z} from "zod";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
 import {ShowingStatusSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
+import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
 
 
 /**
@@ -14,9 +14,9 @@ export const ShowingFormStatusSchema = z.object({
     ticketPrice: preprocessToNumber(PositiveNumberSchema),
     status: ShowingStatusSchema,
     config: z.object({
-        isActive: CoercedBooleanValueSchema,
-        isSpecialEvent: CoercedBooleanValueSchema.optional(),
-        canReserveSeats: CoercedBooleanValueSchema.optional(),
+        isActive: URLParamBooleanSchema,
+        isSpecialEvent: URLParamBooleanSchema,
+        canReserveSeats: URLParamBooleanSchema,
     }),
 });
 

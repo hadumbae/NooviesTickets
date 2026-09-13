@@ -2,7 +2,7 @@
  * @fileoverview Formatter utility for transforming raw location data into displayable address strings.
  */
 
-import {Location} from "@/common/_models/location/LocationSchema.ts";
+import {Location} from "@noovies-tickets/common";
 import {ISO3166Alpha2CountryConstant} from "@/common/_const";
 
 /** Formats a location object into a structured address with a human-readable country name. */

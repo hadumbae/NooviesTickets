@@ -5,8 +5,8 @@
 import {z} from "zod";
 import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
 import {URLParamPositiveNumberSchema} from "@/shared/schema/url/URLParamPositiveNumberSchema";
-import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
 import {SlugStringSchema} from "@noovies-tickets/common";
+import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
 import {MovieReviewUniqueCodeSchema} from "@/domains/movie-reviews/_validation/review-code/MovieReviewUniqueCodeSchema";
 
 /** Zod schema for validating movie review match query filters from URL parameters. */

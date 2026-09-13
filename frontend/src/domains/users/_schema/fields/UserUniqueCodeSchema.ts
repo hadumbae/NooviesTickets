@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/common/_schemas";
+import {StringValueSchema} from "@noovies-tickets/common";
 
 /** Validation schema for unique user identification codes. */
 export const UserUniqueCodeSchema = StringValueSchema.regex(

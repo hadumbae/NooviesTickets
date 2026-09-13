@@ -5,7 +5,7 @@
 
 import {cn} from "@/common/_feat";
 import {ReactElement, useState} from "react";
-import {ReservationType} from "@/domains/reservations/_schema";
+import {ReservationType} from "@noovies-tickets/common";
 import {
     ReservationCountFieldset,
     ReservationSeatFieldset,

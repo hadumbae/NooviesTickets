@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {UserStatusSchema} from "@/domains/users/validation/fields";
+import {UserStatusSchema} from "@noovies-tickets/common";
 import {UserModerationLogInputSchema} from "@/domains/users/_feat/user-moderation";
 import {
     UserStatusUpdateActionSchema

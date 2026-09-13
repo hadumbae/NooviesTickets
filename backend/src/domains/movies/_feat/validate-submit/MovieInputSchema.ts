@@ -4,8 +4,7 @@
  */
 
 import {z} from "zod";
-import {URLStringSchema, UTCDateOnlySchema, ISO6391LanguageCodeSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {CoercedBooleanValueSchema} from "@/shared/_schema/booleans/CoercedBooleanValueSchema";
+import {BooleanValueSchema, URLStringSchema, UTCDateOnlySchema, ISO6391LanguageCodeSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {MovieTitleSchema} from "@/domains/movies/_feat/validate-submit/MovieTitleSchema";
 import {MovieTaglineSchema} from "@/domains/movies/_feat/validate-submit/MovieTaglineSchema";
 import {MovieSynopsisSchema} from "@/domains/movies/_feat/validate-submit/MovieSynopsisSchema";
@@ -21,14 +20,14 @@ export const MovieInputBaseSchema = z.object({
     synopsis: MovieSynopsisSchema,
     genres: MovieGenreIDsSchema,
     releaseDate: UTCDateOnlySchema.optional().nullable(),
-    isReleased: CoercedBooleanValueSchema.optional(),
+    isReleased: BooleanValueSchema.optional(),
     runtime: MovieRuntimeSchema,
     originalLanguage: ISO6391LanguageCodeSchema,
     country: ISO3166Alpha2CountryCodeSchema,
     languages: MovieLanguagesSchema,
     subtitles: MovieLanguagesSchema,
     trailerURL: URLStringSchema.optional().nullable(),
-    isAvailable: CoercedBooleanValueSchema.optional(),
+    isAvailable: BooleanValueSchema.optional(),
 });
 
 /** Refined schema that enforces conditional validation logic between release status and date. */

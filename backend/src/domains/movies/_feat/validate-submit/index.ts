@@ -6,4 +6,3 @@ export * from "@/domains/movies/_feat/validate-submit/MovieSynopsisSchema";
 export * from "@/domains/movies/_feat/validate-submit/MovieGenreIDsSchema";
 export * from "@/domains/movies/_feat/validate-submit/MovieLanguagesSchema";
 export * from "@/domains/movies/_feat/validate-submit/MovieSnapshotInputSchema";
-export * from "@noovies-tickets/common";

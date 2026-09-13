@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /** Schema for validating a movie tagline string. */
 export const MovieTaglineSchema = NonEmptyStringSchema.max(100, "Must be 100 characters or less.");

@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from 'react';
-import type {CloudinaryImage} from "@/common/_schemas/cloudinary-image/CloudinaryImageSchema.ts";
+import type {CloudinaryImage} from "@noovies-tickets/common";
 import {Avatar, AvatarFallback, AvatarImage} from "@/views/common/_comp/ui/avatar.tsx";
 import {getInitials} from "@/common/_feat/formatters/getInitials.ts";
 import {cn} from "@/common/_feat";

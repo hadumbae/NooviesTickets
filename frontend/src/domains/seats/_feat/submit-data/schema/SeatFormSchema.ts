@@ -3,9 +3,10 @@
  */
 
 import {z} from "zod";
-import {SeatLabelSchema, SeatLayoutTypeSchema, SeatRowSchema, SeatTypeSchema} from "@/domains/seats/_schema/fields";
+import {SeatLabelSchema, SeatRowSchema} from "@/domains/seats/_schema/fields";
+import {SeatLayoutTypeSchema, SeatTypeSchema} from "@noovies-tickets/common";
 import {IDStringSchema, NonNegativeNumberSchema, PositiveIntegerSchema, preprocessEmptyToUndefined, preprocessOptionalField, preprocessToNumber} from "@noovies-tickets/common";
-import {CoercedBooleanValueSchema} from "@/common/_schemas";
+import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
 import {AnyUnionValues} from "@/common/_types";
 
 /** Base Zod schema containing shared geometric and relational fields for all seat layout elements. */
@@ -24,7 +25,7 @@ const SeatingSchema = SeatFormBaseSchema.extend({
     seatNumber: preprocessToNumber(PositiveIntegerSchema),
     seatLabel: preprocessOptionalField(SeatLabelSchema),
     seatType: SeatTypeSchema,
-    isAvailable: CoercedBooleanValueSchema,
+    isAvailable: URLParamBooleanSchema,
     priceMultiplier: preprocessToNumber(NonNegativeNumberSchema),
 });
 

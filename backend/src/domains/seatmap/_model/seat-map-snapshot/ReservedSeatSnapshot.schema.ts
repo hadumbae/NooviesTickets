@@ -3,7 +3,7 @@
  */
 
 import {Schema} from "mongoose";
-import {SeatTypeConstant} from "@/domains/seat/_validation";
+import {SeatTypeConstant} from "@noovies-tickets/common";
 import type {
     ReservedSeatSnapshotSchemaFields
 } from "@/domains/seatmap/_model/seat-map-snapshot/ReservedSeatSnapshot.types.js";

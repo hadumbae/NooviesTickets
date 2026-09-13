@@ -3,7 +3,8 @@
  */
 
 import {Schema} from "mongoose";
-import {UserModerationLogActionConstant, type UserModerationLogSchemaFields} from "@/domains/users";
+import {UserModerationLogActionConstant} from "@noovies-tickets/common";
+import type {UserModerationLogSchemaFields} from "@/domains/users";
 
 /** Mongoose schema for the UserModerationLog model. */
 export const UserModerationLogSchema = new Schema<UserModerationLogSchemaFields>({

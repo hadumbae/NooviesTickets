@@ -2,7 +2,7 @@
  * @fileoverview Hook for fetching paginated movie reviews and their aggregate details.
  */
 import {ObjectIdString} from "@noovies-tickets/common";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
@@ -14,7 +14,7 @@ import {MovieReviewSummaryData, MovieReviewSummarySchema} from "@/domains/movie-
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data/buildQueryFn.ts";
 
 /** Parameters for detailed movie review queries. */
-type FetchParams = PaginationValues & {
+type FetchParams = PaginationOptions & {
     movieID: ObjectIdString;
     config?: Omit<RequestOptions, "limit">;
     options?: FetchQueryOptions<MovieReviewSummaryData>;

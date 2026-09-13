@@ -4,9 +4,8 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas";
-import {RoleTypeDepartmentSchema, preprocessEmptyToUndefined, PositiveNumberSchema, IDStringSchema} from "@noovies-tickets/common";
-import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {BooleanValueSchema, RoleTypeDepartmentSchema, preprocessEmptyToUndefined, PositiveNumberSchema, IDStringSchema} from "@noovies-tickets/common";
 import {
     UndefinedForCrewFieldSchema
 } from "@/domains/movie-credits/_schemas/model/UndefinedForCrewFieldSchema.ts";
@@ -24,7 +23,7 @@ export const MovieCreditBaseSchema = z.object({
     creditedAs: preprocessEmptyToUndefined(
         NonEmptyStringSchema.max(150, "Must be 150 characters or less.").optional()
     ).optional(),
-    uncredited: CoercedBooleanValueSchema.optional(),
+    uncredited: BooleanValueSchema.optional(),
     notes: NonEmptyStringSchema.nullable().optional(),
     movie: IDStringSchema,
     person: IDStringSchema,
@@ -52,11 +51,11 @@ export const MovieCreditCastSchema = MovieCreditBaseSchema.extend({
     department: z.literal("CAST"),
     characterName: NonEmptyStringSchema,
     billingOrder: PositiveNumberSchema.optional(),
-    isPrimary: CoercedBooleanValueSchema,
-    voiceOnly: CoercedBooleanValueSchema,
-    cameo: CoercedBooleanValueSchema,
-    motionCapture: CoercedBooleanValueSchema,
-    archiveFootage: CoercedBooleanValueSchema,
+    isPrimary: BooleanValueSchema,
+    voiceOnly: BooleanValueSchema,
+    cameo: BooleanValueSchema,
+    motionCapture: BooleanValueSchema,
+    archiveFootage: BooleanValueSchema,
 });
 
 /**

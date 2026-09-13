@@ -3,7 +3,7 @@
  *
  */
 
-import { RoleTypeCategory } from "@/domains/roletypes/_schema";
+import { RoleTypeCategory } from "@noovies-tickets/common";
 
 /**
  * Canonical ordering used when rendering grouped credit sections in the UI.

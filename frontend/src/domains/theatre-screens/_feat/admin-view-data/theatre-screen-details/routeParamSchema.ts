@@ -1,7 +1,7 @@
 /** @fileoverview Zod schema and type for theatre screen route parameters. */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating route parameters identifying a specific theatre screen. */
 export const TheatreScreenDetailsRouteParamSchema = z.object(

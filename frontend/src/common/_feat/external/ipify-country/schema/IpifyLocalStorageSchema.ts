@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {BooleanValueSchema} from "@/common/_schemas";
+import {BooleanValueSchema} from "@noovies-tickets/common";
 import {IpifyPayloadSchema} from "@/common/_feat/external/ipify-country/schema/IpifyPayloadSchema.ts";
 
 /** Zod schema for validating Ipify data persisted to local storage. */

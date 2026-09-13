@@ -3,10 +3,7 @@
  * Defines the input configurations and structured return types for public genre views.
  */
 
-import type {
-    RequestPaginationOptions
-} from "@/shared/_feat/fetch-request-options/schemas/RequestPaginationOptionsSchema";
-import type {SlugString} from "@noovies-tickets/common";
+import type {PaginationOptions, SlugString} from "@noovies-tickets/common";
 import type {GenreSchemaFields} from "@/domains/genres/_models/genre";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
 import type {MovieWithGenres} from "@/domains/movies/_models/movie/Movie.types";
@@ -16,7 +13,7 @@ import type {MovieWithGenres} from "@/domains/movies/_models/movie/Movie.types";
  */
 export type FetchGenreWithMoviesConfig = {
     slug: SlugString;
-    moviePagination: RequestPaginationOptions;
+    moviePagination: PaginationOptions;
 }
 
 /**

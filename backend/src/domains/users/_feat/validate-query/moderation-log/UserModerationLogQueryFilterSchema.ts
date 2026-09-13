@@ -3,9 +3,8 @@
  */
 
 import {z} from "zod";
-import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
+import {preprocessEmptyToUndefined, UserModerationLogActionSchema} from "@noovies-tickets/common";
 import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {UserModerationLogActionSchema} from "@/domains/users";
 
 /** Schema for filtering user moderation logs by user ID and action type. */
 export const UserModerationLogQueryFilterSchema = z.object({

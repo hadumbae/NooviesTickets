@@ -4,19 +4,19 @@
 
 import {useLocation} from "react-router-dom";
 import {
-    PaginationValues,
-    PaginationValuesSchema
-} from "@/common/_feat/fetch-pagination-search-params/schemas/PaginationValuesSchema.ts";
+    PaginationOptions,
+    PaginationOptionsSchema
+} from "@noovies-tickets/common";
 
 /** Result of the pagination state validation. */
 type PaginationReturns =
-    | { success: true; data: PaginationValues }
+    | { success: true; data: PaginationOptions }
     | { success?: false; data: null };
 
 /** Extracts and validates pagination values from the current navigation state. */
 export function usePaginationLocationState(): PaginationReturns {
     const {state} = useLocation();
-    const {data, success} = PaginationValuesSchema.safeParse(state);
+    const {data, success} = PaginationOptionsSchema.safeParse(state);
 
     return success
         ? {success: true, data}

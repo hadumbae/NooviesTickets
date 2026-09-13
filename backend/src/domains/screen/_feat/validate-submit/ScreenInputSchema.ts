@@ -7,7 +7,7 @@
 import {z} from "zod";
 import {TheatreAsyncIDString} from "@/shared/schema/helpers/ZodIDHelpers";
 import {PositiveNumberSchema, NonEmptyStringSchema} from "@noovies-tickets/common";
-import {ScreenTypeSchema} from "@/domains/screen/_validation";
+import {ScreenTypeSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema for validating Screen creation and update payloads.

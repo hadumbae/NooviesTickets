@@ -4,8 +4,7 @@ import {z} from "zod";
 import {
     preprocessEmptyToUndefined
 } from "@noovies-tickets/common";
-import {LongitudeSchema} from "@/common/_models/coordinate/LongitudeSchema.ts";
-import {LatitudeSchema} from "@/common/_models/coordinate/LatitudeSchema.ts";
+import {LongitudeSchema, LatitudeSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating coordinate form submissions. */
 export const CoordinateFormSchema = z.object({

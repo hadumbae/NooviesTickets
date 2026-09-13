@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {IANATimezoneSchema, NumberValueSchema, StringValueSchema, preprocessToNumber, PositiveNumberSchema, IpSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
-import {CoercedBooleanValueSchema} from "@/shared/_schema/booleans/CoercedBooleanValueSchema";
+import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
 
 /** Zod validation schema for application environment variables. */
 export const EnvironmentVariablesSchema = z.object({
@@ -15,11 +15,11 @@ export const EnvironmentVariablesSchema = z.object({
     CLOUDINARY_CLOUD_NAME: StringValueSchema,
     CLOUDINARY_API_KEY: StringValueSchema,
     CLOUDINARY_API_SECRET: StringValueSchema,
-    USE_MOCKED_IP: CoercedBooleanValueSchema,
+    USE_MOCKED_IP: URLParamBooleanSchema,
     MOCKED_CLIENT_IP: IpSchema,
     IPIFY_KEY: StringValueSchema,
     JWT_SECRET: StringValueSchema,
-    REQUIRE_SECURE_COOKIES: CoercedBooleanValueSchema,
+    REQUIRE_SECURE_COOKIES: URLParamBooleanSchema,
     PAGINATION_PAGE_DEFAULT: preprocessToNumber(PositiveNumberSchema).catch(1),
     PAGINATION_PER_PAGE_DEFAULT: preprocessToNumber(PositiveNumberSchema).catch(10),
     CREDENTIALS_EXPIRY_DURATION: preprocessToNumber(PositiveNumberSchema).catch(15),

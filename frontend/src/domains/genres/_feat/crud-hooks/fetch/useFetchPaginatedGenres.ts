@@ -4,7 +4,7 @@
 
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params/schemas/PaginationValuesSchema.ts";
+import {PaginationOptions} from "@noovies-tickets/common";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
@@ -17,7 +17,7 @@ import {GenreQueryOptions} from "@/domains/genres/_schema";
 /**
  * Parameters for the useFetchPaginatedGenres hook.
  */
-type FetchQueries<TData = unknown> = PaginationValues & {
+type FetchQueries<TData = unknown> = PaginationOptions & {
     schema: ZodType<TData, ZodTypeDef, unknown>;
     queries?: GenreQueryOptions;
     config?: RequestOptions;

@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {Redo} from "lucide-react";
-import {CloudinaryImage} from "@/common/_schemas/cloudinary-image/CloudinaryImageSchema.ts";
+import {CloudinaryImage} from "@noovies-tickets/common";
 import {IconButton} from "@/views/common/_comp";
 import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
 import {buildString} from "@/common/_feat/formatters/buildString.ts";
