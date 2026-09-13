@@ -5,7 +5,7 @@
 import {Types} from "mongoose";
 import type {ModelTimestamps} from "@/shared/_types/model/ModelTimestamps.js";
 import type {ModelSoftDelete} from "@/shared/_types/model/ModelSoftDelete.js";
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema.js";
+import type {SlugString} from "@noovies-tickets/common";
 import type {UniqueCode} from "@/shared/_schema/codes";
 
 /** Base model type containing the standard MongoDB identifier. */

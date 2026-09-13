@@ -4,16 +4,16 @@
 
 import {ReactElement} from "react";
 import {AlertTriangle, Loader, LucideIcon, Trash} from "lucide-react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {cn} from "@/common/_feat";
 import {IconButton} from "@/views/common/_comp";
 import {MutationResponseConfig} from "@/common/_feat/submit-data";
 import {useDeleteSeatSubmitHandler} from "@/domains/seats";
 
 /** Props for the SeatDeleteWarning component. */
-type WarningProps = MutationResponseConfig<void, { _id: ObjectId }> & {
+type WarningProps = MutationResponseConfig<void, { _id: ObjectIdString }> & {
     icon?: LucideIcon;
-    _id: ObjectId;
+    _id: ObjectIdString;
     seatName?: string;
     className?: string;
 };

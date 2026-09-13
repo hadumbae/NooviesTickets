@@ -5,7 +5,7 @@
 import createHttpError from "http-errors";
 import {Movie, type MovieSchemaFields} from "@/domains/movies/_models/movie";
 import {MoviePopulationPaths} from "@/domains/movies/_feat/query-population";
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
+import type {SlugString} from "@noovies-tickets/common";
 import {fetchCreditsForMovie, type GroupedCreditsForMovieData} from "@/domains/movies/_feat/client-view-data/movie-credits/fetchCreditsForMovie";
 
 /** Configuration for fetching movie credits along with movie details. */

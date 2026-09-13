@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
+import {SlugString} from "@noovies-tickets/common";
 import {ShowingDetails} from "@/domains/showings/_schema/showing";
 import {cn} from "@/common/_feat";
 import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";

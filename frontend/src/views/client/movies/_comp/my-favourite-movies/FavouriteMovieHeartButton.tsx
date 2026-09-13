@@ -3,7 +3,6 @@
  * FavouriteMovieHeartButton.tsx
  */
 
-import {ObjectId} from "@/common/_schemas";
 import {forwardRef, useState} from "react";
 import {Heart, HeartMinus, HeartPlus} from "lucide-react";
 import {Button, ButtonProps} from "@/views/common/_comp/ui/button.tsx";
@@ -13,7 +12,6 @@ import {AnimatedLoader} from "@/views/common/_comp";
 type HeartProps = ButtonProps & {
     isFavourite: boolean;
     isPending?: boolean;
-    movieID: ObjectId;
 }
 
 const IS_FAVOURITE_CSS = "text-green-600 dark:text-green-400";
@@ -24,7 +22,7 @@ const SET_INACTIVE_CSS = "text-red-600 dark:text-red-400";
 
 /** Renders a hover-aware favourite toggle button. */
 export const FavouriteMovieHeartButton = forwardRef<HTMLButtonElement, HeartProps>(
-    ({isFavourite, isPending, movieID, ...buttonProps}, ref) => {
+    ({isFavourite, isPending, ...buttonProps}, ref) => {
         const HoverIcon = isFavourite ? HeartMinus : HeartPlus;
         const [isHovered, setIsHovered] = useState<boolean>(false);
 

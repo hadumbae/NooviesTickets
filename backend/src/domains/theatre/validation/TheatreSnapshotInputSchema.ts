@@ -3,9 +3,7 @@
  */
 
 import { z } from "zod";
-import { NonEmptyStringSchema } from "@noovies-tickets/common";
-import { ISO3166Alpha2CountryCodeSchema } from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
-import { IANATimezoneSchema } from "@noovies-tickets/common";
+import {NonEmptyStringSchema, IANATimezoneSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 
 /**
  * Validates the administrative input required to generate a point-in-time theatre snapshot.

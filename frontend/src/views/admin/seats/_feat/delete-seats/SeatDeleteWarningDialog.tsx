@@ -11,10 +11,10 @@ import {SeatLayoutTypeLabelMap} from "@/domains/seats";
 import {Seat, SeatDetails} from "@/domains/seats";
 import {useDeleteSeatSubmitHandler} from "@/domains/seats";
 import {UIOpenStateProps} from "@/common/_types";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Props for the SeatDeleteWarningDialog component. */
-type WarningProps = MutationResponseConfig<void, { _id: ObjectId }> & UIOpenStateProps & {
+type WarningProps = MutationResponseConfig<void, { _id: ObjectIdString }> & UIOpenStateProps & {
     children: ReactNode;
     seat: Seat | SeatDetails;
 };

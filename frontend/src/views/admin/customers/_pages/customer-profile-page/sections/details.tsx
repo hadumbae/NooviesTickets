@@ -6,7 +6,7 @@ import {ReactElement} from "react";
 import {PageSectionHeader} from "@/views/common/_comp";
 import {PopulatedMovieReview} from "@/domains/movie-reviews/_schema/model/PopulatedMovieReviewSchema.ts";
 import {Reservation} from "@/domains/reservations/_schema/model/reservations/ReservationSchema.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {Separator} from "@/views/common/_comp/ui";
 import {Link} from "react-router-dom";
 import {CustomerDetailsListCard} from "@/views/admin/customers/_comp/customer-details/CustomerDetailsListCard.tsx";
@@ -15,7 +15,7 @@ import {CustomerReviewListSummaryItem} from "@/views/admin/customers/_comp/custo
 
 /** Props for the CustomerProfileDetailsSection component. */
 type SectionProps = {
-    customerID: ObjectId;
+    customerID: ObjectIdString;
     reviews: PopulatedMovieReview[];
     reservations: Reservation[];
     totalReviews: number;

@@ -4,8 +4,7 @@
 
 import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
 import {ReactElement} from "react";
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
-import {URLString} from "@noovies-tickets/common";
+import {SlugString, URLString} from "@noovies-tickets/common";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image/MoviePosterImage.tsx";
 
 /** Props for the BrowseMoviePosterLink component. */

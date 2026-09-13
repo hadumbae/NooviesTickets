@@ -6,7 +6,7 @@ import {cn} from "@/common/_feat";
 import {
     ReservationSeatMapElement
 } from "@/views/client/reservations/_comp/seating-input/ReservationSeatMapElement.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {useOrganisedSeatingForLayout} from "@/domains/seats/_feat/handle-seat-layout";
 import {ReactElement} from "react";
 
@@ -16,8 +16,8 @@ import {SeatMapDetails} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSch
 type SelectorProps = {
     className?: string;
     seating: SeatMapDetails[];
-    value: ObjectId[];
-    updateValue: (selection: ObjectId[]) => void;
+    value: ObjectIdString[];
+    updateValue: (selection: ObjectIdString[]) => void;
 };
 
 /** Renders a selectable seat map grid. */
@@ -29,7 +29,7 @@ export function ReservationSeatMapSelector(
         includeLabels: false,
     });
 
-    const toggleSeat = (_id: ObjectId) => {
+    const toggleSeat = (_id: ObjectIdString) => {
         selectedSeating.includes(_id)
             ? updateSelection(selectedSeating.filter(v => v !== _id))
             : updateSelection([...selectedSeating, _id]);

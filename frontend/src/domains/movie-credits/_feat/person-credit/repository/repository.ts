@@ -1,5 +1,5 @@
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {PersonCreditBaseURL} from "@/domains/movie-credits/_feat/person-credit/repository/baseURL.ts";
@@ -10,7 +10,7 @@ import {PersonFilmography} from "@/domains/movie-credits/_feat/person-credit/sch
  * Parameters for grouped movie credit queries by person.
  */
 export type FilmographyForPersonConfig = {
-    _id: ObjectId;
+    _id: ObjectIdString;
     config?: Pick<RequestOptions, "limit">;
 };
 

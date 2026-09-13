@@ -4,8 +4,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {PositiveIntegerSchema} from "@noovies-tickets/common";
+import {NonEmptyStringSchema, PositiveIntegerSchema} from "@noovies-tickets/common";
 import {BooleanValueSchema} from "@/shared/_schema/booleans/BooleanValueSchema.js";
 
 /**

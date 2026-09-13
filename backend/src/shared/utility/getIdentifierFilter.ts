@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import type { SlugString } from "../schema/strings/SlugStringSchema.js";
+import type { SlugString } from "@noovies-tickets/common";
 
 /**
  * Builds a MongoDB filter object from a polymorphic identifier.

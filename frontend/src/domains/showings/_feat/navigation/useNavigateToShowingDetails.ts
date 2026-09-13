@@ -7,11 +7,11 @@ import {
     useLoggedNavigate
 } from "@/common/_feat/navigation/useLoggedNavigate.ts";
 import {NavigateOptions} from "react-router-dom";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Configuration for the showing details navigation hook. */
 type NavConfig = LoggingMessageParams & {
-    slug: ObjectId;
+    slug: ObjectIdString;
     options?: NavigateOptions,
 }
 

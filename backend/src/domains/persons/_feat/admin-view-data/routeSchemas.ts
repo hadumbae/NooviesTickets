@@ -4,9 +4,7 @@
  */
 
 import {z} from "zod";
-import {NonNegativeNumberSchema} from "@noovies-tickets/common";
-import {preprocessToNumber} from "@noovies-tickets/common";
-import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
+import {NonNegativeNumberSchema, preprocessToNumber, SlugStringSchema} from "@noovies-tickets/common";
 
 /**
  * Validation schema for the Person details route.

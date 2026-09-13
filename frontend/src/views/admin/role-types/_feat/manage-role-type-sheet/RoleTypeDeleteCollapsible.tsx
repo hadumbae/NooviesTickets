@@ -6,18 +6,18 @@ import {ReactElement, useState} from 'react';
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/common/_comp/ui/collapsible.tsx";
 import {ChevronDown, ChevronRight, TriangleAlert} from "lucide-react";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {MutationResponseConfig} from "@/common/_feat/submit-data";
 import {useRoleTypeDeleteMutation} from "@/domains/roletypes/_feat/crud-hooks/submit/useRoleTypeDeleteMutation.ts";
 import {handleMutateAsync} from "@/common/_feat";
 
 type DeleteByID = {
-    _id: ObjectId
+    _id: ObjectIdString
 };
 
 /** Props for the RoleTypeListSheetDeleteCollapsible component. */
 export type CollapsibleProps = MutationResponseConfig<void, DeleteByID> & {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /**

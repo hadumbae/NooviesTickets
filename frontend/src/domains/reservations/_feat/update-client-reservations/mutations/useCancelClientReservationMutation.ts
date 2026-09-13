@@ -3,7 +3,7 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     CurrentUserReservationQueryKeys
 } from "@/domains/reservations/_feat/fetch-current-user-reservations/keys/CurrentUserReservationQueryKeys.ts";
@@ -18,10 +18,10 @@ import {
 /**
  * Hook providing a mutation to cancel a reservation by its unique identifier.
  */
-export function useCancelClientReservationMutation(): UseMutationResult<void, unknown, ObjectId> {
+export function useCancelClientReservationMutation(): UseMutationResult<void, unknown, ObjectIdString> {
     const queryClient = useQueryClient();
 
-    const cancel = async (_id: ObjectId) => {
+    const cancel = async (_id: ObjectIdString) => {
         await patchCancelClientReservation(_id);
     }
 

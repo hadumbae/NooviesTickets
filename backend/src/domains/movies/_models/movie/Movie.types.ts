@@ -5,7 +5,7 @@
 
 import {Types} from "mongoose";
 import type {URLString} from "@noovies-tickets/common";
-import type {ISO6391LanguageCode} from "@/shared/schema/enums/ISO6391LanguageCodeSchema.js";
+import type {ISO6391LanguageCode} from "@noovies-tickets/common";
 import type {CloudinaryImageObject} from "@/shared/schema/cloudinary/CloudinaryImageObjectSchema.js";
 import type {GenreSchemaFields} from "@/domains/genres/_models/genre/Genre.types.js";
 

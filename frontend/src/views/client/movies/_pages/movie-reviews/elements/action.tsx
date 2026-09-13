@@ -5,7 +5,7 @@
 import {ReactElement, useState} from "react";
 import {MessageCirclePlus} from "lucide-react";
 import {Button} from "@/views/common/_comp/ui";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {cn} from "@/common/_feat";
 
 import {MovieReviewFormPopup} from "@/views/client/movie-reviews";
@@ -14,7 +14,7 @@ import {LabelContent} from "@/views/common/_comp";
 
 /** Props for the MovieInfoReviewAction component. */
 type ActionProps = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     totalReviews: number;
     userReview: MovieReviewDetails | null;
     className?: string;

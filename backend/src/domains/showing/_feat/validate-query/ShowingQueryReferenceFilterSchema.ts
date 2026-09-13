@@ -5,7 +5,7 @@
 
 import {z} from "zod";
 import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
-import {ISO3166Alpha2CountryCodeSchema} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
+import {ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining reference filters for Showing queries.

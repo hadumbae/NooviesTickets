@@ -3,7 +3,7 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {validateData} from "@/common/_feat/validate-data/validateData.ts";
 
 import {AdminReservation, AdminReservationSchema} from "@/domains/reservations/_schema";
@@ -16,7 +16,7 @@ import {
 
 /** Props for the useRefundReservationMutation hook. */
 export type UseRefundReservationMutationConfig = {
-    reservationID: ObjectId;
+    reservationID: ObjectIdString;
 }
 
 /** Mutation hook that transitions a reservation to a refunded status and invalidates relevant queries. */

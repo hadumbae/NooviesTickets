@@ -1,7 +1,7 @@
 /**
  * @fileoverview Hook for fetching paginated movie reviews and their aggregate details.
  */
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
@@ -15,7 +15,7 @@ import {buildQueryFn} from "@/common/_feat/validate-fetch-data/buildQueryFn.ts";
 
 /** Parameters for detailed movie review queries. */
 type FetchParams = PaginationValues & {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     config?: Omit<RequestOptions, "limit">;
     options?: FetchQueryOptions<MovieReviewSummaryData>;
 };

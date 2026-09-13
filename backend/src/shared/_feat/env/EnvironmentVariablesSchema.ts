@@ -3,12 +3,7 @@
  */
 
 import {z} from "zod";
-import {IANATimezoneSchema} from "@noovies-tickets/common";
-import {NumberValueSchema} from "@noovies-tickets/common";
-import {StringValueSchema, preprocessToNumber} from "@noovies-tickets/common";
-import {PositiveNumberSchema} from "@noovies-tickets/common";
-import {IpSchema} from "@/shared/schema/strings/IPSchema";
-import {NonNegativeNumberSchema} from "@noovies-tickets/common";
+import {IANATimezoneSchema, NumberValueSchema, StringValueSchema, preprocessToNumber, PositiveNumberSchema, IpSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import {CoercedBooleanValueSchema} from "@/shared/_schema/booleans/CoercedBooleanValueSchema";
 
 /** Zod validation schema for application environment variables. */

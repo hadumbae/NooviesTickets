@@ -4,9 +4,8 @@
 
 import {z} from "zod";
 import {MongooseSortOrderSchema} from "@/common/_schemas/enums/MongooseSortOrderSchema.ts";
-import {IDStringSchema} from "@/common/_schemas";
+import {IDStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {SeatMapStatusSchema} from "@/domains/seatmaps/_schema/fields";
-import {PositiveNumberSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema for filtering SeatMap documents by showing, seat, price, or status.

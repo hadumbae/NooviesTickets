@@ -11,7 +11,7 @@ import {
     BreadcrumbSeparator,
 } from "@/views/common/_comp/ui/breadcrumb.tsx";
 import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
-import {SlugString} from "@/common/_schemas";
+import {SlugString} from "@noovies-tickets/common";
 import {ReactElement} from "react";
 
 /** Props for the TheatreShowingCreateBreadcrumbs component. */

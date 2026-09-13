@@ -11,11 +11,11 @@ import {
 } from "@/views/admin/reservations/_feat/update-notes-form/UpdateReservationNotesFormPopup.tsx";
 import {Button} from "@/views/common/_comp/ui";
 import {Pencil} from "lucide-react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Props for the AdminReservationNotesSection component. */
 type SectionProps = {
-    reservationID: ObjectId;
+    reservationID: ObjectIdString;
     notes?: string | null;
 };
 

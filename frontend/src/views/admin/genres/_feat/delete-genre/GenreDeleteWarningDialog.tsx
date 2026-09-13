@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, ReactNode} from 'react';
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     EntityDeleteWarningDialog
 } from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
@@ -14,9 +14,9 @@ import {useDeleteGenre} from "@/domains/genres/_feat/crud-hooks/mutate/useDelete
 /** Props for the {@link GenreDeleteWarningDialog} component. */
 type DialogProps = UIOpenStateProps & {
     children?: ReactNode;
-    _id: ObjectId;
+    _id: ObjectIdString;
     name: string;
-    onSubmitConfig?: MutationResponseConfig<void, { _id: ObjectId }>;
+    onSubmitConfig?: MutationResponseConfig<void, { _id: ObjectIdString }>;
 };
 
 /**

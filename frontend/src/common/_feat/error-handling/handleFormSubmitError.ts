@@ -23,7 +23,7 @@ export function handleFormSubmitError<TFormValues extends FieldValues, TForm ext
         const {errors} = error;
         Logger.error({msg: "Form Validation Failed: ", error, context: {errors}});
 
-        for (let {path, message} of errors) {
+        for (const {path, message} of errors) {
             const formPath = path.map((v) => typeof v === "number" ? `${v}` : v).join(".") as Path<TFormValues>;
             form.setError(formPath, {type: "manual", message});
         }

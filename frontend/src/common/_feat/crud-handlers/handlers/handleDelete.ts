@@ -6,14 +6,14 @@
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {buildURL} from "@/common/_feat/fetch-api";
 
 /**
  * Parameters required to delete a specific document.
  */
 export type DeleteDocumentConfig = {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /**

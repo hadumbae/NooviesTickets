@@ -5,7 +5,7 @@
 import {ReactElement} from 'react';
 import {useFormContext} from "react-hook-form";
 import {Plus, X} from "lucide-react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/common/_feat";
 import {filterFalsyAttributes} from "@/common/_feat/filter-object-attributes/filterFalsyAttributes.ts";
 import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
@@ -79,7 +79,7 @@ export function ShowingSubmitFormDetailsFieldset(
             key: "movie",
             element: <div className="space-y-1">
                 <MovieHookFormSelect name="movie" label="Movie" description="The movie to be shown."/>
-                {movie && <MovieQuickOverviewFetchCard movieID={movie as ObjectId}/>}
+                {movie && <MovieQuickOverviewFetchCard movieID={movie as ObjectIdString}/>}
             </div>
         }),
         field({
@@ -93,7 +93,7 @@ export function ShowingSubmitFormDetailsFieldset(
                     onValueChange={onTheatreChange}
                 />
 
-                {theatre && <TheatreQuickOverviewFetchCard theatreID={theatre as ObjectId}/>}
+                {theatre && <TheatreQuickOverviewFetchCard theatreID={theatre as ObjectIdString}/>}
             </div>
         }),
         {

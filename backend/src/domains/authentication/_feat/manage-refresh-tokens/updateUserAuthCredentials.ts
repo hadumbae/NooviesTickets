@@ -7,7 +7,7 @@ import createHttpError from "http-errors";
 import {RefreshToken} from "@/domains/authentication/_models/refresh-token";
 import {generateAuthenticationPayload} from "@/domains/authentication/_feat/login-user";
 import {createRefreshToken} from "@/domains/authentication/_feat/manage-refresh-tokens/createRefreshToken";
-import type {IpString} from "@/shared/schema/strings/IPSchema";
+import type {IpString} from "@noovies-tickets/common";
 import type {UserSchemaFields} from "@/domains/users";
 import type {AuthUserCredentials} from "@/domains/authentication";
 

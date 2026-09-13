@@ -3,14 +3,13 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, NonEmptyStringSchema, SlugStringSchema} from "@/common/_schemas/strings";
-import {ISO4217CurrencyCodeSchema} from "@/common/_schemas/enums/ISO4217CurrencyCodeSchema.ts";
+import {NonEmptyStringSchema} from "@/common/_schemas/strings";
+import {IDStringSchema, SlugStringSchema, ISO8601DateTimeSchema, NonNegativeNumberSchema, PositiveNumberSchema, ISO4217CurrencyCodeSchema} from "@noovies-tickets/common";
 import {ModelTimestampsSchema} from "@/common/_schemas/models/time-stamps/ModelTimestampsSchema.ts";
 import {ReservedShowingSnapshotSchema} from "@/domains/reservations/_schema/snapshot";
 import {BooleanValueSchema} from "@/common/_schemas/boolean/BooleanValueSchema.ts";
-import {ISO8601DateTimeSchema, NonNegativeNumberSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {
-    ReservationStatusEnumSchema,
+    ReservationStatusSchema,
     ReservationTypeEnumSchema,
     ReservationUniqueCodeSchema
 } from "@/domains/reservations/_schema/model/fields";
@@ -47,7 +46,7 @@ const ReservationBaseMetaSchema = z.object({
     slug: SlugStringSchema.readonly(),
     uniqueCode: ReservationUniqueCodeSchema.readonly(),
     reservationType: ReservationTypeEnumSchema,
-    status: ReservationStatusEnumSchema,
+    status: ReservationStatusSchema,
     notes: NonEmptyStringSchema
         .max(3000, "Must be 3000 characters or less.")
         .optional()

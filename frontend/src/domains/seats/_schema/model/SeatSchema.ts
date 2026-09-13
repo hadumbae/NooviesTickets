@@ -3,10 +3,8 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas";
+import {IDStringSchema, preprocessEmptyToUndefined, NonNegativeNumberSchema, PositiveNumberSchema, SlugStringSchema} from "@noovies-tickets/common";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {preprocessEmptyToUndefined, NonNegativeNumberSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {SlugStringSchema} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
 import {SeatLabelSchema, SeatLayoutTypeSchema, SeatRowSchema, SeatTypeSchema} from "@/domains/seats/_schema/fields";
 
 /** Base layout entry shared across all structure types. */

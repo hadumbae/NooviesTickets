@@ -3,9 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas/strings/id-strings/IDStringSchema";
-import {NonEmptyStringSchema, DateOnlyStringSchema, preprocessOptionalField} from "@noovies-tickets/common";
-import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema";
+import {IDStringSchema, NonEmptyStringSchema, DateOnlyStringSchema, preprocessOptionalField, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 
 /** Zod schema for filtering Person documents by ID, name, birth date, or nationality. */
 export const PersonQueryFilterSchema = z.object({

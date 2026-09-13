@@ -2,7 +2,7 @@
  * @fileoverview Hook for fetching and validating composite user data for the admin details view.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {buildQueryFn, useQueryOptionDefaults} from "@/common/_feat";
@@ -16,7 +16,7 @@ import {
 
 /** Configuration for fetching user details view data. */
 export type FetchConfig = {
-    userID: ObjectId;
+    userID: ObjectIdString;
     reviewCount?: number;
     reservationCount?: number;
     options?: FetchQueryOptions<UserDetailsViewData>;

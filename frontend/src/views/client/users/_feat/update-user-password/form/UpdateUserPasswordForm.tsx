@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, useId} from 'react';
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
 import {BaseFormContextProvider} from "@/common/_feat/generic-form-context";
 import {Form} from "@/views/common/_comp/ui";
@@ -17,7 +17,7 @@ import {
 /** Props for the UpdateUserPasswordForm component. */
 type FormProps = {
     children: ReactElement;
-    userID: ObjectId;
+    userID: ObjectIdString;
     onSubmitConfig?: MutationResponseConfig<void, UserPasswordUpdateFormValues>;
     resetConfig?: MutationFormResetConfig;
 }

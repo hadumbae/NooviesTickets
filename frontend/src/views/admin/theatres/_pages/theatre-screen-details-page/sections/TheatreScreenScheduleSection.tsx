@@ -7,12 +7,12 @@ import {EmptyArrayContainer, IconButton, PageSectionHeader} from "@/views/common
 import {LoggedLink} from "@/views/common/_feat";
 import {List} from "lucide-react";
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import { TheatreScreenScheduleCard } from "@/views/admin/theatre-screens/_comp";
 
 /** Props for the TheatreScreenScheduleSection component. */
 type SectionProps = {
-    screenID: ObjectId;
+    screenID: ObjectIdString;
     showings: ShowingDetails[];
 };
 

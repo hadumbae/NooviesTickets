@@ -2,7 +2,7 @@
  * @fileoverview React Query hook for fetching paginated reviews by movie ID.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
@@ -18,7 +18,7 @@ import {PaginatedItems} from "@/common/_types";
 
 /** Parameters required to fetch paginated reviews for a specific movie. */
 type FetchParams = PaginationValues & {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     config?: Omit<RequestOptions, "limit">;
     options?: FetchQueryOptions<PaginatedItems<PopulatedMovieReview>>;
 };

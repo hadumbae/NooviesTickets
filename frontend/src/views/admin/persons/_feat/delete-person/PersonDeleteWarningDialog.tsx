@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, ReactNode} from 'react';
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {UIOpenStateProps} from "@/common/_types";
 import {useRemovePersonData} from "@/domains/persons/_feat/crud-hooks";
 import {MutationResponseConfig} from "@/common/_feat/submit-data";
@@ -18,9 +18,9 @@ import {
 /**
  * Props for the {@link PersonDeleteWarningDialog} component.
  */
-type WarningDialogProps = MutationResponseConfig<void, { _id: ObjectId }> & UIOpenStateProps & {
+type WarningDialogProps = MutationResponseConfig<void, { _id: ObjectIdString }> & UIOpenStateProps & {
     children?: ReactNode;
-    personID: ObjectId;
+    personID: ObjectIdString;
     personName: string;
 };
 

@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from 'react';
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {MovieCreditDetails} from "@/domains/movie-credits/_schemas/model/MovieCreditDetailsSchema.ts";
 import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
 import {SROnly} from "@/views/common/_comp/screen-readers";
@@ -13,7 +13,7 @@ import {
 
 /** Props for the MovieDetailsCreditOverview component. */
 export type OverviewProps = {
-    slug: ObjectId;
+    slug: ObjectIdString;
     credits: (Extract<MovieCreditDetails, { department: "CAST" }>)[];
 };
 

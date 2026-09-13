@@ -21,7 +21,7 @@ export function FormPendingSubmitButton(
     return (
         <Button
             {...props}
-            variant="primary"
+            variant={variant}
             type="submit"
             disabled={disabled || isPending}
             form={formID}

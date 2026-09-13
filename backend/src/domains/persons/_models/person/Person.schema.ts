@@ -8,7 +8,7 @@ import type {PersonSchemaFields} from "@/domains/persons/_models/person/Person.t
 import {CloudinaryImageSchema} from "@/shared/model/cloudinary-image/CloudinaryImage";
 import {
     ISO3166Alpha2CodeConstant
-} from "@/shared/constants/country/ISO3166Alpha2CodeConstant.js";
+} from "@noovies-tickets/common";
 import {SlugSchemaTypeOptions} from "@/shared/model/SlugSchemaTypeOptions.js";
 
 /**

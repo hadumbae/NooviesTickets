@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas";
+import {IDStringSchema} from "@noovies-tickets/common";
 import {ManageCustomerRouteParamsSchema} from "@/domains/customers/_feat/manage-customers";
 
 /** Schema for validating customer reservation route parameters. */

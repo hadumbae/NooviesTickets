@@ -13,14 +13,14 @@ import {
     BreadcrumbSeparator
 } from "@/views/common/_comp/ui/breadcrumb.tsx"
 import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx"
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Props for the CustomerReviewLogsPageBreadcrumbs component. */
 type BreadcrumbsProps = {
     customerName: string;
-    customerID: ObjectId;
+    customerID: ObjectIdString;
     customerCode: UserUniqueCode
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
     reviewCode: MovieReviewUniqueCode
 }
 

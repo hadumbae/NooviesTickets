@@ -1,4 +1,4 @@
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
+import type {SlugString} from "@noovies-tickets/common";
 import createHttpError from "http-errors";
 import {Types} from "mongoose";
 import {Movie, type MovieSchemaFields} from "@/domains/movies/_models";

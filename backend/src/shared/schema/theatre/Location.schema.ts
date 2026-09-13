@@ -3,10 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {IANATimezoneSchema} from "@noovies-tickets/common";
-import {ISO3166Alpha2CountryCodeSchema} from "../enums/ISO3166Alpha2CountryCodeSchema.js";
-import {NumberValueSchema} from "@noovies-tickets/common";
+import {NonEmptyStringSchema, IANATimezoneSchema, NumberValueSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {CityStringSchema, StateStringSchema, StreetStringSchema} from "@/shared/_schema";
 
 /** Schema for validating longitude geographic coordinates within valid world bounds. */

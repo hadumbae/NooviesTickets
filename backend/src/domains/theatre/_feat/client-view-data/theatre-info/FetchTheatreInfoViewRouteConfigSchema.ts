@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessToNumber, NonNegativeNumberSchema, DateOnlyStringSchema} from "@noovies-tickets/common";
-import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
+import {preprocessToNumber, NonNegativeNumberSchema, DateOnlyStringSchema, SlugStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating theatre info view route parameters. */
 export const FetchTheatreInfoViewRouteConfigSchema = z.object({

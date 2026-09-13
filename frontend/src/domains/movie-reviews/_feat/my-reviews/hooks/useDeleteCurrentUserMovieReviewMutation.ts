@@ -2,7 +2,7 @@
  * @fileoverview Mutation hook for deleting a movie review belonging to the current user.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {deleteRemoveMovieReviewForCurrentUser} from "@/domains/movie-reviews/_feat/my-reviews/repository/repository.ts";
 import {toast} from "react-toastify";
@@ -14,8 +14,8 @@ import {MutationResponseConfig} from "@/common/_feat/submit-data/mutationTypes.t
 
 /** Parameters for the movie review deletion mutation. */
 type MutateParams = {
-    reviewID: ObjectId;
-    movieID?: ObjectId;
+    reviewID: ObjectIdString;
+    movieID?: ObjectIdString;
 }
 
 /** Mutation hook for deleting a MovieReview owned by the current user. */

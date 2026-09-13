@@ -3,13 +3,13 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {destroy} from "@/domains/persons/_feat/crud";
 import {PersonCRUDMutationKeys, PersonCRUDQueryKeys} from "@/domains/persons/_feat/crud-hooks/keys";
 
 /** The unique identifier of the person to be deleted. */
 type DeleteValue = {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /** Handles deletion of a single Person entity. */

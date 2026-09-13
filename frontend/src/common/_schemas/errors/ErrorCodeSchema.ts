@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {ErrorCodeConstant} from "@/common/_const";
-import {ZodEnumParamHandler} from "@/common/_feat/validation-handlers";
+import {ZodEnumParamHandler} from "@noovies-tickets/common";
 
 /** Zod schema for validating error code strings. */
 export const ErrorCodeSchema = z.enum(

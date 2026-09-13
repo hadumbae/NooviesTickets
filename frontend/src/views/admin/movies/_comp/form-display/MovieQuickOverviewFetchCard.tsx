@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {cn} from "@/common/_feat";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {Card, CardContent} from "@/views/common/_comp/ui";
@@ -14,7 +14,7 @@ import {Image} from "@/views/common/_comp";
 
 /** Props for the MovieQuickOverviewFetchCard component. */
 type FetchCardProps = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     className?: string;
 };
 

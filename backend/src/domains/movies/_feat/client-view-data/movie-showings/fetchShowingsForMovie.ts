@@ -3,10 +3,9 @@
  */
 
 import {type FilterQuery, Types} from "mongoose";
-import type {NonNegativeNumber} from "@noovies-tickets/common";
+import type {NonNegativeNumber, PositiveInteger} from "@noovies-tickets/common";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
-import type {PositiveInteger} from "@noovies-tickets/common";
-import type {ISO3166Alpha2CountryCode} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
+import type {ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
 import {generateFuzzyRegexPattern} from "@/shared/utility/regex/generateFuzzyRegexPattern";
 import {Showing} from "@/domains/showing/_models/showing/Showing.model";

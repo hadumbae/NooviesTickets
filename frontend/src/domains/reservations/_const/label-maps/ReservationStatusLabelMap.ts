@@ -9,4 +9,5 @@ export const ReservationStatusLabelMap = {
     "CANCELLED": "Cancelled",
     "REFUNDED": "Refunded",
     "EXPIRED": "Expired",
+    "INVALID": "Invalid",
 };

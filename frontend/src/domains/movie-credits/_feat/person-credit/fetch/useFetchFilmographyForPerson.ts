@@ -3,7 +3,7 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
@@ -15,7 +15,7 @@ import {PersonCreditQueryKeys} from "@/domains/movie-credits/_feat/person-credit
 
 /** Parameters for the useFetchFilmographyForPerson hook. */
 type FetchParams = {
-    _id: ObjectId;
+    _id: ObjectIdString;
     config?: RequestOptions;
     options?: FetchQueryOptions<PersonFilmography>;
 };

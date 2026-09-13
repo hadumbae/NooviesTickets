@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas";
+import {IDStringSchema} from "@noovies-tickets/common";
 import {
     RoleTypeCastCategorySchema,
     RoleTypeCrewCategorySchema,

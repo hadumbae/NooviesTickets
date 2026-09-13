@@ -4,7 +4,7 @@
 
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {MovieReviewForm} from "@/domains/movie-reviews/_feat/submit-form/schema/MovieReviewFormSchema.ts";
 
 /** Parameters for fetching the current user's movie reviews. */
@@ -20,7 +20,7 @@ export type CreateCurrentUserMovieReviewConfig = {
 
 /** Parameters for updating a movie review for the current user. */
 export type UpdateCurrentUserMovieReviewConfig = {
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
     data: MovieReviewForm;
     config?: Omit<RequestOptions, "limit">;
 }

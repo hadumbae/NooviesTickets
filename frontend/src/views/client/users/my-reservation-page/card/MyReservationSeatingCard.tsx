@@ -4,14 +4,14 @@
 
 import {Card, CardContent, CardHeader, CardTitle} from "@/views/common/_comp/ui/card.tsx";
 import {ReservationSeatingLoader} from "@/views/client/reservations/_comp/seating-display/ReservationSeatingLoader.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {ReactElement} from "react";
 
 import {SeatMapWithSeat} from "@/domains/seatmaps/_schema/model/SeatMapWithSeatSchema";
 
 /** Props for the MyReservationSeatingCard component. */
 type CardProps = {
-    showingID: ObjectId;
+    showingID: ObjectIdString;
     selectedSeating: SeatMapWithSeat[];
     className?: string;
 }
@@ -20,7 +20,7 @@ type CardProps = {
 export function MyReservationSeatingCard(
     {className, showingID, selectedSeating}: CardProps
 ): ReactElement {
-    const seatIDs: ObjectId[] = [];
+    const seatIDs: ObjectIdString[] = [];
     const seatLabels: string[] = [];
 
     for (const {_id, seat: {row, seatNumber, seatLabel}} of selectedSeating) {

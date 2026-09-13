@@ -3,7 +3,7 @@
  */
 
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString, SlugString} from "@noovies-tickets/common";
 import {ReactElement} from "react";
 import {PageSectionHeaderLink} from "@/views/common/_comp/page";
 import {useFetchMovieCredits} from "@/domains/movie-credits/_feat/crud-hooks";
@@ -12,7 +12,6 @@ import {
 } from "@/domains/movie-credits/_schemas";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {MovieDetailsCreditCastOverview} from "@/views/admin/movie-credits/_comp/cast-overview";
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
 
 /** Cast-specific movie credit details filtered by department. */
@@ -20,7 +19,7 @@ type CastCredits = (Extract<MovieCreditDetails, { department: "CAST" }>)[];
 
 /** Props for the MovieDetailsPageCreditSection component. */
 type TabProps = {
-    _id: ObjectId;
+    _id: ObjectIdString;
     slug: SlugString;
 };
 

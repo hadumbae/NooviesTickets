@@ -3,9 +3,8 @@
  */
 
 import {z} from "zod";
-import {SlugStringSchema} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
+import {SlugStringSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@/common/_schemas";
-import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
 
 /** Zod schema for validating reference-based filter criteria for Showings. */
 export const ShowingQueryReferenceFilterSchema = z.object({

@@ -2,7 +2,7 @@
  * @fileoverview Provides select options for ISO 639-1 language codes.
  */
 
-import {ISO6391CodeConstant} from "@/common/_const/languages/ISO6391CodeConstant.ts";
+import {ISO6391CodeConstant} from "@noovies-tickets/common";
 import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
 import {ISO6391LanguageLabels as ISO6391LanguageConstant} from "@/common/_const/languages/ISO6391LanguageLabels.ts";
 

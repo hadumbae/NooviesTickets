@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {SlugStringSchema} from "@/common/_schemas/strings";
+import {SlugStringSchema} from "@noovies-tickets/common";
 
 /** Schema for a route parameter object with a slug field. */
 export const SlugRouteParamSchema = z.object(

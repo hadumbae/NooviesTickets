@@ -5,7 +5,7 @@
 import {Types} from "mongoose";
 import type {LeanUserSchemaFields} from "@/domains/users/model/user/User.types";
 import type {MovieWithGenres, MovieWithRating} from "@/domains/movies/_models/movie/Movie.types";
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
+import type {SlugString} from "@noovies-tickets/common";
 import type {MovieReviewUniqueCode} from "@/domains/movie-reviews/_validation/review-code/MovieReviewUniqueCodeSchema";
 
 /** Core fields for the MovieReview database schema. */

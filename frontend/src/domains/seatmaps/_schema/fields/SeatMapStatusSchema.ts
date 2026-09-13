@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ZodEnumParamHandler} from "@/common/_feat/validation-handlers";
+import {ZodEnumParamHandler} from "@noovies-tickets/common";
 import {SeatMapStatusConstant} from "@/domains/seatmaps/_schema/fields/SeatMapStatusConstant.ts";
 
 /** Zod schema for validating SeatMap status strings against predefined constants. */

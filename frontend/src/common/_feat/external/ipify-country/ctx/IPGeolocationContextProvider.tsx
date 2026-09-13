@@ -4,7 +4,7 @@
 
 import {ReactElement, ReactNode, useEffect, useState} from "react";
 import {useFetchUserCountry} from "@/common/_feat/external/ipify-country/hooks/useFetchUserCountry.ts";
-import {IpString} from "@/common/_schemas/strings/ip-string/IpSchema.ts";
+import {IpString} from "@noovies-tickets/common";
 import {
     IPGeolocationContext,
     IPGeolocationContextValues

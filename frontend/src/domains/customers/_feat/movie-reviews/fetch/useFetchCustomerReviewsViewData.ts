@@ -9,7 +9,7 @@ import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 import {getFetchCustomerReviewsViewData} from "@/domains/customers/_feat/movie-reviews/repository/repository.ts";
 import {CustomerReviewsViewQueryKeys} from "@/domains/customers/_feat/movie-reviews/fetch/queryKeys.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     CustomerReviewsViewData,
     CustomerReviewsViewDataSchema
@@ -17,7 +17,7 @@ import {
 
 /** Parameters for the useFetchCustomerReviewsViewData hook. */
 export type FetchParams = {
-    customerID: ObjectId;
+    customerID: ObjectIdString;
     pagination: PaginationValues;
     options?: FetchQueryOptions<CustomerReviewsViewData>;
 };

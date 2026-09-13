@@ -3,9 +3,8 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, NonEmptyStringSchema} from "@/common/_schemas";
-import {IANATimezoneSchema} from "@noovies-tickets/common";
-import {ISO6391LanguageCodeSchema} from "@/common/_schemas/enums/ISO6391LanguageCodeSchema.ts";
+import {NonEmptyStringSchema} from "@/common/_schemas";
+import {IDStringSchema, IANATimezoneSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
 import {ShowingConfigSchema} from "@/domains/showings/_schema/showing/ShowingConfigSchema.ts";
 import {ShowingStatusSchema, ShowingTimeSchema, TicketPriceSchema} from "@/domains/showings/_schema/fields";
 import {TheatreSnapshotSchema} from "@/domains/theatres/_schema/snapshot/TheatreSnapshotSchema.ts";

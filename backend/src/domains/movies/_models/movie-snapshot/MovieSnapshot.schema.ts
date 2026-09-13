@@ -3,11 +3,8 @@
  */
 
 import { Schema } from "mongoose";
-import {
-    ISO3166Alpha2CodeConstant
-} from "@/shared/constants/country/ISO3166Alpha2CodeConstant.js";
+import {ISO3166Alpha2CodeConstant, URLStringSchema} from "@noovies-tickets/common";
 import type { MovieSnapshotSchemaFields } from "@/domains/movies/_models/movie-snapshot/MovieSnapshot.types.js";
-import { URLStringSchema } from "@noovies-tickets/common";
 
 /** Mongoose schema for movie snapshot persistence. */
 export const MovieSnapshotSchema = new Schema<MovieSnapshotSchemaFields>({

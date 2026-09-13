@@ -7,7 +7,7 @@ import {AdminReservation, Reservation} from "@/domains/reservations/_schema";
 import {Card, CardContent, Separator} from "@/views/common/_comp/ui";
 import {LabelContent} from "@/views/common/_comp";
 import {cn, convertToTitleCase, useIsMobile} from "@/common/_feat";
-import {OrientationValues} from "@/common/_schemas";
+import {OrientationValues} from "@noovies-tickets/common";
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
 import {buildShowingDateString} from "@/domains/showings/_feat/formatters/buildShowingDateString.ts";
 

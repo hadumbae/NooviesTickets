@@ -3,14 +3,14 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 import {destroy} from "@/domains/seats/_feat/crud";
 import {SeatCRUDMutationKeys, SeatCRUDQueryKeys} from "@/domains/seats/_feat/crud-hooks/keys";
 import {TheatreScreenAdminViewDataQueryKeys} from "@/domains/theatre-screens";
 
 type DeleteValue = {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /**

@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ZodEnumParamHandler} from "@/common/_feat";
+import {ZodEnumParamHandler} from "@noovies-tickets/common";
 import {UserStatusConstant} from "@/domains/users/_const";
 
 /** Zod schema validating that a string matches a recognised user status with parameterised error custom handlers. */

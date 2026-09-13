@@ -9,7 +9,7 @@ import {
     PersonInfoViewData,
     PersonInfoViewDataSchema
 } from "@/domains/persons/_feat/client-view-data/person-info/dataSchema.ts";
-import {SlugString} from "@/common/_schemas";
+import {SlugString} from "@noovies-tickets/common";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";

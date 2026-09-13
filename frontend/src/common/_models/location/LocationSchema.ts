@@ -2,8 +2,7 @@
 
 import {z} from "zod";
 import {NonEmptyStringSchema} from "@/common/_schemas";
-import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
-import {IANATimezoneSchema} from "@noovies-tickets/common";
+import {ISO3166Alpha2CountryCodeSchema, IANATimezoneSchema} from "@noovies-tickets/common";
 import {CoordinateSchema} from "@/common/_models/coordinate/CoordinateSchema.ts";
 import {StreetStringSchema} from "@/common/_models/location/StreetStringSchema.ts";
 import {CityStringSchema} from "@/common/_models/location/CityStringSchema.ts";

@@ -2,7 +2,7 @@
  * @fileoverview API functions for removing movie poster and banner images.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {FetchRequestReturns} from "@/common/_types";
 import {buildURL, handleFetchOperation} from "@/common/_feat";
 import {ManageMovieImagesBaseURL} from "@/domains/movies/_feat/manage-images/baseURL.ts";
@@ -10,7 +10,7 @@ import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 
 /** Parameters required to remove a movie image asset. */
 export type DeleteMovieImageRouteConfig = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
 }
 
 /** Sends an API request to remove the poster image for a specified movie. */

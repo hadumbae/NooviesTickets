@@ -4,8 +4,7 @@
 
 import createHttpError from "http-errors";
 import {Theatre, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
-import type {DateOnlyString} from "@noovies-tickets/common";
+import type {SlugString, DateOnlyString} from "@noovies-tickets/common";
 import {type MovieSchemaFields} from "@/domains/movies/_models/movie";
 import {type ScreenSchemaFields, type ScreenWithShowings} from "@/domains/screen/_models/screen";
 import {fetchTheatreScreensWithShowings} from "@/domains/screen/_feat/fetch-theatre-screens/screens-with-showings";

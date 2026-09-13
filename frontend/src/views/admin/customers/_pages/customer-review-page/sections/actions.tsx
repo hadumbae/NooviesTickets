@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {PageSectionHeader} from "@/views/common/_comp/page";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     ResetReviewDisplayNameAction,
     ResetReviewLikesAction,
@@ -14,7 +14,7 @@ import {
 
 /** Props for the CustomerReviewPageActionSection component. */
 export type SectionProps = {
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
     displayName: string;
     rating: number;
 };

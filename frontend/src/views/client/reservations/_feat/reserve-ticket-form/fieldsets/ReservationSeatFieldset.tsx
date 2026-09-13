@@ -3,7 +3,7 @@
  */
 
 import {Button} from "@/views/common/_comp/ui/button.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {SeatMapDetailsLoader} from "@/views/admin/seatmaps/_comp/loaders/SeatMapDetailsLoader.tsx";
 import {ReservationSeatMapInput} from "@/views/client/reservations/_comp/seating-input/ReservationSeatMapInput.tsx";
 import {ReactElement, useEffect} from "react";
@@ -22,8 +22,8 @@ export function ReservationSeatFieldset(
 ): ReactElement {
     const {control, watch, setValue} = useFormContext();
 
-    const showingID = watch("showing") as ObjectId;
-    const selectedSeating = (watch("selectedSeating") || []) as ObjectId[];
+    const showingID = watch("showing") as ObjectIdString;
+    const selectedSeating = (watch("selectedSeating") || []) as ObjectIdString[];
 
     useEffect(() => {
         setValue("ticketCount", selectedSeating.length, {shouldValidate: true});

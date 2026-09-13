@@ -3,7 +3,7 @@
  */
 
 import type {UserSchemaFields} from "@/domains/users";
-import type {IpString} from "@/shared/schema/strings/IPSchema";
+import type {IpString} from "@noovies-tickets/common";
 import type {BaseModel, ModelTimestamps} from "@/shared/_types";
 import {Types} from "mongoose";
 

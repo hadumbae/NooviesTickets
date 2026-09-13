@@ -6,8 +6,7 @@ import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 import {ZodType, ZodTypeDef} from "zod";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import {ObjectId} from "@/common/_schemas";
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
+import {ObjectIdString, SlugString} from "@noovies-tickets/common";
 
 /** Base configuration for individual data queries requiring schema validation. */
 export type QueryConfig<TData = unknown> = {
@@ -18,7 +17,7 @@ export type QueryConfig<TData = unknown> = {
 
 /** Configuration for fetching a single entity by its unique identifier. */
 export type IDQueryConfig<TData = unknown> = QueryConfig<TData> & {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /** Configuration for fetching a single entity by its URL-friendly slug. */
@@ -29,7 +28,7 @@ export type SlugQueryConfig<TData = unknown> = QueryConfig<TData> & {
 /** Configuration for fetching collections with optional filters. */
 export type ListQueryConfig<
     TData = unknown,
-    TQueries extends Record<string, unknown> = {}
+    TQueries extends Record<string, unknown> = Record<string, unknown>
 > = QueryConfig<TData> & {
     queries?: TQueries;
 };
@@ -37,5 +36,5 @@ export type ListQueryConfig<
 /** Configuration for standardized paginated API requests. */
 export type PaginatedQueryConfig<
     TData = unknown,
-    TQueries extends Record<string, unknown> = {}
+    TQueries extends Record<string, unknown> = Record<string, unknown>
 > = PaginationValues & ListQueryConfig<TData, TQueries>;

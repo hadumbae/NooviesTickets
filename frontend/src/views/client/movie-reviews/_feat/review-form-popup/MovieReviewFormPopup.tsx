@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {MutationResponseConfig} from "@/common/_feat/submit-data";
 import {UIOpenStateProps} from "@/common/_types";
 import {MovieReview} from "@/domains/movie-reviews/_schema";
@@ -13,7 +13,7 @@ import {MovieReviewForm} from "@/domains/movie-reviews";
 /** Props for the MovieReviewFormPopup component. */
 type FormProps = UIOpenStateProps & {
     children?: ReactNode;
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     reviewToEdit?: MovieReview;
     onSubmitConfig?: MutationResponseConfig<MovieReview, MovieReviewForm>;
 };

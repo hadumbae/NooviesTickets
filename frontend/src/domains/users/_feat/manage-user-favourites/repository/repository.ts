@@ -3,7 +3,7 @@
  */
 
 import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
@@ -14,7 +14,7 @@ import {MovieDetails} from "@/domains/movies/_schema/movie";
 
 /** Checks if a specific movie is in the current user's favourites list. */
 export async function getCheckIsFavouriteMovie(
-    movieID: ObjectId
+    movieID: ObjectIdString
 ): Promise<FetchRequestReturns<IsFavouriteMovieMetadata>> {
     const url = buildURL({
         baseURL: ManageUserFavouritesBaseURL,
@@ -39,7 +39,7 @@ export async function getUserFavourites(
 
 /** Toggles the favourite status of a movie for the current user. */
 export async function patchToggleUserFavouriteMovie(
-    movieID: ObjectId
+    movieID: ObjectIdString
 ): Promise<FetchRequestReturns<unknown>> {
     const url = buildURL({
         baseURL: ManageUserFavouritesBaseURL,

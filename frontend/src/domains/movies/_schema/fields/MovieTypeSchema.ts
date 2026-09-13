@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ZodEnumParamHandler} from "@/common/_feat";
+import {ZodEnumParamHandler} from "@noovies-tickets/common";
 
 /** Schema for validating supported movie image type enumeration values. */
 export const MovieImageTypeSchema = z.enum(["POSTER", "BANNER"], ZodEnumParamHandler({

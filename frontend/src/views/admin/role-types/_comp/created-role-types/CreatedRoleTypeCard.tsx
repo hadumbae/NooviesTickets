@@ -5,13 +5,13 @@
 import {ReactElement} from "react";
 import {RoleType} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {X} from "lucide-react";
 
 /** Props for the CreatedRoleTypeCard component. */
 type CardProps = {
     roleType: RoleType;
-    removeType: (_id: ObjectId) => void;
+    removeType: (_id: ObjectIdString) => void;
 };
 
 /**

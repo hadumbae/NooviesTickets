@@ -2,7 +2,7 @@
  * @fileoverview Type definitions for theatre and screen data aggregation services.
  */
 
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
+import type {SlugString} from "@noovies-tickets/common";
 import type {TheatreSchemaFields} from "@/domains/theatre/model/theatre/Theatre.types";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";

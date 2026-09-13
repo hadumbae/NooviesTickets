@@ -3,11 +3,11 @@
  */
 
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Configuration for fetching customer review moderation log view data. */
 export type GetFetchCustomerReviewLogsViewDataConfig = {
-    customerID: ObjectId;
-    reviewID: ObjectId;
+    customerID: ObjectIdString;
+    reviewID: ObjectIdString;
     pagination: PaginationValues;
 }

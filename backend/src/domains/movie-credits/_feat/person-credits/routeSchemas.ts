@@ -5,8 +5,7 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {NonNegativeNumberSchema} from "@noovies-tickets/common";
-import {preprocessToNumber} from "@noovies-tickets/common";
+import {NonNegativeNumberSchema, preprocessToNumber} from "@noovies-tickets/common";
 
 /**
  * Validation schema for the fetchPersonCreditStats route parameters.

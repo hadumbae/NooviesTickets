@@ -3,9 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas";
-import {NumberValueSchema, IANATimezoneSchema, preprocessOptionalField, preprocessToNumber} from "@noovies-tickets/common";
-import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
+import {IDStringSchema, NumberValueSchema, IANATimezoneSchema, preprocessOptionalField, preprocessToNumber, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {TheatreNameSchema} from "@/domains/theatres/_schema/fields/TheatreNameSchema.ts";
 import {CityStringSchema, PostalCodeSchema, StateStringSchema, StreetStringSchema} from "@/common/_models/location";
 

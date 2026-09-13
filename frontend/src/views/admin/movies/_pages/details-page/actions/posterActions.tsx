@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {MoviePosterImageSubmitForm} from "@/views/admin/movies/_feat/submit-movie-image/MoviePosterImageSubmitForm.tsx";
 import {MoviePosterImageDeleteDialog} from "@/views/admin/movies/_feat/delete-movie-image";
 import {MovieImageSubmitFormPanel} from "@/views/admin/movies/_feat/submit-movie-image/MovieImageSubmitFormPanel.tsx";
@@ -16,7 +16,7 @@ import {
 
 /** Props for the MovieDetailsPagePosterActions component. */
 type ActionProps = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     className?: string;
 };
 

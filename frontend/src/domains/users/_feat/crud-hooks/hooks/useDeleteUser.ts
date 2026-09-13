@@ -3,13 +3,13 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {destroy} from "@/domains/genres/_feat/crud";
 import {UserCRUDMutationKeys, UserCRUDQueryKeys} from "@/domains/users/_feat/crud-hooks/keys";
 
 /** Object containing the ID of the user to be deleted. */
 type DeleteByID = {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /** Hook that provides a mutation function to delete a user and invalidates the user list on success. */

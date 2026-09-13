@@ -4,10 +4,8 @@
  */
 
 import { z } from 'zod';
-import { NonEmptyStringSchema } from "@noovies-tickets/common";
+import {NonEmptyStringSchema, PositiveNumberSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import { BooleanValueSchema } from "@/shared/_schema/booleans/BooleanValueSchema";
-import { PositiveNumberSchema } from "@noovies-tickets/common";
-import { NonNegativeNumberSchema } from "@noovies-tickets/common";
 import { ObjectIdStringSchema } from "@/shared/schema/mongoose/ObjectIdStringSchema";
 import { SeatLayoutTypeSchema } from "@/domains/seat/_validation/SeatLayoutTypeSchema";
 import {SeatTypeSchema} from "@/domains/seat/_validation";

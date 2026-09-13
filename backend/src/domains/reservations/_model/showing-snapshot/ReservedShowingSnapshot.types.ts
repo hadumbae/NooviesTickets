@@ -3,7 +3,7 @@
  */
 
 import type {ReservationType} from "@/domains/reservations/_validation";
-import type {ISO6391LanguageCode} from "@/shared/schema/enums/ISO6391LanguageCodeSchema";
+import type {ISO6391LanguageCode} from "@noovies-tickets/common";
 import type {ReservedSeatSnapshotSchemaFields} from "@/domains/seatmap/_model/seat-map-snapshot/ReservedSeatSnapshot.types";
 import type {MovieSnapshotSchemaFields} from "@/domains/movies/_models/movie-snapshot/MovieSnapshot.types";
 import type {ScreenSnapshotSchemaFields} from "@/domains/screen/_models/screen-snapshot";

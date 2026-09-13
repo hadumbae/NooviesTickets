@@ -38,7 +38,7 @@ export function TheatreDetailsPage(): ReactElement {
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
 
     const query = useFetchTheatreDetailsViewData({
-        slug: routeParams?.slug!,
+        slug: routeParams?.slug ?? "",
         queries: {screenPage: page, screenPerPage: SCREENS_PER_PAGE, showingLimit: SHOWINGS_LIMIT},
         options: {enabled: !!routeParams?.slug},
     });

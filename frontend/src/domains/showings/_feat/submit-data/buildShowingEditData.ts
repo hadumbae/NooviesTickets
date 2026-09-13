@@ -22,9 +22,9 @@ export function buildShowingEditData(
     const {config, startTime, endTime, screen, theatre, movie, ...remShowing} = showing;
 
     const showingDateAndTime = getLocalShowingSchedule({
-        startTime: showing?.startTime,
-        endTime: showing?.endTime,
         localTimezone: remShowing.timezone,
+        startTime,
+        endTime,
     });
 
     const showingConfig: ShowingConfig = {

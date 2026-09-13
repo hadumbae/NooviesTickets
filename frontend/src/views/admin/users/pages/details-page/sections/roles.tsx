@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, useState} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {AdminActionButton, PageSectionHeader} from "@/views/common/_comp";
 import {UserRole, UserStatus} from "@/domains/users/_schema/fields";
 import {useInvalidateUserQueriesOnModeration} from "@/domains/users/_feat/user-moderation-actions";
@@ -17,7 +17,7 @@ import {
 
 /** Props for the UserDetailsPageRoleManagementSection component. */
 type SectionProps = {
-    userId: ObjectId;
+    userId: ObjectIdString;
     userRoles: UserRole[];
     userStatus: UserStatus;
 };

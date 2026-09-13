@@ -5,7 +5,7 @@
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {toast} from "react-toastify";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     handleSubmitResponseError
 } from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
@@ -16,7 +16,7 @@ import {GenreCRUDMutationKeys} from "@/domains/genres/_feat/crud-hooks/keys/Genr
 
 /** Parameters for identifying the genre to be deleted. */
 type DeleteByID = {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /**
@@ -28,7 +28,10 @@ export function useDeleteGenre(
     const queryClient = useQueryClient();
 
     const deleteGenre = async ({_id}: DeleteByID) => {
-        onSubmitConfig.submitMessage && toast.success(onSubmitConfig.submitMessage);
+        if (onSubmitConfig.submitMessage) {
+            toast.success(onSubmitConfig.submitMessage);
+        }
+
         onSubmitConfig.onSubmit?.({_id});
 
         await destroy({_id})

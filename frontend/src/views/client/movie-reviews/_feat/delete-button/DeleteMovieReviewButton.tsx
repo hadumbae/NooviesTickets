@@ -5,15 +5,15 @@
 import {ReactElement} from "react";
 import {Button, ButtonProps} from "@/views/common/_comp/ui";
 import {cn} from "@/common/_feat";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {Trash} from "lucide-react";
 import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
 import {useDeleteCurrentUserMovieReviewMutation} from "@/domains/movie-reviews";
 
 /** Props for the DeleteMovieReviewButton component. */
 type DeleteProps = Omit<ButtonProps, "onClick"> & {
-    reviewID: ObjectId;
-    movieID?: ObjectId;
+    reviewID: ObjectIdString;
+    movieID?: ObjectIdString;
 };
 
 /** Button that executes a mutation to delete the current user's movie review. */

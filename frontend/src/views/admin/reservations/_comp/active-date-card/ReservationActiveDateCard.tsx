@@ -7,7 +7,7 @@ import {DateTime} from "luxon";
 import {cn} from "@/common/_feat";
 import {LucideIcon} from "lucide-react";
 import {Card, CardContent} from "@/views/common/_comp/ui";
-import {ReservationStatus} from "@/domains/reservations/_schema/model/fields/ReservationStatusEnumSchema.ts";
+import {ReservationStatus} from "@noovies-tickets/common";
 
 /** Props for the ReservationActiveDateCard component. */
 type CardProps = {
@@ -20,12 +20,13 @@ type CardProps = {
 /**
  * Mapping of reservation statuses to specific Tailwind background color classes.
  */
-const COLOUR_CSS = {
+const COLOUR_CSS: Record<ReservationStatus, string> = {
     RESERVED: "bg-blue-400",
     PAID: "bg-green-400",
     EXPIRED: "bg-amber-400",
     CANCELLED: "bg-red-400",
     REFUNDED: "bg-cyan-400",
+    INVALID: "bg-gray-400",
 };
 
 /** A detailed status card showing an icon, a descriptive label, and a formatted timestamp. */

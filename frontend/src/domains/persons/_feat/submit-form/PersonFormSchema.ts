@@ -3,9 +3,7 @@
  */
 
 import {z} from "zod";
-import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
-import {NonFutureDateStringSchema, preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {IDStringSchema} from "@/common/_schemas";
+import {ISO3166Alpha2CountryCodeSchema, NonFutureDateStringSchema, preprocessEmptyToUndefined, IDStringSchema} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 import {PersonBiographySchema, PersonNameSchema} from "@/domains/persons/_schema/fields";
 

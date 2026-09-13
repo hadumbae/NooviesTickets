@@ -12,10 +12,10 @@ import {SeatMapStatusRadioGroup} from "@/views/admin/seatmaps/_feat/form-input";
 import {PageSectionHeader} from "@/views/common/_comp/page";
 import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
 import {cn} from "@/common/_feat";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 type ViewProps = FormFieldsetProps<SeatMapFormValues> & {
-    screen: ObjectId;
+    screen: ObjectIdString;
 }
 
 /** Renders seat selection and status fields for the seat map form. */

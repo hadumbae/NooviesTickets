@@ -2,7 +2,7 @@
  * @fileoverview React Hook for managing user status update mutations using React Query.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {useMutation, UseMutationResult} from "@tanstack/react-query";
 import {UpdateUserStatusFormData, UpdateUserStatusReturns} from "@/domains/users/_feat/manage-user-status/schema";
 import {patchUpdateUserStatus} from "@/domains/users/_feat/manage-user-status/repository";
@@ -10,7 +10,7 @@ import {ManageUserStatusMutationKeys} from "@/domains/users/_feat/manage-user-st
 
 /** Configuration options for the useUpdateUserStatus hook. */
 export type UseUpdateUserStatusConfig = {
-    userId: ObjectId;
+    userId: ObjectIdString;
 }
 
 /**

@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, useState} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {AdminActionButton, PageSectionHeader} from "@/views/common/_comp";
 import {GenericFormDialog} from "@/views/common/_feat";
 import {UpdateUserSuspensionFormView} from "@/views/admin/users/_feat";
@@ -14,7 +14,7 @@ import {UpdateUserSuspensionReturns,} from "@/domains/users/_feat/manage-user-su
 
 /** Props for the UserDetailsPageSuspensionSection component. */
 type SectionProps = {
-    userId: ObjectId;
+    userId: ObjectIdString;
     userStatus: UserStatus;
 };
 

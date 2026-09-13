@@ -4,12 +4,12 @@
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {destroy} from "@/domains/theatres/_feat/crud";
 import {TheatreCRUDMutationKeys, TheatreCRUDQueryKeys} from "@/domains/theatres/_feat/crud-hooks/keys";
 
 type DeleteIdentifier = {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /**

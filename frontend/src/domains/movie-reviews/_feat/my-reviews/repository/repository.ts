@@ -4,7 +4,7 @@
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {buildURL} from "@/common/_feat/fetch-api";
 import {ManageMyReviewsBaseURL} from "@/domains/movie-reviews/_feat/my-reviews/repository/baseURL.ts";
 import type {
@@ -54,7 +54,7 @@ export function patchUpdateMovieReviewForCurrentUser<TData = unknown>(
 
 /** Deletes a specific movie review owned by the authenticated user. */
 export function deleteRemoveMovieReviewForCurrentUser<TData = unknown>(
-    reviewID: ObjectId,
+    reviewID: ObjectIdString,
 ): Promise<FetchRequestReturns<TData>> {
     const url = buildURL({
         baseURL: ManageMyReviewsBaseURL,

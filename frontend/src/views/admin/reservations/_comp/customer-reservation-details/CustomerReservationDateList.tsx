@@ -20,6 +20,7 @@ const STATUS_VALUES: Record<ReservationStatus, number> = {
     "EXPIRED": 2,
     "CANCELLED": 3,
     "REFUNDED": 4,
+    "INVALID": 0,
 };
 
 /**

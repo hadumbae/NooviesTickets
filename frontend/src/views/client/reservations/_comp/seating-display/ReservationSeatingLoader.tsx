@@ -2,7 +2,7 @@
  * @fileoverview Loads seating data for a showing into a reservation-scoped seating view.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {SeatMapDetailsLoader} from "@/views/admin/seatmaps/_comp/loaders/SeatMapDetailsLoader.tsx";
 import {ReservationSeatingView} from "@/views/client/reservations/_comp/seating-display/ReservationSeatingView.tsx";
 import {ReactElement} from "react";
@@ -11,8 +11,8 @@ import {SeatMapDetails} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSch
 
 /** Props for the ReservationSeatingLoader component. */
 type LoaderProps = {
-    selectedSeating: ObjectId[];
-    showingID: ObjectId;
+    selectedSeating: ObjectIdString[];
+    showingID: ObjectIdString;
 };
 
 /**

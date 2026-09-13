@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {SlugStringSchema} from "@/common/_schemas";
+import {SlugStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating person information route parameters. */
 export const PersonInfoURLParamsSchema = z.object({

@@ -4,7 +4,7 @@
  */
 
 import {useMutation, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {deleteRemoveProfileImage} from "@/domains/persons/_feat/remove-profile-image/repository";
 import {
     PersonRemoveProfileImageMutationKeys
@@ -12,7 +12,7 @@ import {
 
 /** Parameters for the profile image removal mutation. */
 type DeleteValue = {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /**

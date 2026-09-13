@@ -2,7 +2,7 @@
  * @fileoverview Orchestrator component for the Set Review Rating administrative action.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {SetReviewRatingFormData} from "@/domains/movie-reviews/_feat/admin-actions/set-review-rating";
 import {ReactElement, useState} from "react";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
@@ -14,7 +14,7 @@ import {SetReviewRatingForm} from "@/views/admin/customers/_feat/set-rating/SetR
 
 /** Props for the SetReviewRatingAction component. */
 type ActionProps = {
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
     presetValues?: Partial<SetReviewRatingFormData>;
     submitConfig?: MutationResponseConfig<MovieReview, SetReviewRatingFormData> & MutationFormResetConfig;
 };

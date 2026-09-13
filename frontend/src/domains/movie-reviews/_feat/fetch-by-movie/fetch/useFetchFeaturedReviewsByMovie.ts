@@ -2,7 +2,7 @@
  * @fileoverview React Query hook for fetching featured movie reviews.
  */
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {getFetchFeaturedReviewsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/repository.ts";
@@ -17,7 +17,7 @@ import {buildQueryFn} from "@/common/_feat/validate-fetch-data/buildQueryFn.ts";
 
 /** Parameters for fetching featured movie reviews. */
 export type FetchParams = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     config?: Pick<RequestOptions, "limit">;
     options?: FetchQueryOptions<FeaturedReviewsByMovie>;
 };

@@ -11,7 +11,7 @@ import {
     getFetchCustomerReservationsViewData
 } from "@/domains/customers/_feat/manage-reservations/repository/repository.ts";
 import {CustomerReservationsViewQueryKeys} from "@/domains/customers/_feat/manage-reservations/fetch/queryKeys.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     CustomerReservationsViewData,
     CustomerReservationsViewDataSchema
@@ -19,7 +19,7 @@ import {
 
 /** Parameters for the useFetchCustomerReservationsViewData hook. */
 export type FetchParams = {
-    customerID: ObjectId;
+    customerID: ObjectIdString;
     pagination: PaginationValues;
     options?: FetchQueryOptions<CustomerReservationsViewData>;
 };

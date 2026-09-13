@@ -12,16 +12,16 @@ import {setRedirectPath} from "@/common/_feat/navigation";
 /** Hook that monitors for HttpResponseErrors and redirects to login on 401 status. */
 export function useHttpResponseErrorHandler(error: unknown) {
     const navigate = useLoggedNavigate();
-
     const {pathname, search, hash} = useLocation();
-    const targetURL = new URL(`${pathname}${search}${hash}`);
-
-    if (!(error instanceof HttpResponseError)) return;
 
     useEffect(() => {
+        if (!(error instanceof HttpResponseError)) return;
+
         const {status} = error;
 
         if (status === 401) {
+            const targetURL = new URL(`${pathname}${search}${hash}`);
+
             toast.error("Unauthorized!");
             setRedirectPath(targetURL);
 
@@ -31,5 +31,5 @@ export function useHttpResponseErrorHandler(error: unknown) {
                 component: useHttpResponseErrorHandler.name,
             });
         }
-    }, [error, targetURL]);
+    }, [error, pathname, search, hash, navigate]);
 }

@@ -1,4 +1,4 @@
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {FetchRequestReturns} from "@/common/_types";
 import {buildURL, handleFetchOperation} from "@/common/_feat";
 import {MovieReviewAdminActionsBaseURL} from "@/domains/movie-reviews/_feat/admin-actions/baseURL.ts";
@@ -10,7 +10,7 @@ import {
  * Configuration for the API request to update a reviewer's display name.
  */
 export type PatchResetReviewDisplayNameConfig = {
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
     data: ResetReviewDisplayNameFormData;
 };
 

@@ -4,7 +4,7 @@
  */
 
 import {RefinementCtx} from "zod";
-import {ReservationStatus} from "@/domains/reservations/_schema/model/fields/ReservationStatusEnumSchema.ts";
+import {ReservationStatus} from "@noovies-tickets/common";
 import {ReservationBase} from "@/domains/reservations/_schema/model/reservations/ReservationBaseSchema.ts";
 import {PopulatedReservationBase} from "@/domains/reservations/_schema/model/populated-reservations/PopulatedReservationBaseSchema.ts";
 import {AdminReservationBase} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationBaseSchema.ts";

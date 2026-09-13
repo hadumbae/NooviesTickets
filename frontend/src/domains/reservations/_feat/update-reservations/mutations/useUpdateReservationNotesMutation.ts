@@ -3,7 +3,7 @@
  *
  */
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {validateData} from "@/common/_feat/validate-data/validateData.ts";
 
 import {AdminReservation, AdminReservationSchema} from "@/domains/reservations/_schema";
@@ -15,7 +15,7 @@ import {CustomerReservationViewQueryKeys} from "@/domains/customers/_feat/manage
 
 /** Props for the useUpdateReservationNotesMutation hook. */
 export type UseUpdateReservationNotesMutationParams = {
-    reservationID: ObjectId;
+    reservationID: ObjectIdString;
 }
 
 /** Provides a mutation for updating reservation notes with integrated validation and error handling. */

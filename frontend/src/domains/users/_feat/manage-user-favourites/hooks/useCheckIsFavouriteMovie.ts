@@ -2,7 +2,7 @@
  * @fileoverview React Query hook to check if a movie is in the user's favourites.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import { FetchQueryOptions } from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
@@ -14,7 +14,7 @@ import {ManageUserFavouritesQueryKeys} from "@/domains/users/_feat/manage-user-f
 
 /** Parameters for the useCheckIsFavouriteMovie hook. */
 type FetchParams = {
-    _id: ObjectId;
+    _id: ObjectIdString;
     options?: FetchQueryOptions<unknown>;
 };
 

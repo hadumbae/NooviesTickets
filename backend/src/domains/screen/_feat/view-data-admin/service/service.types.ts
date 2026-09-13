@@ -3,7 +3,7 @@
  * Represents the aggregated state required to render a screen's layout and its parent context.
  */
 
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
+import type {SlugString} from "@noovies-tickets/common";
 import type {TheatreWithVirtuals} from "@/domains/theatre/model/theatre";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import type {SeatSchemaFields} from "@/domains/seat/_models";

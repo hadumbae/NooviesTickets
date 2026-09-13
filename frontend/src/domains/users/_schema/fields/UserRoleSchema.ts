@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ZodEnumParamHandler} from "@/common/_feat";
+import {ZodEnumParamHandler} from "@noovies-tickets/common";
 import {UserRoleConstant} from "@/domains/users/_const/UserRoleConstant.ts";
 
 /** Zod schema for validating user roles against predefined constants. */

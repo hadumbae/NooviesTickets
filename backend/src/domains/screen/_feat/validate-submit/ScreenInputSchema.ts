@@ -6,8 +6,7 @@
 
 import {z} from "zod";
 import {TheatreAsyncIDString} from "@/shared/schema/helpers/ZodIDHelpers";
-import {PositiveNumberSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {PositiveNumberSchema, NonEmptyStringSchema} from "@noovies-tickets/common";
 import {ScreenTypeSchema} from "@/domains/screen/_validation";
 
 /**

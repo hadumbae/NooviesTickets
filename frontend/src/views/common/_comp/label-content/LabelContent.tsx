@@ -4,7 +4,7 @@
 
 import {ReactElement, ReactNode} from 'react';
 import {cn} from "@/common/_feat";
-import {OrientationValues} from "@/common/_schemas";
+import {OrientationValues} from "@noovies-tickets/common";
 
 type ContentClassNames = {
     label?: string;

@@ -5,9 +5,7 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
-import {ObjectId} from "@/common/_schemas";
-import {DateOnlyString} from "@noovies-tickets/common";
+import {SlugString, ObjectIdString, DateOnlyString} from "@noovies-tickets/common";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
@@ -17,7 +15,7 @@ import {fetchScreensWithShowings} from "@/domains/theatre-screens/_feat/client-v
 import {TheatreScreenClientViewQueryKeys} from "@/domains/theatre-screens/_feat/client-view-data/fetch/queryKeys.ts";
 
 type FetchParams = {
-    theatreID: ObjectId | SlugString;
+    theatreID: ObjectIdString | SlugString;
     dateString: DateOnlyString;
     options?: FetchQueryOptions<TheatreScreenSchedule[]>;
 };

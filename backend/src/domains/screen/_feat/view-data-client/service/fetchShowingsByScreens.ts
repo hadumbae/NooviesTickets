@@ -9,7 +9,7 @@ import {type PipelineStage, Types} from "mongoose";
 import {ShowingPopulationPipelines} from "@/domains/showing/_feat/query-population/ShowingPopulationPipelines";
 import {ShowingSeatMapVirtualPipelines} from "@/domains/showing/_feat/query-population/ShowingSeatMapVirtualPipelines";
 import {Screen} from "@/domains/screen/_models/screen/Screen.model";
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
+import type {SlugString} from "@noovies-tickets/common";
 
 /** Parameters for fetching showings grouped by screens. */
 export type ShowingsByScreensParams = {

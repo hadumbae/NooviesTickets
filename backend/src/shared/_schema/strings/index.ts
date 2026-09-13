@@ -1,2 +1,2 @@
-export * from "@/shared/_schema/strings/ModerationLogMessageSchema";
+export * from "@noovies-tickets/common";
 

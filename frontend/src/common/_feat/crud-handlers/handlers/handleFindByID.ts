@@ -7,14 +7,14 @@
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {buildURL} from "@/common/_feat/fetch-api";
 
 /**
  * Parameters for fetching a specific document by its unique identifier.
  */
 export type FindDocumentByIDConfig = {
-    _id: ObjectId;
+    _id: ObjectIdString;
     config?: Omit<RequestOptions, "limit">;
 };
 

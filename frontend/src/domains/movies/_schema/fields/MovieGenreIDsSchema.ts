@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas";
+import {IDStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for an array of genre ID strings. */
 export const MovieGenreIDsSchema = z.array(IDStringSchema, {message: "Must be an array of genre IDs."});

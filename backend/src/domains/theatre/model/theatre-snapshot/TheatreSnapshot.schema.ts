@@ -6,7 +6,7 @@ import { Schema } from "mongoose";
 import type { TheatreSnapshotSchemaFields } from "./TheatreSnapshot.types.js";
 import {
     ISO3166Alpha2CodeConstant
-} from "@/shared/constants/country/ISO3166Alpha2CodeConstant.js";
+} from "@noovies-tickets/common";
 import { IANAZone } from "luxon";
 
 /**

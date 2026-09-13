@@ -7,7 +7,7 @@ import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.t
 import {buildString} from "@/common/_feat/formatters/buildString.ts";
 import {buildShowingDateString} from "@/domains/showings/_feat/formatters/buildShowingDateString.ts";
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {PopulatedReservation} from "@/domains/reservations/_schema/model/populated-reservations/PopulatedReservationSchema.ts";
 
 /**
@@ -15,9 +15,9 @@ import {PopulatedReservation} from "@/domains/reservations/_schema/model/populat
  */
 type FormattedReturns = PopulatedReservation & {
     _ids: {
-        showingID: ObjectId;
-        theatreID: ObjectId;
-        movieID: ObjectId;
+        showingID: ObjectIdString;
+        theatreID: ObjectIdString;
+        movieID: ObjectIdString;
     },
     formatted: {
         movieTitle: string;

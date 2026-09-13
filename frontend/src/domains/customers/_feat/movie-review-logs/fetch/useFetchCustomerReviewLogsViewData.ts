@@ -2,7 +2,7 @@
  * @fileoverview Hook for fetching and validating movie review moderation logs.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {useQuery, UseQueryResult} from "@tanstack/react-query"
 import HttpResponseError from "@/common/_err/HttpResponseError.ts"
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data"
@@ -18,8 +18,8 @@ import {
 
 /** Configuration for the customer review logs fetch hook. */
 type FetchConfig = {
-    customerID: ObjectId;
-    reviewID: ObjectId;
+    customerID: ObjectIdString;
+    reviewID: ObjectIdString;
     pagination: PaginationValues
     options?: FetchQueryOptions<CustomerReviewLogsViewData>
 }

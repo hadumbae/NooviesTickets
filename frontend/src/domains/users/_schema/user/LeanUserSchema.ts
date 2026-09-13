@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas/strings/id-strings/IDStringSchema";
+import {IDStringSchema} from "@noovies-tickets/common";
 import {UserPersonalNameSchema, UserStatusSchema, UserUniqueCodeSchema} from "@/domains/users/_schema/fields";
 
 /** Zod schema for identifying a user with minimal metadata. */

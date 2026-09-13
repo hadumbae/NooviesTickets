@@ -4,7 +4,7 @@
 
 import type {QueryConfig} from "@/shared/_types/query-config/QueryConfig";
 import {type Model, Types} from "mongoose";
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema.js";
+import type {SlugString} from "@noovies-tickets/common";
 import type {ModelObject} from "@/shared/_types/model/ModelObject";
 
 /** Parameters for fetching a required document by either its ObjectId or unique slug. */

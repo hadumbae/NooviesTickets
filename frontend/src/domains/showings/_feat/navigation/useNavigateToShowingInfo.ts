@@ -7,7 +7,7 @@ import {
     useLoggedNavigate
 } from "@/common/_feat/navigation/useLoggedNavigate.ts";
 import {NavigateOptions} from "react-router-dom";
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
+import {SlugString} from "@noovies-tickets/common";
 
 /** Configuration for the showing navigation action. */
 type NavConfig = LoggingMessageParams & {

@@ -1,7 +1,7 @@
 /** @fileoverview Confirmation dialog for deleting movie credits with integrated mutation logic. */
 
 import {ReactElement, ReactNode} from 'react';
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     EntityDeleteWarningDialog
 } from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
@@ -16,7 +16,7 @@ import {useMovieCreditDeleteMutation} from "@/domains/movie-credits";
 /** Props for the MovieCreditDeleteWarningDialog component. */
 type WarningDialogProps = MutationResponseConfig & UIOpenStateProps & {
     children?: ReactNode;
-    _id: ObjectId;
+    _id: ObjectIdString;
     displayText?: string;
     displayDescription?: string;
 }

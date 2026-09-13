@@ -8,7 +8,7 @@ import {Card, CardContent} from "@/views/common/_comp/ui";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {FavouriteMovieHeartButton} from "@/views/client/movies/_comp";
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     IsFavouriteMovieMetadata,
     useCheckIsFavouriteMovie,
@@ -18,7 +18,7 @@ import {cn} from "@/common/_feat";
 
 /** Props for the MovieOverviewFavouriteToggle component. */
 type SelectorProps = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
 }
 
 /** Displays a card allowing the user to view and toggle the favorite status of a specific movie. */
@@ -42,7 +42,6 @@ export function MovieOverviewFavouriteToggle(
                                 className={isFavourite ? "border-pink-500" : ""}
                                 isFavourite={isFavourite}
                                 isPending={isPending}
-                                movieID={movieID}
                                 disabled={isPending}
                                 onClick={() => mutateAsync(movieID)}
                             />

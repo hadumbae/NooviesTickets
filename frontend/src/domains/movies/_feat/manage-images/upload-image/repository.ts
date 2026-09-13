@@ -2,7 +2,7 @@
  * @fileoverview API functions for uploading and updating movie poster and banner images.
  */
 
-import {ObjectId} from "@/common/_schemas/strings/id-strings/IDStringSchema";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns";
 import {buildURL} from "@/common/_feat/fetch-api/buildURL";
 import {ManageMovieImagesBaseURL} from "@/domains/movies/_feat/manage-images/baseURL";
@@ -11,7 +11,7 @@ import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 
 /** Parameters required to upload a movie poster or banner image. */
 export type UploadMovieImageRouteConfig = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     data: FormData;
 }
 

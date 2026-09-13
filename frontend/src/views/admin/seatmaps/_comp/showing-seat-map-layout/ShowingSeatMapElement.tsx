@@ -19,6 +19,16 @@ type ShowingSeatMapElementProps = {
 export function ShowingSeatMapElement({element}: ShowingSeatMapElementProps): ReactElement {
     const {setSeatMap, setIsPanelOpen} = useRequiredContext({context: SeatMapDetailsPanelSetterContext});
 
+    const onClick = useCallback(
+        () => {
+            if (!element || typeof element === "number") return;
+
+            setSeatMap(element);
+            setIsPanelOpen(true);
+        },
+        [element, setSeatMap, setIsPanelOpen],
+    );
+
     if (!element) {
         return (
             <SeatLayoutNonSeatElement>
@@ -37,14 +47,6 @@ export function ShowingSeatMapElement({element}: ShowingSeatMapElementProps): Re
 
     const {seat: {layoutType}} = element;
     const Icon = SeatLayoutIconConstant[layoutType];
-
-    const onClick = useCallback(
-        () => {
-            setSeatMap(element);
-            setIsPanelOpen(true);
-        },
-        [element, setSeatMap, setIsPanelOpen],
-    );
 
     return (
         <Button variant="link" className="p-1 hover:border hover:shadow" onClick={onClick}>

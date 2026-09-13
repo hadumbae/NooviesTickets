@@ -10,11 +10,11 @@ import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
 import {IsRecommendedCheck} from "@/views/client/movie-reviews/_comp/badges/IsRecommendedCheck.tsx";
 import {ReactElement} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Props for the CustomerMovieReviewSummaryCard component. */
 type CardProps = {
-    customerID: ObjectId;
+    customerID: ObjectIdString;
     review: CustomerMovieReviewSummary;
 };
 

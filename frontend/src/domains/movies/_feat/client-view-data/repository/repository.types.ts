@@ -2,8 +2,7 @@
  * @fileoverview Type definitions for the movie client view data repository.
  */
 
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
-import {ISO3166Alpha2CountryCode} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
+import {SlugString, ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 
 /** Configuration for fetching movie overview information. */

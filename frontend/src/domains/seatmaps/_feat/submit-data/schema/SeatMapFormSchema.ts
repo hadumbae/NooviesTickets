@@ -4,8 +4,7 @@
 
 import {z} from "zod";
 import {AnyValues} from "@/common/_types";
-import {IDStringSchema} from "@/common/_schemas";
-import {preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
+import {IDStringSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
 import {SeatMapStatusSchema} from "@/domains/seatmaps/_schema/fields";
 
 /**

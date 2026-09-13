@@ -5,7 +5,7 @@
 import {Schema} from "mongoose";
 import {ReservedShowingSnapshotSchema} from "@/domains/reservations/_model/showing-snapshot";
 import type {ReservationSchemaFields} from "./Reservation.types.js";
-import {ISO4217CurrencyCodesConstant} from "@/shared/constants/currency/ISO4217CurrencyCodesConstant.js";
+import {ISO4217CurrencyCodesConstant} from "@noovies-tickets/common";
 import {SlugSchemaTypeOptions} from "@/shared/model/SlugSchemaTypeOptions.js";
 import {IsDeletedSchemaTypeOptions} from "@/shared/model/IsDeletedSchemaTypeOptions";
 import {DeletedAtSchemaTypeOptions} from "@/shared/model/DeletedAtSchemaTypeOptions";

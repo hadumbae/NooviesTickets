@@ -3,7 +3,7 @@
  */
 
 import {MutationKey, useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {Movie, MovieSchema} from "@/domains/movies/_schema/movie";
 import {validateData} from "@/common/_feat/validate-data/validateData";
 import {MovieCRUDQueryKeys} from "@/domains/movies/_feat/crud-hooks";
@@ -20,7 +20,7 @@ export type RemoveMovieImageMutation = () => UseMutationResult<Movie, unknown, D
 
 /** Parameters required to delete a movie image asset. */
 export type DeleteMovieImageConfig = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
 };
 
 /**

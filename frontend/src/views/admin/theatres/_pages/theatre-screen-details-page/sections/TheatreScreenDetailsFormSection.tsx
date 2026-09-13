@@ -8,13 +8,13 @@ import {Card, CardContent, Collapsible, CollapsibleContent, CollapsibleTrigger} 
 import {SeatFormSubmitList, SeatSubmitForm, SeatSubmitFormActions, SeatSubmitFormView} from "@/views/admin/seats";
 import {SeatDetails, SeatFormData, SeatFormValues} from "@/domains/seats";
 import {HideFields} from "@/common/_types";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {ChevronDown, ChevronUp} from "lucide-react";
 
 /** Props for the TheatreScreenDetailsFormSection component. */
 type SectionProps = {
-    screenID: ObjectId;
-    theatreID: ObjectId;
+    screenID: ObjectIdString;
+    theatreID: ObjectIdString;
 };
 
 /**

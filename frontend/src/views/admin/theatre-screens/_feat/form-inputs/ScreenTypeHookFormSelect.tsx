@@ -22,7 +22,7 @@ type Props<TSubmit extends FieldValues> = {
 
 /** Form select component that populates options from the ScreenTypeConstant. */
 export function ScreenTypeHookFormSelect<TSubmit extends FieldValues>(
-    {disabled, isMulti, ...rest}: Props<TSubmit>
+    {isMulti, ...rest}: Props<TSubmit>
 ): ReactElement {
     const options: ReactSelectOption[] = ScreenTypeConstant.map(
         (screenType): ReactSelectOption => ({

@@ -2,7 +2,7 @@
  * @fileoverview React Query mutation hook for executing user suspension updates.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {useMutation, UseMutationResult} from "@tanstack/react-query";
 import {ManageUserSuspensionMutationKeys} from "@/domains/users/_feat/manage-user-suspension/keys";
 import {patchUpdateUserSuspension} from "@/domains/users/_feat/manage-user-suspension/repository";
@@ -13,7 +13,7 @@ import {
 
 /** Configuration options for the useUpdateUserSuspension mutation hook. */
 export type UseUpdateUserSuspensionConfig = {
-    userId: ObjectId;
+    userId: ObjectIdString;
 };
 
 /**

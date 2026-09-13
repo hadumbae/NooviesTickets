@@ -7,13 +7,13 @@ import {PageSectionHeader} from "@/views/common/_comp/page";
 import {TextCollapsible} from "@/views/common/_comp/text-display/text-blocks/TextCollapsible.tsx";
 import {Card, CardContent} from "@/views/common/_comp/ui";
 import {useIsMobile} from "@/common/_feat/handle-ui/useIsMobile.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {RoleTypeDepartment} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
 import {MovieCreditForm, MovieCreditFormActions, MovieCreditFormView} from "@/views/admin/movie-credits";
 
 /** Props for the MoviePeoplePageFormSection component. */
 type SectionProps = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     department: RoleTypeDepartment;
 };
 

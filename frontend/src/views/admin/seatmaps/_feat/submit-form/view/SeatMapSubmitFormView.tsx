@@ -8,7 +8,7 @@ import {DisableFields} from "@/common/_types";
 import {cn} from "@/common/_feat";
 import {Button} from "@/views/common/_comp/ui";
 import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 import {SeatMapFormValues} from "@/domains/seatmaps";
 import {
@@ -19,7 +19,7 @@ import {
 /** Props for the SeatMapFormView component. */
 type ViewProps = {
     className?: string;
-    screenForSeats: ObjectId;
+    screenForSeats: ObjectIdString;
     disableFields?: DisableFields<SeatMapFormValues>;
     isNestedView?: boolean;
 };

@@ -5,8 +5,7 @@
 
 import {z} from "zod"
 import {MovieReviewModerationActionSchema} from "@/domains/movie-reviews/_feat/moderation/schema/actions"
-import {IDStringSchema} from "@/common/_schemas";
-import {NonEmptyStringSchema, ISO8601DateTimeSchema} from "@noovies-tickets/common";
+import {IDStringSchema, NonEmptyStringSchema, ISO8601DateTimeSchema} from "@noovies-tickets/common";
 
 /**
  * Zod validation schema for an individual moderation audit entry.

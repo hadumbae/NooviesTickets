@@ -5,7 +5,7 @@
 
 import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {BaseCRUDParams} from "@/shared/_feat/generic-crud/types";
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
+import type {SlugString} from "@noovies-tickets/common";
 
 /**
  * Specific configuration for the "Find By Slug" database operation.

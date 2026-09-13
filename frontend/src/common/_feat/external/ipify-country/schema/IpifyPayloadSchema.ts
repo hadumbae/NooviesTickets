@@ -3,7 +3,8 @@
  */
 
 import {z} from "zod";
-import {IpSchema, NonEmptyStringSchema} from "@/common/_schemas/strings";
+import {NonEmptyStringSchema} from "@/common/_schemas/strings";
+import {IpSchema} from "@noovies-tickets/common";
 import {IpifyLocationSchema} from "@/common/_feat/external/ipify-country/schema/IpifyLocationSchema.ts";
 
 /** Zod schema for validating the root Ipify API response object. */

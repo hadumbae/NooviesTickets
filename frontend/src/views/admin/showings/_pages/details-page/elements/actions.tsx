@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {ShowingDeleteWarningDialog} from "@/views/admin/showings/_feat/showing-delete-warning";
 import {useNavigateToShowingIndex} from "@/domains/showings/_feat/navigation";
 import {useIsDeletingUIContext, useIsDeletingUIContextActions} from "@/common/_ctx/ui";
@@ -11,7 +11,7 @@ import {useIsDeletingUIContext, useIsDeletingUIContextActions} from "@/common/_c
 /** Props for the ShowingDetailsPageActions component. */
 type ActionProps = {
     className?: string
-    showingID: ObjectId;
+    showingID: ObjectIdString;
 };
 
 /**

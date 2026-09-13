@@ -1,4 +1,4 @@
-import {ObjectId} from "@/common/_schemas/strings/id-strings/IDStringSchema";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {ModerationMessageFormData} from "@/common/_feat/moderation/forms/ModerationMessageFormSchema";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns";
 import {buildURL} from "@/common/_feat/fetch-api/buildURL";
@@ -9,7 +9,7 @@ import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOper
  * Configuration for the API request to toggle a review's visibility.
  */
 export type PatchToggleReviewPublicityConfig = {
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
     data: ModerationMessageFormData;
 };
 

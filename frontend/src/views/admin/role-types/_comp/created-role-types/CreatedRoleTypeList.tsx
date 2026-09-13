@@ -3,7 +3,7 @@
  */
 
 import {Dispatch, ReactElement, SetStateAction} from 'react';
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {RoleType} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
 import {X} from "lucide-react";
@@ -26,7 +26,7 @@ type CreatedListProps = {
 export function CreatedRoleTypeList(
     {roleTypes, setRoleTypes, classNames}: CreatedListProps
 ): ReactElement {
-    const removeRoleType = (_id: ObjectId) => setRoleTypes((prev) => prev.filter(rt => rt._id !== _id));
+    const removeRoleType = (_id: ObjectIdString) => setRoleTypes((prev) => prev.filter(rt => rt._id !== _id));
 
     return (
         <div className={cn("space-y-2", classNames?.container)}>

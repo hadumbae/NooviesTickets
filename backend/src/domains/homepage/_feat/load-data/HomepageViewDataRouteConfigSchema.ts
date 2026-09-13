@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessOptionalField, PositiveIntegerSchema} from "@noovies-tickets/common";
-import {ISO3166Alpha2CountryCodeSchema} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
+import {preprocessOptionalField, PositiveIntegerSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 
 /** Schema for validating and preprocessing input parameters for fetching homepage view data. */
 export const HomepageViewDataRouteConfigSchema = z.object({

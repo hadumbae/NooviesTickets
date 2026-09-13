@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 import {LoggedLink} from "@/views/common/_feat";
 import {cn} from "@/common/_feat";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {UserUniqueCode} from "@/domains/users/_schema/fields/UserUniqueCodeSchema.ts";
 
 /** Style overrides for the CustomerUniqueCodeDisplay component. */
@@ -17,7 +17,7 @@ export type DisplayClassNames = {
 
 /** Props for the CustomerUniqueCodeDisplay component. */
 type DisplayProps = {
-    customerID: ObjectId;
+    customerID: ObjectIdString;
     uniqueCode: UserUniqueCode;
     classNames?: DisplayClassNames;
 };

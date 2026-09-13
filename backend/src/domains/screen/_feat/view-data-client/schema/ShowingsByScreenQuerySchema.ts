@@ -4,8 +4,7 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {NonNegativeNumberSchema, DateOnlyStringSchema} from "@noovies-tickets/common";
-import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
+import {NonNegativeNumberSchema, DateOnlyStringSchema, SlugStringSchema} from "@noovies-tickets/common";
 
 /** Schema for the showings by screen query parameters. */
 export const ShowingsByScreenQuerySchema = z.object({

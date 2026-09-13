@@ -4,16 +4,16 @@
 
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params/schemas/PaginationValuesSchema.ts";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Parameters for retrieving reviews for a movie. */
 export type FetchReviewsByMovieConfig = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     config?: RequestOptions;
 };
 
 /** Parameters for paginated movie review retrieval. */
 export type FetchPaginatedReviewsByMovieConfig = PaginationValues & {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     config?: Omit<RequestOptions, "limit">;
 };

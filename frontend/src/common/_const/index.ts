@@ -1,5 +1,5 @@
 import {ScreenBreakpointConstant} from "@/common/_const/ScreenBreakpointConstant.ts";
-import {OrientationConstant} from "@/common/_const/OrientationConstant.ts";
+import {OrientationConstant} from "@noovies-tickets/common";
 
 export * from "./http";
 export * from "./country";

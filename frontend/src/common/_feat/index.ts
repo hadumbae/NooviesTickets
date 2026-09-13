@@ -35,5 +35,4 @@ export * from "./use-fetch-api";
 export * from "./validate-data";
 export * from "./validate-fetch-data";
 export * from "./validation-builders";
-export * from "./validation-handlers";
 export * from "./zod-utils";

@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {InvalidContextErrorCodeConstant} from "@/common/_err/invalid-context/InvalidContextErrorCodeConstant.ts";
-import {ZodEnumParamHandler} from "@/common/_feat/validation-handlers/ZodEnumParamHandler.ts";
+import {ZodEnumParamHandler} from "@noovies-tickets/common";
 
 /** Zod schema for validating invalid context error code strings. */
 export const InvalidContextErrorCodeSchema = z.enum(InvalidContextErrorCodeConstant, ZodEnumParamHandler({

@@ -4,7 +4,7 @@ import {CoordinateSchema} from "@/shared/model/coordinate/Coordinate.schema";
 import {IANAZone} from "luxon";
 import {
     ISO3166Alpha2CodeConstant
-} from "../../constants/country/ISO3166Alpha2CodeConstant.js";
+} from "@noovies-tickets/common";
 
 /**
  * Mongoose schema for embedding a physical location into documents.

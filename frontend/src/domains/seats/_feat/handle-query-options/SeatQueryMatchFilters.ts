@@ -3,8 +3,7 @@
  */
 
 import { z } from "zod";
-import {IDStringSchema} from "@/common/_schemas";
-import {NonEmptyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
+import {IDStringSchema, NonEmptyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import { SeatTypeSchema } from "@/domains/seats/_schema/fields";
 import { SeatLayoutTypeSchema } from "@/domains/seats/_schema/fields";
 import { CoercedBooleanValueSchema } from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";

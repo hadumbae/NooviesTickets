@@ -5,12 +5,10 @@
 
 import {z} from "zod";
 import {ModelTimestampsSchema} from "@/common/_schemas/models/time-stamps/ModelTimestampsSchema.ts";
-import {IDStringSchema} from "@/common/_schemas";
+import {IDStringSchema, SlugStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {BooleanValueSchema} from "@/common/_schemas/boolean/BooleanValueSchema.ts";
-import {SlugStringSchema} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
 import {MovieReviewUniqueCodeSchema} from "@/domains/movie-reviews/_schema/fields";
-import {PositiveNumberSchema} from "@noovies-tickets/common";
 
 /** Zod validation schema for a movie review document. */
 export const MovieReviewSchema = ModelTimestampsSchema.extend({

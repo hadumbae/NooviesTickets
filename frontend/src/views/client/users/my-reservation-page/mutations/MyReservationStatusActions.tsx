@@ -3,18 +3,17 @@
  */
 
 import {ReactElement} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString, ReservationStatus} from "@noovies-tickets/common";
 import {Button} from "@/views/common/_comp/ui";
 import {Loader} from "lucide-react";
 import {handleMutateAsync, MutationResponseConfig} from "@/common/_feat";
-import {ReservationStatus} from "@/domains/reservations/_schema/model/fields/ReservationStatusEnumSchema.ts";
 import {
     useReservationStateMutations
 } from "@/domains/reservations/_feat/update-client-reservations/mutations/useReservationStateMutations.ts";
 
 /** Props for the MyReservationStatusActions component. */
-type ActionProps = MutationResponseConfig<void, ObjectId> & {
-    reservationID: ObjectId;
+type ActionProps = MutationResponseConfig<void, ObjectIdString> & {
+    reservationID: ObjectIdString;
     status: ReservationStatus;
 };
 

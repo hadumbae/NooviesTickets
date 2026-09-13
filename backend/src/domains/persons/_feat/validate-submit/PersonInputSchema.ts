@@ -4,9 +4,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {ISO3166Alpha2CountryCodeSchema} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
-import {UTCDateOnlySchema} from "@noovies-tickets/common";
+import {NonEmptyStringSchema, UTCDateOnlySchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 
 /**
  * Validates Person data for creation or updates.

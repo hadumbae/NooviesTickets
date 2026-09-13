@@ -7,11 +7,11 @@ import {UserUniqueCode} from "@/domains/users/_schema/fields/UserUniqueCodeSchem
 import {MovieReviewUniqueCode} from "@/domains/movie-reviews";
 import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
 import {Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator} from "@/views/common/_comp/ui";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Props for the CustomerReviewPageBreadcrumbs component. */
 type BreadcrumbProps = {
-    customerID: ObjectId;
+    customerID: ObjectIdString;
     customerName: string;
     customerCode: UserUniqueCode;
     reviewCode: MovieReviewUniqueCode;

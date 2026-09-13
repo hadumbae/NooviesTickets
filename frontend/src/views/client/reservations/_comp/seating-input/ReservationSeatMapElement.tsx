@@ -6,7 +6,7 @@ import {Check, Plus} from "lucide-react";
 import {cn} from "@/common/_feat";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/views/common/_comp/ui/tooltip.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {ReactElement} from "react";
 
 import {SeatMapDetails} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSchema";
@@ -15,7 +15,7 @@ import {SeatMapDetails} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSch
 type ElementProps = {
     isSelected: boolean;
     element: SeatMapDetails | null;
-    toggleSeat: (_id: ObjectId) => void;
+    toggleSeat: (_id: ObjectIdString) => void;
 };
 
 const SIZE_CSS = "h-8 w-8";

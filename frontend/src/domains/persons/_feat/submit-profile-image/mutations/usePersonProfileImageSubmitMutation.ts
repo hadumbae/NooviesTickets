@@ -2,7 +2,7 @@
  * @fileoverview Mutation hook for uploading a person's profile image.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {PersonProfileImageMutationKeys} from "@/domains/persons/_feat/submit-profile-image/mutations/mutationKeys.ts";
 import {patchUploadProfileImage} from "@/domains/persons/_feat/submit-profile-image/repositories/repository.ts";
@@ -11,7 +11,7 @@ import {PersonCRUDQueryKeys} from "@/domains/persons/_feat/crud-hooks/keys/Perso
 
 /** Parameters for the profile image submission mutation. */
 export type ProfileImageSubmitConfig = {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /** Hook to manage the lifecycle of a profile image upload. */

@@ -3,7 +3,7 @@
  */
 
 import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Configuration for the hook initialization. */
 type HookConfig = {
@@ -12,7 +12,7 @@ type HookConfig = {
 
 /** Configuration for the navigation execution. */
 type NavConfig = {
-    slug: ObjectId;
+    slug: ObjectIdString;
     message?: string;
 };
 

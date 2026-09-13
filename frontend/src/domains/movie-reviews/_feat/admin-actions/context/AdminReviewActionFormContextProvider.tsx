@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, ReactNode, useMemo} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     AdminReviewActionFormContext,
     AdminReviewActionFormContextValues
@@ -13,7 +13,7 @@ import {
 type ProviderProps = {
     children: ReactNode;
     formID: string;
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
 };
 
 /**

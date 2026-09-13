@@ -5,7 +5,7 @@
 import {ReactElement} from 'react';
 import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
 import {Loader} from "lucide-react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {cn} from "@/common/_feat";
 import {TheatreDetails, TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
 import {useFetchTheatre} from "@/domains/theatres/_feat/crud-hooks";
@@ -14,7 +14,7 @@ import {formatTheatreDetails} from "@/domains/theatres/_feat/formatters";
 
 /** Props for the TheatreQuickOverviewFetchCard component. */
 export type FetchCardProps = {
-    theatreID: ObjectId;
+    theatreID: ObjectIdString;
     className?: string;
 };
 

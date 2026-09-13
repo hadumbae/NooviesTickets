@@ -3,7 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
+import type {SlugString} from "@noovies-tickets/common";
 import type {QueryConfig} from "@/shared/_types";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import {Person, type PersonSchemaFields} from "@/domains/persons";

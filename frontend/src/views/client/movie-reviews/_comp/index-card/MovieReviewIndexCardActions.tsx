@@ -2,7 +2,7 @@
  * @fileoverview Inline action menu for managing individual movie reviews.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {Ellipsis} from "lucide-react";
 import {IconButton} from "@/views/common/_comp";
 import {ReactElement, useState} from "react";
@@ -12,8 +12,8 @@ import {useDeleteCurrentUserMovieReviewMutation} from "@/domains/movie-reviews";
 
 /** Props for the MovieReviewIndexCardActions component. */
 type ActionProps = {
-    reviewID: ObjectId;
-    movieID?: ObjectId;
+    reviewID: ObjectIdString;
+    movieID?: ObjectIdString;
     toggleEdit: (openState: boolean) => void;
 };
 

@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, ReactNode} from 'react';
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {EntityDeleteWarningDialog} from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
 import {useTheatreDeleteMutation} from "@/domains/theatres/_feat/crud-hooks";
 import {UIOpenStateProps} from "@/common/_types";
@@ -11,10 +11,10 @@ import {MutationResponseConfig} from "@/common/_feat/submit-data";
 import {handleMutateAsync} from "@/common/_feat";
 
 /** Props for the TheatreDeleteWarningDialog component. */
-type DeleteMutationProps = MutationResponseConfig<void, { _id: ObjectId }> & UIOpenStateProps & {
+type DeleteMutationProps = MutationResponseConfig<void, { _id: ObjectIdString }> & UIOpenStateProps & {
     children?: ReactNode;
     theatreName?: string;
-    theatreID: ObjectId;
+    theatreID: ObjectIdString;
 };
 
 /**

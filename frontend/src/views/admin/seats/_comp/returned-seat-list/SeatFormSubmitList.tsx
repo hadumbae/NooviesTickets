@@ -3,7 +3,7 @@
  */
 
 import {Dispatch, ReactElement, SetStateAction} from 'react';
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 import {SeatDetails} from "@/domains/seats/_schema";
 import {SeatFormSubmitSeatCard} from "@/views/admin/seats/_comp/returned-seat-list/SeatFormSubmitSeatCard.tsx";
@@ -23,7 +23,7 @@ type ListProps = {
 export function SeatFormSubmitList(
     {returnedSeating, setReturnedSeating}: ListProps
 ): ReactElement {
-    const removeSeat = (_id: ObjectId) => {
+    const removeSeat = (_id: ObjectIdString) => {
         setReturnedSeating(prev => prev.filter(s => s._id !== _id));
     };
 

@@ -4,7 +4,7 @@
 
 import {ReactElement, ReactNode} from "react";
 import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
+import {SlugString} from "@noovies-tickets/common";
 import {Button, buttonVariants, Popover, PopoverContent, PopoverTrigger} from "@/views/common/_comp/ui";
 import {useIsDeletingUIContextActions} from "@/common/_ctx/ui";
 

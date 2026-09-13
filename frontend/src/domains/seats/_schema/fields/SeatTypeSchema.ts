@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {SeatTypeConstant} from "@/domains/seats/_schema/constants";
-import {ZodEnumParamHandler} from "@/common/_feat/validation-handlers";
+import {ZodEnumParamHandler} from "@noovies-tickets/common";
 
 /** Zod schema for validating seat types. */
 export const SeatTypeSchema = z.enum(SeatTypeConstant, ZodEnumParamHandler());

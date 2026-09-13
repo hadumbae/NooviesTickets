@@ -4,7 +4,7 @@
 
 import {ReactElement, useState} from "react";
 import {ModerationMessageFormData} from "@/common/_feat/moderation/forms";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {ResetReviewLikesForm} from "@/views/admin/customers/_feat/reset-likes/ResetReviewLikesForm.tsx";
 import {ResetReviewLikesDialog} from "@/views/admin/customers/_feat/reset-likes/ResetReviewLikesDialog.tsx";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
@@ -14,7 +14,7 @@ import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/su
 
 /** Props for the ResetReviewLikesAction component. */
 type ActionProps = {
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
     presetValues?: Partial<ModerationMessageFormData>;
     submitConfig?: MutationResponseConfig<MovieReview, ModerationMessageFormData> & MutationFormResetConfig;
 };

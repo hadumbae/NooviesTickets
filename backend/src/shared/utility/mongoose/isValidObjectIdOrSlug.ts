@@ -4,7 +4,7 @@
  */
 
 import { Types } from "mongoose";
-import type {SlugString} from "../../schema/strings/SlugStringSchema.js";
+import type {SlugString} from "@noovies-tickets/common";
 
 /**
  * Converts a valid 24-char hex string to ObjectId; otherwise returns the input unchanged.

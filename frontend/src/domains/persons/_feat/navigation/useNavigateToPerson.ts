@@ -6,7 +6,7 @@ import {
     LoggingMessageParams, useLoggedNavigate
 } from "@/common/_feat/navigation/useLoggedNavigate.ts";
 import {NavigateOptions} from "react-router-dom";
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
+import {SlugString} from "@noovies-tickets/common";
 
 /** Parameters for the person navigation hook. */
 type NavigateParams = LoggingMessageParams & {

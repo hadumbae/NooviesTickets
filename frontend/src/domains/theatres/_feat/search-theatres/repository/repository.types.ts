@@ -3,7 +3,7 @@
  */
 
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
-import {ISO3166Alpha2CountryCode} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
+import {ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
 
 /**
  * Parameters for browsing theatres by location.

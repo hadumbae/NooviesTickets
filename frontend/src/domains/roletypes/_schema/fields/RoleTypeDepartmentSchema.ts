@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ZodEnumParamHandler} from "@/common/_feat";
+import {ZodEnumParamHandler} from "@noovies-tickets/common";
 import {RoleTypeDepartmentConstant} from "@/domains/roletypes/_const/RoleTypeDepartmentConstant.ts";
 
 /** Zod schema for validating role type department strings. */

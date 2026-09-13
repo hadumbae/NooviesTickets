@@ -5,13 +5,8 @@
 import {z} from "zod";
 import {AnyValues} from "@/common/_types";
 import {MovieReviewRatingSchema} from "@/domains/movie-reviews/_schema/fields/MovieReviewRatingSchema.ts";
-import {IDStringSchema} from "@/common/_schemas";
+import {IDStringSchema, preprocessOptionalField, preprocessToNumber, preprocessToUndefined} from "@noovies-tickets/common";
 import {BooleanValueSchema, NonEmptyStringSchema, StringValueSchema} from "@/common/_schemas";
-import {
-    preprocessOptionalField,
-    preprocessToNumber,
-    preprocessToUndefined
-} from "@noovies-tickets/common";
 
 /** Validation schema for movie review form submission. */
 export const MovieReviewFormSchema = z.object({

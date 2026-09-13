@@ -2,7 +2,7 @@
  * @fileoverview React Hook for managing user admin role update mutations using React Query.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {useMutation, UseMutationResult} from "@tanstack/react-query";
 import {patchUpdateUserAdminRole} from "@/domains/users/_feat/manage-user-roles/repository";
 import {UpdateAdminStatusMutationKeys} from "@/domains/users/_feat/manage-user-roles/manage-admin-role/keys";
@@ -13,7 +13,7 @@ import {
 
 /** Configuration options for the useUpdateUserAdminRole mutation hook. */
 export type UseUpdateUserAdminRoleMutationConfig = {
-    userId: ObjectId;
+    userId: ObjectIdString;
 }
 
 /**

@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
@@ -17,7 +17,7 @@ import {findByID} from "@/domains/genres/_feat/crud";
  * Parameters for the useFetchGenre hook.
  */
 type FetchParams<TData = unknown> = {
-    _id: ObjectId;
+    _id: ObjectIdString;
     schema: ZodType<TData, ZodTypeDef, unknown>;
     config?: Omit<RequestOptions, "limit">;
     options?: FetchQueryOptions<TData>;

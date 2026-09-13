@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@noovies-tickets/common";
-import {PositiveIntegerSchema} from "@noovies-tickets/common";
+import {StringValueSchema, PositiveIntegerSchema} from "@noovies-tickets/common";
 import {MulterImageFileMimeTypeSchema} from "./MulterImageFileMimeTypeSchema";
 import {MulterImageFileBufferSchema} from "@/shared/_feat/manage-multer-images/MulterImageFileBufferSchema";
 

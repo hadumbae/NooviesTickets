@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {ISO6391LanguageCodeSchema} from "@/common/_schemas/enums/ISO6391LanguageCodeSchema.ts";
+import {preprocessEmptyToUndefined, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
 
 /** Schema for showing language configuration with normalization for form input. */
 export const ShowingFormLanguageSchema = z.object({

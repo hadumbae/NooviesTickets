@@ -2,7 +2,7 @@
  * @fileoverview Renders reservation seating arranged into display rows.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {cn} from "@/common/_feat";
 import {
     ReservationSeatingElement
@@ -14,7 +14,7 @@ import {SeatMapDetails} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSch
 
 /** Props for the ReservationSeatingView component. */
 type DisplayProps = {
-    selectedSeating: ObjectId[];
+    selectedSeating: ObjectIdString[];
     seating: SeatMapDetails[];
     className?: string;
 }
@@ -28,7 +28,7 @@ export function ReservationSeatingView(
         includeLabels: false,
     });
 
-    const isSelected = (_id?: ObjectId | null) => _id
+    const isSelected = (_id?: ObjectIdString | null) => _id
         ? selectedSeating.includes(_id)
         : false;
 

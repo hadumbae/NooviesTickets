@@ -4,10 +4,9 @@
 
 import {z} from "zod";
 import {ScreenTypeSchema} from "@/domains/theatre-screens/_schema/fields";
-import {IDStringSchema} from "@/common/_schemas";
+import {IDStringSchema, PositiveNumberSchema, preprocessToNumber} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 
-import {PositiveNumberSchema, preprocessToNumber} from "@noovies-tickets/common";
 
 /**
  * Schema for validating a Theatre Screen record.

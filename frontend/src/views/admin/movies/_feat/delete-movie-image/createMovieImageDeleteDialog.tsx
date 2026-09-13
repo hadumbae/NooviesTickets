@@ -4,7 +4,7 @@
 
 import {ReactElement} from 'react';
 import {EntityDeleteWarningDialog} from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {DeleteMovieImageConfig, RemoveMovieImageMutation} from "@/domains/movies/_feat/manage-images";
 import {MutationResponseConfig} from "@/common/_feat/submit-data";
 import {UIOpenStateProps} from "@/common/_types";
@@ -19,7 +19,7 @@ type FactoryConfig = {
 
 /** Props for the generated movie image deletion dialog component. */
 type DialogProps = MutationResponseConfig<Movie, DeleteMovieImageConfig> & UIOpenStateProps & {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
 }
 
 /**

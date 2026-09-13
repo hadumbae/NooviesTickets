@@ -3,9 +3,7 @@
  */
 
 import {z} from "zod";
-import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {TimezoneOffsetSchema} from "@noovies-tickets/common";
+import {ISO3166Alpha2CountryCodeSchema, NonEmptyStringSchema, TimezoneOffsetSchema} from "@noovies-tickets/common";
 
 /** Zod validation schema for the Ipify location object. */
 export const IpifyLocationSchema = z.object({

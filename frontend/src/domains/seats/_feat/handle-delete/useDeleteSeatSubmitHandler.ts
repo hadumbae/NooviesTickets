@@ -8,10 +8,10 @@ import {
     handleSubmitResponseError
 } from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
 import {MutationResponseConfig} from "@/common/_feat/submit-data";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
-type HandlerConfig = MutationResponseConfig<void, { _id: ObjectId }> & {
-    _id: ObjectId;
+type HandlerConfig = MutationResponseConfig<void, { _id: ObjectIdString }> & {
+    _id: ObjectIdString;
 };
 
 type HandlerReturns = {

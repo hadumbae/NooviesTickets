@@ -3,7 +3,7 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {validateData} from "@/common/_feat/validate-data/validateData.ts";
 
 import {AdminReservation, AdminReservationSchema} from "@/domains/reservations/_schema";
@@ -14,7 +14,7 @@ import {ReservationUpdateMutationKeys} from "@/domains/reservations/_feat/update
 
 /** Props for the useCancelReservationMutation hook. */
 export type UseCancelReservationMutationConfig = {
-    reservationID: ObjectId;
+    reservationID: ObjectIdString;
 }
 
 /** Provides a mutation for cancelling a reservation with integrated success and error handling. */

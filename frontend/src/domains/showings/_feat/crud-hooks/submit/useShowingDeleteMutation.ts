@@ -3,7 +3,7 @@
  */
 
 import {useMutation, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 import {destroy} from "@/domains/showings/_feat/crud";
 import {ShowingBaseQueryKeys} from "@/domains/showings/_feat/base-query-keys";
@@ -18,7 +18,7 @@ export type UseDeleteShowingConfig = {
 export function useShowingDeleteMutation({hardDelete = false}: UseDeleteShowingConfig = {}) {
     const queryClient = useQueryClient();
 
-    const deleteShowing = async ({_id}: { _id: ObjectId }) => {
+    const deleteShowing = async ({_id}: { _id: ObjectIdString }) => {
         const deleteItem = hardDelete ? () => destroy({_id}) : () => softDelete({_id});
         await deleteItem();
     };

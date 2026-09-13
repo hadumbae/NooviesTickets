@@ -2,7 +2,7 @@
  * @fileoverview Orchestrator component for the Reset Display Name administrative action.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {ResetReviewDisplayNameFormData} from "@/domains/movie-reviews/_feat/admin-actions/reset-review-display-name";
 import {ReactElement, useState} from "react";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
@@ -13,7 +13,7 @@ import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/su
 
 /** Props for the ResetReviewDisplayNameAction component. */
 type ActionProps = {
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
     presetValues?: Partial<ResetReviewDisplayNameFormData>;
     submitConfig?: MutationResponseConfig<MovieReview, ResetReviewDisplayNameFormData> & MutationFormResetConfig;
 };

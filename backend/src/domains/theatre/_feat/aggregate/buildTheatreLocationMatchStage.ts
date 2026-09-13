@@ -1,7 +1,7 @@
 /**
  * @fileoverview Utility for generating MongoDB aggregation match stages for theatre locations.
  */
-import type {ISO3166Alpha2CountryCode} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
+import type {ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
 
 type BuilderConfig = {
     target?: string;

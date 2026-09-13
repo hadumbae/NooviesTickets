@@ -3,7 +3,7 @@
  */
 
 import type {MovieSchemaFields} from "@/domains/movies/_models/movie/Movie.types";
-import type {SlugString} from "@/shared/schema/strings/SlugStringSchema";
+import type {SlugString} from "@noovies-tickets/common";
 import type {GenreSchemaFields} from "@/domains/genres/_models/genre";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
 

@@ -3,7 +3,7 @@
  */
 
 import {UseMutationResult} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     useCheckoutClientReservationMutation
 } from "@/domains/reservations/_feat/update-client-reservations/mutations/useCheckoutClientReservationMutation.ts";
@@ -13,8 +13,8 @@ import {
 
 /** Return values for the useReservationStateMutations hook. */
 type ReturnParams = {
-    cancelMutation: UseMutationResult<void, unknown, ObjectId>;
-    checkoutMutation: UseMutationResult<void, unknown, ObjectId>;
+    cancelMutation: UseMutationResult<void, unknown, ObjectIdString>;
+    checkoutMutation: UseMutationResult<void, unknown, ObjectIdString>;
     isPending: boolean;
     isSuccess: boolean;
     isError: boolean;

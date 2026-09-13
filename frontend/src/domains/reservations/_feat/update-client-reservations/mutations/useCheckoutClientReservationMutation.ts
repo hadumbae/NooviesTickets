@@ -3,7 +3,7 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {patchCheckoutTicket} from "@/domains/reservations/_feat/update-client-reservations/repositories";
 import {
     UpdateClientReservationMutationKeys
@@ -16,10 +16,10 @@ import {ReservationCRUDQueryKeys} from "@/domains/reservations/_feat/crud-hooks/
 /**
  * Provides a mutation for checking out a ticket by its ID.
  */
-export function useCheckoutClientReservationMutation(): UseMutationResult<void, unknown, ObjectId> {
+export function useCheckoutClientReservationMutation(): UseMutationResult<void, unknown, ObjectIdString> {
     const queryClient = useQueryClient();
 
-    const checkout = async (_id: ObjectId) => {
+    const checkout = async (_id: ObjectIdString) => {
         await patchCheckoutTicket(_id);
     }
 

@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, useState} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     useInvalidateUserQueriesOnModeration
 } from "@/domains/users/_feat/user-moderation-actions/keys/useInvalidateUserQueriesOnModeration.ts";
@@ -16,7 +16,7 @@ import {UpdateUserStatusFormView} from "@/views/admin/users/_feat";
 
 /** Props for the UserDetailsPageStatusManagementSection component. */
 type SectionProps = {
-    userId: ObjectId;
+    userId: ObjectIdString;
     userStatus: UserStatus;
 };
 

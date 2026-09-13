@@ -64,7 +64,7 @@ export function AuthProvider(
             const expireBy = getAuthExpireBy();
             const now = new Date();
 
-            if (now.getTime() > expireBy.toJSDate().getTime() && !isRefreshingToken.current) {
+            if (user !== null && now.getTime() > expireBy.toJSDate().getTime() && !isRefreshingToken.current) {
                 isRefreshingToken.current = true;
                 handleRefresh();
             }

@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {HTTPStatusCodeConstant} from "@/common/_const";
-import {ZodEnumParamHandler} from "@/common/_feat/validation-handlers";
+import {ZodEnumParamHandler} from "@noovies-tickets/common";
 
 /** Zod schema for validating HTTP status codes. */
 export const HTTPStatusCodeSchema = z.enum(HTTPStatusCodeConstant, ZodEnumParamHandler({

@@ -12,7 +12,7 @@ import {
     BreadcrumbSeparator,
 } from "@/views/common/_comp/ui";
 import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
+import {SlugString} from "@noovies-tickets/common";
 
 /** Props for the TheatreShowingListBreadcrumbs component. */
 type BreadcrumbProps = {

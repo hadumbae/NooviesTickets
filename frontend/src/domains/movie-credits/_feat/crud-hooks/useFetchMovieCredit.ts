@@ -2,7 +2,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 import {QueryConfig} from "@/common/_types";
 import {MovieCreditCRUDQueryKeys} from "@/domains/movie-credits/_feat/crud-hooks/queryKeys.ts";
@@ -11,7 +11,7 @@ import {findByID} from "@/domains/movie-credits/_feat/crud/repository.ts";
 
 /** Configuration for fetching a movie credit including the identifier and validation schema. */
 type FetchParams<TData = unknown> = QueryConfig<TData> & {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /** Fetches a movie credit record and validates it against the provided schema. */

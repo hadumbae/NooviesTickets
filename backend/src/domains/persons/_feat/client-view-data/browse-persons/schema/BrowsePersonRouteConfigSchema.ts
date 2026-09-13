@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessToNumber} from "@noovies-tickets/common";
-import {PositiveIntegerSchema} from "@noovies-tickets/common";
+import {preprocessToNumber, PositiveIntegerSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating person browsing pagination parameters. */
 export const BrowsePersonRouteConfigSchema = z.object({

@@ -3,16 +3,16 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, StringValueSchema} from "@/common/_schemas";
-import {preprocessOptionalField} from "@noovies-tickets/common";
-import {ReservationStatusEnumSchema, ReservationTypeEnumSchema} from "@/domains/reservations/_schema/model/fields";
+import {StringValueSchema} from "@/common/_schemas";
+import {IDStringSchema, preprocessOptionalField} from "@noovies-tickets/common";
+import {ReservationStatusSchema, ReservationTypeEnumSchema} from "@/domains/reservations/_schema/model/fields";
 
 /** Zod schema for validating base reservation query filter parameters. */
 export const ReservationBaseQueryFilterSchema = z.object({
     userID: preprocessOptionalField(IDStringSchema),
     showingID: preprocessOptionalField(IDStringSchema),
     uniqueCode: preprocessOptionalField(StringValueSchema),
-    status: preprocessOptionalField(ReservationStatusEnumSchema),
+    status: preprocessOptionalField(ReservationStatusSchema),
     reservationType: preprocessOptionalField(ReservationTypeEnumSchema),
 });
 

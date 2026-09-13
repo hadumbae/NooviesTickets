@@ -3,7 +3,7 @@
  */
 
 import {MutationKey, useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {Movie, MovieSchema} from "@/domains/movies/_schema";
 import {validateData} from "@/common/_feat/validate-data/validateData.ts";
 import {MovieCRUDQueryKeys} from "@/domains/movies/_feat/crud-hooks";
@@ -18,7 +18,7 @@ type FactoryConfig = {
 
 /** Parameters required to initialise a movie image upload mutation hook. */
 export type SubmitMovieImageConfig = {
-    movieID: ObjectId;
+    movieID: ObjectIdString;
 };
 
 /**

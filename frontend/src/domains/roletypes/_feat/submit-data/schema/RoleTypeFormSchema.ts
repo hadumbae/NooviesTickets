@@ -9,10 +9,9 @@ import {
     RoleTypeCastCategorySchema,
     RoleTypeCrewCategorySchema,
 } from "@/domains/roletypes/_schema/fields/RoleTypeCategorySchema.ts";
-import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
+import {preprocessEmptyToUndefined, IDStringSchema} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 import {RoleTypeDescriptionSchema, RoleTypeNameSchema} from "@/domains/roletypes/_schema";
-import {IDStringSchema} from "@/common/_schemas";
 
 /** Base validation schema containing shared fields for all role type forms. */
 const RoleTypeFormBaseSchema = z.object({

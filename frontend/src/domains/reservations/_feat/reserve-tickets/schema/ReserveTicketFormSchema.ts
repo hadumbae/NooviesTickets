@@ -3,12 +3,10 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas";
-import {ISO4217CurrencyCodeSchema} from "@/common/_schemas/enums/ISO4217CurrencyCodeSchema.ts";
+import {IDStringSchema, PositiveNumberSchema, preprocessToNull, preprocessToNumber, ISO4217CurrencyCodeSchema} from "@noovies-tickets/common";
 import {ReservationTypeConstant} from "@/domains/reservations/_schema/model/fields/ReservationTypeConstant.ts";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
 import {AnyValues} from "@/common/_types";
-import {PositiveNumberSchema, preprocessToNull, preprocessToNumber} from "@noovies-tickets/common";
 
 /** Base schema containing shared fields for all ticket reservation modes. */
 export const ReserveTicketFormBaseSchema = z.object({

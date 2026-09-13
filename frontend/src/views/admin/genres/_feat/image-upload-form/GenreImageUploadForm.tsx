@@ -4,7 +4,7 @@
 
 import {ReactElement, ReactNode, useId} from "react";
 import {Form} from "@/views/common/_comp/ui/form.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
 import {BaseFormContextProvider} from "@/common/_feat/generic-form-context";
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
@@ -21,7 +21,7 @@ import {DefaultValues} from "react-hook-form";
 type FormProps = MutationResponseConfig<Genre, FormData> & MutationFormResetConfig & {
     resetValues?: DefaultValues<GenreImageUploadFormValues>;
     children: ReactNode;
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /** Form component that handles multipart/form-data submission for genre images. */

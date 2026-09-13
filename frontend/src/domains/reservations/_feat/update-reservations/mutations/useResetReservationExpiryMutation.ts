@@ -4,7 +4,7 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {validateData} from "@/common/_feat/validate-data/validateData.ts";
 
 import {AdminReservation, AdminReservationSchema} from "@/domains/reservations/_schema";
@@ -17,7 +17,7 @@ import {EmptyFormData} from "@/common/_feat";
 
 /** Props for the useResetReservationExpiryMutation hook. */
 export type UseResetReservationExpiryMutationConfig = {
-    reservationID: ObjectId;
+    reservationID: ObjectIdString;
 }
 
 /**

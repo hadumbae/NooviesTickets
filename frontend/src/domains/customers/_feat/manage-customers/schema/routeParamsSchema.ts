@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod"
-import {IDStringSchema} from "@/common/_schemas";
+import {IDStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating customer management route parameters. */
 export const ManageCustomerRouteParamsSchema = z.object({

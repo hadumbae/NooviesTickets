@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {PageSectionHeaderLink} from "@/views/common/_comp/page";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
 import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
@@ -15,7 +15,7 @@ import {ShowingDetails, ShowingDetailsSchema} from "@/domains/showings/_schema/s
 
 /** Props for the MovieDetailsPageShowingSection component. */
 type TabProps = {
-    _id: ObjectId;
+    _id: ObjectIdString;
 };
 
 /**

@@ -3,7 +3,7 @@ import type {LookupPipelineStages} from "@/shared/_types";
 import {ShowingPopulationPipelines, ShowingSeatMapVirtualPipelines} from "@/domains/showing";
 import type {PipelineStage} from "mongoose";
 import {buildTheatreLocationMatchStage} from "@/domains/theatre/_feat/aggregate";
-import type {ISO3166Alpha2CountryCode} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
+import type {ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
 import type {LocationTarget} from "@/shared/schema/features/location-query-options/LocationQueryOptions.types";
 
 /** Props for the fetchTheatresByLocation service function. */

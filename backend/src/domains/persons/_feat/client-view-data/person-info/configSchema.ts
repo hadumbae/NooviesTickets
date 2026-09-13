@@ -4,9 +4,7 @@
  */
 
 import {z} from "zod";
-import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
-import {preprocessToNumber} from "@noovies-tickets/common";
-import {PositiveNumberSchema} from "@noovies-tickets/common";
+import {SlugStringSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
 
 /** Zod validation schema for the person information route configuration. */
 export const PersonInfoViewRouteConfigSchema = z.object({

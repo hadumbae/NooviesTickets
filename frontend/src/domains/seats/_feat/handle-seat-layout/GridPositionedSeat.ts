@@ -2,11 +2,11 @@
  * @fileoverview Grid-based seat positioning data structure.
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Grid-based seat positioning data. */
 export type GridPositionedSeat = {
-    _id: ObjectId;
+    _id: ObjectIdString;
     row: string;
     x: number;
     y: number;

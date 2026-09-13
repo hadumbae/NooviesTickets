@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, useState} from "react";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {ModerationMessageFormData} from "@/common/_feat/moderation/forms";
 import {Button} from "@/views/common/_comp/ui";
 import {ToggleReviewPublicityForm} from "@/views/admin/customers/_feat/toggle-publicity/ToggleReviewPublicityForm.tsx";
@@ -16,7 +16,7 @@ import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/su
 
 /** Props for the ToggleReviewPublicityAction component. */
 type ActionProps = {
-    reviewID: ObjectId;
+    reviewID: ObjectIdString;
     presetValues?: Partial<ModerationMessageFormData>;
     submitConfig?: MutationResponseConfig<MovieReview, ModerationMessageFormData> & MutationFormResetConfig;
 };

@@ -10,11 +10,11 @@ import {CustomerProfileOverviewViewQueryKeys} from "@/domains/customers/_feat/pr
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
 import {CustomerProfileViewData, CustomerProfileViewDataSchema} from "@/domains/customers/_feat/profile-overview/schema/viewDataSchema.ts";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Parameters for the customer profile fetch hook. */
 export type FetchParams = {
-    customerID: ObjectId;
+    customerID: ObjectIdString;
     options?: FetchQueryOptions<CustomerProfileViewData>;
 }
 

@@ -3,8 +3,7 @@
  */
 
 import { z } from "zod";
-import { NonEmptyStringSchema } from "@noovies-tickets/common";
-import { NonNegativeNumberSchema } from "@noovies-tickets/common";
+import {NonEmptyStringSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import { LocationSchema } from "@/shared/schema/theatre/Location.schema";
 
 /**

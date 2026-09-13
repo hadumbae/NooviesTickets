@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas";
-import {DateOnlyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
+import {IDStringSchema, DateOnlyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
 import {ShowingStatusSchema} from "@/domains/showings/_schema/fields/ShowingStatusSchema";
 

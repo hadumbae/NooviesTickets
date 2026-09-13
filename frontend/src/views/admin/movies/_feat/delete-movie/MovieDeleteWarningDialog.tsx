@@ -1,7 +1,7 @@
 /** @fileoverview Confirmation dialogue for deleting a movie entity with integrated mutation logic. */
 
 import {ReactElement, ReactNode} from 'react';
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {
     EntityDeleteWarningDialog
 } from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
@@ -14,9 +14,9 @@ import {
 } from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
 
 /** Props for the MovieDeleteWarningDialog component, supporting controlled UI states and deletion callbacks. */
-type WarningDialogProps = MutationResponseConfig<void, { _id: ObjectId }> & UIOpenStateProps & {
+type WarningDialogProps = MutationResponseConfig<void, { _id: ObjectIdString }> & UIOpenStateProps & {
     children?: ReactNode;
-    movieID: ObjectId;
+    movieID: ObjectIdString;
     movieName?: string;
 };
 

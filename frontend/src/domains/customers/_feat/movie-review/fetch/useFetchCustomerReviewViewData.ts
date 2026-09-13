@@ -3,7 +3,7 @@
  *
  */
 
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
@@ -18,8 +18,8 @@ import {getFetchCustomerReviewViewData} from "@/domains/customers/_feat/movie-re
 
 /** Parameters for the customer review data fetch hook. */
 export type FetchParams = {
-    customerID: ObjectId;
-    reviewID: ObjectId;
+    customerID: ObjectIdString;
+    reviewID: ObjectIdString;
     options?: FetchQueryOptions<CustomerReviewViewData>;
 };
 

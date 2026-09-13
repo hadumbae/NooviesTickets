@@ -7,7 +7,7 @@ import {Control, FieldValues, Path} from "react-hook-form";
 import {
     ReservationSeatMapSelector
 } from "@/views/client/reservations/_comp/seating-input/ReservationSeatMapSelector.tsx";
-import {ObjectId} from "@/common/_schemas";
+import {ObjectIdString} from "@noovies-tickets/common";
 import {ReactElement} from "react";
 
 import {SeatMapDetails} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSchema";
@@ -34,7 +34,7 @@ export function ReservationSeatMapInput<TValues extends FieldValues>(
                 <ReservationSeatMapSelector
                     seating={seating}
                     value={value}
-                    updateValue={(selection: ObjectId[]) =>
+                    updateValue={(selection: ObjectIdString[]) =>
                         onChange(selection)
                     }
                 />

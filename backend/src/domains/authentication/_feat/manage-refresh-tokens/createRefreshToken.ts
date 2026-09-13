@@ -7,7 +7,7 @@ import {Types} from "mongoose";
 import {RefreshToken, type RefreshTokenSchemaFields} from "@/domains/authentication";
 import {DateTime} from "luxon";
 import {getEnvVariables} from "@/shared/_feat";
-import type {IpString} from "@/shared/schema/strings/IPSchema";
+import type {IpString} from "@noovies-tickets/common";
 
 type CreateConfig = {
     userIp?: IpString;

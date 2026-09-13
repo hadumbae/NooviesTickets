@@ -2,7 +2,7 @@
  * @fileoverview Type definitions for person detail view repository operations.
  */
 
-import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
+import {SlugString} from "@noovies-tickets/common";
 
 /**
  * Parameters for retrieving a person's administrative detail view.

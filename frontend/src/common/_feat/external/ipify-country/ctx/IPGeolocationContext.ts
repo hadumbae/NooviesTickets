@@ -3,7 +3,7 @@
  */
 
 import {createContext, Dispatch, SetStateAction} from "react";
-import {IpString} from "@/common/_schemas/strings/ip-string/IpSchema.ts";
+import {IpString} from "@noovies-tickets/common";
 import {IpifyLocation, IpifyPayloadData} from "@/common/_feat/external/ipify-country/schema";
 
 /** Values and state setters provided by the IP geolocation context. */

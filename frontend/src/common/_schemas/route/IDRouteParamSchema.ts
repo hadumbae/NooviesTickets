@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@/common/_schemas/strings";
+import {IDStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for a route parameter object containing an _id field. */
 export const IDRouteParamSchema = z.object(
