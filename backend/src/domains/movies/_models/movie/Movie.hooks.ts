@@ -9,8 +9,8 @@ import {Showing} from "@/domains/showing/_models/showing/Showing.model.js";
 import type {MovieSchemaFields} from "@/domains/movies/_models/movie/Movie.types.js";
 import {generateSlug} from "@/shared/utility/generateSlug.js";
 import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
-import {Movie} from "@/domains/movies/_models/movie/Movie.model.js";
-import {Genre} from "@/domains/genres/_models/genre";
+import {MovieModel} from "@/domains/movies/_models/movie/Movie.model.js";
+import {GenreModel} from "@/domains/genres/_models/genre";
 
 /**
  * Synchronizes the URL slug whenever the title is modified.
@@ -34,7 +34,7 @@ MovieSchema.pre(
     {document: true},
     async function (this: HydratedDocument<MovieSchemaFields>) {
         if (!this.isNew || this.isModified("genres")) {
-            const oldDoc = await Movie.findById(this._id).select("genres");
+            const oldDoc = await MovieModel.findById(this._id).select("genres");
             (this as any)._genresToRemove = oldDoc?.genres ?? [];
         }
     }
@@ -48,13 +48,13 @@ MovieSchema.post(
     {document: true},
     async function (this: HydratedDocument<MovieSchemaFields>) {
         if ((this as any)._genresToRemove) {
-            await Genre.updateMany(
+            await GenreModel.updateMany(
                 {_id: {$in: (this as any)._genresToRemove}},
                 {$inc: {movieCount: -1}}
             );
         }
 
-        await Genre.updateMany(
+        await GenreModel.updateMany(
             {_id: {$in: this.genres}},
             {$inc: {movieCount: 1}},
         );

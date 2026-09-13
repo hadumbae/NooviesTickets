@@ -8,7 +8,7 @@ import type {
     TheatreDetailsViewData,
     TheatreShowingListViewData
 } from "@/domains/theatre/_feat/admin-view-data/service/service.types";
-import {Theatre, type TheatreWithVirtuals} from "@/domains/theatre/model/theatre";
+import {TheatreModel, type TheatreWithVirtuals} from "@/domains/theatre/model/theatre";
 import {Screen, type ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import {TheatreVirtualPopulationPaths} from "@/domains/theatre/_feat/crud";
 import createHttpError from "http-errors";
@@ -25,7 +25,7 @@ import {ScreenVirtualPipelines} from "@/domains/screen/_feat/query-population";
 export async function fetchTheatreDetailsViewData(
     {slug, screenPage = 1, screenPerPage = 25, showingLimit = 10}: FetchTheatreDetailsViewDataConfig
 ): Promise<TheatreDetailsViewData> {
-    const theatre = await Theatre
+    const theatre = await TheatreModel
         .findOne({slug})
         .populate(TheatreVirtualPopulationPaths)
         .lean<TheatreWithVirtuals>({virtuals: true});
@@ -66,7 +66,7 @@ export async function fetchTheatreDetailsViewData(
 export async function fetchTheatreShowingListViewData(
     {slug, page = 1, perPage = 20}: FetchTheatreShowingListViewDataConfig
 ): Promise<TheatreShowingListViewData> {
-    const theatre = await Theatre
+    const theatre = await TheatreModel
         .findOne({slug})
         .populate(TheatreVirtualPopulationPaths)
         .lean<TheatreWithVirtuals>({virtuals: true});

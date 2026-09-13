@@ -2,7 +2,7 @@
  * @fileoverview Factory and service logic for uploading and replacing movie image assets via Cloudinary.
  */
 
-import {Movie} from "@/domains/movies/_models/movie/Movie.model";
+import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
 import createHttpError from "http-errors";
 import {removeCloudinaryImage} from "@/shared/_feat/manage-cloudinary-images/removeCloudinaryImage";
 import {uploadCloudinaryImage} from "@/shared/_feat/manage-cloudinary-images/uploadCloudinaryImage";
@@ -26,7 +26,7 @@ export function createMovieImageUploader(
     {key}: UploaderFactoryConfig
 ): (params: MovieImageUploadConfig) => Promise<MovieSchemaFields> {
     return async ({movieID, image}: MovieImageUploadConfig): Promise<MovieSchemaFields> => {
-        const movie = await Movie.findById(movieID);
+        const movie = await MovieModel.findById(movieID);
         if (!movie) throw createHttpError(404, "Not found.");
 
         if (movie[key]) {

@@ -1,12 +1,12 @@
 import "dotenv/config";
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
-import {User} from "@/domains/users";
+import {UserModel} from "@/domains/users";
 
 connect()
     .then(async () => {
 
-        const cursor = User.find().cursor();
+        const cursor = UserModel.find().cursor();
 
         for (let user = await cursor.next(); user !== null; user = await cursor.next()) {
             user.status = "ACTIVE";

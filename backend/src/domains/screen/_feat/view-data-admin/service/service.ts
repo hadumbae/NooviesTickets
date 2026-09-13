@@ -3,7 +3,7 @@
  * Performs parallel or sequential lookups to build a unified context of Theatre, Screen, and Seats.
  */
 
-import {Theatre, type TheatreWithVirtuals} from "@/domains/theatre/model/theatre";
+import {TheatreModel, type TheatreWithVirtuals} from "@/domains/theatre/model/theatre";
 import {TheatreVirtualPopulationPaths} from "@/domains/theatre/_feat/crud";
 import createHttpError from "http-errors";
 import {Screen} from "@/domains/screen/_models/screen";
@@ -20,7 +20,7 @@ import {Showing, ShowingPopulationPaths} from "@/domains/showing";
 export async function fetchTheatreScreenDetailsViewData(
     {theatreSlug, screenSlug, recentShowingsCount}: FetchTheatreScreenDetailsViewDataConfig
 ): Promise<TheatreScreenDetailsViewData> {
-    const theatre = await Theatre
+    const theatre = await TheatreModel
         .findOne({slug: theatreSlug})
         .populate(TheatreVirtualPopulationPaths)
         .lean<TheatreWithVirtuals>({virtuals: true});

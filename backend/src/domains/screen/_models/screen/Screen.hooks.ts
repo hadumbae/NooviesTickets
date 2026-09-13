@@ -17,7 +17,7 @@ import type { ScreenSchemaFields } from "./Screen.types";
 
 import {Showing} from "@/domains/showing/_models/showing/Showing.model";
 import {generateSlug} from "@/shared/utility/generateSlug";
-import {Theatre} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/model/theatre";
 import {Seat} from "@/domains/seat/_models";
 
 /**
@@ -84,7 +84,7 @@ ScreenSchema.post(
     { document: true, query: false },
     async function (this: HydratedDocument<ScreenSchemaFields>) {
         await Promise.all([
-            Theatre.updateMany(
+            TheatreModel.updateMany(
                 { screens: this._id },
                 { $pull: { screens: this._id } },
             ),
@@ -109,7 +109,7 @@ ScreenSchema.post(
         if (!_id) return;
 
         await Promise.all([
-            Theatre.updateMany(
+            TheatreModel.updateMany(
                 { screens: _id },
                 { $pull: { screens: _id } },
             ),

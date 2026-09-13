@@ -9,10 +9,10 @@ import type {
     UserFavouriteMovieConfig
 } from "@/domains/users/_feat/manage-user-favourties/service/service.types";
 
-import {User} from "@/domains/users/model/user/User.model";
+import {UserModel} from "@/domains/users/model/user/User.model";
 import createHttpError from "http-errors";
 import type {UserSchemaFields} from "@/domains/users/model/user/User.types";
-import {Movie} from "@/domains/movies/_models/movie/Movie.model";
+import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
 import {fetchRequiredMovie} from "@/domains/movies/_feat/fetch-movies";
 
 
@@ -20,13 +20,13 @@ import {fetchRequiredMovie} from "@/domains/movies/_feat/fetch-movies";
 export const fetchUserFavourites = async (
     {userID, page, perPage}: FetchUserFavouritesConfig
 ) => {
-    const user = await User.findById(userID).select("favourites").lean();
+    const user = await UserModel.findById(userID).select("favourites").lean();
     if (!user) createHttpError(404, "User not found.");
 
     const {favourites} = user as UserSchemaFields;
     const [totalItems, items] = await Promise.all([
-        Movie.countDocuments({_id: {$in: favourites}}),
-        Movie.find({_id: {$in: favourites}})
+        MovieModel.countDocuments({_id: {$in: favourites}}),
+        MovieModel.find({_id: {$in: favourites}})
             .skip(perPage * (page - 1))
             .limit(perPage)
             .populate("genres")
@@ -43,7 +43,7 @@ export const fetchUserFavourites = async (
 export const isUserFavouriteMovie = async (
     {userID, movieID}: UserFavouriteMovieConfig
 ): Promise<IsUserFavouriteMovieReturns> => {
-    const checkValue = await User.exists({_id: userID, favourites: movieID});
+    const checkValue = await UserModel.exists({_id: userID, favourites: movieID});
     const isFavourite = checkValue !== null
 
     return {
@@ -63,7 +63,7 @@ export const toggleCurrentUserFavouriteMovie = async (
         options: {lean: true, select: "_id"}
     });
 
-    const removed = await User.findOneAndUpdate(
+    const removed = await UserModel.findOneAndUpdate(
         {_id: userID, favourites: movie._id},
         {$pull: {favourites: movie._id}},
         {new: true}
@@ -76,7 +76,7 @@ export const toggleCurrentUserFavouriteMovie = async (
         };
     }
 
-    const addedCount = await User.updateOne(
+    const addedCount = await UserModel.updateOne(
         {_id: userID},
         {$addToSet: {favourites: movie._id}},
     );

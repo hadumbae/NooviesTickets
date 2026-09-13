@@ -6,18 +6,18 @@ import {Types} from "mongoose";
 import {TheatreSnapshotInputSchema} from "@/domains/theatre/validation/TheatreSnapshotInputSchema";
 import {InconsistentDataError} from "@/shared/errors/InconsistentDataError";
 import {DocumentNotFoundError} from "@/shared/errors/DocumentNotFoundError";
-import {Theatre} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/model/theatre";
 import {TheatreSnapshot, type TheatreSnapshotSchemaFields} from "@/domains/theatre/model/theatre-snapshot";
 
 /** Creates an immutable validated snapshot of a theatre at a specific point in time. */
 export async function createTheatreSnapshot(
     theatreID: Types.ObjectId
 ): Promise<TheatreSnapshotSchemaFields> {
-    const theatre = await Theatre.findById(theatreID).lean();
+    const theatre = await TheatreModel.findById(theatreID).lean();
 
     if (!theatre) {
         throw new DocumentNotFoundError({
-            model: Theatre,
+            model: TheatreModel,
             identifier: theatreID,
             message: "Failed to fetch theatre for snapshot.",
         });

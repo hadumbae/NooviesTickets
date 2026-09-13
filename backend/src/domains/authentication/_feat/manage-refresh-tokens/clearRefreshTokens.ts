@@ -3,7 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import {RefreshToken} from "@/domains/authentication";
+import {RefreshTokenModel} from "@/domains/authentication";
 
 type ClearConfig = {
     userId: Types.ObjectId;
@@ -13,5 +13,5 @@ type ClearConfig = {
 export async function clearRefreshTokens(
     {userId}: ClearConfig,
 ): Promise<void> {
-    await RefreshToken.updateMany({user: userId}, {$set: {revoked: true}});
+    await RefreshTokenModel.updateMany({user: userId}, {$set: {revoked: true}});
 }

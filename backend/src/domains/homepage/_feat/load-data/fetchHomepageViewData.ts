@@ -4,9 +4,9 @@
 
 import type {HomepageViewDataRouteConfig} from "@/domains/homepage/_feat/load-data/HomepageViewDataRouteConfigSchema";
 import {Types} from "mongoose";
-import {Movie, type MovieSchemaFields, MovieSummarySelect} from "@/domains/movies";
-import {Genre, type GenreSchemaFields, GenreSummarySelect} from "@/domains/genres";
-import {Theatre, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
+import {MovieModel, type MovieSchemaFields, MovieSummarySelect} from "@/domains/movies";
+import {GenreModel, type GenreSchemaFields, GenreSummarySelect} from "@/domains/genres";
+import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
 import {Showing, type ShowingSchemaFields, ShowingSummarySelect} from "@/domains/showing";
 import {Reservation, type ReservationSchemaFields} from "@/domains/reservations";
 import {ReservationSummarySelect} from "@/domains/reservations/_feat/query-population/ReservationSummarySelect";
@@ -31,7 +31,7 @@ export async function fetchHomepageViewData(
 ): Promise<FetchReturns> {
     const now = new Date();
 
-    const movies = await Movie
+    const movies = await MovieModel
         .find({isReleased: true, releaseDate: {$lte: now}})
         .select(MovieSummarySelect)
         .sort({releaseDate: -1})
@@ -39,14 +39,14 @@ export async function fetchHomepageViewData(
         .populate("genres")
         .lean();
 
-    const genreStubs = await Genre
+    const genreStubs = await GenreModel
         .find({isFeatured: true})
         .select(GenreSummarySelect)
         .limit(genreCount)
         .lean();
 
     const genres = await Promise.all(genreStubs.map(async (genre) => ({
-        ...genre, movies: await Movie
+        ...genre, movies: await MovieModel
             .find({isReleased: true, releaseDate: {$lte: now}, genres: genre._id})
             .sort({releaseDate: -1})
             .select(MovieSummarySelect)
@@ -55,14 +55,14 @@ export async function fetchHomepageViewData(
             .lean(),
     })));
 
-    const sampled = await Theatre.aggregate([
+    const sampled = await TheatreModel.aggregate([
         {$match: {"location.country": country}},
         {$sample: {size: theatreCount}},
         {$project: {_id: 1}},
     ]);
 
     const theatreIDs = sampled.map((doc) => doc._id);
-    const theatres = await Theatre.find({_id: {$in: theatreIDs}}).lean({virtuals: true});
+    const theatres = await TheatreModel.find({_id: {$in: theatreIDs}}).lean({virtuals: true});
 
     const showings = await Showing
         .find({"theatreSnapshot.country": country, startTime: {$gte: now}, status: {$in: ["SCHEDULED", "SOLD_OUT"]}})

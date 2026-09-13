@@ -3,7 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import {User, type UserSchemaFields} from "@/domains/users/model/user";
+import {UserModel, type UserSchemaFields} from "@/domains/users/model/user";
 import {LeanUserQuerySelectFields} from "@/domains/users/_feat/query-population";
 import createHttpError from "http-errors";
 import {saveUserModerationLog, type UserModerationLogSchemaFields} from "@/domains/users";
@@ -28,7 +28,7 @@ type UpdateReturns = {
 export async function updateUserStatus(
     {adminId, userId, data: {action, status, message}}: UpdateConfig
 ): Promise<UpdateReturns> {
-    const user = await User.findById(userId).select(LeanUserQuerySelectFields);
+    const user = await UserModel.findById(userId).select(LeanUserQuerySelectFields);
     if (!user) throw createHttpError(404, "User not found!");
 
     user.status = status;

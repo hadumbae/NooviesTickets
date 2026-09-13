@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import createHttpError from "http-errors";
-import {User, type UserModerationLogSchemaFields, type UserSchemaFields} from "@/domains/users/model";
+import {UserModel, type UserModerationLogSchemaFields, type UserSchemaFields} from "@/domains/users/model";
 import {saveUserModerationLog,} from "@/domains/users/_feat/user-moderation";
 import {LeanUserQuerySelectFields,} from "@/domains/users/_feat/query-population";
 import {type UserRoleUpdateAction, type UserAdminRoleUpdateInputData} from "@/domains/users/_feat/manage-user-roles/schema";
@@ -28,7 +28,7 @@ type RoleReturns = {
 export async function manageUserAdminRole(
     {userId, adminId, data: {roles, message, action}}: RoleConfig
 ): Promise<RoleReturns> {
-    const user = await User
+    const user = await UserModel
         .findById(userId)
         .select(LeanUserQuerySelectFields);
 

@@ -9,4 +9,4 @@ import "@/domains/users/model/user/User.hooks";
 import "@/domains/users/model/user/User.virtuals";
 
 /** The Mongoose model for interacting with the users collection. */
-export const User: Model<UserSchemaFields> = model<UserSchemaFields>("User", UserSchema);
+export const UserModel: Model<UserSchemaFields> = model<UserSchemaFields>("User", UserSchema);

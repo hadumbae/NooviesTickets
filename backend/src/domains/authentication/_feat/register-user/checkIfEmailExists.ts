@@ -3,12 +3,12 @@
  */
 
 import {z, type ZodIssue} from "zod";
-import {User} from "@/domains/users/model/user";
+import {UserModel} from "@/domains/users/model/user";
 import {RequestValidationError} from "@/shared/errors/RequestValidationError";
 
 /** Checks for email uniqueness and throws a validation error if the email is taken. */
 export async function checkIfEmailExists(email: string): Promise<void> {
-    const emailCount = await User.countDocuments({email});
+    const emailCount = await UserModel.countDocuments({email});
 
     if (emailCount > 0) {
         const errors: ZodIssue[] = [{

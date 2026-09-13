@@ -17,13 +17,13 @@ import 'dotenv/config';
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
 import {generateSlug} from "@/shared/utility/generateSlug.js";
-import {Person} from "@/domains/persons/_models/person";
+import {PersonModel} from "@/domains/persons/_models/person";
 
 /**
  * Connect to the database and update missing person slugs.
  */
 connect().then(async () => {
-    const cursor = Person.find().cursor();
+    const cursor = PersonModel.find().cursor();
 
     for (
         let person = await cursor.next();
@@ -36,7 +36,7 @@ connect().then(async () => {
         }
     }
 
-    await Person.createIndexes();
+    await PersonModel.createIndexes();
     console.log("Done updating persons.");
 })
     .catch((err) => {

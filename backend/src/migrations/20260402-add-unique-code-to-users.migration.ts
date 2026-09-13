@@ -6,7 +6,7 @@
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
 import mongoose from "mongoose";
-import {User} from "@/domains/users/model/user/User.model";
+import {UserModel} from "@/domains/users/model/user/User.model";
 import {generateUserUniqueCode} from "@/domains/users/_feat/manage-user-unique-code/generators";
 
 /**
@@ -14,7 +14,7 @@ import {generateUserUniqueCode} from "@/domains/users/_feat/manage-user-unique-c
  */
 connect().then(async () => {
     /** Initialize cursor for memory-efficient document processing. */
-    const cursor = User.find().cursor();
+    const cursor = UserModel.find().cursor();
 
     for (let user = await cursor.next(); user !== null; user = await cursor.next()) {
         console.log("Found User!")
@@ -27,7 +27,7 @@ connect().then(async () => {
         console.log("Unique Code: ", user.uniqueCode);
     }
 
-    await User.syncIndexes();
+    await UserModel.syncIndexes();
     console.log("Done updating users. Added unique codes.");
 }).catch((err) => {
     console.error("Migration Error: ", err);

@@ -6,7 +6,7 @@ import {Types} from "mongoose";
 import createHttpError from "http-errors";
 import type {UserStatus} from "@/domains/users/validation/fields";
 import {type UserModerationLogSchemaFields} from "@/domains/users/model/moderation-log";
-import {User, type UserSchemaFields,} from "@/domains/users/model/user";
+import {UserModel, type UserSchemaFields,} from "@/domains/users/model/user";
 import {LeanUserQuerySelectFields} from "@/domains/users/_feat/query-population";
 import {saveUserModerationLog} from "@/domains/users/_feat/user-moderation";
 import {
@@ -37,7 +37,7 @@ export async function updateUserSuspension(
         ? ["ACTIVE", "SUSPENDED"]
         : ["SUSPENDED", "ACTIVE"];
 
-    const user = await User
+    const user = await UserModel
         .findOne({_id: userID, status: fromStatus})
         .select(LeanUserQuerySelectFields);
 

@@ -5,7 +5,7 @@
 import createHttpError from "http-errors";
 import type {SlugString, PositiveInteger} from "@noovies-tickets/common";
 import {Types} from "mongoose";
-import {Movie, type MovieSchemaFields} from "@/domains/movies/_models/movie";
+import {MovieModel, type MovieSchemaFields} from "@/domains/movies/_models/movie";
 import type {MovieCreditSchemaFields} from "@/domains/movie-credits/_models/credit/MovieCredit.types";
 import {
     type ReviewDetailsByMovieReturns
@@ -36,7 +36,7 @@ export type MovieInfoOverviewViewData = {
 export async function fetchMovieInfoOverviewViewData(
     {userID, slug, reviewPage, reviewPerPage}: FetchMovieInfoOverviewViewDataConfig
 ): Promise<MovieInfoOverviewViewData> {
-    const movie = await Movie
+    const movie = await MovieModel
         .findOne({slug})
         .populate(MoviePopulationPaths)
         .lean({virtuals: true});

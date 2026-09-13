@@ -5,7 +5,7 @@
 
 import type {ZodIssue} from "zod";
 import {ZodDuplicateIndexError} from "@/shared/errors/zod/ZodDuplicateIndexError";
-import {Genre} from "@/domains/genres/_models/genre/Genre.model";
+import {GenreModel} from "@/domains/genres/_models/genre/Genre.model";
 
 /**
  * Handles unique constraint violations for Genres.
@@ -23,7 +23,7 @@ export function handleGenreDuplicateIndex(indexString: string): void | never {
 
         throw new ZodDuplicateIndexError({
             index: indexString,
-            model: Genre.modelName,
+            model: GenreModel.modelName,
             errors,
             message: "Duplicate genre name detected."
         });

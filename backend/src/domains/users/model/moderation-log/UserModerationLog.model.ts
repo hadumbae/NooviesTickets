@@ -9,5 +9,5 @@ import {UserModerationLogSchema} from "@/domains/users/model/moderation-log/User
 /**
  * Mongoose model for persisting and querying user moderation log entries.
  */
-export const UserModerationLog: Model<UserModerationLogSchemaFields> =
+export const UserModerationLogModel: Model<UserModerationLogSchemaFields> =
     model<UserModerationLogSchemaFields>("UserModerationLog", UserModerationLogSchema);

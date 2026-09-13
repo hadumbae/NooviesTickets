@@ -2,7 +2,7 @@
  * @fileoverview Handler for fetching minimal person data for UI input selections.
  */
 
-import {Person} from "@/domains/persons/_models/person/Person.model";
+import {PersonModel} from "@/domains/persons/_models/person/Person.model";
 import type {PersonSchemaFields} from "@/domains/persons/_models/person/Person.types";
 import type {FetchLeanDataConfig} from "@/domains/ui-inputs/handlers/fetchLeanDataConfig";
 
@@ -10,7 +10,7 @@ import type {FetchLeanDataConfig} from "@/domains/ui-inputs/handlers/fetchLeanDa
 export async function fetchPersonsForInputs(
     {filters, sorts}: FetchLeanDataConfig<PersonSchemaFields> = {}
 ): Promise<PersonSchemaFields[]> {
-    return Person
+    return PersonModel
         .find(filters ?? {})
         .sort(sorts)
         .select("_id name dob nationality")

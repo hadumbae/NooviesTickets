@@ -4,8 +4,8 @@
 
 import type {FetchGenreDetailsViewConfig, FetchGenreDetailsViewReturns} from "./service.types";
 import createHttpError from "http-errors";
-import {Genre} from "@/domains/genres/_models/genre";
-import {Movie} from "@/domains/movies/_models/movie/Movie.model";
+import {GenreModel} from "@/domains/genres/_models/genre";
+import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
 
 /**
  * Aggregates a genre's metadata with a paginated list of associated movies.
@@ -14,12 +14,12 @@ import {Movie} from "@/domains/movies/_models/movie/Movie.model";
 export const fetchGenreDetails = async (
     {genreSlug, moviePagination: {page, perPage}}: FetchGenreDetailsViewConfig
 ): Promise<FetchGenreDetailsViewReturns> => {
-    const genre = await Genre.findOne({slug: genreSlug}).lean();
+    const genre = await GenreModel.findOne({slug: genreSlug}).lean();
     if (!genre) throw createHttpError(404, "Genre not found.");
 
     const [totalItems, items] = await Promise.all([
-        Movie.countDocuments({genres: genre._id}),
-        Movie.find({genres: genre._id})
+        MovieModel.countDocuments({genres: genre._id}),
+        MovieModel.find({genres: genre._id})
             .skip(perPage * (page - 1))
             .limit(perPage)
             .populate("genres")

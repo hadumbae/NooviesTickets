@@ -13,4 +13,4 @@ import type {PersonSchemaFields} from "@/domains/persons/_models/person/Person.t
  * Mongoose model for the Person collection.
  * Provides CRUD operations and identity tracking for actor/director documents.
  */
-export const Person: Model<PersonSchemaFields> = model<PersonSchemaFields>("Person", PersonSchema);
+export const PersonModel: Model<PersonSchemaFields> = model<PersonSchemaFields>("Person", PersonSchema);

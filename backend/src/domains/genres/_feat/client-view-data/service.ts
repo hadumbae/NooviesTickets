@@ -8,8 +8,8 @@ import type {
     FetchGenreWithMoviesConfig,
     GenreWithMoviesReturns
 } from "@/domains/genres/_feat/client-view-data/service.types";
-import {Genre} from "@/domains/genres/_models/genre";
-import {Movie} from "@/domains/movies/_models/movie/Movie.model";
+import {GenreModel} from "@/domains/genres/_models/genre";
+import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
 import type {MovieWithGenres} from "@/domains/movies/_models/movie/Movie.types";
 
 /**
@@ -18,11 +18,11 @@ import type {MovieWithGenres} from "@/domains/movies/_models/movie/Movie.types";
 export async function fetchGenreWithMovies(
     {slug, moviePagination: {page, perPage}}: FetchGenreWithMoviesConfig
 ): Promise<GenreWithMoviesReturns> {
-    const genre = await Genre.findOne({slug}).lean().orFail();
+    const genre = await GenreModel.findOne({slug}).lean().orFail();
 
     const [totalItems, items] = await Promise.all([
-        Movie.countDocuments({genres: genre._id}),
-        Movie
+        MovieModel.countDocuments({genres: genre._id}),
+        MovieModel
             .find({genres: genre._id})
             .skip((page - 1) * perPage)
             .limit(perPage)

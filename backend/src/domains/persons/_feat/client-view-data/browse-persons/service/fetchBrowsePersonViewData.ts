@@ -2,7 +2,7 @@
  * @fileoverview Service for fetching and aggregating person data for the browse view.
  */
 
-import {Person, type PersonSchemaFields} from "@/domains/persons";
+import {PersonModel, type PersonSchemaFields} from "@/domains/persons";
 import type {
     BrowsePersonsQueryMatchStage,
     BrowsePersonsQuerySortStage
@@ -43,8 +43,8 @@ export async function fetchBrowsePersonViewData(
     } = config;
 
     const [totalItems, persons] = await Promise.all([
-        Person.countDocuments(match.$match),
-        Person
+        PersonModel.countDocuments(match.$match),
+        PersonModel
             .find(match.$match)
             .sort(sort.$sort)
             .skip((page - 1) * perPage)

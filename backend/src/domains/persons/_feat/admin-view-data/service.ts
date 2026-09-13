@@ -7,7 +7,7 @@ import type {
     FetchPersonDetailsViewData,
     FetchPersonDetailsViewDataConfig
 } from "@/domains/persons/_feat/admin-view-data/service.types";
-import {Person} from "@/domains/persons/_models/person";
+import {PersonModel} from "@/domains/persons/_models/person";
 import {fetchPersonCreditStats, fetchPersonFilmography} from "@/domains/movie-credits/_feat/person-credits";
 
 /**
@@ -16,7 +16,7 @@ import {fetchPersonCreditStats, fetchPersonFilmography} from "@/domains/movie-cr
 export async function fetchPersonDetailsViewData(
     {slug, limit}: FetchPersonDetailsViewDataConfig
 ): Promise<FetchPersonDetailsViewData> {
-    const person = await Person.findOne({slug}).orFail();
+    const person = await PersonModel.findOne({slug}).orFail();
     const filmography = await fetchPersonFilmography({personID: person._id, limit});
     const stats = await fetchPersonCreditStats({personID: person._id});
 

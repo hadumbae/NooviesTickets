@@ -7,11 +7,11 @@ import {buildCRUDRoutes, type CRUDRoute} from "@/shared/_feat/generic-crud/route
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {destroy, find, findById, paginated} from "@/shared/_feat/generic-crud/path-handlers";
-import {User, type UserSchemaFields} from "@/domains/users/model/user";
+import {UserModel, type UserSchemaFields} from "@/domains/users/model/user";
 import {UserQueryMatchStageSchema, UserQuerySortStageSchema} from "@/domains/users/_feat/validate-query";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 
-const modelName = User.modelName;
+const modelName = UserModel.modelName;
 const matchSchema = UserQueryMatchStageSchema;
 const sortSchema = UserQuerySortStageSchema;
 
@@ -45,7 +45,7 @@ const routes: CRUDRoute<UserSchemaFields>[] = [
 ];
 
 const router: Router = buildCRUDRoutes<UserSchemaFields>({
-    model: User,
+    model: UserModel,
     routes: routes,
 });
 

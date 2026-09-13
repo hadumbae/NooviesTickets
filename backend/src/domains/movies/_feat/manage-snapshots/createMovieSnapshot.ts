@@ -2,7 +2,7 @@
  * @fileoverview Utility for generating immutable movie snapshots for historical records.
  */
 
-import {Movie} from "@/domains/movies/_models/movie/Movie.model";
+import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
 import type {MovieSnapshotSchemaFields} from "@/domains/movies/_models/movie-snapshot";
 import {Types} from "mongoose";
 import {DocumentNotFoundError} from "@/shared/errors/DocumentNotFoundError";
@@ -15,11 +15,11 @@ import {MovieSnapshotInputSchema} from "@/domains/movies/_feat/validate-submit";
 export async function createMovieSnapshot(
     movieID: Types.ObjectId
 ): Promise<MovieSnapshotSchemaFields> {
-    const movie = await Movie.findById(movieID).populate(["genres"]).lean();
+    const movie = await MovieModel.findById(movieID).populate(["genres"]).lean();
 
     if (!movie) {
         throw new DocumentNotFoundError({
-            model: Movie,
+            model: MovieModel,
             identifier: movieID,
             message: "Failed to fetch Movie for snapshot.",
         });

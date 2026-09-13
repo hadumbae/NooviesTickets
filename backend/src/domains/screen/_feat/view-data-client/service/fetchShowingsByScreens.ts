@@ -4,7 +4,7 @@
 
 import type {ScreenWithShowings} from "@/domains/screen/_models/screen/Screen.types";
 import {getIdentifierFilter} from "@/shared/utility/getIdentifierFilter";
-import {Theatre} from "@/domains/theatre/model/theatre/Theatre.model";
+import {TheatreModel} from "@/domains/theatre/model/theatre/Theatre.model";
 import {type PipelineStage, Types} from "mongoose";
 import {ShowingPopulationPipelines} from "@/domains/showing/_feat/query-population/ShowingPopulationPipelines";
 import {ShowingSeatMapVirtualPipelines} from "@/domains/showing/_feat/query-population/ShowingSeatMapVirtualPipelines";
@@ -23,7 +23,7 @@ export async function fetchShowingsByScreens(
 ): Promise<ScreenWithShowings[]> {
     const idFilter = getIdentifierFilter(theatreID);
 
-    const {_id, location: {timezone}} = await Theatre
+    const {_id, location: {timezone}} = await TheatreModel
         .findOne(idFilter)
         .select("location")
         .orFail();

@@ -11,13 +11,13 @@ import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, findBySlug, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
 import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
-import {Person, type PersonSchemaFields} from "@/domains/persons/_models/person";
+import {PersonModel, type PersonSchemaFields} from "@/domains/persons/_models/person";
 import {PersonQueryMatchStageSchema, PersonQuerySortStageSchema} from "@/domains/persons/_feat/validate-query";
 import {PersonInputSchema} from "@/domains/persons/_feat/validate-submit";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 
-const modelName = Person.modelName;
+const modelName = PersonModel.modelName;
 const matchSchema = PersonQueryMatchStageSchema;
 const sortSchema = PersonQuerySortStageSchema;
 
@@ -80,7 +80,7 @@ const routes: CRUDRoute<PersonSchemaFields>[] = [
  * The instantiated Express Router for Person CRUD operations.
  */
 const router: Router = buildCRUDRoutes<PersonSchemaFields>({
-    model: Person,
+    model: PersonModel,
     routes: routes,
 });
 
@@ -91,7 +91,7 @@ const router: Router = buildCRUDRoutes<PersonSchemaFields>({
 router.get(
     "/query",
     buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
-    asyncHandler(aggregate({model: Person})),
+    asyncHandler(aggregate({model: PersonModel})),
 );
 
 export {

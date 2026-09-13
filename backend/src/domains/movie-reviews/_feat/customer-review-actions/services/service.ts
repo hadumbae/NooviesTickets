@@ -12,7 +12,7 @@ import type {
 } from "@/domains/movie-reviews/_feat/customer-review-actions/services/service.types";
 import {
     MovieReview,
-    MovieReviewModerationLog,
+    MovieReviewModerationLogModel,
     type MovieReviewModerationLogSchemaFields,
     type MovieReviewSchemaFields
 } from "@/domains/movie-reviews/_models";
@@ -22,7 +22,7 @@ export const writeMovieReviewModLog = async (
     {reviewID, admin, action, message}: WriteMovieReviewModLogConfig
 ): Promise<MovieReviewModerationLogSchemaFields> => {
     try {
-        return await MovieReviewModerationLog.create({
+        return await MovieReviewModerationLogModel.create({
             action,
             admin,
             message,

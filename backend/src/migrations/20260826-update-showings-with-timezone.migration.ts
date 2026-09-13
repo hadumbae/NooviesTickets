@@ -6,14 +6,14 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
 import {Showing} from "@/domains/showing";
-import {Theatre} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/model/theatre";
 
 connect().then(async () => {
 
     const cursor = Showing.find().cursor();
 
     for (let showing = await cursor.next(); showing !== null; showing = await cursor.next()) {
-        const theatre = await Theatre.findById(showing.theatre);
+        const theatre = await TheatreModel.findById(showing.theatre);
         if (!theatre) continue;
 
         showing.timezone = theatre.location.timezone;

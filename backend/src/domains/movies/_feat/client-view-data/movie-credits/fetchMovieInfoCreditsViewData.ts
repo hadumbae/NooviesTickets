@@ -3,7 +3,7 @@
  */
 
 import createHttpError from "http-errors";
-import {Movie, type MovieSchemaFields} from "@/domains/movies/_models/movie";
+import {MovieModel, type MovieSchemaFields} from "@/domains/movies/_models/movie";
 import {MoviePopulationPaths} from "@/domains/movies/_feat/query-population";
 import type {SlugString} from "@noovies-tickets/common";
 import {fetchCreditsForMovie, type GroupedCreditsForMovieData} from "@/domains/movies/_feat/client-view-data/movie-credits/fetchCreditsForMovie";
@@ -22,7 +22,7 @@ export type MovieInfoCreditsViewData = {
 export async function fetchMovieInfoCreditsViewData(
     {slug}: FetchMovieInfoCreditsViewDataConfig
 ): Promise<MovieInfoCreditsViewData> {
-    const movie = await Movie
+    const movie = await MovieModel
         .findOne({slug})
         .populate(MoviePopulationPaths)
         .lean({virtuals: true});

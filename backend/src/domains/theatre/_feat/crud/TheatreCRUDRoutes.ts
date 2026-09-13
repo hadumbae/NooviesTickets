@@ -12,12 +12,12 @@ import validateZodSchema from "@/shared/utility/schema/validators/validateZodSch
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import {TheatreQueryMatchStageSchema, TheatreQuerySortStageSchema} from "@/domains/theatre/_feat/validate-query";
-import {Theatre, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
+import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
 import {TheatreVirtualPipelines} from "@/domains/theatre/_feat/aggregate";
 import {TheatreVirtualPopulationPaths} from "@/domains/theatre/_feat/crud/options/TheatreVirtualPopulationPaths";
 import {TheatreInputSchema} from "@/domains/theatre/validation";
 
-const modelName = Theatre.modelName;
+const modelName = TheatreModel.modelName;
 const matchSchema = TheatreQueryMatchStageSchema;
 const sortSchema = TheatreQuerySortStageSchema;
 
@@ -76,7 +76,7 @@ const routes: CRUDRoute<TheatreSchemaFields>[] = [
 
 /** Orchestrates the creation of the router using a generic CRUD factory. */
 const router: Router = buildCRUDRoutes<TheatreSchemaFields>({
-    model: Theatre,
+    model: TheatreModel,
     routes: routes,
     populatePaths: TheatreVirtualPopulationPaths,
 });
@@ -85,7 +85,7 @@ const router: Router = buildCRUDRoutes<TheatreSchemaFields>({
 router.get(
     "/query",
     buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
-    asyncHandler(aggregate({model: Theatre, virtualsPipelines: TheatreVirtualPipelines})),
+    asyncHandler(aggregate({model: TheatreModel, virtualsPipelines: TheatreVirtualPipelines})),
 );
 
 export {

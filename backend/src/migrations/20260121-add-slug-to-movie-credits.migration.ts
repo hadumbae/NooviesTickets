@@ -18,7 +18,7 @@ import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
 import {generateSlug} from "@/shared/utility/generateSlug.js";
 import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
-import {Person} from "@/domains/persons/_models/person";
+import {PersonModel} from "@/domains/persons/_models/person";
 
 /**
  * Connect to the database and update missing person slugs.
@@ -27,7 +27,7 @@ connect().then(async () => {
     const cursor = MovieCredit.find().cursor();
 
     for (let credit = await cursor.next(); credit !== null; credit = await cursor.next()) {
-        const person = await Person.findById(credit.person);
+        const person = await PersonModel.findById(credit.person);
 
         if (!credit.slug && person) {
             credit.slug = generateSlug(person.name);

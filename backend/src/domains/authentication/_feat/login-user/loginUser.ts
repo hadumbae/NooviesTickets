@@ -6,7 +6,7 @@ import type {ZodIssue} from "zod";
 import bcrypt from "bcryptjs";
 import createHttpError from "http-errors";
 import type {UserLoginInput} from "@/domains/authentication/_feat/login-user/UserLoginInputSchema";
-import {User} from "@/domains/users/model/user";
+import {UserModel} from "@/domains/users/model/user";
 import {RequestValidationError} from "@/shared/errors/RequestValidationError";
 import {type AuthUserCredentials} from "@/domains/authentication";
 import {generateAuthenticationPayload} from "@/domains/authentication/_feat/login-user/generateAuthenticationPayload";
@@ -22,7 +22,7 @@ type LoginConfig = {
 export async function loginUser(
     {data: {email: inputEmail, password: inputPassword}}: LoginConfig
 ): Promise<AuthUserCredentials> {
-    const user = await User.findOne({email: inputEmail});
+    const user = await UserModel.findOne({email: inputEmail});
     if (!user) throw createHttpError(404, "User not found!");
 
     const {password, status} = user;

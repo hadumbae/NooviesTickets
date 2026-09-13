@@ -4,7 +4,7 @@
 
 import crypto from "crypto";
 import createHttpError from "http-errors";
-import {RefreshToken} from "@/domains/authentication/_models/refresh-token";
+import {RefreshTokenModel} from "@/domains/authentication/_models/refresh-token";
 import {generateAuthenticationPayload} from "@/domains/authentication/_feat/login-user";
 import {createRefreshToken} from "@/domains/authentication/_feat/manage-refresh-tokens/createRefreshToken";
 import type {IpString} from "@noovies-tickets/common";
@@ -27,7 +27,7 @@ export async function updateUserAuthCredentials(
 ): Promise<UpdateReturns> {
     const incomingHashed = crypto.createHash("sha256").update(incomingToken).digest("hex");
 
-    const staleToken = await RefreshToken.findOne({tokenHash: incomingHashed});
+    const staleToken = await RefreshTokenModel.findOne({tokenHash: incomingHashed});
     if (!staleToken) throw createHttpError(401, "Invalid. Refresh Token Required.");
 
     if (!user._id.equals(staleToken.user)) {
@@ -35,7 +35,7 @@ export async function updateUserAuthCredentials(
     }
 
     if (staleToken.revoked) {
-        await RefreshToken.updateMany({family: staleToken.family}, {$set: {revoked: true}});
+        await RefreshTokenModel.updateMany({family: staleToken.family}, {$set: {revoked: true}});
         throw createHttpError(403, "Forbidden. Token Already Revoked.");
     }
 

@@ -6,7 +6,7 @@ import type {
     RemoveGenreImageConfig,
     UpdateGenreImageConfig
 } from "@/domains/genres/_feat/manage-image/service/service.types";
-import {Genre, type GenreSchemaFields} from "@/domains/genres/_models/genre";
+import {GenreModel, type GenreSchemaFields} from "@/domains/genres/_models/genre";
 import createHttpError from "http-errors";
 import {removeCloudinaryImage, uploadCloudinaryImage} from "@/shared/_feat/manage-cloudinary-images";
 
@@ -14,7 +14,7 @@ import {removeCloudinaryImage, uploadCloudinaryImage} from "@/shared/_feat/manag
 export async function updateGenreImage(
     {_id, image}: UpdateGenreImageConfig
 ): Promise<GenreSchemaFields> {
-    const genre = await Genre.findById(_id);
+    const genre = await GenreModel.findById(_id);
     if (!genre) throw createHttpError(404, "Genre not found.")
 
     if (genre.image) {
@@ -31,7 +31,7 @@ export async function updateGenreImage(
 export async function removeGenreImage(
     {_id}: RemoveGenreImageConfig
 ): Promise<GenreSchemaFields> {
-    const genre = await Genre.findById(_id);
+    const genre = await GenreModel.findById(_id);
     if (!genre) throw createHttpError(404, "Genre not found.")
 
     if (genre.image) {

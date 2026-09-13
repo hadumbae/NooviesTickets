@@ -8,7 +8,7 @@ import type {MovieReviewSchemaFields} from "@/domains/movie-reviews/_models/revi
 import {Reservation} from "@/domains/reservations/_model/reservation/Reservation.model";
 import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import {Types} from "mongoose";
-import {LeanUserQuerySelectFields, User} from "@/domains/users";
+import {LeanUserQuerySelectFields, UserModel} from "@/domains/users";
 import createHttpError from "http-errors";
 import {MovieReviewPopulatePaths} from "@/domains/movie-reviews";
 
@@ -36,7 +36,7 @@ export type CustomerProfileViewData = {
 export async function fetchCustomerProfileViewData(
     {userId, reservationCounts = 5, reviewCounts = 5}: FetchCustomerProfileViewDataConfig
 ): Promise<CustomerProfileViewData> {
-    const customer = await User
+    const customer = await UserModel
         .findById(userId)
         .select(LeanUserQuerySelectFields)
         .lean();

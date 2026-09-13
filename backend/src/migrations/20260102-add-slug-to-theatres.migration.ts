@@ -15,10 +15,10 @@ import 'dotenv/config';
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
 import {generateSlug} from "@/shared/utility/generateSlug.js";
-import {Theatre} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/model/theatre";
 
 connect().then(async () => {
-    const cursor = Theatre.find().cursor();
+    const cursor = TheatreModel.find().cursor();
 
     for (let theatre = await cursor.next(); theatre !== null; theatre = await cursor.next()) {
         if (!theatre.slug) {
@@ -27,7 +27,7 @@ connect().then(async () => {
         }
     }
 
-    await Theatre.createIndexes();
+    await TheatreModel.createIndexes();
     console.log("Done updating theatres.");
 }).catch((err) => {
     console.log(err);

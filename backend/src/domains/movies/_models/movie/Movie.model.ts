@@ -10,4 +10,4 @@ import "./Movie.indexes.js";
 import "./Movie.hooks.js";
 
 /** Mongoose model for performing CRUD operations on Movie documents. */
-export const Movie: Model<MovieSchemaFields> = model<MovieSchemaFields>("Movie", MovieSchema);
+export const MovieModel: Model<MovieSchemaFields> = model<MovieSchemaFields>("Movie", MovieSchema);

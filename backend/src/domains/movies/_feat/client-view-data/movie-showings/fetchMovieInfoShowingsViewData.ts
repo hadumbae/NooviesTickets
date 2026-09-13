@@ -3,7 +3,7 @@
  */
 
 import createHttpError from "http-errors";
-import {Movie, type MovieSchemaFields} from "@/domains/movies/_models/movie";
+import {MovieModel, type MovieSchemaFields} from "@/domains/movies/_models/movie";
 import {MoviePopulationPaths} from "@/domains/movies/_feat/query-population";
 import {fetchShowingsForMovie} from "@/domains/movies/_feat/client-view-data/movie-showings/fetchShowingsForMovie";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
@@ -25,7 +25,7 @@ export type MovieInfoShowingsViewData = {
 export async function fetchMovieInfoShowingsViewData(
     {slug, ...queries}: MovieInfoShowingsViewRouteConfig
 ): Promise<MovieInfoShowingsViewData> {
-    const movie = await Movie.findOne({slug}).populate(MoviePopulationPaths).lean({virtuals: true});
+    const movie = await MovieModel.findOne({slug}).populate(MoviePopulationPaths).lean({virtuals: true});
     if (!movie) throw createHttpError(404, "Movie not found.");
 
     const {items, totalItems} = await fetchShowingsForMovie({

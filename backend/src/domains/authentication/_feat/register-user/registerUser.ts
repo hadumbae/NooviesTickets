@@ -3,7 +3,7 @@
  */
 
 import bcrypt from "bcryptjs";
-import {User, type UserSchemaFields} from "@/domains/users/model/user";
+import {UserModel, type UserSchemaFields} from "@/domains/users/model/user";
 import {checkIfEmailExists} from "@/domains/authentication/_feat/register-user/checkIfEmailExists";
 import type {UserRegisterInput} from "@/domains/authentication/_feat/register-user/UserRegisterInputSchema";
 import {generateUserUniqueCode} from "@/domains/users";
@@ -24,7 +24,7 @@ export async function registerUser(
 
     const uniqueCode = generateUserUniqueCode();
 
-    return User.create({
+    return UserModel.create({
         name,
         email,
         password: hashedPassword,

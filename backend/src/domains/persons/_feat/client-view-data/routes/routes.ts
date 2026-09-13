@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {Person} from "@/domains/persons/_models";
+import {PersonModel} from "@/domains/persons/_models";
 import {parseQueryMatchStage, parseQuerySortStage} from "@/shared/_feat/middleware";
 import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
@@ -16,7 +16,7 @@ import {
 import {PersonInfoViewRouteConfigSchema} from "@/domains/persons/_feat/client-view-data/person-info";
 
 const routes = Router();
-const modelName = Person.modelName;
+const modelName = PersonModel.modelName;
 
 routes.get(
     "/browse",

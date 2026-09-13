@@ -1,4 +1,4 @@
-import {Theatre, type TheatreWithShowings} from "@/domains/theatre/model/theatre";
+import {TheatreModel, type TheatreWithShowings} from "@/domains/theatre/model/theatre";
 import type {LookupPipelineStages} from "@/shared/_types";
 import {ShowingPopulationPipelines, ShowingSeatMapVirtualPipelines} from "@/domains/showing";
 import type {PipelineStage} from "mongoose";
@@ -75,7 +75,7 @@ export async function fetchTheatresByLocation(
         },
     ];
 
-    const [result] = await Theatre.aggregate(pipelines);
+    const [result] = await TheatreModel.aggregate(pipelines);
 
     return result;
 }

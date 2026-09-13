@@ -5,7 +5,7 @@
 import type {Request, Response} from "express";
 import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils";
 import {createDocument} from "@/shared/_feat/generic-crud/path-handlers";
-import {Genre, handleGenreDuplicateIndex} from "@/domains/genres/_models/genre";
+import {GenreModel, handleGenreDuplicateIndex} from "@/domains/genres/_models/genre";
 
 /**
  * Creates a Genre document using validated body data and domain-specific error handling.
@@ -16,7 +16,7 @@ export function genreCreate() {
         const data = req.validatedBody;
 
         const item = await createDocument({
-            model: Genre,
+            model: GenreModel,
             options,
             data,
             onDuplicateIndex: handleGenreDuplicateIndex,

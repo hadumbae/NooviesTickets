@@ -9,7 +9,7 @@ import type {
     UploadPersonProfileImageConfig
 } from "@/domains/persons/_feat/update-image/service.types";
 import createHttpError from "http-errors";
-import {Person, type PersonSchemaFields} from "@/domains/persons/_models/person";
+import {PersonModel, type PersonSchemaFields} from "@/domains/persons/_models/person";
 import {removeCloudinaryImage, uploadCloudinaryImage} from "@/shared/_feat/manage-cloudinary-images";
 
 /**
@@ -19,7 +19,7 @@ import {removeCloudinaryImage, uploadCloudinaryImage} from "@/shared/_feat/manag
 export async function updateProfileImage(
     {_id, image}: UploadPersonProfileImageConfig
 ): Promise<DocumentType<PersonSchemaFields>> {
-    const person = await Person.findById(_id);
+    const person = await PersonModel.findById(_id);
     if (!person) throw createHttpError(404, "Person not found.");
 
     if (person.profileImage) {
@@ -39,7 +39,7 @@ export async function updateProfileImage(
 export async function deleteProfileImage(
     {_id}: RemovePersonProfileImageConfig
 ): Promise<DocumentType<PersonSchemaFields>> {
-    const person = await Person.findById(_id);
+    const person = await PersonModel.findById(_id);
     if (!person) throw createHttpError(404, "Person not found.");
 
     if (person.profileImage?.public_id) {

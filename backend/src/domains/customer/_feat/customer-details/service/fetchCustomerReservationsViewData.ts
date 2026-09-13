@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import type {PaginationReturns} from "@/shared/_types/pagination";
-import {LeanUserQuerySelectFields, type LeanUserSchemaFields, User} from "@/domains/users";
+import {LeanUserQuerySelectFields, type LeanUserSchemaFields, UserModel} from "@/domains/users";
 import type {RequestPaginationOptions} from "@/shared/_feat/fetch-request-options";
 import createHttpError from "http-errors";
 import {Reservation, type ReservationSchemaFields} from "@/domains/reservations";
@@ -31,7 +31,7 @@ export type FetchCustomerReservationsViewData = {
 export async function fetchCustomerReservationsViewData(
     {userId, filters, sorts, pagination: {page, perPage}}: FetchCustomerReservationsViewDataConfig
 ): Promise<FetchCustomerReservationsViewData> {
-    const customer = await User
+    const customer = await UserModel
         .findById(userId)
         .select(LeanUserQuerySelectFields)
         .lean();

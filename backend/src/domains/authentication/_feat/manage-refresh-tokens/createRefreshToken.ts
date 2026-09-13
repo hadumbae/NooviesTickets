@@ -4,7 +4,7 @@
 
 import crypto from "crypto";
 import {Types} from "mongoose";
-import {RefreshToken, type RefreshTokenSchemaFields} from "@/domains/authentication";
+import {RefreshTokenModel, type RefreshTokenSchemaFields} from "@/domains/authentication";
 import {DateTime} from "luxon";
 import {getEnvVariables} from "@/shared/_feat";
 import type {IpString} from "@noovies-tickets/common";
@@ -31,7 +31,7 @@ export async function createRefreshToken(
     const tokenFamily = family ?? crypto.randomUUID();
     const expiresAt = DateTime.now().plus({day: REFRESH_TOKEN_LIFETIME}).toJSDate();
 
-    const data = new RefreshToken({
+    const data = new RefreshTokenModel({
         ip: userIp,
         family: tokenFamily,
         user: userID,

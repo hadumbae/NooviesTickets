@@ -8,12 +8,12 @@ import type {
 } from "@/domains/showing/_feat/admin-view-data/service/service.types";
 import {Showing} from "@/domains/showing/_models/showing/Showing.model";
 import createHttpError from "http-errors";
-import {Theatre} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/model/theatre";
 import {Screen} from "@/domains/screen/_models/screen";
 import {ScreenPopulationPaths} from "@/domains/screen/_feat/query-population";
 import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import {SeatMapPopulationPaths} from "@/domains/seatmap/_feat/query-population";
-import {Movie} from "@/domains/movies/_models/movie";
+import {MovieModel} from "@/domains/movies/_models/movie";
 import {MoviePopulationPaths} from "@/domains/movies/_feat/query-population";
 import {ShowingPopulationPaths} from "@/domains/showing/_feat/query-population";
 
@@ -31,8 +31,8 @@ export async function fetchShowingDetailsViewData(
     }
 
     const [movie, theatre, screen, seating] = await Promise.all([
-        Movie.findById(showing.movie).populate(MoviePopulationPaths).lean({virtuals: true}),
-        Theatre.findById(showing.theatre).lean({virtuals: true}),
+        MovieModel.findById(showing.movie).populate(MoviePopulationPaths).lean({virtuals: true}),
+        TheatreModel.findById(showing.theatre).lean({virtuals: true}),
         Screen.findById(showing.screen).populate(ScreenPopulationPaths).lean({virtuals: true}),
         SeatMap.find({showing: showing._id}).populate(SeatMapPopulationPaths).lean({virtuals: true}),
     ]);

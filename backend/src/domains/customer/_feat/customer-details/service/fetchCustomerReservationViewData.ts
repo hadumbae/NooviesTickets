@@ -3,7 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import {LeanUserQuerySelectFields, type LeanUserSchemaFields, User} from "@/domains/users";
+import {LeanUserQuerySelectFields, type LeanUserSchemaFields, UserModel} from "@/domains/users";
 import createHttpError from "http-errors";
 import {Reservation, type ReservationSchemaFields} from "@/domains/reservations";
 
@@ -23,7 +23,7 @@ export type FetchCustomerReservationViewData = {
 export async function fetchCustomerReservationViewData(
     {userId, reservationId}: FetchCustomerReservationViewDataConfig
 ): Promise<FetchCustomerReservationViewData> {
-    const customer = await User
+    const customer = await UserModel
         .findById(userId)
         .select(LeanUserQuerySelectFields)
         .lean();

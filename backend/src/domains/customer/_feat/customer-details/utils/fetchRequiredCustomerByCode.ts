@@ -2,7 +2,7 @@
  * @fileoverview Utility for retrieving non-sensitive customer profile information by unique code.
  */
 
-import {User} from "@/domains/users/model/user/User.model";
+import {UserModel} from "@/domains/users/model/user/User.model";
 import createHttpError from "http-errors";
 import type {UserUniqueCode} from "@/domains/users/_feat/manage-user-unique-code/schemas";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
@@ -13,7 +13,7 @@ import {LeanUserQuerySelectFields} from "@/domains/users";
 export async function fetchRequiredCustomerByCode(
     code: UserUniqueCode
 ): Promise<DocumentType<LeanUserSchemaFields>> {
-    const customer = await User
+    const customer = await UserModel
         .findOne({uniqueCode: code})
         .select(LeanUserQuerySelectFields);
 

@@ -6,7 +6,7 @@ import type {Request, Response} from "express";
 import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils";
 import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
 import {updateDocument} from "@/shared/_feat/generic-crud/path-handlers";
-import {Genre, handleGenreDuplicateIndex} from "@/domains/genres/_models/genre";
+import {GenreModel, handleGenreDuplicateIndex} from "@/domains/genres/_models/genre";
 
 /**
  * Updates a Genre document by ID, handling field synchronization and unsetting.
@@ -20,7 +20,7 @@ export function genreUpdate() {
         const unset = req.unsetFields;
 
         const item = await updateDocument({
-            model: Genre,
+            model: GenreModel,
             _id: itemID,
             options,
             data,

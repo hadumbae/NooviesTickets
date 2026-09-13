@@ -4,7 +4,7 @@
 
 import createHttpError from "http-errors";
 import {Types} from "mongoose";
-import {Movie, type MovieSchemaFields} from "@/domains/movies/_models/movie";
+import {MovieModel, type MovieSchemaFields} from "@/domains/movies/_models/movie";
 import {removeCloudinaryImage} from "@/shared/_feat/manage-cloudinary-images";
 
 /** Configuration specifying which image field on the movie document to target for removal. */
@@ -22,7 +22,7 @@ export function createMovieImageRemover(
     {key}: RemoverFactoryConfig
 ): (params: DeleteMovieImageConfig) => Promise<MovieSchemaFields> {
     return async ({movieID}: DeleteMovieImageConfig): Promise<MovieSchemaFields> => {
-        const movie = await Movie.findById(movieID);
+        const movie = await MovieModel.findById(movieID);
         if (!movie) throw createHttpError(404, "Not found.");
 
         if (movie[key] && movie[key].public_id) {

@@ -6,19 +6,19 @@ import {ShowingSchema} from "./Showing.schema.js";
 import {type HydratedDocument, type Query} from "mongoose";
 import type {ShowingSchemaFields} from "./Showing.types.js";
 import {fetchRequiredModelDocument} from "@/shared/utility/fetch/fetchRequiredModelDocument";
-import {Theatre} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/model/theatre";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import {ShowingVirtualPopulationPaths} from "@/domains/showing/_feat/query-population";
 import {createShowingSeatMap} from "@/domains/seatmap/_feat/manage-showing-seat-maps";
 import {ShowingSeatMapVirtualPipelines} from "@/domains/showing/_feat/query-population/ShowingSeatMapVirtualPipelines";
 import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
-import {Movie} from "@/domains/movies/_models/movie";
+import {MovieModel} from "@/domains/movies/_models/movie";
 import {generateSlug} from "@/shared/utility/generateSlug";
 
 ShowingSchema.pre("validate", {document: true}, async function () {
     if (this.isModified("theatre")) {
         const theatre = await fetchRequiredModelDocument({
-            model: Theatre,
+            model: TheatreModel,
             _id: this.theatre,
             notFoundMessage: "Theatre Not Found.",
         });
@@ -28,7 +28,7 @@ ShowingSchema.pre("validate", {document: true}, async function () {
 
     if (this.isModified("movie")) {
         const movie = await fetchRequiredModelDocument({
-            model: Movie,
+            model: MovieModel,
             _id: this.movie,
             notFoundMessage: "Movie Not Found.",
         });

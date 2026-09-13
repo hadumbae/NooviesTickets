@@ -14,4 +14,4 @@ import "./Theatre.hooks";
 /**
  * The Theatre Model.
  */
-export const Theatre: Model<TheatreSchemaFields> = model<TheatreSchemaFields>("Theatre", TheatreSchema);
+export const TheatreModel: Model<TheatreSchemaFields> = model<TheatreSchemaFields>("Theatre", TheatreSchema);

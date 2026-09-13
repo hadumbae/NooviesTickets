@@ -5,14 +5,14 @@
 
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
-import {User} from "@/domains/users/model/user/User.model";
+import {UserModel} from "@/domains/users/model/user/User.model";
 import mongoose from "mongoose";
 
 /**
  * Ensures all users have a defined `favourites` array.
  */
 connect().then(async () => {
-    const cursor = User.find().cursor();
+    const cursor = UserModel.find().cursor();
 
     for (
         let user = await cursor.next();

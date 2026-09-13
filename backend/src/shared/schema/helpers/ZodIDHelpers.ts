@@ -1,15 +1,15 @@
 import {Showing} from "@/domains/showing/_models/showing/Showing.model.js";
 import {ObjectIdStringSchema} from "../mongoose/ObjectIdStringSchema.js";
-import {Genre} from "@/domains/genres/_models/genre";
-import {Person} from "@/domains/persons/_models/person";
+import {GenreModel} from "@/domains/genres/_models/genre";
+import {PersonModel} from "@/domains/persons/_models/person";
 import {Screen} from "@/domains/screen/_models/screen";
-import {Theatre} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/model/theatre";
 import {Seat} from "@/domains/seat/_models";
 
 export const GenreAsyncIDString = ObjectIdStringSchema
     .refine(
         async (genreID) => {
-            const genre = await Genre.findById(genreID);
+            const genre = await GenreModel.findById(genreID);
             return !!genre;
         },
         "404. Invalid ID."
@@ -18,7 +18,7 @@ export const GenreAsyncIDString = ObjectIdStringSchema
 export const PersonAsyncIDString = ObjectIdStringSchema
     .refine(
         async (personID) => {
-            const genre = await Person.findById(personID);
+            const genre = await PersonModel.findById(personID);
             return !!genre;
         },
         "404. Invalid ID."
@@ -27,7 +27,7 @@ export const PersonAsyncIDString = ObjectIdStringSchema
 export const TheatreAsyncIDString = ObjectIdStringSchema
     .refine(
         async (theatreID) => {
-            const theatre = await Theatre.findById(theatreID);
+            const theatre = await TheatreModel.findById(theatreID);
             return !!theatre;
         },
         "404. Screen not found."

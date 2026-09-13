@@ -14,5 +14,5 @@ import {
 /**
  * Mongoose model for interacting with the movie review moderation logs collection.
  */
-export const MovieReviewModerationLog: Model<MovieReviewModerationLogSchemaFields> =
+export const MovieReviewModerationLogModel: Model<MovieReviewModerationLogSchemaFields> =
     model<MovieReviewModerationLogSchemaFields>("MovieReviewModerationLog", MovieReviewModerationLogSchema)

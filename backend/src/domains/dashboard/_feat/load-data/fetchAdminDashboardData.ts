@@ -2,10 +2,10 @@
  * @fileoverview Service for aggregating summary counts across multiple domains for the admin dashboard.
  */
 
-import {Genre} from "@/domains/genres";
-import {Person} from "@/domains/persons";
-import {Theatre} from "@/domains/theatre/model/theatre";
-import {Movie} from "@/domains/movies";
+import {GenreModel} from "@/domains/genres";
+import {PersonModel} from "@/domains/persons";
+import {TheatreModel} from "@/domains/theatre/model/theatre";
+import {MovieModel} from "@/domains/movies";
 import {Showing} from "@/domains/showing";
 import {Reservation} from "@/domains/reservations";
 import {RoleTypeModel} from "@/domains/role-types";
@@ -28,10 +28,10 @@ type AdminDashboardData = {
 /** Fetches total entity count metrics across various domain collections for admin analytics. */
 export async function fetchAdminDashboardData(): Promise<AdminDashboardData> {
     const results = await Promise.all([
-        Genre.countDocuments(),
-        Person.countDocuments(),
-        Theatre.countDocuments(),
-        Movie.countDocuments(),
+        GenreModel.countDocuments(),
+        PersonModel.countDocuments(),
+        TheatreModel.countDocuments(),
+        MovieModel.countDocuments(),
         Showing.countDocuments(),
         Showing.countDocuments({status: {$in: ["SCHEDULED", "RUNNING", "SOLD_OUT"]}}),
         Reservation.countDocuments(),

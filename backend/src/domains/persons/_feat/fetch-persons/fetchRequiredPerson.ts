@@ -6,7 +6,7 @@ import {Types} from "mongoose";
 import type {SlugString} from "@noovies-tickets/common";
 import type {QueryConfig} from "@/shared/_types";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
-import {Person, type PersonSchemaFields} from "@/domains/persons";
+import {PersonModel, type PersonSchemaFields} from "@/domains/persons";
 import populateQuery from "@/shared/utility/mongoose/populateQuery";
 import {fetchOrFailQuery} from "@/shared/utility/mongoose/fetchOrFailQuery";
 
@@ -23,7 +23,7 @@ export async function fetchRequiredPerson(
     {_id, slug, options}: FetchConfig
 ): Promise<DocumentType<PersonSchemaFields>> {
     const query = populateQuery({
-        query: _id ? Person.findById(_id) : Person.findOne({slug}),
+        query: _id ? PersonModel.findById(_id) : PersonModel.findOne({slug}),
         config: options,
     });
 

@@ -2,7 +2,7 @@
  * @fileoverview Service for retrieving a specific movie document from the database.
  */
 
-import {Movie} from "@/domains/movies/_models/movie/Movie.model";
+import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
 import {fetchOrFailQuery} from "@/shared/utility/mongoose/fetchOrFailQuery";
 import {Types} from "mongoose";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
@@ -24,7 +24,7 @@ export const fetchRequiredMovie = async (
     {_id, slug, options = {}}: FetchRequiredMovieConfig
 ): Promise<DocumentType<MovieSchemaFields>> => {
     const query = populateQuery({
-        query: _id ? Movie.findById(_id) : Movie.findOne({slug}),
+        query: _id ? MovieModel.findById(_id) : MovieModel.findOne({slug}),
         config: options
     });
 

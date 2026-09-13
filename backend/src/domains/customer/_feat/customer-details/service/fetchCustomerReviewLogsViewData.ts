@@ -7,12 +7,12 @@ import type {
     MovieReviewModerationLogSchemaFields
 } from "@/domains/movie-reviews/_models/moderationLogs/MovieReviewModerationLog.types";
 import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
-import {MovieReviewModerationLog} from "@/domains/movie-reviews/_models/moderationLogs/MovieReviewModerationLog.model";
+import {MovieReviewModerationLogModel} from "@/domains/movie-reviews/_models/moderationLogs/MovieReviewModerationLog.model";
 import type {
     RequestPaginationOptions
 } from "@/shared/_feat/fetch-request-options/schemas/RequestPaginationOptionsSchema";
 import {Types} from "mongoose";
-import {LeanUserQuerySelectFields, User, type UserSchemaFields} from "@/domains/users";
+import {LeanUserQuerySelectFields, UserModel, type UserSchemaFields} from "@/domains/users";
 import {MovieReviewPopulatePaths, type MovieReviewSchemaFields} from "@/domains/movie-reviews";
 import createHttpError from "http-errors";
 
@@ -37,7 +37,7 @@ export type FetchCustomerReviewLogsViewData = {
 export async function fetchCustomerReviewLogsViewData(
     {userId, reviewId, pagination: {page, perPage}}: FetchCustomerReviewLogsViewDataConfig
 ): Promise<FetchCustomerReviewLogsViewData> {
-    const customer = await User
+    const customer = await UserModel
         .findById(userId)
         .select(LeanUserQuerySelectFields)
         .lean();
@@ -56,8 +56,8 @@ export async function fetchCustomerReviewLogsViewData(
     }
 
     const [totalItems, items] = await Promise.all([
-        MovieReviewModerationLog.countDocuments({review: review._id}),
-        MovieReviewModerationLog
+        MovieReviewModerationLogModel.countDocuments({review: review._id}),
+        MovieReviewModerationLogModel
             .find({review: review._id})
             .sort({createdAt: -1})
             .skip(perPage * (page - 1))

@@ -5,7 +5,7 @@
 import {Types} from "mongoose";
 import createHttpError from "http-errors";
 import bcrypt from "bcryptjs";
-import {User} from "@/domains/users/model/user";
+import {UserModel} from "@/domains/users/model/user";
 import type {
     UserPasswordUpdateInput
 } from "@/domains/authentication/_feat/change-user-password/UserPasswordUpdateInputSchema";
@@ -29,7 +29,7 @@ export async function updateUserPassword(params: PasswordUpdateData) {
 
     // --- GET USER ---
 
-    const user = await User.findById(userId);
+    const user = await UserModel.findById(userId);
 
     if (!user) {
         throw createHttpError(404, "User Not Found.");

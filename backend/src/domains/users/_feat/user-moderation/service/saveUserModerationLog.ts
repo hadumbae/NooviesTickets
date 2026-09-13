@@ -5,7 +5,7 @@
 import {Types} from "mongoose";
 import type {ModerationLogMessage} from "@/shared/_schema";
 import {type UserModerationLogAction} from "@/domains/users/validation/fields";
-import {UserModerationLog, type UserModerationLogSchemaFields} from "@/domains/users/model";
+import {UserModerationLogModel, type UserModerationLogSchemaFields} from "@/domains/users/model";
 
 /** Configuration parameters required to persist a user moderation log. */
 type SaveConfig<TAction extends string = UserModerationLogAction> = {
@@ -21,7 +21,7 @@ type SaveConfig<TAction extends string = UserModerationLogAction> = {
 export async function saveUserModerationLog<TAction extends string = UserModerationLogAction>(
     {admin, user, action, message}: SaveConfig<TAction>
 ): Promise<UserModerationLogSchemaFields> {
-    const log = new UserModerationLog({
+    const log = new UserModerationLogModel({
         admin,
         user,
         modDate: new Date(),

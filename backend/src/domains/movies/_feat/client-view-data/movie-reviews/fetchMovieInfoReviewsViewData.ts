@@ -1,7 +1,7 @@
 import type {SlugString} from "@noovies-tickets/common";
 import createHttpError from "http-errors";
 import {Types} from "mongoose";
-import {Movie, type MovieSchemaFields} from "@/domains/movies/_models";
+import {MovieModel, type MovieSchemaFields} from "@/domains/movies/_models";
 import {MoviePopulationPaths} from "@/domains/movies/_feat/query-population";
 import {
     type ReviewDetailsByMovieReturns
@@ -25,7 +25,7 @@ export type MovieInfoReviewsViewData = {
 export async function fetchMovieInfoReviewsViewData(
     {userID, slug, page, perPage}: FetchMovieInfoReviewsViewDataConfig
 ): Promise<MovieInfoReviewsViewData> {
-    const movie = await Movie
+    const movie = await MovieModel
         .findOne({slug})
         .populate(MoviePopulationPaths)
         .lean({virtuals: true});

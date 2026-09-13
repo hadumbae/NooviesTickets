@@ -3,7 +3,7 @@
  */
 
 import createHttpError from "http-errors";
-import {Theatre, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
+import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
 import type {SlugString, DateOnlyString} from "@noovies-tickets/common";
 import {type MovieSchemaFields} from "@/domains/movies/_models/movie";
 import {type ScreenSchemaFields, type ScreenWithShowings} from "@/domains/screen/_models/screen";
@@ -46,7 +46,7 @@ export type TheatreInfoViewData = {
 export async function fetchTheatreInfoViewData(
     {theatreSlug, localDateString, limit = 3}: FetchTheatreInfoViewDataConfig
 ): Promise<TheatreInfoViewData> {
-    const theatre = await Theatre.findOne({slug: theatreSlug}).lean({virtuals: true});
+    const theatre = await TheatreModel.findOne({slug: theatreSlug}).lean({virtuals: true});
     if (!theatre) throw createHttpError(404, "Theatre not found!");
 
     const screens = await fetchTheatreScreensWithShowings({

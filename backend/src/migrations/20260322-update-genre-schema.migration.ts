@@ -6,14 +6,14 @@
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
 import mongoose from "mongoose";
-import {Movie} from "@/domains/movies/_models/movie/Movie.model";
-import {Genre} from "@/domains/genres/_models/genre";
+import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
+import {GenreModel} from "@/domains/genres/_models/genre";
 
 /**
  * Executes the synchronization process.
  */
 connect().then(async () => {
-    const cursor = Genre.find().cursor();
+    const cursor = GenreModel.find().cursor();
 
     for (
         let genre = await cursor.next();
@@ -21,7 +21,7 @@ connect().then(async () => {
         genre = await cursor.next()
     ) {
         /** Recalculate actual count from the Movie collection. */
-        const count = await Movie.countDocuments({genres: genre._id});
+        const count = await MovieModel.countDocuments({genres: genre._id});
 
         console.log(`Updating: ${genre.name} | Found: ${count} movies`);
 

@@ -11,4 +11,4 @@ import "./Genre.hooks.js";
 /**
  * Compiled Mongoose model for Genre documents.
  */
-export const Genre: Model<GenreSchemaFields> = model<GenreSchemaFields>("Genre", GenreSchema);
+export const GenreModel: Model<GenreSchemaFields> = model<GenreSchemaFields>("Genre", GenreSchema);

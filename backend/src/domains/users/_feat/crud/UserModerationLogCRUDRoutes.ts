@@ -12,9 +12,9 @@ import {
     UserModerationLogQuerySortStageSchema
 } from "@/domains/users/_feat/validate-query";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
-import {UserModerationLog, type UserModerationLogSchemaFields} from "@/domains/users/model/moderation-log";
+import {UserModerationLogModel, type UserModerationLogSchemaFields} from "@/domains/users/model/moderation-log";
 
-const modelName = UserModerationLog.modelName;
+const modelName = UserModerationLogModel.modelName;
 const matchSchema = UserModerationLogQueryMatchStageSchema;
 const sortSchema = UserModerationLogQuerySortStageSchema;
 
@@ -42,7 +42,7 @@ const routes: CRUDRoute<UserModerationLogSchemaFields>[] = [
 ];
 
 const router: Router = buildCRUDRoutes<UserModerationLogSchemaFields>({
-    model: UserModerationLog,
+    model: UserModerationLogModel,
     routes: routes,
 });
 
