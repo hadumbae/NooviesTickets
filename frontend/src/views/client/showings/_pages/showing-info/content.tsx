@@ -7,7 +7,7 @@ import {PageFlexWrapper, PageSectionHeader} from "@/views/common/_comp/page";
 import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
 
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
-import {ReservationType} from "@/domains/reservations/_schema/model/fields/ReservationTypeEnumSchema.ts";
+import {ReservationType} from "@noovies-tickets/common";
 import {ShowingSelectorInfoCard} from "@/views/client/showings/_comp";
 import {ShowingInfoPageHeader} from "@/views/client/showings/_pages/showing-info/header.tsx";
 import {ReservationForm, ReservationFormView} from "@/views/client/reservations/_feat/reserve-ticket-form/form";

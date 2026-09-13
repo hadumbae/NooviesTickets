@@ -3,15 +3,7 @@
  */
 
 import {Schema} from "mongoose";
-import {
-    RoleTypeDepartmentConstant
-} from "@/domains/role-types/_validation/constants/RoleTypeDepartmentConstant";
-import {
-    RoleTypeCastCategoryConstant
-} from "@/domains/role-types/_validation/constants/RoleTypeCastCategoryConstant";
-import {
-    RoleTypeCrewCategoryConstant
-} from "@/domains/role-types/_validation/constants/RoleTypeCrewCategoryConstant";
+import {RoleTypeDepartmentConstant, RoleTypeCastCategoryConstant, RoleTypeCrewCategoryConstant} from "@noovies-tickets/common";
 import type {RoleTypeSchemaFields} from "@/domains/role-types/_models/RoleType.types";
 
 /** Mongoose schema for role type documents. */

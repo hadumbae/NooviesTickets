@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
-import {UserRoleSchema} from "@/domains/users/_schema/fields/UserRoleSchema.ts";
+import {UserRoleSchema} from "@noovies-tickets/common";
 import {LeanUserWithEmailSchema} from "@/domains/users/_schema/user/LeanUserWithEmailSchema.ts";
 
 /** Complete validation schema for the User entity including assigned roles. */

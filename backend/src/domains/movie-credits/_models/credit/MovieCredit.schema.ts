@@ -8,7 +8,7 @@ import {Schema} from "mongoose";
 import type {MovieCreditSchemaFields} from "@/domains/movie-credits/_models/credit/MovieCredit.types";
 import {
     RoleTypeDepartmentConstant
-} from "@/domains/role-types/_validation/constants/RoleTypeDepartmentConstant";
+} from "@noovies-tickets/common";
 import {SlugSchemaTypeOptions} from "@/shared/model/SlugSchemaTypeOptions.js";
 
 /**

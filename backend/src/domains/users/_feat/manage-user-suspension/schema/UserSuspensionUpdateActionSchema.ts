@@ -6,7 +6,7 @@ import {z} from "zod";
 import {UserSuspensionUpdateActionConstant} from "@/domains/users/_feat/manage-user-suspension/const";
 import {
     UserModerationLogActionSchema
-} from "@/domains/users/validation/fields/moderation/UserModerationLogActionSchema";
+} from "@noovies-tickets/common";
 
 /** Zod schema validating subset actions specifically authorised for changing user suspension states. */
 export const UserSuspensionUpdateActionSchema = UserModerationLogActionSchema.extract(UserSuspensionUpdateActionConstant);

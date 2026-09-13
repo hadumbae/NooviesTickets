@@ -3,11 +3,10 @@
  */
 
 import {ReactElement, useState} from "react";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {ObjectIdString, UserStatus} from "@noovies-tickets/common";
 import {
     useInvalidateUserQueriesOnModeration
 } from "@/domains/users/_feat/user-moderation-actions/keys/useInvalidateUserQueriesOnModeration.ts";
-import {UserStatus} from "@/domains/users/_schema/fields/UserStatusSchema.ts";
 import {AdminActionButton, PageSectionHeader} from "@/views/common/_comp";
 import {UpdateUserStatusForm} from "@/domains/users/_feat/manage-user-status/forms";
 import {UpdateUserStatusFormValues} from "@/domains/users/_feat/manage-user-status/schema";

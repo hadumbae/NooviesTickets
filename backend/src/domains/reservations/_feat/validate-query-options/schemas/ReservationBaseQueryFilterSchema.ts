@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {ReservationStatusSchema} from "@noovies-tickets/common";
-import {ReservationTypeSchema} from "@/domains/reservations/_validation/ReservationTypeSchema";
+import {ReservationStatusSchema, ReservationTypeSchema} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
 

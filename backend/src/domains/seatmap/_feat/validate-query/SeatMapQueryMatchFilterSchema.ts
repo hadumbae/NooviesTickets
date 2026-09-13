@@ -6,7 +6,7 @@
 import {z} from "zod";
 import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
 import {URLParamPositiveNumberSchema} from "@/shared/schema/url/URLParamPositiveNumberSchema";
-import {SeatMapStatusSchema} from "@/domains/seatmap/_validation/fields/SeatMapStatusSchema";
+import {SeatMapStatusSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining match-level filters for SeatMap queries.

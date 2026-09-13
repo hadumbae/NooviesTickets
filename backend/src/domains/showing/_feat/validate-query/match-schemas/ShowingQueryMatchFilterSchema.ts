@@ -7,7 +7,7 @@ import {z} from "zod";
 import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
 import {URLParamPositiveNumberSchema} from "@/shared/schema/url/URLParamPositiveNumberSchema";
 import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
-import {ShowingStatusSchema} from "@/domains/showing/_validation/fields/ShowingStatusSchema";
+import {ShowingStatusSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining match-level filters for Showing queries.

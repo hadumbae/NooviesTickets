@@ -3,14 +3,9 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@noovies-tickets/common";
-import {
-    RoleTypeCastCategorySchema,
-    RoleTypeCrewCategorySchema,
-} from "@/domains/roletypes/_schema/fields/RoleTypeCategorySchema.ts";
+import {IDStringSchema, RoleTypeCastCategorySchema, RoleTypeCrewCategorySchema, RoleTypeDepartmentSchema} from "@noovies-tickets/common";
 import {RoleTypeNameSchema} from "@/domains/roletypes/_schema/fields/RoleTypeNameSchema";
 import {RoleTypeDescriptionSchema} from "@/domains/roletypes/_schema/fields/RoleTypeDescriptionSchema";
-import {RoleTypeDepartmentSchema} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
 
 const RoleTypeBaseSchema = z.object({
     _id: IDStringSchema.readonly(),

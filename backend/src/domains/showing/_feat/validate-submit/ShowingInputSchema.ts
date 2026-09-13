@@ -4,8 +4,7 @@
 
 import {z} from "zod";
 import {DateTime} from "luxon";
-import {NonEmptyStringSchema, PositiveNumberSchema, DateOnlyStringSchema, TimeStringSchema, IANATimezoneSchema} from "@noovies-tickets/common";
-import {ShowingStatusSchema} from "@/domains/showing/_validation/fields/ShowingStatusSchema";
+import {NonEmptyStringSchema, PositiveNumberSchema, DateOnlyStringSchema, TimeStringSchema, IANATimezoneSchema, ShowingStatusSchema} from "@noovies-tickets/common";
 import {ShowingConfigInputSchema} from "@/domains/showing/_feat/validate-submit/ShowingConfigInputSchema";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
 

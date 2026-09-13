@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import type {MovieCreditSchemaFields} from "@/domains/movie-credits/_models/credit/MovieCredit.types";
-import type {RoleTypeDepartment} from "@/domains/role-types/_validation/schema/RoleTypeDepartmentSchema";
+import type {RoleTypeDepartment} from "@noovies-tickets/common";
 import type {RoleTypeSchemaFields} from "@/domains/role-types/_models/RoleType.types";
 
 /**

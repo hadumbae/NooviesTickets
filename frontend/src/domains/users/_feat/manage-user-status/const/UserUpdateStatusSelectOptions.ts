@@ -3,7 +3,7 @@
  */
 
 import {ReactSelectOption} from "@/common/_types";
-import {UserStatusConstant} from "@/domains/users/_const/UserStatusConstant.ts";
+import {UserStatusConstant} from "@noovies-tickets/common";
 
 /** Select options for active user statuses formatted for React Select components. */
 export const UserActivateStatusSelectOptions: ReactSelectOption[] = UserStatusConstant

@@ -3,9 +3,8 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, DateOnlyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
+import {IDStringSchema, DateOnlyStringSchema, PositiveNumberSchema, ShowingStatusSchema} from "@noovies-tickets/common";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {ShowingStatusSchema} from "@/domains/showings/_schema/fields/ShowingStatusSchema";
 
 /** Zod schema for validating match-based filter criteria for Showings. */
 export const ShowingQueryMatchFilterSchema = z.object({

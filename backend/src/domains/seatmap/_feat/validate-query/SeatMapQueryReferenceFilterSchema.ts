@@ -5,11 +5,9 @@
 
 import {z} from "zod";
 import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {ShowingStatusSchema} from "@/domains/showing/_validation/fields/ShowingStatusSchema";
+import {ShowingStatusSchema, SeatTypeSchema, SlugStringSchema} from "@noovies-tickets/common";
 import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
 import {URLParamPositiveNumberSchema} from "@/shared/schema/url/URLParamPositiveNumberSchema";
-import {SeatTypeSchema} from "@/domains/seat/_validation/SeatTypeSchema";
-import {SlugStringSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining reference filters for SeatMap queries.

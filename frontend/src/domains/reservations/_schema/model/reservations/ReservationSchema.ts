@@ -3,10 +3,9 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "@noovies-tickets/common";
+import {IDStringSchema, ReservationTypeConstant} from "@noovies-tickets/common";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
 import {superRefineReservation} from "@/domains/reservations/_schema/model/reservations/ReservationSchemaUtilities.ts";
-import {ReservationTypeConstant} from "@/domains/reservations/_schema/model/fields/ReservationTypeConstant.ts";
 import {ReservationBaseSchema} from "@/domains/reservations/_schema/model/reservations/ReservationBaseSchema.ts";
 
 const GeneralSchemaOption = ReservationBaseSchema.extend({

@@ -10,7 +10,7 @@ import {ReservedShowingSnapshotSchema} from "@/domains/reservations/_schema/snap
 import {BooleanValueSchema} from "@/common/_schemas/boolean/BooleanValueSchema.ts";
 import {
     ReservationStatusSchema,
-    ReservationTypeEnumSchema,
+    ReservationTypeSchema,
     ReservationUniqueCodeSchema
 } from "@/domains/reservations/_schema/model/fields";
 
@@ -45,7 +45,7 @@ const ReservationBaseMetaSchema = z.object({
     _id: IDStringSchema.readonly(),
     slug: SlugStringSchema.readonly(),
     uniqueCode: ReservationUniqueCodeSchema.readonly(),
-    reservationType: ReservationTypeEnumSchema,
+    reservationType: ReservationTypeSchema,
     status: ReservationStatusSchema,
     notes: NonEmptyStringSchema
         .max(3000, "Must be 3000 characters or less.")

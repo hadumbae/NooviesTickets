@@ -5,7 +5,7 @@
 import {Schema} from "mongoose";
 import {UserRoleConstant, UserStatusConstant} from "@/domains/users/_const";
 import type {UserSchemaFields} from "@/domains/users/model/user/User.types.js";
-import type {UserRole} from "@/domains/users/validation/fields/UserRoleSchema";
+import type {UserRole} from "@noovies-tickets/common";
 
 /** User document schema. */
 export const UserSchema = new Schema<UserSchemaFields>({

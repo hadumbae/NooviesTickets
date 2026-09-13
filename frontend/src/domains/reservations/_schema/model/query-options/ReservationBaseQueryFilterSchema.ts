@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {StringValueSchema} from "@/common/_schemas";
 import {IDStringSchema, preprocessOptionalField} from "@noovies-tickets/common";
-import {ReservationStatusSchema, ReservationTypeEnumSchema} from "@/domains/reservations/_schema/model/fields";
+import {ReservationStatusSchema, ReservationTypeSchema} from "@/domains/reservations/_schema/model/fields";
 
 /** Zod schema for validating base reservation query filter parameters. */
 export const ReservationBaseQueryFilterSchema = z.object({
@@ -13,7 +13,7 @@ export const ReservationBaseQueryFilterSchema = z.object({
     showingID: preprocessOptionalField(IDStringSchema),
     uniqueCode: preprocessOptionalField(StringValueSchema),
     status: preprocessOptionalField(ReservationStatusSchema),
-    reservationType: preprocessOptionalField(ReservationTypeEnumSchema),
+    reservationType: preprocessOptionalField(ReservationTypeSchema),
 });
 
 /** Type representing the base reservation query filter parameters. */

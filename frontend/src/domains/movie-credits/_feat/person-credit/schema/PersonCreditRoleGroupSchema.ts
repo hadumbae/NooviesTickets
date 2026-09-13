@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {NonEmptyStringSchema} from "@/common/_schemas";
-import {RoleTypeDepartmentSchema} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
+import {RoleTypeDepartmentSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import {
     PersonCastCredit,
     PersonCreditSchema,
@@ -12,7 +12,6 @@ import {
 } from "@/domains/movie-credits/_feat/person-credit/schema/PersonCreditSchema.ts";
 import {RoleTypeSchema} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
-import {NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /**
  * Schema representing a collection of movie credits associated with a single role name.

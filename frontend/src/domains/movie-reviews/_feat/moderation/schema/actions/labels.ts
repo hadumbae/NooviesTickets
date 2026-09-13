@@ -2,7 +2,7 @@
  * @fileoverview Maps movie review moderation action codes to human-readable display labels.
  */
 
-import {MovieReviewModerationAction} from "@/domains/movie-reviews/_feat/moderation/schema/actions/schema.ts";
+import {MovieReviewModerationAction} from "@noovies-tickets/common";
 
 /** Dictionary of labels for administrative moderation actions used in audit logs and tables. */
 export const MovieReviewModerationActionLabels: Record<MovieReviewModerationAction, string> = {

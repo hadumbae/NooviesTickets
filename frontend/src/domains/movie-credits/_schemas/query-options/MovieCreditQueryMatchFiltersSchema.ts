@@ -5,8 +5,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {RoleTypeDepartmentSchema} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
+import {IDStringSchema, PositiveNumberSchema, RoleTypeDepartmentSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
 

@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {UserRole} from "@/domains/users/_schema/fields/UserRoleSchema.ts";
+import {UserRole} from "@noovies-tickets/common";
 import {Badge} from "@/views/common/_comp/ui";
 import {cn} from "@/common/_feat";
 

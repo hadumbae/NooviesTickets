@@ -5,7 +5,7 @@
 import {HookFormInput} from "@/views/common/_feat";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
 import {useFormContext} from "react-hook-form";
-import {ReservationType} from "@/domains/reservations/_schema/model/fields/ReservationTypeEnumSchema.ts";
+import {ReservationType} from "@noovies-tickets/common";
 import {cn} from "@/common/_feat";
 import {ReactElement} from "react";
 

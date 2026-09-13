@@ -5,10 +5,9 @@
 
 import {z} from "zod";
 
-import {PositiveNumberSchema, NonEmptyStringSchema} from "@noovies-tickets/common";
+import {PositiveNumberSchema, NonEmptyStringSchema, RoleTypeDepartmentSchema} from "@noovies-tickets/common";
 import {ObjectIdStringSchema} from "@/shared/schema/mongoose/ObjectIdStringSchema";
 import {CoercedBooleanValueSchema} from "@/shared/_schema/booleans/CoercedBooleanValueSchema";
-import {RoleTypeDepartmentSchema} from "@/domains/role-types/_validation/schema/RoleTypeDepartmentSchema";
 
 /**
  * Base schema for a movie credit input (common fields for both CAST and CREW)

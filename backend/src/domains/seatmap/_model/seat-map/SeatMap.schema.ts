@@ -3,7 +3,7 @@
  */
 
 import { Schema } from "mongoose";
-import {SeatMapStatusConstant} from "@/domains/seatmap/_validation/fields/SeatMapStatusConstant";
+import {SeatMapStatusConstant} from "@noovies-tickets/common";
 import type { SeatMapSchemaFields } from "@/domains/seatmap/_model/seat-map/SeatMap.types.js";
 
 /** Mongoose schema definition for seat map entries. */

@@ -4,7 +4,7 @@
  */
 
 import {z} from "zod";
-import {RoleTypeDepartmentSchema} from "@/domains/role-types/_validation/schema/RoleTypeDepartmentSchema";
+import {RoleTypeDepartmentSchema} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 
 /**

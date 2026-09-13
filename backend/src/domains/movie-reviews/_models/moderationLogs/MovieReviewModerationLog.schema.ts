@@ -4,7 +4,7 @@
  */
 
 import {Schema} from "mongoose"
-import {MovieReviewModerationActionConstant} from "@/domains/movie-reviews/_validation/moderation-actions/constant"
+import {MovieReviewModerationActionConstant} from "@noovies-tickets/common"
 import type {
     MovieReviewModerationLogSchemaFields
 } from "@/domains/movie-reviews/_models/moderationLogs/MovieReviewModerationLog.types"

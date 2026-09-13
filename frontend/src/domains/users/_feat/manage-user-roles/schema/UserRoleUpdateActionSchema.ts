@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {UserRoleUpdateActionConstant} from "@/domains/users/_feat/manage-user-roles/const";
-import {UserModerationLogActionSchema} from "@/domains/users/_schema/fields/UserModerationLogActionSchema.ts";
+import {UserModerationLogActionSchema} from "@noovies-tickets/common";
 
 /** Zod schema validating subset actions specifically authorised for changing user roles. */
 export const UserRoleUpdateActionSchema = UserModerationLogActionSchema.extract(UserRoleUpdateActionConstant);

@@ -4,8 +4,7 @@
 
 import {z} from "zod";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {ShowingStatusSchema} from "@/domains/showings/_schema/fields/ShowingStatusSchema.ts";
-import {preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
+import {ShowingStatusSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
 
 
 /**

@@ -3,7 +3,7 @@
  */
 
 import {ReactSelectOption} from "@/common/_types";
-import {RoleTypeDepartmentConstant} from "@/domains/roletypes/_const/RoleTypeDepartmentConstant.ts";
+import {RoleTypeDepartmentConstant} from "@noovies-tickets/common";
 
 /** Select option list mapped from role type department constants for dropdown components. */
 export const RoleTypeDepartmentSelectOptions: ReactSelectOption[] = RoleTypeDepartmentConstant.map(

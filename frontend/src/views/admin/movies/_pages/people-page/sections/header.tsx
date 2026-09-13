@@ -8,7 +8,7 @@ import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.t
 import {HeaderDescription, HeaderTitle} from "@/views/common/_comp/page-headers";
 
 import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
-import {RoleTypeDepartment} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
+import {RoleTypeDepartment} from "@noovies-tickets/common";
 import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
 import {MoviePersonListBreadcrumb} from "@/views/admin/movies/_pages/people-page/sections/breadcrumb.tsx";
 

@@ -3,8 +3,7 @@
  */
 
 import {Schema, type SchemaDefinitionProperty} from "mongoose";
-import {ShowingStatusConstant} from "@/domains/showing/_validation/fields/ShowingStatusConstant";
-import {ISO6391CodeConstant} from "@noovies-tickets/common";
+import {ShowingStatusConstant, ISO6391CodeConstant} from "@noovies-tickets/common";
 import type {ShowingSchemaFields} from "./Showing.types.js";
 import {SlugSchemaTypeOptions} from "@/shared/model/SlugSchemaTypeOptions.js";
 import {ShowingConfigSchema} from "@/domains/showing/_models/showing-config/ShowingConfig.schema.js";

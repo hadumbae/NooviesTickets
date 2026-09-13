@@ -13,7 +13,7 @@ import {
     DropdownMenuTrigger,
 } from "@/views/common/_comp/ui";
 import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
-import {RoleTypeDepartment} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
+import {RoleTypeDepartment} from "@noovies-tickets/common";
 import {
     useIsDeletingMovieBannerUIActions,
     useIsDeletingMoviePosterUIActions,

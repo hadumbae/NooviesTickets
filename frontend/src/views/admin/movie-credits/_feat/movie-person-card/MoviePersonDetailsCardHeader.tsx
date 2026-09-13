@@ -5,7 +5,7 @@ import {CardDescription, CardHeader, CardTitle} from "@/views/common/_comp/ui/ca
 import {
     MoviePersonDetailsCardToggles
 } from "@/views/admin/movie-credits/_feat/movie-person-card/MoviePersonDetailsCardToggles.tsx";
-import {RoleTypeDepartment} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
+import {RoleTypeDepartment} from "@noovies-tickets/common";
 import {simplifyMovieCreditDetails} from "@/domains/movie-credits/_feat/formatters/simplifyMovieCreditDetails.ts";
 
 import {MovieCreditDetails} from "@/domains/movie-credits/_schemas/model/MovieCreditDetailsSchema.ts";

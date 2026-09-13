@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {PositiveNumberSchema} from "@noovies-tickets/common";
-import {SeatMapStatusSchema} from "@/domains/seatmap/_validation/fields/SeatMapStatusSchema";
+import {PositiveNumberSchema, SeatMapStatusSchema} from "@noovies-tickets/common";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
 
 /** Zod schema for validating the input required to create or update a seat map entry. */

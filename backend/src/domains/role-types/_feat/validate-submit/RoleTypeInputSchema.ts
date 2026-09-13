@@ -3,12 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {RoleTypeDepartmentSchema} from "@/domains/role-types/_validation/schema/RoleTypeDepartmentSchema";
-import {
-    RoleTypeCastCategorySchema,
-    RoleTypeCrewCategorySchema
-} from "@/domains/role-types/_validation/schema/RoleTypeCategorySchema";
+import {NonEmptyStringSchema, RoleTypeDepartmentSchema, RoleTypeCastCategorySchema, RoleTypeCrewCategorySchema} from "@noovies-tickets/common";
 
 const RoleTypeBaseSchema = z.object({
     roleName: NonEmptyStringSchema.max(150, {message: "Max. 150 Chars"}),

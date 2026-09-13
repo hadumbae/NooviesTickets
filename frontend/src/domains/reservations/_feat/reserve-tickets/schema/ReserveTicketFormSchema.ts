@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, PositiveNumberSchema, preprocessToNull, preprocessToNumber, ISO4217CurrencyCodeSchema} from "@noovies-tickets/common";
-import {ReservationTypeConstant} from "@/domains/reservations/_schema/model/fields/ReservationTypeConstant.ts";
+import {IDStringSchema, PositiveNumberSchema, preprocessToNull, preprocessToNumber, ISO4217CurrencyCodeSchema, ReservationTypeConstant} from "@noovies-tickets/common";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
 import {AnyValues} from "@/common/_types";
 

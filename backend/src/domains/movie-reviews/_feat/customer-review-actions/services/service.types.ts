@@ -6,7 +6,7 @@ import {Types} from "mongoose";
 import type {AdminModerationMessage} from "@/shared/_feat/admin-users/schema";
 import type {
     MovieReviewModerationAction
-} from "@/domains/movie-reviews/_validation/moderation-actions/MovieReviewModerationActionSchema";
+} from "@noovies-tickets/common";
 
 /** Configuration for toggling a review's visibility status. */
 export type ToggleReviewPublicityConfig = {

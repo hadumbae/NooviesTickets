@@ -3,7 +3,7 @@
  */
 
 import {ModerationLogMessageSchema} from "@/shared/_schema";
-import { UserModerationLogActionSchema } from "@/domains/users/validation/fields/moderation";
+import { UserModerationLogActionSchema } from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Zod schema validating the input object data required to log a user moderation action. */

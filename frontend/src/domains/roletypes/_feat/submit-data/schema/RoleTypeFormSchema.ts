@@ -4,12 +4,7 @@
  */
 
 import {z} from "zod";
-import {RoleTypeDepartmentSchema} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
-import {
-    RoleTypeCastCategorySchema,
-    RoleTypeCrewCategorySchema,
-} from "@/domains/roletypes/_schema/fields/RoleTypeCategorySchema.ts";
-import {preprocessEmptyToUndefined, IDStringSchema} from "@noovies-tickets/common";
+import {RoleTypeDepartmentSchema, RoleTypeCastCategorySchema, RoleTypeCrewCategorySchema, preprocessEmptyToUndefined, IDStringSchema} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 import {RoleTypeDescriptionSchema, RoleTypeNameSchema} from "@/domains/roletypes/_schema";
 
