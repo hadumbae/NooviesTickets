@@ -17,14 +17,14 @@ import 'dotenv/config';
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
 import {generateSlug} from "@/shared/utility/generateSlug.js";
-import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {MovieCreditModel} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 import {PersonModel} from "@/domains/persons/_models/person";
 
 /**
  * Connect to the database and update missing person slugs.
  */
 connect().then(async () => {
-    const cursor = MovieCredit.find().cursor();
+    const cursor = MovieCreditModel.find().cursor();
 
     for (let credit = await cursor.next(); credit !== null; credit = await cursor.next()) {
         const person = await PersonModel.findById(credit.person);
@@ -35,7 +35,7 @@ connect().then(async () => {
         }
     }
 
-    await MovieCredit.createIndexes();
+    await MovieCreditModel.createIndexes();
     console.log("Done updating movie credits.");
 }).catch((err) => {
     console.log(err);

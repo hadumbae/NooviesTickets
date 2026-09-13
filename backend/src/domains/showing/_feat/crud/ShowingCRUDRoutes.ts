@@ -22,7 +22,7 @@ import validateZodSchema from "@/shared/utility/schema/validators/validateZodSch
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
-import {Showing} from "@/domains/showing/_models/showing/Showing.model";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import {ShowingQueryMatchStageSchema, ShowingQuerySortStageSchema} from "@/domains/showing/_feat/validate-query";
 import {type ShowingInput, ShowingInputSchema} from "@/domains/showing/_feat/validate-submit/ShowingInputSchema";
 import {ShowingPopulationPaths} from "@/domains/showing/_feat/query-population";
@@ -31,7 +31,7 @@ import {ShowingSeatMapVirtualPipelines} from "@/domains/showing/_feat/query-popu
 import {buildShowingDerivedFields} from "@/domains/showing/_feat/crud/buildShowingDerivedFields";
 
 const authCRUDMiddleware = buildAuthCRUDQueryStageMiddleware({
-    modelName: Showing.modelName,
+    modelName: ShowingModel.modelName,
     matchSchema: ShowingQueryMatchStageSchema,
     sortSchema: ShowingQuerySortStageSchema,
 });
@@ -91,7 +91,7 @@ const routes: CRUDRoute<ShowingSchemaFields>[] = [
 
 /** Orchestrates the creation of the router using the generic CRUD utility factory. */
 const router: Router = buildCRUDRoutes<ShowingSchemaFields, ShowingInput>({
-    model: Showing,
+    model: ShowingModel,
     routes: routes,
     populatePaths: ShowingPopulationPaths,
     deriveData: buildShowingDerivedFields,
@@ -103,7 +103,7 @@ router.get(
     authCRUDMiddleware,
     asyncHandler(
         aggregate({
-            model: Showing,
+            model: ShowingModel,
             populationPipelines: ShowingPopulationPipelines,
             virtualsPipelines: ShowingSeatMapVirtualPipelines,
         })

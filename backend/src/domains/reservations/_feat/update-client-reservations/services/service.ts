@@ -9,7 +9,7 @@ import type {
     CheckoutClientReservationParams
 } from "@/domains/reservations/_feat/update-client-reservations/services/service.types";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
-import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import {
     assertReservationExists,
     assertReservationNotExpired,
@@ -66,7 +66,7 @@ export async function cancelClientReservation(
             const populatedShowing = reservation.showing as unknown as ShowingSchemaFields;
 
             if (populatedShowing.status === "SCHEDULED" || populatedShowing.status === "SOLD_OUT") {
-                await SeatMap.updateMany(
+                await SeatMapModel.updateMany(
                     {_id: {$in: selectedSeating}},
                     {reservation: null, status: "AVAILABLE"}
                 );

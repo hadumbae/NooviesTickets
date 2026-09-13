@@ -6,11 +6,11 @@
 
 import {TheatreSchema} from "./Theatre.schema";
 import type {HydratedDocument, Query} from "mongoose";
-import {Screen} from "@/domains/screen/_models/screen";
-import {Showing} from "@/domains/showing/_models/showing/Showing.model";
+import {ScreenModel} from "@/domains/screen/_models/screen";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import type {TheatreSchemaFields} from "./Theatre.types";
 import {generateSlug} from "@/shared/utility/generateSlug";
-import {Seat} from "@/domains/seat/_models";
+import {SeatModel} from "@/domains/seat/_models";
 
 /**
  * Pre-validation Hook: Slug Synchronization
@@ -58,9 +58,9 @@ const performCascadeCleanup = async (theatreId: any) => {
     if (!theatreId) return;
 
     await Promise.all([
-        Screen.deleteMany({theatre: theatreId}),
-        Seat.deleteMany({theatre: theatreId}),
-        Showing.deleteMany({theatre: theatreId}),
+        ScreenModel.deleteMany({theatre: theatreId}),
+        SeatModel.deleteMany({theatre: theatreId}),
+        ShowingModel.deleteMany({theatre: theatreId}),
     ]);
 };
 

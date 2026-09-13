@@ -15,4 +15,4 @@ import "./Screen.indexes";
 /**
  * The Screen Model.
  */
-export const Screen: Model<ScreenSchemaFields> = model<ScreenSchemaFields>("Screen", ScreenSchema);
+export const ScreenModel: Model<ScreenSchemaFields> = model<ScreenSchemaFields>("Screen", ScreenSchema);

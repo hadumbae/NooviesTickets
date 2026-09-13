@@ -14,12 +14,12 @@ import {ReservationStatusConstant, ReservationTypeConstant} from "@/domains/rese
 import type {SoftDeleteSchemaModel} from "@/shared/_types";
 
 /** TypeScript type representing the compiled Reservation Model. */
-export type ReservationModel = SoftDeleteSchemaModel<ReservationSchemaFields>
+export type ReservationSchemaModel = SoftDeleteSchemaModel<ReservationSchemaFields>
 
 /** Mongoose schema representing a booking transaction. */
 export const ReservationSchema = new Schema<
     ReservationSchemaFields,
-    ReservationModel,
+    ReservationSchemaModel,
     ModelSoftDeleteMethods<ReservationSchemaFields>
 >({
     /** Reference to the User who initiated the booking. */

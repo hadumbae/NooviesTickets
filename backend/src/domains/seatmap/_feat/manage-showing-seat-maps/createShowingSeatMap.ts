@@ -2,12 +2,12 @@
  * @fileoverview Logic for generating and persisting the initial seat map for a specific showing.
  */
 
-import {Showing} from "@/domains/showing/_models/showing/Showing.model";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import createHttpError from "http-errors";
-import {Seat} from "@/domains/seat/_models";
+import {SeatModel} from "@/domains/seat/_models";
 import {type AnyBulkWriteOperation, Types} from "mongoose";
 import type {SeatMapInputData} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
-import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 
 /** Configuration object containing the unique identifier for a showing. */
 type ShowingConfig = {
@@ -19,7 +19,7 @@ type ShowingConfig = {
  */
 export async function createShowingSeatMap({showingID}: ShowingConfig): Promise<void> {
     // --- Fetch Showing ---
-    const showing = await Showing.findById(showingID);
+    const showing = await ShowingModel.findById(showingID);
 
     if (!showing) {
         throw createHttpError(404, "Showing Not Found.");
@@ -28,7 +28,7 @@ export async function createShowingSeatMap({showingID}: ShowingConfig): Promise<
     // --- Fetch Seats ---
     const {_id: seatShowing, ticketPrice: seatBasePrice, theatre, screen} = showing;
 
-    const seats = await Seat.find({
+    const seats = await SeatModel.find({
         theatre,
         screen,
         layoutType: "SEAT",
@@ -55,5 +55,5 @@ export async function createShowingSeatMap({showingID}: ShowingConfig): Promise<
     }
 
     // --- Create Seat Map ---
-    await SeatMap.bulkWrite(seatMap);
+    await SeatMapModel.bulkWrite(seatMap);
 }

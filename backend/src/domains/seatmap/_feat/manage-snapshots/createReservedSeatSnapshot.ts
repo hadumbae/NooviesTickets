@@ -2,11 +2,11 @@ import {Types} from "mongoose";
 import type {
     ReservedSeatSnapshotSchemaFields
 } from "@/domains/seatmap/_model/seat-map-snapshot/ReservedSeatSnapshot.types.js";
-import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import type {SeatMapSchemaFields} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
 import {ReservedSeatSnapshotInputSchema} from "@/domains/seatmap/_feat/validate-submit/ReservedSeatSnapshotInputSchema";
 import {InconsistentDataError} from "@/shared/errors/InconsistentDataError";
-import {ReservedSeatSnapshot} from "@/domains/seatmap/_model/seat-map-snapshot/ReservedSeatSnapshot.model.js";
+import {ReservedSeatSnapshotModel} from "@/domains/seatmap/_model/seat-map-snapshot/ReservedSeatSnapshot.model.js";
 import type {SeatSchemaFields} from "@/domains/seat/_models";
 import generateArraySchema from "@/shared/utility/schema/generateArraySchema";
 
@@ -20,7 +20,7 @@ export async function createReservedSeatSnapshot(
     if (!seating) return null;
     if (seating.length === 0) return [];
 
-    const seatMaps = await SeatMap
+    const seatMaps = await SeatMapModel
         .find({_id: {$in: seating}})
         .populate(["seat"])
         .lean() as SeatMapWithInfo[];
@@ -42,7 +42,7 @@ export async function createReservedSeatSnapshot(
 
     if (!success) {
         throw new InconsistentDataError({
-            modelName: ReservedSeatSnapshot.name,
+            modelName: ReservedSeatSnapshotModel.name,
             errors: error?.errors,
             message: "Failed to validate seat map data.",
         });

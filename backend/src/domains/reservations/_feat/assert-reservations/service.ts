@@ -6,7 +6,7 @@ import type {ReservationSchemaFields} from "@/domains/reservations/_model/reserv
 import {calculateDateNow} from "@/shared/utility/date/LuxonDateUtils";
 import {BookingError} from "@/shared/errors/reservations/BookingError";
 import {Types} from "mongoose";
-import {Reservation} from "@/domains/reservations/_model/reservation";
+import {ReservationModel} from "@/domains/reservations/_model/reservation";
 import type {AssertReservationOwnershipConfig} from "@/domains/reservations/_feat/assert-reservations/service.types";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 
@@ -16,7 +16,7 @@ import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 export const assertReservationExists = async (
     _id: Types.ObjectId
 ): Promise<DocumentType<ReservationSchemaFields>> => {
-    const reservation = await Reservation.findById(_id);
+    const reservation = await ReservationModel.findById(_id);
 
     if (!reservation) {
         throw new BookingError({

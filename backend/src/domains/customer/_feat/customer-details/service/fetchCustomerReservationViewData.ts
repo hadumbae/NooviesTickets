@@ -5,7 +5,7 @@
 import {Types} from "mongoose";
 import {LeanUserQuerySelectFields, type LeanUserSchemaFields, UserModel} from "@/domains/users";
 import createHttpError from "http-errors";
-import {Reservation, type ReservationSchemaFields} from "@/domains/reservations";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations";
 
 /** Configuration for fetching customer reservation view data. */
 export type FetchCustomerReservationViewDataConfig = {
@@ -32,7 +32,7 @@ export async function fetchCustomerReservationViewData(
         throw createHttpError(404, "Customer Not Found.");
     }
 
-    const reservation = await Reservation
+    const reservation = await ReservationModel
         .findById(reservationId)
         .populate({path: "user", select: LeanUserQuerySelectFields})
         .lean();

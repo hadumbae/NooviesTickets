@@ -14,20 +14,20 @@ import validateZodSchema from "@/shared/utility/schema/validators/validateZodSch
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import type {SeatMapSchemaFields} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
-import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import {SeatMapInputSchema} from "@/domains/seatmap/_feat/validate-submit/SeatMapInputSchema";
 import {SeatMapQueryOptionsSchema} from "@/domains/seatmap/_feat/validate-query";
 import {SeatMapPopulationPaths} from "@/domains/seatmap/_feat/query-population";
 import {handleDuplicateIndex} from "@/domains/seatmap/_model/seat-map/SeatMap.handlers";
 import {verifyReferencesExist} from "@/shared/_feat";
-import {Seat} from "@/domains/seat";
-import {Showing} from "@/domains/showing";
+import {SeatModel} from "@/domains/seat";
+import {ShowingModel} from "@/domains/showing";
 
 const hasReferences = verifyReferencesExist({
     statusCode: 422,
     refs: [
-        {key: "seat", model: Seat},
-        {key: "showing", model: Showing},
+        {key: "seat", model: SeatModel},
+        {key: "showing", model: ShowingModel},
     ]
 });
 
@@ -41,7 +41,7 @@ const routes: CRUDRoute<SeatMapSchemaFields>[] = [
         method: "get",
         middleware: [
             isAuth,
-            parseQueryOptions({schema: SeatMapQueryOptionsSchema, modelName: SeatMap.modelName})
+            parseQueryOptions({schema: SeatMapQueryOptionsSchema, modelName: SeatMapModel.modelName})
         ],
         handler: find
     },
@@ -51,7 +51,7 @@ const routes: CRUDRoute<SeatMapSchemaFields>[] = [
         method: "get",
         middleware: [
             isAuth,
-            parseQueryOptions({schema: SeatMapQueryOptionsSchema, modelName: SeatMap.modelName})
+            parseQueryOptions({schema: SeatMapQueryOptionsSchema, modelName: SeatMapModel.modelName})
         ],
         handler: paginated
     },
@@ -89,7 +89,7 @@ const routes: CRUDRoute<SeatMapSchemaFields>[] = [
  * Orchestrates the creation of the router using the generic CRUD utility factory.
  */
 const router: Router = buildCRUDRoutes<SeatMapSchemaFields>({
-    model: SeatMap,
+    model: SeatMapModel,
     routes: routes,
     populatePaths: SeatMapPopulationPaths,
     onDuplicateIndex: handleDuplicateIndex,
@@ -100,8 +100,8 @@ const router: Router = buildCRUDRoutes<SeatMapSchemaFields>({
  */
 router.get(
     "/query",
-    [isAuth, parseQueryOptions({schema: SeatMapQueryOptionsSchema, modelName: SeatMap.modelName})],
-    asyncHandler(aggregate({model: SeatMap})),
+    [isAuth, parseQueryOptions({schema: SeatMapQueryOptionsSchema, modelName: SeatMapModel.modelName})],
+    asyncHandler(aggregate({model: SeatMapModel})),
 );
 
 export {

@@ -5,8 +5,8 @@
 import type {LeanUserSchemaFields} from "@/domains/users/model/user/User.types";
 import type {ReservationSchemaFields} from "@/domains/reservations/_model/reservation/Reservation.types";
 import type {MovieReviewSchemaFields} from "@/domains/movie-reviews/_models/review/MovieReview.types";
-import {Reservation} from "@/domains/reservations/_model/reservation/Reservation.model";
-import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
+import {ReservationModel} from "@/domains/reservations/_model/reservation/Reservation.model";
+import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import {Types} from "mongoose";
 import {LeanUserQuerySelectFields, UserModel} from "@/domains/users";
 import createHttpError from "http-errors";
@@ -45,15 +45,15 @@ export async function fetchCustomerProfileViewData(
         throw createHttpError(404, "Customer Not Found.");
     }
 
-    const reservationCountQuery = Reservation.countDocuments({user: customer._id});
-    const reviewCountQuery = MovieReview.countDocuments({user: customer._id})
+    const reservationCountQuery = ReservationModel.countDocuments({user: customer._id});
+    const reviewCountQuery = MovieReviewModel.countDocuments({user: customer._id})
 
-    const reservationQuery = Reservation
+    const reservationQuery = ReservationModel
         .find({user: customer._id})
         .sort({createdAt: -1})
         .limit(reservationCounts);
 
-    const reviewQuery = MovieReview
+    const reviewQuery = MovieReviewModel
         .find({user: customer._id})
         .sort({createdAt: -1})
         .limit(reviewCounts)

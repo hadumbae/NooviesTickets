@@ -8,7 +8,7 @@
 
 import {PersonSchema} from "@/domains/persons/_models/person/Person.schema.js";
 import type {HydratedDocument, Query} from "mongoose";
-import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {MovieCreditModel} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 import {generateSlug} from "@/shared/utility/generateSlug.js";
 import type {PersonSchemaFields} from "@/domains/persons/_models/person/Person.types";
 
@@ -45,7 +45,7 @@ PersonSchema.pre(
         const {_id} = this;
         if (!_id) return;
 
-        await MovieCredit.deleteMany({person: _id});
+        await MovieCreditModel.deleteMany({person: _id});
     },
 );
 
@@ -65,6 +65,6 @@ PersonSchema.pre(
         const {_id} = this.getFilter();
         if (!_id) return;
 
-        await MovieCredit.deleteMany({movie: _id});
+        await MovieCreditModel.deleteMany({movie: _id});
     },
 );

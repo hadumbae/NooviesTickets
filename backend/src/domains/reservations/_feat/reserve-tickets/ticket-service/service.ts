@@ -10,14 +10,14 @@ import type {
     ReserveSeatTicketData,
     ReserveTicketsParams
 } from "@/domains/reservations/_feat/reserve-tickets/ticket-service/service.types";
-import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import type {SeatMapSchemaFields} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
 import {type ReserveTicketPersistenceData} from "@/domains/reservations/_feat/reserve-tickets/schemas";
-import {Seat} from "@/domains/seat/_models";
+import {SeatModel} from "@/domains/seat/_models";
 import {
     saveValidatedReservation
 } from "@/domains/reservations/_feat/reserve-tickets/ticket-service/saveValidatedReservation";
-import {Reservation, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
 
 /** Initiates a ticket reservation hold based on the provided type and identity context. */
 export async function reserveTickets(
@@ -58,7 +58,7 @@ const ReserveHandlers = {
         const {showing: showingID, ticketCount: seatsToReserve} = data;
         const {ticketPrice, screen: {_id: screenID}} = await fetchPopulatedShowing(showingID);
 
-        const totalScreenSeats = await Seat.countDocuments({
+        const totalScreenSeats = await SeatModel.countDocuments({
             screen: screenID,
             layoutType: "SEAT",
         });
@@ -71,7 +71,7 @@ const ReserveHandlers = {
             });
         }
 
-        const reservedCheck = await Reservation.aggregate([
+        const reservedCheck = await ReservationModel.aggregate([
             {$match: {showing: showingID, status: "PAID"}},
             {$group: {_id: null, totalAmount: {$sum: "$ticketCount"}}},
         ]);
@@ -98,18 +98,18 @@ const ReserveHandlers = {
      */
     RESERVED_SEATS: async (data: ReserveSeatTicketData): Promise<ReservationSchemaFields> => {
         const {selectedSeating} = data;
-        const session = await SeatMap.startSession();
+        const session = await SeatMapModel.startSession();
         let seating: SeatMapSchemaFields[] = [];
 
         try {
             seating = await session.withTransaction(async () => {
-                const {modifiedCount: heldSeats} = await SeatMap.updateMany(
+                const {modifiedCount: heldSeats} = await SeatMapModel.updateMany(
                     {_id: {$in: selectedSeating}, status: "AVAILABLE"},
                     {status: "PENDING"}
                 );
 
                 if (heldSeats !== selectedSeating.length) {
-                    await SeatMap.updateMany(
+                    await SeatMapModel.updateMany(
                         {_id: {$in: selectedSeating}, status: "PENDING"},
                         {status: "AVAILABLE"}
                     );
@@ -121,7 +121,7 @@ const ReserveHandlers = {
                     });
                 }
 
-                return SeatMap
+                return SeatMapModel
                     .find({_id: {$in: selectedSeating}, status: "PENDING"})
                     .populate(["seat"])
                     .lean();

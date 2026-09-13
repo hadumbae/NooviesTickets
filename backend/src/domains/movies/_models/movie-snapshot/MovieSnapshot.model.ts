@@ -9,5 +9,5 @@ import { MovieSnapshotSchema } from "@/domains/movies/_models/movie-snapshot/Mov
 /**
  * Movie snapshot model.
  */
-export const MovieSnapshot: Model<MovieSnapshotSchemaFields> =
+export const MovieSnapshotModel: Model<MovieSnapshotSchemaFields> =
     model<MovieSnapshotSchemaFields>("MovieSnapshot", MovieSnapshotSchema);

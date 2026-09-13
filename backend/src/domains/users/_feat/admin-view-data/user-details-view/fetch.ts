@@ -4,9 +4,9 @@
 
 import {LeanUserQuerySelectFields, UserModel, type UserSchemaFields} from "@/domains/users";
 import type {UserDetailsViewRouteConfig} from "@/domains/users/_feat/admin-view-data";
-import {Reservation} from "@/domains/reservations";
+import {ReservationModel} from "@/domains/reservations";
 import createHttpError from "http-errors";
-import {MovieReview} from "@/domains/movie-reviews";
+import {MovieReviewModel} from "@/domains/movie-reviews";
 
 /** Configuration for the user details fetch operation. */
 type FetchConfig = UserDetailsViewRouteConfig;
@@ -31,8 +31,8 @@ export async function fetchUserDetailsViewData(
         throw createHttpError(404, "User not found.");
     }
 
-    const reviewCountQuery = MovieReview.countDocuments({user})
-    const reservationCountQuery = Reservation.countDocuments({user})
+    const reviewCountQuery = MovieReviewModel.countDocuments({user})
+    const reservationCountQuery = ReservationModel.countDocuments({user})
 
     const [totalReviews, totalReservations] = await Promise.all([
         reviewCountQuery,

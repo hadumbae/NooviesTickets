@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import type {RequestOptions} from "@/shared/_feat";
-import {MovieReview, type MovieReviewSchemaFields} from "@/domains/movie-reviews/_models/review";
+import {MovieReviewModel, type MovieReviewSchemaFields} from "@/domains/movie-reviews/_models/review";
 import {
     addMovieReviewDetailsPipelines,
     MovieReviewPopulationPipelines,
@@ -31,7 +31,7 @@ export const fetchFeaturedReviewsByMovie = async (
 ): Promise<FeaturedReviewsByMovieReturns> => {
     const populationPipelines = options?.populate ? MovieReviewPopulationPipelines : [];
 
-    const [result] = await MovieReview.aggregate<FeaturedReviewsByMovieReturns>([
+    const [result] = await MovieReviewModel.aggregate<FeaturedReviewsByMovieReturns>([
         {$match: {movie: movieID}},
         {
             $facet: {

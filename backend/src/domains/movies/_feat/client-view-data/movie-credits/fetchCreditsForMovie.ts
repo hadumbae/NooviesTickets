@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import type {MovieCreditSchemaFields} from "@/domains/movie-credits/_models/credit/MovieCredit.types";
-import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {MovieCreditModel} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 import type {RoleTypeCastCategory, RoleTypeCrewCategory} from "@noovies-tickets/common";
 
 /** Credits grouped by their specific role type category. */
@@ -24,7 +24,7 @@ export type GroupedCreditsForMovieData = {
 export async function fetchCreditsForMovie(
     movieID: Types.ObjectId
 ): Promise<GroupedCreditsForMovieData> {
-    const [data] = await MovieCredit.aggregate<GroupedCreditsForMovieData>([
+    const [data] = await MovieCreditModel.aggregate<GroupedCreditsForMovieData>([
         {$match: {movie: movieID}},
         {$lookup: {from: "roletypes", localField: "roleType", foreignField: "_id", as: "roleType"}},
         {$lookup: {from: "people", localField: "person", foreignField: "_id", as: "person"}},

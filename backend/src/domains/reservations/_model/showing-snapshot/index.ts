@@ -5,12 +5,12 @@ import {
     ReservedShowingSnapshotSchema
 } from "@/domains/reservations/_model/showing-snapshot/ReservedShowingSnapshot.schema";
 import {
-    ReservedShowingSnapshot
+    ReservedShowingSnapshotModel
 } from "@/domains/reservations/_model/showing-snapshot/ReservedShowingSnapshot.model";
 
 export {
     ReservedShowingSnapshotSchema,
-    ReservedShowingSnapshot,
+    ReservedShowingSnapshotModel,
 }
 
 export type {

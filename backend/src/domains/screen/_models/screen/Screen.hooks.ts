@@ -15,10 +15,10 @@ import { ScreenSchema } from "./Screen.schema";
 import type { HydratedDocument, Query } from "mongoose";
 import type { ScreenSchemaFields } from "./Screen.types";
 
-import {Showing} from "@/domains/showing/_models/showing/Showing.model";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import {generateSlug} from "@/shared/utility/generateSlug";
 import {TheatreModel} from "@/domains/theatre/model/theatre";
-import {Seat} from "@/domains/seat/_models";
+import {SeatModel} from "@/domains/seat/_models";
 
 /**
  * Document-level validation hook.
@@ -88,8 +88,8 @@ ScreenSchema.post(
                 { screens: this._id },
                 { $pull: { screens: this._id } },
             ),
-            Seat.deleteMany({ screen: this._id }),
-            Showing.deleteMany({ screen: this._id }),
+            SeatModel.deleteMany({ screen: this._id }),
+            ShowingModel.deleteMany({ screen: this._id }),
         ]);
     },
 );
@@ -113,8 +113,8 @@ ScreenSchema.post(
                 { screens: _id },
                 { $pull: { screens: _id } },
             ),
-            Seat.deleteMany({ screen: _id }),
-            Showing.deleteMany({ screen: _id }),
+            SeatModel.deleteMany({ screen: _id }),
+            ShowingModel.deleteMany({ screen: _id }),
         ]);
     },
 );

@@ -3,7 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import {Showing} from "@/domains/showing/_models/showing/Showing.model";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import {DocumentNotFoundError} from "@/shared/errors/DocumentNotFoundError";
 import {InconsistentDataError} from "@/shared/errors/InconsistentDataError";
 import {createMovieSnapshot} from "@/domains/movies/_feat/manage-snapshots/createMovieSnapshot";
@@ -35,11 +35,11 @@ export type CreateReservedShowingSnapshotParams = {
 export async function createReservedShowingSnapshot(
     {showingID, selectedSeating, pricePaid, ticketCount, reservationType}: CreateReservedShowingSnapshotParams
 ): Promise<ReservedShowingSnapshotSchemaFields> {
-    const showing = await Showing.findById(showingID).lean();
+    const showing = await ShowingModel.findById(showingID).lean();
 
     if (!showing) {
         throw new DocumentNotFoundError({
-            model: Showing,
+            model: ShowingModel,
             identifier: showingID,
             message: "Failed to fetch showing for snapshot.",
         });
@@ -66,7 +66,7 @@ export async function createReservedShowingSnapshot(
 
     if (!success) {
         throw new InconsistentDataError({
-            modelName: Showing.name,
+            modelName: ShowingModel.name,
             message: "Inconsistent source data: unable to finalize reservation snapshot.",
             errors: error?.errors,
         });

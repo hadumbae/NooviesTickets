@@ -43,7 +43,7 @@ export class RequestValidationError extends Error {
      * @param params - Validation error details.
      */
     constructor(params: ErrorParams) {
-        const {message, errors, raw, statusCode} = params;
+        const {message, errors, raw, statusCode = 422} = params;
 
         super(message);
 

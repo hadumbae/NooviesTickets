@@ -5,14 +5,14 @@
 
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
-import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {MovieCreditModel} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 import mongoose from "mongoose";
 
 /**
  * Connects to the database and synchronizes MovieCredit indexes.
  */
 connect().then(async () => {
-    await MovieCredit.syncIndexes();
+    await MovieCreditModel.syncIndexes();
 }).catch(
     err => console.error("Migration Error:", err)
 ).finally(async () => {

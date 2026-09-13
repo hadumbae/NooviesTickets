@@ -18,11 +18,11 @@
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
 import mongoose from "mongoose";
-import {Reservation} from "@/domains/reservations/_model/reservation";
+import {ReservationModel} from "@/domains/reservations/_model/reservation";
 
 connect()
     .then(async () => {
-        await Reservation.syncIndexes();
+        await ReservationModel.syncIndexes();
     })
     .catch((error: unknown) => {
         console.error(error);

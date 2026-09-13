@@ -7,7 +7,7 @@ import type {MovieSnapshotSchemaFields} from "@/domains/movies/_models/movie-sna
 import {Types} from "mongoose";
 import {DocumentNotFoundError} from "@/shared/errors/DocumentNotFoundError";
 import {InconsistentDataError} from "@/shared/errors/InconsistentDataError";
-import {MovieSnapshot} from "@/domains/movies/_models/movie-snapshot";
+import {MovieSnapshotModel} from "@/domains/movies/_models/movie-snapshot";
 import type {MovieWithGenres} from "@/domains/movies/_models/movie/Movie.types";
 import {MovieSnapshotInputSchema} from "@/domains/movies/_feat/validate-submit";
 
@@ -34,7 +34,7 @@ export async function createMovieSnapshot(
 
     if (!success) {
         throw new InconsistentDataError({
-            modelName: MovieSnapshot.name,
+            modelName: MovieSnapshotModel.name,
             message: "Inconsistent data, unable to create snapshot.",
             errors: error?.errors,
         });

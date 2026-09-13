@@ -13,7 +13,7 @@
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
 import mongoose from "mongoose";
-import {Showing} from "@/domains/showing/_models/showing/Showing.model.js";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model.js";
 
 /**
  * Executes the migration logic.
@@ -22,7 +22,7 @@ import {Showing} from "@/domains/showing/_models/showing/Showing.model.js";
  * ensuring all records (even those already marked) are correctly initialized.
  */
 connect().then(async () => {
-    const cursor = Showing
+    const cursor = ShowingModel
         .find()
         .setOptions({getSoftDeleted: true}) // Bypasses the auto-filter in Showing.hooks.ts
         .cursor();

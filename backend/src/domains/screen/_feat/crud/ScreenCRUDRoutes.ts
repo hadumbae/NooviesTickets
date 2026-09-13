@@ -10,7 +10,7 @@ import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
-import {Screen, type ScreenSchemaFields} from "@/domains/screen/_models/screen";
+import {ScreenModel, type ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import {ScreenInputSchema} from "@/domains/screen/_feat/validate-submit";
 import {ScreenQueryMatchStageSchema, ScreenQuerySortStageSchema} from "@/domains/screen/_feat/validate-query";
 import validateZodSchemaAsync from "@/shared/utility/schema/validators/validateZodSchemaAsync";
@@ -29,7 +29,7 @@ import {
     update
 } from "@/shared/_feat/generic-crud/path-handlers";
 
-const modelName = Screen.modelName;
+const modelName = ScreenModel.modelName;
 const matchSchema = ScreenQueryMatchStageSchema;
 const sortSchema = ScreenQuerySortStageSchema;
 
@@ -92,7 +92,7 @@ const routes: CRUDRoute<ScreenSchemaFields>[] = [
  * Orchestrates the creation of the router with generic path handlers.
  */
 const router: Router = buildCRUDRoutes<ScreenSchemaFields>({
-    model: Screen,
+    model: ScreenModel,
     routes: routes,
     populatePaths: ScreenPopulationPaths,
 });
@@ -104,7 +104,7 @@ router.get(
     "/query",
     buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
     asyncHandler(aggregate({
-        model: Screen,
+        model: ScreenModel,
         virtualsPipelines: ScreenVirtualPipelines,
         populationPipelines: ScreenPopulationPipelines,
     })),

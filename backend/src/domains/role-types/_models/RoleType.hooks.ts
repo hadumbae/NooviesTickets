@@ -5,7 +5,7 @@
 import {RoleTypeSchema} from "./RoleType.schema.js";
 import type {HydratedDocument, Query} from "mongoose";
 import type {RoleTypeSchemaFields} from "@/domains/role-types/_models/RoleType.types";
-import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {MovieCreditModel} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 
 RoleTypeSchema.pre(
     ["find", "findOne", "findOneAndUpdate"],
@@ -27,7 +27,7 @@ RoleTypeSchema.pre(
     async function (this: HydratedDocument<RoleTypeSchemaFields>) {
         const { _id } = this;
         (this as any)._wasUpdated = true;
-        await MovieCredit.deleteMany({ roleType: _id });
+        await MovieCreditModel.deleteMany({ roleType: _id });
     }
 );
 
@@ -39,6 +39,6 @@ RoleTypeSchema.pre(
         if (!_id) return;
 
         (this as any)._wasUpdated = true;
-        await MovieCredit.deleteMany({ roleType: _id });
+        await MovieCreditModel.deleteMany({ roleType: _id });
     }
 );

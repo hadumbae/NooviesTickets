@@ -8,14 +8,14 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {fetchReservationsForUser} from "@/domains/reservations/_feat/fetch-client-reservations/controllers";
 import {parseQueryFilters, parseQuerySorts} from "@/shared/_feat";
-import {Reservation} from "@/domains/reservations/_model";
+import {ReservationModel} from "@/domains/reservations/_model";
 import {
     CurrentUserReservationQueryFilterSchema,
     CurrentUserReservationQuerySortSchema,
 } from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations";
 
 const router = Router();
-const modelName = Reservation.modelName;
+const modelName = ReservationModel.modelName;
 
 /**
  * GET `/user/fetch-reservations`

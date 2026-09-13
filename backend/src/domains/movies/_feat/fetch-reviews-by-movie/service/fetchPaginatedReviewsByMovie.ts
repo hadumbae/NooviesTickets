@@ -4,7 +4,7 @@
 
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
 import type {MovieReviewSchemaFields} from "@/domains/movie-reviews/_models/review/MovieReview.types";
-import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
+import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import populateQuery from "@/shared/utility/mongoose/populateQuery";
 import {MovieReviewPopulatePaths} from "@/domains/movie-reviews/_feat/query-population/MovieReviewPopulatePaths";
 import {Types} from "mongoose";
@@ -24,7 +24,7 @@ export type BrowseReviewsByMovieConfig = {
 export const fetchPaginatedReviewsByMovie = async (
     {movieID, page, perPage, options}: BrowseReviewsByMovieConfig
 ): Promise<PaginationReturns<MovieReviewSchemaFields>> => {
-    const baseQuery = MovieReview
+    const baseQuery = MovieReviewModel
         .find({movie: movieID})
         .skip((page - 1) * perPage)
         .limit(perPage);
@@ -35,7 +35,7 @@ export const fetchPaginatedReviewsByMovie = async (
     });
 
     const [totalItems, items] = await Promise.all([
-        MovieReview.countDocuments({movie: movieID}),
+        MovieReviewModel.countDocuments({movie: movieID}),
         paginatedQuery,
     ]);
 

@@ -4,7 +4,7 @@
 
 import createHttpError from "http-errors";
 import {LeanUserQuerySelectFields, type LeanUserSchemaFields, UserModel} from "@/domains/users";
-import {MovieReview, type MovieReviewSchemaFields,} from "@/domains/movie-reviews/_models";
+import {MovieReviewModel, type MovieReviewSchemaFields,} from "@/domains/movie-reviews/_models";
 import {MovieWithRatingPipelines} from "@/domains/movie-reviews/_feat";
 import {Types} from "mongoose";
 
@@ -27,7 +27,7 @@ export async function fetchCustomerReviewViewData(
     const customer = await UserModel.findById(userId).select(LeanUserQuerySelectFields);
     if (!customer) throw createHttpError(404, "Customer Not Found.");
 
-    const [review] = await MovieReview.aggregate<MovieReviewSchemaFields>([
+    const [review] = await MovieReviewModel.aggregate<MovieReviewSchemaFields>([
         {$match: {_id: reviewId, user: customer._id}},
         {
             $lookup: {

@@ -15,10 +15,10 @@ import 'dotenv/config';
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
 import {generateSlug} from "@/shared/utility/generateSlug.js";
-import {Seat} from "@/domains/seat/_models";
+import {SeatModel} from "@/domains/seat/_models";
 
 connect().then(async () => {
-    const cursor = Seat.find().cursor();
+    const cursor = SeatModel.find().cursor();
 
     for (let seat = await cursor.next(); seat !== null; seat = await cursor.next()) {
         if (!seat.slug) {
@@ -27,7 +27,7 @@ connect().then(async () => {
         }
     }
 
-    await Seat.createIndexes();
+    await SeatModel.createIndexes();
     console.log("Done updating seats.");
 }).catch((err) => {
     console.log(err);

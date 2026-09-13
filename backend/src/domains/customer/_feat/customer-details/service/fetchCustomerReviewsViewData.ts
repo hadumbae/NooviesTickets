@@ -3,7 +3,7 @@
  */
 
 import {type PipelineStage, Types} from "mongoose";
-import {type CustomerMovieReviewSummary, MovieReview} from "@/domains/movie-reviews";
+import {type CustomerMovieReviewSummary, MovieReviewModel} from "@/domains/movie-reviews";
 import type {PaginationReturns} from "@/shared/_types/pagination";
 import {LeanUserQuerySelectFields, type LeanUserSchemaFields, UserModel} from "@/domains/users";
 import {MoviePopulationPipelines} from "@/domains/movies/_feat/query-population";
@@ -50,7 +50,7 @@ export async function fetchCustomerReviewsViewData(
         {$project: {helpfulLikes: 0}},
     ]
 
-    const [reviews] = await MovieReview.aggregate<PaginationReturns<CustomerMovieReviewSummary>>([
+    const [reviews] = await MovieReviewModel.aggregate<PaginationReturns<CustomerMovieReviewSummary>>([
         {$match: {user: customer._id}},
         ...buildPaginationPipelines({innerStages: reviewInnerStages}),
     ])

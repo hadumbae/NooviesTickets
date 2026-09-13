@@ -7,7 +7,7 @@ import type {
     FetchPaginatedUserReviewsConfig,
     UpdateUserMovieReviewConfig
 } from "@/domains/movie-reviews/_feat/current-user-reviews/service/service.types";
-import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
+import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import {MovieReviewPopulatePaths} from "@/domains/movie-reviews/_feat/query-population/MovieReviewPopulatePaths.js";
 import populateQuery from "@/shared/utility/mongoose/populateQuery.js";
 import {handlePersistenceQuery} from "@/shared/utility/mongoose/handlePersistenceQuery.js";
@@ -29,7 +29,7 @@ import {checkMovieReviewOwnership} from "@/domains/movie-reviews/_feat/check-own
 export const fetchCurrentUserMovieReview = async (
     reviewID: Types.ObjectId
 ): Promise<MyMovieReviewSchemaFields> => {
-    const [results] = await MovieReview.aggregate<MyMovieReviewSchemaFields>([
+    const [results] = await MovieReviewModel.aggregate<MyMovieReviewSchemaFields>([
         {$match: {_id: reviewID}},
         {$addFields: {helpfulCount: {$size: "$helpfulLikes"}}},
         {$project: {helpfulLikes: 0}},
@@ -43,7 +43,7 @@ export const fetchCurrentUserMovieReview = async (
 export const fetchCurrentUserMovieReviewList = async (
     {userID, page, perPage}: FetchPaginatedUserReviewsConfig
 ): Promise<PaginationReturns<MovieReviewSchemaFields>> => {
-    const [results] = await MovieReview.aggregate<PaginationReturns<MovieReviewSchemaFields>>([
+    const [results] = await MovieReviewModel.aggregate<PaginationReturns<MovieReviewSchemaFields>>([
         {$match: {user: userID}},
         {
             $facet: {
@@ -76,12 +76,12 @@ export async function createMovieReviewForCurrentUser(
     const userReviewData = {...data, user: userID};
 
     const doc = await handlePersistenceQuery({
-        query: () => MovieReview.create(userReviewData),
+        query: () => MovieReviewModel.create(userReviewData),
         onDuplicateIndexError: handleMovieReviewDuplicateIndex,
     });
 
     const query = populateQuery({
-        query: MovieReview.findById(doc._id),
+        query: MovieReviewModel.findById(doc._id),
         config: {...options, populatePaths: MovieReviewPopulatePaths},
     });
 
@@ -95,7 +95,7 @@ export async function updateMovieReviewForCurrentUser(
     const isOwner = checkMovieReviewOwnership({userID, reviewID});
     if (!isOwner) throw createHttpError(403, "Invalid User, Can Only Update Owned Review.");
 
-    const docToUpdate = await MovieReview.findById(reviewID).orFail();
+    const docToUpdate = await MovieReviewModel.findById(reviewID).orFail();
 
     docToUpdate.set(data);
     if (unset) Object.keys(unset).forEach((key) => docToUpdate.set(key, undefined));
@@ -103,12 +103,12 @@ export async function updateMovieReviewForCurrentUser(
     await handlePersistenceQuery({
         query: () => docToUpdate.save(),
         retries: 3,
-        modelName: MovieReview.modelName,
+        modelName: MovieReviewModel.modelName,
         onDuplicateIndexError: handleMovieReviewDuplicateIndex,
         onVersionError: () => {
             throw new DocumentVersionError({
                 _id: reviewID,
-                model: MovieReview.modelName,
+                model: MovieReviewModel.modelName,
                 raw: data,
                 message: "Document version error with movie review.",
             });
@@ -116,7 +116,7 @@ export async function updateMovieReviewForCurrentUser(
     });
 
     const updatedQuery = populateQuery({
-        query: MovieReview.findById(reviewID),
+        query: MovieReviewModel.findById(reviewID),
         config: {...options, populatePaths: MovieReviewPopulatePaths}
     });
 
@@ -127,7 +127,7 @@ export async function updateMovieReviewForCurrentUser(
 export async function deleteMovieReviewForCurrentUser(
     {userID, reviewID}: DeleteUserMovieReviewConfig
 ): Promise<void> {
-    const review = await MovieReview.findById(reviewID).orFail();
+    const review = await MovieReviewModel.findById(reviewID).orFail();
 
     const isOwner = checkMovieReviewOwnership({userID, reviewID});
     if (!isOwner) throw createHttpError(403, "Invalid User, Can Only Delete Owned Review.");

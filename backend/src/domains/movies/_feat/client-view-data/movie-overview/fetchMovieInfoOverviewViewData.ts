@@ -11,7 +11,7 @@ import {
     type ReviewDetailsByMovieReturns
 } from "@/domains/movies/_feat/fetch-reviews-by-movie";
 import {MoviePopulationPaths} from "@/domains/movies/_feat/query-population";
-import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {MovieCreditModel} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 import {MovieCreditPopulationPaths} from "@/domains/movie-credits/_feat/query-population";
 import {
     fetchReviewDetailsForMovie
@@ -43,7 +43,7 @@ export async function fetchMovieInfoOverviewViewData(
 
     if (!movie) throw createHttpError(404, "Movie not found.");
 
-    const credits = await MovieCredit
+    const credits = await MovieCreditModel
         .find({movie: movie._id})
         .populate(MovieCreditPopulationPaths)
         .lean({virtuals: true});

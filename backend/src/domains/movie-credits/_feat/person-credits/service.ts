@@ -2,7 +2,7 @@
  * @fileoverview Service for aggregating a person's filmography.
  */
 
-import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {MovieCreditModel} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 import type {
     FetchPersonCreditStatsConfig,
     FetchPersonFilmographyConfig,
@@ -16,7 +16,7 @@ import type {
 export async function fetchPersonCreditStats(
     {personID}: FetchPersonCreditStatsConfig
 ): Promise<PersonCreditStats> {
-    const [data] = await MovieCredit.aggregate<PersonCreditStats>([
+    const [data] = await MovieCreditModel.aggregate<PersonCreditStats>([
         {$match: {person: personID}},
         {
             $group: {
@@ -43,7 +43,7 @@ export async function fetchPersonCreditStats(
 export async function fetchPersonFilmography(
     {personID, limit}: FetchPersonFilmographyConfig
 ): Promise<RoleCreditsGroup[]> {
-    return MovieCredit.aggregate<RoleCreditsGroup>([
+    return MovieCreditModel.aggregate<RoleCreditsGroup>([
         {$match: {person: personID}},
 
         {$lookup: {from: "movies", localField: "movie", foreignField: "_id", as: "movie"}},

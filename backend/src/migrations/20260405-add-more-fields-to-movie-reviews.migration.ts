@@ -6,7 +6,7 @@
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
 import mongoose from "mongoose";
-import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
+import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import {generateSlug} from "@/shared/utility/generateSlug";
 import {generateMovieReviewUniqueCode} from "@/domains/movie-reviews/_feat/handle-query/generateMovieReviewUniqueCode";
 
@@ -17,7 +17,7 @@ import {generateMovieReviewUniqueCode} from "@/domains/movie-reviews/_feat/handl
 connect().then(async () => {
     console.log("Starting MovieReview identity backfill migration...");
 
-    const cursor = MovieReview.find().cursor();
+    const cursor = MovieReviewModel.find().cursor();
 
     for (let review = await cursor.next(); review !== null; review = await cursor.next()) {
         review.slug = generateSlug("review");
@@ -26,7 +26,7 @@ connect().then(async () => {
         await review.save();
     }
 
-    await MovieReview.syncIndexes();
+    await MovieReviewModel.syncIndexes();
     console.log(`--- Migration Completed Successfully ---`);
 }).catch((err) => {
     console.error("Migration Failed: ", err);

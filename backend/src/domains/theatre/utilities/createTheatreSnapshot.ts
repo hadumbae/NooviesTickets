@@ -7,7 +7,7 @@ import {TheatreSnapshotInputSchema} from "@/domains/theatre/validation/TheatreSn
 import {InconsistentDataError} from "@/shared/errors/InconsistentDataError";
 import {DocumentNotFoundError} from "@/shared/errors/DocumentNotFoundError";
 import {TheatreModel} from "@/domains/theatre/model/theatre";
-import {TheatreSnapshot, type TheatreSnapshotSchemaFields} from "@/domains/theatre/model/theatre-snapshot";
+import {TheatreSnapshotModel, type TheatreSnapshotSchemaFields} from "@/domains/theatre/model/theatre-snapshot";
 
 /** Creates an immutable validated snapshot of a theatre at a specific point in time. */
 export async function createTheatreSnapshot(
@@ -28,7 +28,7 @@ export async function createTheatreSnapshot(
 
     if (!success) {
         throw new InconsistentDataError({
-            modelName: TheatreSnapshot.name,
+            modelName: TheatreSnapshotModel.name,
             message: "Inconsistent data, unable to create snapshot.",
             errors: error?.errors,
         });

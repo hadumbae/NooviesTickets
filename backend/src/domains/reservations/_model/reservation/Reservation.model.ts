@@ -3,7 +3,7 @@
  */
 
 import {model} from "mongoose";
-import {type ReservationModel, ReservationSchema} from "./Reservation.schema.js";
+import {type ReservationSchemaModel, ReservationSchema} from "./Reservation.schema.js";
 import type {ReservationSchemaFields} from "./Reservation.types.js";
 
 /**
@@ -17,7 +17,7 @@ import "./Reservation.methods.js";
 /**
  * Mongoose model for interacting with the Reservation collection.
  */
-export const Reservation: ReservationModel = model<ReservationSchemaFields, ReservationModel>(
+export const ReservationModel: ReservationSchemaModel = model<ReservationSchemaFields, ReservationSchemaModel>(
     "Reservation",
     ReservationSchema,
 );

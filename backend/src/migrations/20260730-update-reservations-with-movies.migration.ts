@@ -5,13 +5,13 @@
 import "dotenv/config";
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
-import {Reservation} from "@/domains/reservations";
+import {ReservationModel} from "@/domains/reservations";
 import type {ShowingSchemaFields} from "@/domains/showing";
 
 connect()
     .then(async () => {
 
-        const cursor = Reservation.find().cursor();
+        const cursor = ReservationModel.find().cursor();
 
         for (let reservation = await cursor.next(); reservation !== null; reservation = await cursor.next()) {
             const populated = await reservation.populate({path: "showing"});

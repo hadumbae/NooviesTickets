@@ -12,4 +12,4 @@ import type {SeatSchemaFields} from "@/domains/seat/_models/Seat.types";
 /**
  * Model representing a seat or grid element within a theatre screen.
  */
-export const Seat: Model<SeatSchemaFields> = model<SeatSchemaFields>("Seat", SeatSchema);
+export const SeatModel: Model<SeatSchemaFields> = model<SeatSchemaFields>("Seat", SeatSchema);

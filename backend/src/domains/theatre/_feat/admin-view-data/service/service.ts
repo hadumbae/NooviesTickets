@@ -9,12 +9,12 @@ import type {
     TheatreShowingListViewData
 } from "@/domains/theatre/_feat/admin-view-data/service/service.types";
 import {TheatreModel, type TheatreWithVirtuals} from "@/domains/theatre/model/theatre";
-import {Screen, type ScreenSchemaFields} from "@/domains/screen/_models/screen";
+import {ScreenModel, type ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import {TheatreVirtualPopulationPaths} from "@/domains/theatre/_feat/crud";
 import createHttpError from "http-errors";
 import {buildPaginationPipelines} from "@/shared/_feat/pagination-pipelines";
 import type {PipelineStage} from "mongoose";
-import {Showing} from "@/domains/showing/_models/showing/Showing.model";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import {ShowingPopulationPaths} from "@/domains/showing/_feat/query-population";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
 import {ScreenVirtualPipelines} from "@/domains/screen/_feat/query-population";
@@ -34,7 +34,7 @@ export async function fetchTheatreDetailsViewData(
         throw createHttpError(404, "Theatre not found!");
     }
 
-    const [screens] = await Screen.aggregate<PaginationReturns<ScreenSchemaFields>>([
+    const [screens] = await ScreenModel.aggregate<PaginationReturns<ScreenSchemaFields>>([
         {$match: {theatre: theatre._id}},
         ...buildPaginationPipelines({
             innerStages: [
@@ -46,7 +46,7 @@ export async function fetchTheatreDetailsViewData(
         }),
     ]);
 
-    const showings = await Showing
+    const showings = await ShowingModel
         .find({theatre: theatre._id, status: "SCHEDULED"})
         .sort({startTime: -1})
         .limit(showingLimit)
@@ -76,8 +76,8 @@ export async function fetchTheatreShowingListViewData(
     }
 
     const [totalItems, items] = await Promise.all([
-        Showing.countDocuments({theatre: theatre._id}),
-        Showing
+        ShowingModel.countDocuments({theatre: theatre._id}),
+        ShowingModel
             .find({theatre: theatre._id})
             .sort({startTime: -1})
             .skip((page - 1) * perPage)

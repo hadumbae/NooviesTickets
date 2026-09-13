@@ -9,7 +9,7 @@ import type { ReservedShowingSnapshotSchemaFields } from "@/domains/reservations
 import "@/domains/reservations/_model/showing-snapshot/ReservedShowingSnapshot.hooks.js";
 
 /** Mongoose model for the ReservedShowingSnapshot collection. */
-export const ReservedShowingSnapshot: Model<ReservedShowingSnapshotSchemaFields> =
+export const ReservedShowingSnapshotModel: Model<ReservedShowingSnapshotSchemaFields> =
     model<ReservedShowingSnapshotSchemaFields>(
         "ReservedShowingSnapshot",
         ReservedShowingSnapshotSchema

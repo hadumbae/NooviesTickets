@@ -1,4 +1,4 @@
-import {Reservation, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
 import {ReservationQueryMatchStageSchema, ReservationQuerySortStageSchema} from "@/domains/reservations/_feat/validate-query-options";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {destroy, findById, findBySlug} from "@/shared/_feat/generic-crud/path-handlers";
@@ -10,7 +10,7 @@ import {ReservationPopulatePaths} from "@/domains/reservations/_feat/query-popul
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 
-const modelName = Reservation.modelName;
+const modelName = ReservationModel.modelName;
 const matchSchema = ReservationQueryMatchStageSchema;
 const sortSchema = ReservationQuerySortStageSchema;
 
@@ -36,7 +36,7 @@ const routes: CRUDRoute<ReservationSchemaFields>[] = [
 ];
 
 const router: Router = buildCRUDRoutes<ReservationSchemaFields>({
-    model: Reservation,
+    model: ReservationModel,
     routes: routes,
     populatePaths: ReservationPopulatePaths,
 });
@@ -44,7 +44,7 @@ const router: Router = buildCRUDRoutes<ReservationSchemaFields>({
 router.get(
     "/query",
     buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
-    asyncHandler(aggregate({model: Reservation})),
+    asyncHandler(aggregate({model: ReservationModel})),
 );
 
 export {

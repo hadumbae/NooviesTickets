@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import type {SeatMapSchemaFields} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
-import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import {SeatMapPopulationPaths} from "@/domains/seatmap/_feat/query-population";
 import createHttpError from "http-errors";
 
@@ -17,7 +17,7 @@ type ToggleConfig = {
  * Switches a seat map status between AVAILABLE and UNAVAILABLE.
  */
 export async function toggleSeatMapAvailability({_id}: ToggleConfig): Promise<SeatMapSchemaFields> {
-    const seatMap = await SeatMap.findById(_id).populate(SeatMapPopulationPaths);
+    const seatMap = await SeatMapModel.findById(_id).populate(SeatMapPopulationPaths);
     if (!seatMap) throw createHttpError(404, "Seat Map not found.");
 
     const {status} = seatMap;
@@ -25,7 +25,7 @@ export async function toggleSeatMapAvailability({_id}: ToggleConfig): Promise<Se
     if (status !== "AVAILABLE" && status !== "UNAVAILABLE") return seatMap;
     const newStatus = status === "UNAVAILABLE" ? "AVAILABLE" : "UNAVAILABLE";
 
-    const updatedSeatMap = await SeatMap
+    const updatedSeatMap = await SeatMapModel
         .findByIdAndUpdate(_id, {status: newStatus}, {new: true})
         .populate(SeatMapPopulationPaths);
 

@@ -7,8 +7,8 @@ import {Types} from "mongoose";
 import {MovieModel, type MovieSchemaFields, MovieSummarySelect} from "@/domains/movies";
 import {GenreModel, type GenreSchemaFields, GenreSummarySelect} from "@/domains/genres";
 import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
-import {Showing, type ShowingSchemaFields, ShowingSummarySelect} from "@/domains/showing";
-import {Reservation, type ReservationSchemaFields} from "@/domains/reservations";
+import {ShowingModel, type ShowingSchemaFields, ShowingSummarySelect} from "@/domains/showing";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations";
 import {ReservationSummarySelect} from "@/domains/reservations/_feat/query-population/ReservationSummarySelect";
 
 /** Configuration options for fetching user-specific and general homepage view data. */
@@ -64,7 +64,7 @@ export async function fetchHomepageViewData(
     const theatreIDs = sampled.map((doc) => doc._id);
     const theatres = await TheatreModel.find({_id: {$in: theatreIDs}}).lean({virtuals: true});
 
-    const showings = await Showing
+    const showings = await ShowingModel
         .find({"theatreSnapshot.country": country, startTime: {$gte: now}, status: {$in: ["SCHEDULED", "SOLD_OUT"]}})
         .select(ShowingSummarySelect)
         .sort({startTime: 1})
@@ -81,7 +81,7 @@ export async function fetchHomepageViewData(
 
     if (!user) return {...generalData, reservations: [],}
 
-    const reservations = await Reservation
+    const reservations = await ReservationModel
         .find({user, "snapshot.startTime": {$gt: now}, status: {$in: ["PENDING", "RESERVED", "PAID"]}})
         .select(ReservationSummarySelect)
         .sort({"snapshot.startTime": 1})

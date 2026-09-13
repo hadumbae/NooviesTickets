@@ -8,7 +8,7 @@ import {
     type ReserveTicketPersistenceData,
     ReserveTicketPersistenceSchema
 } from "@/domains/reservations/_feat/reserve-tickets";
-import {Reservation, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
 
 /** Validates the input data against the persistence schema before saving and populating the reservation document. */
 export async function saveValidatedReservation(
@@ -24,7 +24,7 @@ export async function saveValidatedReservation(
         });
     }
 
-    const doc = new Reservation(parsedData);
+    const doc = new ReservationModel(parsedData);
     await doc.save();
 
     await doc.populate(ReservationPopulatePaths);

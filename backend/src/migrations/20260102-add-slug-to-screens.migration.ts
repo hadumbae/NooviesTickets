@@ -8,14 +8,14 @@ import 'dotenv/config';
 
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
-import {Screen} from "@/domains/screen/_models/screen";
+import {ScreenModel} from "@/domains/screen/_models/screen";
 import {generateSlug} from "@/shared/utility/generateSlug.js";
 
 /**
  * Migration Execution Logic:
  */
 connect().then(async () => {
-    const cursor = Screen.find().cursor();
+    const cursor = ScreenModel.find().cursor();
 
     for (let screen = await cursor.next(); screen != null; screen = await cursor.next()) {
         if (!screen.slug) {
@@ -24,7 +24,7 @@ connect().then(async () => {
         }
     }
 
-    await Screen.createIndexes();
+    await ScreenModel.createIndexes();
     console.log("Done updating seats.");
 }).catch((err) => {
     console.error(err);

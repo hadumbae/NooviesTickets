@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import type {PaginationReturns} from "@/shared/_types";
-import {MovieReview, type MovieReviewSchemaFields} from "@/domains/movie-reviews/_models/review";
+import {MovieReviewModel, type MovieReviewSchemaFields} from "@/domains/movie-reviews/_models/review";
 import type {
     BrowseReviewsByMovieConfig
 } from "@/domains/movies/_feat/fetch-reviews-by-movie/service/fetchPaginatedReviewsByMovie";
@@ -32,7 +32,7 @@ export const fetchReviewDetailsForMovie = async (
 ): Promise<ReviewDetailsByMovieReturns> => {
     const populationPipelines = options?.populate ? MovieReviewPopulationPipelines : [];
 
-    const [result] = await MovieReview.aggregate<ReviewDetailsByMovieReturns>([
+    const [result] = await MovieReviewModel.aggregate<ReviewDetailsByMovieReturns>([
         {
             $match: {movie: movieID}
         },

@@ -6,10 +6,10 @@ import {GenreModel} from "@/domains/genres";
 import {PersonModel} from "@/domains/persons";
 import {TheatreModel} from "@/domains/theatre/model/theatre";
 import {MovieModel} from "@/domains/movies";
-import {Showing} from "@/domains/showing";
-import {Reservation} from "@/domains/reservations";
+import {ShowingModel} from "@/domains/showing";
+import {ReservationModel} from "@/domains/reservations";
 import {RoleTypeModel} from "@/domains/role-types";
-import {MovieReview} from "@/domains/movie-reviews";
+import {MovieReviewModel} from "@/domains/movie-reviews";
 
 type AdminDashboardData = {
     genres: number,
@@ -32,13 +32,13 @@ export async function fetchAdminDashboardData(): Promise<AdminDashboardData> {
         PersonModel.countDocuments(),
         TheatreModel.countDocuments(),
         MovieModel.countDocuments(),
-        Showing.countDocuments(),
-        Showing.countDocuments({status: {$in: ["SCHEDULED", "RUNNING", "SOLD_OUT"]}}),
-        Reservation.countDocuments(),
-        Reservation.countDocuments({status: {$in: ["RESERVED", "PAID"]}}),
+        ShowingModel.countDocuments(),
+        ShowingModel.countDocuments({status: {$in: ["SCHEDULED", "RUNNING", "SOLD_OUT"]}}),
+        ReservationModel.countDocuments(),
+        ReservationModel.countDocuments({status: {$in: ["RESERVED", "PAID"]}}),
         RoleTypeModel.countDocuments(),
-        MovieReview.countDocuments(),
-        MovieReview.countDocuments({isPublic: true}),
+        MovieReviewModel.countDocuments(),
+        MovieReviewModel.countDocuments({isPublic: true}),
     ]);
 
     const [

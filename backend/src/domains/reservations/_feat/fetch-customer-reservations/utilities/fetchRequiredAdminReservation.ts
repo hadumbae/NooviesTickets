@@ -6,7 +6,7 @@ import {Types} from "mongoose";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import type {AdminReservation} from "@/domains/reservations/_feat/fetch-customer-reservations";
 import createHttpError from "http-errors";
-import {Reservation} from "@/domains/reservations/_model/reservation";
+import {ReservationModel} from "@/domains/reservations/_model/reservation";
 import {LeanUserQuerySelectFields} from "@/domains/users";
 
 /**
@@ -15,7 +15,7 @@ import {LeanUserQuerySelectFields} from "@/domains/users";
 export async function fetchRequiredAdminReservation(
     _id: Types.ObjectId
 ): Promise<DocumentType<AdminReservation>> {
-    const reservation = await Reservation
+    const reservation = await ReservationModel
         .findById<DocumentType<AdminReservation>>(_id)
         .populate({path: "user", select: LeanUserQuerySelectFields});
 

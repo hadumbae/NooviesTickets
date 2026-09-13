@@ -8,7 +8,7 @@ import {TheatreModel} from "@/domains/theatre/model/theatre/Theatre.model";
 import {type PipelineStage, Types} from "mongoose";
 import {ShowingPopulationPipelines} from "@/domains/showing/_feat/query-population/ShowingPopulationPipelines";
 import {ShowingSeatMapVirtualPipelines} from "@/domains/showing/_feat/query-population/ShowingSeatMapVirtualPipelines";
-import {Screen} from "@/domains/screen/_models/screen/Screen.model";
+import {ScreenModel} from "@/domains/screen/_models/screen/Screen.model";
 import type {SlugString} from "@noovies-tickets/common";
 
 /** Parameters for fetching showings grouped by screens. */
@@ -73,5 +73,5 @@ export async function fetchShowingsByScreens(
         },
     ];
 
-    return Screen.aggregate(pipeline);
+    return ScreenModel.aggregate(pipeline);
 }

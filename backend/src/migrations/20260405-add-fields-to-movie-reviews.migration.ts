@@ -6,7 +6,7 @@
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
 import mongoose from "mongoose";
-import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
+import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 
 /**
  * Migration: Updates all existing MovieReview documents to include 'isPublic' and 'moderationLogs'.
@@ -15,7 +15,7 @@ import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.mo
 connect().then(async () => {
     console.log("Starting MovieReview migration...");
 
-    const cursor = MovieReview.find().cursor();
+    const cursor = MovieReviewModel.find().cursor();
 
     for (let review = await cursor.next(); review !== null; review = await cursor.next()) {
         /** Initialize new schema fields */
@@ -25,7 +25,7 @@ connect().then(async () => {
         console.log(`Updated review ID: ${review._id}`);
     }
 
-    await MovieReview.syncIndexes();
+    await MovieReviewModel.syncIndexes();
     console.log("--- Migration Completed Successfully ---");
 }).catch((err) => {
     console.error("Migration Failed: ", err);

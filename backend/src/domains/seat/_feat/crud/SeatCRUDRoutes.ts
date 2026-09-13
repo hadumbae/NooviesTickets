@@ -12,13 +12,13 @@ import validateZodSchema from "@/shared/utility/schema/validators/validateZodSch
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import {SeatInputSchema} from "@/domains/seat/_feat/validate-submit";
-import {Seat, type SeatSchemaFields} from "@/domains/seat/_models";
+import {SeatModel, type SeatSchemaFields} from "@/domains/seat/_models";
 import {
     SeatQueryMatchStageSchema,
     SeatQuerySortStageSchema
 } from "@/domains/seat/_feat/validate-query";
 
-const modelName = Seat.modelName;
+const modelName = SeatModel.modelName;
 const matchSchema = SeatQueryMatchStageSchema;
 const sortSchema = SeatQuerySortStageSchema;
 
@@ -68,7 +68,7 @@ const routes: CRUDRoute<SeatSchemaFields>[] = [
             isAdmin,
             validateZodSchema(SeatInputSchema),
             buildUnsetFields({
-                model: Seat,
+                model: SeatModel,
                 excludeKeys: ["row", "x", "y", "layoutType", "theatre", "screen"],
             }),
         ],
@@ -85,7 +85,7 @@ const routes: CRUDRoute<SeatSchemaFields>[] = [
 
 /** Orchestrates the creation of the router with generic path handlers. */
 const router: Router = buildCRUDRoutes<SeatSchemaFields>({
-    model: Seat,
+    model: SeatModel,
     routes: routes,
     populatePaths: ["screen", "theatre"],
 });
@@ -94,7 +94,7 @@ const router: Router = buildCRUDRoutes<SeatSchemaFields>({
 router.get(
     "/query",
     buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
-    asyncHandler(aggregate({model: Seat})),
+    asyncHandler(aggregate({model: SeatModel})),
 );
 
 export {

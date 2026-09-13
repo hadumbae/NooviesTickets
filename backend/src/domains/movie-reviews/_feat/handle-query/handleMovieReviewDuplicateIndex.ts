@@ -3,14 +3,14 @@
  */
 
 import {ZodDuplicateIndexError} from "@/shared/errors/zod/ZodDuplicateIndexError.js";
-import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
+import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 
 /** Translates a MongoDB duplicate index string into a typed ZodDuplicateIndexError. */
 export function handleMovieReviewDuplicateIndex(indexString: string): never {
     if (indexString === "user_1_movie_1") {
         throw new ZodDuplicateIndexError({
             index: indexString,
-            model: MovieReview.modelName,
+            model: MovieReviewModel.modelName,
             message: "Duplicate movie review detected. Reviews must not have the same user and movie.",
             errors: [
                 {
@@ -29,7 +29,7 @@ export function handleMovieReviewDuplicateIndex(indexString: string): never {
 
     throw new ZodDuplicateIndexError({
         index: indexString,
-        model: MovieReview.modelName,
+        model: MovieReviewModel.modelName,
         errors: [],
         message: "Movie review with duplicate indexes detected."
     });

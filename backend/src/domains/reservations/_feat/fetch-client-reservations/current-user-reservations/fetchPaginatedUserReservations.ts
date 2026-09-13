@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
-import {Reservation, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
 import {ReservationPopulatePaths} from "@/domains/reservations/_feat/query-population";
 import type {QueryPaginationParams} from "@/shared/schema/query/QueryPaginationParamsSchema";
 import type {CurrentUserReservationQueryFilters, CurrentUserReservationQuerySorts} from "@/domains/reservations";
@@ -21,9 +21,9 @@ export type FetchPaginatedUserReservationsParams = {
 export const fetchPaginatedUserReservations = async (
     {userID, filters, sorts, pagination: {page, perPage}}: FetchPaginatedUserReservationsParams
 ): Promise<PaginationReturns<ReservationSchemaFields>> => {
-    const countQuery = Reservation.countDocuments({user: userID});
+    const countQuery = ReservationModel.countDocuments({user: userID});
 
-    const itemQuery = Reservation
+    const itemQuery = ReservationModel
         .find({...filters, user: userID})
         .sort(sorts ?? {dateReserved: -1})
         .skip(perPage * (page - 1))

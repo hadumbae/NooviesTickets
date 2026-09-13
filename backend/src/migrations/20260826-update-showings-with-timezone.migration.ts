@@ -5,12 +5,12 @@
 import "dotenv/config";
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
-import {Showing} from "@/domains/showing";
+import {ShowingModel} from "@/domains/showing";
 import {TheatreModel} from "@/domains/theatre/model/theatre";
 
 connect().then(async () => {
 
-    const cursor = Showing.find().cursor();
+    const cursor = ShowingModel.find().cursor();
 
     for (let showing = await cursor.next(); showing !== null; showing = await cursor.next()) {
         const theatre = await TheatreModel.findById(showing.theatre);

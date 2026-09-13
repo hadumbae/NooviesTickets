@@ -4,7 +4,7 @@
  */
 
 import {Types} from "mongoose";
-import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
+import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 
 /**
  * Parameters for `checkMovieReviewOwnership`
@@ -20,7 +20,7 @@ type OwnershipParams = {
 export async function checkMovieReviewOwnership(
     {userID, reviewID}: OwnershipParams
 ): Promise<boolean> {
-    const review = await MovieReview
+    const review = await MovieReviewModel
         .findById(reviewID)
         .select("user")
         .lean()

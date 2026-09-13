@@ -7,7 +7,7 @@ import { ScreenSnapshotSchema } from "@/domains/screen/_models/screen-snapshot/S
 import type { ScreenSnapshotSchemaFields } from "@/domains/screen/_models/screen-snapshot/ScreenSnapshot.types.js";
 
 /** Mongoose model for the ScreenSnapshot collection. */
-export const ScreenSnapshot: Model<ScreenSnapshotSchemaFields> =
+export const ScreenSnapshotModel: Model<ScreenSnapshotSchemaFields> =
     model<ScreenSnapshotSchemaFields>(
         "ScreenSnapshot",
         ScreenSnapshotSchema

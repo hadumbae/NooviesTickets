@@ -12,9 +12,9 @@
 
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
-import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 
 connect()
-    .then(async () => await SeatMap.createIndexes())
+    .then(async () => await SeatMapModel.createIndexes())
     .catch((err) => console.error(err))
     .finally(async () => await mongoose.disconnect());

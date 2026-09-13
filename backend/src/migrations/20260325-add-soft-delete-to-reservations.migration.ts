@@ -6,16 +6,16 @@
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
 import mongoose from "mongoose";
-import {Reservation} from "@/domains/reservations/_model/reservation";
+import {ReservationModel} from "@/domains/reservations/_model/reservation";
 import {generateReservationUniqueCode} from "@/domains/reservations/_feat/generate-reservation-code";
 
 /**
  * Execution block for the Reservation data migration.
  */
 connect().then(async () => {
-    await Reservation.syncIndexes();
+    await ReservationModel.syncIndexes();
 
-    const cursor = Reservation
+    const cursor = ReservationModel
         .find()
         .setOptions({getSoftDeleted: true})
         .cursor();

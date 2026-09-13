@@ -16,7 +16,7 @@ import type {SoftDeleteSchemaModel} from "@/shared/_types";
 import {TheatreSnapshotSchema} from "@/domains/theatre/model/theatre-snapshot";
 
 /** Mongoose model type for the Showing collection including soft-delete methods. */
-export type ShowingModel = SoftDeleteSchemaModel<ShowingSchemaFields>;
+export type ShowingSchemaModel = SoftDeleteSchemaModel<ShowingSchemaFields>;
 
 const LanguageDefinition: SchemaDefinitionProperty = {
     type: String,
@@ -25,7 +25,7 @@ const LanguageDefinition: SchemaDefinitionProperty = {
 };
 
 /** Mongoose schema definition for movie showings. */
-export const ShowingSchema = new Schema<ShowingSchemaFields, ShowingModel, ModelSoftDeleteMethods<ShowingSchemaFields>>(
+export const ShowingSchema = new Schema<ShowingSchemaFields, ShowingSchemaModel, ModelSoftDeleteMethods<ShowingSchemaFields>>(
     {
         movie: {
             type: Schema.Types.ObjectId,

@@ -11,7 +11,7 @@ import "@/domains/movie-reviews/_models/review/MovieReview.hooks";
 /**
  * The Mongoose model for interacting with the MovieReview collection.
  */
-export const MovieReview: Model<MovieReviewSchemaFields> = model<MovieReviewSchemaFields>(
+export const MovieReviewModel: Model<MovieReviewSchemaFields> = model<MovieReviewSchemaFields>(
     "MovieReview",
     MovieReviewSchema,
 );

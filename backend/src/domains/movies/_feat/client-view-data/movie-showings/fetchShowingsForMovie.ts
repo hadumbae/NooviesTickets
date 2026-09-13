@@ -8,7 +8,7 @@ import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import type {ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
 import {generateFuzzyRegexPattern} from "@/shared/utility/regex/generateFuzzyRegexPattern";
-import {Showing} from "@/domains/showing/_models/showing/Showing.model";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import {ShowingPopulationPipelines} from "@/domains/showing/_feat/query-population/ShowingPopulationPipelines";
 
 /** Parameters for the fetchShowingsForMovie function. */
@@ -53,7 +53,7 @@ export async function fetchShowingsForMovie(
         ];
     }
 
-    const [result] = await Showing.aggregate<PaginatedShowingsForMovie>([
+    const [result] = await ShowingModel.aggregate<PaginatedShowingsForMovie>([
         {
             $match: matchStage
         },

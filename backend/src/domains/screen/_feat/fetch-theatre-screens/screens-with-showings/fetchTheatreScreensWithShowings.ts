@@ -5,7 +5,7 @@
 import {Types} from "mongoose";
 import {buildShowingLookupStage} from "@/domains/showing/_feat/aggregation";
 import {buildMovieLookupStage, MoviePopulationPipelines} from "@/domains/movies";
-import {Screen} from "@/domains/screen/_models/screen";
+import {ScreenModel} from "@/domains/screen/_models/screen";
 import type {IANATimezone} from "@noovies-tickets/common";
 
 type FetchConfig = {
@@ -43,7 +43,7 @@ export async function fetchTheatreScreensWithShowings(
         ],
     });
 
-    return Screen.aggregate([
+    return ScreenModel.aggregate([
         {$match: {theatre: theatreID}},
         {$sort: {name: 1}},
         {$limit: 50},

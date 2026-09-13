@@ -6,13 +6,13 @@
 import {TheatreModel, type TheatreWithVirtuals} from "@/domains/theatre/model/theatre";
 import {TheatreVirtualPopulationPaths} from "@/domains/theatre/_feat/crud";
 import createHttpError from "http-errors";
-import {Screen} from "@/domains/screen/_models/screen";
-import {Seat} from "@/domains/seat/_models";
+import {ScreenModel} from "@/domains/screen/_models/screen";
+import {SeatModel} from "@/domains/seat/_models";
 import type {
     FetchTheatreScreenDetailsViewDataConfig,
     TheatreScreenDetailsViewData
 } from "@/domains/screen/_feat/view-data-admin/service/service.types";
-import {Showing, ShowingPopulationPaths} from "@/domains/showing";
+import {ShowingModel, ShowingPopulationPaths} from "@/domains/showing";
 
 /**
  * Fetches the complete dataset for managing a specific screen.
@@ -29,7 +29,7 @@ export async function fetchTheatreScreenDetailsViewData(
         throw createHttpError(404, "Theatre not found!");
     }
 
-    const screen = await Screen
+    const screen = await ScreenModel
         .findOne({theatre: theatre._id, slug: screenSlug})
         .lean({virtuals: true});
 
@@ -37,12 +37,12 @@ export async function fetchTheatreScreenDetailsViewData(
         throw createHttpError(404, "Screen not found!");
     }
 
-    const seats = await Seat
+    const seats = await SeatModel
         .find({screen: screen._id})
         .populate(["screen", "theatre"])
         .lean();
 
-    const recentShowings = await Showing
+    const recentShowings = await ShowingModel
         .find({theatre: theatre._id, screen: screen._id})
         .sort({startTime: 1})
         .limit(recentShowingsCount ?? 10)

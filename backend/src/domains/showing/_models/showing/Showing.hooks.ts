@@ -11,7 +11,7 @@ import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import {ShowingVirtualPopulationPaths} from "@/domains/showing/_feat/query-population";
 import {createShowingSeatMap} from "@/domains/seatmap/_feat/manage-showing-seat-maps";
 import {ShowingSeatMapVirtualPipelines} from "@/domains/showing/_feat/query-population/ShowingSeatMapVirtualPipelines";
-import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import {MovieModel} from "@/domains/movies/_models/movie";
 import {generateSlug} from "@/shared/utility/generateSlug";
 
@@ -72,7 +72,7 @@ ShowingSchema.pre("aggregate", async function () {
 
 ShowingSchema.post(["deleteOne", "deleteMany"], {document: false, query: true}, async function () {
     const {_id: showingID} = this.getFilter();
-    if (showingID) await SeatMap.deleteMany({showing: showingID});
+    if (showingID) await SeatMapModel.deleteMany({showing: showingID});
 });
 
 ShowingSchema.post(
@@ -80,6 +80,6 @@ ShowingSchema.post(
     {document: true, query: false},
     async function (doc: HydratedDocument<ShowingSchemaFields>) {
         if (!doc._id) return;
-        await SeatMap.deleteMany({showing: doc._id});
+        await SeatMapModel.deleteMany({showing: doc._id});
     }
 );

@@ -22,7 +22,7 @@ import validateZodSchema from "@/shared/utility/schema/validators/validateZodSch
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import type {MovieCreditSchemaFields} from "@/domains/movie-credits/_models/credit/MovieCredit.types";
-import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {MovieCreditModel} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 import {
     MovieCreditQueryMatchStageSchema,
     MovieCreditQuerySortStageSchema
@@ -32,7 +32,7 @@ import {MovieCreditPopulationPaths} from "@/domains/movie-credits/_feat/query-po
 import {MovieCreditPopulationPipelines} from "@/domains/movie-credits/_feat/aggregation";
 import {handleDuplicateCreditIndex} from "@/domains/movie-credits/_models";
 
-const modelName = MovieCredit.modelName;
+const modelName = MovieCreditModel.modelName;
 const matchSchema = MovieCreditQueryMatchStageSchema;
 const sortSchema = MovieCreditQuerySortStageSchema;
 
@@ -95,7 +95,7 @@ const routes: CRUDRoute<MovieCreditSchemaFields>[] = [
  * Orchestrates the creation of the router using the generic CRUD utility factory.
  */
 const router: Router = buildCRUDRoutes<MovieCreditSchemaFields>({
-    model: MovieCredit,
+    model: MovieCreditModel,
     routes: routes,
     populatePaths: MovieCreditPopulationPaths,
     onDuplicateIndex: handleDuplicateCreditIndex,
@@ -107,7 +107,7 @@ const router: Router = buildCRUDRoutes<MovieCreditSchemaFields>({
 router.get(
     "/query",
     buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
-    asyncHandler(aggregate({model: MovieCredit, populationPipelines: MovieCreditPopulationPipelines})),
+    asyncHandler(aggregate({model: MovieCreditModel, populationPipelines: MovieCreditPopulationPipelines})),
 );
 
 export {

@@ -7,7 +7,7 @@ import type {PaginationReturns} from "@/shared/_types/pagination";
 import {LeanUserQuerySelectFields, type LeanUserSchemaFields, UserModel} from "@/domains/users";
 import type {RequestPaginationOptions} from "@/shared/_feat/fetch-request-options";
 import createHttpError from "http-errors";
-import {Reservation, type ReservationSchemaFields} from "@/domains/reservations";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations";
 import type {
     CustomerReservationQueryFilters,
     CustomerReservationQuerySorts
@@ -41,8 +41,8 @@ export async function fetchCustomerReservationsViewData(
     }
 
     const [totalItems, items] = await Promise.all([
-        Reservation.countDocuments({...filters, user: customer._id}),
-        Reservation
+        ReservationModel.countDocuments({...filters, user: customer._id}),
+        ReservationModel
             .find({...filters, user: customer._id})
             .sort({dateReserved: 1, ...sorts})
             .skip((page - 1) * perPage)

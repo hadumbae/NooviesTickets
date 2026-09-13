@@ -4,7 +4,7 @@
 
 import type {ZodIssue} from "zod";
 import {ZodDuplicateIndexError} from "@/shared/errors/zod/ZodDuplicateIndexError";
-import {SeatMap} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 
 /** Handles MongoDB duplicate key errors by transforming them into formatted ZodDuplicateIndexErrors. */
 export function handleDuplicateIndex(indexString: string): void | never {
@@ -24,7 +24,7 @@ export function handleDuplicateIndex(indexString: string): void | never {
 
         throw new ZodDuplicateIndexError({
             index: indexString,
-            model: SeatMap.modelName,
+            model: SeatMapModel.modelName,
             errors,
             message: "Duplicate seat mapping detected. Each seat can be assigned only once per showing.",
         });

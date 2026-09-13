@@ -1,14 +1,14 @@
 import type {ReservationDoc, ReservationSchemaFields} from "@/domains/reservations/_model/reservation/Reservation.types";
-import {type ReservationModel, ReservationSchema} from "@/domains/reservations/_model/reservation/Reservation.schema";
-import {Reservation} from "@/domains/reservations/_model/reservation/Reservation.model";
+import {type ReservationSchemaModel, ReservationSchema} from "@/domains/reservations/_model/reservation/Reservation.schema";
+import {ReservationModel} from "@/domains/reservations/_model/reservation/Reservation.model";
 
 export {
     ReservationSchema,
-    Reservation,
+    ReservationModel,
 }
 
 export type {
-    ReservationModel,
+    ReservationSchemaModel,
     ReservationSchemaFields,
     ReservationDoc,
 }

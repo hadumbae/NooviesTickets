@@ -8,13 +8,13 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {destroy, find, findById, findBySlug, paginated} from "@/shared/_feat/generic-crud/path-handlers";
-import {MovieReview, type MovieReviewSchemaFields} from "@/domains/movie-reviews/_models";
+import {MovieReviewModel, type MovieReviewSchemaFields} from "@/domains/movie-reviews/_models";
 import {
     MovieReviewQueryMatchStageSchema,
     MovieReviewQuerySortStageSchema
 } from "@/domains/movie-reviews/_feat/validate-query-options";
 
-const modelName = MovieReview.modelName;
+const modelName = MovieReviewModel.modelName;
 const matchSchema = MovieReviewQueryMatchStageSchema;
 const sortSchema = MovieReviewQuerySortStageSchema;
 
@@ -52,7 +52,7 @@ const routes: CRUDRoute<MovieReviewSchemaFields>[] = [
 ];
 
 const router: Router = buildCRUDRoutes<MovieReviewSchemaFields>({
-    model: MovieReview,
+    model: MovieReviewModel,
     routes: routes,
 });
 

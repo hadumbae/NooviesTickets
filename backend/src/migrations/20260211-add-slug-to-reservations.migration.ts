@@ -6,8 +6,8 @@
 import "dotenv/config";
 import {connect} from "@/shared/config/database.js";
 import mongoose from "mongoose";
-import {Reservation} from "@/domains/reservations/_model/reservation";
-import {Showing} from "@/domains/showing/_models/showing/Showing.model.js";
+import {ReservationModel} from "@/domains/reservations/_model/reservation";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model.js";
 import createHttpError from "http-errors";
 import {generateSlug} from "@/shared/utility/generateSlug.js";
 import type {PopulatedShowing} from "@/domains/showing/_models/showing/Showing.types";
@@ -16,9 +16,9 @@ import type {PopulatedShowing} from "@/domains/showing/_models/showing/Showing.t
  * Execution block for the Reservation slug migration.
  */
 connect().then(async () => {
-    await Reservation.syncIndexes();
+    await ReservationModel.syncIndexes();
 
-    const cursor = Reservation.find().cursor();
+    const cursor = ReservationModel.find().cursor();
 
     for (
         let reservation = await cursor.next();
@@ -26,7 +26,7 @@ connect().then(async () => {
         reservation = await cursor.next()
     ) {
         if (!reservation.slug) {
-            const showing = await Showing
+            const showing = await ShowingModel
                 .findById(reservation.showing)
                 .select("movie")
                 .populate("movie")

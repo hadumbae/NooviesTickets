@@ -7,5 +7,5 @@ import {ReservedSeatSnapshotSchema} from "@/domains/seatmap/_model/seat-map-snap
 import type {ReservedSeatSnapshotSchemaFields} from "@/domains/seatmap/_model/seat-map-snapshot/ReservedSeatSnapshot.types.js";
 
 /** Mongoose model for the ReservedSeatSnapshot collection. */
-export const ReservedSeatSnapshot: Model<ReservedSeatSnapshotSchemaFields> =
+export const ReservedSeatSnapshotModel: Model<ReservedSeatSnapshotSchemaFields> =
     model<ReservedSeatSnapshotSchemaFields>("ReservedSeatSnapshot", ReservedSeatSnapshotSchema);

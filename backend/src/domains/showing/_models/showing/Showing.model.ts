@@ -3,7 +3,7 @@
  */
 
 import {model} from "mongoose";
-import {type ShowingModel, ShowingSchema} from "./Showing.schema.js";
+import {type ShowingSchemaModel, ShowingSchema} from "./Showing.schema.js";
 
 
 import type {ShowingSchemaFields} from "./Showing.types.js";
@@ -13,6 +13,6 @@ import "./Showing.hooks.js";
 import "./Showing.methods.js";
 
 /** Mongoose model for Showing documents. */
-export const Showing: ShowingModel = model<ShowingSchemaFields, ShowingModel>("Showing", ShowingSchema);
+export const ShowingModel: ShowingSchemaModel = model<ShowingSchemaFields, ShowingSchemaModel>("Showing", ShowingSchema);
 
 

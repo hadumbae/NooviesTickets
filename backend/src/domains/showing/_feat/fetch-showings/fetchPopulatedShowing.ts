@@ -3,7 +3,7 @@
  */
 
 import type {PopulatePath} from "@/shared/_types/mongoose/PopulatePath";
-import {Showing} from "@/domains/showing/_models/showing/Showing.model.js";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model.js";
 import {Types} from "mongoose";
 import type {PopulatedShowing} from "@/domains/showing/_models/showing/Showing.types.js";
 
@@ -20,7 +20,7 @@ export async function fetchPopulatedShowing(
         {path: "movie", populate: {path: "genres"}},
     ];
 
-    return Showing
+    return ShowingModel
         .findById(_id)
         .populate<SchemaPopulatePath>(showingPopulation)
         .lean()

@@ -10,7 +10,7 @@ import {type ScreenSchemaFields, type ScreenWithShowings} from "@/domains/screen
 import {fetchTheatreScreensWithShowings} from "@/domains/screen/_feat/fetch-theatre-screens/screens-with-showings";
 
 import {
-    Showing,
+    ShowingModel,
     ShowingSummarySelect,
     TheatreShowingPopulationPaths,
     type TheatreShowingSchema
@@ -59,7 +59,7 @@ export async function fetchTheatreInfoViewData(
     const now = new Date();
     const endOfWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 7);
 
-    const showings = await Showing
+    const showings = await ShowingModel
         .find({startTime: {$gt: now, $lte: endOfWeek}})
         .select(ShowingSummarySelect)
         .sort({startTime: 1})

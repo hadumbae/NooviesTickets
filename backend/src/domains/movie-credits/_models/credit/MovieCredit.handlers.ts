@@ -5,7 +5,7 @@
 import type {ZodIssue} from "zod";
 import {ZodDuplicateIndexError} from "@/shared/errors/zod/ZodDuplicateIndexError";
 import {
-    MovieCredit as MovieCreditModel
+    MovieCreditModel
 } from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 
 /**

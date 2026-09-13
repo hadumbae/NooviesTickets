@@ -6,7 +6,7 @@ import type {PaginationReturns} from "@/shared/_types/pagination/PaginationRetur
 import type {
     MovieReviewModerationLogSchemaFields
 } from "@/domains/movie-reviews/_models/moderationLogs/MovieReviewModerationLog.types";
-import {MovieReview} from "@/domains/movie-reviews/_models/review/MovieReview.model";
+import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import {MovieReviewModerationLogModel} from "@/domains/movie-reviews/_models/moderationLogs/MovieReviewModerationLog.model";
 import type {
     RequestPaginationOptions
@@ -46,7 +46,7 @@ export async function fetchCustomerReviewLogsViewData(
         throw createHttpError(404, "User Not Found.");
     }
 
-    const review = await MovieReview
+    const review = await MovieReviewModel
         .findById(reviewId)
         .populate(MovieReviewPopulatePaths)
         .lean();

@@ -11,7 +11,7 @@ import type {
     WriteMovieReviewModLogConfig,
 } from "@/domains/movie-reviews/_feat/customer-review-actions/services/service.types";
 import {
-    MovieReview,
+    MovieReviewModel,
     MovieReviewModerationLogModel,
     type MovieReviewModerationLogSchemaFields,
     type MovieReviewSchemaFields
@@ -39,7 +39,7 @@ export const writeMovieReviewModLog = async (
 export const toggleReviewPublicity = async (
     {adminID, reviewID, message}: ToggleReviewPublicityConfig
 ): Promise<MovieReviewSchemaFields> => {
-    const review = await MovieReview.findByIdAndUpdate(
+    const review = await MovieReviewModel.findByIdAndUpdate(
         reviewID,
         [{$set: {isPublic: {$not: "$isPublic"}}}],
         {new: true}
@@ -59,7 +59,7 @@ export const toggleReviewPublicity = async (
 export const resetDisplayName = async (
     {adminID, reviewID, message, displayName}: ResetDisplayNameConfig
 ): Promise<MovieReviewSchemaFields> => {
-    const review = await MovieReview.findByIdAndUpdate(reviewID, {displayName}, {new: true}).orFail();
+    const review = await MovieReviewModel.findByIdAndUpdate(reviewID, {displayName}, {new: true}).orFail();
     await writeMovieReviewModLog({reviewID, action: "MOD_RESET_DISPLAY_NAME", admin: adminID, message});
     return review;
 };
@@ -68,7 +68,7 @@ export const resetDisplayName = async (
 export const resetLikes = async (
     {adminID, reviewID, message}: ResetLikesConfig
 ): Promise<MovieReviewSchemaFields> => {
-    const review = await MovieReview.findByIdAndUpdate(reviewID, {helpfulLikes: []}, {new: true}).orFail();
+    const review = await MovieReviewModel.findByIdAndUpdate(reviewID, {helpfulLikes: []}, {new: true}).orFail();
     await writeMovieReviewModLog({reviewID, action: "MOD_RESET_LIKES", admin: adminID, message});
     return review;
 };
@@ -77,7 +77,7 @@ export const resetLikes = async (
 export const setRatings = async (
     {adminID, reviewID, message, rating}: SetRatingsConfig
 ): Promise<MovieReviewSchemaFields> => {
-    const review = await MovieReview.findByIdAndUpdate(reviewID, {rating}, {new: true}).orFail();
+    const review = await MovieReviewModel.findByIdAndUpdate(reviewID, {rating}, {new: true}).orFail();
     await writeMovieReviewModLog({reviewID, action: "MOD_SET_RATING", admin: adminID, message});
     return review;
 };

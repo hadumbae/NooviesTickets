@@ -7,7 +7,7 @@ import type {
     BrowsePersonsQueryMatchStage,
     BrowsePersonsQuerySortStage
 } from "@/domains/persons/_feat/client-view-data/browse-persons";
-import {MovieCredit} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {MovieCreditModel} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
 import {Types} from "mongoose";
 
@@ -21,7 +21,7 @@ type FetchConfig = {
 
 /** Aggregates unique role names from movie credits for a list of person IDs. */
 export async function fetchRoleNamesForPersons(_ids: Types.ObjectId[]) {
-    const results = await MovieCredit.aggregate([
+    const results = await MovieCreditModel.aggregate([
         {$match: {person: {$in: _ids}}},
         {$lookup: {from: "roletypes", localField: "roleType", foreignField: "_id", as: "roleType"}},
         {$unwind: "$roleType"},

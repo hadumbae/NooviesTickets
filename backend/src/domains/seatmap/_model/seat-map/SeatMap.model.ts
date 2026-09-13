@@ -10,4 +10,4 @@ import "@/domains/seatmap/_model/seat-map/SeatMap.virtuals.js";
 import "@/domains/seatmap/_model/seat-map/SeatMap.hooks.js";
 
 /** Mongoose model for interacting with the SeatMap collection. */
-export const SeatMap: Model<SeatMapSchemaFields> = model<SeatMapSchemaFields>("SeatMap", SeatMapSchema);
+export const SeatMapModel: Model<SeatMapSchemaFields> = model<SeatMapSchemaFields>("SeatMap", SeatMapSchema);

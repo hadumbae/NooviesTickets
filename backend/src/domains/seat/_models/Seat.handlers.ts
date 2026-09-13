@@ -4,7 +4,7 @@
 
 import type { ZodIssue } from "zod";
 import { ZodDuplicateIndexError } from "@/shared/errors/zod/ZodDuplicateIndexError";
-import {Seat} from "@/domains/seat/_models/Seat.model";
+import {SeatModel} from "@/domains/seat/_models/Seat.model";
 
 /**
  * Intercepts MongoDB duplicate key errors for Seat indexes and transforms them
@@ -23,7 +23,7 @@ export function handleDuplicateIndex(indexString: string): void | never {
 
         throw new ZodDuplicateIndexError({
             index: indexString,
-            model: Seat.modelName,
+            model: SeatModel.modelName,
             errors,
             message: "Duplicate seat: row + seat number must be unique.",
         });
@@ -40,7 +40,7 @@ export function handleDuplicateIndex(indexString: string): void | never {
 
         throw new ZodDuplicateIndexError({
             index: indexString,
-            model: Seat.modelName,
+            model: SeatModel.modelName,
             errors,
             message: "Duplicate seat: coordinates (x, y) must be unique.",
         });

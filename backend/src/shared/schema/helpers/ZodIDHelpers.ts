@@ -1,10 +1,10 @@
-import {Showing} from "@/domains/showing/_models/showing/Showing.model.js";
+import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model.js";
 import {ObjectIdStringSchema} from "../mongoose/ObjectIdStringSchema.js";
 import {GenreModel} from "@/domains/genres/_models/genre";
 import {PersonModel} from "@/domains/persons/_models/person";
-import {Screen} from "@/domains/screen/_models/screen";
+import {ScreenModel} from "@/domains/screen/_models/screen";
 import {TheatreModel} from "@/domains/theatre/model/theatre";
-import {Seat} from "@/domains/seat/_models";
+import {SeatModel} from "@/domains/seat/_models";
 
 export const GenreAsyncIDString = ObjectIdStringSchema
     .refine(
@@ -36,7 +36,7 @@ export const TheatreAsyncIDString = ObjectIdStringSchema
 export const SeatAsyncIDString = ObjectIdStringSchema
     .refine(
         async (seatID) => {
-            const seat = await Seat.findById(seatID);
+            const seat = await SeatModel.findById(seatID);
             return !!seat;
         },
         "404. Screen not found."
@@ -45,7 +45,7 @@ export const SeatAsyncIDString = ObjectIdStringSchema
 export const ScreenAsyncIDString = ObjectIdStringSchema
     .refine(
         async (screenID) => {
-            const screen = await Screen.findById(screenID);
+            const screen = await ScreenModel.findById(screenID);
             return !!screen;
         },
         "404. Screen not found."
@@ -54,7 +54,7 @@ export const ScreenAsyncIDString = ObjectIdStringSchema
 export const ShowingAsyncIDString = ObjectIdStringSchema
     .refine(
         async (showingID) => {
-            const showing = await Showing.findById(showingID);
+            const showing = await ShowingModel.findById(showingID);
             return !!showing;
         },
         "404. Showing not found."
