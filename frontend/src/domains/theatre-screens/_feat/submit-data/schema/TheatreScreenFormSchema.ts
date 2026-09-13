@@ -4,11 +4,8 @@
 
 import {z} from "zod";
 import {IDStringSchema, NonEmptyStringSchema} from "@/common/_schemas";
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
+import {preprocessEmptyToUndefined, preprocessToNumber, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import {ScreenTypeSchema} from "@/domains/theatre-screens/_schema";
-import {
-    CoercedNonNegativeNumberSchema
-} from "@/common/_schemas/numbers/non-negative-number/CoercedNonNegativeNumberSchema";
 import {AnyValues} from "@/common/_types";
 
 /**
@@ -17,7 +14,7 @@ import {AnyValues} from "@/common/_types";
 export const TheatreScreenFormSchema = z.object({
     _id: IDStringSchema.readonly().optional(),
     name: preprocessEmptyToUndefined(NonEmptyStringSchema.max(255, "Must be 255 characters or less.")),
-    capacity: preprocessEmptyToUndefined(CoercedNonNegativeNumberSchema),
+    capacity: preprocessToNumber(NonNegativeNumberSchema),
     screenType: preprocessEmptyToUndefined(ScreenTypeSchema),
     theatre: preprocessEmptyToUndefined(IDStringSchema),
 });

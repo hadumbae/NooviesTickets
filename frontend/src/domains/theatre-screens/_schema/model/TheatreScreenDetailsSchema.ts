@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {PopulatedTheatreScreenSchema} from "@/domains/theatre-screens/_schema/model/PopulatedTheatreScreenSchema.ts";
 
-import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /**
  * Schema for a theatre screen including populated relational data and computed metrics.

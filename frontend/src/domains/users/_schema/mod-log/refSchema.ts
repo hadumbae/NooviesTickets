@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ISO8601DateTimeSchema} from "@/common/_schemas/iso-8601";
+import {ISO8601DateTimeSchema} from "@noovies-tickets/common";
 import {UserModerationLogActionSchema} from "@/domains/users/_schema/fields";
 import {IDStringSchema, ModerationLogMessageSchema} from "@/common/_schemas/strings";
 

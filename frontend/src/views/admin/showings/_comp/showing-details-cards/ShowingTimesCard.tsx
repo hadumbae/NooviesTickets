@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
 import {Showing, ShowingDetails} from "@/domains/showings/_schema/showing";
-import {IANATimezone} from "@/common/_schemas/time/IANATimezoneSchema.ts";
+import {IANATimezone} from "@noovies-tickets/common";
 import {LabelContent} from "@/views/common/_comp/label-content/LabelContent.tsx";
 import {buildShowingDateString} from "@/domains/showings/_feat/formatters";
 import {cn} from "@/common/_feat";

@@ -4,9 +4,7 @@
 
 import {z} from "zod";
 import {NonEmptyStringSchema} from "@/common/_schemas/strings";
-import {URLStringSchema} from "@/common/_schemas/strings/simple-strings/URLStringSchema.ts";
-import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
+import {URLStringSchema, NonNegativeNumberSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating Cloudinary image response objects. */
 export const CloudinaryImageSchema = z.object({

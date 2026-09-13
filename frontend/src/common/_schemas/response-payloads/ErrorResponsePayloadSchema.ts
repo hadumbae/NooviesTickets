@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas/strings/simple-strings/NonEmptyStringSchema.ts";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {HTTPStatusCodeSchema} from "@/common/_schemas/http/HTTPStatusCodeSchema.ts";
 import {ErrorCodeSchema} from "@/common/_schemas/errors/ErrorCodeSchema.ts";
 

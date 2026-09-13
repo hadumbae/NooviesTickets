@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/shared/schema/strings/StringValueSchema";
+import {StringValueSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating a user's personal name string. */
 export const UserPersonalNameSchema = StringValueSchema.min(3, "Min. 3 Characters").max(255, "Max. 255 Characters");

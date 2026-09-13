@@ -3,7 +3,7 @@
  */
 
 import {DateTime} from "luxon";
-import {IANATimezone} from "@/common/_schemas/time/IANATimezoneSchema.ts";
+import {IANATimezone} from "@noovies-tickets/common";
 
 /** Parameters for the buildShowingDateString function. */
 type DateParams = {

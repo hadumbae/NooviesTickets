@@ -7,12 +7,11 @@ import {MovieSnapshotSchema} from "@/domains/movies/_schema";
 import {TheatreSnapshotSchema} from "@/domains/theatres/_schema";
 import {TheatreScreenSnapshotSchema} from "@/domains/theatre-screens/_schema";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
-import {ISO8601DateTimeSchema} from "@/common/_schemas/iso-8601/ISO8601DateTimeSchema.ts";
+import {ISO8601DateTimeSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@/common/_schemas/strings";
 import {BooleanValueSchema} from "@/common/_schemas/boolean";
 import {ReservedSeatSnapshotSchema} from "@/domains/reservations/_schema/snapshot/ReservedSeatSnapshotSchema.ts";
 
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
 
 /** Zod schema for capturing the complete state of a showing at the moment a reservation is finalized. */
 export const ReservedShowingSnapshotSchema = z.object({

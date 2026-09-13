@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessOptionalField} from "@/shared/_feat";
-import {PositiveIntegerSchema} from "@/shared/_schema";
+import {preprocessOptionalField, PositiveIntegerSchema} from "@noovies-tickets/common";
 import {ISO3166Alpha2CountryCodeSchema} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
 
 /** Schema for validating and preprocessing input parameters for fetching homepage view data. */

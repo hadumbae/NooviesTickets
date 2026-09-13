@@ -4,7 +4,8 @@
  */
 
 import {z} from "zod";
-import {CoercedPositiveNumberSchema} from "@/shared/_schema/numbers/coerced-number/CoercedPositiveNumberSchema";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
+import {preprocessToNumber} from "@noovies-tickets/common";
 
 /**
  * Validates and transforms incoming pagination parameters.
@@ -12,10 +13,10 @@ import {CoercedPositiveNumberSchema} from "@/shared/_schema/numbers/coerced-numb
  */
 export const RequestPaginationOptionsSchema = z.object({
     /** The current page index (1-based). */
-    page: CoercedPositiveNumberSchema,
+    page: preprocessToNumber(PositiveNumberSchema),
 
     /** The number of records to retrieve per result set. */
-    perPage: CoercedPositiveNumberSchema,
+    perPage: preprocessToNumber(PositiveNumberSchema),
 });
 
 /**

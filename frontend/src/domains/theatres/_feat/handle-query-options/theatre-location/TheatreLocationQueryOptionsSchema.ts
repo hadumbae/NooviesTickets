@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessOptionalField} from "@/common/_feat";
+import {preprocessOptionalField} from "@noovies-tickets/common";
 import {ISO3166Alpha2CountryCodeSchema, LocationTargetSchema} from "@/common/_schemas";
 import {AnyValues} from "@/common/_types";
 

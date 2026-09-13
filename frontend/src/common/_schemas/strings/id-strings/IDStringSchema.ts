@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/common/_schemas/strings/simple-strings/StringValueSchema.ts";
+import {StringValueSchema} from "@noovies-tickets/common";
 
 /** Zod schema that validates a string is exactly 24 characters long. */
 export const IDStringSchema = StringValueSchema.length(24, "ID String must be exactly 24 characters.");

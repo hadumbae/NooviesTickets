@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {PopulatedShowingSchema} from "@/domains/showings/_schema/showing/PopulatedShowingSchema.ts";
 
-import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /**
  * Extends {@link PopulatedShowingSchema} with seat availability metrics.

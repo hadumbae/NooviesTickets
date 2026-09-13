@@ -2,8 +2,7 @@
  * @fileoverview Utility for extracting and formatting date and time strings from showing timestamps.
  */
 
-import { IANATimezone } from "@/common/_schemas/time/IANATimezoneSchema.ts";
-import { ISO8601DateTime } from "@/common/_schemas/iso-8601/ISO8601DateTimeSchema.ts";
+import {IANATimezone, ISO8601DateTime} from "@noovies-tickets/common";
 
 /** Parameters for extracting showing date and time values. */
 type ShowingDateTimeParams = {

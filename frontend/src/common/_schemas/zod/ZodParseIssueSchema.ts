@@ -3,7 +3,7 @@
  */
 
 import { z } from "zod";
-import { NonEmptyStringSchema } from "@/common/_schemas/strings/simple-strings/NonEmptyStringSchema.ts";
+import { NonEmptyStringSchema } from "@noovies-tickets/common";
 
 /** Zod schema for validating individual issues returned during Zod parsing. */
 export const ZodParseIssueSchema = z.object({

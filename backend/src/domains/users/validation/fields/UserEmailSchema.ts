@@ -3,10 +3,10 @@
  */
 
 import {z} from "zod";
-import {EmailSchema} from "@/shared/schema/strings/EmailSchema";
+import {EmailStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating user email strings with a maximum length constraint. */
-export const UserEmailSchema = EmailSchema.max(255, "Max. 255 Chars");
+export const UserEmailSchema = EmailStringSchema.max(255, "Max. 255 Chars");
 
 /** Type definition for a validated user email string. */
 export type UserEmailString = z.infer<typeof UserEmailSchema>;

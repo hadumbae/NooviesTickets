@@ -1,5 +1,5 @@
 import {z} from "zod";
-import {preprocessToUndefined} from "@/common/_feat";
+import {preprocessToUndefined} from "@noovies-tickets/common";
 
 /** Schema requiring undefined for crew-restricted fields. */
 export const UndefinedForCrewFieldSchema = preprocessToUndefined(

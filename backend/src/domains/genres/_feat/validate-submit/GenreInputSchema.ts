@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {BooleanValueSchema} from "@/shared/_schema/booleans/BooleanValueSchema";
 
 /** Validates Genre data for creation or updates. */

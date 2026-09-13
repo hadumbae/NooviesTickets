@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessOptionalField} from "@/common/_feat/validation-preprocessors";
+import {preprocessOptionalField} from "@noovies-tickets/common";
 import {MongooseSortOrderSchema} from "@/common/_schemas/enums/MongooseSortOrderSchema.ts";
 
 /** Zod schema for defining sort order on Person fields. */

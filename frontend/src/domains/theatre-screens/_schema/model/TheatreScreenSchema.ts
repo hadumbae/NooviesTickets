@@ -7,7 +7,7 @@ import {ScreenTypeSchema} from "@/domains/theatre-screens/_schema/fields";
 import {IDStringSchema} from "@/common/_schemas";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 
-import {CoercedPositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/CoercedPositiveNumberSchema";
+import {PositiveNumberSchema, preprocessToNumber} from "@noovies-tickets/common";
 
 /**
  * Schema for validating a Theatre Screen record.
@@ -15,7 +15,7 @@ import {CoercedPositiveNumberSchema} from "@/common/_schemas/numbers/positive-nu
 export const TheatreScreenSchema = z.object({
     _id: IDStringSchema.readonly(),
     name: NonEmptyStringSchema.max(255, "Name must be 255 characters or less."),
-    capacity: CoercedPositiveNumberSchema,
+    capacity: preprocessToNumber(PositiveNumberSchema),
     screenType: ScreenTypeSchema,
     theatre: IDStringSchema,
     slug: NonEmptyStringSchema.readonly(),

@@ -14,7 +14,7 @@ import {
 } from "@/domains/theatres/_feat/handle-query-options/theatre-info/TheatreInfoQueryOptionsContext.ts";
 import {DateTime} from "luxon";
 import {QueryOptionsCalendarInput} from "@/views/common/_feat";
-import {DateOnlyString} from "@/common/_schemas";
+import {DateOnlyString} from "@noovies-tickets/common";
 import {getTodayDateOnly} from "@/common/_feat";
 import {TheatreInfoScreensSection} from "@/views/client/theatres/_pages/theatre-info/sections";
 import {

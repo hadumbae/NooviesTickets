@@ -4,8 +4,8 @@
 
 import {z} from "zod";
 import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
-import {preprocessToNumber} from "@/shared/_feat/zod-preprocessors";
-import {PositiveIntegerSchema} from "@/shared/_schema/numbers/numbers/PositiveIntegerSchema";
+import {preprocessToNumber} from "@noovies-tickets/common";
+import {PositiveIntegerSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating movie review route parameters. */
 export const MovieInfoReviewsViewRouteConfigSchema = z.object({

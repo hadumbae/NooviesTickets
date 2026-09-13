@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {AnyValues} from "@/common/_types";
 

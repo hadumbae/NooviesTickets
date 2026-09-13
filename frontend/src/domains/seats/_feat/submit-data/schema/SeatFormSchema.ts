@@ -5,12 +5,8 @@
 import {z} from "zod";
 import {SeatLabelSchema, SeatLayoutTypeSchema, SeatRowSchema, SeatTypeSchema} from "@/domains/seats/_schema/fields";
 import {IDStringSchema} from "@/common/_schemas";
-import {CoercedBooleanValueSchema, NonNegativeNumberSchema, PositiveIntegerSchema,} from "@/common/_schemas";
-import {
-    preprocessEmptyToUndefined,
-    preprocessOptionalField,
-    preprocessToNumber
-} from "@/common/_feat/validation-preprocessors";
+import {CoercedBooleanValueSchema} from "@/common/_schemas";
+import {NonNegativeNumberSchema, PositiveIntegerSchema, preprocessEmptyToUndefined, preprocessOptionalField, preprocessToNumber} from "@noovies-tickets/common";
 import {AnyUnionValues} from "@/common/_types";
 
 /** Base Zod schema containing shared geometric and relational fields for all seat layout elements. */

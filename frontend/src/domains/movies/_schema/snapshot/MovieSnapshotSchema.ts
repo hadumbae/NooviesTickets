@@ -7,9 +7,8 @@ import {NonEmptyStringSchema} from "@/common/_schemas/strings";
 import {URLStringSchema} from "@/common/_schemas/strings";
 import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
-import {ISO8601DateTimeSchema} from "@/common/_schemas/iso-8601";
+import {ISO8601DateTimeSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {MovieTaglineSchema, MovieTitleSchema} from "@/domains/movies/_schema/fields";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers";
 
 /** Zod schema for validating movie snapshot data. */
 export const MovieSnapshotSchema = z.object({

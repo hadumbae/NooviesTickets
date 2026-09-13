@@ -3,12 +3,12 @@
  */
 
 import {z} from "zod";
-import {EmailSchema} from "@/shared/schema/strings/EmailSchema";
 import {PasswordStringSchema} from "@/shared/schema/strings/PasswordStringSchema";
+import {EmailStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating user login input data. */
 export const UserLoginInputSchema = z.object({
-    email: EmailSchema.max(255, "Max. 255 Chars"),
+    email: EmailStringSchema.max(255, "Max. 255 Chars"),
     password: PasswordStringSchema,
 });
 

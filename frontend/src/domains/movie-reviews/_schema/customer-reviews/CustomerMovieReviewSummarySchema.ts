@@ -6,7 +6,7 @@ import {z} from "zod";
 import {MovieReviewSchema} from "@/domains/movie-reviews/_schema/model/MovieReviewSchema.ts";
 import {MovieWithGenresSchema} from "@/domains/movies/_schema/movie";
 
-import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating a customer's movie review summary data. */
 export const CustomerMovieReviewSummarySchema = MovieReviewSchema.extend({

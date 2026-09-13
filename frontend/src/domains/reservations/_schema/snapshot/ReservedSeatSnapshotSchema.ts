@@ -7,7 +7,7 @@ import {IDStringSchema} from "@/common/_schemas";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {SeatTypeSchema} from "@/domains/seats/_schema/fields";
 import {z} from "zod";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema for the finalized state of a single seat at the moment of booking.

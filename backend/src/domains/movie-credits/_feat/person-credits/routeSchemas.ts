@@ -5,7 +5,8 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {CoercedNonNegativeNumberSchema} from "@/shared/_schema/numbers/coerced-number/CoercedNonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
+import {preprocessToNumber} from "@noovies-tickets/common";
 
 /**
  * Validation schema for the fetchPersonCreditStats route parameters.
@@ -24,7 +25,7 @@ export type FetchPersonCreditStatsRouteConfig = z.infer<typeof FetchPersonCredit
  */
 export const FetchPersonFilmographyRouteConfigSchema = z.object({
     personID: ObjectIdSchema,
-    limit: CoercedNonNegativeNumberSchema.optional(),
+    limit: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
 });
 
 /**

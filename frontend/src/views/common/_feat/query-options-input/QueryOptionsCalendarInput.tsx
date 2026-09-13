@@ -6,7 +6,7 @@ import {ReactElement, useEffect, useState} from "react";
 import {cn} from "@/common/_feat";
 import {Button, Calendar, CalendarProps, Popover, PopoverContent, PopoverTrigger} from "@/views/common/_comp/ui";
 import {ButtonVariant} from "@/common/_types";
-import {DateOnlyString} from "@/common/_schemas";
+import {DateOnlyString} from "@noovies-tickets/common";
 import {DateTime} from "luxon";
 import {CalendarIcon} from "lucide-react";
 

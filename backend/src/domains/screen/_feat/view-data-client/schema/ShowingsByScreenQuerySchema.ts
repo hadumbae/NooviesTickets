@@ -4,14 +4,13 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {SimpleDateStringSchema} from "@/shared/schema/date-time/SimpleDateStringSchema";
-import {NonNegativeNumberSchema} from "@/shared/_schema/numbers/numbers/NonNegativeNumberSchema";
+import {NonNegativeNumberSchema, DateOnlyStringSchema} from "@noovies-tickets/common";
 import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
 
 /** Schema for the showings by screen query parameters. */
 export const ShowingsByScreenQuerySchema = z.object({
     theatreID: z.union([ObjectIdSchema, SlugStringSchema], {message: "Must be an ID string or a valid slug."}),
-    dateString: SimpleDateStringSchema,
+    dateString: DateOnlyStringSchema,
     limit: NonNegativeNumberSchema.optional(),
 });
 

@@ -3,7 +3,7 @@
  */
 
 import "dotenv/config"
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Zod schema for resolving the client IP address with support for fallback environment mocks. */

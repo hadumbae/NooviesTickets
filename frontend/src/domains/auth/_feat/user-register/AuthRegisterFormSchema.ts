@@ -4,7 +4,7 @@
  */
 import {z} from "zod";
 import {AnyValues} from "@/common/_types";
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 import {UserEmailSchema, UserPasswordSchema, UserPersonalNameSchema} from "@/domains/users/_schema/fields";
 
 /** Base schema for registration input fields. */

@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors/preprocessEmptyToUndefined.ts";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 import {GenreNameSchema} from "@/domains/genres/_schema/fields/GenreNameSchema.ts";
 
 /** Zod schema for validating genre query filter parameters. */

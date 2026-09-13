@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {ISO8601DateTimeSchema} from "@/common/_schemas/iso-8601/ISO8601DateTimeSchema.ts";
-import {DateTimeInstanceSchema} from "@/common/_schemas/date-time/DateTimeInstanceSchema.ts";
+import {ISO8601DateTimeSchema, DateTimeInstanceSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating model timestamps as ISO-8601 strings or DateTime instances. */
 export const ModelTimestampDateTimeSchema = z.union(

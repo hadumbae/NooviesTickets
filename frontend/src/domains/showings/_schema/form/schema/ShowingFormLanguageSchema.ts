@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 import {ISO6391LanguageCodeSchema} from "@/common/_schemas/enums/ISO6391LanguageCodeSchema.ts";
 
 /** Schema for showing language configuration with normalization for form input. */

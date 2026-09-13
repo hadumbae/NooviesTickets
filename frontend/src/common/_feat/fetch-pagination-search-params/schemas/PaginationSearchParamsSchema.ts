@@ -3,13 +3,12 @@
  */
 
 import {z} from "zod";
-import {preprocessOptionalField} from "@/common/_feat/validation-preprocessors";
-import {CoercedPositiveIntegerSchema} from "@/common/_schemas";
+import {preprocessToNumber, PositiveIntegerSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating pagination search parameters. */
 export const PaginationSearchParamsSchema = z.object({
-    page: preprocessOptionalField(z.lazy(() => CoercedPositiveIntegerSchema)),
-    perPage: preprocessOptionalField(z.lazy(() => CoercedPositiveIntegerSchema)),
+    page: preprocessToNumber(z.lazy(() => PositiveIntegerSchema.optional())).optional(),
+    perPage: preprocessToNumber(z.lazy(() => PositiveIntegerSchema.optional())).optional(),
 });
 
 /** Type definition for pagination search parameters. */

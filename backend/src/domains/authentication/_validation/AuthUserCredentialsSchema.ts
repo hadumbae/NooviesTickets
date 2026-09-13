@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/shared/schema/strings/StringValueSchema";
+import {StringValueSchema} from "@noovies-tickets/common";
 import {AuthTokenPayloadSchema} from "@/domains/authentication/_validation/AuthTokenPayloadSchema";
 
 /** Zod validation schema for user credentials containing token payload and session token. */

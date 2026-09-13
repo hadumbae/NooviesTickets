@@ -6,7 +6,7 @@ import {ReactElement} from "react";
 import {TheatreScreenSchedule} from "@/domains/theatre-screens/_schema/model";
 import {EmptyArrayContainer, PageSectionHeader} from "@/views/common/_comp";
 import {TheatreScreenShowingSelectCard} from "@/views/client/theatre-screens";
-import {DateOnlyString, IANATimezone} from "@/common/_schemas";
+import {DateOnlyString, IANATimezone} from "@noovies-tickets/common";
 import {DateTime} from "luxon";
 
 /** Props for the TheatreInfoScreensSection component. */

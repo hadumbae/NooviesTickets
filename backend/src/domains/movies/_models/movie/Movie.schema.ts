@@ -8,7 +8,7 @@ import {ISO6391CodeConstant} from "@/shared/constants/language/ISO6391CodeConsta
 import {
     ISO3166Alpha2CodeConstant
 } from "@/shared/constants/country/ISO3166Alpha2CodeConstant.js";
-import {URLStringSchema} from "@/shared/schema/strings/URLStringSchema.js";
+import {URLStringSchema} from "@noovies-tickets/common";
 import type {MovieSchemaFields} from "@/domains/movies/_models/movie/Movie.types.js";
 
 /** Mongoose schema for the Movie entity. */

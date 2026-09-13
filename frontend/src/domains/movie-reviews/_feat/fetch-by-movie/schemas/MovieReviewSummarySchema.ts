@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {MovieReviewDetailsSchema} from "@/domains/movie-reviews/_schema/model/MovieReviewDetailsSchema.ts";
-import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating a summary of movie reviews including average rating and user-specific review. */
 export const MovieReviewSummarySchema = z.object({

@@ -3,7 +3,7 @@
 import {z} from "zod";
 import {
     preprocessEmptyToUndefined
-} from "@/common/_feat/validation-preprocessors";
+} from "@noovies-tickets/common";
 import {LongitudeSchema} from "@/common/_models/coordinate/LongitudeSchema.ts";
 import {LatitudeSchema} from "@/common/_models/coordinate/LatitudeSchema.ts";
 

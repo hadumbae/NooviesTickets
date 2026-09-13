@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 
-import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /**
  * Statistics representing a person's professional footprint in the MovieCredit collection.

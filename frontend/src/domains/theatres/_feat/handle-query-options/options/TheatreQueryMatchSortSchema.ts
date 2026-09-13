@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {MongooseSortOrderSchema} from "@/common/_schemas/enums/MongooseSortOrderSchema.ts";
-import {preprocessOptionalField} from "@/common/_feat";
+import {preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema defining sorting parameters for theatre queries. */
 export const TheatreQueryMatchSortSchema = z.object({

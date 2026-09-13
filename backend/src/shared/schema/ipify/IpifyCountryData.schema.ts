@@ -5,8 +5,8 @@
 
 import {z} from "zod";
 import {ISO3166Alpha2CountryCodeSchema} from "../enums/ISO3166Alpha2CountryCodeSchema.js";
-import {NonEmptyStringSchema} from "../strings/NonEmptyStringSchema.js";
-import {TimezoneOffsetSchema} from "../date-time/TimezoneOffsetSchema.js";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {TimezoneOffsetSchema} from "@noovies-tickets/common";
 import {IpSchema} from "../strings/IPSchema.js";
 
 /**

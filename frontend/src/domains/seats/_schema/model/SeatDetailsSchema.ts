@@ -6,12 +6,11 @@ import {z} from "zod";
 import {SeatBaseSchema} from "./SeatSchema.ts";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {CoercedNumberValueSchema} from "@/common/_schemas/numbers/number-value/CoercedNumberValueSchema.ts";
+import {NumberValueSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
 
 import {SeatTypeSchema} from "@/domains/seats/_schema/fields";
 import {TheatreScreenSchema} from "@/domains/theatre-screens/_schema";
 import {TheatreSchema} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
 
 /** Schema for seating positions with full theatre and screen references. */
 const SeatDetailsReferenceSchema = SeatBaseSchema.extend({
@@ -26,7 +25,7 @@ const SeatingSchema = SeatDetailsReferenceSchema.extend({
     seatLabel: NonEmptyStringSchema.optional(),
     seatType: SeatTypeSchema,
     isAvailable: CoercedBooleanValueSchema,
-    priceMultiplier: CoercedNumberValueSchema.gte(0, "Must be 0 or greater."),
+    priceMultiplier: preprocessToNumber(NumberValueSchema.gte(0, "Must be 0 or greater.")),
 });
 
 /** Schema for an aisle position within the layout. */

@@ -3,13 +3,12 @@
  */
 
 import { z } from "zod";
-import { IDStringSchema } from "@/common/_schemas";
-import { NonEmptyStringSchema } from "@/common/_schemas/strings/simple-strings/NonEmptyStringSchema.ts";
+import {IDStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import { SeatTypeSchema } from "@/domains/seats/_schema/fields";
 import { SeatLayoutTypeSchema } from "@/domains/seats/_schema/fields";
 import { CoercedBooleanValueSchema } from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
 
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
 
 /**
  * Zod schema for Seat-specific query filters used to build database match conditions.

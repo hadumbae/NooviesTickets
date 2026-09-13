@@ -5,9 +5,8 @@
 import {z} from "zod";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
 import {ShowingStatusSchema} from "@/domains/showings/_schema/fields/ShowingStatusSchema.ts";
-import {preprocessToNumber} from "@/common/_feat/validation-preprocessors";
+import {preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
 
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
 
 /**
  * Schema for showing pricing, lifecycle state, and configuration flags.

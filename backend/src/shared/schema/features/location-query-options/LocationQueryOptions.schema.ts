@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {ISO3166Alpha2CountryCodeSchema} from "../../enums/ISO3166Alpha2CountryCodeSchema.js";
-import {NonEmptyStringSchema} from "../../strings/NonEmptyStringSchema.js";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {CityStringSchema, StateStringSchema} from "@/shared/_schema";
 
 /**

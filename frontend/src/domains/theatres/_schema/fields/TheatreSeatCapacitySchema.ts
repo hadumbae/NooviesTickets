@@ -2,15 +2,12 @@
  * @fileoverview Defines the validation schema for a theatre's seat capacity.
  */
 
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
 import {z} from "zod";
-import {
-    CoercedNonNegativeNumberSchema
-} from "@/common/_schemas/numbers/non-negative-number/CoercedNonNegativeNumberSchema";
+import {NonNegativeNumberSchema, preprocessToNumber} from "@noovies-tickets/common";
 
 /** Zod schema for validating and coercing theatre seat capacity values. */
-export const TheatreSeatCapacitySchema = preprocessEmptyToUndefined(
-    CoercedNonNegativeNumberSchema.max(2500, "Max. 2500")
+export const TheatreSeatCapacitySchema = preprocessToNumber(
+    NonNegativeNumberSchema.max(2500, "Max. 2500")
 );
 
 /** Type definition for a theatre's seat capacity. */

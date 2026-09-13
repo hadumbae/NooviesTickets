@@ -6,7 +6,7 @@ import {z} from "zod";
 import {IDStringSchema, SlugStringSchema} from "@/common/_schemas";
 import {PersonNameSchema} from "@/domains/persons/_schema/fields/PersonNameSchema";
 import {PersonBiographySchema} from "@/domains/persons/_schema/fields/PersonBiographySchema";
-import {UTCDayOnlyDateTimeSchema} from "@/common/_schemas/date-time/UTCDayOnlyDateTimeSchema";
+import {UTCDayOnlyDateTimeSchema} from "@noovies-tickets/common";
 import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema";
 import {CloudinaryImageSchema} from "@/common/_schemas/cloudinary-image/CloudinaryImageSchema";
 

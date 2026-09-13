@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {PositiveNumberSchema} from "@/shared/_schema/numbers/numbers/PositiveNumberSchema";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
 import {SeatMapStatusSchema} from "@/domains/seatmap/_validation/fields/SeatMapStatusSchema";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
 

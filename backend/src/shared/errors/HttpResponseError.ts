@@ -4,7 +4,7 @@
  * @filename HttpResponseError.ts
  */
 
-import type {URLString} from "../schema/strings/URLStringSchema.js";
+import type {URLString} from "@noovies-tickets/common";
 
 /**
  * Parameters used to construct a {@link HttpResponseError}.

@@ -3,9 +3,8 @@
  */
 
 import {Logger} from "@/common/_feat/logger/Logger.ts";
-import {preprocessToNumber} from "@/common/_feat/validation-preprocessors";
+import {preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
 
-import {CoercedPositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/CoercedPositiveNumberSchema";
 
 const RAW_DEFAULTS = {
     page: import.meta.env.VITE_PAGINATION_PAGE_DEFAULT,
@@ -16,7 +15,7 @@ const RAW_DEFAULTS = {
 export function getPaginationDefaultValue(key: "page" | "perPage"): number {
     const rawValue = RAW_DEFAULTS[key];
 
-    const {data, success, error} = preprocessToNumber(CoercedPositiveNumberSchema).safeParse(rawValue);
+    const {data, success, error} = preprocessToNumber(PositiveNumberSchema).safeParse(rawValue);
 
     if (!success) {
         Logger.error({

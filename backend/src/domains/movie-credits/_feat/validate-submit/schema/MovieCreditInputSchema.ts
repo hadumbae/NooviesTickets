@@ -5,9 +5,9 @@
 
 import {z} from "zod";
 
-import {PositiveNumberSchema} from "@/shared/_schema/numbers/numbers/PositiveNumberSchema";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
 import {ObjectIdStringSchema} from "@/shared/schema/mongoose/ObjectIdStringSchema";
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {CoercedBooleanValueSchema} from "@/shared/_schema/booleans/CoercedBooleanValueSchema";
 import {RoleTypeDepartmentSchema} from "@/domains/role-types/_validation/schema/RoleTypeDepartmentSchema";
 

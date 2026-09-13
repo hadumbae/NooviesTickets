@@ -4,8 +4,8 @@
 
 import {z} from "zod";
 import generateArraySchema from "@/shared/utility/schema/generateArraySchema";
-import {ValidDateInstanceSchema} from "@/shared/schema/date-time/ValidDateInstanceSchema";
-import {PositiveNumberSchema} from "@/shared/_schema/numbers/numbers/PositiveNumberSchema";
+import {ValidDateInstanceSchema} from "@noovies-tickets/common";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
 import {BooleanValueSchema} from "@/shared/_schema/booleans/BooleanValueSchema";
 import {ISO6391LanguageCodeSchema} from "@/shared/schema/enums/ISO6391LanguageCodeSchema";
 import {ReservationTypeSchema} from "@/domains/reservations/_validation";

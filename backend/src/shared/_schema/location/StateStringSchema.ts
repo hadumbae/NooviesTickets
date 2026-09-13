@@ -2,7 +2,7 @@
  * @fileoverview Zod schema and type definition for validating state or region name strings.
  */
 
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Schema for validating state name strings up to 500 characters. */

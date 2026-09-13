@@ -1,6 +1,6 @@
 import {HttpResponseError} from "../../errors/HttpResponseError.js";
 import {parseJSON} from "../parseJSON.js";
-import type {URLString} from "../../schema/strings/URLStringSchema.js";
+import type {URLString} from "@noovies-tickets/common";
 
 type HandlerParams = {
     url: URLString;

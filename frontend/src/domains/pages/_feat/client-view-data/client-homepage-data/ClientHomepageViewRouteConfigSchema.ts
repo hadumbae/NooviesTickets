@@ -3,7 +3,8 @@
  */
 
 import {z} from "zod";
-import {ISO3166Alpha2CountryCodeSchema, PositiveIntegerSchema} from "@/common/_schemas";
+import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas";
+import {PositiveIntegerSchema} from "@noovies-tickets/common";
 
 /** Zod schema for parsing and validating client homepage view query parameters with defaults. */
 export const ClientHomepageViewRouteConfigSchema = z.object({

@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas/strings/simple-strings/NonEmptyStringSchema.ts";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /** Schema for non-empty strings with a maximum length of 75 characters. */
 export const SlugStringSchema = NonEmptyStringSchema.max(75, "Max. 75 Chars");

@@ -6,15 +6,12 @@
 import {z} from "zod";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {RoleTypeDepartmentSchema} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
-import {
-    preprocessEmptyToUndefined
-} from "@/common/_feat/validation-preprocessors";
+import {preprocessEmptyToUndefined, PositiveNumberSchema} from "@noovies-tickets/common";
 import {IDStringSchema} from "@/common/_schemas";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
 import {
     UndefinedForCrewFieldSchema
 } from "@/domains/movie-credits/_schemas/model/UndefinedForCrewFieldSchema.ts";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
 
 /**
  * Base schema shared by cast and crew credits.

@@ -8,7 +8,7 @@ import {z} from "zod";
 import {MovieReviewSchema} from "@/domains/movie-reviews/_schema/model";
 import { MovieWithRatingSchema } from "@/domains/movies/_schema/movie";
 import {LeanUserSchema} from "@/domains/users/_schema/user/LeanUserSchema";
-import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /** Schema for a movie review enriched with user and movie details for the author's view. */
 export const MyMovieReviewSchema = MovieReviewSchema.extend({

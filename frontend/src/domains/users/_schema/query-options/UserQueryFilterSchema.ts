@@ -3,7 +3,8 @@
  */
 
 import {z} from "zod";
-import {generateArraySchema, preprocessOptionalField} from "@/common/_feat";
+import {generateArraySchema} from "@/common/_feat";
+import {preprocessOptionalField} from "@noovies-tickets/common";
 import {UserPersonalNameSchema, UserRoleSchema, UserUniqueCodeSchema, UserEmailSchema} from "@/domains/users/_schema/fields";
 
 /** Zod schema for validating user search and filter parameters. */

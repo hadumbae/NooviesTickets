@@ -5,7 +5,7 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {ScreenTypeSchema} from "@/domains/screen/_validation";
 
 /**

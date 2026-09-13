@@ -6,7 +6,7 @@
 import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {BaseCRUDParams} from "@/shared/_feat/generic-crud/types";
 import type {RequestOptions} from "@/shared/_feat/fetch-request-options/schemas";
-import type {NonNegativeNumber} from "@/shared/_schema/numbers/numbers/NonNegativeNumberSchema";
+import type {NonNegativeNumber} from "@noovies-tickets/common";
 import {Types} from "mongoose";
 
 /**

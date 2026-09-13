@@ -3,11 +3,11 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {ReserveTicketInputSchema} from "@/domains/reservations/_feat/reserve-tickets/schemas";
-import {DateInstanceSchema} from "@/shared/schema/date-time/DateInstanceSchema";
+import {DateInstanceSchema} from "@noovies-tickets/common";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {NonNegativeNumberSchema} from "@/shared/_schema/numbers/numbers/NonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
 import {ReservationStatusSchema} from "@/domains/reservations/_validation";
 
 /** Validation schema for the internal persistence layer of a ticket reservation. */

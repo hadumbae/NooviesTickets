@@ -4,7 +4,7 @@
  */
 
 import { z } from "zod";
-import {StringValueSchema} from "./StringValueSchema.js";
+import {StringValueSchema} from "@noovies-tickets/common";
 
 /**
  * Schema for a trimmed string representing a valid IPv4 or IPv6 address.

@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {MongooseSortOrderSchema} from "@/common/_schemas/enums/MongooseSortOrderSchema.ts";
-import {preprocessOptionalField} from "@/common/_feat/validation-preprocessors";
+import {preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema defining available sorting parameters for movie queries. */
 export const MovieQuerySortSchema = z.object({

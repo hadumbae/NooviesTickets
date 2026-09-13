@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import preprocessEmptyToUndefined from "@/shared/utility/schema/preprocessors/preprocessEmptyToUndefined";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
 import {UserModerationLogActionSchema} from "@/domains/users";
 

@@ -4,16 +4,17 @@
 
 import {z} from "zod";
 import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
-import {CoercedNonNegativeNumberSchema} from "@/shared/_schema/numbers/coerced-number/CoercedNonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
+import {preprocessToNumber} from "@noovies-tickets/common";
 
 /**
  * Zod schema for validating the route and search parameters of the Theatre Details page.
  */
 export const TheatreDetailsViewRouteConfigSchema = z.object({
     slug: SlugStringSchema,
-    screenPage: CoercedNonNegativeNumberSchema.optional(),
-    screenPerPage: CoercedNonNegativeNumberSchema.optional(),
-    showingLimit: CoercedNonNegativeNumberSchema.optional(),
+    screenPage: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
+    screenPerPage: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
+    showingLimit: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
 });
 
 /**

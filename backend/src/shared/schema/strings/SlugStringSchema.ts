@@ -16,7 +16,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "./NonEmptyStringSchema.js";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /**
  * Slug string validation schema.

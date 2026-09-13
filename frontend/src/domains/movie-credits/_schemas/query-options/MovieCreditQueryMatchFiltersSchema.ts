@@ -9,7 +9,7 @@ import {IDStringSchema} from "@/common/_schemas";
 import {RoleTypeDepartmentSchema} from "@/domains/roletypes/_schema/fields/RoleTypeDepartmentSchema.ts";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
 
 /**
  * Match-level filters for MovieCredit queries.

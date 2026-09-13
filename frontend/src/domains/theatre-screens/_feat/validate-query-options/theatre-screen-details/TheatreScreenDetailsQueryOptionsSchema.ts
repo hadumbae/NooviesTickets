@@ -3,14 +3,13 @@
  */
 
 import {z} from "zod";
-import {CoercedNonNegativeNumberSchema} from "@/common/_schemas";
-import {preprocessOptionalField} from "@/common/_feat";
+import {NonNegativeNumberSchema, preprocessToNumber} from "@noovies-tickets/common";
 
 /** Zod schema for validating query options when fetching theatre screen details. */
 export const TheatreScreenDetailsQueryOptionsSchema = z.object({
-    recentShowingsCount: preprocessOptionalField(
-        CoercedNonNegativeNumberSchema.max(20, "Max 20 recent showings.")
-    ).catch(10),
+    recentShowingsCount: preprocessToNumber(
+        NonNegativeNumberSchema.max(20, "Max 20 recent showings.").optional()
+    ).optional().catch(10),
 });
 
 /** Inferred TypeScript type for theatre screen details query options. */

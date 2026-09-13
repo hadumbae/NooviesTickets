@@ -7,16 +7,14 @@ import {IDStringSchema} from "@/common/_schemas";
 import {ISO4217CurrencyCodeSchema} from "@/common/_schemas/enums/ISO4217CurrencyCodeSchema.ts";
 import {ReservationTypeConstant} from "@/domains/reservations/_schema/model/fields/ReservationTypeConstant.ts";
 import {generateArraySchema} from "@/common/_feat/validation-builders";
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
 import {AnyValues} from "@/common/_types";
-import {CoercedPositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/CoercedPositiveNumberSchema";
-import {preprocessToNull} from "@/common/_feat/validation-preprocessors/preprocessToNull.ts";
+import {PositiveNumberSchema, preprocessToNull, preprocessToNumber} from "@noovies-tickets/common";
 
 /** Base schema containing shared fields for all ticket reservation modes. */
 export const ReserveTicketFormBaseSchema = z.object({
     showing: IDStringSchema,
     movie: IDStringSchema,
-    ticketCount: preprocessEmptyToUndefined(CoercedPositiveNumberSchema),
+    ticketCount: preprocessToNumber(PositiveNumberSchema),
     currency: ISO4217CurrencyCodeSchema,
 });
 

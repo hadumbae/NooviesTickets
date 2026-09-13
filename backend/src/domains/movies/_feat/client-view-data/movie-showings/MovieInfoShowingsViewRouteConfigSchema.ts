@@ -2,13 +2,11 @@
  * @fileoverview Zod schema for validating route configuration parameters for the movie showings view.
  */
 
-import {StringValueSchema} from "@/shared/schema/strings/StringValueSchema";
+import {StringValueSchema, preprocessToNumber, preprocessOptionalField} from "@noovies-tickets/common";
 import {ISO3166Alpha2CountryCodeSchema} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
 import {z} from "zod";
-import {PositiveIntegerSchema} from "@/shared/_schema/numbers/numbers/PositiveIntegerSchema";
+import {PositiveIntegerSchema} from "@noovies-tickets/common";
 import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
-import {preprocessToNumber} from "@/shared/_feat/zod-preprocessors/preprocessToNumber";
-import {preprocessOptionalField} from "@/shared/_feat";
 
 /** Schema for movie showing route parameters including location and pagination. */
 export const MovieInfoShowingsViewRouteConfigSchema = z.object({

@@ -2,7 +2,7 @@
  * @fileoverview Zod validation schema for the showing details form.
  */
 
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 import {IDStringSchema, NonEmptyStringSchema} from "@/common/_schemas";
 import {z} from "zod";
 import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";

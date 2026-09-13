@@ -4,7 +4,7 @@
  * @filename useFetchAPI.ts
  */
 
-import type {URLString} from "../../schema/strings/URLStringSchema.js";
+import type {URLString} from "@noovies-tickets/common";
 import {executeFetch} from "./executeFetch.js";
 import type {RequestMethod} from "@/shared/_types/requests/RequestMethods";
 import {handleBadResponse} from "./handleBadResponse.js";

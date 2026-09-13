@@ -2,7 +2,7 @@
  * @fileoverview React Query hook to check if a movie is in the user's favourites.
  */
 
-import { ObjectId } from "@/common/_schemas";
+import {ObjectId} from "@/common/_schemas";
 import { FetchQueryOptions } from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";

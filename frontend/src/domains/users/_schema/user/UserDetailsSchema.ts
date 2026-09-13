@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonNegativeIntegerSchema} from "@/common/_schemas";
+import {NonNegativeIntegerSchema} from "@noovies-tickets/common";
 import {UserSchema} from "@/domains/users/_schema/user/UserSchema.ts";
 
 /** Complete validation schema for the User entity including assigned roles. */

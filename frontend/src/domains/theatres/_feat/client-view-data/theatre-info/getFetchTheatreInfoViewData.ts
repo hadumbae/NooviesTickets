@@ -8,7 +8,7 @@ import {buildURL} from "@/common/_feat/fetch-api/buildURL";
 import {TheatreClientViewBaseURL} from "@/domains/theatres/_feat/client-view-data/repository/baseURL";
 import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation";
 import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString";
-import {DateOnlyString} from "@/common/_schemas/dates/DateOnlyStringSchema";
+import {DateOnlyString} from "@noovies-tickets/common";
 
 /** Parameters for fetching theatre information view data. */
 export type GetFetchTheatreInfoViewDataConfig = {

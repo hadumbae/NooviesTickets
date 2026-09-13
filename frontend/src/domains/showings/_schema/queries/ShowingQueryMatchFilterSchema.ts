@@ -4,10 +4,9 @@
 
 import {z} from "zod";
 import {IDStringSchema} from "@/common/_schemas";
-import {DateOnlyStringSchema} from "@/common/_schemas/dates/DateOnlyStringSchema.ts";
+import {DateOnlyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
 import {ShowingStatusSchema} from "@/domains/showings/_schema/fields/ShowingStatusSchema";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
 
 /** Zod schema for validating match-based filter criteria for Showings. */
 export const ShowingQueryMatchFilterSchema = z.object({

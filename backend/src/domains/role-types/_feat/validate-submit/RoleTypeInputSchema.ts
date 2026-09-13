@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {RoleTypeDepartmentSchema} from "@/domains/role-types/_validation/schema/RoleTypeDepartmentSchema";
 import {
     RoleTypeCastCategorySchema,

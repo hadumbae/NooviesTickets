@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/common/_schemas/strings/simple-strings/StringValueSchema.ts";
+import {StringValueSchema} from "@noovies-tickets/common";
 
 /** Zod schema that validates a string as a valid IPv6 address. */
 export const IpV6Schema = StringValueSchema.ip({message: "Must be a valid IP V6 address", version: "v6"});

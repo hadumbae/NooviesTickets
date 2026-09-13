@@ -2,7 +2,7 @@
  * @fileoverview Zod schema and type definition for validating city name strings.
  */
 
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Schema for validating city name strings up to 500 characters. */

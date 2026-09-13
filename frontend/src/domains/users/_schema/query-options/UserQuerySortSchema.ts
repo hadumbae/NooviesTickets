@@ -2,7 +2,7 @@
  * @fileoverview Zod schema for defining sortable fields in user queries.
  */
 
-import {preprocessOptionalField} from "@/common/_feat";
+import {preprocessOptionalField} from "@noovies-tickets/common";
 import {MongooseSortOrderSchema} from "@/common/_schemas";
 import {z} from "zod";
 

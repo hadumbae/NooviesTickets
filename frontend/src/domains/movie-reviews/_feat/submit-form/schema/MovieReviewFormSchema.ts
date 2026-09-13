@@ -11,7 +11,7 @@ import {
     preprocessOptionalField,
     preprocessToNumber,
     preprocessToUndefined
-} from "@/common/_feat/validation-preprocessors";
+} from "@noovies-tickets/common";
 
 /** Validation schema for movie review form submission. */
 export const MovieReviewFormSchema = z.object({

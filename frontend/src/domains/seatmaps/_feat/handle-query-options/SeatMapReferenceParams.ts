@@ -7,7 +7,7 @@ import {IDStringSchema} from "@/common/_schemas";
 import {ShowingStatusSchema} from "@/domains/showings/_schema/fields";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {SeatTypeSchema} from "@/domains/seats/_schema/fields";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating seat map reference filter parameters. */
 export const SeatMapReferenceFilterSchema = z.object({

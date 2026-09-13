@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {ModerationMessageFormSchema} from "@/common/_feat/moderation/forms";
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 import {MovieReviewRatingSchema} from "@/domains/movie-reviews/_schema";
 

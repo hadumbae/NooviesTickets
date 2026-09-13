@@ -9,7 +9,7 @@ import {
     RoleTypeCastCategorySchema,
     RoleTypeCrewCategorySchema,
 } from "@/domains/roletypes/_schema/fields/RoleTypeCategorySchema.ts";
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 import {RoleTypeDescriptionSchema, RoleTypeNameSchema} from "@/domains/roletypes/_schema";
 import {IDStringSchema} from "@/common/_schemas";

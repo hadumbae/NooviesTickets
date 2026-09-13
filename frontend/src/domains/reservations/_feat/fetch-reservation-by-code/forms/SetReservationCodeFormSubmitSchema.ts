@@ -6,7 +6,7 @@
 import {z} from "zod";
 import {
     preprocessEmptyToUndefined
-} from "@/common/_feat/validation-preprocessors";
+} from "@noovies-tickets/common";
 import {ReservationUniqueCodeSchema} from "@/domains/reservations/_schema/model";
 import {AnyValues} from "@/common/_types";
 

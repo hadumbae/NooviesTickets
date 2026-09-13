@@ -6,7 +6,7 @@ import {z} from "zod";
 import {CoercedBooleanValueSchema, IDStringSchema} from "@/common/_schemas";
 import {AnyValues} from "@/common/_types";
 import {GenreDescriptionSchema, GenreNameSchema} from "@/domains/genres/_schema/fields";
-import {preprocessEmptyToUndefined} from "@/common/_feat";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 
 /** Zod schema for validating and transforming Genre form data. */
 export const GenreFormSchema = z.object({

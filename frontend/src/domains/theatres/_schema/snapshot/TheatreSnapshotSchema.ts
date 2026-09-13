@@ -3,7 +3,7 @@
 import {z} from "zod";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
-import {IANATimezoneSchema} from "@/common/_schemas/time/IANATimezoneSchema.ts";
+import {IANATimezoneSchema} from "@noovies-tickets/common";
 
 /** Zod schema for a finalized theatre state used in historical records. */
 export const TheatreSnapshotSchema = z.object({

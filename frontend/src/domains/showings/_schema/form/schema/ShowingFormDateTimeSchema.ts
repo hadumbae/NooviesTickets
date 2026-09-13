@@ -3,10 +3,7 @@
  */
 
 import {z} from "zod";
-import {TimeStringSchema} from "@/common/_schemas/time/TimeStringSchema.ts";
-import {DateOnlyStringSchema} from "@/common/_schemas/dates/DateOnlyStringSchema.ts";
-import {preprocessEmptyToUndefined, preprocessOptionalField} from "@/common/_feat";
-import {IANATimezoneSchema} from "@/common/_schemas";
+import {TimeStringSchema, DateOnlyStringSchema, preprocessEmptyToUndefined, preprocessOptionalField, IANATimezoneSchema} from "@noovies-tickets/common";
 
 /**
  * Schema for showing date and time inputs that normalizes empty strings to undefined for optional end fields.

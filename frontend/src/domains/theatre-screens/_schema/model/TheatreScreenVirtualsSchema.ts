@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 
-import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
 
 /**
  * Schema for calculated or derived theatre screen data.

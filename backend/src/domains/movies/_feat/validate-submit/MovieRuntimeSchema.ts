@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {PositiveNumberSchema} from "@/shared/_schema/numbers/numbers/PositiveNumberSchema";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating a movie runtime in minutes. */
 export const MovieRuntimeSchema = PositiveNumberSchema.lte(500, "Must be 500 or less.");

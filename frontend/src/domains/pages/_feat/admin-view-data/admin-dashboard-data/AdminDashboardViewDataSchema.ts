@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {NonNegativeIntegerSchema} from "@/common/_schemas";
+import {NonNegativeIntegerSchema} from "@noovies-tickets/common";
 
 /** Schema for validating aggregated count metrics displayed on the admin dashboard. */
 export const AdminDashboardViewDataSchema = z.object({

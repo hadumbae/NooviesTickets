@@ -4,7 +4,8 @@
  */
 
 import {z} from "zod";
-import {CoercedNonNegativeNumberSchema} from "@/shared/_schema/numbers/coerced-number/CoercedNonNegativeNumberSchema";
+import {NonNegativeNumberSchema} from "@noovies-tickets/common";
+import {preprocessToNumber} from "@noovies-tickets/common";
 import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
 
 /**
@@ -12,7 +13,7 @@ import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
  */
 export const PersonDetailsViewRouteConfigSchema = z.object({
     slug: SlugStringSchema,
-    limit: CoercedNonNegativeNumberSchema.optional(),
+    limit: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
 });
 
 /**

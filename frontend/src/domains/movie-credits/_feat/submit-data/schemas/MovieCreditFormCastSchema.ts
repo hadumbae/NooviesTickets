@@ -6,7 +6,7 @@ import {z} from "zod";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
 import {MovieCreditFormBaseSchema} from "@/domains/movie-credits/_feat/submit-data/schemas/MovieCreditFormBaseSchema.ts";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
 
 /** Zod schema for a complete cast credit including base fields. */
 export const MovieCreditFormCastSchema = MovieCreditFormBaseSchema.extend({

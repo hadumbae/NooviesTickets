@@ -3,8 +3,8 @@
  */
 
 import {z} from "zod";
-import {PositiveIntegerSchema, StringValueSchema} from "@/common/_schemas";
-import {preprocessOptionalField} from "@/common/_feat/validation-preprocessors";
+import {StringValueSchema} from "@/common/_schemas";
+import {PositiveIntegerSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema for validating and parsing showings page query strings. */
 export const ShowingsPageQueryStringSchema = z.object({

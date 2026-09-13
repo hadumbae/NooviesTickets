@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/shared/schema/strings/StringValueSchema";
+import {StringValueSchema} from "@noovies-tickets/common";
 
 /** Zod schema enforcing string length and constraint boundaries for moderation log messages. */
 export const ModerationLogMessageSchema = StringValueSchema

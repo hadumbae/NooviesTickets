@@ -1,4 +1,4 @@
-import {StringValueSchema} from "@/shared/schema/strings/StringValueSchema";
+import {StringValueSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 export const UniqueCodeSchema = StringValueSchema.regex(

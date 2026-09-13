@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {UserSchema} from "@/domains/users/_schema";
-import {NonNegativeIntegerSchema} from "@/common/_schemas";
+import {NonNegativeIntegerSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating the composite user details view data. */
 export const UserDetailsViewDataSchema = z.object({

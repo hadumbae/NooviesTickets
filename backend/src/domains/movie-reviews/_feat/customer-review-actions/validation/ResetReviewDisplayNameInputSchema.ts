@@ -3,7 +3,7 @@
  */
 
 import {AdminModerationMessageInputSchema} from "@/shared/_feat/admin-users/schema";
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Validates the input required to reset a reviewer's display name. */

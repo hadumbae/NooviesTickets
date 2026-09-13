@@ -1,8 +1,6 @@
 import {z} from "zod";
-import { PositiveNumberSchema } from "@/shared/_schema/numbers/numbers/PositiveNumberSchema";
-import { URLStringSchema } from "../strings/URLStringSchema.js";
-import { NonEmptyStringSchema } from "../strings/NonEmptyStringSchema.js";
-import preprocessEmptyToUndefined from "../../utility/schema/preprocessors/preprocessEmptyToUndefined.js";
+import { PositiveNumberSchema } from "@noovies-tickets/common";
+import {URLStringSchema, NonEmptyStringSchema, preprocessEmptyToUndefined} from "@noovies-tickets/common";
 
 /**
  * Zod schema representing a Cloudinary image object.

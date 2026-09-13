@@ -4,11 +4,10 @@
 
 import {z} from "zod";
 import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
-import {NonFutureDateStringSchema} from "@/common/_schemas/dates/NonFutureDateStringSchema.ts";
+import {NonFutureDateStringSchema, preprocessEmptyToUndefined} from "@noovies-tickets/common";
 import {IDStringSchema} from "@/common/_schemas";
 import {AnyValues} from "@/common/_types";
 import {PersonBiographySchema, PersonNameSchema} from "@/domains/persons/_schema/fields";
-import {preprocessEmptyToUndefined} from "@/common/_feat";
 
 /** Zod schema for validating person form data. */
 export const PersonFormSchema = z.object({

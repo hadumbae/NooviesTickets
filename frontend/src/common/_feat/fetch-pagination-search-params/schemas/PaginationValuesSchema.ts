@@ -3,9 +3,8 @@
  */
 
 import {z} from "zod";
-import {preprocessToNumber} from "@/common/_feat/validation-preprocessors";
+import {preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
 
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
 
 /** Zod schema for validating page and per-page values. */
 export const PaginationValuesSchema = z.object({

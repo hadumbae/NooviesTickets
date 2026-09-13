@@ -9,6 +9,9 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
+    "@types/luxon": "3.7.1",
+    "@vvo/tzdb": "6.178.0",
+    "luxon": "3.7.2",
     "zod": "3.24.1"
   }
 }

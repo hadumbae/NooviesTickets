@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {cn} from "@/common/_feat";
-import {IANATimezone} from "@/common/_schemas/time/IANATimezoneSchema.ts";
+import {IANATimezone} from "@noovies-tickets/common";
 import {ShowingDetails, ShowingWithMovie} from "@/domains/showings/_schema/showing";
 import {ShowingInfoLanguages, ShowingInfoMovieMeta} from "@/views/client/showings/_comp/showing-info-details";
 import {buttonVariants} from "@/views/common/_comp/ui";

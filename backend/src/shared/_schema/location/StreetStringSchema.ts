@@ -2,7 +2,7 @@
  * @fileoverview Zod schema and type definition for validating street address strings.
  */
 
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /** Schema for validating street address strings up to 2000 characters. */

@@ -3,7 +3,7 @@
  * @filename executeFetch.ts
  */
 
-import type {URLString} from "../../schema/strings/URLStringSchema.js";
+import type {URLString} from "@noovies-tickets/common";
 import type {RequestMethod} from "@/shared/_types/requests/RequestMethods";
 import {UseFetchError} from "../../errors/UseFetchError.js";
 

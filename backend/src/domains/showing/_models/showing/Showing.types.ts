@@ -11,7 +11,7 @@ import type {MovieWithGenres} from "@/domains/movies/_models/movie/Movie.types";
 import type {ShowingConfigSchemaFields} from "@/domains/showing/_models/showing-config/ShowingConfig.types.js";
 import type {LocationSchemaFields} from "@/shared/model/location/LocationSchemaFields";
 import type {BaseSoftDeleteModel} from "@/shared/_types/model/BaseModel";
-import type {IANATimezone} from "@/shared/schema/date-time/IANATimezoneSchema";
+import type {IANATimezone} from "@noovies-tickets/common";
 import type {TheatreSnapshotSchemaFields} from "@/domains/theatre/model/theatre-snapshot";
 
 /** Core schema fields for a theatre showing. */

@@ -8,8 +8,7 @@ import {ISO4217CurrencyCodeSchema} from "@/common/_schemas/enums/ISO4217Currency
 import {ModelTimestampsSchema} from "@/common/_schemas/models/time-stamps/ModelTimestampsSchema.ts";
 import {ReservedShowingSnapshotSchema} from "@/domains/reservations/_schema/snapshot";
 import {BooleanValueSchema} from "@/common/_schemas/boolean/BooleanValueSchema.ts";
-import {ISO8601DateTimeSchema} from "@/common/_schemas/iso-8601/ISO8601DateTimeSchema.ts";
-import {NonNegativeNumberSchema, PositiveNumberSchema} from "@/common/_schemas/numbers";
+import {ISO8601DateTimeSchema, NonNegativeNumberSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {
     ReservationStatusEnumSchema,
     ReservationTypeEnumSchema,

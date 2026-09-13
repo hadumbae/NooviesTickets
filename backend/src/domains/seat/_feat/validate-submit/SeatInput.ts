@@ -4,10 +4,10 @@
  */
 
 import { z } from 'zod';
-import { NonEmptyStringSchema } from "@/shared/schema/strings/NonEmptyStringSchema";
+import { NonEmptyStringSchema } from "@noovies-tickets/common";
 import { BooleanValueSchema } from "@/shared/_schema/booleans/BooleanValueSchema";
-import { PositiveNumberSchema } from "@/shared/_schema/numbers/numbers/PositiveNumberSchema";
-import { NonNegativeNumberSchema } from "@/shared/_schema/numbers/numbers/NonNegativeNumberSchema";
+import { PositiveNumberSchema } from "@noovies-tickets/common";
+import { NonNegativeNumberSchema } from "@noovies-tickets/common";
 import { ObjectIdStringSchema } from "@/shared/schema/mongoose/ObjectIdStringSchema";
 import { SeatLayoutTypeSchema } from "@/domains/seat/_validation/SeatLayoutTypeSchema";
 import {SeatTypeSchema} from "@/domains/seat/_validation";

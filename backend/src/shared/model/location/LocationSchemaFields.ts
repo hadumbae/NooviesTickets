@@ -1,4 +1,4 @@
-import type {IANATimezone} from "../../schema/date-time/IANATimezoneSchema.js";
+import type {IANATimezone} from "@noovies-tickets/common";
 import type {CoordinateSchemaFields} from "@/shared/model/coordinate/Coordinate.types";
 import type {ISO3166Alpha2CountryCode} from "../../schema/enums/ISO3166Alpha2CountryCodeSchema.js";
 

@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessOptionalField} from "@/common/_feat";
+import {preprocessOptionalField} from "@noovies-tickets/common";
 import {ReservationUniqueCodeSchema} from "@/domains/reservations/_schema/model";
 
 /** Validates the search criteria used to locate a reservation by its unique code. */

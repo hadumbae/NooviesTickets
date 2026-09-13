@@ -4,7 +4,7 @@
 
 import {AdminModerationMessageInputSchema} from "@/shared/_feat/admin-users/schema";
 import {z} from "zod";
-import {NumberValueSchema} from "@/shared/_schema/numbers/numbers/NumberValueSchema";
+import {NumberValueSchema} from "@noovies-tickets/common";
 
 /** Validates the input required to manually adjust a review's star rating. */
 export const SetReviewRatingInputSchema = AdminModerationMessageInputSchema.extend({

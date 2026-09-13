@@ -7,7 +7,7 @@ import {z} from "zod";
 import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
 import {URLParamNonNegativeNumberSchema} from "@/shared/schema/url/URLParamNonNegativeNumberSchema";
 import {ISO3166Alpha2CountryCodeSchema} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
-import {IANATimezoneSchema} from "@/shared/schema/date-time/IANATimezoneSchema";
+import {IANATimezoneSchema} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 
 /**

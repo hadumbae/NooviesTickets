@@ -4,12 +4,11 @@
  */
 
 import {z} from "zod";
-import {URLStringSchema} from "@/shared/schema/strings/URLStringSchema";
+import {URLStringSchema, NonEmptyStringSchema} from "@noovies-tickets/common";
 import {MovieTitleSchema} from "@/domains/movies/_feat/validate-submit/MovieTitleSchema";
 import {MovieTaglineSchema} from "@/domains/movies/_feat/validate-submit/MovieTaglineSchema";
-import {DateInstanceSchema} from "@/shared/schema/date-time/DateInstanceSchema";
+import {DateInstanceSchema} from "@noovies-tickets/common";
 import generateArraySchema from "@/shared/utility/schema/generateArraySchema";
-import { NonEmptyStringSchema } from "@/shared/schema/strings/NonEmptyStringSchema";
 import {MovieRuntimeSchema} from "@/domains/movies/_feat/validate-submit/MovieRuntimeSchema";
 import {ISO3166Alpha2CountryCodeSchema} from "@/shared/schema/enums/ISO3166Alpha2CountryCodeSchema";
 

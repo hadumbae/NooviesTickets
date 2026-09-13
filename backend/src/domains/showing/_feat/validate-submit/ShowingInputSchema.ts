@@ -4,21 +4,17 @@
 
 import {z} from "zod";
 import {DateTime} from "luxon";
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
-import {PositiveNumberSchema} from "@/shared/_schema/numbers/numbers/PositiveNumberSchema";
+import {NonEmptyStringSchema, PositiveNumberSchema, DateOnlyStringSchema, TimeStringSchema, IANATimezoneSchema} from "@noovies-tickets/common";
 import {ShowingStatusSchema} from "@/domains/showing/_validation/fields/ShowingStatusSchema";
-import {SimpleDateStringSchema} from "@/shared/schema/date-time/SimpleDateStringSchema";
-import {TimeStringSchema} from "@/shared/schema/date-time/TimeStringSchema";
 import {ShowingConfigInputSchema} from "@/domains/showing/_feat/validate-submit/ShowingConfigInputSchema";
-import {IANATimezoneSchema} from "@/shared/schema/date-time/IANATimezoneSchema";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
 
 /** Schema for validating showing input and transforming date strings into UTC JS Dates. */
 export const ShowingInputSchema = z.object({
-    startAtDate: SimpleDateStringSchema,
+    startAtDate: DateOnlyStringSchema,
     startAtTime: TimeStringSchema,
 
-    endAtDate: SimpleDateStringSchema.optional(),
+    endAtDate: DateOnlyStringSchema.optional(),
     endAtTime: TimeStringSchema.optional(),
     timezone: IANATimezoneSchema,
 

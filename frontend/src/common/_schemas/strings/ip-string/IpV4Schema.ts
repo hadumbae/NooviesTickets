@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/common/_schemas/strings/simple-strings/StringValueSchema.ts";
+import {StringValueSchema} from "@noovies-tickets/common";
 
 /** Zod schema that validates a string as a version 4 IP address. */
 export const IpV4Schema = StringValueSchema.ip({message: "Must be a valid IP V4 address", version: "v4"});

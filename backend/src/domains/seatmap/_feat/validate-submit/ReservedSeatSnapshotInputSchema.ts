@@ -4,8 +4,8 @@
 
 import {z} from "zod";
 import {SeatTypeSchema} from "@/domains/seat/_validation";
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
-import {PositiveNumberSchema} from "@/shared/_schema/numbers/numbers/PositiveNumberSchema";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {PositiveNumberSchema} from "@noovies-tickets/common";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
 
 /** Zod schema for validating reserved seat snapshot input data. */

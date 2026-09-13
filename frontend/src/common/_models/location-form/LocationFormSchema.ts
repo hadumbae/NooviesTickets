@@ -2,7 +2,7 @@
 
 import {z} from "zod";
 import {CoordinateFormSchema,} from "@/common/_models/coordinate-form/CoordinateFormSchema.ts";
-import {IANATimezoneSchema} from "@/common/_schemas/time/IANATimezoneSchema.ts";
+import {IANATimezoneSchema} from "@noovies-tickets/common";
 import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
 import {CityStringSchema, PostalCodeSchema, StateStringSchema, StreetStringSchema} from "@/common/_models/location";
 

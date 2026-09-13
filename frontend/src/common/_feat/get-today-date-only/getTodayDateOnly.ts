@@ -3,7 +3,7 @@
  */
 
 import {DateTime} from "luxon";
-import {DateOnlyString} from "@/common/_schemas";
+import {DateOnlyString} from "@noovies-tickets/common";
 
 /** Returns the current local date as a date-only ISO string. */
 export function getTodayDateOnly(): DateOnlyString {

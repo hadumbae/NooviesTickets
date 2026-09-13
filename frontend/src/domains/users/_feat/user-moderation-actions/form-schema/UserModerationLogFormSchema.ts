@@ -6,7 +6,7 @@ import {z} from "zod";
 import {ModerationLogMessageSchema} from "@/common/_schemas";
 import {UserModerationLogActionSchema} from "@/domains/users/_schema/fields";
 import {AnyValues} from "@/common/_types";
-import {preprocessEmptyToUndefined} from "@/common/_feat";
+import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 
 /** Zod schema validating form input data for recording a user moderation log entry. */
 export const UserModerationLogFormSchema = z.object({

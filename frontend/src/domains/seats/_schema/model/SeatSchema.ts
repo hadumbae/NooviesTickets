@@ -5,11 +5,9 @@
 import {z} from "zod";
 import {IDStringSchema} from "@/common/_schemas";
 import {CoercedBooleanValueSchema} from "@/common/_schemas/boolean/CoercedBooleanValueSchema.ts";
-import {preprocessEmptyToUndefined} from "@/common/_feat/validation-preprocessors";
+import {preprocessEmptyToUndefined, NonNegativeNumberSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {SlugStringSchema} from "@/common/_schemas/strings/slug-strings/SlugString.ts";
 import {SeatLabelSchema, SeatLayoutTypeSchema, SeatRowSchema, SeatTypeSchema} from "@/domains/seats/_schema/fields";
-import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";
-import {PositiveNumberSchema} from "@/common/_schemas/numbers/positive-number/PositiveNumberSchema";
 
 /** Base layout entry shared across all structure types. */
 export const SeatBaseSchema = z.object({

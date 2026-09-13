@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessToNumber} from "@/common/_feat/validation-preprocessors";
-import {PositiveIntegerSchema} from "@/common/_schemas/numbers";
+import {preprocessToNumber, PositiveIntegerSchema} from "@noovies-tickets/common";
 
 /** Zod schema for a pagination value object. */
 export const PaginationValueSchema = z.object({

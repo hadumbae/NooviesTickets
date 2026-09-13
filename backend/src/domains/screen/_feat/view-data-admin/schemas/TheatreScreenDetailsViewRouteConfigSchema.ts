@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {SlugStringSchema} from "@/shared/schema/strings/SlugStringSchema";
-import {PositiveIntegerSchema} from "@/shared/_schema";
+import {PositiveIntegerSchema} from "@noovies-tickets/common";
 
 /**
  * Validation schema for ensuring both theatre and screen identifiers are present and valid slugs.

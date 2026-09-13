@@ -6,7 +6,7 @@ import {z} from "zod";
 import {IDStringSchema} from "@/common/_schemas";
 import {
     preprocessEmptyToUndefined
-} from "@/common/_feat/validation-preprocessors";
+} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@/common/_schemas";
 
 /** Zod schema for core movie credit fields common to both cast and crew. */

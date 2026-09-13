@@ -3,14 +3,13 @@
  */
 
 import {z} from "zod";
-import {EmailSchema} from "@/shared/schema/strings/EmailSchema";
 import {PasswordStringSchema} from "@/shared/schema/strings/PasswordStringSchema";
-import {NonEmptyStringSchema} from "@/shared/schema/strings/NonEmptyStringSchema";
+import {NonEmptyStringSchema, EmailStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating user registration requests, including password confirmation matching. */
 export const UserRegisterInputSchema = z.object({
     name: NonEmptyStringSchema.min(3, "Min. 3 Chars").max(255, "Max. 255 Chars"),
-    email: EmailSchema.max(255, "Max. 255 Chars"),
+    email: EmailStringSchema.max(255, "Max. 255 Chars"),
     password: PasswordStringSchema,
     confirm: PasswordStringSchema,
 }).refine(
