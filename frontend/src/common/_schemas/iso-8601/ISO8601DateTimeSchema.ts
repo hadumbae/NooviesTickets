@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {DateTime} from "luxon";
-import {ISO8601StringSchema} from "@/common/_schemas/iso-8601";
+import {ISO8601StringSchema} from "@/common/_schemas/iso-8601/ISO8601StringSchema.ts";
 
 /** Zod schema that transforms an ISO-8601 string into a validated Luxon DateTime instance in UTC. */
 export const ISO8601DateTimeSchema = ISO8601StringSchema

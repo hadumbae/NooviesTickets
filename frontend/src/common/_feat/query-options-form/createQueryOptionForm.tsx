@@ -8,13 +8,10 @@ import {DefaultValues, FieldValues, useForm, UseFormReturn} from "react-hook-for
 import {zodResolver} from "@hookform/resolvers/zod";
 import {isEqual} from "lodash";
 import {Form} from "@/views/common/_comp/ui";
-import {
-    generateQueryFormDefaultValues,
-    QueryOptionFormContainerProps,
-    QueryOptionFormContextProvider,
-    QueryOptionFormValues,
-    useGenerateFormID,
-} from "@/common/_feat";
+import {generateQueryFormDefaultValues} from "@/common/_feat/handle-form/generateQueryFormDefaultValues.ts";
+import {QueryOptionFormContextProvider} from "@/common/_feat/query-option-form-context/provider.tsx";
+import {useGenerateFormID} from "@/common/_feat/generate-form-keys/useGenerateFormID.ts";
+import {QueryOptionFormContainerProps, QueryOptionFormValues} from "@/common/_feat/query-options-form/types.ts";
 
 type FactoryConfig<TShape extends ZodRawShape> = {
     name: string;

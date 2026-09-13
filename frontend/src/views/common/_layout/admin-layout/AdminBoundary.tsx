@@ -10,7 +10,7 @@
 import {NotAdminWarning} from "@/views/common/_layout/admin-layout/warnings/NotAdminWarning.tsx";
 import {ReactNode} from "react";
 import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {useAuthContext} from "@/domains/auth";
+import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";
 
 /**
  * Props for {@link AdminBoundary}.

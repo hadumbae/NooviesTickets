@@ -7,12 +7,14 @@ import {
     FetchPaginatedReviewsByMovieConfig,
     FetchReviewsByMovieConfig
 } from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/repository.types.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 import {ReviewsByMovieBaseURL} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/baseURL.ts";
 import {PaginatedItems} from "@/common/_types";
-import {FeaturedReviewsByMovie, MovieReviewSummaryData, PopulatedMovieReview} from "@/domains/movie-reviews";
+import {FeaturedReviewsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/schemas/FeaturedReviewsByMovieSchema.ts";
+import {MovieReviewSummaryData} from "@/domains/movie-reviews/_feat/fetch-by-movie/schemas/MovieReviewSummarySchema.ts";
+import {PopulatedMovieReview} from "@/domains/movie-reviews/_schema/model/PopulatedMovieReviewSchema.ts";
 
 /**
  * Requests paginated reviews for a movie.
@@ -26,7 +28,7 @@ export const getFetchReviewsByMovie = (
         queries: {page, perPage, ...config},
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 };
 
 /**
@@ -41,7 +43,7 @@ export const getFetchReviewDetailsByMovie = (
         queries: {page, perPage, ...config},
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 };
 
 /**
@@ -56,5 +58,5 @@ export const getFetchFeaturedReviewsByMovie = (
         queries: config,
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 };

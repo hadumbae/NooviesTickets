@@ -2,9 +2,9 @@
  * @fileoverview Utility function for refreshing authentication tokens and fetching validated user data.
  */
 
-import {User, UserSchema} from "@/domains/users";
-import {postRefreshAuthentication} from "@/domains/auth";
-import {validateData} from "@/common/_feat";
+import {User, UserSchema} from "@/domains/users/_schema/user/UserSchema.ts";
+import {postRefreshAuthentication} from "@/domains/auth/_feat/user-refresh/postRefreshAuthentication.ts";
+import {validateData} from "@/common/_feat/validate-data/validateData.ts";
 
 /** Triggers a token refresh request and returns the validated user data. */
 export async function refreshUserAuthToken(): Promise<User> {

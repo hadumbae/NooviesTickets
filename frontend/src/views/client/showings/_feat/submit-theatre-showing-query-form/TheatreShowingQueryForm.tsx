@@ -8,7 +8,7 @@ import {Form} from "@/views/common/_comp/ui";
 import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
 import {BaseFormContextProvider} from "@/common/_feat/generic-form-context";
 import {useTheatreScheduleQueryForm} from "@/domains/showings/_feat/submit-theatre-schedule-query/useTheatreScheduleQueryForm.ts";
-import {ShowingsPageQueryFormValues} from "@/domains/movies";
+import {ShowingsPageQueryFormValues} from "@/domains/movies/_feat/manage-showing-page/ShowingsPageQueryFormValues.ts";
 import {
     ShowingsPageQueryStrings,
     ShowingsPageQueryStringSchema

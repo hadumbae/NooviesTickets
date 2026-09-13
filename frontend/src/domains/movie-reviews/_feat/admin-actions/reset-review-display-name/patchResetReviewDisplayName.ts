@@ -1,6 +1,6 @@
 import {ObjectId} from "@/common/_schemas";
 import {FetchRequestReturns} from "@/common/_types";
-import {buildURL, useFetchAPI} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/common/_feat";
 import {MovieReviewAdminActionsBaseURL} from "@/domains/movie-reviews/_feat/admin-actions/baseURL.ts";
 import {
     ResetReviewDisplayNameFormData
@@ -23,5 +23,5 @@ export function patchResetReviewDisplayName<TData = unknown>(
         path: `/rev/${reviewID}/display-name`,
     });
 
-    return useFetchAPI({url, method: "PATCH", data});
+    return handleFetchOperation({url, method: "PATCH", data});
 }

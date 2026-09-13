@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/common/_schemas/strings/simple-strings";
+import {StringValueSchema} from "@/common/_schemas/strings/simple-strings/StringValueSchema.ts";
 
 /** Zod schema for a trimmed IP address string. */
 export const IpSchema = StringValueSchema.ip({message: "Must be a valid IP address."});

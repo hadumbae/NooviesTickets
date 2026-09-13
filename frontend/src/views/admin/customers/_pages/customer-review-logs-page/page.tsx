@@ -8,7 +8,7 @@ import {useFetchCustomerReviewLogsViewData} from "@/domains/customers/_feat/movi
 import {useParsedPaginationValue} from "@/common/_feat/fetch-pagination-search-params";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {useRouteParams} from "@/common/_feat";
-import {CustomerReviewRouteParamsSchema} from "@/domains/customers";
+import {CustomerReviewRouteParamsSchema} from "@/domains/customers/_feat/movie-review/schema/routeParamsSchema.ts";
 
 const LOGS_PER_PAGE = 20;
 

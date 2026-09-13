@@ -3,12 +3,13 @@
  */
 
 import {Dispatch, ReactElement, SetStateAction} from "react";
-import {MovieCreditForm, MovieCreditFormPanel} from "@/views/admin/movie-credits";
+import {MovieCreditForm} from "@/views/admin/movie-credits/_feat/submit-form/MovieCreditForm.tsx";
+import {MovieCreditFormPanel} from "@/views/admin/movie-credits/_feat/submit-form/views/MovieCreditFormPanel.tsx";
 import {
     MovieCreditDeleteWarningDialog
 } from "@/views/admin/movie-credits/_feat/delete-credit/MovieCreditDeleteWarningDialog.tsx";
 
-import {MovieCredit} from "@/domains/movie-credits";
+import {MovieCredit} from "@/domains/movie-credits/_schemas/model/MovieCreditSchema.ts";
 
 /** Props for the MoviePersonDetailsCardActions component. */
 type ActionProps = {

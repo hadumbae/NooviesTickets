@@ -5,7 +5,7 @@
 import serializeQueryStrings from "@/common/_feat/fetch-search-params/serializeQueryStrings.ts";
 import {useSearchParams} from "react-router-dom";
 import {parseSearchParams} from "@/common/_feat/fetch-search-params/parseSearchParams.ts";
-import {updateSearchParams} from "@/common/_feat/fetch-search-params/index";
+import updateSearchParams from "@/common/_feat/fetch-search-params/updateSearchParams.ts";
 import {z, ZodObject, ZodRawShape} from "zod";
 import {
     stringifySearchParamValues

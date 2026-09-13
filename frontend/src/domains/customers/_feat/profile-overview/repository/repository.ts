@@ -3,13 +3,13 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts"
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts"
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts"
 import {CustomerProfileOverviewBaseURL} from "@/domains/customers/_feat/profile-overview/repository/baseURL";
 import {
     GetFetchCustomerProfileViewDataConfig
 } from "@/domains/customers/_feat/profile-overview/repository/repository.types";
 import {buildURL} from "@/common/_feat/fetch-api";
-import {CustomerProfileViewData} from "@/domains/customers";
+import {CustomerProfileViewData} from "@/domains/customers/_feat/profile-overview/schema/viewDataSchema.ts";
 
 /**
  * Fetches the complete profile view for a specific customer.
@@ -22,5 +22,5 @@ export function getFetchCustomerProfileViewData(
         path: `/customer/${customerID}`,
     })
 
-    return useFetchAPI({method: "GET", url})
+    return handleFetchOperation({method: "GET", url})
 }

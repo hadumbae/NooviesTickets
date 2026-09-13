@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {PersonCastCredit} from "@/domains/movie-credits";
+import {PersonCastCredit} from "@/domains/movie-credits/_feat/person-credit/schema/PersonCreditSchema.ts";
 import {Card, CardContent} from "@/views/common/_comp/ui";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image/MoviePosterImage.tsx";
-import {MovieCreditCastFlags} from "@/views/admin/movie-credits";
-import {PersonInfoCreditHeader} from "@/views/client/movie-credits";
+import {MovieCreditCastFlags} from "@/views/admin/movie-credits/_comp/credit-flag-badges/MovieCreditCastFlags.tsx";
+import {PersonInfoCreditHeader} from "@/views/client/movie-credits/_comp/person-info-credits/PersonInfoCreditHeader.tsx";
 import {Link} from "react-router-dom";
 
 /** Props for the PersonInfoCastCreditCard component. */

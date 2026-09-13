@@ -3,7 +3,7 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 import {PersonProfileImageBaseURL} from "@/domains/persons/_feat/submit-profile-image/repositories/baseURL.ts";
 import {UploadProfileImageConfig} from "@/domains/persons/_feat/submit-profile-image/repositories/repository.types.ts";
@@ -20,6 +20,6 @@ export async function patchUploadProfileImage(
         queries: config
     });
 
-    return useFetchAPI({url, method: "PATCH", data});
+    return handleFetchOperation({url, method: "PATCH", data});
 }
 

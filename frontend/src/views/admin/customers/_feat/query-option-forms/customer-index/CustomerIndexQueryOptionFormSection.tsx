@@ -3,8 +3,9 @@
  */
 
 import {createQueryOptionFormSection} from "@/common/_feat";
-import {useCustomerIndexQueryOptionsContext} from "@/domains/customers";
-import {CustomerIndexQueryOptionForm, CustomerIndexQueryOptionFormView} from "@/views/admin/customers";
+import {useCustomerIndexQueryOptionsContext} from "@/domains/customers/_ctx/CustomerIndexQueryOptionsContext.ts";
+import {CustomerIndexQueryOptionForm} from "@/views/admin/customers/_feat/query-option-forms/customer-index/CustomerIndexQueryOptionForm.tsx";
+import {CustomerIndexQueryOptionFormView} from "@/views/admin/customers/_feat/query-option-forms/customer-index/CustomerIndexQueryOptionFormView.tsx";
 
 /**
  * A section component for customer index query options.

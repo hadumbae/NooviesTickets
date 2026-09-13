@@ -2,7 +2,7 @@
  * @fileoverview Repository for fetching administrative view data related to user details.
  */
 
-import {buildURL, useFetchAPI} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/common/_feat";
 import {GetFetchUserDetailsViewDataConfig} from "@/domains/users/_feat/admin-view-data/repository/repository.types.ts";
 import {UserAdminViewDataBaseURL} from "@/domains/users/_feat/admin-view-data/repository/baseURL.ts";
 import {FetchRequestReturns} from "@/common/_types";
@@ -18,5 +18,5 @@ export async function getFetchUserDetailsViewData(
         queries: {reviewCount, reservationCount},
     });
 
-    return useFetchAPI({method: "GET", url});
+    return handleFetchOperation({method: "GET", url});
 }

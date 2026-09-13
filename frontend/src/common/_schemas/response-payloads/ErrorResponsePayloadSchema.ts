@@ -3,9 +3,9 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@/common/_schemas/strings";
+import {NonEmptyStringSchema} from "@/common/_schemas/strings/simple-strings/NonEmptyStringSchema.ts";
 import {HTTPStatusCodeSchema} from "@/common/_schemas/http/HTTPStatusCodeSchema.ts";
-import {ErrorCodeSchema} from "@/common/_schemas";
+import {ErrorCodeSchema} from "@/common/_schemas/errors/ErrorCodeSchema.ts";
 
 /** Zod schema for validating error response objects containing status codes and error details. */
 export const ErrorResponsePayloadSchema = z.object({

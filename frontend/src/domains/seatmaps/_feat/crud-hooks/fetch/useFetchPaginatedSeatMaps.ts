@@ -5,9 +5,9 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 import {PaginatedQueryConfig} from "@/common/_types";
-import {paginated} from "@/domains/seatmaps/_feat/crud";
+import {paginated} from "@/domains/seatmaps/_feat/crud/repository.ts";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {SeatMapCRUDQueryKeys} from "@/domains/seatmaps/_feat/crud-hooks";
+import {SeatMapCRUDQueryKeys} from "@/domains/seatmaps/_feat/crud-hooks/keys/queryKey.ts";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 
 /** Fetches a paginated list of seat maps and validates the response against a schema. */

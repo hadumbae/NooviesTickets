@@ -7,7 +7,7 @@ import {NetworkError} from "@/common/_err/NetworkError.ts";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {ErrorHandlerProps} from "@/common/_types/error/ErrorHandlerProps.ts";
 import {HttpStatusOverrideText} from "@/common/_types/error/HttpErrorTypes.ts";
-import {AppErrorDisplay} from "@/views/common/_feat/error-boundary/app-error-boundary";
+import {AppErrorDisplay} from "@/views/common/_feat/error-boundary/app-error-boundary/display/AppErrorDisplay.tsx";
 import {
     HttpResponseErrorDisplay,
     NetworkErrorDisplay

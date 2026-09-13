@@ -29,25 +29,22 @@ describe("GenreQueryOptionsSchema", () => {
             expect(success).toBe(true);
             expect(data).toEqual({name: "Drama", sortByName: -1});
         });
-    });
 
-    describe("Invalid query options for schema", () => {
-        it("rejects null as data", () => {
-            const {success, error} = GenreQueryOptionSchema.safeParse({
+        it("accepts null as data", () => {
+            const {success, data} = GenreQueryOptionSchema.safeParse({
                 name: null,
                 sortByName: null,
             });
 
-            expect(success).toBe(false);
-            expect(error?.errors[0].path[0]).toBe("name");
-            expect(error?.errors[0].code).toBe("invalid_type");
-            expect(error?.errors[1].path[0]).toBe("sortByName");
-            expect(error?.errors[1].code).toBe("invalid_union");
+            expect(success).toBe(true);
+            expect(data).toEqual({name: undefined, sortByName: undefined});
         });
+    });
 
-        it("rejects null as data", () => {
+    describe("Invalid query options for schema", () => {
+        it("rejects an overly long name as data", () => {
             const {success, error} = GenreQueryOptionSchema.safeParse({
-                name: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+                name: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.",
                 sortByName: -1,
             });
 

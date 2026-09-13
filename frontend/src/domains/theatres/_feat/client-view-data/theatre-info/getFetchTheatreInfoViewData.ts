@@ -6,7 +6,7 @@ import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns";
 import {TheatreInfoViewData} from "@/domains/theatres/_feat/client-view-data/theatre-info/TheatreInfoViewDataSchema";
 import {buildURL} from "@/common/_feat/fetch-api/buildURL";
 import {TheatreClientViewBaseURL} from "@/domains/theatres/_feat/client-view-data/repository/baseURL";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation";
 import {SlugString} from "@/common/_schemas/strings/slug-strings/SlugString";
 import {DateOnlyString} from "@/common/_schemas/dates/DateOnlyStringSchema";
 
@@ -29,5 +29,5 @@ export function getFetchTheatreInfoViewData(
         queries,
     });
 
-    return useFetchAPI({method: "GET", url});
+    return handleFetchOperation({method: "GET", url});
 }

@@ -4,7 +4,7 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {ObjectId} from "@/common/_schemas";
 import {buildURL} from "@/common/_feat/fetch-api";
 
@@ -27,6 +27,6 @@ export function handleSoftDelete(baseURL: string) {
             path: `/item/${_id}/soft`,
         });
 
-        return useFetchAPI({url, method: "DELETE"});
+        return handleFetchOperation({url, method: "DELETE"});
     };
 }

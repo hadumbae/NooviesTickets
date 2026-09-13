@@ -8,10 +8,10 @@ import {DateTime} from "luxon";
 import {ReactElement, useEffect} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
-import {clearRedirectPath} from "@/common/_feat";
+import {clearRedirectPath} from "@/common/_feat/navigation/clearRedirectPath.ts";
 import {PageCenter} from "@/views/common/_comp/page";
-import {AuthLoginPageHeader} from "@/views/common/_pages";
-import {AuthLoginFormView} from "@/views/common/_feat";
+import {AuthLoginPageHeader} from "@/views/common/_pages/auth/login/header.tsx";
+import {AuthLoginFormView} from "@/views/common/_feat/auth-login-form/AuthLoginFormView.tsx";
 import {SROnly} from "@/views/common/_comp/screen-readers";
 import {User} from "@/domains/users/_schema/user/UserSchema.ts";
 import {setAuthExpireBy} from "@/domains/auth/_feat/storage";
@@ -33,7 +33,7 @@ export function AuthLoginPage(): ReactElement {
                 "An error occurred. Please log in."
             );
         }
-    }, [location.state?.showLoginError]);
+    }, [location.state?.showLoginError, location.state?.loginErrorMessage]);
 
     const onSubmitSuccess = (user: User) => {
         const refreshByDate = Cookies.get("refreshBy");

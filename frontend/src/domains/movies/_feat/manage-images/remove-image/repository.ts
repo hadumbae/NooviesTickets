@@ -4,7 +4,7 @@
 
 import {ObjectId} from "@/common/_schemas";
 import {FetchRequestReturns} from "@/common/_types";
-import {buildURL, useFetchAPI} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/common/_feat";
 import {ManageMovieImagesBaseURL} from "@/domains/movies/_feat/manage-images/baseURL.ts";
 import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 
@@ -22,7 +22,7 @@ export function patchRemovePosterImage(
         path: `/item/${movieID}/poster-image/remove`
     });
 
-    return useFetchAPI({url, method: "PATCH"});
+    return handleFetchOperation({url, method: "PATCH"});
 }
 
 /** Sends an API request to remove the banner image for a specified movie. */
@@ -34,5 +34,5 @@ export function patchRemoveBannerImage(
         path: `/item/${movieID}/banner-image/remove`
     });
 
-    return useFetchAPI({url, method: "PATCH"});
+    return handleFetchOperation({url, method: "PATCH"});
 }

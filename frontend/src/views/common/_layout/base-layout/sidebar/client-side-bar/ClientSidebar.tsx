@@ -16,7 +16,7 @@ import {
 } from "@/views/common/_layout/base-layout/sidebar/client-side-bar/ClientBrowseSidebarGroup.tsx";
 import AdminLinksSidebarGroup from "@/views/common/_layout/common/navigation/side-bar-group/AdminLinksSidebarGroup.tsx";
 import {LayoutThemeSidebarGroup} from "@/views/common/_layout/common/sidebar/LayoutThemeSidebarGroup.tsx";
-import {useAuthContext} from "@/domains/auth";
+import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";
 
 /**
  * Orchestrates the sidebar content for client users, with conditional administrative shortcuts.

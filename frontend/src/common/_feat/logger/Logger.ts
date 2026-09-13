@@ -39,3 +39,8 @@ export const Logger = {
         console.error("[ERROR]", msg, formatContext(payload));
     },
 };
+
+/** Utility type that extracts valid method names from the Logger class. */
+export type LoggerFunction = {
+    [K in keyof typeof Logger]: typeof Logger[K] extends (...args: any[]) => any ? K : never
+}[keyof typeof Logger];

@@ -4,7 +4,7 @@
 
 import {buildURL} from "@/common/_feat/fetch-api";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 
 import {TheatreScreenSchedule} from "@/domains/theatre-screens/_schema";
 import {TheatreScreenClientViewBaseURL} from "@/domains/theatre-screens/_feat/client-view-data/repository/baseURL.ts";
@@ -23,5 +23,5 @@ export function fetchScreensWithShowings(
         path: `/showings-by-screen/theatre/${theatreID}/date/${localDate}`,
     });
 
-    return useFetchAPI({method: "GET", url});
+    return handleFetchOperation({method: "GET", url});
 }

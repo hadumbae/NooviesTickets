@@ -5,9 +5,9 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {IDQueryConfig} from "@/common/_types";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {findByID} from "@/domains/seatmaps/_feat/crud";
+import {findByID} from "@/domains/seatmaps/_feat/crud/repository.ts";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {SeatMapCRUDQueryKeys} from "@/domains/seatmaps/_feat/crud-hooks";
+import {SeatMapCRUDQueryKeys} from "@/domains/seatmaps/_feat/crud-hooks/keys/queryKey.ts";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 
 /** Fetches a seat map document and validates it against a provided schema. */

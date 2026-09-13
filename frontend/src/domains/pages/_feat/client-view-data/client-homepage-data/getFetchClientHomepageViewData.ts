@@ -5,7 +5,7 @@
 import {
     ClientHomepageViewRouteConfig
 } from "@/domains/pages/_feat/client-view-data/client-homepage-data/ClientHomepageViewRouteConfigSchema.ts";
-import {buildURL, useFetchAPI} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/common/_feat";
 import {ClientHomepageBaseURL} from "@/domains/pages/_feat/client-view-data/baseURL.ts";
 import {FetchRequestReturns} from "@/common/_types";
 import {
@@ -27,5 +27,5 @@ export async function getFetchClientHomepageViewData(
         queries,
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }

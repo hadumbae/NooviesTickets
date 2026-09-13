@@ -3,7 +3,7 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import type {PasswordUpdateData} from "@/domains/users/_feat/update-password/repository/repository.types.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 import {UpdateUserPasswordBaseURL} from "@/domains/users/_feat/update-password/repository/baseURL";
@@ -17,5 +17,5 @@ export function updateUserPassword(
         path: `/password/${userID}/update`,
     });
 
-    return useFetchAPI({url, method: "PATCH", data});
+    return handleFetchOperation({url, method: "PATCH", data});
 }

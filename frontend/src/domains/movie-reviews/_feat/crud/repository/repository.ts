@@ -9,7 +9,7 @@ import {
     handleFindBySlug,
     handlePaginated,
 } from "@/common/_feat/crud-handlers";
-import {MovieReviewCRUDBaseURL} from "@/domains/movie-reviews/_feat";
+import {MovieReviewCRUDBaseURL} from "@/domains/movie-reviews/_feat/crud/repository/baseURL.ts";
 
 /** Finds a movie review by its unique identifier. */
 export const findByID = handleFindByID(MovieReviewCRUDBaseURL);

@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {MovieReviewSchema} from "@/domains/movie-reviews/_schema/model";
+import {MovieReviewSchema} from "@/domains/movie-reviews/_schema/model/MovieReviewSchema.ts";
 import {MovieWithGenresSchema} from "@/domains/movies/_schema/movie";
 import {LeanUserSchema} from "@/domains/users/_schema/user/LeanUserSchema";
 

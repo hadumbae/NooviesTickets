@@ -7,10 +7,11 @@ import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {getFetchReviewDetailsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository";
+import {getFetchReviewDetailsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/repository.ts";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
-import {FetchByMovieQueryKeys, MovieReviewSummaryData, MovieReviewSummarySchema} from "@/domains/movie-reviews/_feat";
-import {buildQueryFn} from "@/common/_feat";
+import {FetchByMovieQueryKeys} from "@/domains/movie-reviews/_feat/fetch-by-movie/fetch/queryKeys.ts";
+import {MovieReviewSummaryData, MovieReviewSummarySchema} from "@/domains/movie-reviews/_feat/fetch-by-movie/schemas/MovieReviewSummarySchema.ts";
+import {buildQueryFn} from "@/common/_feat/validate-fetch-data/buildQueryFn.ts";
 
 /** Parameters for detailed movie review queries. */
 type FetchParams = PaginationValues & {

@@ -4,9 +4,9 @@
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {validateData} from "@/common/_feat/validate-data/validateData.ts";
-import {MovieReview, MovieReviewSchema} from "@/domains/movie-reviews/_schema/model";
+import {MovieReview, MovieReviewSchema} from "@/domains/movie-reviews/_schema/model/MovieReviewSchema.ts";
 import {MovieReviewForm} from "@/domains/movie-reviews/_feat/submit-form/schema/MovieReviewFormSchema.ts";
-import {MyReviewsMutationKeys} from "@/domains/movie-reviews/_feat";
+import {MyReviewsMutationKeys} from "@/domains/movie-reviews/_feat/my-reviews/hooks/mutationKeys.ts";
 import {
     patchUpdateMovieReviewForCurrentUser,
     postCreateMovieReviewForCurrentUser

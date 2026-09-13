@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {MovieReviewSchema} from "@/domains/movie-reviews/_schema";
+import {MovieReviewSchema} from "@/domains/movie-reviews/_schema/model/MovieReviewSchema.ts";
 import {MovieWithGenresSchema} from "@/domains/movies/_schema/movie";
 
 import {NonNegativeNumberSchema} from "@/common/_schemas/numbers/non-negative-number/NonNegativeNumberSchema";

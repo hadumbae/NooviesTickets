@@ -2,7 +2,7 @@
  * @fileoverview Data repository for administrative reservation retrieval by unique code.
  */
 
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 import {FetchByCodeData} from "@/domains/reservations/_feat/fetch-reservation-by-code/schemas";
@@ -22,5 +22,5 @@ export const getFetchByCode = (
         path: `/fetch-by-code/${code}`,
     });
 
-    return useFetchAPI({method: "GET", url});
+    return handleFetchOperation({method: "GET", url});
 }

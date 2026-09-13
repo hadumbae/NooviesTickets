@@ -4,9 +4,9 @@
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts"
 import {CustomerReviewViewData} from "@/domains/customers/_feat/movie-review/schema/viewDataSchema.ts"
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts"
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts"
 import {buildURL} from "@/common/_feat/fetch-api";
-import {ManageCustomerMovieReviewBaseURL} from "@/domains/customers/_feat/movie-review";
+import {ManageCustomerMovieReviewBaseURL} from "@/domains/customers/_feat/movie-review/repository/baseURL.ts";
 import {GetFetchCustomerReviewViewDataConfig} from "@/domains/customers/_feat/movie-review/repository/repository.types";
 
 /**
@@ -20,5 +20,5 @@ export function getFetchCustomerReviewViewData(
         path: `/customer/${customerID}/review/${reviewID}`,
     });
 
-    return useFetchAPI<CustomerReviewViewData>({method: "GET", url});
+    return handleFetchOperation<CustomerReviewViewData>({method: "GET", url});
 }

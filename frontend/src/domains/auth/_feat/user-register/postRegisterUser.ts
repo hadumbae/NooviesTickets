@@ -3,7 +3,7 @@
  */
 
 import {buildURL} from "@/common/_feat/fetch-api/buildURL";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns";
 import {AuthBaseURL} from "@/domains/auth/_feat/common/baseURL.ts";
 import {AuthRegisterForm} from "@/domains/auth/_feat/user-register/AuthRegisterFormSchema.ts";
@@ -11,5 +11,5 @@ import {AuthRegisterForm} from "@/domains/auth/_feat/user-register/AuthRegisterF
 /** Sends registration data to the authentication API to create a new user account. */
 export function postRegisterUser(data: AuthRegisterForm): Promise<FetchRequestReturns> {
     const url = buildURL({baseURL: AuthBaseURL, path: "/register"});
-    return useFetchAPI({url, method: "POST", data});
+    return handleFetchOperation({url, method: "POST", data});
 }

@@ -2,7 +2,7 @@
  * @fileoverview Repository for fetching genre-related client view data.
  */
 
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {GenreClientViewDataBaseURL} from "@/domains/genres/_feat/client-view-data/repository/baseURL.ts";
 import {FetchGenreWithMoviesConfig} from "@/domains/genres/_feat/client-view-data/repository/repository.types.ts";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
@@ -19,7 +19,7 @@ export function getFetchGenreWithMovies(
         queries: moviePagination,
     });
 
-    return useFetchAPI({
+    return handleFetchOperation({
         url,
         method: "GET"
     });

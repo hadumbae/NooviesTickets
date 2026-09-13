@@ -5,8 +5,7 @@ import {
 import {
     BaseLayoutDesktopClientNavigation
 } from "@/views/common/_layout/client/navigation/desktop-client-navigation/BaseLayoutDesktopClientNavigation.tsx";
-import {AuthContext} from "@/domains/auth/_feat/auth-context/AuthContext.ts";
-import {useAuthContext} from "@/domains/auth";
+import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";
 
 /**
  * Desktop navigation switch for the base layout.

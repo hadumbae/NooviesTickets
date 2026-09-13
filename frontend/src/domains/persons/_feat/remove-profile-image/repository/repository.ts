@@ -5,7 +5,7 @@
 import {PersonProfileImageBaseURL} from "@/domains/persons/_feat/submit-profile-image";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {RemoveProfileImageConfig} from "@/domains/persons/_feat/remove-profile-image/repository/repository.types.ts";
 
 /**
@@ -19,5 +19,5 @@ export async function deleteRemoveProfileImage(
         path: `/image/${_id}/remove`,
     });
 
-    return useFetchAPI({url, method: "DELETE"});
+    return handleFetchOperation({url, method: "DELETE"});
 }

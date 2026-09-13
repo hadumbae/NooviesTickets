@@ -4,7 +4,7 @@
 
 import {buildURL} from "@/common/_feat/fetch-api";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 
 import {
     TheatreScreenAdminViewDataBaseURL,
@@ -28,5 +28,5 @@ export async function getFetchTheatreScreenAdminViewData(
         queries: {recentShowingsCount}
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }

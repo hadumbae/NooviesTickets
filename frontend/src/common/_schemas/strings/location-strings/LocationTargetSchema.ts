@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {ISO3166Alpha2CountryCodeSchema} from "@/common/_schemas/enums/ISO3166Alpha2CountryCodeSchema.ts";
-import {NonEmptyStringSchema} from "@/common/_schemas/strings";
+import {NonEmptyStringSchema} from "@/common/_schemas/strings/simple-strings/NonEmptyStringSchema.ts";
 
 /** Zod schema for validating a location target marker. */
 export const LocationTargetSchema = z.union(

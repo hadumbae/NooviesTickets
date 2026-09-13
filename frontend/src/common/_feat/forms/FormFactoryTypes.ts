@@ -3,7 +3,7 @@
  */
 
 import {FieldValues, UseFormReturn} from "react-hook-form";
-import {FormValuesConfig} from "@/common/_feat";
+import {FormValuesConfig} from "@/common/_feat/submit-data/formTypes.ts";
 import {UseMutationResult} from "@tanstack/react-query";
 
 /** Configuration options for creating form container factories. */

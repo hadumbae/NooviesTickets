@@ -3,7 +3,7 @@ import {ModerationMessageFormData} from "@/common/_feat/moderation/forms/Moderat
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns";
 import {buildURL} from "@/common/_feat/fetch-api/buildURL";
 import {MovieReviewAdminActionsBaseURL} from "@/domains/movie-reviews/_feat/admin-actions/baseURL";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation";
 
 /**
  * Configuration for the API request to toggle a review's visibility.
@@ -22,5 +22,5 @@ export function patchToggleReviewPublicity<TData = unknown>(
         path: `/rev/${reviewID}/publicity`,
     });
 
-    return useFetchAPI({url, method: "PATCH", data});
+    return handleFetchOperation({url, method: "PATCH", data});
 }

@@ -1,5 +1,5 @@
-import {Logger} from "@/common/_feat/logger/Logger.ts";
-import {LoggerFunction, LogPayload, LogType} from "@/common/_feat/logger/Logger.types.ts";
+import {Logger, LoggerFunction} from "@/common/_feat/logger/Logger.ts";
+import {LogPayload, LogType} from "@/common/_feat/logger/Logger.types.ts";
 
 export {
     Logger,

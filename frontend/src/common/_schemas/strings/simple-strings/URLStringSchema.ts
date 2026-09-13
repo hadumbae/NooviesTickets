@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@/common/_schemas";
+import {StringValueSchema} from "@/common/_schemas/strings/simple-strings/StringValueSchema.ts";
 
 /** Zod schema that validates a string as a valid URL. */
 export const URLStringSchema = StringValueSchema.url({message: "Must be a valid URL."});

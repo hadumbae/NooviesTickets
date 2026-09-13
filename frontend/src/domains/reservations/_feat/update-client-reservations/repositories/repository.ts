@@ -5,7 +5,7 @@
 
 import {ObjectId} from "@/common/_schemas";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 
 const baseURL = `/api/v1/feat/update-client-reservations`;
@@ -19,7 +19,7 @@ export const patchCheckoutTicket = (
         path: `/checkout/${_id}`,
     });
 
-    return useFetchAPI({method: "PATCH", url});
+    return handleFetchOperation({method: "PATCH", url});
 };
 
 /** Manually voids a reservation and releases any associated seat holds. */
@@ -31,5 +31,5 @@ export const patchCancelClientReservation = (
         path: `/cancel/${_id}`,
     });
 
-    return useFetchAPI({method: "PATCH", url});
+    return handleFetchOperation({method: "PATCH", url});
 };

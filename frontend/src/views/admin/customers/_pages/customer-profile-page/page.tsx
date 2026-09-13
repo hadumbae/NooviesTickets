@@ -4,11 +4,9 @@
 
 import {ReactElement} from "react";
 import {QueryDataLoader} from "@/views/common/_feat";
-import {
-    CustomerProfileOverviewRouteParamsSchema,
-    CustomerProfileViewData,
-    useFetchCustomerProfileViewData
-} from "@/domains/customers";
+import {CustomerProfileOverviewRouteParamsSchema} from "@/domains/customers/_feat/profile-overview/schema/routeParamsSchema.ts";
+import {CustomerProfileViewData} from "@/domains/customers/_feat/profile-overview/schema/viewDataSchema.ts";
+import {useFetchCustomerProfileViewData} from "@/domains/customers/_feat/profile-overview/fetch/useFetchCustomerProfileViewData.ts";
 import {CustomerProfilePageContent} from "@/views/admin/customers/_pages/customer-profile-page/content.tsx";
 import {useRouteParams} from "@/common/_feat";
 

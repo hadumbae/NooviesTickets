@@ -6,8 +6,9 @@ import {ObjectId} from "@/common/_schemas";
 import {ResetReviewDisplayNameFormData} from "@/domains/movie-reviews/_feat/admin-actions/reset-review-display-name";
 import {ReactElement, useState} from "react";
 import {Button} from "@/views/common/_comp/ui/button.tsx";
-import {MovieReview} from "@/domains/movie-reviews/_schema/model";
-import {ResetReviewDisplayNameDialog, ResetReviewDisplayNameForm} from "@/views/admin/customers/_feat";
+import {MovieReview} from "@/domains/movie-reviews/_schema/model/MovieReviewSchema.ts";
+import {ResetReviewDisplayNameDialog} from "@/views/admin/customers/_feat/reset-display-name/ResetReviewDisplayNameDialog.tsx";
+import {ResetReviewDisplayNameForm} from "@/views/admin/customers/_feat/reset-display-name/ResetReviewDisplayNameForm.tsx";
 import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
 
 /** Props for the ResetReviewDisplayNameAction component. */

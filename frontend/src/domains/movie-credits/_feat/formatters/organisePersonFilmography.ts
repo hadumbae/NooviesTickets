@@ -2,7 +2,7 @@
  * @fileoverview Formatter that organizes a person's filmography into cast and crew categories.
  */
 
-import {PersonCastCreditRoleGroup, PersonCreditRoleGroup, PersonCrewCreditRoleGroup} from "@/domains/movie-credits";
+import {PersonCastCreditRoleGroup, PersonCreditRoleGroup, PersonCrewCreditRoleGroup} from "@/domains/movie-credits/_feat/person-credit/schema/PersonCreditRoleGroupSchema.ts";
 
 /** Configuration for organizing a person's filmography. */
 type OrganisedConfig = {

@@ -8,7 +8,7 @@ import {Separator} from "@/views/common/_comp/ui/separator.tsx";
 import {ReactElement, useState} from "react";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image";
 import {ReservationStatusBadge} from "@/views/client/reservations/_comp/reservation-badges";
-import {CustomerReservationDialog} from "@/views/admin/customers/_comp/reservation-card";
+import {CustomerReservationDialog} from "@/views/admin/customers/_comp/reservation-card/CustomerReservationDialog.tsx";
 
 /** Props for the CustomerReservationCard component. */
 type CardProps = {

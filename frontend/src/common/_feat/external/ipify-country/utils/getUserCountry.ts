@@ -3,7 +3,7 @@
  */
 
 import {ISO3166Alpha2CountryCode} from "@/common/_schemas";
-import {getIpifyStorageData} from "@/common/_feat";
+import {getIpifyStorageData} from "@/common/_feat/external/ipify-country/utils/getIpifyStorageData.ts";
 
 type CountryConfig = {
     presetCountry?: ISO3166Alpha2CountryCode;

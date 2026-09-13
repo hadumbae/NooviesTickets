@@ -5,7 +5,7 @@
 import {UpdateUserStatusConfig} from "@/domains/users/_feat/manage-user-status/repository/repository.types.ts";
 import {FetchRequestReturns} from "@/common/_types";
 import {UpdateUserStatusReturns} from "@/domains/users/_feat/manage-user-status/schema";
-import {buildURL, useFetchAPI} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/common/_feat";
 import {ManageUserStatusBaseURL} from "@/domains/users/_feat/manage-user-status/repository/baseURL.ts";
 
 /**
@@ -19,5 +19,5 @@ export function patchUpdateUserStatus(
         path: `/user/${userId}/status/update`,
     });
 
-    return useFetchAPI({url, method: "PATCH", data});
+    return handleFetchOperation({url, method: "PATCH", data});
 }

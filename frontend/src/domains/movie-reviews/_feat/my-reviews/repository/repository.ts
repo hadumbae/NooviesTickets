@@ -3,7 +3,7 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {ObjectId} from "@/common/_schemas";
 import {buildURL} from "@/common/_feat/fetch-api";
 import {ManageMyReviewsBaseURL} from "@/domains/movie-reviews/_feat/my-reviews/repository/baseURL.ts";
@@ -23,7 +23,7 @@ export function getFetchMovieReviewsByCurrentUser<TData = unknown>(
         queries: {page, perPage, ...config},
     });
 
-    return useFetchAPI({url, method: "GET"})
+    return handleFetchOperation({url, method: "GET"})
 }
 
 /** Creates a new movie review for the authenticated user. */
@@ -36,7 +36,7 @@ export function postCreateMovieReviewForCurrentUser<TData = unknown>(
         queries: config
     });
 
-    return useFetchAPI({url, method: "POST", data})
+    return handleFetchOperation({url, method: "POST", data})
 }
 
 /** Updates an existing movie review owned by the authenticated user. */
@@ -49,7 +49,7 @@ export function patchUpdateMovieReviewForCurrentUser<TData = unknown>(
         queries: config,
     });
 
-    return useFetchAPI({url, method: "PATCH", data});
+    return handleFetchOperation({url, method: "PATCH", data});
 }
 
 /** Deletes a specific movie review owned by the authenticated user. */
@@ -61,5 +61,5 @@ export function deleteRemoveMovieReviewForCurrentUser<TData = unknown>(
         path: `/current/delete/${reviewID}`,
     });
 
-    return useFetchAPI({url, method: "DELETE"});
+    return handleFetchOperation({url, method: "DELETE"});
 }

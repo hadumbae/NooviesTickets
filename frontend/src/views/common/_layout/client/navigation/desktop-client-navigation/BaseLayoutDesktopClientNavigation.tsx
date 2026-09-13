@@ -16,7 +16,7 @@ import {
 import {
     BaseLayoutDesktopThemeDropdown
 } from "@/views/common/_layout/common/navigation/desktop-theme-navigation/BaseLayoutDesktopThemeDropdown.tsx";
-import {useAuthContext} from "@/domains/auth";
+import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";
 import {useAuthLogoutUser} from "@/domains/auth/_feat/user-logout/useAuthLogoutUser.ts";
 
 /**

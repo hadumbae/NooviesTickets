@@ -9,7 +9,7 @@ import {ShowingDetailsViewData} from "@/views/admin/showings/_feat/admin-view-da
 import {buildURL} from "@/common/_feat/fetch-api";
 import {ShowingAdminViewDataBaseURL} from "@/views/admin/showings/_feat/admin-view-data/repository/baseURL.ts";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 
 /** Fetches detailed view data for a specific showing by its slug. */
 export async function getFetchShowingDetailsViewData(
@@ -20,5 +20,5 @@ export async function getFetchShowingDetailsViewData(
         path: `/item/${slug}/details`,
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }

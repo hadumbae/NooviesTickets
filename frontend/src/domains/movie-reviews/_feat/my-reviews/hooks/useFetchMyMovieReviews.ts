@@ -7,7 +7,7 @@ import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOption
 import {getFetchMovieReviewsByCurrentUser} from "@/domains/movie-reviews/_feat/my-reviews/repository/repository.ts";
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {MyReviewsQueryKeys} from "@/domains/movie-reviews/_feat";
+import {MyReviewsQueryKeys} from "@/domains/movie-reviews/_feat/my-reviews/hooks/queryKeys.ts";
 import {QueryConfig} from "@/common/_types";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
 

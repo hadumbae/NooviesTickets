@@ -3,7 +3,7 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {PaginatedItems} from "@/common/_types";
 import {PopulatedReservation} from "@/domains/reservations/_schema";
 import {buildURL} from "@/common/_feat/fetch-api";
@@ -26,5 +26,5 @@ export const getFetchUserReservations = async (
         queries: {page, perPage, ...queries},
     });
 
-    return useFetchAPI({method: "GET", url});
+    return handleFetchOperation({method: "GET", url});
 };

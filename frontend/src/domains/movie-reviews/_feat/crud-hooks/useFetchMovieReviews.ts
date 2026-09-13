@@ -7,7 +7,7 @@ import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
 import {ListQueryConfig} from "@/common/_types";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {MovieReviewCRUDQueryKeys} from "@/domains/movie-reviews/_feat";
+import {MovieReviewCRUDQueryKeys} from "@/domains/movie-reviews/_feat/crud-hooks/queryKeys.ts";
 import {find} from "@/domains/movie-reviews/_feat/crud/repository/repository.ts";
 
 /**

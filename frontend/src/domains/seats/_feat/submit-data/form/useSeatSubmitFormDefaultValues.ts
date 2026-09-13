@@ -4,9 +4,9 @@
 
 import {useRef} from "react";
 import {isEqual} from "lodash";
-import {SeatFormValues} from "@/domains/seats/_feat/submit-data/schema";
+import {SeatFormValues} from "@/domains/seats/_feat/submit-data/schema/SeatFormSchema.ts";
 import {FormValuesConfig} from "@/common/_feat/submit-data";
-import {Seat} from "@/domains/seats";
+import {Seat} from "@/domains/seats/_schema/model/SeatSchema.ts";
 
 /**
  * Computes a stable default values object by merging baseline defaults, existing seat data, and manual presets.

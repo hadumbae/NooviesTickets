@@ -2,8 +2,8 @@
  * @fileoverview Repository for interacting with external third-party APIs and services.
  */
 
-import {buildURL} from "@/common/_feat";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {buildURL} from "@/common/_feat/fetch-api/buildURL.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {ExternalAPIBaseURL} from "@/common/_feat/external/repository/baseURL.ts";
 
 /** Fetches geographical information based on the user's current IP address. */
@@ -13,5 +13,5 @@ export const fetchGeolocationByIP = () => {
         path: "/ip-geo/get-geolocation",
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 };

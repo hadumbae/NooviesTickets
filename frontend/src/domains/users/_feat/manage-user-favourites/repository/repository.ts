@@ -2,7 +2,7 @@
  * @fileoverview Repository for managing user favourite movie data and interactions.
  */
 
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {ObjectId} from "@/common/_schemas";
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
@@ -21,7 +21,7 @@ export async function getCheckIsFavouriteMovie(
         path: `/favourites/check/movie/${movieID}`,
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }
 
 /** Retrieves a paginated list of movies favourited by the current user. */
@@ -34,7 +34,7 @@ export async function getUserFavourites(
         queries: params,
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }
 
 /** Toggles the favourite status of a movie for the current user. */
@@ -46,5 +46,5 @@ export async function patchToggleUserFavouriteMovie(
         path: "/favourites/toggle",
     });
 
-    return useFetchAPI({url, method: "PATCH", data: {movieID}});
+    return handleFetchOperation({url, method: "PATCH", data: {movieID}});
 }

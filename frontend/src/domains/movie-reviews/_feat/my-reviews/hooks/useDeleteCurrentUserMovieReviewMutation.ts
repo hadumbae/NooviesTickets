@@ -7,8 +7,10 @@ import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-qu
 import {deleteRemoveMovieReviewForCurrentUser} from "@/domains/movie-reviews/_feat/my-reviews/repository/repository.ts";
 import {toast} from "react-toastify";
 import {handleSubmitResponseError} from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
-import {FetchByMovieQueryKeys, MovieReviewCRUDQueryKeys, MyReviewsMutationKeys} from "@/domains/movie-reviews/_feat";
-import {MutationResponseConfig} from "@/common/_feat";
+import {FetchByMovieQueryKeys} from "@/domains/movie-reviews/_feat/fetch-by-movie/fetch/queryKeys.ts";
+import {MovieReviewCRUDQueryKeys} from "@/domains/movie-reviews/_feat/crud-hooks/queryKeys.ts";
+import {MyReviewsMutationKeys} from "@/domains/movie-reviews/_feat/my-reviews/hooks/mutationKeys.ts";
+import {MutationResponseConfig} from "@/common/_feat/submit-data/mutationTypes.ts";
 
 /** Parameters for the movie review deletion mutation. */
 type MutateParams = {
@@ -30,12 +32,18 @@ export function useDeleteCurrentUserMovieReviewMutation(
         queryClient.invalidateQueries({queryKey: MovieReviewCRUDQueryKeys.list(), exact: true});
         queryClient.invalidateQueries({queryKey: FetchByMovieQueryKeys.all, exact: true});
 
-        successMessage && toast.success(successMessage);
+        if (successMessage) {
+            toast.success(successMessage);
+        }
+
         onSubmitSuccess?.();
     }
 
     const onError = (error: unknown) => {
-        errorMessage && toast.error(errorMessage);
+        if (errorMessage) {
+            toast.error(errorMessage);
+        }
+
         handleSubmitResponseError({error});
         onSubmitError?.(error);
     }

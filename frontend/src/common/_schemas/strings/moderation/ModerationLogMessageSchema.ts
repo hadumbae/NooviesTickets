@@ -2,7 +2,7 @@
  * @fileoverview Zod schema and type definition for moderation log messages.
  */
 
-import {NonEmptyStringSchema} from "@/common/_schemas";
+import {NonEmptyStringSchema} from "@/common/_schemas/strings/simple-strings/NonEmptyStringSchema.ts";
 import {z} from "zod";
 
 /** Zod schema for validating a moderation log message string. */

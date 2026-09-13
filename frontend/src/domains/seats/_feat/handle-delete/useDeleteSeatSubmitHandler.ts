@@ -2,7 +2,7 @@
  * @fileoverview Hook for managing the deletion of seat records through asynchronous mutations and lifecycle callbacks.
  */
 
-import {useSeatDeleteMutation} from "@/domains/seats";
+import {useSeatDeleteMutation} from "@/domains/seats/_feat/crud-hooks/submit/useSeatDeleteMutation.ts";
 import {handleMutationCallback} from "@/common/_feat/handle-mutation-callback";
 import {
     handleSubmitResponseError

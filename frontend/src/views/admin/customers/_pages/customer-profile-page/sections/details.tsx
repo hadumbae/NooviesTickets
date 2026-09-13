@@ -4,16 +4,14 @@
 
 import {ReactElement} from "react";
 import {PageSectionHeader} from "@/views/common/_comp";
-import {PopulatedMovieReview} from "@/domains/movie-reviews";
+import {PopulatedMovieReview} from "@/domains/movie-reviews/_schema/model/PopulatedMovieReviewSchema.ts";
 import {Reservation} from "@/domains/reservations/_schema/model/reservations/ReservationSchema.ts";
 import {ObjectId} from "@/common/_schemas";
 import {Separator} from "@/views/common/_comp/ui";
 import {Link} from "react-router-dom";
-import {
-    CustomerDetailsListCard,
-    CustomerReservationListSummaryItem,
-    CustomerReviewListSummaryItem
-} from "@/views/admin/customers";
+import {CustomerDetailsListCard} from "@/views/admin/customers/_comp/customer-details/CustomerDetailsListCard.tsx";
+import {CustomerReservationListSummaryItem} from "@/views/admin/customers/_comp/customer-details/CustomerReservationListSummaryItem.tsx";
+import {CustomerReviewListSummaryItem} from "@/views/admin/customers/_comp/customer-details/CustomerReviewListSummaryItem.tsx";
 
 /** Props for the CustomerProfileDetailsSection component. */
 type SectionProps = {

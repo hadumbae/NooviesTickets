@@ -3,10 +3,10 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/common/_feat/handle-ui/cn.ts";
 import {HeaderTitle} from "@/views/common/_comp/page-headers/HeaderTitle.tsx";
 import {HeaderDescription} from "@/views/common/_comp/page-headers/HeaderDescription.tsx";
-import {HeaderSubtitle} from "@/views/common/_comp";
+import {HeaderSubtitle} from "@/views/common/_comp/page-headers/HeaderSubtitle.tsx";
 
 /** Props for the PageHeader component. */
 export type HeaderProps = {

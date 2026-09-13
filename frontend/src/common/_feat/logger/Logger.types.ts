@@ -2,8 +2,6 @@
  * @fileoverview Defines types and interfaces for the application logging system.
  */
 
-import {Logger} from "@/common/_feat/logger/Logger.ts";
-
 /** Categories used to classify log messages. */
 export type LogType =
     "GENERAL" |
@@ -25,8 +23,3 @@ export type LogPayload = {
     context?: LogContext;
     error?: Error;
 };
-
-/** Utility type that extracts valid method names from the Logger class. */
-export type LoggerFunction = {
-    [K in keyof typeof Logger]: typeof Logger[K] extends (...args: any[]) => any ? K : never
-}[keyof typeof Logger];

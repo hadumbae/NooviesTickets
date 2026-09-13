@@ -8,7 +8,7 @@ import {cn} from "@/common/_feat";
 import {buttonVariants, Card, CardContent, Separator} from "@/views/common/_comp/ui";
 import {Link} from "react-router-dom";
 import {Search} from "lucide-react";
-import {CustomerUniqueCodeDisplay} from "@/views/admin/customers";
+import {CustomerUniqueCodeDisplay} from "@/views/admin/customers/_comp/customer-details/CustomerUniqueCodeDisplay.tsx";
 import {StatNumberItem} from "@/views/common/_comp";
 
 /** Defines the optional custom class names for the card components. */

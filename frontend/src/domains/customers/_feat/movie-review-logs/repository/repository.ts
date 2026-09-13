@@ -3,13 +3,13 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts"
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts"
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts"
 import {CustomerReviewLogsViewData} from "@/domains/customers/_feat/movie-review-logs/schema/viewDataSchema.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 import {
     GetFetchCustomerReviewLogsViewDataConfig
 } from "@/domains/customers/_feat/movie-review-logs/repository/repository.types";
-import {CustomerReviewLogsBaseURL} from "@/domains/customers/_feat/movie-review-logs";
+import {CustomerReviewLogsBaseURL} from "@/domains/customers/_feat/movie-review-logs/repository/baseURL.ts";
 
 /** Retrieves paginated moderation audit logs for a specific review from the administrative API. */
 export async function getFetchCustomerReviewLogsViewData(
@@ -21,5 +21,5 @@ export async function getFetchCustomerReviewLogsViewData(
         queries: pagination
     })
 
-    return useFetchAPI({method: "GET", url})
+    return handleFetchOperation({method: "GET", url})
 }

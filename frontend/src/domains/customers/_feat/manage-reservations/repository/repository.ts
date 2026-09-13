@@ -3,7 +3,7 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts"
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts"
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts"
 import {buildURL} from "@/common/_feat/fetch-api";
 import {CustomerReservationsViewData} from "@/domains/customers/_feat/manage-reservations/schema"
 import {
@@ -25,5 +25,5 @@ export function getFetchCustomerReservationsViewData(
         queries: pagination
     });
 
-    return useFetchAPI<CustomerReservationsViewData>({method: "GET", url})
+    return handleFetchOperation<CustomerReservationsViewData>({method: "GET", url})
 }

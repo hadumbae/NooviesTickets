@@ -4,7 +4,7 @@
 
 import {buildURL} from "@/common/_feat/fetch-api";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {MovieClientViewBaseURL} from "@/domains/movies/_feat/client-view-data/repository/baseURL.ts";
 import {
     MovieInfoCreditViewData,
@@ -29,7 +29,7 @@ export function getOverviewDataForMovieInfoView(
         queries,
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }
 
 /** Fetches user reviews for a specific movie. */
@@ -42,7 +42,7 @@ export function getReviewsForMovieInfoView(
         queries,
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }
 
 /** Retrieves the cast and crew credits for a specific movie. */
@@ -54,7 +54,7 @@ export function getCreditForMovieInfoView(
         path: `/item/${slug}/info-credits`,
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }
 
 /** Fetches scheduled showings and cinema information for a specific movie. */
@@ -67,5 +67,5 @@ export function getShowingsForMovieInfoView(
         queries
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }

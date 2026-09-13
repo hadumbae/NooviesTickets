@@ -4,7 +4,7 @@
  */
 
 import {NavigateOptions, URLSearchParamsInit} from "react-router-dom";
-import {updateSearchParams} from "@/common/_feat/fetch-search-params";
+import updateSearchParams from "@/common/_feat/fetch-search-params/updateSearchParams.ts";
 
 /**
  * Configuration parameters for updating a single search parameter.
@@ -15,7 +15,7 @@ type SetValueParams = {
     /** * The new value to assign.
      * Supported types (via {@link updateSearchParams}): string, number, boolean, array, or object.
      */
-    value: any;
+    value: unknown;
     /** The current `URLSearchParams` instance from the component state or hook. */
     searchParams: URLSearchParams;
     /** * The setter function provided by React Router's `useSearchParams` hook to

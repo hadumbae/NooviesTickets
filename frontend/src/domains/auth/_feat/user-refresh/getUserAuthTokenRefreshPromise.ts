@@ -2,7 +2,7 @@
  * @fileoverview Singleton manager for handling concurrent authentication token refresh promises.
  */
 
-import {User} from "@/domains/users";
+import {User} from "@/domains/users/_schema/user/UserSchema.ts";
 import {refreshUserAuthToken} from "@/domains/auth/_feat/user-refresh/refreshUserAuthToken.ts";
 
 let refreshPromise: Promise<User> | null = null;

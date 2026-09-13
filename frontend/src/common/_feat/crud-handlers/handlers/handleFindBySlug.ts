@@ -4,7 +4,7 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 
@@ -29,6 +29,6 @@ export function handleFindBySlug(baseURL: string) {
             queries: config,
         });
 
-        return useFetchAPI({url, method: "GET"});
+        return handleFetchOperation({url, method: "GET"});
     };
 }

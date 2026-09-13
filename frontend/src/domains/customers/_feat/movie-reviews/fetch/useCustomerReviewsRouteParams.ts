@@ -4,7 +4,7 @@
 
 import {useParams} from "react-router-dom";
 import {RouteError} from "@/common/_err/RouteError.ts";
-import {CustomerReviewsRouteParams, CustomerReviewsRouteParamsSchema} from "@/domains/customers";
+import {CustomerReviewsRouteParams, CustomerReviewsRouteParamsSchema} from "@/domains/customers/_feat/movie-reviews/schema/routeParamsSchema.ts";
 
 /**
  * Extracts and validates customer review route parameters from the URL.

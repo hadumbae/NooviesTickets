@@ -3,7 +3,7 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types";
-import {buildURL, useFetchAPI} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/common/_feat";
 import {
     UpdateUserAdminRoleReturns
 } from "@/domains/users/_feat/manage-user-roles/manage-admin-role/schema/UpdateUserAdminRoleReturnsSchema.ts";
@@ -21,5 +21,5 @@ export async function patchUpdateUserAdminRole(
         path: `/user/${userId}/role/admin/update`,
     });
 
-    return useFetchAPI({url, method: "PATCH", data});
+    return handleFetchOperation({url, method: "PATCH", data});
 }

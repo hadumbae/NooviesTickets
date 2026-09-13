@@ -4,7 +4,7 @@
  */
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 import {buildURL} from "@/common/_feat/fetch-api";
@@ -12,7 +12,7 @@ import {buildURL} from "@/common/_feat/fetch-api";
 /**
  * Composite parameters for requesting paginated document sets.
  */
-export type FindPaginatedDocumentsConfig<TQueries extends Record<string, any>> = {
+export type FindPaginatedDocumentsConfig<TQueries extends Record<string, unknown>> = {
     pagination: PaginationValues;
     queries?: TQueries;
     config?: RequestOptions;
@@ -35,6 +35,6 @@ export const handlePaginated = (baseURL: string) => {
             },
         });
 
-        return useFetchAPI({url, method: "GET"});
+        return handleFetchOperation({url, method: "GET"});
     };
 };

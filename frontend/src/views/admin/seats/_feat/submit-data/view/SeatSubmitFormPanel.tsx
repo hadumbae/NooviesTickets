@@ -8,9 +8,9 @@ import {useFormContext} from "react-hook-form";
 import {useBaseFormContext} from "@/common/_feat/generic-form-context";
 import {UIOpenStateProps} from "@/common/_types";
 import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
-import {cn} from "@/common/_feat";
-import {SeatFormValues} from "@/domains/seats";
-import {SeatSubmitFormView} from "@/views/admin/seats";
+import {cn} from "@/common/_feat/handle-ui/cn.ts";
+import {SeatFormValues} from "@/domains/seats/_feat/submit-data/schema/SeatFormSchema.ts";
+import {SeatSubmitFormView} from "@/views/admin/seats/_feat/submit-data/view/SeatSubmitFormView.tsx";
 import {
     Button,
     ScrollArea,

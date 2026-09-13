@@ -13,9 +13,9 @@ import {
     SheetTrigger,
 } from "@/views/common/_comp/ui";
 
-import {MovieCreditFormValues} from "@/domains/movie-credits";
-import {MovieCreditFormActions} from "@/views/admin/movie-credits";
-import {FormViewProps} from "@/common/_feat";
+import {MovieCreditFormValues} from "@/domains/movie-credits/_feat/submit-data/schemas/MovieCreditFormSchema.ts";
+import {MovieCreditFormActions} from "@/views/admin/movie-credits/_feat/submit-form/views/MovieCreditFormActions.tsx";
+import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
 
 /** Props for the MovieCreditFormPanel component, extending form and UI state definitions. */
 type FormPanelProps = UIOpenStateProps & FormViewProps<MovieCreditFormValues> & {

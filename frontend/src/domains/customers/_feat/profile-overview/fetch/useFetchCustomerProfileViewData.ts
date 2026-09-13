@@ -8,7 +8,7 @@ import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOption
 import {getFetchCustomerProfileViewData} from "@/domains/customers/_feat/profile-overview/repository/repository.ts";
 import {CustomerProfileOverviewViewQueryKeys} from "@/domains/customers/_feat/profile-overview/fetch/queryKeys.ts";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {CustomerProfileViewData, CustomerProfileViewDataSchema} from "@/domains/customers";
+import {CustomerProfileViewData, CustomerProfileViewDataSchema} from "@/domains/customers/_feat/profile-overview/schema/viewDataSchema.ts";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {ObjectId} from "@/common/_schemas";
 

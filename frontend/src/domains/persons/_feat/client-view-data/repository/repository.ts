@@ -4,7 +4,7 @@
 
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {PersonInfoViewData} from "@/domains/persons/_feat/client-view-data/person-info/dataSchema.ts";
 import {PersonClientViewBaseURL} from "@/domains/persons/_feat/client-view-data/repository/baseURL.ts";
 import {
@@ -23,7 +23,7 @@ export async function getFetchBrowsePersonsViewData(
         queries: {page, perPage, ...queries},
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }
 
 /** Fetches detailed information for a specific person based on their slug. */
@@ -36,5 +36,5 @@ export async function getFetchPersonInfoViewData(
         queries: {limit},
     });
 
-    return useFetchAPI({url, method: "GET"});
+    return handleFetchOperation({url, method: "GET"});
 }

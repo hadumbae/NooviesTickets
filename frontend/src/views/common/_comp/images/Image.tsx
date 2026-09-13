@@ -3,9 +3,9 @@
  */
 
 import {ImgHTMLAttributes, ReactElement, useState} from "react";
-import {NoImagePlaceholder} from "@/views/common/_comp";
+import {NoImagePlaceholder} from "@/views/common/_comp/images/NoImagePlaceholder.tsx";
 import {URLString} from "@/common/_schemas/strings/simple-strings/URLStringSchema.ts";
-import {cn} from "@/common/_feat";
+import {cn} from "@/common/_feat/handle-ui/cn.ts";
 
 /** Props for the Image component. */
 type ImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, "src" | "onError"> & {

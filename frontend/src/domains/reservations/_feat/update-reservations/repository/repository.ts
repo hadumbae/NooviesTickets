@@ -3,7 +3,7 @@
  */
 
 import {buildURL} from "@/common/_feat/fetch-api";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
 
 import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationSchema.ts";
@@ -24,7 +24,7 @@ export const patchUpdateReservationNotes = (
         path: `/update/${_id}/notes`
     });
 
-    return useFetchAPI({method: "PATCH", url, data});
+    return handleFetchOperation({method: "PATCH", url, data});
 }
 
 /** Resets the expiration TTL of a pending reservation to prevent timeout. */
@@ -36,7 +36,7 @@ export const patchResetReservationExpiry = (
         path: `/update/${_id}/expiry`
     });
 
-    return useFetchAPI({method: "PATCH", url});
+    return handleFetchOperation({method: "PATCH", url});
 }
 
 /** Transitions a reservation status to cancelled. */
@@ -48,7 +48,7 @@ export const patchCancelReservation = (
         path: `/update/${_id}/cancel`
     });
 
-    return useFetchAPI({method: "PATCH", url, data});
+    return handleFetchOperation({method: "PATCH", url, data});
 }
 
 /** Transitions a reservation status to refunded. */
@@ -60,5 +60,5 @@ export const patchRefundReservation = (
         path: `/update/${_id}/refund`
     });
 
-    return useFetchAPI({method: "PATCH", url, data});
+    return handleFetchOperation({method: "PATCH", url, data});
 }

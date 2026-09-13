@@ -2,12 +2,9 @@
  * @fileoverview Factory function for creating React Hook Form submit handlers with mutation lifecycle callbacks.
  */
 
-import {
-    handleFormSubmitError,
-    handleMutationCallback,
-    MutationFormResetConfig,
-    MutationResponseConfig
-} from "@/common/_feat";
+import {handleFormSubmitError} from "@/common/_feat/error-handling/handleFormSubmitError.ts";
+import {handleMutationCallback} from "@/common/_feat/handle-mutation-callback/handleMutationCallback.ts";
+import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data/mutationTypes.ts";
 import {DefaultValues, FieldValues, UseFormReturn} from "react-hook-form";
 import {UseMutateAsyncFunction} from "@tanstack/react-query";
 
@@ -40,7 +37,9 @@ export function createFormSubmitHandler<TFormValues extends FieldValues, TForm e
 ) {
     return async (values: TForm) => {
         try {
-            resetOnSubmit && form.reset(resetValues);
+            if (resetOnSubmit) {
+                form.reset(resetValues);
+            }
 
             handleMutationCallback({
                 message: submitMessage,
@@ -50,7 +49,9 @@ export function createFormSubmitHandler<TFormValues extends FieldValues, TForm e
             const data = await mutateAsync(values);
             console.log("Mutation Response:", data);
 
-            resetOnSuccess && form.reset(resetValues);
+            if (resetOnSuccess) {
+                form.reset(resetValues);
+            }
 
             handleMutationCallback({
                 message: successMessage,
@@ -59,7 +60,9 @@ export function createFormSubmitHandler<TFormValues extends FieldValues, TForm e
             });
         } catch (error: unknown) {
             handleFormSubmitError({form, error, displayMessage: errorMessage});
-            resetOnError && form.reset(resetValues);
+            if (resetOnError) {
+                form.reset(resetValues);
+            }
             onSubmitError?.(error);
         }
     };

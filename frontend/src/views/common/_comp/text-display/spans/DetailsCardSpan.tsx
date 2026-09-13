@@ -5,7 +5,7 @@
 import {ElementType, ReactElement} from 'react';
 import {cn} from "@/common/_feat";
 import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
-import {LoggerFunction} from "@/common/_feat/logger/Logger.types.ts";
+import {LoggerFunction} from "@/common/_feat/logger/Logger.ts";
 
 /** Props for the DetailsCardSpan component. */
 type SpanProps = {

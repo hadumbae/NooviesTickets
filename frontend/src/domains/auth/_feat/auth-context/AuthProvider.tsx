@@ -7,7 +7,7 @@ import {ReactElement, ReactNode, useEffect, useRef, useState} from "react";
 import {User, UserSchema} from "@/domains/users/_schema/user/UserSchema";
 import {getAuthExpireBy, setAuthExpireBy} from "@/domains/auth/_feat/storage";
 import {AuthContext, AuthUserContextValue} from "@/domains/auth/_feat/auth-context/AuthContext.ts";
-import {useAuthRefreshToken} from "@/domains/auth";
+import {useAuthRefreshToken} from "@/domains/auth/_feat/user-refresh/useAuthRefreshToken.ts";
 import {toast} from "react-toastify";
 import {DateTime} from "luxon";
 
@@ -71,7 +71,7 @@ export function AuthProvider(
         }, 1000 * 30);
 
         return () => clearInterval(interval);
-    }, [user]);
+    }, [user, refreshToken]);
 
     useEffect(() => {
         const interval = setInterval(() => {

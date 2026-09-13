@@ -9,7 +9,7 @@ import {parseJSON} from "@/common/_feat/use-fetch-api/json";
 import {executeFetch} from "@/common/_feat/use-fetch-api/fetch";
 import {clearLocalAuthUser} from "@/domains/auth/_feat/storage/clearLocalAuthUser.ts";
 import {isRefreshEligible} from "@/domains/auth/_feat/user-refresh/isRefreshEligible.ts";
-import {getUserAuthTokenRefreshPromise} from "@/domains/auth";
+import {getUserAuthTokenRefreshPromise} from "@/domains/auth/_feat/user-refresh/getUserAuthTokenRefreshPromise.ts";
 
 type useFetchAPIParams<TPayload> = {
     url: string;
@@ -19,12 +19,12 @@ type useFetchAPIParams<TPayload> = {
 };
 
 /** Performs a standardized fetch request with automatic JSON parsing and error handling. */
-export async function useFetchAPI<TReturns = unknown, TPayload = unknown>(
+export async function handleFetchOperation<TReturns = unknown, TPayload = unknown>(
     {url, data, signal, method = "GET"}: useFetchAPIParams<TPayload>
 ): Promise<FetchRequestReturns<TReturns>> {
     // --- SETUP ---
 
-    const funcName = useFetchAPI.name;
+    const funcName = handleFetchOperation.name;
 
     const isFormData = typeof FormData !== "undefined" && data instanceof FormData;
 

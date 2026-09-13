@@ -4,7 +4,8 @@
 
 import {z, ZodObject, ZodRawShape} from "zod";
 import {createContext, ReactElement, ReactNode, useContext} from "react";
-import {countActiveQueryOptions, useParsedSearchParams} from "@/common/_feat";
+import {countActiveQueryOptions} from "@/common/_feat/fetch-search-params/countActiveQueryOptions.ts";
+import {useParsedSearchParams} from "@/common/_feat/fetch-search-params/hooks/useParsedSearchParams.ts";
 import {InvalidContextError} from "@/common/_err";
 
 /** Configuration for the query options context factory. */

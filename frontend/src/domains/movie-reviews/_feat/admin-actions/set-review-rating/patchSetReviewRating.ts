@@ -1,7 +1,7 @@
 import {ObjectId} from "@/common/_schemas";
 import {MovieReviewAdminActionsBaseURL} from "@/domains/movie-reviews/_feat/admin-actions/baseURL";
 import {FetchRequestReturns} from "@/common/_types";
-import {buildURL, useFetchAPI} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/common/_feat";
 import {
     SetReviewRatingFormData
 } from "@/domains/movie-reviews/_feat/admin-actions/set-review-rating/SetReviewRatingFormSchema.ts";
@@ -23,5 +23,5 @@ export function patchSetReviewRating<TData = unknown>(
         path: `/rev/${reviewID}/ratings`,
     });
 
-    return useFetchAPI({url, method: "PATCH", data});
+    return handleFetchOperation({url, method: "PATCH", data});
 }

@@ -1,9 +1,9 @@
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 
 export * from "./bad-response";
 export * from "./json";
 export * from "./fetch";
 
 export {
-    useFetchAPI,
+    handleFetchOperation,
 }

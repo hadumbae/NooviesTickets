@@ -3,18 +3,17 @@
  */
 
 import {cloneElement, ReactElement} from "react";
-import {cn, FormFieldsetProps} from "@/common/_feat";
-import {SeatFormValues} from "@/domains/seats";
+import {cn} from "@/common/_feat/handle-ui/cn.ts";
+import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {SeatFormValues} from "@/domains/seats/_feat/submit-data/schema/SeatFormSchema.ts";
 import {useFormContext} from "react-hook-form";
 import {HookFormFieldsetConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
-import {
-    SeatSubmitFormCoordinateFieldset,
-    SeatSubmitFormDetailsFieldset,
-    SeatSubmitFormLayoutFieldset,
-    SeatSubmitFormNonSeatFieldset,
-    SeatSubmitFormRowFieldset,
-    SeatSubmitFormSeatFieldset
-} from "@/views/admin/seats";
+import {SeatSubmitFormCoordinateFieldset} from "@/views/admin/seats/_feat/submit-data/fieldsets/SeatSubmitFormCoordinateFieldset.tsx";
+import {SeatSubmitFormDetailsFieldset} from "@/views/admin/seats/_feat/submit-data/fieldsets/SeatSubmitFormDetailsFieldset.tsx";
+import {SeatSubmitFormLayoutFieldset} from "@/views/admin/seats/_feat/submit-data/fieldsets/SeatSubmitFormLayoutFieldset.tsx";
+import {SeatSubmitFormNonSeatFieldset} from "@/views/admin/seats/_feat/submit-data/fieldsets/SeatSubmitFormNonSeatFieldset.tsx";
+import {SeatSubmitFormRowFieldset} from "@/views/admin/seats/_feat/submit-data/fieldsets/SeatSubmitFormRowFieldset.tsx";
+import {SeatSubmitFormSeatFieldset} from "@/views/admin/seats/_feat/submit-data/fieldsets/SeatSubmitFormSeatFieldset.tsx";
 
 type ViewProps = FormFieldsetProps<SeatFormValues> & {
     isNestedView?: boolean;

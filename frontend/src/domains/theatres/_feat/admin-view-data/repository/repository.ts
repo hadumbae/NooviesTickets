@@ -9,7 +9,7 @@ import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.t
 import {TheatreDetailsViewData} from "@/domains/theatres/_feat/admin-view-data/schema/TheatreDetailsViewDataSchema.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 import {TheatreAdminViewDataBaseURL} from "@/domains/theatres/_feat/admin-view-data/repository/baseURL.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {
     TheatreShowingListViewData
 } from "@/domains/theatres/_feat/admin-view-data/schema/TheatreShowingListViewDataSchema.ts";
@@ -26,7 +26,7 @@ export function getFetchTheatreDetailsViewData(
         queries,
     });
 
-    return useFetchAPI({url: url, method: "GET"});
+    return handleFetchOperation({url: url, method: "GET"});
 }
 
 export function getFetchTheatreShowingListViewData(
@@ -38,5 +38,5 @@ export function getFetchTheatreShowingListViewData(
         queries,
     });
 
-    return useFetchAPI({url: url, method: "GET"});
+    return handleFetchOperation({url: url, method: "GET"});
 }

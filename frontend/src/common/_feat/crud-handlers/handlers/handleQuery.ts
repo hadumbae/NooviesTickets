@@ -7,13 +7,13 @@
 import {PaginationValues} from "@/common/_feat/fetch-pagination-search-params";
 import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
 import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {useFetchAPI} from "@/common/_feat/use-fetch-api/useFetchAPI.ts";
+import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
 import {buildURL} from "@/common/_feat/fetch-api";
 
 /**
  * Composite parameters for document aggregation queries.
  */
-export type FindDocumentsByQueryConfig<TQueries extends Record<string, any>> = {
+export type FindDocumentsByQueryConfig<TQueries extends Record<string, unknown>> = {
     queries?: TQueries;
     pagination?: Partial<PaginationValues>;
     config?: RequestOptions;
@@ -36,6 +36,6 @@ export function handleQuery(baseURL: string) {
             },
         });
 
-        return useFetchAPI({url, method: "GET"});
+        return handleFetchOperation({url, method: "GET"});
     };
 }
