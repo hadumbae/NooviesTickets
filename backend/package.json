@@ -18,6 +18,7 @@
   "dependencies": {
     "@graphql-tools/load-files": "7.0.1",
     "@graphql-tools/merge": "9.1.9",
+    "@noovies-tickets/common": "*",
     "@types/bcryptjs": "2.4.6",
     "@types/cookie-parser": "1.4.8",
     "@types/cors": "2.8.17",

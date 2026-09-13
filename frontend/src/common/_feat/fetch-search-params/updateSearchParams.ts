@@ -15,7 +15,7 @@ export type SearchParamValue =
  */
 type UpdateParams = {
     searchParams: URLSearchParams;
-    updateData: Record<string, SearchParamValue>;
+    updateData: Record<string, unknown>;
 };
 
 /**
@@ -34,7 +34,7 @@ export default function updateSearchParams(
     const updatedSearchParams = new URLSearchParams(searchParams.toString());
 
     const keysToRetain = Object.keys(updateData);
-    for (let keyToDelete of updatedSearchParams.keys()) {
+    for (const keyToDelete of updatedSearchParams.keys()) {
         if (!keysToRetain.includes(keyToDelete)) {
             updatedSearchParams.delete(keyToDelete);
         }
@@ -46,7 +46,7 @@ export default function updateSearchParams(
         } else if (Array.isArray(value)) {
             updatedSearchParams.delete(key);
 
-            for (let val of value) {
+            for (const val of value) {
                 updatedSearchParams.append(key, val.toString())
             }
         } else if (typeof value === 'object') {
