@@ -9,6 +9,8 @@ import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
 import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {IDRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import {RoleTypeModel} from "@/domains/role-types/_models/RoleType.model";
@@ -49,21 +51,21 @@ const routes: CRUDRoute<RoleTypeSchemaFields>[] = [
         /** Retrieval of a specific role by its MongoDB Object ID. */
         path: `/item/:_id`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: findById
     },
     {
         /** Partial update of role attributes (e.g., changing the role name or department). */
         path: `/item/:_id`,
         method: "patch",
-        middleware: [isAuth, isAdmin, validateZodSchema(RoleTypeInputSchema)],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema}), validateZodSchema(RoleTypeInputSchema)],
         handler: update
     },
     {
         /** Permanent removal of a role definition. */
         path: `/item/:_id`,
         method: "delete",
-        middleware: [isAuth, isAdmin],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: destroy
     },
 ];

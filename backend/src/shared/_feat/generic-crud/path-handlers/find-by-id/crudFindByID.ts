@@ -8,8 +8,8 @@ import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {Request, Response} from "express";
 import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils";
 import type {FindDocumentByIdConfig} from "@/shared/_feat/generic-crud/path-handlers/find-by-id/crudFindByID.types";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
 import type {CRUDControllerHandlerConfig} from "@/shared/_feat/generic-crud/types/CRUDControllerHandler";
+import type {IDRouteConfig} from "@/shared/_schema/route-config";
 
 /**
  * Retrieves a document from the database using its primary key, applying population and virtuals.
@@ -36,13 +36,12 @@ export const findById = <TModel extends BaseModel>(
     {model, populatePaths}: CRUDControllerHandlerConfig<TModel>
 ) => {
     return async (req: Request, res: Response) => {
-        const {_id} = req.params;
-        const identifier = isValidObjectId(_id);
+        const {_id} = req.parsedConfig as IDRouteConfig;
         const options = fetchRequestOptions(req);
 
         const item = await findDocumentById({
             model,
-            _id: identifier,
+            _id,
             populatePaths,
             options,
         });

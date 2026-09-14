@@ -9,6 +9,7 @@ import type {Request, Response} from "express";
 import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils";
 import type {FindDocumentBySlugConfig} from "@/shared/_feat/generic-crud/path-handlers/find-by-slug/crudFindBySlug.types";
 import type {CRUDControllerHandlerConfig} from "@/shared/_feat/generic-crud/types/CRUDControllerHandler";
+import type {SlugRouteConfig} from "@/shared/_schema/route-config";
 
 /**
  * Executes a database lookup for a document matching a specific slug string.
@@ -35,7 +36,7 @@ export const findBySlug = <TModel extends BaseModelWithSlug>(
     {model, populatePaths}: CRUDControllerHandlerConfig<TModel>
 ) => {
     return async (req: Request, res: Response) => {
-        const {slug} = req.params;
+        const {slug} = req.parsedConfig as SlugRouteConfig;
         const options = fetchRequestOptions(req);
 
         const item = await findDocumentBySlug({

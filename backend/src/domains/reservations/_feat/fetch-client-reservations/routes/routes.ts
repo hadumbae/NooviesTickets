@@ -13,6 +13,8 @@ import {
     CurrentUserReservationQueryFilterSchema,
     CurrentUserReservationQuerySortSchema,
 } from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {ClientReservationsRouteConfigSchema} from "@/domains/reservations/_feat/fetch-client-reservations/schema";
 
 const router = Router();
 const modelName = ReservationModel.modelName;
@@ -24,6 +26,7 @@ router.get(
     "/user/paginated",
     [
         isAuth,
+        validateRequestConfig({schema: ClientReservationsRouteConfigSchema}),
         parseQueryFilters({modelName, schema: CurrentUserReservationQueryFilterSchema}),
         parseQuerySorts({modelName, schema: CurrentUserReservationQuerySortSchema}),
     ],

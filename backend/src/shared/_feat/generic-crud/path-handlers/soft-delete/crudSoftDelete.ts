@@ -7,8 +7,8 @@ import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {SoftDeleteDocumentConfig} from "@/shared/_feat/generic-crud/path-handlers/soft-delete/crudSoftDelete.types";
 import {InvalidMethodError} from "@/shared/errors/InvalidMethodError";
 import type {Request, Response} from "express";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
 import type {CRUDControllerHandlerConfig} from "@/shared/_feat/generic-crud/types/CRUDControllerHandler";
+import type {IDRouteConfig} from "@/shared/_schema/route-config";
 
 /**
  * Executes a soft-delete by invoking a document's internal `softDelete` method.
@@ -40,12 +40,11 @@ export const softDelete = <TModel extends BaseModel>(
     {model}: CRUDControllerHandlerConfig<TModel>
 ) => {
     return async (req: Request, res: Response) => {
-        const {_id} = req.params;
-        const identifier = isValidObjectId(_id);
+        const {_id} = req.parsedConfig as IDRouteConfig;
 
         const item = await softDeleteDocument({
             model,
-            _id: identifier,
+            _id,
         });
 
         return res.status(200).json(item);

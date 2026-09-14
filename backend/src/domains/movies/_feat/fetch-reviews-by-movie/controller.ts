@@ -3,14 +3,16 @@
  */
 
 import type {Request, Response} from "express";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
-import {QueryUtils} from "@/shared/services/query-utils/QueryUtils";
 import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
 import {
     fetchFeaturedReviewsByMovie,
     fetchPaginatedReviewsByMovie,
     fetchReviewDetailsForMovie
 } from "@/domains/movies/_feat/fetch-reviews-by-movie/service";
+import type {
+    FeaturedMovieReviewsRouteConfig,
+    MovieReviewsPaginatedRouteConfig
+} from "@/domains/movies/_feat/fetch-reviews-by-movie/schema";
 
 /**
  * Handles paginated movie review retrieval.
@@ -18,11 +20,7 @@ import {
 export async function getReviewsByMovie(
     req: Request, res: Response
 ): Promise<Response> {
-    const {_id} = req.params;
-    const movieID = isValidObjectId(_id);
-
-    const {page, perPage} = QueryUtils.fetchPaginationFromQuery(req);
-    const options = QueryUtils.fetchOptionsFromQuery(req);
+    const {_id: movieID, page, perPage, ...options} = req.parsedConfig as MovieReviewsPaginatedRouteConfig;
 
     const data = await fetchPaginatedReviewsByMovie({
         movieID,
@@ -42,11 +40,8 @@ export async function getReviewsByMovie(
 export async function getFeaturedReviewsByMovie(
     req: Request, res: Response
 ): Promise<Response> {
-    const {_id} = req.params;
-
+    const {_id: movieID, ...options} = req.parsedConfig as FeaturedMovieReviewsRouteConfig;
     const userID = fetchRequestUserId(req);
-    const movieID = isValidObjectId(_id);
-    const options = QueryUtils.fetchOptionsFromQuery(req);
 
     const data = await fetchFeaturedReviewsByMovie({
         movieID,
@@ -63,13 +58,8 @@ export async function getFeaturedReviewsByMovie(
 export async function getReviewDetailsByMovie(
     req: Request, res: Response
 ): Promise<Response> {
-    const {_id} = req.params;
-
+    const {_id: movieID, page, perPage, ...options} = req.parsedConfig as MovieReviewsPaginatedRouteConfig;
     const userID = fetchRequestUserId(req);
-    const movieID = isValidObjectId(_id);
-
-    const {page, perPage} = QueryUtils.fetchPaginationFromQuery(req);
-    const options = QueryUtils.fetchOptionsFromQuery(req);
 
     const data = await fetchReviewDetailsForMovie({
         userID,

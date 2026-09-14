@@ -11,6 +11,8 @@ import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, findBySlug, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
 import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import type {MovieSchemaFields} from "@/domains/movies/_models/movie/Movie.types";
@@ -52,28 +54,28 @@ const routes: CRUDRoute<MovieSchemaFields>[] = [
         /** Retrieval of a specific Movie by its MongoDB Object ID. */
         path: `/item/:_id`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: findById
     },
     {
         /** Retrieval of a specific Movie by its SEO-friendly slug. */
         path: `/item/:slug/slug`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: SlugRouteConfigSchema})],
         handler: findBySlug
     },
     {
         /** Partial update of an existing Movie's metadata (e.g. availability, title, genres). */
         path: `/item/:_id`,
         method: "patch",
-        middleware: [isAuth, isAdmin, validateZodSchema(MovieInputSchema)],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema}), validateZodSchema(MovieInputSchema)],
         handler: update
     },
     {
         /** Permanent deletion of a Movie record. */
         path: `/item/:_id`,
         method: "delete",
-        middleware: [isAuth, isAdmin],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: destroy
     },
 ];

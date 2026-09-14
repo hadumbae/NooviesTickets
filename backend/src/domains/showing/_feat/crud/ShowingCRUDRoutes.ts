@@ -19,6 +19,8 @@ import {
     update
 } from "@/shared/_feat/generic-crud/path-handlers";
 import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
@@ -63,28 +65,28 @@ const routes: CRUDRoute<ShowingSchemaFields>[] = [
         /** Retrieval of a specific showing by its MongoDB Object ID. */
         path: `/item/:_id`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: findById
     },
     {
         /** Retrieval of a specific showing via its unique slug. */
         path: `/item/:slug/slug`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: SlugRouteConfigSchema})],
         handler: findBySlug
     },
     {
         /** Update of showtime details (e.g., status changes, price updates, or time shifts). */
         path: `/item/:_id`,
         method: "patch",
-        middleware: [isAuth, isAdmin, validateZodSchema(ShowingInputSchema)],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema}), validateZodSchema(ShowingInputSchema)],
         handler: update
     },
     {
         /** Cancellation/Removal of a scheduled showing. */
         path: `/item/:_id`,
         method: "delete",
-        middleware: [isAuth, isAdmin],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: destroy
     },
 ];

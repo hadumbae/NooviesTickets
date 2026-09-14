@@ -9,6 +9,8 @@ import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, findBySlug, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
 import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import {TheatreQueryMatchStageSchema, TheatreQuerySortStageSchema} from "@/domains/theatre/_feat/validate-query";
@@ -48,28 +50,28 @@ const routes: CRUDRoute<TheatreSchemaFields>[] = [
         /** Retrieval of a specific theatre by its MongoDB Object ID. */
         path: `/item/:_id`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: findById
     },
     {
         /** Retrieval of a specific theatre via its SEO-friendly slug. */
         path: `/item/:slug/slug`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: SlugRouteConfigSchema})],
         handler: findBySlug
     },
     {
         /** Partial update of theatre details. */
         path: `/item/:_id`,
         method: "patch",
-        middleware: [isAuth, isAdmin, validateZodSchema(TheatreInputSchema)],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema}), validateZodSchema(TheatreInputSchema)],
         handler: update
     },
     {
         /** Permanent removal of a theatre record from the database. */
         path: `/item/:_id`,
         method: "delete",
-        middleware: [isAuth, isAdmin],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: destroy
     },
 ];

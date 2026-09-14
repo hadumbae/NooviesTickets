@@ -19,6 +19,8 @@ import {
     update
 } from "@/shared/_feat/generic-crud/path-handlers";
 import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import type {MovieCreditSchemaFields} from "@/domains/movie-credits/_models/credit/MovieCredit.types";
@@ -65,28 +67,28 @@ const routes: CRUDRoute<MovieCreditSchemaFields>[] = [
         /** Retrieval of a specific credit record by its MongoDB Object ID. */
         path: `/item/:_id`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: findById
     },
     {
         /** Retrieval of a specific credit via its SEO-friendly slug. */
         path: `/item/:slug/slug`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: SlugRouteConfigSchema})],
         handler: findBySlug
     },
     {
         /** Partial update of credit metadata (e.g., changing billing order or character name). */
         path: `/item/:_id`,
         method: "patch",
-        middleware: [isAuth, isAdmin, validateZodSchema(MovieCreditInputSchema)],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema}), validateZodSchema(MovieCreditInputSchema)],
         handler: update
     },
     {
         /** Removal of a credit record from a movie. */
         path: `/item/:_id`,
         method: "delete",
-        middleware: [isAuth, isAdmin],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: destroy
     },
 ];

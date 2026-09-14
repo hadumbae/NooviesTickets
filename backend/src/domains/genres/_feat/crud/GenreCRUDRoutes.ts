@@ -17,6 +17,8 @@ import {GenreModel} from "@/domains/genres/_models/genre";
 import {genreCreate} from "@/domains/genres/_feat/crud/genreCreate";
 import {genreUpdate} from "@/domains/genres/_feat/crud/genreUpdate";
 import {destroy, find, findById, findBySlug, paginated} from "@/shared/_feat/generic-crud/path-handlers";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import {GenreInputSchema} from "@/domains/genres/_feat/validate-submit";
 import {GenreQueryMatchStageSchema, GenreQuerySortStageSchema} from "@/domains/genres/_feat/validate-query";
 
@@ -49,25 +51,25 @@ const routes: CRUDRoute<GenreSchemaFields>[] = [
     {
         path: `/item/:_id`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: findById
     },
     {
         path: `/item/:slug/slug`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: SlugRouteConfigSchema})],
         handler: findBySlug
     },
     {
         path: `/item/:_id`,
         method: "patch",
-        middleware: [isAuth, isAdmin, validateZodSchema(GenreInputSchema)],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema}), validateZodSchema(GenreInputSchema)],
         handler: genreUpdate
     },
     {
         path: `/item/:_id`,
         method: "delete",
-        middleware: [isAuth, isAdmin],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: destroy
     },
 ];

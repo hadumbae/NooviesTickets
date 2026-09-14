@@ -4,16 +4,16 @@
 
 import type {Request, Response} from "express";
 import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
 import {updateDocument} from "@/shared/_feat/generic-crud/path-handlers";
 import {GenreModel, handleGenreDuplicateIndex} from "@/domains/genres/_models/genre";
+import type {IDRouteConfig} from "@/shared/_schema/route-config";
 
 /**
  * Updates a Genre document by ID, handling field synchronization and unsetting.
  */
 export function genreUpdate() {
     return async (req: Request, res: Response) => {
-        const itemID = isValidObjectId(req.params._id);
+        const {_id} = req.parsedConfig as IDRouteConfig;
         const options = fetchRequestOptions(req);
 
         const data = req.validatedBody;
@@ -21,7 +21,7 @@ export function genreUpdate() {
 
         const item = await updateDocument({
             model: GenreModel,
-            _id: itemID,
+            _id,
             options,
             data,
             unset,

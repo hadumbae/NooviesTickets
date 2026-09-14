@@ -8,6 +8,8 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth.js";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler.js";
 import * as UserFavouriteController from "@/domains/users/_feat/manage-user-favourties/controller/controller";
 import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema.js";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {UserFavouriteMoviesRouteConfigSchema} from "@/domains/users/_feat/manage-user-favourties/schema";
 import {UserFavouriteMovieInputSchema} from "@/domains/users/validation/submit/UserFavouriteMovieInputSchema";
 
 const router = Router();
@@ -15,7 +17,7 @@ const router = Router();
 /** Lists favourites for the current user. */
 router.get(
     "/favourites/user",
-    [isAuth],
+    [isAuth, validateRequestConfig({schema: UserFavouriteMoviesRouteConfigSchema})],
     asyncHandler(UserFavouriteController.getFavouriteMovies)
 );
 

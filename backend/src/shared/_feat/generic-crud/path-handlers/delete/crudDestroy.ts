@@ -6,9 +6,9 @@
 import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {Request, Response} from "express";
 import createHttpError from "http-errors";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
 import type {DeleteDocumentConfig} from "@/shared/_feat/generic-crud/path-handlers/delete/crudDestroy.types";
 import type {CRUDControllerHandlerConfig} from "@/shared/_feat/generic-crud/types/CRUDControllerHandler";
+import type {IDRouteConfig} from "@/shared/_schema/route-config";
 
 /**
  * Deletes a document by its ID after verifying its existence.
@@ -32,10 +32,9 @@ export const destroy = <TModel extends BaseModel>(
     {model}: CRUDControllerHandlerConfig<TModel>
 ) => {
     return async (req: Request, res: Response) => {
-        const {_id} = req.params;
-        const itemID = isValidObjectId(_id);
+        const {_id} = req.parsedConfig as IDRouteConfig;
 
-        await deleteDocument({model, _id: itemID});
+        await deleteDocument({model, _id});
 
         return res.status(200).json({message: "Deleted."});
     }

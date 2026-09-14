@@ -9,13 +9,18 @@ import * as MyMovieReviewController from "@/domains/movie-reviews/_feat/current-
 import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema.js";
 import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
 import {MyReviewIDRouteConfigSchema} from "@/domains/movie-reviews/_feat/current-user-reviews/schema/MyReviewIDRouteConfigSchema";
+import {
+    MyMovieReviewListRouteConfigSchema,
+    MyMovieReviewOptionsRouteConfigSchema,
+    MyReviewUpdateRouteConfigSchema
+} from "@/domains/movie-reviews/_feat/current-user-reviews/schema";
 import {MovieReviewCreateInputSchema, MovieReviewUpdateInputSchema} from "@/domains/movie-reviews/_feat/validate-submit/schemas";
 
 const router = Router();
 
 router.get(
     "/current/fetch",
-    [isAuth],
+    [isAuth, validateRequestConfig({schema: MyMovieReviewListRouteConfigSchema})],
     asyncHandler(MyMovieReviewController.getFetchCurrentUserMovieReviewList),
 );
 
@@ -32,6 +37,7 @@ router.post(
     "/current/create",
     [
         isAuth,
+        validateRequestConfig({schema: MyMovieReviewOptionsRouteConfigSchema}),
         validateZodSchema(MovieReviewCreateInputSchema),
     ],
     asyncHandler(MyMovieReviewController.postCreateMovieReviewForCurrentUser),
@@ -41,7 +47,7 @@ router.patch(
     "/current/update/:reviewID",
     [
         isAuth,
-        validateRequestConfig({schema: MyReviewIDRouteConfigSchema}),
+        validateRequestConfig({schema: MyReviewUpdateRouteConfigSchema}),
         validateZodSchema(MovieReviewUpdateInputSchema),
     ],
     asyncHandler(MyMovieReviewController.patchUpdateMovieReviewForCurrentUser),

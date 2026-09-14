@@ -10,9 +10,9 @@ import {isDuplicateIndexError} from "@/shared/utility/mongoose/isDuplicateIndexE
 import {handleDuplicateIndexError} from "@/shared/utility/mongoose/handleDuplicateIndexError";
 import type {UpdateDocumentConfig} from "@/shared/_feat/generic-crud/path-handlers/update/crudUpdate.types";
 import {DocumentVersionError} from "@/shared/errors/DocumentVersionError";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
 import type {CRUDControllerHandlerConfig} from "@/shared/_feat/generic-crud/types/CRUDControllerHandler";
 import type {ControllerAsyncFunc} from "@/shared/_types/controllers/ControllerTypes";
+import type {IDRouteConfig} from "@/shared/_schema/route-config";
 
 /**
  * Manages document retrieval, mutation, and persistence with built-in retry logic for Mongoose version conflicts.
@@ -72,15 +72,14 @@ export function update<TModel extends BaseModel>(
         const unset = req.unsetFields;
         const options = fetchRequestOptions(req);
 
-        const {_id} = req.params;
-        const itemID = isValidObjectId(_id);
+        const {_id} = req.parsedConfig as IDRouteConfig;
 
         const item = await updateDocument({
             model,
             options,
             data,
             unset,
-            _id: itemID,
+            _id,
             populatePaths,
             onDuplicateIndex,
         });

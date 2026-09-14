@@ -14,6 +14,8 @@ import {ScreenModel, type ScreenSchemaFields} from "@/domains/screen/_models/scr
 import {ScreenInputSchema} from "@/domains/screen/_feat/validate-submit";
 import {ScreenQueryMatchStageSchema, ScreenQuerySortStageSchema} from "@/domains/screen/_feat/validate-query";
 import validateZodSchemaAsync from "@/shared/utility/schema/validators/validateZodSchemaAsync";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import {
     ScreenPopulationPaths,
     ScreenPopulationPipelines,
@@ -28,6 +30,7 @@ import {
     paginated,
     update
 } from "@/shared/_feat/generic-crud/path-handlers";
+import {deriveTheatreScreenData} from "@/domains/screen/_feat/crud/deriveTheatreScreenData";
 
 const modelName = ScreenModel.modelName;
 const matchSchema = ScreenQueryMatchStageSchema;
@@ -62,28 +65,28 @@ const routes: CRUDRoute<ScreenSchemaFields>[] = [
         /** Retrieval of a specific Screen by Object ID. */
         path: `/item/:_id`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: findById
     },
     {
         /** Retrieval of a specific Screen by slug. */
         path: `/item/:slug/slug`,
         method: "get",
-        middleware: [isAuth],
+        middleware: [isAuth, validateRequestConfig({schema: SlugRouteConfigSchema})],
         handler: findBySlug
     },
     {
         /** Partial update of an existing Screen record. */
         path: `/item/:_id`,
         method: "patch",
-        middleware: [isAuth, isAdmin, validateZodSchemaAsync(ScreenInputSchema)],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema}), validateZodSchemaAsync(ScreenInputSchema)],
         handler: update
     },
     {
         /** Permanent deletion of a Screen record. */
         path: `/item/:_id`,
         method: "delete",
-        middleware: [isAuth, isAdmin],
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: destroy
     },
 ];
@@ -95,7 +98,10 @@ const router: Router = buildCRUDRoutes<ScreenSchemaFields>({
     model: ScreenModel,
     routes: routes,
     populatePaths: ScreenPopulationPaths,
+    deriveData: deriveTheatreScreenData,
 });
+
+
 
 /**
  * Custom aggregation endpoint for complex queries and data reporting.

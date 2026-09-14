@@ -4,14 +4,18 @@
  */
 
 import type {Request, Response} from "express";
-import {QueryUtils} from "@/shared/services/query-utils/QueryUtils.js";
 import * as MyMovieReviewService from "@/domains/movie-reviews/_feat/current-user-reviews/service";
 import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
 import type {
     MovieReviewCreateInputData,
     MovieReviewUpdateInputData
 } from "@/domains/movie-reviews/_feat/validate-submit/schemas";
-import type {MyReviewIDRouteConfig} from "@/domains/movie-reviews/_feat/current-user-reviews/schema";
+import type {
+    MyMovieReviewListRouteConfig,
+    MyMovieReviewOptionsRouteConfig,
+    MyReviewIDRouteConfig,
+    MyReviewUpdateRouteConfig
+} from "@/domains/movie-reviews/_feat/current-user-reviews/schema";
 
 /**
  * Retrieves a single Movie Review owned by the authenticated user.
@@ -34,8 +38,7 @@ export async function getFetchCurrentUserMovieReviewList(
     req: Request, res: Response
 ): Promise<Response> {
     const userID = fetchRequestUserId(req);
-    const {page, perPage} = QueryUtils.fetchPaginationFromQuery(req);
-    const {populate, virtuals} = QueryUtils.fetchOptionsFromQuery(req);
+    const {page, perPage, populate, virtuals} = req.parsedConfig as MyMovieReviewListRouteConfig;
 
     const data = await MyMovieReviewService.fetchCurrentUserMovieReviewList({
         userID,
@@ -56,7 +59,7 @@ export async function postCreateMovieReviewForCurrentUser(
     req: Request, res: Response
 ): Promise<Response> {
     const userID = fetchRequestUserId(req);
-    const {populate, virtuals} = QueryUtils.fetchOptionsFromQuery(req);
+    const {populate, virtuals} = req.parsedConfig as MyMovieReviewOptionsRouteConfig;
 
     const data = req.validatedBody as MovieReviewCreateInputData;
 
@@ -78,8 +81,7 @@ export async function patchUpdateMovieReviewForCurrentUser(
     req: Request, res: Response
 ): Promise<Response> {
     const userID = fetchRequestUserId(req);
-    const {populate, virtuals} = QueryUtils.fetchOptionsFromQuery(req);
-    const {reviewID} = req.parsedConfig as MyReviewIDRouteConfig;
+    const {reviewID, populate, virtuals} = req.parsedConfig as MyReviewUpdateRouteConfig;
 
     const data = req.validatedBody as MovieReviewUpdateInputData;
     const unset = req.unsetFields;

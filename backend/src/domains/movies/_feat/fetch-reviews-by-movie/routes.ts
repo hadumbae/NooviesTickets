@@ -7,6 +7,11 @@ import { Router } from "express";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import * as MovieBrowseController from "@/domains/movies/_feat/fetch-reviews-by-movie/controller";
+import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {
+    FeaturedMovieReviewsRouteConfigSchema,
+    MovieReviewsPaginatedRouteConfigSchema
+} from "@/domains/movies/_feat/fetch-reviews-by-movie/schema";
 
 const router = Router();
 
@@ -15,7 +20,7 @@ const router = Router();
  */
 router.get(
     "/item/:_id/reviews",
-    [isAuth],
+    [isAuth, validateRequestConfig({schema: MovieReviewsPaginatedRouteConfigSchema})],
     asyncHandler(MovieBrowseController.getReviewsByMovie),
 );
 
@@ -24,7 +29,7 @@ router.get(
  */
 router.get(
     "/item/:_id/reviews/details",
-    [isAuth],
+    [isAuth, validateRequestConfig({schema: MovieReviewsPaginatedRouteConfigSchema})],
     asyncHandler(MovieBrowseController.getReviewDetailsByMovie),
 );
 
@@ -33,7 +38,7 @@ router.get(
  */
 router.get(
     "/item/:_id/reviews/featured",
-    [isAuth],
+    [isAuth, validateRequestConfig({schema: FeaturedMovieReviewsRouteConfigSchema})],
     asyncHandler(MovieBrowseController.getFeaturedReviewsByMovie),
 );
 

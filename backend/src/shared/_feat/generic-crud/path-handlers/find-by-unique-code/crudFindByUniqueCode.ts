@@ -11,6 +11,7 @@ import type {
 import type {Request, Response} from "express";
 import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils";
 import type {CRUDControllerHandlerConfig} from "@/shared/_feat/generic-crud/types/CRUDControllerHandler";
+import type {UniqueCodeRouteConfig} from "@/shared/_schema/route-config";
 
 /**
  * Performs a database lookup for a document using its system-wide unique identifier.
@@ -37,7 +38,7 @@ export const findByUniqueCode = <TModel extends BaseModelWithUniqueCode>(
     {model, populatePaths}: CRUDControllerHandlerConfig<TModel>
 ) => {
     return async (req: Request, res: Response) => {
-        const {uniqueCode} = req.params;
+        const {uniqueCode} = req.parsedConfig as UniqueCodeRouteConfig;
         const options = fetchRequestOptions(req);
 
         const item = await findDocumentByUniqueCode({

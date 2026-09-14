@@ -1,18 +1,10 @@
+/**
+ * @fileoverview Zod schema definitions and types for booking-related error codes.
+ */
+
 import {z} from "zod";
 
-/**
- * @file BookingErrorCode.schema.ts
- *
- * Zod schema and types for booking-related error codes.
- */
-
-/**
- * Supported booking error code literals.
- *
- * @remarks
- * These codes are intended for client-safe error handling
- * and should remain stable once exposed.
- */
+/** List of supported booking error code literals. */
 export const BOOKING_ERROR_CODES = [
     "ERR_SCREEN_FULL",
     "ERR_SHOWING_CANCELLED",
@@ -25,13 +17,7 @@ export const BOOKING_ERROR_CODES = [
     "ERR_UNKNOWN_ERROR",
 ] as const;
 
-/**
- * Zod enum schema for {@link BOOKING_ERROR_CODES}.
- *
- * @remarks
- * Provides user-friendly error messages for invalid values
- * and invalid input types.
- */
+/** Schema for validating booking error code values with custom error messages. */
 export const BookingErrorCodeSchema = z.enum(
     BOOKING_ERROR_CODES,
     {
@@ -49,7 +35,5 @@ export const BookingErrorCodeSchema = z.enum(
     }
 );
 
-/**
- * Inferred booking error code union type.
- */
+/** Parsed type representation for booking error codes. */
 export type BookingErrorCode = z.infer<typeof BookingErrorCodeSchema>;

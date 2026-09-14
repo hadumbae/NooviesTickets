@@ -6,22 +6,22 @@
 import type {Request, Response} from 'express';
 import type {ControllerAsyncFunc} from "@/shared/_types/controllers/ControllerTypes";
 import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
-import {QueryUtils} from "@/shared/services/query-utils/QueryUtils.js";
 import * as UserFavouriteService from "@/domains/users/_feat/manage-user-favourties/service/service";
 import type {UserFavouriteMovieInput} from "@/domains/users/validation/submit/UserFavouriteMovieInputSchema";
 import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId.js";
+import type {UserFavouriteMoviesRouteConfig} from "@/domains/users/_feat/manage-user-favourties/schema";
 
 /** Returns paginated favourites for the current user. */
 export const getFavouriteMovies: ControllerAsyncFunc = async (
     req: Request, res: Response
 ): Promise<Response> => {
     const userID = fetchRequestUserId(req);
-    const {page, perPage} = QueryUtils.fetchPaginationFromQuery(req);
+    const {page, perPage} = req.parsedConfig as UserFavouriteMoviesRouteConfig;
 
     const paginatedMovies = await UserFavouriteService.fetchUserFavourites({
         userID,
-        page: page ?? 1,
-        perPage: perPage ?? 10,
+        page,
+        perPage,
     });
 
     return res.status(200).json(paginatedMovies);
