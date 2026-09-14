@@ -4,27 +4,32 @@
  */
 
 import {z} from "zod";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {URLParamPositiveNumberSchema} from "@/shared/schema/url/URLParamPositiveNumberSchema";
-import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
-import {URLParamNonNegativeNumberSchema} from "@/shared/schema/url/URLParamNonNegativeNumberSchema";
+import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {
+    BooleanValueSchema,
+    NonNegativeNumberSchema,
+    PositiveNumberSchema,
+    preprocessToBoolean,
+    preprocessToNumber,
+    SeatLayoutTypeSchema,
+    SeatTypeSchema
+} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
-import {SeatLayoutTypeSchema, SeatTypeSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining match-level filters for Seat queries.
  */
 export const SeatQueryMatchFiltersSchema = z.object({
-    _id: URLParamObjectIDSchema,
+    _id: ObjectIdSchema.optional(),
     row: URLParamRegexPatternSchema,
-    seatNumber: URLParamPositiveNumberSchema,
+    seatNumber: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
     seatLabel: URLParamRegexPatternSchema,
     seatType: SeatTypeSchema.optional(),
     layoutType: SeatLayoutTypeSchema.optional(),
-    isAvailable: URLParamBooleanSchema,
-    theatre: URLParamObjectIDSchema,
-    screen: URLParamObjectIDSchema,
-    priceMultiplier: URLParamNonNegativeNumberSchema,
+    isAvailable: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    theatre: ObjectIdSchema.optional(),
+    screen: ObjectIdSchema.optional(),
+    priceMultiplier: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
 });
 
 /**

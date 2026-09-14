@@ -3,8 +3,17 @@
  */
 
 import {z} from "zod";
-import {IANATimezoneSchema, NumberValueSchema, StringValueSchema, preprocessToNumber, PositiveNumberSchema, IpSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
+import {
+    BooleanValueSchema,
+    IANATimezoneSchema,
+    IpSchema,
+    NonNegativeNumberSchema,
+    NumberValueSchema,
+    PositiveNumberSchema,
+    preprocessToBoolean,
+    preprocessToNumber,
+    StringValueSchema
+} from "@noovies-tickets/common";
 
 /** Zod validation schema for application environment variables. */
 export const EnvironmentVariablesSchema = z.object({
@@ -15,11 +24,11 @@ export const EnvironmentVariablesSchema = z.object({
     CLOUDINARY_CLOUD_NAME: StringValueSchema,
     CLOUDINARY_API_KEY: StringValueSchema,
     CLOUDINARY_API_SECRET: StringValueSchema,
-    USE_MOCKED_IP: URLParamBooleanSchema,
+    USE_MOCKED_IP: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
     MOCKED_CLIENT_IP: IpSchema,
     IPIFY_KEY: StringValueSchema,
     JWT_SECRET: StringValueSchema,
-    REQUIRE_SECURE_COOKIES: URLParamBooleanSchema,
+    REQUIRE_SECURE_COOKIES: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
     PAGINATION_PAGE_DEFAULT: preprocessToNumber(PositiveNumberSchema).catch(1),
     PAGINATION_PER_PAGE_DEFAULT: preprocessToNumber(PositiveNumberSchema).catch(10),
     CREDENTIALS_EXPIRY_DURATION: preprocessToNumber(PositiveNumberSchema).catch(15),

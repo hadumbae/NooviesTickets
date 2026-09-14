@@ -3,11 +3,11 @@
  */
 
 import {z} from "zod";
-import {MongooseNumericSortSchema} from "@/shared/schema/url/URLParamMongooseSortOrderSchema";
+import {MongooseNumericSortOrderSchema} from "@noovies-tickets/common";
 
 /** Schema for validating sort key parameters for genre queries. */
 export const GenreQueryMatchSortsSchema = z.object({
-    sortByName: MongooseNumericSortSchema.optional(),
+    sortByName: MongooseNumericSortOrderSchema.optional(),
 });
 
 /** Inferred type for genre query sort options. */

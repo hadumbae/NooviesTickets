@@ -5,13 +5,13 @@
 import {z} from "zod";
 import {ReservationStatusSchema, ReservationTypeSchema} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
+import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
 
 /** Zod schema for validating the base query parameters of a reservation. */
 export const ReservationBaseQueryFilterSchema = z.object({
-    movie: URLParamObjectIDSchema,
-    user: URLParamObjectIDSchema,
-    showing: URLParamObjectIDSchema,
+    movie: ObjectIdSchema.optional(),
+    user: ObjectIdSchema.optional(),
+    showing: ObjectIdSchema.optional(),
     uniqueCode: URLParamRegexPatternSchema,
     status: ReservationStatusSchema.optional(),
     reservationType: ReservationTypeSchema.optional(),

@@ -4,20 +4,26 @@
  */
 
 import {z} from "zod";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {ShowingStatusSchema, SeatTypeSchema, SlugStringSchema} from "@noovies-tickets/common";
-import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
-import {URLParamPositiveNumberSchema} from "@/shared/schema/url/URLParamPositiveNumberSchema";
+import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {
+    PositiveNumberSchema,
+    preprocessOptionalField,
+    preprocessToNumber,
+    SeatTypeSchema,
+    ShowingStatusSchema,
+    SlugStringSchema,
+    TrimmedStringSchema
+} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining reference filters for SeatMap queries.
  */
 export const SeatMapQueryReferenceFilterSchema = z.object({
-    movie: URLParamObjectIDSchema,
+    movie: ObjectIdSchema.optional(),
     showingSlug: SlugStringSchema.optional(),
     showingStatus: ShowingStatusSchema.optional(),
-    seatRow: URLParamStringSchema,
-    seatNumber: URLParamPositiveNumberSchema,
+    seatRow: preprocessOptionalField(TrimmedStringSchema),
+    seatNumber: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
     seatType: SeatTypeSchema.optional(),
 });
 

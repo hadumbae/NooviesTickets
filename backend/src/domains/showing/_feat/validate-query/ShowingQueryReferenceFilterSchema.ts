@@ -4,18 +4,17 @@
  */
 
 import {z} from "zod";
-import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
-import {ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
+import {ISO3166Alpha2CountryCodeSchema, preprocessOptionalField, TrimmedStringSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining reference filters for Showing queries.
  */
 export const ShowingQueryReferenceFilterSchema = z.object({
-    movieSlug: URLParamStringSchema,
-    theatreSlug: URLParamStringSchema,
-    screenSlug: URLParamStringSchema,
-    theatreState: URLParamStringSchema,
-    theatreCity: URLParamStringSchema,
+    movieSlug: preprocessOptionalField(TrimmedStringSchema),
+    theatreSlug: preprocessOptionalField(TrimmedStringSchema),
+    screenSlug: preprocessOptionalField(TrimmedStringSchema),
+    theatreState: preprocessOptionalField(TrimmedStringSchema),
+    theatreCity: preprocessOptionalField(TrimmedStringSchema),
     theatreCountry: ISO3166Alpha2CountryCodeSchema.optional(),
 });
 

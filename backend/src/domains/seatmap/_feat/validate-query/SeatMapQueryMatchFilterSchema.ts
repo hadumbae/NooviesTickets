@@ -4,17 +4,16 @@
  */
 
 import {z} from "zod";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {URLParamPositiveNumberSchema} from "@/shared/schema/url/URLParamPositiveNumberSchema";
-import {SeatMapStatusSchema} from "@noovies-tickets/common";
+import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {PositiveNumberSchema, preprocessToNumber, SeatMapStatusSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining match-level filters for SeatMap queries.
  */
 export const SeatMapQueryMatchFilterSchema = z.object({
-    showing: URLParamObjectIDSchema,
-    seat: URLParamObjectIDSchema,
-    price: URLParamPositiveNumberSchema,
+    showing: ObjectIdSchema.optional(),
+    seat: ObjectIdSchema.optional(),
+    price: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
     status: SeatMapStatusSchema.optional(),
 });
 

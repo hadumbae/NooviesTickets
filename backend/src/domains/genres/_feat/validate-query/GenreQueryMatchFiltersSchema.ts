@@ -3,13 +3,12 @@
  */
 
 import {z} from "zod";
-import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
-import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
+import {BooleanValueSchema, preprocessOptionalField, preprocessToBoolean, TrimmedStringSchema} from "@noovies-tickets/common";
 
 /** Schema for validating raw filterable URL query fields for genres. */
 export const GenreQueryMatchFiltersSchema = z.object({
-    name: URLParamStringSchema,
-    isFeatured: URLParamBooleanSchema,
+    name: preprocessOptionalField(TrimmedStringSchema),
+    isFeatured: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
 });
 
 /** Inferred type for raw genre filter parameters. */

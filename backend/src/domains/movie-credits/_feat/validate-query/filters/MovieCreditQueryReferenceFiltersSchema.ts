@@ -4,14 +4,14 @@
  */
 
 import {z} from "zod";
-import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
+import {preprocessOptionalField, TrimmedStringSchema} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 
 /**
  * Zod schema defining reference filters for MovieCredit queries.
  */
 export const MovieCreditQueryReferenceFiltersSchema = z.object({
-    movieSlug: URLParamStringSchema,
+    movieSlug: preprocessOptionalField(TrimmedStringSchema),
     roleName: URLParamRegexPatternSchema,
 });
 

@@ -3,16 +3,16 @@
  */
 
 import {z} from "zod";
-import {MongooseNumericSortSchema} from "@/shared/schema/url/URLParamMongooseSortOrderSchema";
+import {MongooseNumericSortOrderSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema for defining sort criteria in Screen queries.
  */
 export const ScreenQueryMatchSortSchema = z.object({
-    sortByName: MongooseNumericSortSchema.optional(),
-    sortByCapacity: MongooseNumericSortSchema.optional(),
-    sortByScreenType: MongooseNumericSortSchema.optional(),
-    sortByCreatedAt: MongooseNumericSortSchema.optional(),
+    sortByName: MongooseNumericSortOrderSchema.optional(),
+    sortByCapacity: MongooseNumericSortOrderSchema.optional(),
+    sortByScreenType: MongooseNumericSortOrderSchema.optional(),
+    sortByCreatedAt: MongooseNumericSortOrderSchema.optional(),
 });
 
 /**

@@ -3,19 +3,23 @@
  */
 
 import {z} from "zod";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
-import {URLParamPositiveNumberSchema} from "@/shared/schema/url/URLParamPositiveNumberSchema";
-import {ScreenTypeSchema} from "@noovies-tickets/common";
+import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {
+    PositiveNumberSchema,
+    preprocessOptionalField,
+    preprocessToNumber,
+    ScreenTypeSchema,
+    TrimmedStringSchema
+} from "@noovies-tickets/common";
 
 /**
  * Zod schema for matching/filtering Screen documents via URL parameters.
  */
 export const ScreenQueryMatchFilterSchema = z.object({
-    _id: URLParamObjectIDSchema,
-    name: URLParamStringSchema,
-    theatre: URLParamObjectIDSchema,
-    capacity: URLParamPositiveNumberSchema,
+    _id: ObjectIdSchema.optional(),
+    name: preprocessOptionalField(TrimmedStringSchema),
+    theatre: ObjectIdSchema.optional(),
+    capacity: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
     screenType: ScreenTypeSchema.optional(),
 });
 

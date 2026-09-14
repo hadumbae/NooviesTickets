@@ -3,16 +3,15 @@
  */
 
 import {z} from "zod";
-import {SlugStringSchema} from "@noovies-tickets/common";
-import {URLParamNonNegativeNumberSchema} from "@/shared/schema/url/URLParamNonNegativeNumberSchema";
+import {NonNegativeNumberSchema, preprocessToNumber, SlugStringSchema} from "@noovies-tickets/common";
 
 /**
  * Schema for validating route configuration and pagination parameters for theatre showings.
  */
 export const TheatreShowingListRouteConfigSchema = z.object({
     slug: SlugStringSchema,
-    page: URLParamNonNegativeNumberSchema,
-    perPage: URLParamNonNegativeNumberSchema,
+    page: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
+    perPage: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
 });
 
 /** Configuration for the theatre showing list route. */

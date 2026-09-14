@@ -3,24 +3,26 @@
  */
 
 import {z} from "zod";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {URLParamDateOnlySchema} from "@/shared/schema/url/URLParamDateOnlySchema";
 import generateURLParamArraySchema from "@/shared/utility/schema/url-params/generateURLParamArraySchema";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import {ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
+import {
+    BooleanValueSchema,
+    DateOnlyInstanceSchema,
+    ISO3166Alpha2CountryCodeSchema,
+    preprocessToBoolean
+} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 
 /** Zod schema for validating and parsing movie filter criteria from URL parameters. */
 export const MovieQueryFiltersSchema = z.object({
-    _id: URLParamObjectIDSchema,
+    _id: ObjectIdSchema.optional(),
     title: URLParamRegexPatternSchema,
-    releaseDate: URLParamDateOnlySchema,
+    releaseDate: DateOnlyInstanceSchema.optional(),
     genres: generateURLParamArraySchema(ObjectIdSchema),
     originalTitle: URLParamRegexPatternSchema,
-    isReleased: URLParamBooleanSchema,
+    isReleased: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
     country: ISO3166Alpha2CountryCodeSchema.optional(),
-    isAvailable: URLParamBooleanSchema,
+    isAvailable: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
 });
 
 /** Type definition for movie query filters inferred from the schema. */

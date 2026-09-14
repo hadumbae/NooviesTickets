@@ -3,18 +3,22 @@
  */
 
 import {z} from "zod";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {URLParamPositiveNumberSchema} from "@/shared/schema/url/URLParamPositiveNumberSchema";
-import {SlugStringSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
+import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {
+    BooleanValueSchema,
+    PositiveNumberSchema,
+    preprocessToBoolean,
+    preprocessToNumber,
+    SlugStringSchema
+} from "@noovies-tickets/common";
 import {MovieReviewUniqueCodeSchema} from "@/domains/movie-reviews/_validation/review-code/MovieReviewUniqueCodeSchema";
 
 /** Zod schema for validating movie review match query filters from URL parameters. */
 export const MovieReviewQueryMatchFilterSchema = z.object({
-    user: URLParamObjectIDSchema,
-    movie: URLParamObjectIDSchema,
-    rating: URLParamPositiveNumberSchema,
-    isRecommended: URLParamBooleanSchema,
+    user: ObjectIdSchema.optional(),
+    movie: ObjectIdSchema.optional(),
+    rating: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
+    isRecommended: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
     slug: SlugStringSchema.optional(),
     uniqueCode: MovieReviewUniqueCodeSchema.optional(),
 });

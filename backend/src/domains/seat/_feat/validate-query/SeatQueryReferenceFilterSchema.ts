@@ -4,17 +4,17 @@
  */
 
 import {z} from "zod";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
+import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {preprocessOptionalField, TrimmedStringSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining reference filters for Seat queries.
  */
 export const SeatQueryReferenceFilterSchema = z.object({
-    showing: URLParamObjectIDSchema,
-    showingSlug: URLParamObjectIDSchema,
-    theatreSlug: URLParamStringSchema,
-    screenSlug: URLParamStringSchema,
+    showing: ObjectIdSchema.optional(),
+    showingSlug: ObjectIdSchema.optional(),
+    theatreSlug: preprocessOptionalField(TrimmedStringSchema),
+    screenSlug: preprocessOptionalField(TrimmedStringSchema),
 });
 
 /**

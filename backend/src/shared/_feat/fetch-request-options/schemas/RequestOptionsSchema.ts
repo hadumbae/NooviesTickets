@@ -5,18 +5,17 @@
  */
 
 import {z} from "zod";
-import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
-import {URLParamNumberSchema} from "@/shared/schema/url/URLParamNumberSchema";
+import {BooleanValueSchema, NumberValueSchema, preprocessToBoolean, preprocessToNumber} from "@noovies-tickets/common";
 
 /**
  * Validates global request modifiers for fetching data.
  */
 export const RequestOptionsSchema = z.object({
-    populate: URLParamBooleanSchema,
-    virtuals: URLParamBooleanSchema,
-    limit: URLParamNumberSchema,
-    page: URLParamNumberSchema,
-    perPage: URLParamNumberSchema,
+    populate: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    virtuals: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    limit: preprocessToNumber(NumberValueSchema.optional()).optional(),
+    page: preprocessToNumber(NumberValueSchema.optional()).optional(),
+    perPage: preprocessToNumber(NumberValueSchema.optional()).optional(),
 });
 
 /**

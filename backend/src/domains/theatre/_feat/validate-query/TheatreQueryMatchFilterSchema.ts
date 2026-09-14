@@ -4,9 +4,14 @@
  */
 
 import {z} from "zod";
-import {URLParamStringSchema} from "@/shared/schema/url/URLParamStringSchema";
-import {URLParamNonNegativeNumberSchema} from "@/shared/schema/url/URLParamNonNegativeNumberSchema";
-import {ISO3166Alpha2CountryCodeSchema, IANATimezoneSchema} from "@noovies-tickets/common";
+import {
+    IANATimezoneSchema,
+    ISO3166Alpha2CountryCodeSchema,
+    NonNegativeNumberSchema,
+    preprocessOptionalField,
+    preprocessToNumber,
+    TrimmedStringSchema
+} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 
 /**
@@ -14,12 +19,12 @@ import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
  */
 export const TheatreQueryMatchFilterSchema = z.object({
     name: URLParamRegexPatternSchema,
-    seatCapacity: URLParamNonNegativeNumberSchema,
+    seatCapacity: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
     street: URLParamRegexPatternSchema,
     city: URLParamRegexPatternSchema,
     state: URLParamRegexPatternSchema,
     country: ISO3166Alpha2CountryCodeSchema.optional(),
-    postalCode: URLParamStringSchema,
+    postalCode: preprocessOptionalField(TrimmedStringSchema),
     timezone: IANATimezoneSchema.optional(),
 });
 

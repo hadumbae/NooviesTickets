@@ -4,31 +4,35 @@
  */
 
 import {z} from "zod";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {RoleTypeDepartmentSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/shared/schema/url/URLParamBooleanSchema";
+import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {
+    BooleanValueSchema,
+    NumberValueSchema,
+    preprocessToBoolean,
+    preprocessToNumber,
+    RoleTypeDepartmentSchema
+} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
-import {URLParamNumberSchema} from "@/shared/schema/url/URLParamNumberSchema";
 
 /**
  * Zod schema defining match-level filters for MovieCredit queries.
  */
 export const MovieCreditQueryMatchFiltersSchema = z.object({
-    _id: URLParamObjectIDSchema,
-    movie: URLParamObjectIDSchema,
-    person: URLParamObjectIDSchema,
-    roleType: URLParamObjectIDSchema,
+    _id: ObjectIdSchema.optional(),
+    movie: ObjectIdSchema.optional(),
+    person: ObjectIdSchema.optional(),
+    roleType: ObjectIdSchema.optional(),
     department: RoleTypeDepartmentSchema.optional(),
-    displayRoleName: URLParamObjectIDSchema,
-    creditedAs: URLParamObjectIDSchema,
-    isPrimary: URLParamBooleanSchema,
+    displayRoleName: ObjectIdSchema.optional(),
+    creditedAs: ObjectIdSchema.optional(),
+    isPrimary: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
     characterName: URLParamRegexPatternSchema,
-    billingOrder: URLParamNumberSchema,
-    uncredited: URLParamBooleanSchema,
-    voiceOnly: URLParamBooleanSchema,
-    cameo: URLParamBooleanSchema,
-    motionCapture: URLParamBooleanSchema,
-    archiveFootage: URLParamBooleanSchema,
+    billingOrder: preprocessToNumber(NumberValueSchema.optional()).optional(),
+    uncredited: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    voiceOnly: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    cameo: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    motionCapture: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    archiveFootage: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
 });
 
 /**

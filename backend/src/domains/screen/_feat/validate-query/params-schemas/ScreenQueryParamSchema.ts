@@ -3,13 +3,13 @@
  */
 
 import {z} from "zod";
-import {URLParamNonNegativeNumberSchema} from "@/shared/schema/url/URLParamNonNegativeNumberSchema";
+import {NonNegativeNumberSchema, preprocessToNumber} from "@noovies-tickets/common";
 
 /**
  * Zod schema for auxiliary Screen query parameters.
  */
 export const ScreenQueryParamSchema = z.object({
-    showingsPerScreen: URLParamNonNegativeNumberSchema,
+    showingsPerScreen: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
 });
 
 /**

@@ -3,20 +3,20 @@
  */
 
 import {z} from "zod";
-import {MongooseNumericSortSchema} from "@/shared/schema/url/URLParamMongooseSortOrderSchema";
+import {MongooseNumericSortOrderSchema} from "@noovies-tickets/common";
 
 /**
  * Validates available sort fields for Person results.
  */
 export const PersonQueryMatchSortsSchema = z.object({
     /** Sort order by name (1 for asc, -1 for desc). */
-    sortByName: MongooseNumericSortSchema.optional(),
+    sortByName: MongooseNumericSortOrderSchema.optional(),
 
     /** Sort order by date of birth. */
-    sortByDOB: MongooseNumericSortSchema.optional(),
+    sortByDOB: MongooseNumericSortOrderSchema.optional(),
 
     /** Sort order by nationality code. */
-    sortByNationality: MongooseNumericSortSchema.optional(),
+    sortByNationality: MongooseNumericSortOrderSchema.optional(),
 });
 
 /**

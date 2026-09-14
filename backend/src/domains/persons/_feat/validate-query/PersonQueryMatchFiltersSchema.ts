@@ -3,18 +3,17 @@
  */
 
 import {z} from "zod";
-import {URLParamObjectIDSchema} from "@/shared/schema/url/URLParamObjectIDSchema";
-import {URLParamDateOnlySchema} from "@/shared/schema/url/URLParamDateOnlySchema";
-import {ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
+import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {DateOnlyInstanceSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 
 /**
  * Validates filtering criteria for Person queries.
  */
 export const PersonQueryMatchFiltersSchema = z.object({
-    _id: URLParamObjectIDSchema,
+    _id: ObjectIdSchema.optional(),
     name: URLParamRegexPatternSchema,
-    dob: URLParamDateOnlySchema,
+    dob: DateOnlyInstanceSchema.optional(),
     nationality: ISO3166Alpha2CountryCodeSchema.optional(),
 });
 
