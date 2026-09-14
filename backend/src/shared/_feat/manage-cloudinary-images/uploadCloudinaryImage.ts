@@ -7,7 +7,7 @@ import {
     CloudinaryImageSchema as CloudinaryImageObjectSchema
 } from "@noovies-tickets/common";
 import {Cloudinary} from "@/config/cloudinary";
-import {RequestValidationError} from "@/shared/errors/RequestValidationError";
+import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 import type {MulterImageFile} from "@/shared/_feat/manage-multer-images";
 
 type UploadImageConfig = {

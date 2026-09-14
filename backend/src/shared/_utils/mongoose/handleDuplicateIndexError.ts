@@ -4,7 +4,7 @@
  */
 
 import { isDuplicateIndexError } from "./isDuplicateIndexError.js";
-import { ZodDuplicateIndexError } from "../../errors/zod/ZodDuplicateIndexError.js";
+import { ZodDuplicateIndexError } from "../../_errors/zod/ZodDuplicateIndexError.js";
 
 type ErrorParams = {
     error: unknown;

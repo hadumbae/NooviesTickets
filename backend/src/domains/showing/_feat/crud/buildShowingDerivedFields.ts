@@ -4,7 +4,7 @@
 
 import type {ShowingInput, ShowingSchemaFields} from "@/domains/showing";
 import {createTheatreSnapshot} from "@/domains/theatre/utilities";
-import {RequestValidationError} from "@/shared/errors/RequestValidationError";
+import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 
 /** Constructs derived fields such as theatre snapshots required for showing documents. */
 export async function buildShowingDerivedFields(data: Partial<ShowingInput>): Promise<Partial<ShowingSchemaFields>> {

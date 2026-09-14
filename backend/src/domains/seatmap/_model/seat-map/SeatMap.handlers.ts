@@ -3,7 +3,7 @@
  */
 
 import type {ZodIssue} from "zod";
-import {ZodDuplicateIndexError} from "@/shared/errors/zod/ZodDuplicateIndexError";
+import {ZodDuplicateIndexError} from "@/shared/_errors/zod/ZodDuplicateIndexError";
 import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 
 /** Handles MongoDB duplicate key errors by transforming them into formatted ZodDuplicateIndexErrors. */

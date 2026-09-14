@@ -4,7 +4,7 @@
  * @filename getResponseText.ts
  */
 
-import {HttpResponseError} from "../../errors/HttpResponseError.js";
+import {HttpResponseError} from "../../_errors/HttpResponseError.js";
 
 /**
  * Reads the text body from a Fetch API response.

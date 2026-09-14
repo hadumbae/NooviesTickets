@@ -6,7 +6,7 @@
  */
 
 import type {Response} from "express";
-import {BadRequestError} from "../../../errors/BadRequestError.js";
+import {BadRequestError} from "../../../_errors/BadRequestError.js";
 
 /**
  * Type guard for request-related errors.

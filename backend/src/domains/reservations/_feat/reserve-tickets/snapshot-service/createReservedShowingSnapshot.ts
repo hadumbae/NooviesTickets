@@ -4,8 +4,8 @@
 
 import {Types} from "mongoose";
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
-import {DocumentNotFoundError} from "@/shared/errors/DocumentNotFoundError";
-import {InconsistentDataError} from "@/shared/errors/InconsistentDataError";
+import {DocumentNotFoundError} from "@/shared/_errors/DocumentNotFoundError";
+import {InconsistentDataError} from "@/shared/_errors/InconsistentDataError";
 import {createMovieSnapshot} from "@/domains/movies/_feat/manage-snapshots/createMovieSnapshot";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
 import {createReservedSeatSnapshot} from "@/domains/seatmap/_feat/manage-snapshots/createReservedSeatSnapshot";

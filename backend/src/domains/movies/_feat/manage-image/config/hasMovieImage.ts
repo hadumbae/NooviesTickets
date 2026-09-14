@@ -4,7 +4,7 @@
 
 import type {NextFunction, Request, Response} from "express";
 import {MovieImageInputSchema} from "@/domains/movies/_feat/manage-image/config/MovieImageInputSchema";
-import {RequestValidationError} from "@/shared/errors/RequestValidationError";
+import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 
 /**
  * Validates that an uploaded movie image file exists and meets schema constraints.

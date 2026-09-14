@@ -5,7 +5,7 @@
 
 import type {URLString} from "@noovies-tickets/common";
 import type {RequestMethod} from "@/shared/_types/requests/RequestMethods";
-import {UseFetchError} from "../../errors/UseFetchError.js";
+import {UseFetchError} from "../../_errors/UseFetchError.js";
 
 /**
  * Parameters for {@link executeFetch}.

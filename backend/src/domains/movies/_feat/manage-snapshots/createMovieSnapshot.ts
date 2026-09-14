@@ -5,8 +5,8 @@
 import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
 import type {MovieSnapshotSchemaFields} from "@/domains/movies/_models/movie-snapshot";
 import {Types} from "mongoose";
-import {DocumentNotFoundError} from "@/shared/errors/DocumentNotFoundError";
-import {InconsistentDataError} from "@/shared/errors/InconsistentDataError";
+import {DocumentNotFoundError} from "@/shared/_errors/DocumentNotFoundError";
+import {InconsistentDataError} from "@/shared/_errors/InconsistentDataError";
 import {MovieSnapshotModel} from "@/domains/movies/_models/movie-snapshot";
 import type {MovieWithGenres} from "@/domains/movies/_models/movie/Movie.types";
 import {MovieSnapshotInputSchema} from "@/domains/movies/_feat/validate-submit";

@@ -1,5 +1,5 @@
 import type {Response} from "express";
-import {BookingError} from "../../../errors/reservations/BookingError.js";
+import {BookingError} from "../../../_errors/reservations/BookingError.js";
 
 /**
  * Type guard for {@link BookingError}.

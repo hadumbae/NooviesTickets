@@ -4,9 +4,9 @@
 
 import type {Response} from 'express';
 import {ZodError} from "zod";
-import { RequestValidationError } from "@/shared/errors/RequestValidationError";
-import {ZodDuplicateIndexError} from "@/shared/errors/zod/ZodDuplicateIndexError";
-import {InvalidRequestQueryError} from "../../../errors/InvalidRequestQueryError";
+import { RequestValidationError } from "@/shared/_errors/RequestValidationError";
+import {ZodDuplicateIndexError} from "@/shared/_errors/zod/ZodDuplicateIndexError";
+import {InvalidRequestQueryError} from "../../../_errors/InvalidRequestQueryError";
 
 /** Determines whether an error is a globally handled Zod-related or request validation error. */
 export const isGlobalZodError = (error: unknown) =>

@@ -1,5 +1,5 @@
 import { ZodError } from "zod";
-import {RequestValidationError} from "../../../errors/RequestValidationError.js";
+import {RequestValidationError} from "../../../_errors/RequestValidationError.js";
 
 /**
  * Handles errors thrown during Zod schema validation.

@@ -1,5 +1,5 @@
 import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
-import {BookingError} from "@/shared/errors/reservations/BookingError";
+import {BookingError} from "@/shared/_errors/reservations/BookingError";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
 

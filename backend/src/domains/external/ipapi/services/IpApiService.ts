@@ -7,7 +7,7 @@ import "dotenv/config";
 import {useFetchAPI} from "@/shared/_utils/fetch/useFetchAPI.js";
 import * as process from "node:process";
 import {IpifyCountryDataSchema, type IpifyCountryData} from "@/domains/external/ipapi/schema/IpifyCountryDataSchema.js";
-import {DataValidationError} from "@/shared/errors/DataValidationError.js";
+import {DataValidationError} from "@/shared/_errors/DataValidationError.js";
 
 /**
  * Fetches geolocation data for the provided IP address.

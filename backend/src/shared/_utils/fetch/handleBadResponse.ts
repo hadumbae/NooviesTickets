@@ -1,4 +1,4 @@
-import {HttpResponseError} from "../../errors/HttpResponseError.js";
+import {HttpResponseError} from "../../_errors/HttpResponseError.js";
 import {parseJSON} from "../parseJSON.js";
 import type {URLString} from "@noovies-tickets/common";
 

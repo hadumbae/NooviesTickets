@@ -5,7 +5,7 @@
 import {type Model} from "mongoose";
 import type {NextFunction, Request, Response} from "express";
 import type {ZodIssue} from "zod";
-import {RequestValidationError} from "@/shared/errors/RequestValidationError";
+import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 
 type ReferenceCheck = {
     model: Model<any>;

@@ -3,7 +3,7 @@
  */
 
 import type {ZodIssue} from "zod";
-import {ZodDuplicateIndexError} from "@/shared/errors/zod/ZodDuplicateIndexError";
+import {ZodDuplicateIndexError} from "@/shared/_errors/zod/ZodDuplicateIndexError";
 import {
     MovieCreditModel
 } from "@/domains/movie-credits/_models/credit/MovieCredit.model";

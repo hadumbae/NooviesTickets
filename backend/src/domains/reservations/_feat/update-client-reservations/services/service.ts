@@ -3,7 +3,7 @@
  *
  */
 
-import {BookingError} from "@/shared/errors/reservations/BookingError";
+import {BookingError} from "@/shared/_errors/reservations/BookingError";
 import type {
     CancelClientReservationParams,
     CheckoutClientReservationParams

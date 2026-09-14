@@ -4,7 +4,7 @@
 
 import {z, type ZodIssue} from "zod";
 import {UserModel} from "@/domains/users/model/user";
-import {RequestValidationError} from "@/shared/errors/RequestValidationError";
+import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 
 /** Checks for email uniqueness and throws a validation error if the email is taken. */
 export async function checkIfEmailExists(email: string): Promise<void> {

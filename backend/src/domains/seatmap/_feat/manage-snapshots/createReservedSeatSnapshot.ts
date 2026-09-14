@@ -5,7 +5,7 @@ import type {
 import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import type {SeatMapSchemaFields} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
 import {ReservedSeatSnapshotInputSchema} from "@/domains/seatmap/_feat/validate-submit/ReservedSeatSnapshotInputSchema";
-import {InconsistentDataError} from "@/shared/errors/InconsistentDataError";
+import {InconsistentDataError} from "@/shared/_errors/InconsistentDataError";
 import {ReservedSeatSnapshotModel} from "@/domains/seatmap/_model/seat-map-snapshot/ReservedSeatSnapshot.model.js";
 import type {SeatSchemaFields} from "@/domains/seat/_models";
 import {generateArraySchema} from "@noovies-tickets/common";

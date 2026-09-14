@@ -9,7 +9,7 @@ import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils";
 import {isDuplicateIndexError} from "@/shared/_utils/mongoose/isDuplicateIndexError";
 import {handleDuplicateIndexError} from "@/shared/_utils/mongoose/handleDuplicateIndexError";
 import type {UpdateDocumentConfig} from "@/shared/_feat/generic-crud/path-handlers/update/crudUpdate.types";
-import {DocumentVersionError} from "@/shared/errors/DocumentVersionError";
+import {DocumentVersionError} from "@/shared/_errors/DocumentVersionError";
 import type {CRUDControllerHandlerConfig} from "@/shared/_feat/generic-crud/types/CRUDControllerHandler";
 import type {ControllerAsyncFunc} from "@/shared/_types/controllers/ControllerTypes";
 import type {IDRouteConfig} from "@/shared/_schema/route-config";

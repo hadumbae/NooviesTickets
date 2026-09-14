@@ -17,7 +17,7 @@ import type {
     MyMovieReviewSchemaFields
 } from "@/domains/movie-reviews/_models/review/MovieReview.types";
 import createHttpError from "http-errors";
-import {DocumentVersionError} from "@/shared/errors/DocumentVersionError.js";
+import {DocumentVersionError} from "@/shared/_errors/DocumentVersionError.js";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
 import {
     MovieReviewPopulationPipelines

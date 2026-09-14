@@ -3,7 +3,7 @@
  */
 
 import type { ZodIssue } from "zod";
-import { ZodDuplicateIndexError } from "@/shared/errors/zod/ZodDuplicateIndexError";
+import { ZodDuplicateIndexError } from "@/shared/_errors/zod/ZodDuplicateIndexError";
 import {SeatModel} from "@/domains/seat/_models/Seat.model";
 
 /**

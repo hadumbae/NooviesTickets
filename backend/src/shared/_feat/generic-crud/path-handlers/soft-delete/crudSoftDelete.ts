@@ -5,7 +5,7 @@
 
 import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {SoftDeleteDocumentConfig} from "@/shared/_feat/generic-crud/path-handlers/soft-delete/crudSoftDelete.types";
-import {InvalidMethodError} from "@/shared/errors/InvalidMethodError";
+import {InvalidMethodError} from "@/shared/_errors/InvalidMethodError";
 import type {Request, Response} from "express";
 import type {CRUDControllerHandlerConfig} from "@/shared/_feat/generic-crud/types/CRUDControllerHandler";
 import type {IDRouteConfig} from "@/shared/_schema/route-config";

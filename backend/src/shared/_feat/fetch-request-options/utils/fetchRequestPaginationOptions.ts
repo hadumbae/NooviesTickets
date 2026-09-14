@@ -8,7 +8,7 @@ import {
     type PaginationOptions,
     PaginationOptionsSchema
 } from "@noovies-tickets/common";
-import {InvalidRequestQueryError} from "@/shared/errors/InvalidRequestQueryError";
+import {InvalidRequestQueryError} from "@/shared/_errors/InvalidRequestQueryError";
 
 /**
  * Parses and validates incoming request query parameters into a structured pagination object.

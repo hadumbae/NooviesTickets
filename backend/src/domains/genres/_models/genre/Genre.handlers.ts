@@ -4,7 +4,7 @@
  */
 
 import type {ZodIssue} from "zod";
-import {ZodDuplicateIndexError} from "@/shared/errors/zod/ZodDuplicateIndexError";
+import {ZodDuplicateIndexError} from "@/shared/_errors/zod/ZodDuplicateIndexError";
 import {GenreModel} from "@/domains/genres/_models/genre/Genre.model";
 
 /**

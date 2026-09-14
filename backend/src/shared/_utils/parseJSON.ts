@@ -4,7 +4,7 @@
  * @filename parseJSON.ts
  */
 
-import {JSONParseError} from "../errors/JSONParseError.js";
+import {JSONParseError} from "../_errors/JSONParseError.js";
 
 /**
  * Parameters for {@link parseJSON}.

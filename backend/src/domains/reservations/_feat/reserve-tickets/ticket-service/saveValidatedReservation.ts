@@ -2,7 +2,7 @@
  * @fileoverview Service for validating and persisting reservation data to the database.
  */
 
-import {RequestValidationError} from "@/shared/errors/RequestValidationError";
+import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 import {ReservationPopulatePaths} from "@/domains/reservations/_feat/query-population/ReservationPopulatePaths";
 import {
     type ReserveTicketPersistenceData,

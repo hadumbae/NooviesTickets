@@ -4,7 +4,7 @@
  */
 import type {ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
 import {calculateDateNow} from "@noovies-tickets/common";
-import {BookingError} from "@/shared/errors/reservations/BookingError";
+import {BookingError} from "@/shared/_errors/reservations/BookingError";
 import {Types} from "mongoose";
 import {ReservationModel} from "@/domains/reservations/_model/reservation";
 import type {AssertReservationOwnershipConfig} from "@/domains/reservations/_feat/assert-reservations/service.types";

@@ -4,7 +4,7 @@
 
 import {calculateFutureDate} from "@noovies-tickets/common";
 import {fetchPopulatedShowing} from "@/domains/showing/_feat/fetch-showings/fetchPopulatedShowing";
-import {BookingError} from "@/shared/errors/reservations/BookingError";
+import {BookingError} from "@/shared/_errors/reservations/BookingError";
 import type {
     ReserveGeneralTicketData,
     ReserveSeatTicketData,

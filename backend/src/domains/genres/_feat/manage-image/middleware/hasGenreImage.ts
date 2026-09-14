@@ -4,7 +4,7 @@
 
 import type {NextFunction, Request, Response} from "express";
 import {GenreImageInputSchema} from "@/domains/genres/_feat/manage-image/schema/GenreImageInputSchema";
-import {RequestValidationError} from "@/shared/errors/RequestValidationError";
+import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 
 /**
  * Validates the uploaded file against the GenreImageInputSchema and attaches the result to the request. */

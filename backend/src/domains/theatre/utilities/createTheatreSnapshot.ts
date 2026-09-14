@@ -4,8 +4,8 @@
 
 import {Types} from "mongoose";
 import {TheatreSnapshotInputSchema} from "@/domains/theatre/validation/TheatreSnapshotInputSchema";
-import {InconsistentDataError} from "@/shared/errors/InconsistentDataError";
-import {DocumentNotFoundError} from "@/shared/errors/DocumentNotFoundError";
+import {InconsistentDataError} from "@/shared/_errors/InconsistentDataError";
+import {DocumentNotFoundError} from "@/shared/_errors/DocumentNotFoundError";
 import {TheatreModel} from "@/domains/theatre/model/theatre";
 import {TheatreSnapshotModel, type TheatreSnapshotSchemaFields} from "@/domains/theatre/model/theatre-snapshot";
 
