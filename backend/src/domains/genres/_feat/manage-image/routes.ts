@@ -4,11 +4,11 @@
 
 import {Router} from "express";
 import {patchRemoveGenreImage, patchUpdateGenreImage} from "@/domains/genres/_feat/manage-image/controller";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {ManageGenreImageRouteConfigSchema} from "@/domains/genres/_feat/manage-image/schema/ManageGenreImageRouteConfig";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {uploadImage} from "@/config/image-multr";
 import {hasGenreImage} from "@/domains/genres/_feat/manage-image/middleware/hasGenreImage";
 

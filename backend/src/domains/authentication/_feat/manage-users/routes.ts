@@ -5,9 +5,9 @@
 import {Router} from "express";
 import {hasRefreshToken, isAdmin, isAuth} from "@/domains/authentication/_middleware";
 import {parseRouteParams} from "@/shared/_feat/middleware";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
-import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
-import validateZodSchemaAsync from "@/shared/utility/schema/validators/validateZodSchemaAsync";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
+import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import validateZodSchemaAsync from "@/shared/_utils/schema/validators/validateZodSchemaAsync";
 import {ManageUserRouteConfigSchema} from "@/domains/authentication/_feat/manage-users/routeSchema";
 import {postRegisterUser, UserRegisterInputSchema} from "@/domains/authentication/_feat/register-user";
 import {postLoginUser, UserLoginInputSchema} from "@/domains/authentication/_feat/login-user";

@@ -1,5 +1,5 @@
 import {Router} from "express";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {getFetchShowingsByScreens} from "@/domains/screen/_feat/view-data-client/controller/controller";
 
 const router = Router();

@@ -5,8 +5,8 @@
 
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
-import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
+import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
 
 import {ReserveTicketInputSchema} from "@/domains/reservations/_feat/reserve-tickets/schemas";
 import {postReserveTickets} from "@/domains/reservations/_feat/reserve-tickets/controllers";

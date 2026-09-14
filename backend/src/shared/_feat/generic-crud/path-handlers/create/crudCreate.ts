@@ -2,13 +2,13 @@
  * @fileoverview Generic controller and service for creating new documents within a Mongoose model.
  */
 
-import populateQuery from "@/shared/utility/mongoose/populateQuery";
+import populateQuery from "@/shared/_utils/mongoose/populateQuery";
 import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {Request, Response} from "express";
 import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils";
 import type {CreateDocumentConfig} from "@/shared/_feat/generic-crud/path-handlers/create/crudCreate.types";
-import {isDuplicateIndexError} from "@/shared/utility/mongoose/isDuplicateIndexError";
-import {handleDuplicateIndexError} from "@/shared/utility/mongoose/handleDuplicateIndexError";
+import {isDuplicateIndexError} from "@/shared/_utils/mongoose/isDuplicateIndexError";
+import {handleDuplicateIndexError} from "@/shared/_utils/mongoose/handleDuplicateIndexError";
 import type {CRUDControllerHandlerConfig} from "@/shared/_feat/generic-crud/types/CRUDControllerHandler";
 import type {ControllerAsyncFunc} from "@/shared/_types/controllers/ControllerTypes";
 

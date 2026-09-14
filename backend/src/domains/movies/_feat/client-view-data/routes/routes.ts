@@ -4,8 +4,8 @@
 
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth.js";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {MovieInfoOverviewViewRouteConfigSchema} from "@/domains/movies/_feat/client-view-data/movie-overview";
 import {MovieInfoCreditsViewRouteConfigSchema} from "@/domains/movies/_feat/client-view-data/movie-credits";
 import {MovieInfoShowingsViewRouteConfigSchema} from "@/domains/movies/_feat/client-view-data/movie-showings";

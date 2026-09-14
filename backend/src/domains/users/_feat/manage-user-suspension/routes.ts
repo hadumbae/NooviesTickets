@@ -3,11 +3,11 @@
  */
 
 import {Router} from "express";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {isAdmin, isAuth} from "@/domains/authentication/_middleware";
 import {ManageUserRouteConfigSchema} from "@/domains/authentication/_feat/manage-users";
-import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {UserSuspensionUpdateInputSchema} from "@/domains/users/_feat/manage-user-suspension/schema";
 import {
     patchUpdateUserSuspension

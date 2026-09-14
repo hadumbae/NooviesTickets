@@ -4,7 +4,7 @@
  */
 
 import type {Request, Response} from "express";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
+import isValidObjectId from "@/shared/_utils/mongoose/isValidObjectId";
 import {deleteProfileImage, updateProfileImage} from "@/domains/persons/_feat/update-image/service";
 
 /**

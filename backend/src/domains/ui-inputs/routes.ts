@@ -1,6 +1,6 @@
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {parseQueryOptions} from "@/shared/_feat/middleware";
 import {MovieQueryOptionsSchema} from "@/domains/movies/_feat/validate-query";
 import {getFetchMovieLeanData, getFetchPersonLeanData, getFetchRoleTypeLeanData} from "@/domains/ui-inputs/controller";

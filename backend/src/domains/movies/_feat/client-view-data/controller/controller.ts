@@ -4,7 +4,7 @@
 
 import type {Request, Response} from "express";
 import {MoviePopulationPaths} from "@/domains/movies/_feat/query-population";
-import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
+import {fetchRequestUserId} from "@/shared/_utils/request/fetchRequestUserId";
 import {fetchRequiredMovie} from "@/domains/movies/_feat/fetch-movies";
 import {
     fetchMovieInfoCreditsViewData,

@@ -9,8 +9,8 @@ import type {
 } from "@/domains/movie-reviews/_feat/current-user-reviews/service/service.types";
 import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import {MovieReviewPopulatePaths} from "@/domains/movie-reviews/_feat/query-population/MovieReviewPopulatePaths.js";
-import populateQuery from "@/shared/utility/mongoose/populateQuery.js";
-import {handlePersistenceQuery} from "@/shared/utility/mongoose/handlePersistenceQuery.js";
+import populateQuery from "@/shared/_utils/mongoose/populateQuery.js";
+import {handlePersistenceQuery} from "@/shared/_utils/mongoose/handlePersistenceQuery.js";
 import {handleMovieReviewDuplicateIndex} from "@/domains/movie-reviews/_feat/handle-query/handleMovieReviewDuplicateIndex";
 import type {
     MovieReviewSchemaFields,

@@ -18,10 +18,10 @@ import {
     paginated,
     update
 } from "@/shared/_feat/generic-crud/path-handlers";
-import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";

@@ -9,7 +9,7 @@ import type {TheatreSchemaFields} from "@/domains/theatre/model/theatre";
 import type {ISO6391LanguageCode} from "@noovies-tickets/common";
 import type {MovieWithGenres} from "@/domains/movies/_models/movie/Movie.types";
 import type {ShowingConfigSchemaFields} from "@/domains/showing/_models/showing-config/ShowingConfig.types.js";
-import type {LocationSchemaFields} from "@/shared/model/location/LocationSchemaFields";
+import type {LocationSchemaFields} from "@/shared/_models/location/LocationSchemaFields";
 import type {BaseSoftDeleteModel} from "@/shared/_types/model/BaseModel";
 import type {IANATimezone} from "@noovies-tickets/common";
 import type {TheatreSnapshotSchemaFields} from "@/domains/theatre/model/theatre-snapshot";

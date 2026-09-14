@@ -4,7 +4,7 @@
 
 import type {ControllerAsyncFunc} from "@/shared/_types/controllers/ControllerTypes";
 import type {Request, Response} from "express";
-import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
+import {fetchRequestUserId} from "@/shared/_utils/request/fetchRequestUserId";
 import type {ReserveTicketInputData} from "@/domains/reservations/_feat/reserve-tickets/schemas";
 import {reserveTickets} from "@/domains/reservations/_feat/reserve-tickets/ticket-service";
 

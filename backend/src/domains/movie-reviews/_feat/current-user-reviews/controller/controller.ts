@@ -5,7 +5,7 @@
 
 import type {Request, Response} from "express";
 import * as MyMovieReviewService from "@/domains/movie-reviews/_feat/current-user-reviews/service";
-import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
+import {fetchRequestUserId} from "@/shared/_utils/request/fetchRequestUserId";
 import type {
     MovieReviewCreateInputData,
     MovieReviewUpdateInputData

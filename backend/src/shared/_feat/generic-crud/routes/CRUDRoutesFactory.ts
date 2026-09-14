@@ -4,7 +4,7 @@
 
 import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import {Router} from "express";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import type {BuildCRUDRoutesParams} from "@/shared/_feat/generic-crud/routes/CRUDRoutesFactory.types";
 
 /**

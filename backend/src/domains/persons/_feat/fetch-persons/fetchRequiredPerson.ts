@@ -7,8 +7,8 @@ import type {SlugString} from "@noovies-tickets/common";
 import type {QueryConfig} from "@/shared/_types";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import {PersonModel, type PersonSchemaFields} from "@/domains/persons";
-import populateQuery from "@/shared/utility/mongoose/populateQuery";
-import {fetchOrFailQuery} from "@/shared/utility/mongoose/fetchOrFailQuery";
+import populateQuery from "@/shared/_utils/mongoose/populateQuery";
+import {fetchOrFailQuery} from "@/shared/_utils/mongoose/fetchOrFailQuery";
 
 /** Configuration for fetching a person by either a unique ID or a slug. */
 type FetchConfig = (

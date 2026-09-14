@@ -4,9 +4,9 @@
 
 import {Router} from "express";
 import {isAdmin, isAuth} from "@/domains/authentication";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {UserDetailsViewRouteConfigSchema} from "@/domains/users/_feat/admin-view-data/user-details-view";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {getFetchUserDetailsViewData} from "@/domains/users/_feat/admin-view-data/controller";
 
 const router = Router();

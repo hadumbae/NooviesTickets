@@ -7,7 +7,7 @@ import {buildCRUDRoutes, type CRUDRoute} from "@/shared/_feat/generic-crud/route
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {destroy, find, findById, paginated} from "@/shared/_feat/generic-crud/path-handlers";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema} from "@/shared/_schema/route-config";
 import {UserModel, type UserSchemaFields} from "@/domains/users/model/user";
 import {UserQueryMatchStageSchema, UserQuerySortStageSchema} from "@/domains/users/_feat/validate-query";

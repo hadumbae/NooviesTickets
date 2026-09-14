@@ -5,16 +5,16 @@
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
-import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
+import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
 import {ReservationNotesInputSchema} from "@/domains/reservations/_feat/update-reservations/schemas";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {
     patchCancelReservation,
     patchRefundReservation,
     patchResetReservationExpiry,
     patchUpdateReservationNotes
 } from "@/domains/reservations/_feat/update-reservations/controller";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema} from "@/shared/_schema";
 
 const routes = Router();

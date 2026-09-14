@@ -4,10 +4,10 @@
  */
 
 import { Router } from "express";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import * as MovieBrowseController from "@/domains/movies/_feat/fetch-reviews-by-movie/controller";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {
     FeaturedMovieReviewsRouteConfigSchema,
     MovieReviewsPaginatedRouteConfigSchema

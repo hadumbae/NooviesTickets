@@ -1,9 +1,9 @@
 import {Router} from "express";
 import {PersonModel} from "@/domains/persons/_models";
 import {parseQueryMatchStage, parseQuerySortStage} from "@/shared/_feat/middleware";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {
     getFetchBrowsePersonViewData,
     getFetchPersonInfoViewData,

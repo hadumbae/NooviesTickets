@@ -5,10 +5,10 @@
 
 import type {Request, Response} from 'express';
 import type {ControllerAsyncFunc} from "@/shared/_types/controllers/ControllerTypes";
-import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
+import {fetchRequestUserId} from "@/shared/_utils/request/fetchRequestUserId";
 import * as UserFavouriteService from "@/domains/users/_feat/manage-user-favourties/service/service";
 import type {UserFavouriteMovieInput} from "@/domains/users/validation/submit/UserFavouriteMovieInputSchema";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId.js";
+import isValidObjectId from "@/shared/_utils/mongoose/isValidObjectId.js";
 import type {UserFavouriteMoviesRouteConfig} from "@/domains/users/_feat/manage-user-favourties/schema";
 
 /** Returns paginated favourites for the current user. */

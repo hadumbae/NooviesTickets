@@ -4,8 +4,8 @@
 
 import {Router} from "express";
 import {checkAuth} from "@/domains/authentication";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {HomepageViewDataRouteConfigSchema} from "@/domains/homepage/_feat/load-data";
 import {getFetchHomepageViewData} from "@/domains/homepage/_feat/routing/getFetchHomepageViewData";
 

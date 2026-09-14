@@ -4,9 +4,9 @@
 
 import {Router} from "express";
 import {isAdmin, isAuth} from "@/domains/authentication";
-import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {patchUpdateUserAdminRole} from "@/domains/users/_feat/manage-user-roles/controller";
 import {UserAdminRoleUpdateInputSchema} from "@/domains/users/_feat/manage-user-roles/schema/UserAdminRoleUpdateInputSchema";
 import {

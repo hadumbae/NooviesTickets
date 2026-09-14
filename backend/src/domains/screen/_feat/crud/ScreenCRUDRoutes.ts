@@ -8,13 +8,13 @@ import {buildCRUDRoutes, type CRUDRoute} from "@/shared/_feat/generic-crud/route
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import {ScreenModel, type ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import {ScreenInputSchema} from "@/domains/screen/_feat/validate-submit";
 import {ScreenQueryMatchStageSchema, ScreenQuerySortStageSchema} from "@/domains/screen/_feat/validate-query";
-import validateZodSchemaAsync from "@/shared/utility/schema/validators/validateZodSchemaAsync";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import validateZodSchemaAsync from "@/shared/_utils/schema/validators/validateZodSchemaAsync";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import {
     ScreenPopulationPaths,

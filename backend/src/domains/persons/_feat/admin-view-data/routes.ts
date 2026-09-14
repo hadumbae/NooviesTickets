@@ -6,9 +6,9 @@
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {PersonDetailsViewRouteConfigSchema} from "@/domains/persons/_feat/admin-view-data/routeSchemas";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {getFetchPersonDetailsViewData} from "@/domains/persons/_feat/admin-view-data/controller";
 
 /**

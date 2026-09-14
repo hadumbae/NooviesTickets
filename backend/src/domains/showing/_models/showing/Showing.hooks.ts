@@ -5,7 +5,7 @@
 import {ShowingSchema} from "./Showing.schema.js";
 import {type HydratedDocument, type Query} from "mongoose";
 import type {ShowingSchemaFields} from "./Showing.types.js";
-import {fetchRequiredModelDocument} from "@/shared/utility/fetch/fetchRequiredModelDocument";
+import {fetchRequiredModelDocument} from "@/shared/_utils/fetch/fetchRequiredModelDocument";
 import {TheatreModel} from "@/domains/theatre/model/theatre";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import {ShowingVirtualPopulationPaths} from "@/domains/showing/_feat/query-population";

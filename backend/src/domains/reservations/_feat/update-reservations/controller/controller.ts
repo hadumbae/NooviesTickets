@@ -9,7 +9,7 @@ import {
     resetReservationExpiry,
     updateReservationNotes
 } from "@/domains/reservations/_feat/update-reservations/service";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
+import isValidObjectId from "@/shared/_utils/mongoose/isValidObjectId";
 
 /** Handles the partial update of a reservation's administrative notes. */
 export const patchUpdateReservationNotes: ControllerAsyncFunc = async (

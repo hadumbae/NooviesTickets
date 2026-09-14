@@ -5,11 +5,11 @@
 import {Schema, type SchemaDefinitionProperty} from "mongoose";
 import {ShowingStatusConstant, ISO6391CodeConstant} from "@noovies-tickets/common";
 import type {ShowingSchemaFields} from "./Showing.types.js";
-import {SlugSchemaTypeOptions} from "@/shared/model/SlugSchemaTypeOptions.js";
+import {SlugSchemaTypeOptions} from "@/shared/_models/SlugSchemaTypeOptions.js";
 import {ShowingConfigSchema} from "@/domains/showing/_models/showing-config/ShowingConfig.schema.js";
-import {LocationSchema} from "@/shared/model/location/Location.js";
-import {IsDeletedSchemaTypeOptions} from "@/shared/model/IsDeletedSchemaTypeOptions.js";
-import {DeletedAtSchemaTypeOptions} from "@/shared/model/DeletedAtSchemaTypeOptions.js";
+import {LocationSchema} from "@/shared/_models/location/Location.js";
+import {IsDeletedSchemaTypeOptions} from "@/shared/_models/IsDeletedSchemaTypeOptions.js";
+import {DeletedAtSchemaTypeOptions} from "@/shared/_models/DeletedAtSchemaTypeOptions.js";
 import type {ModelSoftDeleteMethods} from "@/shared/_types/model/ModelSoftDelete";
 import {IANAZone} from "luxon";
 import type {SoftDeleteSchemaModel} from "@/shared/_types";

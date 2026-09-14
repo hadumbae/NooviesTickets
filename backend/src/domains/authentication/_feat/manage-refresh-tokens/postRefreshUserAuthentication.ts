@@ -6,11 +6,11 @@ import type {Request, Response} from 'express'
 import {
     updateUserAuthCredentials
 } from "@/domains/authentication/_feat/manage-refresh-tokens/updateUserAuthCredentials";
-import {fetchRequestUser} from "@/shared/utility/request/fetchRequestUser";
+import {fetchRequestUser} from "@/shared/_utils/request/fetchRequestUser";
 import {fetchRequestAuthentication} from "@/shared/_feat/request-data";
 import {convertToMilliseconds, getEnvVariables} from "@/shared/_feat";
 import {DateTime} from "luxon";
-import {fetchRequestIP} from "@/shared/utility/request/fetchRequestIP";
+import {fetchRequestIP} from "@/shared/_utils/request/fetchRequestIP";
 
 /** Handles session token rotation and updates authentication cookies for the requesting user. */
 export async function postRefreshUserAuthentication(req: Request, res: Response) {

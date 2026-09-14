@@ -9,15 +9,15 @@ import {buildCRUDRoutes, type CRUDRoute} from "@/shared/_feat/generic-crud/route
 import type {GenreSchemaFields} from "@/domains/genres/_models/genre/Genre.types";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
-import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
+import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import {GenreModel} from "@/domains/genres/_models/genre";
 import {genreCreate} from "@/domains/genres/_feat/crud/genreCreate";
 import {genreUpdate} from "@/domains/genres/_feat/crud/genreUpdate";
 import {destroy, find, findById, findBySlug, paginated} from "@/shared/_feat/generic-crud/path-handlers";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import {GenreInputSchema} from "@/domains/genres/_feat/validate-submit";
 import {GenreQueryMatchStageSchema, GenreQuerySortStageSchema} from "@/domains/genres/_feat/validate-query";

@@ -7,12 +7,12 @@
 
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {
     getFetchPersonCreditStats,
     getFetchPersonFilmography
 } from "@/domains/movie-credits/_feat/person-credits/controller";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {
     FetchPersonCreditStatsRouteConfigSchema,
     FetchPersonFilmographyRouteConfigSchema

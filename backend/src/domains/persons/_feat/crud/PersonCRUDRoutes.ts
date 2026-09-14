@@ -10,13 +10,13 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, findBySlug, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
-import validateZodSchema from "@/shared/utility/schema/validators/validateZodSchema";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import {PersonModel, type PersonSchemaFields} from "@/domains/persons/_models/person";
 import {PersonQueryMatchStageSchema, PersonQuerySortStageSchema} from "@/domains/persons/_feat/validate-query";
 import {PersonInputSchema} from "@/domains/persons/_feat/validate-submit";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 
 const modelName = PersonModel.modelName;

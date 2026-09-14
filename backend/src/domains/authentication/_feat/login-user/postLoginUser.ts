@@ -7,7 +7,7 @@ import createHttpError from "http-errors";
 import {loginUser} from "@/domains/authentication/_feat/login-user/loginUser";
 import type {UserLoginInput} from "@/domains/authentication/_feat/login-user/UserLoginInputSchema";
 import {createRefreshToken} from "@/domains/authentication/_feat/manage-refresh-tokens";
-import {fetchRequestIP} from "@/shared/utility/request/fetchRequestIP";
+import {fetchRequestIP} from "@/shared/_utils/request/fetchRequestIP";
 import {convertToMilliseconds, getEnvVariables} from "@/shared/_feat";
 import {DateTime} from "luxon";
 

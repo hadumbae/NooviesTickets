@@ -4,7 +4,7 @@
  */
 
 import type {BaseModelWithUniqueCode} from "@/shared/_types/model/BaseModel";
-import populateQuery from "@/shared/utility/mongoose/populateQuery";
+import populateQuery from "@/shared/_utils/mongoose/populateQuery";
 import type {
     FindDocumentByUniqueCodeConfig
 } from "@/shared/_feat/generic-crud/path-handlers/find-by-unique-code/crudFindByUniqueCode.types";

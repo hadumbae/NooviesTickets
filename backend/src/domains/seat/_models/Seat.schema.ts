@@ -3,7 +3,7 @@
  */
 
 import { Schema } from "mongoose";
-import {SlugSchemaTypeOptions} from "@/shared/model/SlugSchemaTypeOptions.js";
+import {SlugSchemaTypeOptions} from "@/shared/_models/SlugSchemaTypeOptions.js";
 import { SeatLayoutTypeConstant, SeatTypeConstant } from "@noovies-tickets/common";
 import type {SeatSchemaFields} from "@/domains/seat/_models/Seat.types";
 

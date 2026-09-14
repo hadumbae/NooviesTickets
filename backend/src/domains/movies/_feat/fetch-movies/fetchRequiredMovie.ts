@@ -3,13 +3,13 @@
  */
 
 import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
-import {fetchOrFailQuery} from "@/shared/utility/mongoose/fetchOrFailQuery";
+import {fetchOrFailQuery} from "@/shared/_utils/mongoose/fetchOrFailQuery";
 import {Types} from "mongoose";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import type {MovieSchemaFields} from "@/domains/movies/_models/movie/Movie.types";
 import type {SlugString} from "@noovies-tickets/common";
 import type {QueryConfig} from "@/shared/_types";
-import populateQuery from "@/shared/utility/mongoose/populateQuery";
+import populateQuery from "@/shared/_utils/mongoose/populateQuery";
 
 /** Parameters for fetching a required Movie by its unique identifier. */
 export type FetchRequiredMovieConfig = {

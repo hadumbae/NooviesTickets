@@ -6,8 +6,8 @@ import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import * as GenreAdminViewDataController from "./controller";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {
     GenreDetailsViewRouteConfigSchema
 } from "@/domains/genres/_feat/admin-view-data/schemas/GenreDetailsViewRouteConfigSchema";

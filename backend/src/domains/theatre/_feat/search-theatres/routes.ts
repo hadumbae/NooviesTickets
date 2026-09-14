@@ -3,10 +3,10 @@
  */
 
 import { Router } from "express";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import { getFetchTheatresByLocation } from "@/domains/theatre/_feat/search-theatres/controller";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {
     TheatresByLocationRouteConfigSchema
 } from "@/domains/theatre/_feat/search-theatres/fetch-by-location/TheatresByLocationRouteConfigSchema";

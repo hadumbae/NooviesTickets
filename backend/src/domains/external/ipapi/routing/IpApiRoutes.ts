@@ -4,7 +4,7 @@
  */
 
 import {Router} from "express";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler.js";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler.js";
 import {fetchIpApiGeoData} from "../controllers/IpApiController.js";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth.js";
 

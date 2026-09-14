@@ -3,7 +3,7 @@
  */
 
 import {Schema} from "mongoose";
-import {CloudinaryImageSchema} from "@/shared/model/cloudinary-image/CloudinaryImage.js";
+import {CloudinaryImageSchema} from "@/shared/_models/cloudinary-image/CloudinaryImage.js";
 import {ISO6391CodeConstant, ISO3166Alpha2CodeConstant, URLStringSchema} from "@noovies-tickets/common";
 import type {MovieSchemaFields} from "@/domains/movies/_models/movie/Movie.types.js";
 

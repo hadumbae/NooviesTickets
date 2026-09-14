@@ -3,8 +3,8 @@
  */
 
 import type {Request, Response} from "express";
-import isValidObjectId from "@/shared/utility/mongoose/isValidObjectId";
-import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
+import isValidObjectId from "@/shared/_utils/mongoose/isValidObjectId";
+import {fetchRequestUserId} from "@/shared/_utils/request/fetchRequestUserId";
 import {cancelClientReservation, checkoutClientReservation} from "@/domains/reservations/_feat/update-client-reservations/services";
 
 /**

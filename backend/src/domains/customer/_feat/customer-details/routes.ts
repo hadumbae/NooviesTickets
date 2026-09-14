@@ -5,14 +5,14 @@
 import {Router} from "express"
 import {isAuth} from "@/domains/authentication/_middleware/isAuth"
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin"
-import asyncHandler from "@/shared/utility/handlers/asyncHandler"
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler"
 import {
     getFetchCustomerProfileViewData, getFetchCustomerReservationsViewData, getFetchCustomerReservationViewData,
     getFetchCustomerReviewLogsViewData,
     getFetchCustomerReviewsViewData,
     getFetchCustomerReviewViewData
 } from "@/domains/customer/_feat/customer-details/controller"
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {
     ManageCustomerReservationRouteConfigSchema,
     ManageCustomerReviewRouteConfigSchema,

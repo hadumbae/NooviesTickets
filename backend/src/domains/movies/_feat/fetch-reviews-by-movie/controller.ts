@@ -3,7 +3,7 @@
  */
 
 import type {Request, Response} from "express";
-import {fetchRequestUserId} from "@/shared/utility/request/fetchRequestUserId";
+import {fetchRequestUserId} from "@/shared/_utils/request/fetchRequestUserId";
 import {
     fetchFeaturedReviewsByMovie,
     fetchPaginatedReviewsByMovie,

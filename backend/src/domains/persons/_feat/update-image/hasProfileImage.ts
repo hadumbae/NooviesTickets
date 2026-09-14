@@ -4,7 +4,7 @@
  */
 
 import type {Request, Response, NextFunction} from "express";
-import handleZodError from "@/shared/utility/schema/handlers/handleZodError";
+import handleZodError from "@/shared/_utils/schema/handlers/handleZodError";
 import {PersonProfileImageFileSchema} from "@/domains/persons/_feat/validate-submit";
 
 /**

@@ -6,12 +6,12 @@ import {Router} from "express";
 import {uploadImage} from "@/config/image-multr";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {
     patchRemoveMovieBannerImage,
     patchRemoveMoviePosterImage
 } from "@/domains/movies/_feat/manage-image/remove-image";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {hasMovieImage, ManageMovieImageRouteConfigSchema} from "@/domains/movies/_feat/manage-image/config";
 import {patchUpdateMovieBanner, patchUpdateMoviePoster} from "@/domains/movies/_feat/manage-image/update-image";
 

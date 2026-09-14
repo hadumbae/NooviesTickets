@@ -6,9 +6,9 @@
 
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {BrowseGenreWithMoviesRouteParamSchema} from "@/domains/genres/_feat/client-view-data/schemas";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {getFetchGenreWithMovies} from "@/domains/genres/_feat/client-view-data/controller";
 
 const router = Router();

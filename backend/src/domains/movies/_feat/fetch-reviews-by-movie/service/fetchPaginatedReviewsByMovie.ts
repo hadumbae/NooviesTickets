@@ -5,7 +5,7 @@
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
 import type {MovieReviewSchemaFields} from "@/domains/movie-reviews/_models/review/MovieReview.types";
 import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
-import populateQuery from "@/shared/utility/mongoose/populateQuery";
+import populateQuery from "@/shared/_utils/mongoose/populateQuery";
 import {MovieReviewPopulatePaths} from "@/domains/movie-reviews/_feat/query-population/MovieReviewPopulatePaths";
 import {Types} from "mongoose";
 import type {RequestOptions} from "@/shared/_feat";

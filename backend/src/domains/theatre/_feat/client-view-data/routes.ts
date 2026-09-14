@@ -3,9 +3,9 @@
  */
 
 import {Router} from "express";
-import {validateRequestConfig} from "@/shared/utility/schema/validators/validateRequestConfig";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {FetchTheatreInfoViewRouteConfigSchema} from "@/domains/theatre/_feat/client-view-data/theatre-info/FetchTheatreInfoViewRouteConfigSchema";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {getFetchTheatreInfoViewData} from "@/domains/theatre/_feat/client-view-data/controller";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 

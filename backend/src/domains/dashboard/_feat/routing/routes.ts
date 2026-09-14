@@ -1,6 +1,6 @@
 import {Router} from "express";
 import {isAdmin, isAuth} from "@/domains/authentication";
-import asyncHandler from "@/shared/utility/handlers/asyncHandler";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {getFetchAdminDashboardData} from "@/domains/dashboard/_feat/routing/getFetchAdminDashboardData";
 
 const router = Router();

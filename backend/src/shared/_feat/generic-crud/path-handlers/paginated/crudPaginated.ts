@@ -2,7 +2,7 @@
  * @fileoverview Generic controller and service for retrieving paginated document collections with metadata.
  */
 
-import populateQuery from "@/shared/utility/mongoose/populateQuery";
+import populateQuery from "@/shared/_utils/mongoose/populateQuery";
 import type {BaseModel} from "@/shared/_types/model/BaseModel";
 import type {Request, Response} from "express";
 import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils";

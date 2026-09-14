@@ -3,7 +3,7 @@
  */
 
 import { Types } from "mongoose";
-import type { LocationSchemaFields } from "@/shared/model/location/LocationSchemaFields";
+import type { LocationSchemaFields } from "@/shared/_models/location/LocationSchemaFields";
 import type { BaseModelWithSlug } from "@/shared/_types/model/BaseModel";
 import type { ModelTimestamps } from "@/shared/_types/model/ModelTimestamps";
 import type { ShowingSchemaFields } from "@/domains/showing/_models/showing/Showing.types";
