@@ -7,7 +7,7 @@ import {z} from "zod";
 import {URLStringSchema, NonEmptyStringSchema, DateInstanceSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {MovieTitleSchema} from "@/domains/movies/_feat/validate-submit/MovieTitleSchema";
 import {MovieTaglineSchema} from "@/domains/movies/_feat/validate-submit/MovieTaglineSchema";
-import generateArraySchema from "@/shared/utility/schema/generateArraySchema";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {MovieRuntimeSchema} from "@/domains/movies/_feat/validate-submit/MovieRuntimeSchema";
 
 /** Zod schema for validating movie snapshot input data. */

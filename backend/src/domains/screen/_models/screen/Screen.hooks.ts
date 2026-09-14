@@ -16,7 +16,7 @@ import type { HydratedDocument, Query } from "mongoose";
 import type { ScreenSchemaFields } from "./Screen.types";
 
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
-import {generateSlug} from "@/shared/utility/generateSlug";
+import {generateSlug} from "@noovies-tickets/common";
 import {TheatreModel} from "@/domains/theatre/model/theatre";
 import {SeatModel} from "@/domains/seat/_models";
 

@@ -5,7 +5,7 @@
 
 import {z} from "zod";
 import {GenreSchema} from "@/domains/genres/_schema";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 import {MovieWithGenresSchema} from "@/domains/movies/_schema/movie/MovieWithGenresSchema.ts";
 
 /** Validation schema for the consolidated Browse Genre view data. */

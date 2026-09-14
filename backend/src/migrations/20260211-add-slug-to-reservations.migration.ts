@@ -9,7 +9,7 @@ import mongoose from "mongoose";
 import {ReservationModel} from "@/domains/reservations/_model/reservation";
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model.js";
 import createHttpError from "http-errors";
-import {generateSlug} from "@/shared/utility/generateSlug.js";
+import {generateSlug} from "@noovies-tickets/common";
 import type {PopulatedShowing} from "@/domains/showing/_models/showing/Showing.types";
 
 /**

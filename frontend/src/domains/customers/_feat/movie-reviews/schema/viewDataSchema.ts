@@ -3,7 +3,7 @@
  */
 
 import { LeanUserWithEmailSchema } from "@/domains/users/_schema/user";
-import { generatePaginationSchema } from "@/common/_feat/validation-builders";
+import { generatePaginationSchema } from "@noovies-tickets/common";
 import { z } from "zod";
 import { CustomerMovieReviewSummarySchema } from "@/domains/movie-reviews/_schema";
 

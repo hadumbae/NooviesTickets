@@ -2,7 +2,7 @@
  * @fileoverview Utility functions for generating unique, URL-safe slugs with random ID suffixes.
  */
 
-import {slugify} from "@/shared/imports";
+import slugify from "slugify";
 import {customAlphabet} from "nanoid";
 
 /** Generates a URL-safe slug from a string with an appended random alphanumeric suffix. */

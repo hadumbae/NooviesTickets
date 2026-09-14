@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {HookFormInputControlProps, ReactSelectOption, RequestOptions} from "@/common/_types";
-import {generateArraySchema} from "@/common/_feat";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {AnimatedLoader, HookFormSelect} from "@/views/common/_comp";
 import {FieldValues} from "react-hook-form";

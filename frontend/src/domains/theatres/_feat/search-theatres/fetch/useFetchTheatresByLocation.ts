@@ -8,7 +8,7 @@ import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOption
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
 import {PaginatedItems} from "@/common/_types";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 
 import {TheatreWithRecentShowings, TheatreWithRecentShowingsSchema} from "@/domains/theatres/_schema";
 import {SearchTheatreQueryKeys} from "@/domains/theatres/_feat/search-theatres/fetch/queryKeys.ts"

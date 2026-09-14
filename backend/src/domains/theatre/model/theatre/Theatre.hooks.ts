@@ -9,7 +9,7 @@ import type {HydratedDocument, Query} from "mongoose";
 import {ScreenModel} from "@/domains/screen/_models/screen";
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import type {TheatreSchemaFields} from "./Theatre.types";
-import {generateSlug} from "@/shared/utility/generateSlug";
+import {generateSlug} from "@noovies-tickets/common";
 import {SeatModel} from "@/domains/seat/_models";
 
 /**

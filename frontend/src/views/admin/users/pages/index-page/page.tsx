@@ -3,7 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {generatePaginationSchema, useParsedPaginationValue, useTitle} from "@/common/_feat";
+import {useParsedPaginationValue, useTitle} from "@/common/_feat";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 import {useFetchPaginatedUsers} from "@/domains/users/_feat/crud-hooks/hooks/useFetchPaginatedUsers.ts";
 import {UserSchema} from "@/domains/users/_schema/user/UserSchema.ts";
 import {useUserIndexQueryOptionsContext} from "@/domains/users/_ctx";

@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {generateArraySchema, generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema, generatePaginationSchema} from "@noovies-tickets/common";
 import {ShowingDetailsSchema} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {TheatreScreenWithVirtualsSchema} from "@/domains/theatre-screens/_schema/model";
 import {TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";

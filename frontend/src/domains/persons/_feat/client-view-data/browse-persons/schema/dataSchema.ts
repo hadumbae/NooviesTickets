@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 import {PersonSummaryInfoSchema} from "@/domains/persons/_feat/client-view-data/browse-persons/schema/personSchema.ts";
 
 /** Zod schema for paginated person summary data. */

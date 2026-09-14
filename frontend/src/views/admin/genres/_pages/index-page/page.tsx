@@ -11,7 +11,7 @@ import {QueryDataLoader} from "@/views/common/_feat";
 import {GenreIndexPageContent} from "@/views/admin/genres/_pages/index-page/content.tsx";
 import {useParsedPaginationValue} from "@/common/_feat/fetch-pagination-search-params";
 import {Genre, GenreSchema} from "@/domains/genres/_schema";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 import {PaginatedItems} from "@/common/_types";
 import {
     useGenreIndexQueryOptionsContext

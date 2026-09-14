@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {GroupedCrewCreditsExceptMovieSchema} from "@/domains/movie-credits/_schemas";
 import {CastCreditExceptMovieSchema} from "@/domains/movie-credits/_feat/movie-info-credits/schema/CreditExceptMovieSchema.ts";
 import { MovieDetailsSchema } from "@/domains/movies/_schema/movie";

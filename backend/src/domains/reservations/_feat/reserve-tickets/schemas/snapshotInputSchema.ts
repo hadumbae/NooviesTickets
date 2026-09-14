@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import generateArraySchema from "@/shared/utility/schema/generateArraySchema";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {BooleanValueSchema, ValidDateInstanceSchema, PositiveNumberSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
 import {ReservationTypeSchema} from "@noovies-tickets/common";
 import {ReservedSeatSnapshotInputSchema} from "@/domains/seatmap/_feat/validate-submit/ReservedSeatSnapshotInputSchema";

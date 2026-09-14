@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {ShowingWithMovieSchema} from "@/domains/showings/_schema/showing";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {TheatreScreenSchema} from "@/domains/theatre-screens/_schema/model/TheatreScreenSchema.ts";
 
 /** Zod schema representing a Theatre Screen that includes both its parent Theatre and its scheduled Showings. */

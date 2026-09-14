@@ -6,7 +6,7 @@ import {ReactElement} from 'react';
 import {PaginatedItems} from "@/common/_types";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {useParsedPaginationValue} from "@/common/_feat/fetch-pagination-search-params";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 
 import {MovieDetails, MovieDetailsSchema} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {useFetchPaginatedMovies} from "@/domains/movies/_feat/crud-hooks/fetch/useFetchPaginatedMovies.ts";

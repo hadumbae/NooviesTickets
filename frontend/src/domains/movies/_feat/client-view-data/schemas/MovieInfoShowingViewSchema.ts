@@ -5,7 +5,7 @@
 import { z } from "zod";
 import {MovieDetailsSchema} from "@/domains/movies/_schema/movie";
 import {PopulatedShowingSchema} from "@/domains/showings/_schema/showing";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 
 /** Schema for validating the composite movie and paginated showings data. */
 export const MovieInfoShowingViewSchema = z.object({

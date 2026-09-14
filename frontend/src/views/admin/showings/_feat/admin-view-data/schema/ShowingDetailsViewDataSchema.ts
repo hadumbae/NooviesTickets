@@ -7,7 +7,7 @@ import {ShowingDetailsSchema} from "@/domains/showings/_schema/showing";
 import {MovieWithGenresSchema} from "@/domains/movies/_schema/movie";
 import {TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre";
 import {TheatreScreenDetailsSchema} from "@/domains/theatre-screens/_schema/model";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {SeatMapDetailsSchema} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSchema";
 
 /** Zod schema for validating the aggregated showing details view data. */

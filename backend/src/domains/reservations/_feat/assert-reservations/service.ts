@@ -3,7 +3,7 @@
  *
  */
 import type {ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
-import {calculateDateNow} from "@/shared/utility/date/LuxonDateUtils";
+import {calculateDateNow} from "@noovies-tickets/common";
 import {BookingError} from "@/shared/errors/reservations/BookingError";
 import {Types} from "mongoose";
 import {ReservationModel} from "@/domains/reservations/_model/reservation";

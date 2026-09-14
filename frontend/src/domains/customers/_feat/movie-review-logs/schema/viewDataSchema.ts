@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod"
-import {generatePaginationSchema} from "@/common/_feat/validation-builders"
+import {generatePaginationSchema} from "@noovies-tickets/common"
 import {MovieReviewModerationLogSchema} from "@/domains/movie-reviews/_feat/moderation/schema"
 import {UserSchema} from "@/domains/users/_schema/user/UserSchema.ts";
 import {PopulatedMovieReviewSchema} from "@/domains/movie-reviews";

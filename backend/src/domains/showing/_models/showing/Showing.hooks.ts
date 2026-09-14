@@ -13,7 +13,7 @@ import {createShowingSeatMap} from "@/domains/seatmap/_feat/manage-showing-seat-
 import {ShowingSeatMapVirtualPipelines} from "@/domains/showing/_feat/query-population/ShowingSeatMapVirtualPipelines";
 import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
 import {MovieModel} from "@/domains/movies/_models/movie";
-import {generateSlug} from "@/shared/utility/generateSlug";
+import {generateSlug} from "@noovies-tickets/common";
 
 ShowingSchema.pre("validate", {document: true}, async function () {
     if (this.isModified("theatre")) {

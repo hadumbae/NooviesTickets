@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {MovieDetailsSchema} from "@/domains/movies/_schema/movie";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {MovieCreditDetailsSchema} from "@/domains/movie-credits/_schemas";
 import {MovieReviewSummarySchema} from "@/domains/movie-reviews/_feat/fetch-by-movie";
 

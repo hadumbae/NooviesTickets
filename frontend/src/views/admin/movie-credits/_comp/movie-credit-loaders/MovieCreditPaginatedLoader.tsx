@@ -7,7 +7,7 @@ import {ReactElement, ReactNode} from "react";
 import {useFetchPaginatedMovieCredits} from "@/domains/movie-credits/_feat/crud-hooks";
 import {PaginatedItems} from "@/common/_types";
 import {MovieCreditDetails, MovieCreditDetailsSchema} from "@/domains/movie-credits";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 
 /** Props for the MovieCreditPaginatedListQuery component. */
 type QueryProps = PaginationOptions & MovieCreditQueryOptions & {

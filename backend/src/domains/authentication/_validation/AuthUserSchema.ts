@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import generateArraySchema from "@/shared/utility/schema/generateArraySchema";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {UserUniqueCodeSchema} from "@/domains/users/_feat/manage-user-unique-code";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
 import {

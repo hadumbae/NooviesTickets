@@ -8,10 +8,10 @@ import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.ts
 import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
 import {
     filterNullishAttributes
-} from "@/common/_feat/filter-object-attributes/filterNullishAttributes.ts";
+} from "@noovies-tickets/common";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {Genre, GenreQueryOptions, GenreSchema} from "@/domains/genres/_schema";
 import {useFetchGenres} from "@/domains/genres/_feat/crud-hooks/fetch/useFetchGenres.ts";
 

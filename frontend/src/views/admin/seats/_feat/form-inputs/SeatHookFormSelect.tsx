@@ -9,7 +9,7 @@ import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.ts
 import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
 import {buildString} from "@/common/_feat/formatters/buildString.ts";
 import {QueryDataLoader} from "@/views/common/_feat";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
 
 import {Seat, SeatQueryFilters, SeatSchema, useFetchSeats} from "@/domains/seats";

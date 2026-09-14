@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {PersonSchema} from "@/domains/persons/_schema/person/PersonSchema.ts";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {PersonCreditRoleGroupSchema} from "@/domains/movie-credits";
 
 /** Zod schema for validating person details and their grouped filmography credits. */

@@ -7,7 +7,7 @@ import {useFormContext} from "react-hook-form";
 import {Plus, X} from "lucide-react";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/common/_feat";
-import {filterFalsyAttributes} from "@/common/_feat/filter-object-attributes/filterFalsyAttributes.ts";
+import {filterFalsyAttributes} from "@noovies-tickets/common";
 import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
 
 import {HookFormInput} from "@/views/common/_feat";

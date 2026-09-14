@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {getTodayDateOnly} from "@/common/_feat";
+import {getTodayDateOnly} from "@noovies-tickets/common";
 import {preprocessOptionalField, DateOnlyStringSchema} from "@noovies-tickets/common";
 import {AnyValues} from "@/common/_types";
 

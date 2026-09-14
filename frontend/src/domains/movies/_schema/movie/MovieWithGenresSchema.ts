@@ -6,7 +6,7 @@ import { MovieReleaseDateRefinement } from "@/domains/movies/_schema/movie/Movie
 import { z } from "zod";
 
 import { GenreSchema } from "@/domains/genres/_schema/genre/GenreSchema.ts";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {MovieBaseSchema} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 
 /** Extended movie schema where the genres field is expected as full objects. */

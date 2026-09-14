@@ -12,7 +12,7 @@ import {
 } from "@/domains/movie-credits/_schemas";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {MovieDetailsCreditCastOverview} from "@/views/admin/movie-credits/_comp/cast-overview";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 
 /** Cast-specific movie credit details filtered by department. */
 type CastCredits = (Extract<MovieCreditDetails, { department: "CAST" }>)[];

@@ -4,7 +4,7 @@
 
 import {NavigateOptions, To, useLocation, useNavigate} from "react-router-dom";
 import {Logger} from "@/common/_feat/logger/Logger.ts";
-import {filterNullishAttributes} from "@/common/_feat/filter-object-attributes/filterNullishAttributes.ts";
+import {filterNullishAttributes} from "@noovies-tickets/common";
 import {LoggerFunction} from "@/common/_feat/logger/Logger.ts";
 import {LogContext} from "@/common/_feat/logger/Logger.types.ts";
 import {buildString} from "@/common/_feat/formatters/buildString.ts";

@@ -7,7 +7,7 @@ import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-par
 import {MovieIndexPageContent} from "@/views/admin/movies/_pages/index-page/content.tsx";
 import {PaginatedItems} from "@/common/_types";
 import {MovieDetails, MovieDetailsSchema} from "@/domains/movies/_schema/movie";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {useFetchPaginatedMovies} from "@/domains/movies/_feat/crud-hooks";
 import {useMovieIndexQueryOptionsContext} from "@/domains/movies/_feat/handle-query-options/movie-index/MovieIndexQueryOptionsContext.ts";

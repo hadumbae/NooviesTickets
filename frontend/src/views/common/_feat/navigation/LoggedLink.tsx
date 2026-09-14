@@ -7,7 +7,7 @@ import {forwardRef, MouseEventHandler} from 'react';
 import {Link, LinkProps, NavigateOptions, useLocation} from "react-router-dom";
 import {LoggerFunction} from "@/common/_feat/logger/Logger.ts";
 import {LogContext} from "@/common/_feat/logger/Logger.types.ts";
-import {filterNullishAttributes} from "@/common/_feat/filter-object-attributes/filterNullishAttributes.ts";
+import {filterNullishAttributes} from "@noovies-tickets/common";
 import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
 import {ParamError} from "@/common/_err/ParamError.ts";
 import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";

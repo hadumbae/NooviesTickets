@@ -11,7 +11,7 @@ import {
     PersonCrewCredit
 } from "@/domains/movie-credits/_feat/person-credit/schema/PersonCreditSchema.ts";
 import {RoleTypeSchema} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 
 /**
  * Schema representing a collection of movie credits associated with a single role name.

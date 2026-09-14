@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {TheatreScreenScheduleSchema} from "@/domains/theatre-screens/_schema/model";
 import {
     TheatreMovieRuntimesSchema

@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {AdminReservationSchema} from "@/domains/reservations/_schema";
 import {LeanUserWithEmailSchema} from "@/domains/users/_schema/user";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema for the data displayed in the customer movie reservations view.

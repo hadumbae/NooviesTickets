@@ -11,7 +11,7 @@ import {QueryDataLoader} from "@/views/common/_feat";
 import {FormSelectOnChangeHandler} from "@/common/_types";
 import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
 import {FormSelectValueHandler} from "@/common/_types/form/value";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 
 import {useFetchTheatres} from "@/domains/theatres/_feat/crud-hooks/fetch/useFetchTheatres.ts";
 import {Theatre, TheatreSchema} from "@/domains/theatres/_schema/theatre";

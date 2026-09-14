@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {RoleTypeCrewCategorySchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {CrewCreditExceptMovieSchema} from "@/domains/movie-credits/_feat/movie-info-credits/schema/CreditExceptMovieSchema.ts";
 
 /** Zod schema for crew credits grouped by role category. */

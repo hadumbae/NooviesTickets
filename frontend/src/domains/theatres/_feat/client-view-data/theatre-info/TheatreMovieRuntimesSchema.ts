@@ -7,7 +7,7 @@ import {MovieSummarySchema} from "@/domains/movies/_schema/movie/MovieSummarySch
 import {
     TheatreScreenShowingGroupSchema
 } from "@/domains/theatres/_feat/client-view-data/theatre-info/TheatreScreenShowingGroupSchema.ts";
-import {generateArraySchema} from "@/common/_feat";
+import {generateArraySchema} from "@noovies-tickets/common";
 
 /** Schema for validating a movie summary and its associated screen showing groups. */
 export const TheatreMovieRuntimesSchema = z.object({

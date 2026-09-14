@@ -10,12 +10,12 @@ import {
 } from "@/domains/movies/_feat/submit-queries";
 import {MovieQueryOptions, MovieQueryOptionSchema} from "@/domains/movies/_schema/queries/MovieQueryOptionSchema.ts";
 import {
-    filterFalsyAttributes,
     generateQueryFormDefaultValues,
     QueryOptionFormContainerProps,
     QueryOptionFormContextProvider,
     useGenerateFormID
 } from "@/common/_feat";
+import {filterFalsyAttributes} from "@noovies-tickets/common";
 
 type FormContainerProps = QueryOptionFormContainerProps<MovieQueryOptionFormValues, MovieQueryOptions>;
 

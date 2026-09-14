@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {UserRoleSchema} from "@noovies-tickets/common";
 import {LeanUserWithEmailSchema} from "@/domains/users/_schema/user/LeanUserWithEmailSchema.ts";
 

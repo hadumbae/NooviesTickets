@@ -5,7 +5,7 @@
 import {LoggerFunction} from "@/common/_feat/logger/Logger.ts";
 import {LogType} from "@/common/_feat/logger/Logger.types.ts";
 import {Logger} from "@/common/_feat/logger/Logger.ts";
-import {filterNullishAttributes} from "@/common/_feat/filter-object-attributes/filterNullishAttributes.ts";
+import {filterNullishAttributes} from "@noovies-tickets/common";
 
 /** Configuration parameters for constructing a standard log entry. */
 type LogParams = {

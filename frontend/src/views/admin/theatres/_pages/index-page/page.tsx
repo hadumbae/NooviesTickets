@@ -13,7 +13,7 @@ import {
 import {TheatreHttpStatusOverrideText} from "@/domains/theatres/_const/TheatreHttpStatusOverrideText.ts";
 import {useFetchPaginatedTheatres} from "@/domains/theatres/_feat/crud-hooks";
 import {QueryDataLoader} from "@/views/common/_feat";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 import {PaginatedItems} from "@/common/_types";
 
 import {TheatreDetails, TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre";

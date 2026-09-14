@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {IDStringSchema, ReservationTypeConstant} from "@noovies-tickets/common";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {superRefineReservation} from "@/domains/reservations/_schema/model/reservations/ReservationSchemaUtilities.ts";
 import {ReservationBaseSchema} from "@/domains/reservations/_schema/model/reservations/ReservationBaseSchema.ts";
 

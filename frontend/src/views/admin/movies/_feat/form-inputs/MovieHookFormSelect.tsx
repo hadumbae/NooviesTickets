@@ -7,7 +7,7 @@ import {Loader} from "lucide-react";
 import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
 import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
 import {ReactElement} from "react";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {Movie, MovieSchema} from "@/domains/movies/_schema/movie";
 import {useFetchMovies} from "@/domains/movies/_feat/crud-hooks";
 import {QueryDataLoader} from "@/views/common/_feat";

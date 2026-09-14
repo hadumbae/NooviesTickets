@@ -2,7 +2,7 @@
 
 import {TheatreSchema} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
 import {z} from "zod";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {ShowingDetailsSchema} from "@/domains/showings/_schema/showing";
 
 /** Zod schema for a theatre object extended with a list of detailed showings. */

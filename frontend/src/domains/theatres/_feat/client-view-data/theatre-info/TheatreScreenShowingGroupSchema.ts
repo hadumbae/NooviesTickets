@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {TheatreScreenSummarySchema} from "@/domains/theatre-screens";
-import {generateArraySchema} from "@/common/_feat";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {TheatreShowingSchema} from "@/domains/theatres/_feat/client-view-data/theatre-info/TheatreShowingSchema.ts";
 
 /** Schema for validating a group of showings assigned to a specific screen. */

@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
-import generateArraySchema from "@/shared/utility/schema/generateArraySchema";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {PositiveNumberSchema, ISO4217CurrencyCodeSchema} from "@noovies-tickets/common";
 import {ReservationTypeConstant, ReservationTypeSchema} from "@noovies-tickets/common";
 

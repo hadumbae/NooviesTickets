@@ -4,7 +4,7 @@
  */
 import {
     filterNullishAttributes
-} from "@/common/_feat/filter-object-attributes/filterNullishAttributes.ts";
+} from "@noovies-tickets/common";
 import {LinkItemConfig} from "@/common/_types/navigation/LinkItemConfig.ts";
 
 import {MovieCreditDetails} from "@/domains/movie-credits/_schemas/model/MovieCreditDetailsSchema.ts";

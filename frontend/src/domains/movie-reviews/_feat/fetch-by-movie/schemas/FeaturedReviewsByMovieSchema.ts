@@ -3,7 +3,7 @@
  */
 
 import { z } from "zod";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {MovieReviewDetailsSchema} from "@/domains/movie-reviews/_schema/model";
 
 /** Response schema for featured reviews of a movie. */

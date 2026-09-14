@@ -2,7 +2,7 @@
  * @fileoverview Orchestration service for initiating and finalizing ticket reservations.
  */
 
-import {calculateFutureDate} from "@/shared/utility/date/LuxonDateUtils";
+import {calculateFutureDate} from "@noovies-tickets/common";
 import {fetchPopulatedShowing} from "@/domains/showing/_feat/fetch-showings/fetchPopulatedShowing";
 import {BookingError} from "@/shared/errors/reservations/BookingError";
 import type {

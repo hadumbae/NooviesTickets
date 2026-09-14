@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {SlugString, ObjectIdString, DateOnlyString} from "@noovies-tickets/common";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";

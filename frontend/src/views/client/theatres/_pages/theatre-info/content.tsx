@@ -15,7 +15,7 @@ import {
 import {DateTime} from "luxon";
 import {QueryOptionsCalendarInput} from "@/views/common/_feat";
 import {DateOnlyString} from "@noovies-tickets/common";
-import {getTodayDateOnly} from "@/common/_feat";
+import {getTodayDateOnly} from "@noovies-tickets/common";
 import {TheatreInfoScreensSection} from "@/views/client/theatres/_pages/theatre-info/sections";
 import {
     TheatreInfoUpcomingSection

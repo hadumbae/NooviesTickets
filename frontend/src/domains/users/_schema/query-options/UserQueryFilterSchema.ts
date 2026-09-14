@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {generateArraySchema} from "@/common/_feat";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {preprocessOptionalField, UserRoleSchema} from "@noovies-tickets/common";
 import {UserPersonalNameSchema, UserUniqueCodeSchema, UserEmailSchema} from "@/domains/users/_schema/fields";
 

@@ -10,7 +10,7 @@ import {HookFormMultiSelect} from "@/views/common/_comp/form-select/HookFormMult
 import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {TheatreScreen, TheatreScreenSchema} from "@/domains/theatre-screens/_schema/model";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
 import {TheatreScreenQueryFilters, useFetchScreens} from "@/domains/theatre-screens";
 

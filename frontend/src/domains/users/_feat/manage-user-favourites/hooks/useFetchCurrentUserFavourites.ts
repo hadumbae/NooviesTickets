@@ -10,7 +10,7 @@ import {PaginationOptions} from "@noovies-tickets/common";
 import {getUserFavourites} from "@/domains/users/_feat/manage-user-favourites/repository";
 import {ManageUserFavouritesQueryKeys} from "@/domains/users/_feat/manage-user-favourites/hooks/queryKeys.ts";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 import {MovieDetails, MovieDetailsSchema} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {PaginatedItems} from "@/common/_types";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";

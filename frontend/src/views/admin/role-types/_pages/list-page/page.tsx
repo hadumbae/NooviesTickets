@@ -4,7 +4,7 @@
 
 import {ReactElement} from 'react';
 import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {RoleType, RoleTypeSchema} from "@/domains/roletypes/_schema";
 import {RoleTypeQueryOptionsSchema, useFetchRoleTypes} from "@/domains/roletypes/_feat";

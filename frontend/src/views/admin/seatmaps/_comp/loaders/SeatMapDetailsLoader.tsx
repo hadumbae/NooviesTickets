@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {QueryDataLoader} from "@/views/common/_feat";
 import {SeatMapDetails, SeatMapDetailsSchema, SeatMapQueryOptions, useFetchSeatMaps} from "@/domains/seatmaps";
 

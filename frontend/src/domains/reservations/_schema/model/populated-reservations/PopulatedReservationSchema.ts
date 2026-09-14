@@ -4,7 +4,7 @@
 
 /** Populated schema for General Admission variants. */
 import {z} from "zod";
-import {generateArraySchema} from "@/common/_feat/validation-builders";
+import {generateArraySchema} from "@noovies-tickets/common";
 import {ReservationTypeConstant} from "@noovies-tickets/common";
 import {SeatMapWithSeatSchema} from "@/domains/seatmaps/_schema/model/SeatMapWithSeatSchema";
 import {superRefineReservation} from "@/domains/reservations/_schema/model/reservations/ReservationSchemaUtilities.ts";

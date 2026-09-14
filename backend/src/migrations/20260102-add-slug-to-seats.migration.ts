@@ -14,7 +14,7 @@ import 'dotenv/config';
 
 import mongoose from "mongoose";
 import {connect} from "@/shared/config/database.js";
-import {generateSlug} from "@/shared/utility/generateSlug.js";
+import {generateSlug} from "@noovies-tickets/common";
 import {SeatModel} from "@/domains/seat/_models";
 
 connect().then(async () => {

@@ -8,7 +8,7 @@ import {
 } from "@/common/_feat/navigation/useLoggedNavigate.ts";
 import {
     filterNullishAttributes
-} from "@/common/_feat/filter-object-attributes/filterNullishAttributes.ts";
+} from "@noovies-tickets/common";
 import {NavigateOptions} from "react-router-dom";
 
 /** Props for the navigate function returned by useNavigateToTheatre. */

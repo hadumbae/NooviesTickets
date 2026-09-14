@@ -10,7 +10,7 @@ import {PopulatedReservation, PopulatedReservationSchema} from "@/domains/reserv
 import {PaginatedItems} from "@/common/_types";
 import HttpResponseError from "@/common/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {generatePaginationSchema} from "@/common/_feat/validation-builders";
+import {generatePaginationSchema} from "@noovies-tickets/common";
 import {getFetchUserReservations} from "@/domains/reservations/_feat/fetch-current-user-reservations/repository";
 import {
     CurrentUserReservationQueryKeys
