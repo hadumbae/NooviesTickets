@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {PasswordStringSchema} from "@/shared/schema/strings/PasswordStringSchema";
-import {NonEmptyStringSchema, EmailStringSchema} from "@noovies-tickets/common";
+import {NonEmptyStringSchema, EmailStringSchema, PasswordStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating user registration requests, including password confirmation matching. */
 export const UserRegisterInputSchema = z.object({

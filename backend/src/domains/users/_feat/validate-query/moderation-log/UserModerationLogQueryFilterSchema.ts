@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {preprocessEmptyToUndefined, UserModerationLogActionSchema} from "@noovies-tickets/common";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 
 /** Schema for filtering user moderation logs by user ID and action type. */
 export const UserModerationLogQueryFilterSchema = z.object({

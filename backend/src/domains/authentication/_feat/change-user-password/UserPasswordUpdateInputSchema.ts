@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {PasswordStringSchema} from "@/shared/schema/strings/PasswordStringSchema";
+import {PasswordStringSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating user password update input. */
 export const UserPasswordUpdateInputSchema = z.object({

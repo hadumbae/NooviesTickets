@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {NonNegativeNumberSchema, DateOnlyStringSchema, SlugStringSchema} from "@noovies-tickets/common";
 
 /** Schema for the showings by screen query parameters. */

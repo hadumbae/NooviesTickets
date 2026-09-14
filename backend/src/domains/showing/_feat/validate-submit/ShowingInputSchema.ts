@@ -6,7 +6,7 @@ import {z} from "zod";
 import {DateTime} from "luxon";
 import {NonEmptyStringSchema, PositiveNumberSchema, DateOnlyStringSchema, TimeStringSchema, IANATimezoneSchema, ShowingStatusSchema} from "@noovies-tickets/common";
 import {ShowingConfigInputSchema} from "@/domains/showing/_feat/validate-submit/ShowingConfigInputSchema";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 
 /** Schema for validating showing input and transforming date strings into UTC JS Dates. */
 export const ShowingInputSchema = z.object({

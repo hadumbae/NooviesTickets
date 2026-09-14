@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 
 /** Zod schema validating the parameters required for the user suspension management route. */
 export const ManageUserSuspensionRouteConfigSchema = z.object({

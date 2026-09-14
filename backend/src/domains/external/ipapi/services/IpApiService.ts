@@ -6,7 +6,7 @@
 import "dotenv/config";
 import {useFetchAPI} from "@/shared/utility/fetch/useFetchAPI.js";
 import * as process from "node:process";
-import {IpifyCountryDataSchema, type IpifyCountryData} from "@/shared/schema/ipify/IpifyCountryDataSchema.js";
+import {IpifyCountryDataSchema, type IpifyCountryData} from "@/domains/external/ipapi/schema/IpifyCountryDataSchema.js";
 import {DataValidationError} from "@/shared/errors/DataValidationError.js";
 
 /**

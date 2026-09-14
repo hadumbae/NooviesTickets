@@ -4,13 +4,12 @@
 
 import {z} from "zod";
 import {AnyValues} from "@/shared/_types";
-import {StringValueSchema} from "@noovies-tickets/common";
-import {preprocessEmptyToUndefined, EmailStringSchema} from "@noovies-tickets/common";
+import {preprocessEmptyToUndefined, EmailStringSchema, PasswordInputSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating user login credentials. */
 export const AuthLoginFormSchema = z.object({
     email: preprocessEmptyToUndefined(EmailStringSchema),
-    password: preprocessEmptyToUndefined(StringValueSchema),
+    password: preprocessEmptyToUndefined(PasswordInputSchema),
 });
 
 /** Type representing validated login form data. */

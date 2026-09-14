@@ -1,4 +1,4 @@
-import type {BookingErrorCode} from "../../schema/strings/BookingErrorCodeSchema.js";
+import type {BookingErrorCode} from "../../_schema/strings/BookingErrorCodeSchema.js";
 
 /**
  * Constructor parameters for {@link BookingError}.

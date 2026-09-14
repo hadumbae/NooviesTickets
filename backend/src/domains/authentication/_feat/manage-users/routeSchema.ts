@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 
 /** Zod validation schema for the manage user route parameters. */
 export const ManageUserRouteConfigSchema = z.object({

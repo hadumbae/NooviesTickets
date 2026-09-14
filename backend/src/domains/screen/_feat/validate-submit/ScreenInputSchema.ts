@@ -7,7 +7,7 @@
 import {z} from "zod";
 import {ScreenTypeSchema} from "@noovies-tickets/common";
 import {PositiveNumberSchema, NonEmptyStringSchema} from "@noovies-tickets/common";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 
 /**
  * Zod schema for validating Screen creation and update payloads.

@@ -5,7 +5,7 @@
 
 import { z } from 'zod';
 import {BooleanValueSchema, NonEmptyStringSchema, PositiveNumberSchema, NonNegativeNumberSchema, SeatLayoutTypeSchema} from "@noovies-tickets/common";
-import { ObjectIdStringSchema } from "@/shared/schema/mongoose/ObjectIdStringSchema";
+import { ObjectIdStringSchema } from "@/shared/_schema/mongoose/ObjectIdStringSchema";
 import {SeatTypeSchema} from "@noovies-tickets/common";
 
 /**

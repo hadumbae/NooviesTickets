@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 
 /** Zod validation schema for customer management route parameters. */
 export const ManageCustomerRouteConfigSchema = z.object({

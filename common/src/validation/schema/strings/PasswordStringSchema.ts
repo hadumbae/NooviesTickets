@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@noovies-tickets/common";
+import {StringValueSchema} from "./StringValueSchema";
 
 /** Zod schema for validating password strings between 16 and 255 characters. */
 export const PasswordStringSchema = StringValueSchema.min(16, "Min. 16 Chars").max(255, "Max. 255 Chars");

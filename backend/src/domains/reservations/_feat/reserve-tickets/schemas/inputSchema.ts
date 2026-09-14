@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {generateArraySchema} from "@noovies-tickets/common";
 import {PositiveNumberSchema, ISO4217CurrencyCodeSchema} from "@noovies-tickets/common";
 import {ReservationTypeConstant, ReservationTypeSchema} from "@noovies-tickets/common";

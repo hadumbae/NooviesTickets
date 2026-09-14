@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {SeatTypeSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 
 /** Zod schema for validating reserved seat snapshot input data. */
 export const ReservedSeatSnapshotInputSchema = z.object({

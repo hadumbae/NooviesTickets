@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {generateArraySchema} from "@noovies-tickets/common";
 import {UserUniqueCodeSchema} from "@/domains/users/_feat/manage-user-unique-code";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {
     UserEmailSchema,
     UserPersonalNameSchema,

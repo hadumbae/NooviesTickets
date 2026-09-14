@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ObjectIdSchema} from "@/shared/schema/mongoose/ObjectIdSchema";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {BooleanValueSchema, StringValueSchema, UserStatusSchema} from "@noovies-tickets/common";
 
 /** Zod validation schema for request-scoped authentication data properties. */

@@ -4,7 +4,7 @@
  */
 
 import { z } from "zod";
-import { ObjectIdSchema } from "@/shared/schema/mongoose/ObjectIdSchema.js";
+import { ObjectIdSchema } from "@/shared/_schema/mongoose/ObjectIdSchema.js";
 import { MovieReviewUpdateInputSchema } from "@/domains/movie-reviews/_feat/validate-submit/schemas/MovieReviewUpdateInputSchema.js";
 
 /**

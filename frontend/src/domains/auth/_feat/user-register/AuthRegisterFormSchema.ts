@@ -4,15 +4,15 @@
  */
 import {z} from "zod";
 import {AnyValues} from "@/shared/_types";
-import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {UserEmailSchema, UserPasswordSchema, UserPersonalNameSchema} from "@/domains/users/_schema/fields";
+import {preprocessEmptyToUndefined, PasswordStringSchema} from "@noovies-tickets/common";
+import {UserEmailSchema, UserPersonalNameSchema} from "@/domains/users/_schema/fields";
 
 /** Base schema for registration input fields. */
 export const AuthRegisterFormBaseSchema = z.object({
     name: preprocessEmptyToUndefined(UserPersonalNameSchema),
     email: preprocessEmptyToUndefined(UserEmailSchema),
-    password: preprocessEmptyToUndefined(UserPasswordSchema),
-    confirm: preprocessEmptyToUndefined(UserPasswordSchema),
+    password: preprocessEmptyToUndefined(PasswordStringSchema),
+    confirm: preprocessEmptyToUndefined(PasswordStringSchema),
 });
 
 /** Registration schema with cross-field validation for password confirmation. */
