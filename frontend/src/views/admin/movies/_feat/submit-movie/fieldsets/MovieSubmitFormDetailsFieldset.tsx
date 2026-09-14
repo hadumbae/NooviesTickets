@@ -4,12 +4,12 @@
 
 import {ReactElement} from "react";
 import {useFormContext} from "react-hook-form";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {MovieFormStarterValues} from "@/domains/movies/_feat/submit-data/schema/MovieFormSchema.ts";
-import {cn, createFormFieldConfig, renderFields, useBaseFormContext} from "@/common/_feat";
-import {Separator} from "@/views/common/_comp/ui";
-import {HookFormInput, HookFormTextArea} from "@/views/common/_feat";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
+import {cn, createFormFieldConfig, renderFields, useBaseFormContext} from "@/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui";
+import {HookFormInput, HookFormTextArea} from "@/views/shared/_feat";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
 
 /**
  * Renders form fields for basic movie information like title, tagline, and synopsis.

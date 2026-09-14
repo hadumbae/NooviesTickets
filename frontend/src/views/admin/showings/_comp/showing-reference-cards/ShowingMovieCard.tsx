@@ -2,12 +2,12 @@
  * @fileoverview A card component for displaying movie details within the admin showings view.
  */
 
-import {Card, CardContent, CardHeader} from "@/views/common/_comp/ui/card.tsx";
+import {Card, CardContent, CardHeader} from "@/views/shared/_comp/ui/card.tsx";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {AdminMovieMeta, MovieMetaGenreBadges} from "@/views/admin/movies/_comp/movie-details";
 import {ReactElement} from "react";
 import {MovieWithGenres} from "@/domains/movies/_schema/movie";
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 
 /** Props for the ShowingMovieCard component. */
 type CardProps = {

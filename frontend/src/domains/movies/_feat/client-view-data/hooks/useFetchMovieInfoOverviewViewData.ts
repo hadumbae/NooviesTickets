@@ -4,10 +4,10 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {SlugString} from "@noovies-tickets/common";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {getOverviewDataForMovieInfoView} from "@/domains/movies/_feat/client-view-data/repository";
 import {MovieClientViewDataQueryKeys} from "@/domains/movies/_feat/client-view-data/hooks/queryKeys.ts";
 import {MovieInfoOverviewViewData, MovieInfoOverviewViewSchema} from "@/domains/movies/_feat/client-view-data/schemas";

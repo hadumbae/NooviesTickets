@@ -11,12 +11,12 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-} from "@/views/common/_comp/ui/breadcrumb.tsx";
+} from "@/views/shared/_comp/ui/breadcrumb.tsx";
 import {
     usePaginationLocationState
-} from "@/common/_feat/navigation/usePaginationLocationState.ts";
-import {parseStateToSearchParams} from "@/common/_feat/fetch-search-params/parseStateToSearchParams.ts";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+} from "@/shared/_feat/navigation/usePaginationLocationState.ts";
+import {parseStateToSearchParams} from "@/shared/_feat/fetch-search-params/parseStateToSearchParams.ts";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 
 /** Props for the {@link GenreDetailsPageBreadcrumbs} component. */
 type BreadcrumbProps = {

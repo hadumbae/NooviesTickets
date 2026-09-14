@@ -2,11 +2,11 @@
  * @fileoverview Hook for fetching paginated user data with validation and caching.
  */
 
-import {PaginatedQueryConfig} from "@/common/_types";
+import {PaginatedQueryConfig} from "@/shared/_types";
 import {UserQueryOptions} from "@/domains/users/_schema/query-options";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn, useQueryOptionDefaults} from "@/common/_feat";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn, useQueryOptionDefaults} from "@/shared/_feat";
 import {paginated} from "@/domains/users/_feat/crud";
 import {UserCRUDQueryKeys} from "@/domains/users/_feat/crud-hooks/keys";
 

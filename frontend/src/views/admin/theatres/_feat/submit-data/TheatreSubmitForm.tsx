@@ -2,7 +2,7 @@
  * @fileoverview Defines the form component and hook for submitting theatre data.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {Theatre} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
 import {TheatreEditData, TheatreFormValues} from "@/domains/theatres/_feat/submit-data";
 import {TheatreFormData} from "@/domains/theatres/_feat/submit-data/schema.ts";

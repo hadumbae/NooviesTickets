@@ -3,8 +3,8 @@
  *
  */
 
-import {useCurrentURLPath} from "@/common/_feat/navigation/useCurrentURLPath.ts";
-import {UnauthorisedError} from "@/common/_err/UnauthorisedError.ts";
+import {useCurrentURLPath} from "@/shared/_feat/navigation/useCurrentURLPath.ts";
+import {UnauthorisedError} from "@/shared/_err/UnauthorisedError.ts";
 import {User} from "@/domains/users/_schema/user/UserSchema";
 import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";
 

@@ -5,7 +5,7 @@
 import {
     UserStatusUpdateActionConstant
 } from "@/domains/users/_feat/manage-user-status/const/UserStatusUpdateActionConstant.ts";
-import {ReactSelectOption} from "@/common/_types";
+import {ReactSelectOption} from "@/shared/_types";
 
 /** Select options for user status update actions formatted for React Select components. */
 export const UserStatusUpdateActionSelectOptions: ReactSelectOption[] = UserStatusUpdateActionConstant.map(

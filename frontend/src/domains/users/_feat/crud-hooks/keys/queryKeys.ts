@@ -2,7 +2,7 @@
  * @fileoverview Defines the query key factory for user CRUD operations.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Query key factory for user-related data fetching and caching. */
 export const UserCRUDQueryKeys = buildQueryKey(

@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {IDStringSchema, PositiveNumberSchema, preprocessToNull, preprocessToNumber, ISO4217CurrencyCodeSchema, ReservationTypeConstant} from "@noovies-tickets/common";
 import {generateArraySchema} from "@noovies-tickets/common";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 
 /** Base schema containing shared fields for all ticket reservation modes. */
 export const ReserveTicketFormBaseSchema = z.object({

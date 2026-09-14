@@ -3,7 +3,7 @@
  */
 
 import {Star} from "lucide-react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {ReactElement} from "react";
 
 /** Props for the MovieReviewRatingStars component. */

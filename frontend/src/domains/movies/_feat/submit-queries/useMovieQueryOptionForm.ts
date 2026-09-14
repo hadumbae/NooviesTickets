@@ -4,7 +4,7 @@
 
 import {useForm, UseFormReturn} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {QueryOptionFormValues} from "@/common/_feat/query-options-form";
+import {QueryOptionFormValues} from "@/shared/_feat/query-options-form";
 import {MovieQueryOptions, MovieQueryOptionSchema} from "@/domains/movies/_schema";
 import {MovieQueryOptionFormValues} from "@/domains/movies/_feat/submit-queries/MovieQueryOptionFormValues";
 import {

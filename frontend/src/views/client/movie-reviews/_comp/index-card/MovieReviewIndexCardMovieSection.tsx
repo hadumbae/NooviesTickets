@@ -3,13 +3,13 @@
  */
 
 import {MovieWithRating} from "@/domains/movies/_schema/movie/MovieWithRatingSchema.ts";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {MovieReviewRatingStars} from "@/views/client/movie-reviews/_comp/display/MovieReviewRatingStars.tsx";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image";
 import {formatMovieData} from "@/domains/movies/_feat/formatters";
 import {ReactElement} from "react";
-import {SROnly} from "@/views/common/_comp/screen-readers";
-import {SubsectionTitle} from "@/views/common/_comp";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
+import {SubsectionTitle} from "@/views/shared/_comp";
 
 /** Props for the MovieReviewIndexCardMovieSection component. */
 type SectionProps = {

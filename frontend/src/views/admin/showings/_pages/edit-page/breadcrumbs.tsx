@@ -9,8 +9,8 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-} from "@/views/common/_comp/ui/breadcrumb.tsx";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+} from "@/views/shared/_comp/ui/breadcrumb.tsx";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {ReactElement} from "react";
 

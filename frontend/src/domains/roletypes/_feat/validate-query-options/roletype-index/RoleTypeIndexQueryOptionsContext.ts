@@ -2,7 +2,7 @@
  * @fileoverview React context provider and hook for managing role type index query options state.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsSchema
 } from "@/domains/roletypes/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";

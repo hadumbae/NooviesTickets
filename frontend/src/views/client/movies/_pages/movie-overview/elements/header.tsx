@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
 import {MovieOverviewCreditLinks, MovieOverviewHeadline, MovieOverviewMeta} from "@/views/client/movies/_comp";
 
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {MovieCreditDetails} from "@/domains/movie-credits";
 

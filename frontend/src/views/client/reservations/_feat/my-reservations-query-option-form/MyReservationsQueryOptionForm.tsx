@@ -9,10 +9,10 @@ import {
     CurrentUserReservationsQueryOptionSchema,
     useCurrentUserReservationsQueryOptionForm
 } from "@/domains/reservations/_feat/fetch-current-user-reservations";
-import {useGenerateFormID} from "@/common/_feat/generate-form-keys";
-import {useParsedSearchParams} from "@/common/_feat";
-import {BaseFormContextProvider} from "@/common/_feat/generic-form-context";
-import {Form} from "@/views/common/_comp/ui";
+import {useGenerateFormID} from "@/shared/_feat/generate-form-keys";
+import {useParsedSearchParams} from "@/shared/_feat";
+import {BaseFormContextProvider} from "@/shared/_feat/generic-form-context";
+import {Form} from "@/views/shared/_comp/ui";
 
 /** Props for the MyReservationsQueryOptionForm component. */
 type FormProps = {

@@ -5,8 +5,8 @@
 
 import {forwardRef, useState} from "react";
 import {Heart, HeartMinus, HeartPlus} from "lucide-react";
-import {Button, ButtonProps} from "@/views/common/_comp/ui/button.tsx";
-import {AnimatedLoader} from "@/views/common/_comp";
+import {Button, ButtonProps} from "@/views/shared/_comp/ui/button.tsx";
+import {AnimatedLoader} from "@/views/shared/_comp";
 
 /** Props for FavouriteMovieHeartButton. */
 type HeartProps = ButtonProps & {

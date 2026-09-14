@@ -1,12 +1,12 @@
 /**
  * @fileoverview React Query hook for retrieving paginated movie reservations for a specific customer.
  */
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {PaginationOptions} from "@noovies-tickets/common";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {
     getFetchCustomerReservationsViewData
 } from "@/domains/customers/_feat/manage-reservations/repository/repository.ts";

@@ -4,14 +4,14 @@
 
 import {useMutation, type UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {toast} from "react-toastify";
-import {type MutationResponseConfig} from "@/common/_feat/submit-data";
+import {type MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {
     handleSubmitResponseError
-} from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
+} from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
 import {patchRemoveGenreImage} from "@/domains/genres/_feat/manage-image/repository";
 import {ManageGenreImageMutationKeys} from "@/domains/genres/_feat/manage-image/mutations/mutationKeys.ts";
 import {type Genre, GenreSchema} from "@/domains/genres/_schema";
-import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Payload for the remove genre image mutation. */

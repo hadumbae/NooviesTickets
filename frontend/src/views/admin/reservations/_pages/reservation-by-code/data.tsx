@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationSchema.ts";
-import {PageSectionHeader, SectionTitle} from "@/views/common/_comp";
+import {PageSectionHeader, SectionTitle} from "@/views/shared/_comp";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image/MoviePosterImage.tsx";
 import {ReservationStatusBadge} from "@/views/client/reservations/_comp/reservation-badges/ReservationStatusBadge.tsx";
 import {AdminReservationActionsSection, AdminReservationNotesSection} from "@/views/admin/reservations/_feat";

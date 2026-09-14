@@ -3,13 +3,13 @@
  */
 
 import {ReactElement} from 'react';
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 import {ShowingFormValues} from "@/domains/showings/_schema/form";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
-import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/common/_feat";
-import {HookFormMultiSelect, HookFormSelect} from "@/views/common/_comp";
-import {ISO6391LanguageOptions} from "@/common/_const";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/shared/_feat";
+import {HookFormMultiSelect, HookFormSelect} from "@/views/shared/_comp";
+import {ISO6391LanguageOptions} from "@/shared/_const";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
 
 /**
  * Form section for language configuration.

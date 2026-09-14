@@ -2,7 +2,7 @@
  * @fileoverview Context provider and hooks for managing disclosure state during pending genre image deletion operations.
  */
 
-import {createDisclosureContext} from "@/common/_feat";
+import {createDisclosureContext} from "@/shared/_feat";
 
 const {Provider, useDisclosureState, useDisclosureActions} = createDisclosureContext({
     stateName: "pending-genre-image-delete-ui-state-context",

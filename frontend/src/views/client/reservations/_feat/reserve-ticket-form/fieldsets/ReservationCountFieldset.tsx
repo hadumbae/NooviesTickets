@@ -2,11 +2,11 @@
  * @fileoverview Fieldset for final ticket quantity verification and reservation submission.
  *
  */
-import {HookFormInput} from "@/views/common/_feat";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {HookFormInput} from "@/views/shared/_feat";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {useFormContext} from "react-hook-form";
 import {ReservationType} from "@noovies-tickets/common";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {ReactElement} from "react";
 
 /** Props for the ReservationCountFieldset component. */

@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent, CardHeader} from "@/views/common/_comp/ui";
+import {Card, CardContent, CardHeader} from "@/views/shared/_comp/ui";
 import {BrowseMovieSummary} from "@/views/client/movies/_comp/browse-movie-info";
 
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {Link} from "react-router-dom";
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 
 /** Props for the BrowseMovieOverviewCard component. */
 type CardProps = {

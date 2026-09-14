@@ -5,12 +5,12 @@
 import {ReactElement} from "react";
 import {PersonInfoContent} from "@/views/client/persons/_pages/info-page/content.tsx";
 import {usePersonInfoRouteParams} from "@/domains/persons/_feat/fetch-route-params";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
-import {PageLoader} from "@/views/common/_comp";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
+import {PageLoader} from "@/views/shared/_comp";
 import {toast} from "react-toastify";
 import {useFetchPersonInfoViewData} from "@/domains/persons/_feat/client-view-data";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {useTitle} from "@/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {useTitle} from "@/shared/_feat";
 
 /**
  * Entry point for the person details view.

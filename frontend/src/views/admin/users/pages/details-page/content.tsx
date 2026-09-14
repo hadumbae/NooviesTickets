@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper, PageHeader} from "@/views/common/_comp";
+import {PageFlexWrapper, PageHeader} from "@/views/shared/_comp";
 import {User} from "@/domains/users/_schema/user";
 import {AdminUserDetailsCard} from "@/views/admin/users/_comp";
-import {useTitle} from "@/common/_feat";
+import {useTitle} from "@/shared/_feat";
 import {
     UserDetailsPageBreadcrumbs,
     UserDetailsPageRoleManagementSection, UserDetailsPageStatusManagementSection,

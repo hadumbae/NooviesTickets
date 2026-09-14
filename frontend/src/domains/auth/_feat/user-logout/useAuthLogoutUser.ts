@@ -4,9 +4,9 @@
 
 import {toast} from "react-toastify";
 import {useMutation} from "@tanstack/react-query";
-import {handleSubmitResponseError} from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
+import {handleSubmitResponseError} from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
 import {useLogoutAuthUser} from "@/domains/auth/_feat/manage-auth-user-data/useLogoutAuthUser.ts";
-import {MutationResponseConfig} from "@/common/_feat/submit-data/mutationTypes.ts";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data/mutationTypes.ts";
 import {AuthMutationKeys} from "@/domains/auth/_feat/common/AuthMutationKeys.ts";
 import {postLogoutUser} from "@/domains/auth/_feat/user-logout/postLogoutUser.ts";
 

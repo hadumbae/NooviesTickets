@@ -4,9 +4,9 @@
 
 import {ReactElement} from "react";
 import {List, Plus} from "lucide-react";
-import {PageSectionHeader} from "@/views/common/_comp/page";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
-import {IconButton} from "@/views/common/_comp";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
+import {IconButton} from "@/views/shared/_comp";
 import {SlugString} from "@noovies-tickets/common";
 
 /** Props for the TheatreDetailsShowingsTabHeader component. */

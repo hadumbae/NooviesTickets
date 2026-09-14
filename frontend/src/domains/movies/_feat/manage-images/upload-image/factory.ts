@@ -5,11 +5,11 @@
 import {MutationKey, useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {Movie, MovieSchema} from "@/domains/movies/_schema";
-import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {MovieCRUDQueryKeys} from "@/domains/movies/_feat/crud-hooks";
 import {MovieImageFormData} from "@/domains/movies/_feat/manage-images/formSchema.ts";
 import {UploadMovieImageRouteConfig} from "@/domains/movies/_feat/manage-images/upload-image/repository";
-import {FetchRequestReturns} from "@/common/_types";
+import {FetchRequestReturns} from "@/shared/_types";
 
 type FactoryConfig = {
     key: MutationKey;

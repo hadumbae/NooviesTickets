@@ -11,13 +11,13 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 import {ReactElement, ReactNode} from "react";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {useFormContext} from "react-hook-form";
-import {HookFormInput} from "@/views/common/_feat";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {UIOpenStateProps} from "@/common/_types";
+import {HookFormInput} from "@/views/shared/_feat";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {UIOpenStateProps} from "@/shared/_types";
 
 /** Props for the ToggleReviewPublicityDialog component. */
 type DialogProps = UIOpenStateProps & {

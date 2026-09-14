@@ -3,10 +3,10 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
-import {ListQueryConfig} from "@/common/_types";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {ListQueryConfig} from "@/shared/_types";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {find} from "@/domains/roletypes/_feat/crud";
 import {RoleTypeCRUDQueryKeys} from "@/domains/roletypes/_feat/crud-hooks/keys";
 

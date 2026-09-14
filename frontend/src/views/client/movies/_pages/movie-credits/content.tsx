@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, useMemo} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {MovieInfoHeader} from "@/views/client/movies/_comp";
 import {
     MovieInfoCastCreditsSection,

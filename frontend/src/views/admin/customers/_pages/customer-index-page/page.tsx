@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {useParsedPaginationValue, useTitle} from "@/common/_feat";
+import {useParsedPaginationValue, useTitle} from "@/shared/_feat";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 import {useFetchPaginatedUsers} from "@/domains/users/_feat";
 import {UserDetailsSchema} from "@/domains/users/_schema/user";
 import {useCustomerIndexQueryOptionsContext} from "@/domains/customers/_ctx/CustomerIndexQueryOptionsContext.ts";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {CustomerIndexPageContent} from "@/views/admin/customers/_pages/customer-index-page/content.tsx";
 
 const CUSTOMERS_PER_PAGE = 20;

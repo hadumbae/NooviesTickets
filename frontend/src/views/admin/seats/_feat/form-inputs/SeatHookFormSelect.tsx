@@ -5,12 +5,12 @@
 import {ReactElement} from "react";
 import {FieldValues} from "react-hook-form";
 import {Loader} from "lucide-react";
-import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
-import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
+import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {generateArraySchema} from "@noovies-tickets/common";
-import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
+import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
 
 import {Seat, SeatQueryFilters, SeatSchema, useFetchSeats} from "@/domains/seats";
 

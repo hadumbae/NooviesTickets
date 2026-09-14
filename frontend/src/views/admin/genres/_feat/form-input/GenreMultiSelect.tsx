@@ -3,14 +3,14 @@
  */
 
 import {FieldValues} from "react-hook-form";
-import {HookFormMultiSelect} from "@/views/common/_comp/form-select/HookFormMultiSelect.tsx";
-import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
+import {HookFormMultiSelect} from "@/views/shared/_comp/form-select/HookFormMultiSelect.tsx";
+import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
 import {
     filterNullishAttributes
 } from "@noovies-tickets/common";
 import {ReactElement} from "react";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
 import {useFetchGenres} from "@/domains/genres/_feat/crud-hooks/fetch/useFetchGenres.ts";
 import {GenreQueryOptions, GenreSchema, Genre} from "@/domains/genres/_schema";
 import {generateArraySchema} from "@noovies-tickets/common";

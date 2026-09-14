@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {getInitials} from "@/common/_feat/formatters/getInitials.ts";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
-import {Avatar, AvatarFallback, AvatarImage} from "@/views/common/_comp/ui/avatar.tsx";
+import {getInitials} from "@/shared/_feat/formatters/getInitials.ts";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
+import {Avatar, AvatarFallback, AvatarImage} from "@/views/shared/_comp/ui/avatar.tsx";
 import {MovieCreditDetails} from "@/domains/movie-credits/_schemas";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {Link} from "react-router-dom";
 
 /** Props for the MovieCreditOverviewCard component. */

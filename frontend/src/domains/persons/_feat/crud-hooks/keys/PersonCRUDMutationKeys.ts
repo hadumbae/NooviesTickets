@@ -2,7 +2,7 @@
  * @fileoverview Mutation key factory for Person create, update, and delete operations.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /**
  * Centrally managed mutation keys for Person CRUD operations.

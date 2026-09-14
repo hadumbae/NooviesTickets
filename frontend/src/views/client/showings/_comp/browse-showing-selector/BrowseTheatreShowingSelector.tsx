@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {IANATimezone} from "@noovies-tickets/common";
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {BrowseShowingSelector} from "@/views/client/showings/_comp/browse-showing-selector/BrowseShowingSelector.tsx";
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 
 /** Props for the BrowseTheatreShowingSelector component. */
 type SummaryProps = {

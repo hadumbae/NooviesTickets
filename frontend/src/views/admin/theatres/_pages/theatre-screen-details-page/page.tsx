@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {PageLoader} from "@/views/common/_comp/page";
-import {useFetchByIdentifierRouteParams} from "@/common/_feat";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {PageLoader} from "@/views/shared/_comp/page";
+import {useFetchByIdentifierRouteParams} from "@/shared/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {TheatreScreenDetailsPageContent} from "@/views/admin/theatres/_pages/theatre-screen-details-page/content.tsx";
 import {
     TheatreScreenDetailsRouteParamSchema,
@@ -15,7 +15,7 @@ import {
 import {
     useTheatreScreenDetailsQueryOptionsContext
 } from "@/domains/theatre-screens/_feat/validate-query-options/theatre-screen-details";
-import {IsDeletingUIContextProvider, IsEditingUIContextProvider} from "@/common/_ctx/ui";
+import {IsDeletingUIContextProvider, IsEditingUIContextProvider} from "@/shared/_ctx/ui";
 
 /**
  * Orchestrates route parameter validation and data fetching for the screen details view.

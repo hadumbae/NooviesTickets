@@ -4,9 +4,9 @@
 
 import {ReactElement} from "react";
 import {PersonSummaryInfo} from "@/domains/persons/_feat/client-view-data";
-import {PageFlexWrapper, PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
+import {PageFlexWrapper, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {BrowsePersonsPageListSection} from "@/views/client/persons/_pages/browse-page/sections";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {
     BrowsePersonsQueryOptionsFormSection
 } from "@/views/client/persons/_feat/browse-persons/BrowsePersonsQueryOptionsFormSection.tsx";

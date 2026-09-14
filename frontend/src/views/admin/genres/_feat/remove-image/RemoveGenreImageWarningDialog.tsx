@@ -3,9 +3,9 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {UIOpenStateProps} from "@/common/_types";
+import {UIOpenStateProps} from "@/shared/_types";
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {useRemoveGenreImage} from "@/domains/genres/_feat/manage-image/mutations/useRemoveGenreImage.ts";
 import {
@@ -18,8 +18,8 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-} from "@/views/common/_comp/ui";
-import {handleMutateAsync} from "@/common/_feat";
+} from "@/views/shared/_comp/ui";
+import {handleMutateAsync} from "@/shared/_feat";
 
 /** Props for the RemoveGenreImageWarningDialog component. */
 type DialogProps = UIOpenStateProps & MutationResponseConfig<Genre, { _id: ObjectIdString }> & {

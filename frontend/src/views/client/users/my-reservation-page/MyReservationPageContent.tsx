@@ -4,7 +4,7 @@
 
 
 import {formatReservationDetails} from "@/domains/reservations/_feat/formatters/formatReservationDetails.ts";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {MyReservationPageHeader} from "@/views/client/users/my-reservation-page/headers/header.tsx";
 import {
     MyReservationInfoCard
@@ -15,7 +15,7 @@ import {
 import {
     MyReservationStatusActions
 } from "@/views/client/users/my-reservation-page/mutations/MyReservationStatusActions.tsx";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {PopulatedReservation} from "@/domains/reservations/_schema/model";
 import {ReactElement} from "react";
 

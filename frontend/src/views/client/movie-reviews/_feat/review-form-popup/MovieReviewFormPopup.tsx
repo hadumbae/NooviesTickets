@@ -4,8 +4,8 @@
 
 import {ReactElement, ReactNode} from "react";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
-import {UIOpenStateProps} from "@/common/_types";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
+import {UIOpenStateProps} from "@/shared/_types";
 import {MovieReview} from "@/domains/movie-reviews/_schema";
 import {MovieReviewSubmitForm, SubmitMovieReviewPopupView} from "@/views/client/movie-reviews/_feat/submit-form";
 import {MovieReviewForm} from "@/domains/movie-reviews";

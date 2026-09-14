@@ -3,10 +3,10 @@
  */
 
 import {ReactElement, ReactNode} from 'react';
-import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
-import {useGenerateFormID} from "@/common/_feat/generate-form-keys";
-import {BaseFormContextProvider} from "@/common/_feat/generic-form-context";
-import {Form} from "@/views/common/_comp/ui";
+import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
+import {useGenerateFormID} from "@/shared/_feat/generate-form-keys";
+import {BaseFormContextProvider} from "@/shared/_feat/generic-form-context";
+import {Form} from "@/views/shared/_comp/ui";
 import {
     PersonQueryOptionFormValues,
     usePersonQueryOptionForm

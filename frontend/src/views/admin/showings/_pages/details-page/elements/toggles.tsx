@@ -3,10 +3,10 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {SlugString} from "@noovies-tickets/common";
-import {Button, buttonVariants, Popover, PopoverContent, PopoverTrigger} from "@/views/common/_comp/ui";
-import {useIsDeletingUIContextActions} from "@/common/_ctx/ui";
+import {Button, buttonVariants, Popover, PopoverContent, PopoverTrigger} from "@/views/shared/_comp/ui";
+import {useIsDeletingUIContextActions} from "@/shared/_ctx/ui";
 
 /** Props for the ShowingOptions component. */
 type OptionProps = {

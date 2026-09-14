@@ -3,7 +3,7 @@
  */
 
 import {Dispatch, SetStateAction, useContext, useEffect, useState} from "react";
-import {MultiStepFormStateContext} from "@/common/_feat";
+import {MultiStepFormStateContext} from "@/shared/_feat";
 import {useFormContext} from "react-hook-form";
 
 type HookReturns = {

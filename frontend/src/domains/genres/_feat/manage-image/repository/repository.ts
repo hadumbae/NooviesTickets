@@ -2,15 +2,15 @@
  * @fileoverview Repository for managing genre image upload and removal operations.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
 import {Genre} from "@/domains/genres/_schema";
 import {
     RemoveGenreImageConfig,
     UpdateGenreImageConfig
 } from "@/domains/genres/_feat/manage-image/repository/repository.types.ts";
-import {buildURL} from "@/common/_feat/fetch-api";
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {ManageGenreImageBaseURL} from "@/domains/genres/_feat/manage-image/repository/baseURL.ts";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
 
 /** Updates a genre's image using multipart form data. */
 export async function patchUpdateGenreImage(

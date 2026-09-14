@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from 'react';
-import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
+import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
 import {generateArraySchema} from "@noovies-tickets/common";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {RoleType, RoleTypeSchema} from "@/domains/roletypes/_schema";
 import {RoleTypeQueryOptionsSchema, useFetchRoleTypes} from "@/domains/roletypes/_feat";
 import {RoleTypeListPageContent} from "@/views/admin/role-types/_pages/list-page/content.tsx";

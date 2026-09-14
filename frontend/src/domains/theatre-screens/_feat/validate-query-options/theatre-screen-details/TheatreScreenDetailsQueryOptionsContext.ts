@@ -2,7 +2,7 @@
  * @fileoverview Defines the context provider and custom hook for managing theatre screen details query options.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {
     TheatreScreenDetailsQueryOptionsSchema
 } from "@/domains/theatre-screens/_feat/validate-query-options/theatre-screen-details/TheatreScreenDetailsQueryOptionsSchema.ts";

@@ -6,12 +6,12 @@ import {ReactElement} from 'react';
 import {useFormContext} from "react-hook-form";
 import {Plus, X} from "lucide-react";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/common/_feat";
+import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/shared/_feat";
 import {filterFalsyAttributes} from "@noovies-tickets/common";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 
-import {HookFormInput} from "@/views/common/_feat";
-import {Button, Collapsible, CollapsibleContent, CollapsibleTrigger, Separator} from "@/views/common/_comp/ui";
+import {HookFormInput} from "@/views/shared/_feat";
+import {Button, Collapsible, CollapsibleContent, CollapsibleTrigger, Separator} from "@/views/shared/_comp/ui";
 import {MovieHookFormSelect} from "@/views/admin/movies/_feat/form-inputs/MovieHookFormSelect.tsx";
 import {MovieQuickOverviewFetchCard} from "@/views/admin/movies/_comp/form-display/MovieQuickOverviewFetchCard.tsx";
 import {TheatreHookFormSelect} from "@/views/admin/theatres/_feat/form-input/selects/TheatreHookFormSelect.tsx";
@@ -21,9 +21,9 @@ import {ScreenHookFormSelect} from "@/views/admin/theatre-screens";
 import {Theatre} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
 import {ShowingFormValues} from "@/domains/showings/_schema/form/form-values/ShowingFormValues.ts";
 import {useHandleShowingFormFiltering} from "@/domains/showings/_feat/submit-data/useHandleShowingFormFiltering.ts";
-import {HookFormSelect} from "@/views/common/_comp";
-import {ISO3166Alpha2CountryOptions} from "@/common/_const";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {ISO3166Alpha2CountryOptions} from "@/shared/_const";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
 
 /**
  * Form fieldset for selecting the movie and location details for a showing.

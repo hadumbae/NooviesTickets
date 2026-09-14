@@ -3,11 +3,11 @@
  */
 
 import {ReactElement, useState} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {Button} from "@/views/common/_comp/ui";
-import {PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
-import {useSetAdminPageTitle} from "@/common/_feat/handle-pages";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {Button} from "@/views/shared/_comp/ui";
+import {PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
+import {useSetAdminPageTitle} from "@/shared/_feat/handle-pages";
 
 import {Theatre, TheatreDetails} from "@/domains/theatres/_schema/theatre";
 import {useNavigateToTheatre} from "@/domains/theatres/_feat/navigation/useNavigateToTheatre.ts";

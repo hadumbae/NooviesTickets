@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent, CardHeader} from "@/views/common/_comp/ui";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
+import {Card, CardContent, CardHeader} from "@/views/shared/_comp/ui";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
 import {BadgeAlert, Circle, Cog, DollarSign,} from "lucide-react";
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {Link} from "react-router-dom";
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 
 /** Props for the TheatreScreenSchedule component. */
 type CardProps = {

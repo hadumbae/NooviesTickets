@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for managing genre index query option form state.
  */
 
-import {createQueryOptionForm} from "@/common/_feat";
+import {createQueryOptionForm} from "@/shared/_feat";
 import {
     GenreIndexQueryOptionsSchema
 } from "@/domains/genres/_feat/handle-query-options/genre-index/GenreIndexQueryOptionsSchema.ts";

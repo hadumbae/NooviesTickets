@@ -2,7 +2,7 @@
  * @fileoverview React context provider and hook for managing theatre index query options state.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {
     TheatreIndexQueryOptionsSchema
 } from "@/domains/theatres/_feat/handle-query-options/theatre-index/TheatreIndexQueryOptionsSchema.ts";

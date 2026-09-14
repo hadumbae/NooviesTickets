@@ -4,9 +4,9 @@
 
 import {FieldValues, UseFormReturn} from "react-hook-form";
 import {AdminReservation} from "@/domains/reservations/_schema";
-import {handleMutationCallback} from "@/common/_feat/handle-mutation-callback";
-import {handleFormSubmitError} from "@/common/_feat/error-handling/handleFormSubmitError.ts";
-import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
+import {handleMutationCallback} from "@/shared/_feat/handle-mutation-callback";
+import {handleFormSubmitError} from "@/shared/_feat/error-handling/handleFormSubmitError.ts";
+import {MutationFormResetConfig, MutationResponseConfig} from "@/shared/_feat/submit-data";
 
 /** Configuration for the reservation update submission handler. */
 type HandlerConfig<TFormValues extends FieldValues, TForm extends TFormValues = TFormValues> =

@@ -1,0 +1,16 @@
+import * as React from "react";
+import * as SheetPrimitive from "@radix-ui/react-dialog";
+import {cn} from "@/shared/_feat/handle-ui/cn.ts";
+
+export const SheetDescription = React.forwardRef<
+    React.ElementRef<typeof SheetPrimitive.Description>,
+    React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>
+>(({className, ...props}, ref) => (
+    <SheetPrimitive.Description
+        ref={ref}
+        className={cn("text-sm text-neutral-500 dark:text-neutral-400", className)}
+        {...props}
+    />
+))
+
+SheetDescription.displayName = SheetPrimitive.Description.displayName

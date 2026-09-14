@@ -3,8 +3,8 @@
  */
 
 import {ObjectIdString} from "@noovies-tickets/common";
-import {FetchRequestReturns} from "@/common/_types";
-import {buildURL, handleFetchOperation} from "@/common/_feat";
+import {FetchRequestReturns} from "@/shared/_types";
+import {buildURL, handleFetchOperation} from "@/shared/_feat";
 import {ManageMovieImagesBaseURL} from "@/domains/movies/_feat/manage-images/baseURL.ts";
 import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 

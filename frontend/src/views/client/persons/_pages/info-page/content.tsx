@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp";
+import {PageFlexWrapper} from "@/views/shared/_comp";
 import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
 import {organisePersonFilmography, PersonCreditRoleGroup} from "@/domains/movie-credits";
 import {
@@ -18,7 +18,7 @@ import {
 import {
     PersonInfoPageBreadcrumbs
 } from "@/views/client/persons/_pages/info-page/sections/breadcrumbs.tsx";
-import {useTitle} from "@/common/_feat";
+import {useTitle} from "@/shared/_feat";
 
 /** Props for the PersonInfoContent component. */
 type ContentProps = {

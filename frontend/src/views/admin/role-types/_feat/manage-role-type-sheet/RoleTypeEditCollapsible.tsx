@@ -5,11 +5,11 @@
 import {RoleTypeSubmitFormActions} from "@/views/admin/role-types/_feat/submit-form/RoleTypeSubmitFormActions.tsx";
 import {RoleTypeSubmitFormView} from "@/views/admin/role-types/_feat/submit-form/RoleTypeSubmitFormView.tsx";
 import {ReactElement, useState} from 'react';
-import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/common/_comp/ui/collapsible.tsx";
+import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/shared/_comp/ui/collapsible.tsx";
 import {ChevronDown, ChevronRight} from "lucide-react";
 import {RoleTypeSubmitForm} from "@/views/admin/role-types/_feat/submit-form/RoleTypeSubmitForm.tsx";
 import {RoleType} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
-import {MutationResponseConfig} from "@/common/_feat/submit-data/mutationTypes.ts";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data/mutationTypes.ts";
 import {RoleTypeFormData} from "@/domains/roletypes/_feat/submit-data/schema/RoleTypeFormSchema.ts";
 
 /** Props for the RoleTypeListSheetEditCollapsible component. */

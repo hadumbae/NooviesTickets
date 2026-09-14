@@ -2,10 +2,10 @@
  * @fileoverview API repository for managing movie reviews belonging to the current user.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {buildURL} from "@/common/_feat/fetch-api";
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {ManageMyReviewsBaseURL} from "@/domains/movie-reviews/_feat/my-reviews/repository/baseURL.ts";
 import type {
     CreateCurrentUserMovieReviewConfig,

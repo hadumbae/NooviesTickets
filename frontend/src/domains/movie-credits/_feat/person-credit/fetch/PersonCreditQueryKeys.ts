@@ -2,7 +2,7 @@
  * @fileoverview Query key factory for person-centric movie credit data.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /**
  * Standardized query keys for fetching MovieCredit documents in relation to a Person.

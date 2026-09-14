@@ -4,8 +4,8 @@
 
 import {ReactElement, ReactNode} from "react";
 import {Link, To} from "react-router-dom";
-import {Card, CardContent} from "@/views/common/_comp/ui";
-import {cn} from "@/common/_feat";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
+import {cn} from "@/shared/_feat";
 
 /** Custom CSS class names for the card's internal elements. */
 type CardClassNames = {

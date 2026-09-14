@@ -3,7 +3,7 @@
  * Maps genre domain entities to link structures used by public-facing browsing components.
  */
 
-import {LinkItemConfig} from "@/common/_types/navigation/LinkItemConfig.ts";
+import {LinkItemConfig} from "@/shared/_types/navigation/LinkItemConfig.ts";
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 
 /**

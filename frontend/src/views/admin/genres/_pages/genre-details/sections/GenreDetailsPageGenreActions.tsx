@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {GenreDeleteWarningDialog, GenreSubmitForm, GenreSubmitFormPanel,} from "@/views/admin/genres/_feat";
 import {
@@ -12,7 +12,7 @@ import {
     useIsDeletingUIContextActions,
     useIsEditingUIContext,
     useIsEditingUIContextActions
-} from "@/common/_ctx/ui";
+} from "@/shared/_ctx/ui";
 
 /** Props for the GenreDetailsPageGenreActions component. */
 type ActionProps = {

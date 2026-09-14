@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from 'react';
-import {Form} from "@/views/common/_comp/ui";
+import {Form} from "@/views/shared/_comp/ui";
 import {
     MovieQueryOptionFormValues,
     useMovieQueryOptionForm
@@ -14,7 +14,7 @@ import {
     QueryOptionFormContainerProps,
     QueryOptionFormContextProvider,
     useGenerateFormID
-} from "@/common/_feat";
+} from "@/shared/_feat";
 import {filterFalsyAttributes} from "@noovies-tickets/common";
 
 type FormContainerProps = QueryOptionFormContainerProps<MovieQueryOptionFormValues, MovieQueryOptions>;

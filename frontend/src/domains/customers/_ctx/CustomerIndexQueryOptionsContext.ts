@@ -2,7 +2,7 @@
  * @fileoverview Provides context for managing customer index query options and search parameters.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {CustomerQueryOptionsSchema} from "@/domains/customers/_schema/query-options";
 
 const {Provider, useQueryOptionsContext} = createQueryOptionsContext({

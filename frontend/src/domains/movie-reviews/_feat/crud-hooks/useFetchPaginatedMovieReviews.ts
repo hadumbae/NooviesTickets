@@ -3,12 +3,12 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
-import {PaginatedQueryConfig} from "@/common/_types";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {PaginatedQueryConfig} from "@/shared/_types";
 import {MovieReviewCRUDQueryKeys} from "@/domains/movie-reviews/_feat/crud-hooks/queryKeys.ts";
 import {paginated} from "@/domains/movie-reviews/_feat/crud/repository/repository.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 
 /**
  * Fetches a paginated collection of MovieReviews using React Query.

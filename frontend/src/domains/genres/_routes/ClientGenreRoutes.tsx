@@ -3,8 +3,8 @@
  */
 
 import {RouteObject} from "react-router-dom";
-import {BaseLayout} from "@/views/common/_layout/base-layout/BaseLayout.tsx";
-import {ComponentErrorHandler} from "@/views/common/_feat/error/ComponentErrorHandler.tsx";
+import {BaseLayout} from "@/views/shared/_layout/base-layout/BaseLayout.tsx";
+import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
 
 /** Route configuration for genre-related pages within the client browse section. */
 export const ClientGenreRoutes: RouteObject[] = [

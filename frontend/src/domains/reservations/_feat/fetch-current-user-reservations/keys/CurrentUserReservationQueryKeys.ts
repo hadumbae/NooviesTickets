@@ -2,7 +2,7 @@
  * @fileoverview Query key definitions for current user reservation data.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Query key factory for current user reservation data. */
 export const CurrentUserReservationQueryKeys = buildQueryKey(

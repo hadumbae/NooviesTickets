@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {
     RoleTypeQueryFiltersSchema
 } from "@/domains/roletypes/_feat/validate-query-options/query-options/RoleTypeQueryFiltersSchema";

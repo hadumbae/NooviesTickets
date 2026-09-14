@@ -1,9 +1,9 @@
 import {ReactElement, useState} from "react";
 import {User} from "@/domains/users/_schema/user/UserSchema.ts";
 import {useUserIndexQueryOptionsContext} from "@/domains/users/_ctx/UserIndexQueryOptionsContext.ts";
-import {PageFlexWrapper, PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
+import {PageFlexWrapper, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {UserIndexCard} from "@/views/admin/users/_comp/index-card";
-import {QueryOptionsFormCollapsible} from "@/views/common/_feat";
+import {QueryOptionsFormCollapsible} from "@/views/shared/_feat";
 import {UserIndexQueryOptionForm, UserIndexQueryOptionFormView} from "@/views/admin/users/_feat";
 
 type ContentProps = {

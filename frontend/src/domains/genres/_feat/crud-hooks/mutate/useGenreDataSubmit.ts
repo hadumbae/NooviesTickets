@@ -3,7 +3,7 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {Genre, GenreSchema} from "@/domains/genres/_schema";
 import {create, update} from "@/domains/genres/_feat/crud";
 import {GenreFormData} from "@/domains/genres/_feat/submit-form/schema/GenreFormSchema.ts";

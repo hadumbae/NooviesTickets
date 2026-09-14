@@ -3,9 +3,9 @@
  */
 
 import {z} from "zod";
-import {refineRequireImageFile} from "@/common/_feat/handle-image-upload";
-import {FileInstanceSchema} from "@/common/_schemas/file-uploads";
-import {AnyValues} from "@/common/_types";
+import {refineRequireImageFile} from "@/shared/_feat/handle-image-upload";
+import {FileInstanceSchema} from "@/shared/_schemas/file-uploads";
+import {AnyValues} from "@/shared/_types";
 
 /** Base schema for genre image upload containing the raw file field. */
 export const GenreImageUploadBaseFormSchema = z.object({

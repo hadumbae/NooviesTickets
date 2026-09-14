@@ -4,7 +4,7 @@
 
 import {ReactElement, useState} from "react";
 import {ImageOff} from "lucide-react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {CloudinaryImage} from "@noovies-tickets/common";
 
 /** Props for the GenreImageBanner component. */

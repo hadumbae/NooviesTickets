@@ -3,18 +3,18 @@
  */
 
 import {ReactElement} from "react";
-import {useTitle} from "@/common/_feat";
-import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
+import {useTitle} from "@/shared/_feat";
+import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
 import {TheatreIndexPageContent} from "@/views/admin/theatres/_pages/index-page/content.tsx";
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 import {
     QueryErrorBoundary
-} from "@/views/common/_feat/error-boundary/query-error-fallback/boundary/QueryErrorBoundary.tsx";
+} from "@/views/shared/_feat/error-boundary/query-error-fallback/boundary/QueryErrorBoundary.tsx";
 import {TheatreHttpStatusOverrideText} from "@/domains/theatres/_const/TheatreHttpStatusOverrideText.ts";
 import {useFetchPaginatedTheatres} from "@/domains/theatres/_feat/crud-hooks";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {generatePaginationSchema} from "@noovies-tickets/common";
-import {PaginatedItems} from "@/common/_types";
+import {PaginatedItems} from "@/shared/_types";
 
 import {TheatreDetails, TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre";
 import {TheatreQueryOptionSchema} from "@/domains/theatres/_feat/handle-query-options/options/TheatreQueryOptionSchema.ts";

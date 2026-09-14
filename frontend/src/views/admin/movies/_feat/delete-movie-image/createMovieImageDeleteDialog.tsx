@@ -3,13 +3,13 @@
  */
 
 import {ReactElement} from 'react';
-import {EntityDeleteWarningDialog} from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
+import {EntityDeleteWarningDialog} from "@/views/shared/_feat/dialog/EntityDeleteWarningDialog.tsx";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {DeleteMovieImageConfig, RemoveMovieImageMutation} from "@/domains/movies/_feat/manage-images";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
-import {UIOpenStateProps} from "@/common/_types";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
+import {UIOpenStateProps} from "@/shared/_types";
 import {Movie} from "@/domains/movies/_schema/movie";
-import {handleMutateAsync} from "@/common/_feat/handle-mutate-async/handleMutateAsync.ts";
+import {handleMutateAsync} from "@/shared/_feat/handle-mutate-async/handleMutateAsync.ts";
 
 type FactoryConfig = {
     title: string;

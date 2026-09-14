@@ -8,8 +8,8 @@ import {
     usePersonFormUIActions,
     usePersonImageFormUIActions
 } from "@/domains/persons/_ctx/ui";
-import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/views/common/_comp/ui";
-import {onUISelect} from "@/common/_feat";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/views/shared/_comp/ui";
+import {onUISelect} from "@/shared/_feat";
 
 /** Props for the PersonDetailsActionToggles component. */
 type ToggleProps = {

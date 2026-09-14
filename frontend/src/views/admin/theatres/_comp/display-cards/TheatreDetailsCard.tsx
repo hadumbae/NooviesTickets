@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from 'react';
-import {Card, CardContent, Separator} from "@/views/common/_comp/ui";
-import {DetailsCardSpan} from "@/views/common/_comp/text-display/spans/DetailsCardSpan.tsx";
+import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
+import {DetailsCardSpan} from "@/views/shared/_comp/text-display/spans/DetailsCardSpan.tsx";
 import {
     generateLocationAddressString
-} from "@/common/_feat/formatters/generateLocationAddressString.ts";
-import {cn} from "@/common/_feat";
+} from "@/shared/_feat/formatters/generateLocationAddressString.ts";
+import {cn} from "@/shared/_feat";
 
 import {TheatreDetails} from "@/domains/theatres/_schema";
 

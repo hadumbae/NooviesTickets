@@ -5,7 +5,7 @@
 
 import {z} from "zod";
 import {RoleTypeDepartmentSchema, RoleTypeCastCategorySchema, RoleTypeCrewCategorySchema, preprocessEmptyToUndefined, IDStringSchema} from "@noovies-tickets/common";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {RoleTypeDescriptionSchema, RoleTypeNameSchema} from "@/domains/roletypes/_schema";
 
 /** Base validation schema containing shared fields for all role type forms. */

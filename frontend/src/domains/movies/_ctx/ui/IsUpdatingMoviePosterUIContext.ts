@@ -2,7 +2,7 @@
  * @fileoverview Defines disclosure context provider and hooks for managing movie poster update UI visibility state.
  */
 
-import {createDisclosureContext} from "@/common/_feat";
+import {createDisclosureContext} from "@/shared/_feat";
 
 const {Provider, useDisclosureState, useDisclosureActions} = createDisclosureContext({
     stateName: "is-updating-movie-poster-ui-state-context",

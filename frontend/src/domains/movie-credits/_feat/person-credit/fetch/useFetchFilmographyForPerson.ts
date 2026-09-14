@@ -4,11 +4,11 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {getFetchFilmographyForPerson} from "@/domains/movie-credits/_feat/person-credit/repository";
 import {PersonFilmography, PersonFilmographySchema} from "@/domains/movie-credits/_feat/person-credit/schema";
 import {PersonCreditQueryKeys} from "@/domains/movie-credits/_feat/person-credit/fetch/PersonCreditQueryKeys.ts";

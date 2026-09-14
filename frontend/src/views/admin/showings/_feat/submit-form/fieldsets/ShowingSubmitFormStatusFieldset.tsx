@@ -4,11 +4,11 @@
 
 import {ReactElement} from 'react';
 import {useFormContext} from "react-hook-form";
-import {HookFormCheckbox, HookFormInput} from "@/views/common/_feat";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
+import {HookFormCheckbox, HookFormInput} from "@/views/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 import {ShowingFormValues} from "@/domains/showings/_schema/form";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
-import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/common/_feat";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/shared/_feat";
 import {ShowingStatusHookFormSelect} from "@/views/admin/showings/_feat/form-inputs";
 
 /**

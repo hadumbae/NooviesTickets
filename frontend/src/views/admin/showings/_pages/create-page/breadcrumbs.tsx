@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -11,7 +11,7 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 /**
  * Renders the breadcrumb trail linking back to the showings index from the creation view.

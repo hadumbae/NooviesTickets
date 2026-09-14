@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook for managing theatre location query options state.
  */
 
-import {createQueryOptionForm} from "@/common/_feat";
+import {createQueryOptionForm} from "@/shared/_feat";
 import {TheatreLocationQueryOptionsSchema} from "@/domains/theatres/_feat/handle-query-options/theatre-location/TheatreLocationQueryOptionsSchema.ts";
 
 const {useQueryOptionForm, QueryOptionForm} = createQueryOptionForm({

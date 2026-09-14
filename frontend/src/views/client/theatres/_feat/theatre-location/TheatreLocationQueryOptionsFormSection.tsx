@@ -2,7 +2,7 @@
  * @fileoverview Defines and exports the query option form section for theatre location options.
  */
 
-import {createQueryOptionFormSection} from "@/common/_feat";
+import {createQueryOptionFormSection} from "@/shared/_feat";
 import {
     TheatreLocationQueryOptionForm
 } from "@/views/client/theatres/_feat/theatre-location/TheatreLocationQueryOptionsForm.tsx";

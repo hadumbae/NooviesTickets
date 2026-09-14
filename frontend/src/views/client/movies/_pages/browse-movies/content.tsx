@@ -2,10 +2,10 @@
  * @fileoverview Main content layout for the movie browsing page.
  */
 import {ReactElement} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {SROnly} from "@/views/common/_comp/screen-readers";
-import {PaginationRangeButtons} from "@/views/common/_comp";
-import {PageHeader} from "@/views/common/_comp";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
+import {PaginationRangeButtons} from "@/views/shared/_comp";
+import {PageHeader} from "@/views/shared/_comp";
 import {BrowseMovieIndexCard} from "@/views/client/movies/_comp";
 
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";

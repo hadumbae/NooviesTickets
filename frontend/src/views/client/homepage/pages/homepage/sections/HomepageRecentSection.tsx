@@ -3,11 +3,11 @@
  */
 
 import {ReactElement, useEffect, useState} from "react";
-import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/views/common/_comp/ui";
+import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/views/shared/_comp/ui";
 import {MovieSummary} from "@/domains/movies/_schema/movie/MovieSummarySchema.ts";
 import {HomepageMovieCard} from "@/views/client/homepage/_comp";
-import {PageSectionHeader} from "@/views/common/_comp";
-import {cn} from "@/common/_feat";
+import {PageSectionHeader} from "@/views/shared/_comp";
+import {cn} from "@/shared/_feat";
 import Autoplay from "embla-carousel-autoplay";
 
 /** Props for the HomepageRecentSection component. */

@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {HookFormInput} from "@/views/common/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
 import {useFormContext} from "react-hook-form";
-import {cn} from "@/common/_feat";
-import {useAutoFormSubmit} from "@/common/_feat/submit-data";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {DisableFields} from "@/common/_types";
+import {cn} from "@/shared/_feat";
+import {useAutoFormSubmit} from "@/shared/_feat/submit-data";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {DisableFields} from "@/shared/_types";
 import {ShowingsPageQueryStrings} from "@/domains/movies/_feat/client-view-data/schemas/ShowingsPageQueryStringSchema.ts";
 
 /** Props for the TheatreShowingQueryFormView component. */

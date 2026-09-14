@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 import {Link} from "react-router-dom";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
-import {PageSectionHeader} from "@/views/common/_comp";
+import {PageSectionHeader} from "@/views/shared/_comp";
 import {HomepageTheatreCard} from "@/views/client/homepage/_comp";
 
 /** Props for the HomepageTheatresSection component. */

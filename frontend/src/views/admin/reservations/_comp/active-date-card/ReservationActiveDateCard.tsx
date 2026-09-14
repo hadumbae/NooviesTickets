@@ -4,9 +4,9 @@
  */
 import {ReactElement} from "react";
 import {DateTime} from "luxon";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {LucideIcon} from "lucide-react";
-import {Card, CardContent} from "@/views/common/_comp/ui";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
 import {ReservationStatus} from "@noovies-tickets/common";
 
 /** Props for the ReservationActiveDateCard component. */

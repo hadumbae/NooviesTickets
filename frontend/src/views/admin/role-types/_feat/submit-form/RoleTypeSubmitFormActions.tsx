@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
 
 /** Props for the RoleTypeSubmitFormActions component. */
 type ActionProps = {

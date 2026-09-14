@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
-import {Card, CardContent, Separator} from "@/views/common/_comp/ui";
-import {ISO3166Alpha2ShortCountryConstant} from "@/common/_const";
+import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
+import {ISO3166Alpha2ShortCountryConstant} from "@/shared/_const";
 import {PersonProfileAvatar} from "@/views/admin/persons/_comp/person-details/PersonProfileAvatar.tsx";
-import {LabelContentList} from "@/views/common/_comp";
+import {LabelContentList} from "@/views/shared/_comp";
 
 /** Props for the PersonInfoDetailsCard component. */
 type CardProps = {

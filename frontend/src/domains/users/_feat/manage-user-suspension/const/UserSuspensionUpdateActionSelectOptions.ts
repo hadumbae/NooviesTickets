@@ -2,7 +2,7 @@
  * @fileoverview Select options array mapped from user suspension update action constants for dropdown UI components.
  */
 
-import {ReactSelectOption} from "@/common/_types";
+import {ReactSelectOption} from "@/shared/_types";
 import {
     UserSuspensionUpdateActionConstant
 } from "@/domains/users/_feat/manage-user-suspension/const/UserSuspensionUpdateActionConstant.ts";

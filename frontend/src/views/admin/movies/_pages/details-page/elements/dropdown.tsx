@@ -11,8 +11,8 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "@/views/common/_comp/ui";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
+} from "@/views/shared/_comp/ui";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {RoleTypeDepartment} from "@noovies-tickets/common";
 import {
     useIsDeletingMovieBannerUIActions,

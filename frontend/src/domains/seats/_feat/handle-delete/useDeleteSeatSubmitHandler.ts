@@ -3,11 +3,11 @@
  */
 
 import {useSeatDeleteMutation} from "@/domains/seats/_feat/crud-hooks/submit/useSeatDeleteMutation.ts";
-import {handleMutationCallback} from "@/common/_feat/handle-mutation-callback";
+import {handleMutationCallback} from "@/shared/_feat/handle-mutation-callback";
 import {
     handleSubmitResponseError
-} from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
+} from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {ObjectIdString} from "@noovies-tickets/common";
 
 type HandlerConfig = MutationResponseConfig<void, { _id: ObjectIdString }> & {

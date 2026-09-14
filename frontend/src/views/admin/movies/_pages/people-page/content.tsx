@@ -1,7 +1,7 @@
 /** @fileoverview Layout component for managing movie credits with a split-view dashboard. */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {MoviePeopleHeader} from "@/views/admin/movies/_pages/people-page/sections";
 import {MoviePeoplePageFormSection} from "@/views/admin/movies/_pages/people-page/sections/MoviePeoplePageFormSection.tsx";
 import {MoviePeoplePageCreditSection} from "@/views/admin/movies/_pages/people-page/sections/MoviePeoplePageCreditSection.tsx";

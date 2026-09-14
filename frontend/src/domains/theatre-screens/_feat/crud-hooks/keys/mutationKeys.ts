@@ -3,7 +3,7 @@
  * Provides a consistent naming convention for mutation tracking and cache invalidation.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /**
  * Unique mutation keys for Theatre Screen operations.

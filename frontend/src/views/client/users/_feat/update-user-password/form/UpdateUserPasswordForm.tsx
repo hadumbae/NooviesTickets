@@ -4,9 +4,9 @@
 
 import {ReactElement, useId} from 'react';
 import {ObjectIdString} from "@noovies-tickets/common";
-import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
-import {BaseFormContextProvider} from "@/common/_feat/generic-form-context";
-import {Form} from "@/views/common/_comp/ui";
+import {MutationFormResetConfig, MutationResponseConfig} from "@/shared/_feat/submit-data";
+import {BaseFormContextProvider} from "@/shared/_feat/generic-form-context";
+import {Form} from "@/views/shared/_comp/ui";
 import {
     UserPasswordUpdateFormData,
     UserPasswordUpdateFormValues,

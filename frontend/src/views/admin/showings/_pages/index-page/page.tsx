@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 import {generatePaginationSchema} from "@noovies-tickets/common";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 
 import {ShowingIndexPageContent} from "@/views/admin/showings/_pages/index-page/content.tsx";
 import {ShowingDetailsSchema, ShowingQueryOptionSchema} from "@/domains/showings/_schema";

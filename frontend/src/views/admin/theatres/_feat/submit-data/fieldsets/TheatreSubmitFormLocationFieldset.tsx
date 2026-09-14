@@ -2,13 +2,13 @@
  * @fileoverview Fieldset containing address, timezone, and coordinate inputs for a theatre.
  */
 
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {ReactElement, useEffect} from "react";
 import {useFormContext} from "react-hook-form";
-import {Separator} from "@/views/common/_comp/ui";
-import {HookFormSelect} from "@/views/common/_comp";
-import {HookFormCheckbox, HookFormInput} from "@/views/common/_feat";
-import {IANATimezoneOptions, ISO3166Alpha2CountryOptions} from "@/common/_const";
+import {Separator} from "@/views/shared/_comp/ui";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {HookFormCheckbox, HookFormInput} from "@/views/shared/_feat";
+import {IANATimezoneOptions, ISO3166Alpha2CountryOptions} from "@/shared/_const";
 
 /** Props for the TheatreSubmitFormLocationFieldset component. */
 type InputProps = {

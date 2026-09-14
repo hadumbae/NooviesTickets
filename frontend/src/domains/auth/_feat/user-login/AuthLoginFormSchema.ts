@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {StringValueSchema} from "@noovies-tickets/common";
 import {preprocessEmptyToUndefined, EmailStringSchema} from "@noovies-tickets/common";
 

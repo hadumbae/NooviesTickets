@@ -4,9 +4,9 @@
 
 import {ReactElement} from "react";
 import {ISO6391LanguageCode} from "@noovies-tickets/common";
-import {Badge} from "@/views/common/_comp/ui/badge.tsx";
-import {ISO6391LanguageLabels,} from "@/common/_const/languages/ISO6391LanguageLabels.ts";
-import {cn} from "@/common/_feat";
+import {Badge} from "@/views/shared/_comp/ui/badge.tsx";
+import {ISO6391LanguageLabels,} from "@/shared/_const/languages/ISO6391LanguageLabels.ts";
+import {cn} from "@/shared/_feat";
 
 /** Props for the ShowingLanguageBadges component. */
 type BadgeProps = {

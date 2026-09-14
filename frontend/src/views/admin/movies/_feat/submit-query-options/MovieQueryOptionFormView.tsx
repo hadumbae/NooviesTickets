@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from 'react';
-import {cn, QueryOptionFormContext, QueryOptionFormViewProps, useQueryOptionFormContext} from "@/common/_feat";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
+import {cn, QueryOptionFormContext, QueryOptionFormViewProps, useQueryOptionFormContext} from "@/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 import {
     MovieIndexQueryOptionFormSortFieldset
 } from "@/views/admin/movies/_feat/query-options-form/MovieIndexQueryOptionFormSortFieldset.tsx";
@@ -12,8 +12,8 @@ import {
     MovieIndexQueryOptionFormFilterFieldset
 } from "@/views/admin/movies/_feat/query-options-form/MovieIndexQueryOptionFormFilterFieldset.tsx";
 import {MovieQueryOptionFormValues} from "@/domains/movies/_feat/submit-queries/MovieQueryOptionFormValues.ts";
-import {useAutoFormSubmit} from "@/common/_feat/submit-data";
-import {InvalidContextError} from "@/common/_err";
+import {useAutoFormSubmit} from "@/shared/_feat/submit-data";
+import {InvalidContextError} from "@/shared/_err";
 
 /**
  * Renders filter and sort fieldsets for movie queries with a 450ms debounce auto-submit.

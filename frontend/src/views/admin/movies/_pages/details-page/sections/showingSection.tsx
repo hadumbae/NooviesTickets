@@ -4,11 +4,11 @@
 
 import {ReactElement} from "react";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {PageSectionHeaderLink} from "@/views/common/_comp/page";
+import {PageSectionHeaderLink} from "@/views/shared/_comp/page";
 import {generateArraySchema} from "@noovies-tickets/common";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
-import {cn} from "@/common/_feat";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
+import {cn} from "@/shared/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {ShowingSummaryCard} from "@/views/admin/showings/_comp/showing-summary-card";
 import {useFetchShowings} from "@/domains/showings/_feat/crud-hooks";
 import {ShowingDetails, ShowingDetailsSchema} from "@/domains/showings/_schema/showing";

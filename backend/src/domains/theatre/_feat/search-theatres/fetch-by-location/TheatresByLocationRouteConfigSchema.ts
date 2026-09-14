@@ -7,7 +7,7 @@ import {
     PaginationOptionsSchema
 } from "@noovies-tickets/common";
 import { RequestOptionsSchema } from "@/shared/_feat/fetch-request-options/schemas";
-import { LocationTargetObjectSchema } from "@/shared/schema/features/location-query-options/LocationQueryOptions.schema";
+import { LocationTargetObjectSchema } from "./LocationTargetObjectSchema";
 
 /**
  * Validation schema for theatre location queries, merging pagination, result limits, and geographic target fields.

@@ -3,11 +3,11 @@
  */
 
 import {ReactElement, useState} from "react";
-import {PageSectionHeader} from "@/views/common/_comp";
-import {Card, CardContent, Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/common/_comp/ui";
+import {PageSectionHeader} from "@/views/shared/_comp";
+import {Card, CardContent, Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/shared/_comp/ui";
 import {SeatFormSubmitList, SeatSubmitForm, SeatSubmitFormActions, SeatSubmitFormView} from "@/views/admin/seats";
 import {SeatDetails, SeatFormData, SeatFormValues} from "@/domains/seats";
-import {HideFields} from "@/common/_types";
+import {HideFields} from "@/shared/_types";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {ChevronDown, ChevronUp} from "lucide-react";
 

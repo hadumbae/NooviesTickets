@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {LoggedLink} from "@/views/common/_feat";
-import {cn} from "@/common/_feat";
+import {LoggedLink} from "@/views/shared/_feat";
+import {cn} from "@/shared/_feat";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {UserUniqueCode} from "@/domains/users/_schema/fields/UserUniqueCodeSchema.ts";
 

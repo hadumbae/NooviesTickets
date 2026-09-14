@@ -12,11 +12,11 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from "@/views/common/_comp/ui";
-import {UIOpenStateProps} from "@/common/_types";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
+} from "@/views/shared/_comp/ui";
+import {UIOpenStateProps} from "@/shared/_types";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {TheatreSubmitFormView} from "@/views/admin/theatres/_feat/submit-data/views/TheatreSubmitFormView.tsx";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
 
 import {TheatreFormValues} from "@/domains/theatres/_feat/submit-data";
 

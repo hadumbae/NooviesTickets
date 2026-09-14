@@ -2,7 +2,7 @@
  * @fileoverview Repository for user data access and persistence operations.
  */
 
-import {handleDelete, handleFind, handleFindByID, handlePaginated} from "@/common/_feat";
+import {handleDelete, handleFind, handleFindByID, handlePaginated} from "@/shared/_feat";
 import {UserCRUDBaseURL} from "@/domains/users/_feat/crud/baseURL.ts";
 
 /** Fetches a paginated list of user records. */

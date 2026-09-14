@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {IsDeletingUIContextProvider, IsEditingUIContextProvider} from "@/common/_ctx/ui";
+import {IsDeletingUIContextProvider, IsEditingUIContextProvider} from "@/shared/_ctx/ui";
 import {
     DeletingGenreImageUIContextProvider,
     PendingGenreImageDeleteUIContextProvider,

@@ -2,10 +2,10 @@
 
 import {PaginationOptions} from "@noovies-tickets/common";
 import {MovieCreditQueryOptions} from "@/domains/movie-credits/_schemas/query-options/MovieCreditQueryOptionsSchema.ts";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {ReactElement, ReactNode} from "react";
 import {useFetchPaginatedMovieCredits} from "@/domains/movie-credits/_feat/crud-hooks";
-import {PaginatedItems} from "@/common/_types";
+import {PaginatedItems} from "@/shared/_types";
 import {MovieCreditDetails, MovieCreditDetailsSchema} from "@/domains/movie-credits";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 

@@ -4,15 +4,15 @@
 
 import {ReactElement, useState} from "react";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {ModerationMessageFormData} from "@/common/_feat/moderation/forms";
-import {Button} from "@/views/common/_comp/ui";
+import {ModerationMessageFormData} from "@/shared/_feat/moderation/forms";
+import {Button} from "@/views/shared/_comp/ui";
 import {ToggleReviewPublicityForm} from "@/views/admin/customers/_feat/toggle-publicity/ToggleReviewPublicityForm.tsx";
 import {
     ToggleReviewPublicityDialog
 } from "@/views/admin/customers/_feat/toggle-publicity/ToggleReviewPublicityDialog.tsx";
 
 import {MovieReview} from "@/domains/movie-reviews/_schema/model";
-import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
+import {MutationFormResetConfig, MutationResponseConfig} from "@/shared/_feat/submit-data";
 
 /** Props for the ToggleReviewPublicityAction component. */
 type ActionProps = {

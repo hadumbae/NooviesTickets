@@ -4,17 +4,17 @@
 
 import {ObjectIdString} from "@noovies-tickets/common";
 import {PaginationOptions} from "@noovies-tickets/common";
-import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
+import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {getFetchReviewsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/repository.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {FetchByMovieQueryKeys} from "@/domains/movie-reviews/_feat/fetch-by-movie/fetch/queryKeys.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data/buildQueryFn.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data/buildQueryFn.ts";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 import {PopulatedMovieReview, PopulatedMovieReviewSchema} from "@/domains/movie-reviews/_schema/model/PopulatedMovieReviewSchema.ts";
-import {PaginatedItems} from "@/common/_types";
+import {PaginatedItems} from "@/shared/_types";
 
 /** Parameters required to fetch paginated reviews for a specific movie. */
 type FetchParams = PaginationOptions & {

@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
-import {Badge} from "@/views/common/_comp/ui/badge.tsx";
+import {cn} from "@/shared/_feat";
+import {Badge} from "@/views/shared/_comp/ui/badge.tsx";
 import {MovieReviewRatingStars} from "@/views/client/movie-reviews/_comp/display/MovieReviewRatingStars.tsx";
 
 /**

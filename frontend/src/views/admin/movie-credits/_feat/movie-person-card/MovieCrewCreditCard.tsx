@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from 'react';
-import {Card, CardContent} from "@/views/common/_comp/ui";
-import {LabelContentList, TextQuote} from "@/views/common/_comp";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
+import {LabelContentList, TextQuote} from "@/views/shared/_comp";
 import {MovieCreditDetails} from "@/domains/movie-credits";
 import {
     MoviePersonDetailsCardHeader

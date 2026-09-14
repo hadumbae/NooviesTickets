@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent, CardHeader, Separator} from "@/views/common/_comp/ui";
+import {Card, CardContent, CardHeader, Separator} from "@/views/shared/_comp/ui";
 import {MovieMetaGenreBadges} from "@/views/admin/movies/_comp/movie-details/MovieMetaGenreBadges.tsx";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image/MoviePosterImage.tsx";
 import {TheatreMovieRuntimes} from "@/domains/theatres/_feat/client-view-data/theatre-info/TheatreMovieRuntimesSchema.ts";

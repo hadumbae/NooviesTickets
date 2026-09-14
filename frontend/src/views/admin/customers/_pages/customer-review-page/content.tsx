@@ -5,13 +5,13 @@
 import {LeanUserWithEmail} from "@/domains/users/_schema/user/LeanUserWithEmailSchema.ts";
 import {CustomerMovieReview} from "@/domains/movie-reviews";
 import {AdminMovieWithRatingCard, CustomerDetailsCard, CustomerMovieReviewCard} from "@/views/admin/customers/_comp";
-import {PageFlexWrapper, PageSectionHeader, PageSectionHeaderLink} from "@/views/common/_comp/page";
+import {PageFlexWrapper, PageSectionHeader, PageSectionHeaderLink} from "@/views/shared/_comp/page";
 import {ReactElement} from "react";
 import {
     CustomerReviewPageActionSection,
     CustomerReviewPageBreadcrumbs,
 } from "@/views/admin/customers/_pages/customer-review-page/sections";
-import {PageHeader} from "@/views/common/_comp";
+import {PageHeader} from "@/views/shared/_comp";
 
 /** Props for the CustomerReviewPageContent component. */
 type ContentProps = {

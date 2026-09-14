@@ -4,7 +4,7 @@
  * customer profile data.
  */
 
-import {buildQueryKey} from "@/common/_feat"
+import {buildQueryKey} from "@/shared/_feat"
 
 /**
  * Standardized query keys for fetching aggregated customer profile overview

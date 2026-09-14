@@ -3,13 +3,13 @@
  */
 
 import {ReactElement, ReactNode} from 'react';
-import {buttonVariants, Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from "@/views/common/_comp/ui";
-import {TextQuote} from "@/views/common/_comp/text-display/text-blocks/TextQuote.tsx";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+import {buttonVariants, Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from "@/views/shared/_comp/ui";
+import {TextQuote} from "@/views/shared/_comp/text-display/text-blocks/TextQuote.tsx";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {Search} from "lucide-react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {Movie, MovieDetails} from "@/domains/movies/_schema/movie";
 import {PersonCredit} from "@/domains/movie-credits";
 

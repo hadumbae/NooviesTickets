@@ -5,9 +5,9 @@
  */
 
 import {ReactElement, useState} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {PersonIndexCard} from "@/views/admin/persons/_comp";
 import {PersonIndexQueryOptionFormSection, PersonSubmitForm, PersonSubmitFormPanel} from "@/views/admin/persons/_feat";
 import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";

@@ -5,7 +5,7 @@
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {Genre, GenreSchema} from "@/domains/genres/_schema";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {patchUpdateGenreImage} from "@/domains/genres/_feat/manage-image/repository";
 import {ManageGenreImageMutationKeys} from "@/domains/genres/_feat/manage-image/mutations/mutationKeys.ts";
 

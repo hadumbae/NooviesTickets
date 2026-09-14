@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {DetailsCardSpan} from "@/views/common/_comp/text-display/spans/DetailsCardSpan.tsx";
-import {SectionTitle} from "@/views/common/_comp";
+import {DetailsCardSpan} from "@/views/shared/_comp/text-display/spans/DetailsCardSpan.tsx";
+import {SectionTitle} from "@/views/shared/_comp";
 import {formatSeatLabel, SeatDetails, SeatTypeLabelMap} from "@/domains/seats";
 
 /** Props for the SeatMapSeatSummary component. */

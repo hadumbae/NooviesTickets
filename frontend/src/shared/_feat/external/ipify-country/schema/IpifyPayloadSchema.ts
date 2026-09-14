@@ -1,0 +1,18 @@
+/**
+ * @fileoverview Defines the schema and type for the Ipify API response payload.
+ */
+
+import {z} from "zod";
+import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {IpSchema} from "@noovies-tickets/common";
+import {IpifyLocationSchema} from "@/shared/_feat/external/ipify-country/schema/IpifyLocationSchema.ts";
+
+/** Zod schema for validating the root Ipify API response object. */
+export const IpifyPayloadSchema = z.object({
+    ip: IpSchema,
+    location: IpifyLocationSchema,
+    isp: NonEmptyStringSchema,
+});
+
+/** Data type inferred from the IpifyPayloadSchema. */
+export type IpifyPayloadData = z.infer<typeof IpifyPayloadSchema>;

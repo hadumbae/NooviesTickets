@@ -2,9 +2,9 @@
  * @fileoverview Fetches screen data for client-side views.
  */
 
-import {buildURL} from "@/common/_feat/fetch-api";
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
+import {buildURL} from "@/shared/_feat/fetch-api";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
 
 import {TheatreScreenSchedule} from "@/domains/theatre-screens/_schema";
 import {TheatreScreenClientViewBaseURL} from "@/domains/theatre-screens/_feat/client-view-data/repository/baseURL.ts";

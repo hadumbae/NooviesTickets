@@ -4,8 +4,8 @@
 
 import {ReactElement} from "react";
 import {MovieDeleteWarningDialog} from "@/views/admin/movies/_feat/delete-movie";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
-import {useIsDeletingUIContext, useIsDeletingUIContextActions} from "@/common/_ctx/ui";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
+import {useIsDeletingUIContext, useIsDeletingUIContextActions} from "@/shared/_ctx/ui";
 import {
     MovieDetailsPageActionsProps
 } from "@/views/admin/movies/_pages/details-page/actions/MovieDetailsPageActionsProps.ts";

@@ -3,19 +3,19 @@
  */
 
 import {FC} from "react";
-import {PageLoader} from "@/views/common/_comp/page";
+import {PageLoader} from "@/views/shared/_comp/page";
 import {ShowingDetailsPageContent} from "@/views/admin/showings/_pages/details-page/content.tsx";
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
-import {QueryDataLoader} from "@/views/common/_feat";
+} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {
     ShowingDetailsViewDataSchema,
     useFetchShowingDetailsViewData
 } from "@/views/admin/showings/_feat/admin-view-data";
 import {ShowingDetailsUIContextProvider} from "@/domains/showings/_ctx/showing-details-ui-context/provider.tsx";
-import {IsDeletingUIContextProvider} from "@/common/_ctx/ui";
+import {IsDeletingUIContextProvider} from "@/shared/_ctx/ui";
 
 /**
  * Entry point for the Showing Details admin page.

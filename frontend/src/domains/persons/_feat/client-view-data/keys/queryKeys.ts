@@ -2,7 +2,7 @@
  * @fileoverview Defines query keys for person-related client view data fetching.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Query key factory for person client view data. */
 export const PersonClientViewQueryKeys = buildQueryKey(

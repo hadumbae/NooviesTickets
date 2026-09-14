@@ -3,15 +3,15 @@
  */
 
 import {ReactElement} from "react";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 
 import {SeatMapFormValues} from "@/domains/seatmaps";
 import {SeatQueryOptions} from "@/domains/seats";
 import {SeatHookFormSelect} from "@/views/admin/seats";
 import {SeatMapStatusRadioGroup} from "@/views/admin/seatmaps/_feat/form-input";
-import {PageSectionHeader} from "@/views/common/_comp/page";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
-import {cn} from "@/common/_feat";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {cn} from "@/shared/_feat";
 import {ObjectIdString} from "@noovies-tickets/common";
 
 type ViewProps = FormFieldsetProps<SeatMapFormValues> & {

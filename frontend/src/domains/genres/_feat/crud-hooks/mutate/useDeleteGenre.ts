@@ -8,8 +8,8 @@ import {toast} from "react-toastify";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {
     handleSubmitResponseError
-} from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
+} from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {destroy} from "@/domains/genres/_feat/crud";
 import {GenreCRUDQueryKeys} from "@/domains/genres/_feat/crud-hooks/keys/GenreCRUDQueryKeys.ts";
 import {GenreCRUDMutationKeys} from "@/domains/genres/_feat/crud-hooks/keys/GenreCRUDMutationKeys.ts";

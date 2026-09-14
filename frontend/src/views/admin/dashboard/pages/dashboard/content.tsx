@@ -1,5 +1,5 @@
 import {ReactElement} from "react";
-import {PageFlexWrapper, PageHeader, StatItem} from "@/views/common/_comp";
+import {PageFlexWrapper, PageHeader, StatItem} from "@/views/shared/_comp";
 import {DateTime} from "luxon";
 import {AdminDashboardViewData} from "@/domains/pages/_feat/admin-view-data";
 import {Link} from "react-router-dom";

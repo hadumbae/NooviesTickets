@@ -3,7 +3,7 @@
  */
 
 import {useMutation, UseMutationResult} from "@tanstack/react-query";
-import {validateData} from "@/common/_feat";
+import {validateData} from "@/shared/_feat";
 import {ReserveTicketMutationKeys} from "./mutationKeys";
 import {PopulatedReservation, PopulatedReservationSchema,} from "@/domains/reservations/_schema/model";
 import {ReserveTicketFormData} from "@/domains/reservations/_feat/reserve-tickets/schema";

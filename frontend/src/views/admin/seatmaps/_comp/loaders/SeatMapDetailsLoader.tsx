@@ -4,7 +4,7 @@
 
 import {ReactElement, ReactNode} from "react";
 import {generateArraySchema} from "@noovies-tickets/common";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {SeatMapDetails, SeatMapDetailsSchema, SeatMapQueryOptions, useFetchSeatMaps} from "@/domains/seatmaps";
 
 /** Props for the SeatMapDetailsLoader component. */

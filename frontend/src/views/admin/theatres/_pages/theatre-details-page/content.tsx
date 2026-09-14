@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from 'react';
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {SROnly} from "@/views/common/_comp/screen-readers";
-import {useSetAdminPageTitle} from "@/common/_feat/handle-pages";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
+import {useSetAdminPageTitle} from "@/shared/_feat/handle-pages";
 
 import {TheatreDetailsViewData} from "@/domains/theatres/_feat";
 import {TheatreDetailsCard} from "@/views/admin/theatres/_comp";
@@ -18,7 +18,7 @@ import {
     TheatreDetailsPageActions,
     TheatreDetailsToggles
 } from "@/views/admin/theatres/_pages/theatre-details-page/elements";
-import {IconButton, PageHeader} from "@/views/common/_comp";
+import {IconButton, PageHeader} from "@/views/shared/_comp";
 import {Ellipsis} from "lucide-react";
 
 /** Props for the TheatreDetailsPageContent component. */

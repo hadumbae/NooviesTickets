@@ -2,13 +2,13 @@
  * @fileoverview Controller component for the administrative movie library index page.
  */
 
-import {usePaginationLocationState} from "@/common/_feat/navigation/usePaginationLocationState.ts";
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+import {usePaginationLocationState} from "@/shared/_feat/navigation/usePaginationLocationState.ts";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 import {MovieIndexPageContent} from "@/views/admin/movies/_pages/index-page/content.tsx";
-import {PaginatedItems} from "@/common/_types";
+import {PaginatedItems} from "@/shared/_types";
 import {MovieDetails, MovieDetailsSchema} from "@/domains/movies/_schema/movie";
 import {generatePaginationSchema} from "@noovies-tickets/common";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {useFetchPaginatedMovies} from "@/domains/movies/_feat/crud-hooks";
 import {useMovieIndexQueryOptionsContext} from "@/domains/movies/_feat/handle-query-options/movie-index/MovieIndexQueryOptionsContext.ts";
 

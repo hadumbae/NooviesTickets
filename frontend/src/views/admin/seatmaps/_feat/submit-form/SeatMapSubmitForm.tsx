@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for submitting seat map configuration data.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {SeatMap, SeatMapDetails,} from "@/domains/seatmaps/_schema/model";
 import {SeatMapFormData, SeatMapFormSchema, SeatMapFormValues,} from "@/domains/seatmaps/_feat/submit-data/schema";
 import {useSeatMapSubmitMutation} from "@/domains/seatmaps/_feat/crud-hooks/submit";

@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for resetting an admin reservation's expiration time.
  */
 
-import {createForm, EmptyFormData, EmptyFormValues} from "@/common/_feat";
+import {createForm, EmptyFormData, EmptyFormValues} from "@/shared/_feat";
 import {AdminReservation,} from "@/domains/reservations/_schema/model";
 import {UpdateReservationNotesFormDataSchema,} from "@/domains/reservations/_feat/update-reservations/forms";
 import {

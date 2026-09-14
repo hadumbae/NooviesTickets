@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {EmptyArrayContainer, IconButton, PageSectionHeader} from "@/views/common/_comp";
-import {LoggedLink} from "@/views/common/_feat";
+import {EmptyArrayContainer, IconButton, PageSectionHeader} from "@/views/shared/_comp";
+import {LoggedLink} from "@/views/shared/_feat";
 import {List} from "lucide-react";
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {ObjectIdString} from "@noovies-tickets/common";

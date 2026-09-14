@@ -2,7 +2,7 @@
  * @fileoverview Utility function and type for transforming raw or detailed movie models into form edit data.
  */
 
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {Movie, MovieDetails} from "@/domains/movies/_schema/movie";
 import {MovieFormData} from "@/domains/movies/_feat/submit-data/schema/MovieFormSchema.ts";
 

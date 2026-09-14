@@ -2,10 +2,10 @@
  * @fileoverview Renders form sorting fields for ordering person index query results.
  */
 
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {ReactElement} from "react";
-import {DisableFields, HideFields} from "@/common/_types";
-import {HookFormSortToggle} from "@/views/common/_feat";
+import {DisableFields, HideFields} from "@/shared/_types";
+import {HookFormSortToggle} from "@/views/shared/_feat";
 import {
     PersonIndexQueryOptionsFormValues
 } from "@/domains/persons/_feat/validate-query-options/person-index/PersonIndexQueryOptionSchema.ts";

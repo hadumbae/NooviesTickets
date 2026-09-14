@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for submitting a user movie review.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {
     MovieReview,
     MovieReviewForm,

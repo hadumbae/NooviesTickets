@@ -6,10 +6,10 @@
 import {ReactElement} from "react";
 import {X} from "lucide-react";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {Button, Card, CardContent} from "@/views/common/_comp/ui";
+import {Button, Card, CardContent} from "@/views/shared/_comp/ui";
 
 import {SeatDetails, SeatLayoutTypeLabelMap} from "@/domains/seats";
-import {PageSectionHeader} from "@/views/common/_comp/page";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
 
 /** Props for the SeatFormSubmitStructureCard component. */
 type CardProps = {

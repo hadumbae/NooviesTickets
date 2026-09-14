@@ -3,10 +3,10 @@
  */
 
 import {LeanUserWithEmail} from "@/domains/users/_schema/user";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 import {ReactElement} from "react";
-import {LabelContent} from "@/views/common/_comp";
+import {LabelContent} from "@/views/shared/_comp";
 import {CustomerUniqueCodeDisplay} from "@/views/admin/customers/_comp/customer-details/CustomerUniqueCodeDisplay.tsx";
 
 /** Props for the CustomerDetailsCard component. */

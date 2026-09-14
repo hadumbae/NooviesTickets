@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for resetting a movie review display name.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {MovieReview} from "@/domains/movie-reviews";
 import {MovieReviewMutationConfig} from "@/domains/movie-reviews/_types";
 import {

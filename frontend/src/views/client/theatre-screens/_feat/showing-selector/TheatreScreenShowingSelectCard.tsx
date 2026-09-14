@@ -3,7 +3,7 @@
  */
 
 import {TheatreScreenSchedule} from "@/domains/theatre-screens/_schema/model";
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/views/common/_comp/ui/card.tsx";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/views/shared/_comp/ui/card.tsx";
 import {BrowseShowingSelector} from "@/views/client/showings/_comp/browse-showing-selector/BrowseShowingSelector.tsx";
 import {ReactElement} from "react";
 import {IANATimezone} from "@noovies-tickets/common";

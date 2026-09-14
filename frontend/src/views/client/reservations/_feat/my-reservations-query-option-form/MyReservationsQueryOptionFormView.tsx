@@ -3,16 +3,16 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
-import {HookFormInput, HookFormRadioGroup, HookFormSortToggle} from "@/views/common/_feat";
+import {cn} from "@/shared/_feat";
+import {HookFormInput, HookFormRadioGroup, HookFormSortToggle} from "@/views/shared/_feat";
 import {useFormContext} from "react-hook-form";
 import {
     ReservationStatusFilterRadioGroupOptions,
     ReservationTypeFilterRadioGroupOptions
 } from "@/domains/reservations/_const/radio-group-options";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {useAutoFormSubmit} from "@/common/_feat/submit-data";
-import {Button} from "@/views/common/_comp/ui";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {useAutoFormSubmit} from "@/shared/_feat/submit-data";
+import {Button} from "@/views/shared/_comp/ui";
 import {X} from "lucide-react";
 
 /** Props for the MyReservationsQueryOptionFormView component. */

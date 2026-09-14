@@ -3,11 +3,11 @@
  */
 
 import {cloneElement, ReactElement} from "react";
-import {cn} from "@/common/_feat/handle-ui/cn.ts";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {cn} from "@/shared/_feat/handle-ui/cn.ts";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {SeatFormValues} from "@/domains/seats/_feat/submit-data/schema/SeatFormSchema.ts";
 import {useFormContext} from "react-hook-form";
-import {HookFormFieldsetConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
+import {HookFormFieldsetConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
 import {SeatSubmitFormCoordinateFieldset} from "@/views/admin/seats/_feat/submit-data/fieldsets/SeatSubmitFormCoordinateFieldset.tsx";
 import {SeatSubmitFormDetailsFieldset} from "@/views/admin/seats/_feat/submit-data/fieldsets/SeatSubmitFormDetailsFieldset.tsx";
 import {SeatSubmitFormLayoutFieldset} from "@/views/admin/seats/_feat/submit-data/fieldsets/SeatSubmitFormLayoutFieldset.tsx";

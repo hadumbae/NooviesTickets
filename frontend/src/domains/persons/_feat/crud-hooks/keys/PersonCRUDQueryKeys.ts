@@ -3,7 +3,7 @@
  *
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Hierarchical collection of query keys for Person administrative operations. */
 export const PersonCRUDQueryKeys = buildQueryKey(

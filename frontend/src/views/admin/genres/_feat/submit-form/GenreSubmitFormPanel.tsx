@@ -5,10 +5,10 @@
 import {ReactElement, ReactNode} from 'react';
 import {useFormContext} from "react-hook-form";
 import {GenreFormData} from "@/domains/genres/_feat/submit-form/schema/GenreFormSchema.ts";
-import {DisableFields, UIOpenStateProps} from "@/common/_types";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {useLockForFormUI} from "@/common/_feat/handle-form/useLockForFormUI.ts";
-import {HookFormCheckbox, HookFormInput, HookFormTextArea} from "@/views/common/_feat";
+import {DisableFields, UIOpenStateProps} from "@/shared/_types";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {useLockForFormUI} from "@/shared/_feat/handle-form/useLockForFormUI.ts";
+import {HookFormCheckbox, HookFormInput, HookFormTextArea} from "@/views/shared/_feat";
 import {
     Button,
     ScrollArea,
@@ -18,7 +18,7 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 /** Props for the GenreSubmitFormPanel component. */
 type PanelProps = UIOpenStateProps & {

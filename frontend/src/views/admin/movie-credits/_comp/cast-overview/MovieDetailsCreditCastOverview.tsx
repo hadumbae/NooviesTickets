@@ -5,8 +5,8 @@
 import {ReactElement} from 'react';
 import {ObjectIdString} from "@noovies-tickets/common";
 import {MovieCreditDetails} from "@/domains/movie-credits/_schemas/model/MovieCreditDetailsSchema.ts";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {
     MovieCreditCastOverviewCard
 } from "@/views/admin/movie-credits/_comp/cast-overview/MovieCreditCastOverviewCard.tsx";

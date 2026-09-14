@@ -3,8 +3,8 @@
  */
 
 import {ReactElement, useCallback} from "react";
-import {Button} from "@/views/common/_comp/ui";
-import {useRequiredContext} from "@/common/_feat/use-context/useRequiredContext.ts";
+import {Button} from "@/views/shared/_comp/ui";
+import {useRequiredContext} from "@/shared/_feat/use-context/useRequiredContext.ts";
 
 import {SeatLayoutIconConstant} from "@/domains/seats";
 import {SeatLayoutNonSeatElement} from "@/views/admin/seats";

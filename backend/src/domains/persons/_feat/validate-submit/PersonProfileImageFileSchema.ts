@@ -4,7 +4,7 @@
  */
 
 import {z} from "zod";
-import {ImageTypeConstant} from "@/shared/constants/ImageTypeConstant";
+import {AcceptedImageTypeConstant} from "@noovies-tickets/common";
 import isMulterFile from "@/shared/utility/schema/file-upload/isMulterFile";
 
 /**
@@ -27,7 +27,7 @@ export const PersonProfileImageFileSchema = z
             return z.NEVER;
         }
 
-        if (!ImageTypeConstant.includes(file.mimetype as any)) {
+        if (!AcceptedImageTypeConstant.includes(file.mimetype as any)) {
             ctx.addIssue({code, path, fatal, message: "Invalid file type."});
             return z.NEVER;
         }

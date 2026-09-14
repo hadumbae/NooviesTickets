@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {AcceptedImageTypeConstant} from "@/common/_const/images/AcceptedImageTypeConstant.ts";
-import {cn} from "@/common/_feat";
-import {HookFormFileInput} from "@/views/common/_feat";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {AcceptedImageTypeConstant} from "@/shared/_const/images/AcceptedImageTypeConstant.ts";
+import {cn} from "@/shared/_feat";
+import {HookFormFileInput} from "@/views/shared/_feat";
 
 /** Props for the GenreImageUploadFormView component. */
 type ViewProps = {

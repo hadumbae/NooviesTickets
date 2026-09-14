@@ -2,7 +2,7 @@
  * @fileoverview Defines the form component and hook for updating user account suspension status.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {
     useUpdateUserSuspension,
     UseUpdateUserSuspensionConfig

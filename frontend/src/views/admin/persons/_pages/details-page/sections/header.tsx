@@ -4,8 +4,8 @@
 
 import {ReactElement} from 'react';
 import {EllipsisIcon} from "lucide-react";
-import {CloudinaryAvatarImage, IconButton} from "@/views/common/_comp";
-import {HeaderDescription, HeaderTitle} from "@/views/common/_comp/page-headers";
+import {CloudinaryAvatarImage, IconButton} from "@/views/shared/_comp";
+import {HeaderDescription, HeaderTitle} from "@/views/shared/_comp/page-headers";
 
 import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
 import {PersonDetailsActionToggles} from "@/views/admin/persons/_feat/person-details-actions";

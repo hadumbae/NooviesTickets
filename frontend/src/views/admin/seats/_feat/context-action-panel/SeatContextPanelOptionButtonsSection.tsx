@@ -2,7 +2,7 @@
  * @fileoverview Renders the Edit and Delete action buttons for the Seat Details panel.
  */
 
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {Pencil, Trash, X} from "lucide-react";
 import {Dispatch, ReactElement, SetStateAction} from "react";
 

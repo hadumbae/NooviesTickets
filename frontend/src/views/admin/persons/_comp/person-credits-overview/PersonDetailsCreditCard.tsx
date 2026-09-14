@@ -4,13 +4,13 @@
 
 import {ReactElement} from "react";
 import {PersonCredit} from "@/domains/movie-credits";
-import {Card, CardContent} from "@/views/common/_comp/ui";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
 import {Info} from "lucide-react";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink";
 import {
     PersonDetailsCreditMovieDialog
 } from "@/views/admin/persons/_comp/person-credits-overview/PersonDetailsCreditMovieDialog.tsx";
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 
 /** Props for the PersonDetailsCreditCard component. */
 type CardProps = {

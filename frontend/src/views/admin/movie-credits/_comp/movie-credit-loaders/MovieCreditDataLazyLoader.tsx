@@ -3,12 +3,12 @@
  * the `useFetchMovieCredits` hook, useful for lazy loading movie credits.
  */
 
-import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
+import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {useFetchMovieCredits} from "@/domains/movie-credits/_feat/crud-hooks/useFetchMovieCredits.ts";
 import {z, ZodTypeAny} from "zod";
 import {ReactElement, ReactNode} from "react";
 import {MovieCreditQueryOptions} from "@/domains/movie-credits/_schemas/query-options/MovieCreditQueryOptionsSchema.ts";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 
 /** Props for the MovieCreditDataLazyLoader component. */
 type LoaderProps<TSchema extends ZodTypeAny = ZodTypeAny> = {

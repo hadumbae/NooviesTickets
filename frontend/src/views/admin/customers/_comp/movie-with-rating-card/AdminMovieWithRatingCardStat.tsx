@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
-import {LabelContent} from "@/views/common/_comp";
+import {cn} from "@/shared/_feat";
+import {LabelContent} from "@/views/shared/_comp";
 
 /** Props for the AdminMovieWithRatingCardStat component. */
 type StatProps = {

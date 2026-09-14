@@ -3,13 +3,13 @@
  */
 
 import {ReactElement} from 'react';
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
 import {Loader} from "lucide-react";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {TheatreDetails, TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
 import {useFetchTheatre} from "@/domains/theatres/_feat/crud-hooks";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {formatTheatreDetails} from "@/domains/theatres/_feat/formatters";
 
 /** Props for the TheatreQuickOverviewFetchCard component. */

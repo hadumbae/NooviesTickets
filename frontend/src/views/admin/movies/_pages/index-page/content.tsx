@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {MovieIndexCard} from "@/views/admin/movies/_comp";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {Plus} from "lucide-react";
 import {MovieIndexQueryOptionFormSection} from "@/views/admin/movies/_feat/query-options-form";
 

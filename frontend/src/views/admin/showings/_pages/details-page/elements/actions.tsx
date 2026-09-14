@@ -6,7 +6,7 @@ import {ReactElement} from "react";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {ShowingDeleteWarningDialog} from "@/views/admin/showings/_feat/showing-delete-warning";
 import {useNavigateToShowingIndex} from "@/domains/showings/_feat/navigation";
-import {useIsDeletingUIContext, useIsDeletingUIContextActions} from "@/common/_ctx/ui";
+import {useIsDeletingUIContext, useIsDeletingUIContextActions} from "@/shared/_ctx/ui";
 
 /** Props for the ShowingDetailsPageActions component. */
 type ActionProps = {

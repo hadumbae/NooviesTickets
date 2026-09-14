@@ -2,7 +2,7 @@
  * @fileoverview Defines the form component and hook for submitting movie credit data.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {
     MovieCredit,
     MovieCreditDetails,

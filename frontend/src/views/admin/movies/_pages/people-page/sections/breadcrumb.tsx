@@ -10,10 +10,10 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-} from "@/views/common/_comp/ui/breadcrumb.tsx";
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
+} from "@/views/shared/_comp/ui/breadcrumb.tsx";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
 import {RoleTypeDepartment} from "@noovies-tickets/common";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 
 /** Props for the MoviePersonListBreadcrumb component. */

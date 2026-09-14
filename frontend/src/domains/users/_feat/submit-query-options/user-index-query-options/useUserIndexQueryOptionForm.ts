@@ -2,7 +2,7 @@
  * @fileoverview Hook for managing the user index query options form state and validation.
  */
 
-import {QueryOptionFormValues} from "@/common/_feat";
+import {QueryOptionFormValues} from "@/shared/_feat";
 import {UserQueryOptions, UserQueryOptionsSchema} from "@/domains/users/_schema/query-options";
 import {useForm, UseFormReturn} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";

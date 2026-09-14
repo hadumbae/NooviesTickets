@@ -4,11 +4,11 @@
 
 import {ReservationUniqueCode} from "@/domains/reservations/_schema";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {getFetchByCode} from "@/domains/reservations/_feat/fetch-reservation-by-code/repositories/repository.ts";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {
     FetchByCodeData,
     FetchByCodeDataSchema,

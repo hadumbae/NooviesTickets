@@ -4,7 +4,7 @@ import {ShowingPopulationPipelines, ShowingSeatMapVirtualPipelines} from "@/doma
 import type {PipelineStage} from "mongoose";
 import {buildTheatreLocationMatchStage} from "@/domains/theatre/_feat/aggregate";
 import type {ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
-import type {LocationTarget} from "@/shared/schema/features/location-query-options/LocationQueryOptions.types";
+import type {LocationTarget} from "./LocationTargetSchema";
 
 /** Props for the fetchTheatresByLocation service function. */
 export type FetchTheatreByLocationConfig = {

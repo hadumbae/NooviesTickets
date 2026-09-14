@@ -4,13 +4,13 @@
 
 import {ReactElement} from "react";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {cn} from "@/common/_feat";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {Card, CardContent} from "@/views/common/_comp/ui";
+import {cn} from "@/shared/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
 import {formatMovieData} from "@/domains/movies/_feat/formatters/formatMovieData.ts";
 import {MovieDetails, MovieDetailsSchema} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {useFetchMovie} from "@/domains/movies/_feat/crud-hooks/fetch/useFetchMovie.ts";
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 
 /** Props for the MovieQuickOverviewFetchCard component. */
 type FetchCardProps = {

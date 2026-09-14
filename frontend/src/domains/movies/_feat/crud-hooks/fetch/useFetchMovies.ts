@@ -3,12 +3,12 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {MovieQueryOptions} from "@/domains/movies/_schema/queries";
-import {ListQueryConfig} from "@/common/_types";
+import {ListQueryConfig} from "@/shared/_types";
 import {find} from "@/domains/movies/_feat/crud";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {MovieCRUDQueryKeys} from "@/domains/movies/_feat/crud-hooks/keys/queryKeys.ts";
 
 /**

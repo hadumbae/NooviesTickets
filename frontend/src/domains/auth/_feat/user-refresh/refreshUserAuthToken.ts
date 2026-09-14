@@ -4,7 +4,7 @@
 
 import {User, UserSchema} from "@/domains/users/_schema/user/UserSchema.ts";
 import {postRefreshAuthentication} from "@/domains/auth/_feat/user-refresh/postRefreshAuthentication.ts";
-import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 
 /** Triggers a token refresh request and returns the validated user data. */
 export async function refreshUserAuthToken(): Promise<User> {

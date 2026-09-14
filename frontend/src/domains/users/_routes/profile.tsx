@@ -4,8 +4,8 @@
  */
 
 import {RouteObject} from "react-router-dom";
-import {BaseLayout} from "@/views/common/_layout/base-layout/BaseLayout.tsx";
-import {ErrorPage} from "@/views/common/_pages/error/ErrorPage.tsx";
+import {BaseLayout} from "@/views/shared/_layout/base-layout/BaseLayout.tsx";
+import {ErrorPage} from "@/views/shared/_pages/error/ErrorPage.tsx";
 
 /**
  * Defines the account route hierarchy for authenticated users.

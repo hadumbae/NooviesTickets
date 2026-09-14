@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from "react";
-import {PageSectionHeader} from "@/views/common/_comp/page";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
 import {GenreImageBanner} from "@/views/admin/genres/_comp";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {Genre} from "@/domains/genres/_schema";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {Plus, Trash} from "lucide-react";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {
     useDeletingGenreImageUIContextActions,
     usePendingGenreImageDeleteUIContext,

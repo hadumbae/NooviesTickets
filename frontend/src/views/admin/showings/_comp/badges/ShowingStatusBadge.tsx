@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {Badge} from "@/views/common/_comp/ui/badge.tsx";
+import {Badge} from "@/views/shared/_comp/ui/badge.tsx";
 import {ShowingStatus} from "@noovies-tickets/common";
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
-import {cn} from "@/common/_feat";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
+import {cn} from "@/shared/_feat";
 
 /** Props for the ShowingStatusBadge component. */
 type BadgeProps = {

@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {cn, FormFieldsetProps} from "@/common/_feat";
+import {cn, FormFieldsetProps} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsFormValues
 } from "@/domains/roletypes/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
-import {HookFormSortToggle} from "@/views/common/_feat";
+import {HookFormSortToggle} from "@/views/shared/_feat";
 
 /**
  * Renders sort option toggles for role name and department within a role type index form.

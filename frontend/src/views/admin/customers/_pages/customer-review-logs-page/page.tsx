@@ -5,9 +5,9 @@
 import {ReactElement} from "react";
 import {CustomerReviewLogsPageContent} from "@/views/admin/customers/_pages/customer-review-logs-page/content.tsx";
 import {useFetchCustomerReviewLogsViewData} from "@/domains/customers/_feat/movie-review-logs";
-import {useParsedPaginationValue} from "@/common/_feat/fetch-pagination-search-params";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {useRouteParams} from "@/common/_feat";
+import {useParsedPaginationValue} from "@/shared/_feat/fetch-pagination-search-params";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {useRouteParams} from "@/shared/_feat";
 import {CustomerReviewRouteParamsSchema} from "@/domains/customers/_feat/movie-review/schema/routeParamsSchema.ts";
 
 const LOGS_PER_PAGE = 20;

@@ -2,7 +2,7 @@
  * @fileoverview Creates the form section component for managing role type index query options.
  */
 
-import {createQueryOptionFormSection} from "@/common/_feat";
+import {createQueryOptionFormSection} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsForm
 } from "@/views/admin/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsForm.tsx";

@@ -9,11 +9,11 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from "@/views/common/_comp/ui";
-import {TextQuote} from "@/views/common/_comp";
+} from "@/views/shared/_comp/ui";
+import {TextQuote} from "@/views/shared/_comp";
 import {Search} from "lucide-react";
-import {cn} from "@/common/_feat";
-import {LabelContent} from "@/views/common/_comp/label-content/LabelContent.tsx";
+import {cn} from "@/shared/_feat";
+import {LabelContent} from "@/views/shared/_comp/label-content/LabelContent.tsx";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image";
 import {formatMovieData} from "@/domains/movies/_feat/formatters/formatMovieData.ts";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";

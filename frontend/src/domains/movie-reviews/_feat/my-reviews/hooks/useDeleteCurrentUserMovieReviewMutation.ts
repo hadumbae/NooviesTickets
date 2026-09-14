@@ -6,11 +6,11 @@ import {ObjectIdString} from "@noovies-tickets/common";
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {deleteRemoveMovieReviewForCurrentUser} from "@/domains/movie-reviews/_feat/my-reviews/repository/repository.ts";
 import {toast} from "react-toastify";
-import {handleSubmitResponseError} from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
+import {handleSubmitResponseError} from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
 import {FetchByMovieQueryKeys} from "@/domains/movie-reviews/_feat/fetch-by-movie/fetch/queryKeys.ts";
 import {MovieReviewCRUDQueryKeys} from "@/domains/movie-reviews/_feat/crud-hooks/queryKeys.ts";
 import {MyReviewsMutationKeys} from "@/domains/movie-reviews/_feat/my-reviews/hooks/mutationKeys.ts";
-import {MutationResponseConfig} from "@/common/_feat/submit-data/mutationTypes.ts";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data/mutationTypes.ts";
 
 /** Parameters for the movie review deletion mutation. */
 type MutateParams = {

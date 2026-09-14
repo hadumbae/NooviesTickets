@@ -3,12 +3,12 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {EntityDeleteWarningDialog} from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
+import {EntityDeleteWarningDialog} from "@/views/shared/_feat/dialog/EntityDeleteWarningDialog.tsx";
 import {useShowingDeleteMutation} from "@/domains/showings/_feat/crud-hooks";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {UIOpenStateProps} from "@/common/_types";
-import {handleMutationCallback, handleSubmitResponseError} from "@/common/_feat";
+import {UIOpenStateProps} from "@/shared/_types";
+import {handleMutationCallback, handleSubmitResponseError} from "@/shared/_feat";
 
 /** Props for the ShowingDeleteWarningDialog component. */
 type DialogProps = UIOpenStateProps & MutationResponseConfig & {

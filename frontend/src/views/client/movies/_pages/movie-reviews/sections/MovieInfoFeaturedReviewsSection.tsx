@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {PageSectionHeader} from "@/views/common/_comp";
+import {PageSectionHeader} from "@/views/shared/_comp";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {MovieReviewDetailsCard} from "@/views/client/movie-reviews/_feat";
 import {FeaturedReviewsByMovie, useFetchFeaturedReviewsByMovie} from "@/domains/movie-reviews/_feat";
 

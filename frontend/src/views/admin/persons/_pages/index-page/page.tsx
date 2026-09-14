@@ -5,18 +5,18 @@
  */
 
 import {ReactElement} from 'react';
-import {usePaginationLocationState} from "@/common/_feat/navigation/usePaginationLocationState.ts";
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {usePaginationLocationState} from "@/shared/_feat/navigation/usePaginationLocationState.ts";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {useFetchPaginatedPersons} from "@/domains/persons/_feat/crud-hooks";
 import {PersonIndexPageContent} from "@/views/admin/persons/_pages/index-page/content.tsx";
 import {generatePaginationSchema} from "@noovies-tickets/common";
-import {PaginatedItems} from "@/common/_types";
+import {PaginatedItems} from "@/shared/_types";
 import {Person, PersonSchema} from "@/domains/persons/_schema/person";
 import {
     usePersonIndexQueryOptionsContext
 } from "@/domains/persons/_feat/validate-query-options/person-index/PersonIndexQueryOptionsContext.ts";
-import {useSetAdminPageTitle} from "@/common/_feat";
+import {useSetAdminPageTitle} from "@/shared/_feat";
 
 /** Default result set size for the person administrative grid. */
 const PERSONS_PER_PAGE = 20;

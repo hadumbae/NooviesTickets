@@ -1,8 +1,8 @@
 /** @fileoverview Presentational form view for creating or editing movie credits. */
 
-import {cn, FormViewProps} from "@/common/_feat";
+import {cn, FormViewProps} from "@/shared/_feat";
 import {useFormContext} from "react-hook-form";
-import {Separator} from "@/views/common/_comp/ui";
+import {Separator} from "@/views/shared/_comp/ui";
 import {ReactElement} from "react";
 import {MovieCreditFormValues} from "@/domains/movie-credits/_feat/submit-data/schemas";
 import {

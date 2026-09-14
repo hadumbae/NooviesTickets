@@ -2,7 +2,7 @@
  * @fileoverview Type contracts for fetching reviews by movie.
  */
 
-import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
+import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {ObjectIdString, PaginationOptions} from "@noovies-tickets/common";
 
 /** Parameters for retrieving reviews for a movie. */

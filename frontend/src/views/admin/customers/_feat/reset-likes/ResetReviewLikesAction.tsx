@@ -3,14 +3,14 @@
  */
 
 import {ReactElement, useState} from "react";
-import {ModerationMessageFormData} from "@/common/_feat/moderation/forms";
+import {ModerationMessageFormData} from "@/shared/_feat/moderation/forms";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {ResetReviewLikesForm} from "@/views/admin/customers/_feat/reset-likes/ResetReviewLikesForm.tsx";
 import {ResetReviewLikesDialog} from "@/views/admin/customers/_feat/reset-likes/ResetReviewLikesDialog.tsx";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 
 import {MovieReview} from "@/domains/movie-reviews/_schema/model";
-import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
+import {MutationFormResetConfig, MutationResponseConfig} from "@/shared/_feat/submit-data";
 
 /** Props for the ResetReviewLikesAction component. */
 type ActionProps = {

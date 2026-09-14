@@ -2,7 +2,7 @@
  * @fileoverview Form and hook for managing customer index query options.
  */
 
-import {createQueryOptionForm} from "@/common/_feat";
+import {createQueryOptionForm} from "@/shared/_feat";
 import {CustomerIndexQueryOptionFormValues} from "@/domains/customers/_types";
 import {CustomerQueryOptionsSchema} from "@/domains/customers/_schema/query-options";
 

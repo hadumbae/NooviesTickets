@@ -5,7 +5,7 @@
 
 import {useParams} from "react-router-dom"
 import {CustomerReviewLogsRouteParamsSchema} from "@/domains/customers/_feat/movie-review-logs/schema/routeParamsSchema.ts"
-import {useThrowRouteParamError} from "@/common/_feat/fetch-route-params/useThrowRouteParamError.ts"
+import {useThrowRouteParamError} from "@/shared/_feat/fetch-route-params/useThrowRouteParamError.ts"
 
 /** Extracts and validates the customer and review codes from the current URL. */
 export function useCustomerReviewLogsRouteParams() {

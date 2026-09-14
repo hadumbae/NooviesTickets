@@ -5,7 +5,7 @@
 import {
     filterNullishAttributes
 } from "@noovies-tickets/common";
-import {LinkItemConfig} from "@/common/_types/navigation/LinkItemConfig.ts";
+import {LinkItemConfig} from "@/shared/_types/navigation/LinkItemConfig.ts";
 
 import {MovieCreditDetails} from "@/domains/movie-credits/_schemas/model/MovieCreditDetailsSchema.ts";
 

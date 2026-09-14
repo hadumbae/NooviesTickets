@@ -10,7 +10,7 @@ import {
 import {
     AdminReservationCancelDialog
 } from "@/views/admin/reservations/_feat/reservation-actions/cancel/AdminReservationCancelDialog.tsx";
-import {AdminActionButton} from "@/views/common/_comp";
+import {AdminActionButton} from "@/views/shared/_comp";
 
 /** Props for the AdminReservationCancelAction component. */
 type ActionProps = {

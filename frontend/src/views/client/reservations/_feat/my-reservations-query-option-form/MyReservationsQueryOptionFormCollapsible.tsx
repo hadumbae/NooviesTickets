@@ -3,8 +3,8 @@
  */
 
 import {ReactElement, ReactNode, useState} from "react";
-import {useParsedSearchParams} from "@/common/_feat";
-import {Button, Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/common/_comp/ui";
+import {useParsedSearchParams} from "@/shared/_feat";
+import {Button, Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/shared/_comp/ui";
 import {ChevronsUpDown} from "lucide-react";
 import {
     CurrentUserReservationsQueryOptionSchema

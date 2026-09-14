@@ -9,8 +9,8 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-} from "@/views/common/_comp/ui/breadcrumb.tsx";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+} from "@/views/shared/_comp/ui/breadcrumb.tsx";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {ReactElement} from "react";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {UserUniqueCode} from "@/domains/users/_schema/fields/UserUniqueCodeSchema.ts";

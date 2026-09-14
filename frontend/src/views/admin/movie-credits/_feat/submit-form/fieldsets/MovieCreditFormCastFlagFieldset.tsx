@@ -1,10 +1,10 @@
 /** @fileoverview Fieldset component for cast-specific boolean flags in the movie credit form. */
 
 import {ReactElement} from "react";
-import {HookFormCheckbox} from "@/views/common/_feat";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
-import {createFormFieldConfig, FormViewProps, renderFields} from "@/common/_feat/submit-data";
-import {cn, useBaseFormContext} from "@/common/_feat";
+import {HookFormCheckbox} from "@/views/shared/_feat";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
+import {createFormFieldConfig, FormViewProps, renderFields} from "@/shared/_feat/submit-data";
+import {cn, useBaseFormContext} from "@/shared/_feat";
 import {MovieCreditFormValues} from "@/domains/movie-credits";
 
 /** Renders a grid of checkbox inputs for cast attributes like primary, uncredited, or voice roles. */

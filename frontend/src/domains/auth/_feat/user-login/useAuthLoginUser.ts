@@ -3,7 +3,7 @@
  */
 
 import {useMutation, UseMutationResult} from "@tanstack/react-query";
-import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {User, UserSchema} from "@/domains/users/_schema/user/UserSchema";
 import {AuthLoginFormData} from "@/domains/auth/_feat/user-login/AuthLoginFormSchema.ts";
 import {AuthMutationKeys} from "@/domains/auth/_feat/common/AuthMutationKeys.ts";

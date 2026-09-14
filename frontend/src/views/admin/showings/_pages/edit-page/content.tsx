@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {Card, CardContent} from "@/views/common/_comp/ui";
-import {PageHeader} from "@/views/common/_comp";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
+import {PageHeader} from "@/views/shared/_comp";
 
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {buildShowingEditData, useNavigateToShowingDetails} from "@/domains/showings/_feat";

@@ -3,7 +3,7 @@
  *
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Registry of query keys for public genre view data. */
 export const GenreClientViewDataQueryKeys = buildQueryKey(

@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, useEffect} from "react";
-import {PageFlexWrapper, PageHeader} from "@/views/common/_comp";
+import {PageFlexWrapper, PageHeader} from "@/views/shared/_comp";
 
 import {TheatreScreenSchedule} from "@/domains/theatre-screens";
 import {formatTheatreDetails} from "@/domains/theatres/_feat/formatters/formatTheatreDetails.ts";
@@ -13,7 +13,7 @@ import {
     useTheatreInfoQueryOptionsContext
 } from "@/domains/theatres/_feat/handle-query-options/theatre-info/TheatreInfoQueryOptionsContext.ts";
 import {DateTime} from "luxon";
-import {QueryOptionsCalendarInput} from "@/views/common/_feat";
+import {QueryOptionsCalendarInput} from "@/views/shared/_feat";
 import {DateOnlyString} from "@noovies-tickets/common";
 import {getTodayDateOnly} from "@noovies-tickets/common";
 import {TheatreInfoScreensSection} from "@/views/client/theatres/_pages/theatre-info/sections";

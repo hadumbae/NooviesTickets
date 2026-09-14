@@ -4,8 +4,8 @@
 
 import {z} from "zod";
 import {IDStringSchema, preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
-import {AnyValues} from "@/common/_types";
+import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
+import {AnyValues} from "@/shared/_types";
 import {GenreDescriptionSchema, GenreNameSchema} from "@/domains/genres/_schema/fields";
 
 /** Zod schema for validating and transforming Genre form data. */

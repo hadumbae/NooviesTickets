@@ -4,10 +4,10 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {SlugString} from "@noovies-tickets/common";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 
 import {TheatreScreenAdminViewDataQueryKeys} from "@/domains/theatre-screens/_feat/admin-view-data/keys";
 import {getFetchTheatreScreenAdminViewData,} from "@/domains/theatre-screens/_feat/admin-view-data/repository";

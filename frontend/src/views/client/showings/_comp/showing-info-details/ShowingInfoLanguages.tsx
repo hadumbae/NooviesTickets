@@ -6,7 +6,7 @@
 import {ReactElement} from "react";
 import {Captions, Volume2} from "lucide-react";
 import {ISO6391LanguageCode} from "@noovies-tickets/common";
-import {ISO6391LanguageLabels} from "@/common/_const/languages/ISO6391LanguageLabels.ts";
+import {ISO6391LanguageLabels} from "@/shared/_const/languages/ISO6391LanguageLabels.ts";
 
 const ICON_CSS = "text-with-icon max-md:text-xs font-bold select-none";
 

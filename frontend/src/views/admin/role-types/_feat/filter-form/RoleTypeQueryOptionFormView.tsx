@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from 'react';
-import {HookFormInput, HookFormSortToggle as HookFormStateToggleButton} from "@/views/common/_feat";
-import {cn} from "@/common/_feat";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
-import {useAutoFormSubmit} from "@/common/_feat/submit-data";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
+import {HookFormInput, HookFormSortToggle as HookFormStateToggleButton} from "@/views/shared/_feat";
+import {cn} from "@/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {useAutoFormSubmit} from "@/shared/_feat/submit-data";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
 import {useFormContext} from "react-hook-form";
 import {RoleTypeDepartmentSelect} from "@/views/admin/role-types/_feat/form-inputs";
 import {RoleTypeQueryOptionsFormValues} from "@/domains/roletypes/_feat/validate-query-options/query-options/RoleTypeQueryOptionsSchema.ts";

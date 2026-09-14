@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 
 /** Custom class names for the container and label elements. */
 type GroupClassNames = {

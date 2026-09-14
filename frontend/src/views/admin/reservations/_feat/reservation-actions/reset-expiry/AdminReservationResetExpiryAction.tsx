@@ -8,7 +8,7 @@ import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reser
 import {
     AdminReservationResetExpiryDialog
 } from "@/views/admin/reservations/_feat/reservation-actions/reset-expiry/AdminReservationResetExpiryDialog.tsx";
-import {AdminActionButton} from "@/views/common/_comp";
+import {AdminActionButton} from "@/views/shared/_comp";
 import {
     AdminReservationResetExpiryForm
 } from "@/views/admin/reservations/_feat/reservation-actions/reset-expiry/AdminReservationResetExpiryForm.tsx";

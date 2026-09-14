@@ -2,7 +2,7 @@
  * @fileoverview Defines the form component and hook for submitting role type data.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {RoleTypeFormSchema, useRoleTypeSubmitMutation} from "@/domains/roletypes/_feat";
 
 const {SubmitForm, useSubmitForm} = createForm({

@@ -2,15 +2,15 @@
  * @fileoverview React Query hook for fetching validated paginated Genre collections.
  */
 
-import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
+import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {PaginationOptions} from "@noovies-tickets/common";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {paginated} from "@/domains/genres/_feat/crud";
 import {GenreCRUDQueryKeys} from "@/domains/genres/_feat/crud-hooks/keys/GenreCRUDQueryKeys.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {ZodType, ZodTypeDef} from "zod";
 import {GenreQueryOptions} from "@/domains/genres/_schema";
 

@@ -2,16 +2,16 @@
  * @fileoverview Presentational component for rendering the user's personal movie reviews layout and list.
  */
 
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {PaginationRangeButtons} from "@/views/common/_comp";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {PaginationRangeButtons} from "@/views/shared/_comp";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {MovieReviewIndexCard} from "@/views/client/movie-reviews/_comp/index-card";
 import {MyMovieReview} from "@/domains/movie-reviews/_schema/my-reviews";
 import {ReactElement} from "react";
-import {PageHeader} from "@/views/common/_comp";
+import {PageHeader} from "@/views/shared/_comp";
 import {MyProfileNavigation, MyProfileNavigationDropdown} from "@/views/client/users/_comp/my-profile-nav";
-import {Separator} from "@/views/common/_comp/ui";
-import {useIsMobile} from "@/common/_feat/handle-ui/useIsMobile.tsx";
+import {Separator} from "@/views/shared/_comp/ui";
+import {useIsMobile} from "@/shared/_feat/handle-ui/useIsMobile.tsx";
 
 /** Props for the MyReviewsPageContent component. */
 type ContentProps = {

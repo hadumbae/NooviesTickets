@@ -3,7 +3,7 @@
  */
 
 import {ObjectIdString} from "@noovies-tickets/common";
-import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
+import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 
 /**
  * Parameters for uploading a profile image.

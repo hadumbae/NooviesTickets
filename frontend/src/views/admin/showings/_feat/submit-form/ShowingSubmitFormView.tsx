@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {DisableFields, HideFields} from "@/common/_types";
+import {DisableFields, HideFields} from "@/shared/_types";
 import {ShowingFormValues} from "@/domains/showings/_schema/form/form-values/ShowingFormValues.ts";
-import {FormStep, FormStepMeta} from "@/common/_feat/multi-step-form/types.ts";
+import {FormStep, FormStepMeta} from "@/shared/_feat/multi-step-form/types.ts";
 import {ChevronRight, Clock, Languages, ListCollapse} from "lucide-react";
-import {getSchemaFieldKeys} from "@/common/_feat/zod-utils/getSchemaFieldKeys.ts";
+import {getSchemaFieldKeys} from "@/shared/_feat/zod-utils/getSchemaFieldKeys.ts";
 import {
     ShowingSubmitFormDetailsFieldset
 } from "@/views/admin/showings/_feat/submit-form/fieldsets/ShowingSubmitFormDetailsFieldset.tsx";
@@ -26,7 +26,7 @@ import {
 import {
     ShowingSubmitFormStatusFieldset
 } from "@/views/admin/showings/_feat/submit-form/fieldsets/ShowingSubmitFormStatusFieldset.tsx";
-import {MultiStepForm, MultiStepFormCurrentStep, MultiStepFormView} from "@/views/common/_feat";
+import {MultiStepForm, MultiStepFormCurrentStep, MultiStepFormView} from "@/views/shared/_feat";
 
 /** Props for the ShowingSubmitFormView component. */
 type ViewProps = {

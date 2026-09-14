@@ -10,7 +10,7 @@ import {
     ShowingTypeBadge
 } from "@/views/admin/showings/_comp/badges";
 import {ShowingStatus} from "@noovies-tickets/common";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 
 /** Props for the ShowingStateBadges component. */
 export type BadgeListProps = {

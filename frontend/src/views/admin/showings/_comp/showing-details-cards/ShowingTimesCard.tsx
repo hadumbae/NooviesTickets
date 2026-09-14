@@ -3,13 +3,13 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
 import {Showing, ShowingDetails} from "@/domains/showings/_schema/showing";
 import {IANATimezone} from "@noovies-tickets/common";
-import {LabelContent} from "@/views/common/_comp/label-content/LabelContent.tsx";
+import {LabelContent} from "@/views/shared/_comp/label-content/LabelContent.tsx";
 import {buildShowingDateString} from "@/domains/showings/_feat/formatters";
-import {cn} from "@/common/_feat";
-import {CardClassNames} from "@/common/_types/card";
+import {cn} from "@/shared/_feat";
+import {CardClassNames} from "@/shared/_types/card";
 
 /** Props for the ShowingTimesCard component. */
 type CardProps = {

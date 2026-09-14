@@ -4,10 +4,10 @@
 
 import {ReactElement} from "react";
 import {useFormContext} from "react-hook-form";
-import {DisableFields} from "@/common/_types";
-import {cn} from "@/common/_feat";
-import {HookFormMultiSelect, HookFormSelect} from "@/views/common/_comp";
-import {HookFormInput} from "@/views/common/_feat";
+import {DisableFields} from "@/shared/_types";
+import {cn} from "@/shared/_feat";
+import {HookFormMultiSelect, HookFormSelect} from "@/views/shared/_comp";
+import {HookFormInput} from "@/views/shared/_feat";
 import {UserRoleSelectOptions} from "@/domains/users/_const";
 import {UserRoleUpdateActionSelectOptions} from "@/domains/users/_feat/manage-user-roles/const";
 import {UpdateUserAdminRoleFormValues} from "@/domains/users/_feat/manage-user-roles/manage-admin-role/schema";

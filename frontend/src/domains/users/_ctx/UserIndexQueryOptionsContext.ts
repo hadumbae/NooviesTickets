@@ -2,7 +2,7 @@
  * @fileoverview Context provider and hook for managing user index query options.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {UserQueryOptionsSchema} from "@/domains/users/_schema/query-options/UserQueryOptionsSchema.ts";
 
 const {Provider, useQueryOptionsContext} = createQueryOptionsContext({

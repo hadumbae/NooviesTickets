@@ -2,7 +2,7 @@
  * @fileoverview Context provider and hook exports for managing theatre info query options state.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {
     TheatreInfoQueryOptionsSchema
 } from "@/domains/theatres/_feat/handle-query-options/theatre-info/TheatreInfoQueryOptionsSchema.ts";

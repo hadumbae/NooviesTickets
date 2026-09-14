@@ -9,8 +9,8 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-} from "@/views/common/_comp/ui";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+} from "@/views/shared/_comp/ui";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {SlugString} from "@noovies-tickets/common";
 
 /** Props for the MovieEditBreadcrumbs component. */

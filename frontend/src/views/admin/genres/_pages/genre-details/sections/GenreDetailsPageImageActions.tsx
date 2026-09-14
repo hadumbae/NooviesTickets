@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {
     useDeletingGenreImageUIContext,

@@ -2,7 +2,7 @@
  * @fileoverview Seat map selection grid used during client-side reservations.
  */
 
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {
     ReservationSeatMapElement
 } from "@/views/client/reservations/_comp/seating-input/ReservationSeatMapElement.tsx";

@@ -3,13 +3,13 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
-import {PaginatedItems} from "@/common/_types";
+import {cn} from "@/shared/_feat";
+import {PaginatedItems} from "@/shared/_types";
 import {generatePaginationSchema} from "@noovies-tickets/common";
-import {PageSectionHeader} from "@/views/common/_comp/page";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
-import {PaginationRangeButtons} from "@/views/common/_comp";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
+import {PaginationRangeButtons} from "@/views/shared/_comp";
 import {MovieCastCreditCard, MovieCrewCreditCard} from "@/views/admin/movie-credits/_feat";
 
 import {RoleTypeDepartment} from "@noovies-tickets/common";

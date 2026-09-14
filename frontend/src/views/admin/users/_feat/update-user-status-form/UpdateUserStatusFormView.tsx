@@ -4,10 +4,10 @@
 
 import {ReactElement, useEffect, useState} from "react";
 import {useFormContext} from "react-hook-form";
-import {cn} from "@/common/_feat";
-import {DisableFields} from "@/common/_types";
-import {HookFormSelect} from "@/views/common/_comp";
-import {HookFormInput} from "@/views/common/_feat";
+import {cn} from "@/shared/_feat";
+import {DisableFields} from "@/shared/_types";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {HookFormInput} from "@/views/shared/_feat";
 import {UpdateUserStatusFormValues, UserStatusUpdateAction} from "@/domains/users/_feat/manage-user-status/schema";
 import {
     UserActivateStatusSelectOptions,

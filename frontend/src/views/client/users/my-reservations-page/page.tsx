@@ -2,15 +2,15 @@
  * @fileoverview Entry point for the authenticated user's reservations management page.
  */
 
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 import {MyReservationsPageContent} from "@/views/client/users/my-reservations-page/content.tsx";
 import {ReactElement} from "react";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {
     CurrentUserReservationsQueryOptionSchema,
     useFetchReservationsForCurrentUser
 } from "@/domains/reservations/_feat";
-import {useParsedSearchParams} from "@/common/_feat";
+import {useParsedSearchParams} from "@/shared/_feat";
 
 const RESERVATIONS_PER_PAGE = 20;
 

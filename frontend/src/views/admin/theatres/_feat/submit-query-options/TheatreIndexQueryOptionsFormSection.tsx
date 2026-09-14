@@ -2,7 +2,7 @@
  * @fileoverview Creates the form section component for managing theatre index query options.
  */
 
-import {createQueryOptionFormSection} from "@/common/_feat";
+import {createQueryOptionFormSection} from "@/shared/_feat";
 import {
     TheatreIndexQueryOptions,
     TheatreIndexQueryOptionsFormValues,

@@ -4,9 +4,9 @@
  * Requires wrapping in a Form provider and UpdateReservationNotesFormContext.
  */
 import {ReactElement, ReactNode} from "react";
-import {HookFormTextArea} from "@/views/common/_feat";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
+import {HookFormTextArea} from "@/views/shared/_feat";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
 import {ReservationUniqueCode} from "@/domains/reservations/_schema/model/fields/ReservationUniqueCodeSchema.ts";
 import {
     Button,
@@ -18,7 +18,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 /** Props for the AdminReservationRefundDialog component. */
 type DialogProps = {

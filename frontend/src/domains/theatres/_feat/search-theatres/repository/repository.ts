@@ -2,10 +2,10 @@
  * @fileoverview Repository for theatre search operations.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
-import {buildURL} from "@/common/_feat/fetch-api";
-import {PaginatedItems} from "@/common/_types";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
+import {buildURL} from "@/shared/_feat/fetch-api";
+import {PaginatedItems} from "@/shared/_types";
 
 import {TheatreWithRecentShowings} from "@/domains/theatres/_schema";
 import {SearchTheatreBaseURL} from "@/domains/theatres/_feat/search-theatres/repository/baseURL.ts";

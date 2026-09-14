@@ -5,7 +5,7 @@
 import {
     LoggingMessageParams,
     useLoggedNavigate
-} from "@/common/_feat/navigation/useLoggedNavigate.ts";
+} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {NavigateOptions} from "react-router-dom";
 import {ObjectIdString} from "@noovies-tickets/common";
 

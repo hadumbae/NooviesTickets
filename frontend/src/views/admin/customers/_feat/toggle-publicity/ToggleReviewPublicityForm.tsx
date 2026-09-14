@@ -8,7 +8,7 @@ import {
     ModerationMessageFormData,
     ModerationMessageFormSchema,
     ModerationMessageFormValues
-} from "@/common/_feat";
+} from "@/shared/_feat";
 import {useToggleReviewPublicityMutation} from "@/domains/movie-reviews/_feat/admin-actions/toggle-review-publicity";
 import {MovieReviewMutationConfig} from "@/domains/movie-reviews/_types";
 

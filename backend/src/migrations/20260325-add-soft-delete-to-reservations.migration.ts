@@ -4,7 +4,7 @@
  */
 
 import "dotenv/config";
-import {connect} from "@/shared/config/database.js";
+import {connect} from "@/config/database.js";
 import mongoose from "mongoose";
 import {ReservationModel} from "@/domains/reservations/_model/reservation";
 import {generateReservationUniqueCode} from "@/domains/reservations/_feat/generate-reservation-code";

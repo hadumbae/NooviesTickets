@@ -5,8 +5,8 @@
 import {toast} from "react-toastify";
 import {UseFormReturn} from "react-hook-form";
 import {useMutation, UseMutationResult} from "@tanstack/react-query";
-import {handleFormSubmitError} from "@/common/_feat/error-handling/handleFormSubmitError.ts";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
+import {handleFormSubmitError} from "@/shared/_feat/error-handling/handleFormSubmitError.ts";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {AuthMutationKeys} from "@/domains/auth/_feat/common/AuthMutationKeys.ts";
 import {AuthRegisterForm, AuthRegisterFormValues} from "@/domains/auth/_feat/user-register/AuthRegisterFormSchema.ts";
 import {postRegisterUser} from "@/domains/auth/_feat/user-register/postRegisterUser.ts";

@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {getTodayDateOnly} from "@noovies-tickets/common";
 import {preprocessOptionalField, DateOnlyStringSchema} from "@noovies-tickets/common";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 
 /** Schema for validating theatre info query options context. */
 export const TheatreInfoQueryOptionsSchema = z.object({

@@ -2,7 +2,7 @@
  * @fileoverview Form component and custom hook for submitting movie poster images.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {Movie} from "@/domains/movies/_schema/movie";
 import {MovieImageFormData, MovieImageFormSchema, MovieImageFormValues} from "@/domains/movies/_feat/manage-images";
 import {SubmitMovieImageConfig, useSubmitMoviePosterImage} from "@/domains/movies/_feat/manage-images/upload-image";

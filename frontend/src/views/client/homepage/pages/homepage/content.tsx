@@ -1,5 +1,5 @@
 import {ReactElement} from "react";
-import {PageFlexWrapper, PageHeader} from "@/views/common/_comp";
+import {PageFlexWrapper, PageHeader} from "@/views/shared/_comp";
 import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";
 import {ClientHomepageViewData} from "@/domains/pages/_feat/client-view-data";
 import {

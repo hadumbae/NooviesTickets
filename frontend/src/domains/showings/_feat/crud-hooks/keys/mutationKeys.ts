@@ -2,7 +2,7 @@
  * @fileoverview Defines mutation keys for showing CRUD operations.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Mutation key factory for creating, updating, and deleting showings. */
 export const ShowingCRUDMutationKeys = buildQueryKey(

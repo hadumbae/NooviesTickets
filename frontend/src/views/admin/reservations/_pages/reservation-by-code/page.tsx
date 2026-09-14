@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
+import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
 import {ReservationByCodePageContent} from "@/views/admin/reservations/_pages/reservation-by-code/content.tsx";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {FetchByCodeData} from "@/domains/reservations/_feat/fetch-reservation-by-code/schemas/FetchByCodeDataSchema.ts";
 import {
     FetchByCodeSearchParamsSchema

@@ -10,10 +10,10 @@ import {
     MovieInfoReviewsViewData,
     MovieInfoReviewsViewSchema
 } from "@/domains/movies/_feat/client-view-data/schemas/MovieInfoReviewsViewSchema.ts";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 
 /** Configuration for the movie reviews fetch hook. */
 type FetchConfig = {

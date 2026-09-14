@@ -2,15 +2,15 @@
  * @fileoverview Main page component for the movie editing interface in the admin dashboard.
  */
 
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
+} from "@/shared/_feat";
 import {Movie, MovieSchema} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 import {MovieEditPageContent} from "@/views/admin/movies/_pages/edit-page/content.tsx";
-import {PageLoader} from "@/views/common/_comp/page";
+import {PageLoader} from "@/views/shared/_comp/page";
 import {ReactElement} from "react";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {useFetchMovieBySlug} from "@/domains/movies/_feat/crud-hooks";
 
 /**

@@ -4,10 +4,10 @@
 
 import {ReactElement} from "react";
 import {useFormContext} from "react-hook-form";
-import {HookFormInput} from "@/views/common/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
 import {LabelledFormInput} from "@/views/admin/movies/_comp/form-display/LabelledFormInput.tsx";
-import {cn} from "@/common/_feat";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {cn} from "@/shared/_feat";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {CustomerIndexQueryOptionFormValues} from "@/domains/customers/_types";
 
 /**

@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent} from "@/views/common/_comp/ui";
-import {cn} from "@/common/_feat";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
+import {cn} from "@/shared/_feat";
 import {MovieReviewRatingStars, MovieReviewText} from "@/views/client/movie-reviews/_comp/display";
 import {MovieReviewDetails} from "@/domains/movie-reviews";
-import {SubsectionTitle} from "@/views/common/_comp";
+import {SubsectionTitle} from "@/views/shared/_comp";
 
 /** Props for the MovieReviewSummaryCard component. */
 type CardProps = {

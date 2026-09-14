@@ -3,9 +3,9 @@
  */
 
 import {z} from "zod";
-import {ModerationMessageFormSchema} from "@/common/_feat/moderation/forms";
+import {ModerationMessageFormSchema} from "@/shared/_feat/moderation/forms";
 import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {MovieReviewRatingSchema} from "@/domains/movie-reviews/_schema";
 
 /** Validates the administrative form data for overriding a review's star rating. */

@@ -5,9 +5,9 @@
 import {ReactElement} from "react";
 import {AlertTriangle, Loader, LucideIcon, Trash} from "lucide-react";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {cn} from "@/common/_feat";
-import {IconButton} from "@/views/common/_comp";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
+import {cn} from "@/shared/_feat";
+import {IconButton} from "@/views/shared/_comp";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {useDeleteSeatSubmitHandler} from "@/domains/seats";
 
 /** Props for the SeatDeleteWarning component. */

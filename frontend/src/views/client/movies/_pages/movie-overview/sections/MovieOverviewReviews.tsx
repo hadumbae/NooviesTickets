@@ -3,18 +3,18 @@
  *
  */
 
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {ChevronRight, MessageCirclePlus} from "lucide-react";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {ReactElement, useState} from "react";
 import {
     MovieReviewSummaryCard
 } from "@/views/client/movie-reviews/_comp/review-summary-card/MovieReviewSummaryCard.tsx";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 
 import {MovieReviewDetails} from "@/domains/movie-reviews/_schema";
-import {PageSectionHeaderLink} from "@/views/common/_comp/page";
+import {PageSectionHeaderLink} from "@/views/shared/_comp/page";
 import {MovieReviewFormPopup} from "@/views/client/movie-reviews/_feat";
 
 /** Props for the MovieOverviewReviews component. */

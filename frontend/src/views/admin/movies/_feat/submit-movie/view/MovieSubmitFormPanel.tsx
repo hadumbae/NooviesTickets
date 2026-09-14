@@ -11,11 +11,11 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 
-import {UIOpenStateProps} from "@/common/_types";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {UIOpenStateProps} from "@/shared/_types";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {MovieFormStarterValues} from "@/domains/movies/_feat/submit-data";
 import {MovieSubmitFormView} from "@/views/admin/movies/_feat/submit-movie/view/MovieSubmitFormView.tsx";
 import {MovieSubmitFormActions} from "@/views/admin/movies/_feat/submit-movie/view/MovieSubmitFormActions.tsx";

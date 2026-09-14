@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {MovieReviewRatingSchema} from "@/domains/movie-reviews/_schema/fields/MovieReviewRatingSchema.ts";
 import {BooleanValueSchema, IDStringSchema, preprocessOptionalField, preprocessToNumber, preprocessToUndefined} from "@noovies-tickets/common";
 import {NonEmptyStringSchema, StringValueSchema} from "@noovies-tickets/common";

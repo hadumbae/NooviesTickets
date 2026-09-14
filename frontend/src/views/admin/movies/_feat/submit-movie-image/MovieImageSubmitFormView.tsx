@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from 'react';
-import {cn} from "@/common/_feat";
-import {HookFormFileInput} from "@/views/common/_feat";
-import {AcceptedImageTypeConstant} from "@/common/_const/images/AcceptedImageTypeConstant.ts";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
+import {cn} from "@/shared/_feat";
+import {HookFormFileInput} from "@/views/shared/_feat";
+import {AcceptedImageTypeConstant} from "@/shared/_const/images/AcceptedImageTypeConstant.ts";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
 
 /** Props for the MovieImageSubmitFormView component. */
 type ViewProps = {

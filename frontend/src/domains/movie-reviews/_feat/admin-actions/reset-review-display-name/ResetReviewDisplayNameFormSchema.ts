@@ -3,9 +3,9 @@
  */
 
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {ModerationMessageFormSchema} from "@/common/_feat/moderation/forms";
+import {ModerationMessageFormSchema} from "@/shared/_feat/moderation/forms";
 import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 
 /**

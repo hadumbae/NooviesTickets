@@ -4,14 +4,14 @@
 
 import {FieldValues} from "react-hook-form";
 import {Loader} from "lucide-react";
-import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
-import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
+import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
+import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
 import {ReactElement} from "react";
 import {generateArraySchema} from "@noovies-tickets/common";
 import {Movie, MovieSchema} from "@/domains/movies/_schema/movie";
 import {useFetchMovies} from "@/domains/movies/_feat/crud-hooks";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
 import {MovieQueryFilters} from "@/domains/movies/_schema/queries/MovieQueryFilterSchema.ts";
 
 /** Props for the MovieHookFormSelect component. */

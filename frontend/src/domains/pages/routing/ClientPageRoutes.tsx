@@ -2,7 +2,7 @@
  * @fileoverview Client-side route configurations for public application pages wrapped in the base layout.
  */
 
-import {BaseLayout} from "@/views/common/_layout/base-layout/BaseLayout.tsx";
+import {BaseLayout} from "@/views/shared/_layout/base-layout/BaseLayout.tsx";
 
 /** Route definitions for public-facing client pages. */
 export const ClientPageRoutes = [

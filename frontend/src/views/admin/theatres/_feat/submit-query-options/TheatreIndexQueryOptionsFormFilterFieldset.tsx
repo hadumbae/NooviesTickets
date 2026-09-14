@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from "react";
-import {cn, FormViewProps} from "@/common/_feat";
+import {cn, FormViewProps} from "@/shared/_feat";
 import {
     TheatreIndexQueryOptionsFormValues
 } from "@/domains/theatres/_feat/handle-query-options/theatre-index/TheatreIndexQueryOptionsSchema.ts";
-import {HookFormSelect} from "@/views/common/_comp";
-import {ISO3166Alpha2ShortCountryOptions} from "@/common/_const";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {ISO3166Alpha2ShortCountryOptions} from "@/shared/_const";
 import {useFormContext} from "react-hook-form";
-import {HookFormInput} from "@/views/common/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
 import {LabelledFormInput} from "@/views/admin/movies/_comp/form-display/LabelledFormInput.tsx";
 
 /**

@@ -6,7 +6,7 @@ import {z} from "zod";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {IDStringSchema, preprocessEmptyToUndefined, preprocessToNumber, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import {ScreenTypeSchema} from "@noovies-tickets/common";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 
 /**
  * Zod schema for validating theatre screen creation and update submissions.

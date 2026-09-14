@@ -4,13 +4,13 @@
 
 import {ReactElement, useState} from "react";
 import {MessageCirclePlus} from "lucide-react";
-import {Button} from "@/views/common/_comp/ui";
+import {Button} from "@/views/shared/_comp/ui";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 
 import {MovieReviewFormPopup} from "@/views/client/movie-reviews";
 import {MovieReviewDetails, simplifyMovieReview} from "@/domains/movie-reviews";
-import {LabelContent} from "@/views/common/_comp";
+import {LabelContent} from "@/views/shared/_comp";
 
 /** Props for the MovieInfoReviewAction component. */
 type ActionProps = {

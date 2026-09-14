@@ -1,9 +1,9 @@
 /** @fileoverview Movie poster component with fallback states and a zoomable dialog view. */
 
 import {ReactElement, useState} from 'react';
-import {cn} from "@/common/_feat";
-import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from "@/views/common/_comp/ui/dialog.tsx";
-import {Image} from "@/views/common/_comp";
+import {cn} from "@/shared/_feat";
+import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from "@/views/shared/_comp/ui/dialog.tsx";
+import {Image} from "@/views/shared/_comp";
 
 /** Props for the MoviePosterImageDialog component. */
 type PosterProps = {

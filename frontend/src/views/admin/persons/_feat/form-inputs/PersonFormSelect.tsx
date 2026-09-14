@@ -3,13 +3,13 @@
  */
 
 import {ReactElement} from "react";
-import {HookFormInputControlProps, ReactSelectOption, RequestOptions} from "@/common/_types";
+import {HookFormInputControlProps, ReactSelectOption, RequestOptions} from "@/shared/_types";
 import {Person, PersonSchema} from "@/domains/persons/_schema/person";
 import {PersonQueryFilters} from "@/domains/persons/_schema/query-options";
 import {useFetchPersons} from "@/domains/persons/_feat/crud-hooks/fetch/useFetchPersons.ts";
 import {generateArraySchema} from "@noovies-tickets/common";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {AnimatedLoader, HookFormSelect} from "@/views/common/_comp";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {AnimatedLoader, HookFormSelect} from "@/views/shared/_comp";
 import {FieldValues} from "react-hook-form";
 
 /** Props for the PersonFormSelect component. */

@@ -4,8 +4,8 @@
 
 import {ReactElement} from "react";
 import {Theater, TvMinimal} from "lucide-react";
-import {DetailsCardSpan} from "@/views/common/_comp";
-import {PanelCardLink} from "@/views/common/_feat";
+import {DetailsCardSpan} from "@/views/shared/_comp";
+import {PanelCardLink} from "@/views/shared/_feat";
 import {SeatDetails, SeatTypeLabelMap} from "@/domains/seats";
 
 /** Props for the SeatContextPanelDetailsSection component. */

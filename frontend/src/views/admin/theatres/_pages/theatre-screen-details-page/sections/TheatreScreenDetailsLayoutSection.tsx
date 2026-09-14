@@ -5,8 +5,8 @@
 import {ReactElement} from "react";
 import {SeatDetails, SeatPanelContextProvider} from "@/domains/seats";
 import {ScreenSeatLayout, SeatContextPanel} from "@/views/admin/seats";
-import {EmptyArrayContainer, PageSectionHeader} from "@/views/common/_comp";
-import {Card, CardContent, ScrollArea, ScrollBar} from "@/views/common/_comp/ui";
+import {EmptyArrayContainer, PageSectionHeader} from "@/views/shared/_comp";
+import {Card, CardContent, ScrollArea, ScrollBar} from "@/views/shared/_comp/ui";
 
 /** Props for the TheatreScreenDetailsLayoutSection component. */
 type SectionProps = {

@@ -2,7 +2,7 @@
  * @fileoverview React Query hook for fetching and runtime-validating client homepage view data.
  */
 
-import {FetchQueryOptions} from "@/common/_types";
+import {FetchQueryOptions} from "@/shared/_types";
 import {
     ClientHomepageViewData,
     ClientHomepageViewDataSchema
@@ -11,8 +11,8 @@ import {
     ClientHomepageViewRouteConfig
 } from "@/domains/pages/_feat/client-view-data/client-homepage-data/ClientHomepageViewRouteConfigSchema.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn, useQueryOptionDefaults} from "@/common/_feat";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn, useQueryOptionDefaults} from "@/shared/_feat";
 import {
     getFetchClientHomepageViewData
 } from "@/domains/pages/_feat/client-view-data/client-homepage-data/getFetchClientHomepageViewData.ts";

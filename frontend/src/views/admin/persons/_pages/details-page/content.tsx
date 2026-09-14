@@ -3,15 +3,15 @@
  */
 
 import {ReactElement} from 'react';
-import {PageFlexWrapper, PageSectionHeader} from "@/views/common/_comp/page";
+import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {PersonDetailsPageActions} from "@/views/admin/persons/_pages/details-page/sections/actions.tsx";
 import {PersonDetailsPageHeader} from "@/views/admin/persons/_pages/details-page/sections/header.tsx";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {PersonDetailsCard} from "@/views/admin/persons/_comp/person-details";
 import {PersonDetailsCreditOverview} from "@/views/admin/persons/_comp";
 import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
 import {PersonFilmography} from "@/domains/movie-credits";
-import {useSetAdminPageTitle} from "@/common/_feat";
+import {useSetAdminPageTitle} from "@/shared/_feat";
 
 
 /** Props for the PersonDetailsPageContent component. */

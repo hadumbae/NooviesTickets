@@ -2,7 +2,7 @@
  * @fileoverview Mutation keys for user password update operations.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Mutation key factory for password updates. */
 export const UpdatePasswordMutationKeys = buildQueryKey(

@@ -1,6 +1,6 @@
 /** @fileoverview Query key factory for Movie Credit CRUD operations. */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Query key configuration for fetching, filtering, and paginating movie credits. */
 export const MovieCreditCRUDQueryKeys = buildQueryKey(

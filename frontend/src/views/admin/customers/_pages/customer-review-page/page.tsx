@@ -3,9 +3,9 @@
  *
  */
 
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {ReactElement} from "react";
-import {useRouteParams} from "@/common/_feat";
+import {useRouteParams} from "@/shared/_feat";
 import {CustomerReviewPageContent} from "@/views/admin/customers/_pages/customer-review-page/content.tsx";
 import {
     CustomerReviewRouteParamsSchema,

@@ -4,16 +4,16 @@
 
 import {ReactElement} from 'react';
 import {useFormContext} from "react-hook-form";
-import {cn} from "@/common/_feat";
-import {Separator} from "@/views/common/_comp/ui";
-import {HookFormInput, HookFormSortToggle} from "@/views/common/_feat";
-import {useAutoFormSubmit} from "@/common/_feat/submit-data";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {PageSectionHeader} from "@/views/common/_comp/page";
+import {cn} from "@/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui";
+import {HookFormInput, HookFormSortToggle} from "@/views/shared/_feat";
+import {useAutoFormSubmit} from "@/shared/_feat/submit-data";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
 import {PersonQueryOptionFormValues} from "@/domains/persons/_feat/submit-query-options";
-import {HookFormSelect} from "@/views/common/_comp";
-import {ISO3166Alpha2CountryOptions} from "@/common/_const";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {ISO3166Alpha2CountryOptions} from "@/shared/_const";
 
 /**
  * Form component for filtering and sorting person entities with debounced auto-submission.

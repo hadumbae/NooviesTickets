@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from 'react';
-import {PaginatedItems} from "@/common/_types";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {useParsedPaginationValue} from "@/common/_feat/fetch-pagination-search-params";
+import {PaginatedItems} from "@/shared/_types";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {useParsedPaginationValue} from "@/shared/_feat/fetch-pagination-search-params";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 
 import {MovieDetails, MovieDetailsSchema} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";

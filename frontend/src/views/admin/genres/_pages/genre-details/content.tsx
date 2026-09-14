@@ -1,12 +1,12 @@
 /** @fileoverview Presentation component for the Genre Details page, orchestrating metadata display and associated movies. */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper, PageSectionHeader} from "@/views/common/_comp/page";
-import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
+import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
+import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {MovieIndexCard} from "@/views/admin/movies/_comp/index-list-display";
-import {useSetAdminPageTitle} from "@/common/_feat/handle-pages";
+import {useSetAdminPageTitle} from "@/shared/_feat/handle-pages";
 import {Ellipsis} from "lucide-react";
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {

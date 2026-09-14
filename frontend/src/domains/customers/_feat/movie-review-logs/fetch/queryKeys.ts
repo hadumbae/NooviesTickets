@@ -3,7 +3,7 @@
  *
  */
 
-import {buildQueryKey} from "@/common/_feat"
+import {buildQueryKey} from "@/shared/_feat"
 
 /** Query key factory for customer review logs. */
 export const CustomerReviewLogsQueryKeys = buildQueryKey(

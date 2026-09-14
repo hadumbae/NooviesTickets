@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {DateTime} from "luxon";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -12,7 +12,7 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 /** Props for the ShowingDetailsPageBreadcrumbs component. */
 type BreadcrumbProps = {

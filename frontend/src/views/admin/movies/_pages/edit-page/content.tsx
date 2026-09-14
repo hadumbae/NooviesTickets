@@ -3,13 +3,13 @@
  */
 
 import {ReactElement} from 'react';
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {MovieSubmitForm, MovieSubmitFormActions, MovieSubmitFormView} from "@/views/admin/movies/_feat/submit-movie";
-import {PageHeader} from "@/views/common/_comp";
+import {PageHeader} from "@/views/shared/_comp";
 import {MovieEditBreadcrumbs} from "@/views/admin/movies/_pages/edit-page/breadcrumbs.tsx";
 
 /** Props for the MovieEditPageContent component. */

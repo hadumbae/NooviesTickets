@@ -3,10 +3,10 @@
  */
 
 import {ObjectIdString} from "@noovies-tickets/common";
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns";
-import {buildURL} from "@/common/_feat/fetch-api/buildURL";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns";
+import {buildURL} from "@/shared/_feat/fetch-api/buildURL";
 import {ManageMovieImagesBaseURL} from "@/domains/movies/_feat/manage-images/baseURL";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation";
 import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 
 /** Parameters required to upload a movie poster or banner image. */

@@ -2,10 +2,10 @@
  * @fileoverview Hook for fetching a single user by their unique identifier.
  */
 
-import {IDQueryConfig} from "@/common/_types";
+import {IDQueryConfig} from "@/shared/_types";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn, useQueryOptionDefaults} from "@/common/_feat";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn, useQueryOptionDefaults} from "@/shared/_feat";
 import {findByID} from "@/domains/users/_feat/crud";
 import {UserCRUDQueryKeys} from "@/domains/users/_feat/crud-hooks/keys";
 

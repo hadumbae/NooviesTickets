@@ -2,7 +2,7 @@
  * @fileoverview TanStack Query mutation hook for resetting or correcting a reviewer's display name.
  */
 
-import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {MovieReview, MovieReviewSchema} from "@/domains/movie-reviews/_schema/model";
 import {CustomerReviewActionMutationKeys} from "@/domains/movie-reviews/_feat/admin-actions/mutationKeys.ts";

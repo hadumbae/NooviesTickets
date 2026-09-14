@@ -2,8 +2,8 @@
  * @fileoverview TanStack Query mutation hook for clearing helpful likes from a movie review.
  */
 
-import {ModerationMessageFormData} from "@/common/_feat/moderation/forms";
-import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+import {ModerationMessageFormData} from "@/shared/_feat/moderation/forms";
+import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {CustomerReviewActionMutationKeys} from "@/domains/movie-reviews/_feat/admin-actions/mutationKeys.ts";
 import {MovieReview, MovieReviewSchema} from "@/domains/movie-reviews/_schema/model";

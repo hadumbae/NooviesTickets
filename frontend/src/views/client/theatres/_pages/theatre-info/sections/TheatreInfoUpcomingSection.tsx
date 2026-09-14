@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {TheatreMovieRuntimes} from "@/domains/theatres/_feat/client-view-data/theatre-info/TheatreMovieRuntimesSchema.ts";
-import {EmptyArrayContainer, PageSectionHeader} from "@/views/common/_comp";
+import {EmptyArrayContainer, PageSectionHeader} from "@/views/shared/_comp";
 import {TheatreMovieRuntimesCard} from "@/views/client/theatres/_comp";
 
 /** Props for the TheatreInfoUpcomingSection component. */

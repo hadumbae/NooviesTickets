@@ -5,13 +5,13 @@
 import {ReactElement} from "react";
 import {FieldValues} from "react-hook-form";
 import {Loader} from "lucide-react";
-import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
-import {HookFormMultiSelect} from "@/views/common/_comp/form-select/HookFormMultiSelect.tsx";
-import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
+import {HookFormMultiSelect} from "@/views/shared/_comp/form-select/HookFormMultiSelect.tsx";
+import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {TheatreScreen, TheatreScreenSchema} from "@/domains/theatre-screens/_schema/model";
 import {generateArraySchema} from "@noovies-tickets/common";
-import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
+import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
 import {TheatreScreenQueryFilters, useFetchScreens} from "@/domains/theatre-screens";
 
 /**

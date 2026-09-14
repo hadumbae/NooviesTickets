@@ -4,10 +4,10 @@
 
 import {ReactElement, useEffect} from 'react';
 import {useFormContext} from "react-hook-form";
-import {Separator} from "@/views/common/_comp/ui";
-import {cn} from "@/common/_feat";
+import {Separator} from "@/views/shared/_comp/ui";
+import {cn} from "@/shared/_feat";
 import {ScreenHookFormSelect} from "@/views/admin/theatre-screens/_feat/form-inputs";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {TheatreHookFormSelect} from "@/views/admin/theatres/_feat";
 import {SeatFormValues} from "@/domains/seats";
 

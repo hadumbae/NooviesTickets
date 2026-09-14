@@ -2,7 +2,7 @@
  * @fileoverview Component for displaying a summary of movie showings on the movie overview page.
  */
 
-import {PageSectionHeaderLink} from "@/views/common/_comp/page";
+import {PageSectionHeaderLink} from "@/views/shared/_comp/page";
 import {ReactElement} from "react";
 
 /** Props for the MovieOverviewShowings component. */

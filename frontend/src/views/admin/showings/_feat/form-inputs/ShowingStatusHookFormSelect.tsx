@@ -2,16 +2,16 @@
  * @fileoverview A form select component for choosing a showing status.
  */
 
-import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
+import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
 import {FieldValues} from "react-hook-form";
-import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
+import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
 import {ShowingStatusConstant} from "@noovies-tickets/common";
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
 
 
 import {ShowingFormValues} from "@/domains/showings/_schema/form";
 import {ReactElement} from "react";
-import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
+import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
 
 /** A controlled select input for showing statuses integrated with react-hook-form. */
 export function ShowingStatusHookFormSelect<TValues extends FieldValues = ShowingFormValues>(

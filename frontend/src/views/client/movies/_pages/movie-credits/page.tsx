@@ -4,14 +4,14 @@
 
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
-import {PageLoader} from "@/views/common/_comp/page";
+} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {PageLoader} from "@/views/shared/_comp/page";
 import {MovieInfoCreditsPageContent} from "@/views/client/movies/_pages/movie-credits/content.tsx";
 import {useFetchMovieInfoCreditsData} from "@/domains/movies/_feat/client-view-data/hooks/useFetchMovieInfoCreditsData.ts";
 import {MovieInfoCreditViewData} from "@/domains/movies/_feat/client-view-data";
 import { ReactElement } from "react";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 
 /**
  * Fetches and renders the movie credits page based on the URL slug.

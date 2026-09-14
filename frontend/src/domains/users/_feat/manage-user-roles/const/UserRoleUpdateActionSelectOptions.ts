@@ -3,7 +3,7 @@
  */
 
 import {UserRoleUpdateActionConstant} from "@/domains/users/_feat/manage-user-roles/const/UserRoleUpdateActionConstant.ts";
-import {ReactSelectOption} from "@/common/_types";
+import {ReactSelectOption} from "@/shared/_types";
 
 /** React Select dropdown options representing available user role update actions. */
 export const UserRoleUpdateActionSelectOptions: ReactSelectOption[] = UserRoleUpdateActionConstant.map(

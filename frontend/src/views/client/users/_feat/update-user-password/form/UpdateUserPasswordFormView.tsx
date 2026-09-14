@@ -4,11 +4,11 @@
 
 import {ReactElement} from 'react';
 import {useFormContext} from "react-hook-form";
-import {cn} from "@/common/_feat";
-import {HookFormInput} from "@/views/common/_feat";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {cn} from "@/shared/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {Loader} from "lucide-react";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
 
 /** Props for the UpdateUserPasswordFormView component. */
 type FormProps = {

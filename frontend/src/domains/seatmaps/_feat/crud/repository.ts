@@ -10,7 +10,7 @@ import {
     handlePaginated,
     handleQuery,
     handleUpdate
-} from "@/common/_feat/crud-handlers";
+} from "@/shared/_feat/crud-handlers";
 import {SeatMapCRUDBaseURL} from "@/domains/seatmaps/_feat/crud/baseURL.ts";
 
 /** Fetches all seat map records. */

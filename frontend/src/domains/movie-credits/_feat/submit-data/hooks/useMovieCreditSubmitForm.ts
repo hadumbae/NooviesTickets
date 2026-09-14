@@ -3,7 +3,7 @@
 
 import {useForm, UseFormReturn} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {FormValuesConfig} from "@/common/_feat/submit-data";
+import {FormValuesConfig} from "@/shared/_feat/submit-data";
 import {MovieCredit} from "@/domains/movie-credits/_schemas";
 import {
     MovieCreditFormData,

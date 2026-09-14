@@ -4,12 +4,12 @@
 
 import {ReactElement} from "react";
 import {UserDetails} from "@/domains/users/_schema/user";
-import {cn} from "@/common/_feat";
-import {buttonVariants, Card, CardContent, Separator} from "@/views/common/_comp/ui";
+import {cn} from "@/shared/_feat";
+import {buttonVariants, Card, CardContent, Separator} from "@/views/shared/_comp/ui";
 import {Link} from "react-router-dom";
 import {Search} from "lucide-react";
 import {CustomerUniqueCodeDisplay} from "@/views/admin/customers/_comp/customer-details/CustomerUniqueCodeDisplay.tsx";
-import {StatNumberItem} from "@/views/common/_comp";
+import {StatNumberItem} from "@/views/shared/_comp";
 
 /** Defines the optional custom class names for the card components. */
 type CardClassNames = {

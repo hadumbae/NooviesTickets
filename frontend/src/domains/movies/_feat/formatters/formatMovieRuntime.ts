@@ -2,7 +2,7 @@
  * @fileoverview Utility for formatting movie durations into human-readable strings.
  */
 
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 
 /** Formats a total number of minutes into a string representation of days, hours, and minutes. */
 export function formatMovieRuntime(

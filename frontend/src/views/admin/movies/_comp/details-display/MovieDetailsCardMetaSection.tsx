@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {Separator} from "@/views/common/_comp/ui";
+import {Separator} from "@/views/shared/_comp/ui";
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
-import {ISO3166Alpha2CountryConstant, ISO6391LanguageLabels} from "@/common/_const";
+import {ISO3166Alpha2CountryConstant, ISO6391LanguageLabels} from "@/shared/_const";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
-import {LabelContentList, NoneSpan} from "@/views/common/_comp";
-import {BadgeList} from "@/views/common/_comp/badges";
+import {LabelContentList, NoneSpan} from "@/views/shared/_comp";
+import {BadgeList} from "@/views/shared/_comp/badges";
 import {MovieBannerImageCollapsible} from "@/views/admin/movies/_comp/banner-image";
 
 /** Props for the MovieDetailsCardMetaSection component. */

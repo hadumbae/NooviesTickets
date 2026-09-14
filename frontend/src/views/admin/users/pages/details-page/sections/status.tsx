@@ -7,10 +7,10 @@ import {ObjectIdString, UserStatus} from "@noovies-tickets/common";
 import {
     useInvalidateUserQueriesOnModeration
 } from "@/domains/users/_feat/user-moderation-actions/keys/useInvalidateUserQueriesOnModeration.ts";
-import {AdminActionButton, PageSectionHeader} from "@/views/common/_comp";
+import {AdminActionButton, PageSectionHeader} from "@/views/shared/_comp";
 import {UpdateUserStatusForm} from "@/domains/users/_feat/manage-user-status/forms";
 import {UpdateUserStatusFormValues} from "@/domains/users/_feat/manage-user-status/schema";
-import {GenericFormDialog} from "@/views/common/_feat";
+import {GenericFormDialog} from "@/views/shared/_feat";
 import {UpdateUserStatusFormView} from "@/views/admin/users/_feat";
 
 /** Props for the UserDetailsPageStatusManagementSection component. */

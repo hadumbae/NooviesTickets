@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {PaginationOptions} from "@noovies-tickets/common";
-import {PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 
 import {TheatreWithRecentShowings} from "@/domains/theatres/_schema/theatre/TheatreWithRecentShowingsSchema.ts";
 import {TheatreBrowseListCard} from "@/views/client/theatres/_comp";

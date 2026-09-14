@@ -4,9 +4,9 @@
 
 import {z} from "zod";
 import {preprocessEmptyToUndefined, preprocessOptionalField, preprocessToNumber, NonFutureDateStringSchema, PositiveNumberSchema, IDStringSchema, ISO3166Alpha2CountryCodeSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
+import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
 import {CloudinaryImageSchema} from "@noovies-tickets/common";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {
     MovieGenreIDsSchema,
     MovieSynopsisSchema,

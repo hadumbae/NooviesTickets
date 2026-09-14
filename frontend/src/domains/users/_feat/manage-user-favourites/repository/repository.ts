@@ -2,14 +2,14 @@
  * @fileoverview Repository for managing user favourite movie data and interactions.
  */
 
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {PaginationOptions} from "@noovies-tickets/common";
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {buildURL} from "@/common/_feat/fetch-api";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {IsFavouriteMovieMetadata} from "@/domains/users/_feat/manage-user-favourites/schema";
 import {ManageUserFavouritesBaseURL} from "@/domains/users/_feat/manage-user-favourites/repository/baseURL";
-import {PaginatedItems} from "@/common/_types";
+import {PaginatedItems} from "@/shared/_types";
 import {MovieDetails} from "@/domains/movies/_schema/movie";
 
 /** Checks if a specific movie is in the current user's favourites list. */

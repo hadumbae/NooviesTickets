@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from 'react';
-import {PageLoader} from "@/views/common/_comp/page";
+import {PageLoader} from "@/views/shared/_comp/page";
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
-import {QueryDataLoader} from "@/views/common/_feat";
+} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {QueryDataLoader} from "@/views/shared/_feat";
 
 import {ShowingDetails, ShowingDetailsSchema} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {useFetchShowingBySlug} from "@/domains/showings/_feat/crud-hooks/fetch/useFetchShowingBySlug.ts";

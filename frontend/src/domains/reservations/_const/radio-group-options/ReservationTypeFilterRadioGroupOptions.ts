@@ -2,7 +2,7 @@
  * @fileoverview Defines radio group options for filtering reservations by type.
  */
 
-import {HookRadioOption} from "@/common/_types/input/HookRadioOption.ts";
+import {HookRadioOption} from "@/shared/_types/input/HookRadioOption.ts";
 import {ReservationTypeConstant} from "@noovies-tickets/common";
 
 /** Radio group options for filtering reservations by their admission type. */

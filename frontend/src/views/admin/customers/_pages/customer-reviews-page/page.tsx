@@ -2,14 +2,14 @@
  * @fileoverview Manages data fetching and pagination state for displaying a customer's movie reviews.
  */
 
-import {useParsedPaginationValue} from "@/common/_feat/fetch-pagination-search-params";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {useParsedPaginationValue} from "@/shared/_feat/fetch-pagination-search-params";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {CustomerReviewsPageContent} from "@/views/admin/customers/_pages/customer-reviews-page/content.tsx";
 import {
     CustomerReviewsRouteParamsSchema,
     useFetchCustomerReviewsViewData
 } from "@/domains/customers/_feat/movie-reviews";
-import {useRouteParams} from "@/common/_feat";
+import {useRouteParams} from "@/shared/_feat";
 
 /** Number of reviews to display per page. */
 const REVIEWS_PER_PAGE = 10;

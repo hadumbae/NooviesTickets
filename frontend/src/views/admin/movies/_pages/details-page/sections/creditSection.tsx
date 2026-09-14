@@ -5,12 +5,12 @@
 
 import {ObjectIdString, SlugString} from "@noovies-tickets/common";
 import {ReactElement} from "react";
-import {PageSectionHeaderLink} from "@/views/common/_comp/page";
+import {PageSectionHeaderLink} from "@/views/shared/_comp/page";
 import {useFetchMovieCredits} from "@/domains/movie-credits/_feat/crud-hooks";
 import {
     MovieCreditDetails, MovieCreditDetailsSchema,
 } from "@/domains/movie-credits/_schemas";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {MovieDetailsCreditCastOverview} from "@/views/admin/movie-credits/_comp/cast-overview";
 import {generateArraySchema} from "@noovies-tickets/common";
 

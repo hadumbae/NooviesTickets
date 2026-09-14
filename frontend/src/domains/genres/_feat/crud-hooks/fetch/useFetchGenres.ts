@@ -4,16 +4,16 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {GenreCRUDQueryKeys} from "@/domains/genres/_feat/crud-hooks/keys/GenreCRUDQueryKeys.ts";
 import {ZodType, ZodTypeDef} from "zod";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {query} from "@/domains/genres/_feat/crud";
 import {GenreQueryOptions} from "@/domains/genres/_schema";
-import {RequestPaginationOptions} from "@/common/_types/request/RequestPaginationOptions";
+import {RequestPaginationOptions} from "@/shared/_types/request/RequestPaginationOptions";
 
 /** Parameters for the useFetchGenres hook. */
 type FetchQueries<TData = unknown> = {

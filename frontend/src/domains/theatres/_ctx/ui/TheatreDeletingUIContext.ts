@@ -2,7 +2,7 @@
  * @fileoverview Defines disclosure context provider and hooks for managing theatre deleting UI visibility state.
  */
 
-import {createDisclosureContext} from "@/common/_feat";
+import {createDisclosureContext} from "@/shared/_feat";
 
 const {Provider, useDisclosureState, useDisclosureActions} = createDisclosureContext({
     stateName: "theatre-deleting-ui-state-context",

@@ -7,7 +7,7 @@ import {useForm, UseFormReturn} from "react-hook-form";
 import {SeatMap} from "@/domains/seatmaps/_schema";
 import {SeatMapFormData, SeatMapFormSchema, SeatMapFormValues} from "@/domains/seatmaps/_feat/submit-data/schema";
 import {useSeatMapFormDefaultValues} from "@/domains/seatmaps/_feat/submit-data/form/useSeatMapFormDefaultValues.ts";
-import {FormValuesConfig} from "@/common/_feat/submit-data";
+import {FormValuesConfig} from "@/shared/_feat/submit-data";
 
 /** Initialises a React Hook Form instance for SeatMap data entry. */
 export function useSeatMapForm(

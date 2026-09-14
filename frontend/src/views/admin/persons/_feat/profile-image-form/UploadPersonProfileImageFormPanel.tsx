@@ -3,10 +3,10 @@
  */
 
 import {ReactElement, ReactNode} from 'react';
-import {HookFormFileInput} from "@/views/common/_feat/form-inputs/HookFormFileInput.tsx";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
-import {cn} from "@/common/_feat";
+import {HookFormFileInput} from "@/views/shared/_feat/form-inputs/HookFormFileInput.tsx";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
+import {cn} from "@/shared/_feat";
 import {
     Button,
     ScrollArea,
@@ -16,8 +16,8 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger
-} from "@/views/common/_comp/ui";
-import {UIOpenStateProps} from "@/common/_types";
+} from "@/views/shared/_comp/ui";
+import {UIOpenStateProps} from "@/shared/_types";
 
 /** Props for the UploadPersonProfileImageFormPanel component. */
 type FormPanelProps = UIOpenStateProps & {

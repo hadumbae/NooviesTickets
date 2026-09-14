@@ -4,9 +4,9 @@
 
 import {ReactElement} from "react";
 import {ObjectIdString, ReservationStatus} from "@noovies-tickets/common";
-import {Button} from "@/views/common/_comp/ui";
+import {Button} from "@/views/shared/_comp/ui";
 import {Loader} from "lucide-react";
-import {handleMutateAsync, MutationResponseConfig} from "@/common/_feat";
+import {handleMutateAsync, MutationResponseConfig} from "@/shared/_feat";
 import {
     useReservationStateMutations
 } from "@/domains/reservations/_feat/update-client-reservations/mutations/useReservationStateMutations.ts";

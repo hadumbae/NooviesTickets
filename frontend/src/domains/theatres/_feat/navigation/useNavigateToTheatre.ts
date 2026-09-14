@@ -5,7 +5,7 @@
 import {
     LoggingMessageParams,
     useLoggedNavigate
-} from "@/common/_feat/navigation/useLoggedNavigate.ts";
+} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {
     filterNullishAttributes
 } from "@noovies-tickets/common";

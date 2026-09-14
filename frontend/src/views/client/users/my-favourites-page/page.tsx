@@ -3,15 +3,15 @@
  */
 
 import {ReactElement} from 'react';
-import {useTitle} from "@/common/_feat";
+import {useTitle} from "@/shared/_feat";
 import {
     useFetchCurrentUserFavourites
 } from "@/domains/users/_feat/manage-user-favourites/hooks/useFetchCurrentUserFavourites.ts";
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 import {MyFavouritesPageContent} from "@/views/client/users/my-favourites-page/content.tsx";
 import {MovieDetails} from "@/domains/movies/_schema/movie";
-import {PaginatedItems} from "@/common/_types";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {PaginatedItems} from "@/shared/_types";
+import {QueryDataLoader} from "@/views/shared/_feat";
 
 /** Number of favourite movies displayed per page. */
 const MOVIES_PER_PAGE = 20;

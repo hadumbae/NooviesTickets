@@ -1,12 +1,12 @@
 /**
  * @fileoverview React Query hook for retrieving paginated movie reviews for a specific customer.
  */
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {PaginationOptions} from "@noovies-tickets/common";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {getFetchCustomerReviewsViewData} from "@/domains/customers/_feat/movie-reviews/repository/repository.ts";
 import {CustomerReviewsViewQueryKeys} from "@/domains/customers/_feat/movie-reviews/fetch/queryKeys.ts";
 import {ObjectIdString} from "@noovies-tickets/common";

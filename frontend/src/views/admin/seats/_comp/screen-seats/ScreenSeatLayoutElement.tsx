@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {Button} from "@/views/common/_comp/ui";
+import {Button} from "@/views/shared/_comp/ui";
 import {SeatDetails, SeatLayoutIconConstant, useSeatPanelSetterContext} from "@/domains/seats";
 
 /** Props for the ScreenSeatLayoutElement component. */

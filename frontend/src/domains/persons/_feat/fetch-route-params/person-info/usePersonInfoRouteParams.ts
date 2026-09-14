@@ -4,7 +4,7 @@
 
 import {useParams} from "react-router-dom";
 import {PersonInfoURLParamsSchema} from "@/domains/persons/_feat/fetch-route-params/person-info/urlSchema.ts";
-import {useThrowRouteParamError} from "@/common/_feat/fetch-route-params";
+import {useThrowRouteParamError} from "@/shared/_feat/fetch-route-params";
 import {SlugString} from "@noovies-tickets/common";
 
 /** Validated route and pagination parameters for the person info domain. */

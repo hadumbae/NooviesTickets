@@ -12,14 +12,14 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger
-} from "@/views/common/_comp/ui";
-import {UIOpenStateProps} from "@/common/_types";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
+} from "@/views/shared/_comp/ui";
+import {UIOpenStateProps} from "@/shared/_types";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
 
 import {TheatreScreenFormValues} from "@/domains/theatre-screens";
 import {TheatreScreenFormView} from "@/views/admin/theatre-screens/_feat/submit-data/TheatreScreenFormView.tsx";
-import {useLockForFormUI} from "@/common/_feat";
+import {useLockForFormUI} from "@/shared/_feat";
 
 /**
  * Props for the ScreenSubmitFormPanel component.

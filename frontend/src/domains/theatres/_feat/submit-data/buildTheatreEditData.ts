@@ -2,11 +2,11 @@
  * @fileoverview Utility functions and types for transforming theatre entity data into form edit values.
  */
 
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {TheatreFormData} from "@/domains/theatres/_feat/submit-data/schema.ts";
 import {Theatre, TheatreDetails} from "@/domains/theatres/_schema/theatre";
-import {CoordinateFormStarterValues} from "@/common/_models/coordinate-form";
-import {LocationFormStarterValues} from "@/common/_models/location-form";
+import {CoordinateFormStarterValues} from "@/shared/_models/coordinate-form";
+import {LocationFormStarterValues} from "@/shared/_models/location-form";
 
 /** Type representing form values for editing a theatre. */
 export type TheatreEditData = AnyValues<TheatreFormData>;

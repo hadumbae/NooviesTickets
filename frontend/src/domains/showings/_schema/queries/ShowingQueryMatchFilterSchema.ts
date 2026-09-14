@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {IDStringSchema, DateOnlyStringSchema, PositiveNumberSchema, ShowingStatusSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
+import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
 
 /** Zod schema for validating match-based filter criteria for Showings. */
 export const ShowingQueryMatchFilterSchema = z.object({

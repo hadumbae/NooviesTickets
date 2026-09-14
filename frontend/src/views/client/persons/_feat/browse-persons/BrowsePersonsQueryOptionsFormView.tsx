@@ -4,10 +4,10 @@
 
 import {ReactElement} from "react";
 import {useFormContext} from "react-hook-form";
-import {cn, QueryOptionFormViewProps, useQueryOptionFormContext} from "@/common/_feat";
-import {useAutoFormSubmit} from "@/common/_feat/submit-data";
-import {HookFormInput, HookFormSortToggle} from "@/views/common/_feat";
-import {Button} from "@/views/common/_comp/ui";
+import {cn, QueryOptionFormViewProps, useQueryOptionFormContext} from "@/shared/_feat";
+import {useAutoFormSubmit} from "@/shared/_feat/submit-data";
+import {HookFormInput, HookFormSortToggle} from "@/views/shared/_feat";
+import {Button} from "@/views/shared/_comp/ui";
 import {X} from "lucide-react";
 import {LabelledFormInput} from "@/views/admin/movies/_comp/form-display/LabelledFormInput.tsx";
 import {

@@ -4,8 +4,8 @@
 
 import {ReactElement} from "react";
 import {UserRole} from "@noovies-tickets/common";
-import {Badge} from "@/views/common/_comp/ui";
-import {cn} from "@/common/_feat";
+import {Badge} from "@/views/shared/_comp/ui";
+import {cn} from "@/shared/_feat";
 
 /** Props for the UserRoleBadge component. */
 type BadgeProps = {

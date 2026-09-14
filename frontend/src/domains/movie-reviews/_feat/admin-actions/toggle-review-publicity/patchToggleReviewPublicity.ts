@@ -1,9 +1,9 @@
 import {ObjectIdString} from "@noovies-tickets/common";
-import {ModerationMessageFormData} from "@/common/_feat/moderation/forms/ModerationMessageFormSchema";
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns";
-import {buildURL} from "@/common/_feat/fetch-api/buildURL";
+import {ModerationMessageFormData} from "@/shared/_feat/moderation/forms/ModerationMessageFormSchema";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns";
+import {buildURL} from "@/shared/_feat/fetch-api/buildURL";
 import {MovieReviewAdminActionsBaseURL} from "@/domains/movie-reviews/_feat/admin-actions/baseURL";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation";
 
 /**
  * Configuration for the API request to toggle a review's visibility.

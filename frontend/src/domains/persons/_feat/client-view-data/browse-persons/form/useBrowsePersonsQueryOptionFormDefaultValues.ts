@@ -10,7 +10,7 @@ import {
 import {
     BrowsePersonsQueryOptions
 } from "@/domains/persons/_feat/validate-query-options/person-browse/BrowsePersonsQueryOptionsSchema.ts";
-import {parseSearchParamFormValues} from "@/common/_feat";
+import {parseSearchParamFormValues} from "@/shared/_feat";
 
 /** Configuration for initialising person query form values. */
 type ValueConfig = {

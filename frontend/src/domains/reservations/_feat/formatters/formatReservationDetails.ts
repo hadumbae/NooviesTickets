@@ -3,8 +3,8 @@
  *
  */
 
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 import {buildShowingDateString} from "@/domains/showings/_feat/formatters/buildShowingDateString.ts";
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
 import {ObjectIdString} from "@noovies-tickets/common";

@@ -12,7 +12,7 @@ import {
     handlePaginated,
     handleQuery,
     handleUpdate
-} from "@/common/_feat/crud-handlers";
+} from "@/shared/_feat/crud-handlers";
 
 /** Standard CRUD methods bound to the Seat administrative API. */
 export const find = handleFind(SeatCRUDBaseURL);

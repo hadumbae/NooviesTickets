@@ -8,7 +8,7 @@ import {
     preprocessEmptyToUndefined
 } from "@noovies-tickets/common";
 import {ReservationUniqueCodeSchema} from "@/domains/reservations/_schema/model";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 
 /**
  * Zod validation schema for the reservation lookup form.

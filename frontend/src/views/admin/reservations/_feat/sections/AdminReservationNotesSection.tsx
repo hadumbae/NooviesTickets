@@ -3,13 +3,13 @@
  */
 
 import {ReactElement, useState} from "react";
-import {EmptyArrayContainer, PageSectionHeader} from "@/views/common/_comp";
+import {EmptyArrayContainer, PageSectionHeader} from "@/views/shared/_comp";
 import {ReservationNotesText} from "@/views/admin/reservations/_comp/notes-display/ReservationNotesText.tsx";
 import {UpdateReservationNotesForm} from "@/views/admin/reservations/_feat/update-notes-form/UpdateReservationNotesForm.tsx";
 import {
     UpdateReservationNotesFormPopup
 } from "@/views/admin/reservations/_feat/update-notes-form/UpdateReservationNotesFormPopup.tsx";
-import {Button} from "@/views/common/_comp/ui";
+import {Button} from "@/views/shared/_comp/ui";
 import {Pencil} from "lucide-react";
 import {ObjectIdString} from "@noovies-tickets/common";
 

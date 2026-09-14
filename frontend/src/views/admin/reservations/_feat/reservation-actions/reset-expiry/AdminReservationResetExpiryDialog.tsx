@@ -14,11 +14,11 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/views/common/_comp/ui";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
+} from "@/views/shared/_comp/ui";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
 import {ReservationUniqueCode} from "@/domains/reservations/_schema/model/fields/ReservationUniqueCodeSchema.ts";
-import {useBaseFormContext} from "@/common/_feat";
-import {UIOpenStateProps} from "@/common/_types";
+import {useBaseFormContext} from "@/shared/_feat";
+import {UIOpenStateProps} from "@/shared/_types";
 
 /** Props for the AdminReservationResetExpiryDialog component. */
 type DialogProps = UIOpenStateProps & {

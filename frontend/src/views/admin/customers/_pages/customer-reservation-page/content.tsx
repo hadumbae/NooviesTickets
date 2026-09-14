@@ -3,17 +3,17 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper, PageSectionHeader} from "@/views/common/_comp/page";
+import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {CustomerDetailsCard} from "@/views/admin/customers/_comp";
-import {PageHeader} from "@/views/common/_comp";
+import {PageHeader} from "@/views/shared/_comp";
 import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationSchema.ts";
 import {LeanUserWithEmail} from "@/domains/users/_schema/user";
 import {
     CustomerReservationMetadataSection,
     CustomerReservationPageBreadcrumbs
 } from "@/views/admin/customers/_pages/customer-reservation-page/sections";
-import {useTitle} from "@/common/_feat";
-import {Separator} from "@/views/common/_comp/ui";
+import {useTitle} from "@/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui";
 import {
     AdminReservationActionsSection
 } from "@/views/admin/reservations/_feat/sections/AdminReservationActionsSection.tsx";

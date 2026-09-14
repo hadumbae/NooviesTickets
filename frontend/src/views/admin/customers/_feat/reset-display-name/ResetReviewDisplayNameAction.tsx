@@ -5,11 +5,11 @@
 import {ObjectIdString} from "@noovies-tickets/common";
 import {ResetReviewDisplayNameFormData} from "@/domains/movie-reviews/_feat/admin-actions/reset-review-display-name";
 import {ReactElement, useState} from "react";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {MovieReview} from "@/domains/movie-reviews/_schema/model/MovieReviewSchema.ts";
 import {ResetReviewDisplayNameDialog} from "@/views/admin/customers/_feat/reset-display-name/ResetReviewDisplayNameDialog.tsx";
 import {ResetReviewDisplayNameForm} from "@/views/admin/customers/_feat/reset-display-name/ResetReviewDisplayNameForm.tsx";
-import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
+import {MutationFormResetConfig, MutationResponseConfig} from "@/shared/_feat/submit-data";
 
 /** Props for the ResetReviewDisplayNameAction component. */
 type ActionProps = {

@@ -8,7 +8,7 @@ import {
 import {
     BrowsePersonsQueryOptionsFormView
 } from "@/views/client/persons/_feat/browse-persons/BrowsePersonsQueryOptionsFormView.tsx";
-import {createQueryOptionFormSection} from "@/common/_feat";
+import {createQueryOptionFormSection} from "@/shared/_feat";
 import {
     useBrowsePersonsQueryOptionsContext
 } from "@/domains/persons/_feat/validate-query-options/person-browse/BrowsePersonsQueryOptionsContext.ts";

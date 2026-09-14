@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {QueryOptionFormViewProps} from "@/common/_feat";
+import {QueryOptionFormViewProps} from "@/shared/_feat";
 import {CustomerIndexQueryOptionFormValues} from "@/domains/customers/_types";
 import {
     CustomerIndexQueryOptionFormFilterFieldset
@@ -11,7 +11,7 @@ import {
 import {
     CustomerIndexQueryOptionFormSortFieldset
 } from "@/views/admin/customers/_feat/query-option-forms/customer-index/CustomerIndexQueryOptionFormSortFieldset.tsx";
-import {QueryOptionFormLayout} from "@/views/common/_feat";
+import {QueryOptionFormLayout} from "@/views/shared/_feat";
 
 /**
  * Form component for customer index query options that automatically submits on change.

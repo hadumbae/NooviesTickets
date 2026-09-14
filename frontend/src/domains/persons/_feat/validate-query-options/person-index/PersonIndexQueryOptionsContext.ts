@@ -2,7 +2,7 @@
  * @fileoverview React context provider and hook for managing person index query options.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {
     PersonIndexQueryOptionSchema
 } from "@/domains/persons/_feat/validate-query-options/person-index/PersonIndexQueryOptionSchema.ts";

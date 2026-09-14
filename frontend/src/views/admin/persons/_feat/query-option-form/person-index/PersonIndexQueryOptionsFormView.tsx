@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from "react";
-import {QueryOptionFormLayout} from "@/views/common/_feat";
+import {QueryOptionFormLayout} from "@/views/shared/_feat";
 import {
     PersonIndexQueryOptionsFormFilterFieldset
 } from "@/views/admin/persons/_feat/query-option-form/person-index/PersonIndexQueryOptionsFormFilterFieldset.tsx";
 import {
     PersonIndexQueryOptionsFormSortFieldset
 } from "@/views/admin/persons/_feat/query-option-form/person-index/PersonIndexQueryOptionsFormSortFieldset.tsx";
-import {QueryOptionFormViewProps} from "@/common/_feat";
+import {QueryOptionFormViewProps} from "@/shared/_feat";
 import {CustomerIndexQueryOptionFormValues} from "@/domains/customers";
 
 /**

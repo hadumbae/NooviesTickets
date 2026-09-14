@@ -4,9 +4,9 @@
 
 import {ReactElement} from "react";
 import {URLString} from "@noovies-tickets/common";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image";
-import {HeaderDescription, HeaderTitle} from "@/views/common/_comp/page-headers";
+import {HeaderDescription, HeaderTitle} from "@/views/shared/_comp/page-headers";
 
 /** Props for the MovieInfoHeader component. */
 type MovieInfoHeaderProps = {

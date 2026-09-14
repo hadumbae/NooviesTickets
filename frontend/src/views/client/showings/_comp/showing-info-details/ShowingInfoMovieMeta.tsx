@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 import {Movie, MovieDetails, MovieWithGenres} from "@/domains/movies/_schema/movie";
 
 /** Props for the ShowingInfoMovieMeta component. */

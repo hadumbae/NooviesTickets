@@ -6,7 +6,7 @@
 
 import {z} from "zod";
 import {IDStringSchema, PositiveNumberSchema, RoleTypeDepartmentSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
+import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
 /**

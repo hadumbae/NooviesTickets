@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {ShowingSummaryCard} from "@/views/admin/showings/_comp/showing-summary-card";
 
 import {Theatre, TheatreDetails} from "@/domains/theatres/_schema/theatre";
@@ -14,7 +14,7 @@ import {
     TheatreShowingListBreadcrumbs
 } from "@/views/admin/theatres/_pages/theatre-showings-list/elements/breadcrumbs.tsx";
 import {Plus} from "lucide-react";
-import {LoggedLink} from "@/views/common/_feat";
+import {LoggedLink} from "@/views/shared/_feat";
 
 /** Props for the TheatreShowingListPageContent component. */
 type ContentProps = {

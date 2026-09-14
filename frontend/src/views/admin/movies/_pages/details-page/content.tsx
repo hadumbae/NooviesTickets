@@ -3,15 +3,15 @@
  */
 
 import {ReactElement} from 'react';
-import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {MovieDetailsHeader} from "@/views/admin/movies/_pages/details-page/elements/header.tsx";
 import {MovieDetailsCard} from "@/views/admin/movies/_comp/details-display";
 import {MovieDetailsPageItemActions} from "@/views/admin/movies/_pages/details-page/actions/itemActions.tsx";
-import {SROnly} from "@/views/common/_comp/screen-readers";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {MovieDetailsPageCreditSection} from "@/views/admin/movies/_pages/details-page/sections/creditSection.tsx";
 import {MovieDetailsPageShowingSection} from "@/views/admin/movies/_pages/details-page/sections/showingSection.tsx";
-import {useSetAdminPageTitle} from "@/common/_feat";
+import {useSetAdminPageTitle} from "@/shared/_feat";
 import {
     MovieDetailsPageBannerActions,
     MovieDetailsPagePosterActions

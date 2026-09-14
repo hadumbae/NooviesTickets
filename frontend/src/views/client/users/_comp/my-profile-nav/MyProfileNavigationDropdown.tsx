@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {Button, DropdownMenu, DropdownMenuContent, DropdownMenuTrigger} from "@/views/common/_comp/ui";
-import {DropdownMenuLink} from "@/views/common/_feat/navigation/DropdownMenuLink.tsx";
+import {Button, DropdownMenu, DropdownMenuContent, DropdownMenuTrigger} from "@/views/shared/_comp/ui";
+import {DropdownMenuLink} from "@/views/shared/_feat/navigation/DropdownMenuLink.tsx";
 
 /**
  * Renders a dropdown menu containing links to the user's profile, reservations, reviews, and favourites.

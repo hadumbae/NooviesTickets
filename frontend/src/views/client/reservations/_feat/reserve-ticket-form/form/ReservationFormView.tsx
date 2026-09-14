@@ -3,7 +3,7 @@
  *
  */
 
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {ReactElement, useState} from "react";
 import {ReservationType} from "@noovies-tickets/common";
 import {

@@ -2,8 +2,8 @@
  * @fileoverview Repository functions for sending HTTP requests to manage user administrative roles.
  */
 
-import {FetchRequestReturns} from "@/common/_types";
-import {buildURL, handleFetchOperation} from "@/common/_feat";
+import {FetchRequestReturns} from "@/shared/_types";
+import {buildURL, handleFetchOperation} from "@/shared/_feat";
 import {
     UpdateUserAdminRoleReturns
 } from "@/domains/users/_feat/manage-user-roles/manage-admin-role/schema/UpdateUserAdminRoleReturnsSchema.ts";

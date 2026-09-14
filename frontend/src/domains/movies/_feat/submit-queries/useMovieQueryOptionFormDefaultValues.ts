@@ -2,7 +2,7 @@
  * @fileoverview Hook for managing default form values for movie query options.
  */
 
-import {QueryOptionFormValues} from "@/common/_feat";
+import {QueryOptionFormValues} from "@/shared/_feat";
 import {MovieQueryOptionFormValues} from "@/domains/movies/_feat/submit-queries/MovieQueryOptionFormValues.ts";
 import {MovieQueryOptions} from "@/domains/movies/_schema/queries/MovieQueryOptionSchema.ts";
 import {useRef} from "react";

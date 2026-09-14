@@ -2,12 +2,12 @@
  * @fileoverview Main page component for the Movie Details view.
  */
 
-import {PageLoader} from "@/views/common/_comp/page";
-import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
+import {PageLoader} from "@/views/shared/_comp/page";
+import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {MovieDetails, MovieDetailsSchema} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {MovieDetailsPageContent} from "@/views/admin/movies/_pages/details-page/content.tsx";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {useFetchMovieBySlug} from "@/domains/movies/_feat/crud-hooks";
 import {
     IsDeletingMovieBannerUIContextProvider,
@@ -15,7 +15,7 @@ import {
     IsUpdatingMovieBannerUIContextProvider,
     IsUpdatingMoviePosterUIContextProvider
 } from "@/domains/movies/_ctx/ui";
-import {IsDeletingUIContextProvider} from "@/common/_ctx/ui";
+import {IsDeletingUIContextProvider} from "@/shared/_ctx/ui";
 
 /**
  * Controller component for the movie profile view that fetches data and provides UI context.

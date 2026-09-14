@@ -2,9 +2,9 @@
  * @fileoverview Page component for creating a new showing in the admin panel.
  */
 import {ReactElement} from 'react';
-import {PageHeader} from "@/views/common/_comp";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {Card, CardContent} from "@/views/common/_comp/ui";
+import {PageHeader} from "@/views/shared/_comp";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
 
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {useNavigateToShowingDetails} from "@/domains/showings/_feat/navigation/useNavigateToShowingDetails.ts";

@@ -2,9 +2,9 @@
  * @fileoverview Repository for fetching person-related view data for the client-side interface.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {buildURL} from "@/common/_feat/fetch-api";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
+import {buildURL} from "@/shared/_feat/fetch-api";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
 import {PersonInfoViewData} from "@/domains/persons/_feat/client-view-data/person-info/dataSchema.ts";
 import {PersonClientViewBaseURL} from "@/domains/persons/_feat/client-view-data/repository/baseURL.ts";
 import {

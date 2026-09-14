@@ -2,8 +2,8 @@
  * @fileoverview Main content layout for the customer reviews administration page.
  */
 
-import {PageFlexWrapper, PageSectionHeader} from "@/views/common/_comp/page";
-import {PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
+import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
+import {PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {CustomerMovieReviewSummary} from "@/domains/movie-reviews/_schema/customer-reviews";
 import {LeanUserWithEmail} from "@/domains/users/_schema/user";
 import {CustomerDetailsCard, CustomerMovieReviewSummaryCard} from "@/views/admin/customers/_comp";

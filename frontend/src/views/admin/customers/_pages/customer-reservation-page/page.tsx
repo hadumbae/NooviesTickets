@@ -2,9 +2,9 @@
  * @fileoverview Page component that fetches and displays the details of a specific customer reservation.
  */
 
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {ReactElement} from "react";
-import {useRouteParams, useTitle} from "@/common/_feat";
+import {useRouteParams, useTitle} from "@/shared/_feat";
 import {CustomerReservationPageContent} from "@/views/admin/customers/_pages/customer-reservation-page/content.tsx";
 import {
     CustomerReservationRouteParamsSchema,

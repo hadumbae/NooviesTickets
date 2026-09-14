@@ -7,7 +7,7 @@ import {ObjectIdString} from "@noovies-tickets/common";
 import {destroy} from "@/domains/movies/_feat/crud";
 import {MovieClientViewDataQueryKeys} from "@/domains/movies/_feat/client-view-data/hooks";
 import {MovieCRUDMutationKeys, MovieCRUDQueryKeys} from "@/domains/movies/_feat/crud-hooks/keys";
-import {buildStandardLog} from "@/common/_feat/logger-builders/buildStandardLog.ts";
+import {buildStandardLog} from "@/shared/_feat/logger-builders/buildStandardLog.ts";
 
 /** Configuration for the movie deletion mutation. */
 type DeleteIDConfig = {

@@ -6,7 +6,7 @@ import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieR
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {MovieWithGenres} from "@/domains/movies/_schema/movie/MovieWithGenresSchema.ts";
 import {MovieWithRating} from "@/domains/movies/_schema/movie/MovieWithRatingSchema.ts";
-import {ISO6391LanguageLabels} from "@/common/_const/languages/ISO6391LanguageLabels.ts";
+import {ISO6391LanguageLabels} from "@/shared/_const/languages/ISO6391LanguageLabels.ts";
 
 /** Union of Movie types that include populated genre objects. */
 type MovieWithData = MovieDetails | MovieWithGenres | MovieWithRating;

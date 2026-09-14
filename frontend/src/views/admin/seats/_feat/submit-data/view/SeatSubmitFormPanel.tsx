@@ -5,10 +5,10 @@
 import {ReactElement, ReactNode} from "react";
 import {RotateCcw} from "lucide-react";
 import {useFormContext} from "react-hook-form";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {UIOpenStateProps} from "@/common/_types";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
-import {cn} from "@/common/_feat/handle-ui/cn.ts";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {UIOpenStateProps} from "@/shared/_types";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {cn} from "@/shared/_feat/handle-ui/cn.ts";
 import {SeatFormValues} from "@/domains/seats/_feat/submit-data/schema/SeatFormSchema.ts";
 import {SeatSubmitFormView} from "@/views/admin/seats/_feat/submit-data/view/SeatSubmitFormView.tsx";
 import {
@@ -20,7 +20,7 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 /** Props for the SeatSubmitFormPanel component. */
 type PanelProps = UIOpenStateProps & FormViewProps<SeatFormValues> & {

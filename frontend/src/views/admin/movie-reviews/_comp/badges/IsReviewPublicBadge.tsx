@@ -2,8 +2,8 @@
  * @fileoverview Status badge component indicating the visibility state of a movie review.
  */
 
-import {Badge} from "@/views/common/_comp/ui/badge.tsx";
-import {cn} from "@/common/_feat";
+import {Badge} from "@/views/shared/_comp/ui/badge.tsx";
+import {cn} from "@/shared/_feat";
 import {ReactElement} from "react";
 
 /** Props for the IsReviewPublicBadge component. */

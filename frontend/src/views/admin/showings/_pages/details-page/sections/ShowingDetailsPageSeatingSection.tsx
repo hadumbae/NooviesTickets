@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {PageSectionHeader} from "@/views/common/_comp/page";
-import {useRequiredContext} from "@/common/_feat/use-context/useRequiredContext.ts";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
+import {useRequiredContext} from "@/shared/_feat/use-context/useRequiredContext.ts";
 import {
     SeatMapDetailsPanelStateContext
 } from "@/domains/seatmaps/_ctx/details-panel-context/SeatMapDetailsPanelStateContext.ts";

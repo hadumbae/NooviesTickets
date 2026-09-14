@@ -4,7 +4,7 @@
  */
 
 import "dotenv/config";
-import {connect} from "@/shared/config/database.js";
+import {connect} from "@/config/database.js";
 import mongoose from "mongoose";
 import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import {generateSlug} from "@noovies-tickets/common";

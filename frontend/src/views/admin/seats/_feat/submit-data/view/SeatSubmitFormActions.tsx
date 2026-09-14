@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {Button} from "@/views/common/_comp/ui";
+import {Button} from "@/views/shared/_comp/ui";
 import {RotateCcw} from "lucide-react";
-import {cn} from "@/common/_feat";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
+import {cn} from "@/shared/_feat";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
 import {useFormContext} from "react-hook-form";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
 
 /** Props for the SeatSubmitFormActions component. */
 type ButtonProps = {

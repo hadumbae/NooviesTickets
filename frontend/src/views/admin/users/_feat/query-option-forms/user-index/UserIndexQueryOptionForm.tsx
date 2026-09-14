@@ -4,10 +4,10 @@ import {
     QueryOptionFormContainerProps,
     QueryOptionFormContextProvider,
     useGenerateFormID
-} from "@/common/_feat";
+} from "@/shared/_feat";
 import {UserIndexQueryOptionFormValues, useUserIndexQueryOptionForm} from "@/domains/users/_feat/submit-query-options";
 import {UserQueryOptions, UserQueryOptionsSchema} from "@/domains/users/_schema/query-options/UserQueryOptionsSchema.ts";
-import {Form} from "@/views/common/_comp/ui";
+import {Form} from "@/views/shared/_comp/ui";
 
 type FormProps = QueryOptionFormContainerProps<UserIndexQueryOptionFormValues, UserQueryOptions>;
 

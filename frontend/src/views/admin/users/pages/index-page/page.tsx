@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {useParsedPaginationValue, useTitle} from "@/common/_feat";
+import {useParsedPaginationValue, useTitle} from "@/shared/_feat";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 import {useFetchPaginatedUsers} from "@/domains/users/_feat/crud-hooks/hooks/useFetchPaginatedUsers.ts";
 import {UserSchema} from "@/domains/users/_schema/user/UserSchema.ts";
 import {useUserIndexQueryOptionsContext} from "@/domains/users/_ctx";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {UserIndexPageContent} from "@/views/admin/users/pages/index-page/content.tsx";
 
 const USERS_PER_PAGE = 20;

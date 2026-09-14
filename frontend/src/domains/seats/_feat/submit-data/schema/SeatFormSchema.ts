@@ -6,8 +6,8 @@ import {z} from "zod";
 import {SeatLabelSchema, SeatRowSchema} from "@/domains/seats/_schema/fields";
 import {SeatLayoutTypeSchema, SeatTypeSchema} from "@noovies-tickets/common";
 import {IDStringSchema, NonNegativeNumberSchema, PositiveIntegerSchema, preprocessEmptyToUndefined, preprocessOptionalField, preprocessToNumber} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
-import {AnyUnionValues} from "@/common/_types";
+import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
+import {AnyUnionValues} from "@/shared/_types";
 
 /** Base Zod schema containing shared geometric and relational fields for all seat layout elements. */
 export const SeatFormBaseSchema = z.object({

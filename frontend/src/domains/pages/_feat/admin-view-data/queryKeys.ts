@@ -2,7 +2,7 @@
  * @fileoverview Centralized React Query key factory for administrative page data fetching operations.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Query key hierarchy for administrative page data caching and invalidation. */
 export const AdminPagesQueryKeys = buildQueryKey(

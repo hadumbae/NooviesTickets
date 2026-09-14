@@ -4,7 +4,7 @@
 
 import {ReactElement, useState} from 'react';
 import {RoleType} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
 import {
     RoleTypeDeleteCollapsible
 } from "@/views/admin/role-types/_feat/manage-role-type-sheet/RoleTypeDeleteCollapsible.tsx";
@@ -26,7 +26,7 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 /** Props for the RoleTypeListSheet component. */
 type SheetProps = {

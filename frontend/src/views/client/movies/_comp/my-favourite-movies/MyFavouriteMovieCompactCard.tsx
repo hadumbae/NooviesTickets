@@ -3,16 +3,16 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent} from "@/views/common/_comp/ui";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
 import {Info} from "lucide-react";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image";
 import {BrowseMovieSummaryDialog} from "@/views/client/movies/_comp/browse-movie-info";
 
 import {formatMovieData} from "@/domains/movies/_feat/formatters/formatMovieData.ts";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
-import {SubsectionTitle} from "@/views/common/_comp";
+import {SubsectionTitle} from "@/views/shared/_comp";
 
 /** Props for the MyFavouriteMovieCompactCard component. */
 type CardProps = {

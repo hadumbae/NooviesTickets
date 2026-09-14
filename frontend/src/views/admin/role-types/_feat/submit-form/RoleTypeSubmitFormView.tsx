@@ -4,13 +4,13 @@
 
 import {ReactElement} from 'react';
 import {useFormContext} from "react-hook-form";
-import {cn} from "@/common/_feat";
-import {HookFormInput} from "@/views/common/_feat";
-import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
-import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
-import {HookFormTextArea} from "@/views/common/_feat/form-inputs/HookFormTextArea.tsx";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {cn} from "@/shared/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
+import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
+import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
+import {HookFormTextArea} from "@/views/shared/_feat/form-inputs/HookFormTextArea.tsx";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {RoleTypeCategorySelect} from "@/views/admin/role-types/_feat/form-inputs";
 import {RoleTypeDepartment, RoleTypeDepartmentConstant} from "@noovies-tickets/common";
 import {RoleTypeFormValues} from "@/domains/roletypes/_feat/submit-data/schema/RoleTypeFormSchema.ts";

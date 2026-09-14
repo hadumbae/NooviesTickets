@@ -2,9 +2,9 @@
  * @fileoverview List item component for displaying a movie credit entry.
  */
 
-import {cn} from "@/common/_feat";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
+import {cn} from "@/shared/_feat";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 import {PersonProfileAvatar} from "@/views/admin/persons/_comp/person-details";
 import {CreditExceptMovie} from "@/domains/movie-credits";
 import {ReactElement} from "react";

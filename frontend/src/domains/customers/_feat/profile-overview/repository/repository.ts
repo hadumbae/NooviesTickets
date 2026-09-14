@@ -2,13 +2,13 @@
  * @fileoverview Repository for fetching customer profile data for administrative views.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts"
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts"
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts"
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts"
 import {CustomerProfileOverviewBaseURL} from "@/domains/customers/_feat/profile-overview/repository/baseURL";
 import {
     GetFetchCustomerProfileViewDataConfig
 } from "@/domains/customers/_feat/profile-overview/repository/repository.types";
-import {buildURL} from "@/common/_feat/fetch-api";
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {CustomerProfileViewData} from "@/domains/customers/_feat/profile-overview/schema/viewDataSchema.ts";
 
 /**

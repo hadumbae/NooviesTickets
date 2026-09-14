@@ -4,9 +4,9 @@
 
 import {useFormContext} from "react-hook-form";
 import {ReactElement, ReactNode} from "react";
-import {cn} from "@/common/_feat";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {HookFormInput} from "@/views/common/_feat";
+import {cn} from "@/shared/_feat";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {HookFormInput} from "@/views/shared/_feat";
 import {
     Button,
     Dialog,
@@ -17,8 +17,8 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from "@/views/common/_comp/ui";
-import {UIOpenStateProps} from "@/common/_types";
+} from "@/views/shared/_comp/ui";
+import {UIOpenStateProps} from "@/shared/_types";
 
 /** Props for the ResetReviewDisplayNameDialog component. */
 type DialogProps = UIOpenStateProps & {

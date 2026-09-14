@@ -2,9 +2,9 @@
  * @fileoverview Repository for administrative reservation update operations.
  */
 
-import {buildURL} from "@/common/_feat/fetch-api";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
+import {buildURL} from "@/shared/_feat/fetch-api";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
 
 import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationSchema.ts";
 import {

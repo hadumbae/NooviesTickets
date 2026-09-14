@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from 'react';
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {MovieFormStarterValues} from "@/domains/movies/_feat/submit-data";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {
     MovieSubmitFormDetailsFieldset,
     MovieSubmitFormMediaFieldset,

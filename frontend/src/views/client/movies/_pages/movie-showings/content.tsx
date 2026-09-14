@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper, PageSectionHeader} from "@/views/common/_comp/page";
-import {PaginationRangeButtons} from "@/views/common/_comp";
+import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
+import {PaginationRangeButtons} from "@/views/shared/_comp";
 
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {PopulatedShowing} from "@/domains/showings/_schema/showing/PopulatedShowingSchema.ts";

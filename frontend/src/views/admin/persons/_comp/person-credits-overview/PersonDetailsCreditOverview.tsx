@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from 'react';
-import {SROnly} from "@/views/common/_comp/screen-readers";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {PersonFilmography} from "@/domains/movie-credits";
 import {
     PersonDetailsCreditList

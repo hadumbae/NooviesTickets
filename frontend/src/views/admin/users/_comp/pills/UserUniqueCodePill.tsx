@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {UserUniqueCode} from "@/domains/users/_schema/fields/UserUniqueCodeSchema.ts";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 
 /** Custom class names for the UserUniqueCodePill sub-elements. */
 type PillClassNames = {

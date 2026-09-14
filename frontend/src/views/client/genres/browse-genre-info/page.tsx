@@ -6,13 +6,13 @@
 import { ReactElement } from "react";
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
-import { SlugRouteParamSchema } from "@/common/_schemas/route/SlugRouteParamSchema.ts";
-import { PageLoader } from "@/views/common/_comp/page";
+} from "@/shared/_feat";
+import { SlugRouteParamSchema } from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import { PageLoader } from "@/views/shared/_comp/page";
 import { BrowseGenreInfoPageContent } from "@/views/client/genres/browse-genre-info/content.tsx";
-import { QueryDataLoader } from "@/views/common/_feat";
+import { QueryDataLoader } from "@/views/shared/_feat";
 import { useFetchGenreWithMoviesViewData } from "@/domains/genres/_feat/client-view-data";
-import { useParsedPaginationValue } from "@/common/_feat/fetch-pagination-search-params";
+import { useParsedPaginationValue } from "@/shared/_feat/fetch-pagination-search-params";
 
 /** Global constant defining the number of movie results per page. */
 const MOVIES_PER_PAGE = 10;

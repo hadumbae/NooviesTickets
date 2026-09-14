@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper, PageSectionHeader} from "@/views/common/_comp/page";
-import {PageHeader} from "@/views/common/_comp";
+import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
+import {PageHeader} from "@/views/shared/_comp";
 import {
     MyProfileNavigation,
     MyProfileNavigationDropdown
@@ -13,9 +13,9 @@ import {
     UpdateUserPasswordForm,
     UpdateUserPasswordFormView
 } from "@/views/client/users/_feat/update-user-password/form";
-import {Card, CardContent, Separator} from "@/views/common/_comp/ui";
+import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
 import {User} from "@/domains/users/_schema/user/UserSchema.ts";
-import {useIsMobile} from "@/common/_feat/handle-ui/useIsMobile.tsx";
+import {useIsMobile} from "@/shared/_feat/handle-ui/useIsMobile.tsx";
 
 /** Props for the MyProfilePageContent component. */
 type ContentProps = {

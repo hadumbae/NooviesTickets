@@ -3,12 +3,12 @@
  */
 
 import {ReactElement, useState} from 'react';
-import {PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {useIsMobile} from "@/common/_feat/handle-ui/useIsMobile.tsx";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {useIsMobile} from "@/shared/_feat/handle-ui/useIsMobile.tsx";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {GenreIndexCard} from "@/views/admin/genres/_comp";
-import {Button} from "@/views/common/_comp/ui";
+import {Button} from "@/views/shared/_comp/ui";
 import {Plus} from "lucide-react";
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {useNavigateToGenreDetails} from "@/domains/genres/_feat/navigation/useNavigateToGenreDetails.ts";

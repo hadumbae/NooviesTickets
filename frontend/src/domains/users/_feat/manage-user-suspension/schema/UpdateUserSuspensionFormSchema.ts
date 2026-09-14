@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {BooleanValueSchema} from "@noovies-tickets/common";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {UserModerationLogFormSchema} from "@/domains/users/_feat/user-moderation-actions";
 import {
     UserSuspensionUpdateActionSchema

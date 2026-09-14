@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {SeparatedLinks} from "@/views/common/_feat";
-import {LabelContent} from "@/views/common/_comp";
+import {SeparatedLinks} from "@/views/shared/_feat";
+import {LabelContent} from "@/views/shared/_comp";
 import {generateMovieCreditLinkConfigs, MovieCreditDetails} from "@/domains/movie-credits";
 
 /** Props for the BrowseMovieSummaryCredits component. */

@@ -5,10 +5,10 @@
 import {ReactElement} from "react";
 import {
     useFetchByIdentifierRouteParams, useSetPageTitle
-} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
-import {PageLoader} from "@/views/common/_comp/page";
-import {QueryDataLoader} from "@/views/common/_feat";
+} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {PageLoader} from "@/views/shared/_comp/page";
+import {QueryDataLoader} from "@/views/shared/_feat";
 
 import {useFetchTheatreInfoViewData, useTheatreInfoQueryOptionsContext} from "@/domains/theatres/_feat";
 import {TheatreInfoPageContent} from "@/views/client/theatres/_pages/theatre-info/content.tsx";

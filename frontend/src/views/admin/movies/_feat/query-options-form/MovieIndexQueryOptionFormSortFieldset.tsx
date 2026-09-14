@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {cn, createFormFieldConfig, renderFields} from "@/common/_feat";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
-import {HookFormSortToggle} from "@/views/common/_feat";
+import {cn, createFormFieldConfig, renderFields} from "@/shared/_feat";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {HookFormSortToggle} from "@/views/shared/_feat";
 import {MovieQueryOptionFormValues} from "@/domains/movies/_feat/submit-queries/MovieQueryOptionFormValues.ts";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
 
 /** Renders the form fields for sorting movie index query options. */
 export function MovieIndexQueryOptionFormSortFieldset(

@@ -6,7 +6,7 @@ import {useRef} from "react";
 import {isEqual} from "lodash";
 import {SeatMap} from "@/domains/seatmaps/_schema";
 import {SeatMapFormValues} from "@/domains/seatmaps/_feat/submit-data/schema";
-import {FormValuesConfig} from "@/common/_feat/submit-data";
+import {FormValuesConfig} from "@/shared/_feat/submit-data";
 
 /**
  * Computes the initial state for the seat map form by merging presets and existing entity data.

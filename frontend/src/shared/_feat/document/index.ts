@@ -1,0 +1,1 @@
+export * from "@/shared/_feat/document/useTitle.ts";

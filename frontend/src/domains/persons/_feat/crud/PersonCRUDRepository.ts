@@ -12,7 +12,7 @@ import {
     handlePaginated,
     handleQuery,
     handleUpdate
-} from "@/common/_feat/crud-handlers";
+} from "@/shared/_feat/crud-handlers";
 import {PersonCRUDBaseURL} from "@/domains/persons/_feat/crud/baseURL.ts";
 
 /** Retrieves all Person records without pagination (use with caution for large datasets). */

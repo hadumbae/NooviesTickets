@@ -4,9 +4,9 @@
 
 import {ReactElement, ReactNode} from "react";
 import {useFetchReservationsForCurrentUser} from "@/domains/reservations/_feat";
-import {PaginatedItems} from "@/common/_types";
+import {PaginatedItems} from "@/shared/_types";
 import {PopulatedReservation} from "@/domains/reservations/_schema";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 
 /**
  * Props for the CurrentUserReservationLoader component. */

@@ -4,16 +4,16 @@
 
 import {ReactElement, ReactNode} from 'react';
 import {ObjectIdString} from "@noovies-tickets/common";
-import {UIOpenStateProps} from "@/common/_types";
+import {UIOpenStateProps} from "@/shared/_types";
 import {useRemovePersonData} from "@/domains/persons/_feat/crud-hooks";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
-import {handleMutationCallback} from "@/common/_feat/handle-mutation-callback";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
+import {handleMutationCallback} from "@/shared/_feat/handle-mutation-callback";
 import {
     handleSubmitResponseError
-} from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
+} from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
 import {
     EntityDeleteWarningDialog
-} from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
+} from "@/views/shared/_feat/dialog/EntityDeleteWarningDialog.tsx";
 
 /**
  * Props for the {@link PersonDeleteWarningDialog} component.

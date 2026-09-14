@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {QueryOptionFormViewProps} from "@/common/_feat";
+import {QueryOptionFormViewProps} from "@/shared/_feat";
 import {
     GenreIndexQueryOptionsFormValues
 } from "@/domains/genres/_feat/handle-query-options/genre-index/GenreIndexQueryOptionsSchema.ts";
@@ -13,7 +13,7 @@ import {
 import {
     GenreIndexQueryOptionsFormSortFieldset
 } from "@/views/admin/genres/_feat/submit-genre-index-query-options/GenreIndexQueryOptionsFormSortFieldset.tsx";
-import {QueryOptionFormLayout} from "@/views/common/_feat";
+import {QueryOptionFormLayout} from "@/views/shared/_feat";
 
 /** Form view that combines filter and sort fieldsets for genre index query options. */
 export function GenreIndexQueryOptionsFormView(

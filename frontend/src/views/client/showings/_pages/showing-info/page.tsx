@@ -5,10 +5,10 @@
 import {ReactElement} from "react";
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
-import {PageLoader} from "@/views/common/_comp/page";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
-import {QueryDataLoader} from "@/views/common/_feat";
+} from "@/shared/_feat";
+import {PageLoader} from "@/views/shared/_comp/page";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {QueryDataLoader} from "@/views/shared/_feat";
 
 import {ShowingInfoPageContent} from "@/views/client/showings/_pages/showing-info/content.tsx";
 import {ShowingDetails, ShowingDetailsSchema} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";

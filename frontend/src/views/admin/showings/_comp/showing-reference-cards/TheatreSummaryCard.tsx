@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent} from "@/views/common/_comp/ui";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
 import {Film, Search, Sofa, TvMinimal} from "lucide-react";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
-import {ISO3166Alpha2ShortCountryConstant} from "@/common/_const";
-import {IconButton, SROnly, SubsectionSubtitle, SubsectionTitle} from "@/views/common/_comp";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
+import {ISO3166Alpha2ShortCountryConstant} from "@/shared/_const";
+import {IconButton, SROnly, SubsectionSubtitle, SubsectionTitle} from "@/views/shared/_comp";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
 
 /** Props for the TheatreSummaryCard component. */

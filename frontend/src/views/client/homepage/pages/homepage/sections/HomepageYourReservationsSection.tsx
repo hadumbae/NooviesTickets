@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {ReservationSummary} from "@/domains/reservations/_schema/model/reservations/ReservationSummarySchema.ts";
-import {PageSectionHeader} from "@/views/common/_comp";
+import {PageSectionHeader} from "@/views/shared/_comp";
 import {HomepageReservationCard} from "@/views/client/homepage/_comp";
 
 /** Props for the HomepageYourReservationsSection component. */

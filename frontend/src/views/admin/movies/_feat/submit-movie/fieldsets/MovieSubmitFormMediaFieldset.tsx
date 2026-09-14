@@ -3,16 +3,16 @@
  */
 
 import {ReactElement} from "react";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
-import {HookFormCheckbox, HookFormInput} from "@/views/common/_feat";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
+import {HookFormCheckbox, HookFormInput} from "@/views/shared/_feat";
 import {GenreMultiSelect} from "@/views/admin/genres/_feat/form-input/GenreMultiSelect.tsx";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {useFormContext} from "react-hook-form";
-import {cn, createFormFieldConfig, renderFields, useBaseFormContext} from "@/common/_feat";
+import {cn, createFormFieldConfig, renderFields, useBaseFormContext} from "@/shared/_feat";
 import {MovieFormStarterValues} from "@/domains/movies/_feat/submit-data";
-import {HookFormMultiSelect} from "@/views/common/_comp";
-import {ISO6391LanguageOptions} from "@/common/_const";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
+import {HookFormMultiSelect} from "@/views/shared/_comp";
+import {ISO6391LanguageOptions} from "@/shared/_const";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
 
 /**
  * Renders form fields for trailer URLs, languages, subtitles, and availability.

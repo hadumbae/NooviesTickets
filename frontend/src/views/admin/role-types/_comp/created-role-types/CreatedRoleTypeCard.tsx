@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {RoleType} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {X} from "lucide-react";
 

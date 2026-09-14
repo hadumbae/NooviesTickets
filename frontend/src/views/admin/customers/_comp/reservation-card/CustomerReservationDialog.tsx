@@ -3,9 +3,9 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {cn, convertToTitleCase} from "@/common/_feat";
-import {LoggedLink} from "@/views/common/_feat";
-import {LabelContent} from "@/views/common/_comp";
+import {cn, convertToTitleCase} from "@/shared/_feat";
+import {LoggedLink} from "@/views/shared/_feat";
+import {LabelContent} from "@/views/shared/_comp";
 import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationSchema.ts";
 import {ReservationStatusBadge} from "@/views/client/reservations/_comp";
 import {
@@ -16,7 +16,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 /** Props for the CustomerReservationDialog component. */
 type DialogProps = {

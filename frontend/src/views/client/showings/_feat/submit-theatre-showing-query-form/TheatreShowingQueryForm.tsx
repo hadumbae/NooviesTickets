@@ -4,16 +4,16 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {Form} from "@/views/common/_comp/ui";
-import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
-import {BaseFormContextProvider} from "@/common/_feat/generic-form-context";
+import {Form} from "@/views/shared/_comp/ui";
+import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
+import {BaseFormContextProvider} from "@/shared/_feat/generic-form-context";
 import {useTheatreScheduleQueryForm} from "@/domains/showings/_feat/submit-theatre-schedule-query/useTheatreScheduleQueryForm.ts";
 import {ShowingsPageQueryFormValues} from "@/domains/movies/_feat/manage-showing-page/ShowingsPageQueryFormValues.ts";
 import {
     ShowingsPageQueryStrings,
     ShowingsPageQueryStringSchema
 } from "@/domains/movies/_feat/client-view-data/schemas/ShowingsPageQueryStringSchema.ts";
-import {useGenerateFormID} from "@/common/_feat/generate-form-keys";
+import {useGenerateFormID} from "@/shared/_feat/generate-form-keys";
 
 /** Props for the TheatreShowingQueryForm component. */
 type FormParams = {

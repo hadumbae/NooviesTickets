@@ -2,7 +2,7 @@
  * @fileoverview Context provider and hook for managing movie index query options state.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {
     MovieIndexQueryOptionsSchema
 } from "@/domains/movies/_feat/handle-query-options/movie-index/MovieIndexQueryOptionsSchema.ts";

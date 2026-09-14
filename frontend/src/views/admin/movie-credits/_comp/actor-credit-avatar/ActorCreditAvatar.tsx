@@ -2,14 +2,14 @@
  * @fileoverview Displays a cast member avatar with linked identity and role details.
  */
 
-import {Avatar, AvatarFallback, AvatarImage} from "@/views/common/_comp/ui/avatar.tsx";
-import {getInitials} from "@/common/_feat/formatters/getInitials.ts";
-import {cn} from "@/common/_feat";
+import {Avatar, AvatarFallback, AvatarImage} from "@/views/shared/_comp/ui/avatar.tsx";
+import {getInitials} from "@/shared/_feat/formatters/getInitials.ts";
+import {cn} from "@/shared/_feat";
 import {mapCreditToPersonLinkConfig} from "@/domains/movie-credits/_feat/navigation/mapCreditToPersonLinkConfig.ts";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 
 import {MovieCreditDetails} from "@/domains/movie-credits/_schemas/model/MovieCreditDetailsSchema.ts";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {ReactElement} from "react";
 
 /** Props for the ActorCreditAvatar component. */

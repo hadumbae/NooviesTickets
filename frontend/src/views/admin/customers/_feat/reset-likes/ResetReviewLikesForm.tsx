@@ -8,7 +8,7 @@ import {
     ModerationMessageFormData,
     ModerationMessageFormSchema,
     ModerationMessageFormValues
-} from "@/common/_feat";
+} from "@/shared/_feat";
 import {useResetReviewLikesMutation} from "@/domains/movie-reviews/_feat/admin-actions/reset-review-likes";
 import {MovieReviewMutationConfig} from "@/domains/movie-reviews/_types";
 

@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {Link} from "react-router-dom";
-import {Card, CardContent} from "@/views/common/_comp/ui";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
 import {SlugString} from "@noovies-tickets/common";
 import {GenreName} from "@/domains/genres/_schema/fields/GenreNameSchema.ts";
 import {Plus} from "lucide-react";

@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {UserDetails} from "@/domains/users/_schema/user";
-import {EmptyArrayContainer, PageFlexWrapper, PageHeader, PaginationRangeButtons} from "@/views/common/_comp";
+import {EmptyArrayContainer, PageFlexWrapper, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {CustomerIndexCard} from "@/views/admin/customers/_comp/customer-index";
 import {CustomerIndexQueryOptionFormSection} from "@/views/admin/customers/_feat/query-option-forms";
 

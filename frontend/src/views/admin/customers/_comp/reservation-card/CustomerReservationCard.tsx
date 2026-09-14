@@ -3,8 +3,8 @@
  */
 
 import {AdminReservation} from "@/domains/reservations/_schema/model";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 import {ReactElement, useState} from "react";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image";
 import {ReservationStatusBadge} from "@/views/client/reservations/_comp/reservation-badges";

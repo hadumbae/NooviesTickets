@@ -5,7 +5,7 @@
 
 import {ReactElement} from "react";
 import {MovieReviewModerationAction} from "@noovies-tickets/common";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 
 type BarProps = {
     action: MovieReviewModerationAction;

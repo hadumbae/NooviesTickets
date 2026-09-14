@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {Avatar, AvatarFallback, AvatarImage} from "@/views/common/_comp/ui";
+import {Avatar, AvatarFallback, AvatarImage} from "@/views/shared/_comp/ui";
 import {URLString} from "@noovies-tickets/common";
-import {getInitials} from "@/common/_feat/formatters/getInitials.ts";
+import {getInitials} from "@/shared/_feat/formatters/getInitials.ts";
 
 /**
  * Props for the PersonProfileAvatar component.

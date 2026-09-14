@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
-import {Badge} from "@/views/common/_comp/ui";
+import {cn} from "@/shared/_feat";
+import {Badge} from "@/views/shared/_comp/ui";
 import {ReservationType} from "@noovies-tickets/common";
 import {ReservationTypeLabelMap} from "@/domains/reservations/_const/label-maps";
 

@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {AnyUnionValues} from "@/common/_types";
+import {AnyUnionValues} from "@/shared/_types";
 import {preprocessEmptyToUndefined, UserStatusSchema} from "@noovies-tickets/common";
 import {UserModerationLogFormSchema} from "@/domains/users/_feat/user-moderation-actions";
 import {

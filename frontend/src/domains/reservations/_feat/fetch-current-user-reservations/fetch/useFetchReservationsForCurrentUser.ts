@@ -3,13 +3,13 @@
  */
 
 import {PaginationOptions} from "@noovies-tickets/common";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {PopulatedReservation, PopulatedReservationSchema} from "@/domains/reservations/_schema";
-import {PaginatedItems} from "@/common/_types";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {PaginatedItems} from "@/shared/_types";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 import {getFetchUserReservations} from "@/domains/reservations/_feat/fetch-current-user-reservations/repository";
 import {

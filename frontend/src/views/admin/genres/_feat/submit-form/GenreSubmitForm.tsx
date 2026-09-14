@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for submitting genre data.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {GenreFormData, GenreFormSchema, GenreFormValues} from "@/domains/genres/_feat/submit-form/schema/GenreFormSchema.ts";
 import {useGenreDataSubmit} from "@/domains/genres/_feat/crud-hooks/mutate/useGenreDataSubmit.ts";

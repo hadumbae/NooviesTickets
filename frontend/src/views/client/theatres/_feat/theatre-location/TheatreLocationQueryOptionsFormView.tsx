@@ -10,13 +10,13 @@ import {
     renderFields,
     useAutoFormSubmit,
     useQueryOptionFormContext
-} from "@/common/_feat";
+} from "@/shared/_feat";
 import {TheatreLocationQueryOptionsFormValues} from "@/domains/theatres/_feat/handle-query-options/theatre-location/TheatreLocationQueryOptionsSchema.ts";
-import {HookFormInput} from "@/views/common/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
 import {useFormContext} from "react-hook-form";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
-import {HookFormSelect} from "@/views/common/_comp";
-import {ISO3166Alpha2ShortCountryOptions} from "@/common/_const";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {ISO3166Alpha2ShortCountryOptions} from "@/shared/_const";
 
 /** Renders input fields for configuring theatre location query options within a form context. */
 export function TheatreLocationQueryOptionsFormView(

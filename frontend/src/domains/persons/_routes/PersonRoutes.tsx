@@ -2,8 +2,8 @@
  * @fileoverview Route configuration for the administrative Persons domain.
  */
 
-import {ComponentErrorHandler} from "@/views/common/_feat/error/ComponentErrorHandler.tsx";
-import AdminLayout from "@/views/common/_layout/admin-layout/AdminLayout.tsx";
+import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
+import AdminLayout from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 
 /**
  * Admin "Persons" route definitions.

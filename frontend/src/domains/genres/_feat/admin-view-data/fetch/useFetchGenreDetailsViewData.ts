@@ -3,14 +3,14 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {PaginationOptions} from "@noovies-tickets/common";
 import {SlugString} from "@noovies-tickets/common";
 import {getFetchGenreDetails} from "@/domains/genres/_feat/admin-view-data/repository";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {GenreAdminViewDataQueryKeys} from "@/domains/genres/_feat/admin-view-data/fetch/GenreAdminViewDataQueryKeys.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {GenreDetailsViewData, GenreDetailsViewDataSchema} from "@/domains/genres/_feat/admin-view-data/schema";
 
 /** Parameters for the useFetchGenreDetailsViewData hook. */

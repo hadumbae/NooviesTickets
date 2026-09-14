@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {QueryOptionFormViewProps} from "@/common/_feat";
+import {QueryOptionFormViewProps} from "@/shared/_feat";
 import {
     TheatreIndexQueryOptionsFormValues
 } from "@/domains/theatres/_feat/handle-query-options/theatre-index/TheatreIndexQueryOptionsSchema.ts";
-import {QueryOptionFormLayout} from "@/views/common/_feat";
+import {QueryOptionFormLayout} from "@/views/shared/_feat";
 import {
     TheatreIndexQueryOptionsFormFilterFieldset
 } from "@/views/admin/theatres/_feat/submit-query-options/TheatreIndexQueryOptionsFormFilterFieldset.tsx";

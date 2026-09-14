@@ -1,9 +1,9 @@
 import {ReactElement, useState} from 'react';
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {ChevronDown, ChevronUp} from "lucide-react";
-import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/common/_comp/ui";
+import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/shared/_comp/ui";
 import {URLString} from "@noovies-tickets/common";
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 
 type TextblockProps = {
     url: URLString;

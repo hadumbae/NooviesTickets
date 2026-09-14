@@ -1,7 +1,7 @@
 /** @fileoverview Side-panel wrapper for the movie credit form, managing its visibility and lifecycle. */
 
 import {ReactElement, ReactNode} from "react";
-import {UIOpenStateProps} from "@/common/_types";
+import {UIOpenStateProps} from "@/shared/_types";
 import {MovieCreditFormView} from "@/views/admin/movie-credits/_feat/submit-form/views/MovieCreditFormView.tsx";
 import {
     ScrollArea,
@@ -11,11 +11,11 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 import {MovieCreditFormValues} from "@/domains/movie-credits/_feat/submit-data/schemas/MovieCreditFormSchema.ts";
 import {MovieCreditFormActions} from "@/views/admin/movie-credits/_feat/submit-form/views/MovieCreditFormActions.tsx";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
 
 /** Props for the MovieCreditFormPanel component, extending form and UI state definitions. */
 type FormPanelProps = UIOpenStateProps & FormViewProps<MovieCreditFormValues> & {

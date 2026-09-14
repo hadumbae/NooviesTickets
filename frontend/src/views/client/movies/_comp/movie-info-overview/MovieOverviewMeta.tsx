@@ -5,12 +5,12 @@
  */
 
 import {ReactElement} from "react";
-import {SeparatedLinks} from "@/views/common/_feat";
+import {SeparatedLinks} from "@/views/shared/_feat";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {generateGenreLinkConfigs} from "@/domains/genres/_feat/navigation/generateGenreLinkConfigs.ts";
-import {SROnly} from "@/views/common/_comp/screen-readers";
-import {LabelContent} from "@/views/common/_comp";
-import {ScrollArea, ScrollBar} from "@/views/common/_comp/ui";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
+import {LabelContent} from "@/views/shared/_comp";
+import {ScrollArea, ScrollBar} from "@/views/shared/_comp/ui";
 
 /** Props for the MovieOverviewMeta component. */
 type OverviewProps = {

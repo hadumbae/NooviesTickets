@@ -5,7 +5,7 @@
 import {useRef} from "react";
 import {isEqual} from "lodash";
 import {MovieCredit} from "@/domains/movie-credits/_schemas/model/MovieCreditSchema.ts";
-import {FormValuesConfig} from "@/common/_feat/submit-data";
+import {FormValuesConfig} from "@/shared/_feat/submit-data";
 import {MovieCreditFormValues} from "@/domains/movie-credits/_feat/submit-data/schemas/MovieCreditFormSchema.ts";
 
 /**

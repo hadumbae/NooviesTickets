@@ -4,8 +4,8 @@
 
 import {ReactElement} from "react";
 import {Captions, Clock, Headphones, Landmark, Presentation, Search, Ticket} from "lucide-react";
-import {cn} from "@/common/_feat";
-import {CollapsibleTextblock} from "@/views/common/_comp/text-display/text-blocks/CollapsibleTextblock.tsx";
+import {cn} from "@/shared/_feat";
+import {CollapsibleTextblock} from "@/views/shared/_comp/text-display/text-blocks/CollapsibleTextblock.tsx";
 import {
     buttonVariants,
     Dialog,
@@ -15,14 +15,14 @@ import {
     DialogTitle,
     DialogTrigger,
     Separator,
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 import {formatShowingDetails} from "@/domains/showings/_feat/formatters/formatShowingDetails.ts";
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {ShowingMovieSummary} from "@/views/admin/movies/_comp/showing-movie-summary";
 import {ShowingStateBadges} from "@/views/admin/showings/_comp/showing-state-badges";
 import {ShowingIndexListCard} from "@/views/admin/showings/_comp/index-card/ShowingIndexListCard.tsx";
-import {SROnly} from "@/views/common/_comp";
+import {SROnly} from "@/views/shared/_comp";
 import {Link} from "react-router-dom";
 
 /** Props for the ShowingIndexListDialog component. */

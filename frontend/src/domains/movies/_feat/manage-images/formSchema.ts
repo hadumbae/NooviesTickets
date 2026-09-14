@@ -3,8 +3,8 @@
  */
 
 import {z} from "zod";
-import {refineRequireImageFile} from "@/common/_feat/handle-image-upload";
-import {AnyValues} from "@/common/_types";
+import {refineRequireImageFile} from "@/shared/_feat/handle-image-upload";
+import {AnyValues} from "@/shared/_types";
 
 /** Schema for validating the uploaded movie poster file and ensuring it is not empty. */
 export const MovieImageFormSchema = z.object({

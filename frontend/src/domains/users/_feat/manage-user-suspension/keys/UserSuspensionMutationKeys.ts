@@ -2,7 +2,7 @@
  * @fileoverview Mutation query key constants for user suspension operations.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Query key configuration object for managing user account suspension and unsuspension mutations. */
 export const ManageUserSuspensionMutationKeys = buildQueryKey(

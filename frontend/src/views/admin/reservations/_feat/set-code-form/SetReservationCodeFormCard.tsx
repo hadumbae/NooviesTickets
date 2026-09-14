@@ -4,10 +4,10 @@
 
 import {ReactElement} from "react";
 import {useFormContext} from "react-hook-form";
-import {HookFormInput} from "@/views/common/_feat";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
-import {cn, useQueryOptionFormContext} from "@/common/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
+import {cn, useQueryOptionFormContext} from "@/shared/_feat";
 
 /** Props for the SetReservationCodeFormCard component. */
 type ViewProps = {

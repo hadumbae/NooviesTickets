@@ -1,5 +1,5 @@
 import { type RefinementCtx, z } from "zod";
-import {ImageTypeConstant} from "../../constants/ImageTypeConstant.js";
+import {AcceptedImageTypeConstant} from "@noovies-tickets/common";
 import isMulterFile from "./file-upload/isMulterFile.js";
 
 /**
@@ -30,7 +30,7 @@ type RefinementFileObject = {
  * The returned function will:
  * 1. Check that the `file` exists; if not, adds a required-field issue.
  * 2. Check that the `file` is a valid Multer file using `isMulterFile`; if not, adds an invalid-type issue.
- * 3. Check that the `file` mimetype is included in `ImageTypeConstant`; if not, adds an invalid-type issue.
+ * 3. Check that the `file` mimetype is included in `AcceptedImageTypeConstant`; if not, adds an invalid-type issue.
  *
  * @example
  * ```ts
@@ -61,7 +61,7 @@ export default function refineRequiredImageFile<TObject extends RefinementFileOb
             return z.NEVER;
         }
 
-        if (!ImageTypeConstant.includes((file as any).mimetype)) {
+        if (!AcceptedImageTypeConstant.includes((file as any).mimetype)) {
             ctx.addIssue({ code, path, fatal, message: "Invalid file type." });
             return z.NEVER;
         }

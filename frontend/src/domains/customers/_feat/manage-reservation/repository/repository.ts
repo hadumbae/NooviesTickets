@@ -2,9 +2,9 @@
  * @fileoverview Data retrieval functions for customer movie reservation view data.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts"
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts"
-import {buildURL} from "@/common/_feat/fetch-api";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts"
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts"
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {CustomerReservationViewData} from "@/domains/customers/_feat/manage-reservation/schema/viewDataSchema.ts"
 import {ManageCustomerReservationBaseURL} from "@/domains/customers/_feat/manage-reservation/repository/baseURL.ts";
 import {

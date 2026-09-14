@@ -2,11 +2,11 @@
  * @fileoverview API fetch function for retrieving composite theatre info and screen data for client views.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns";
 import {TheatreInfoViewData} from "@/domains/theatres/_feat/client-view-data/theatre-info/TheatreInfoViewDataSchema";
-import {buildURL} from "@/common/_feat/fetch-api/buildURL";
+import {buildURL} from "@/shared/_feat/fetch-api/buildURL";
 import {TheatreClientViewBaseURL} from "@/domains/theatres/_feat/client-view-data/repository/baseURL";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation";
 import {SlugString, DateOnlyString} from "@noovies-tickets/common";
 
 /** Parameters for fetching theatre information view data. */

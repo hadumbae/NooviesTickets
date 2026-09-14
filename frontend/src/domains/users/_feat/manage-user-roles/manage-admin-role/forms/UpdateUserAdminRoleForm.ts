@@ -2,7 +2,7 @@
  * @fileoverview Defines the form component and hook for updating user admin roles using form utilities.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {
     UpdateUserAdminRoleFormData,
     UpdateUserAdminRoleFormSchema,

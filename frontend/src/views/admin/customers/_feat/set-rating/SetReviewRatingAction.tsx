@@ -5,8 +5,8 @@
 import {ObjectIdString} from "@noovies-tickets/common";
 import {SetReviewRatingFormData} from "@/domains/movie-reviews/_feat/admin-actions/set-review-rating";
 import {ReactElement, useState} from "react";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
-import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
+import {MutationFormResetConfig, MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {MovieReview} from "@/domains/movie-reviews/_schema/model/MovieReviewSchema.ts";
 import {SetReviewRatingDialog} from "@/views/admin/customers/_feat/set-rating/SetReviewRatingDialog.tsx";
 import {SetReviewRatingForm} from "@/views/admin/customers/_feat/set-rating/SetReviewRatingForm.tsx";

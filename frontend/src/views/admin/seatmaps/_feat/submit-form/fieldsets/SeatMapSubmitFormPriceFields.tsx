@@ -3,13 +3,13 @@
  */
 
 import {useFormContext} from "react-hook-form";
-import {HookFormInput} from "@/views/common/_feat";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
-import {cn} from "@/common/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
+import {cn} from "@/shared/_feat";
 import {ReactElement} from "react";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {SeatMapFormValues} from "@/domains/seatmaps";
-import {PageSectionHeader} from "@/views/common/_comp/page";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
 
 /** Props for the SeatMapFormPriceFields component. */
 type ViewProps = FormFieldsetProps<SeatMapFormValues> & {

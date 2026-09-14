@@ -2,7 +2,7 @@
  * @fileoverview Disclosure context provider and hooks for managing movie banner deletion UI state.
  */
 
-import {createDisclosureContext} from "@/common/_feat";
+import {createDisclosureContext} from "@/shared/_feat";
 
 const {Provider, useDisclosureState, useDisclosureActions} = createDisclosureContext({
     stateName: "is-deleting-movie-banner-ui-state-context",

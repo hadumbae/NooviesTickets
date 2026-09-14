@@ -3,9 +3,9 @@
  */
 
 import {Check, Plus} from "lucide-react";
-import {cn} from "@/common/_feat";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
-import {Tooltip, TooltipContent, TooltipTrigger} from "@/views/common/_comp/ui/tooltip.tsx";
+import {cn} from "@/shared/_feat";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
+import {Tooltip, TooltipContent, TooltipTrigger} from "@/views/shared/_comp/ui/tooltip.tsx";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {ReactElement} from "react";
 

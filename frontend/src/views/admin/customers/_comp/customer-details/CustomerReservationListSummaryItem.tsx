@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {Reservation} from "@/domains/reservations/_schema/model/reservations/ReservationSchema.ts";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image/MoviePosterImage.tsx";
 import {ReservationStatusBadge} from "@/views/client/reservations/_comp/reservation-badges/ReservationStatusBadge.tsx";
 

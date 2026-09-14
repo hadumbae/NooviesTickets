@@ -3,8 +3,8 @@
  */
 
 import {RouteObject} from "react-router-dom";
-import {ComponentErrorHandler} from "@/views/common/_feat/error/ComponentErrorHandler.tsx";
-import AdminLayout from "@/views/common/_layout/admin-layout/AdminLayout.tsx";
+import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
+import AdminLayout from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 
 /** Route configuration for movie-related administrative pages. */
 export const AdminMovieRoutes: RouteObject[] = [

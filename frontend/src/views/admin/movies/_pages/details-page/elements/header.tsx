@@ -3,7 +3,7 @@
  */
 
 import {Ellipsis} from "lucide-react";
-import {HeaderSubtitle, HeaderTitle, IconButton, Image} from "@/views/common/_comp";
+import {HeaderSubtitle, HeaderTitle, IconButton, Image} from "@/views/shared/_comp";
 
 import {formatMovieData} from "@/domains/movies/_feat/formatters/formatMovieData.ts";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";

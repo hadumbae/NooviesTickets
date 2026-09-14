@@ -5,9 +5,9 @@
 import {ReactElement} from 'react';
 import {DateTime} from "luxon";
 import {Ellipsis} from "lucide-react";
-import {IconButton} from "@/views/common/_comp";
+import {IconButton} from "@/views/shared/_comp";
 import {SlugString} from "@noovies-tickets/common";
-import {HeaderDescription, HeaderTitle} from "@/views/common/_comp/page-headers";
+import {HeaderDescription, HeaderTitle} from "@/views/shared/_comp/page-headers";
 
 import {MovieTitle} from "@/domains/movies/_schema/fields/MovieTitleSchema.ts";
 import {ShowingDetailsPageBreadcrumbs} from "@/views/admin/showings/_pages/details-page/elements/breadcrumbs.tsx";

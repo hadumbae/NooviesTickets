@@ -2,11 +2,11 @@
  * @fileoverview Orchestrates route params and data fetching for movie showings.
  */
 
-import {getUserCountry, useFetchByIdentifierRouteParams} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
-import {PageLoader} from "@/views/common/_comp/page";
-import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {getUserCountry, useFetchByIdentifierRouteParams} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {PageLoader} from "@/views/shared/_comp/page";
+import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {MovieInfoShowingsPageContent} from "@/views/client/movies/_pages/movie-showings/content.tsx";
 import {
     MovieInfoShowingViewData,

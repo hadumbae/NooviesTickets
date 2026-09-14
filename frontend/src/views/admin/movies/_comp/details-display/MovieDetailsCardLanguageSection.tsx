@@ -4,10 +4,10 @@
 
 import {ReactElement} from "react";
 import {MovieDetails} from "@/domains/movies/_schema/movie";
-import {Separator} from "@/views/common/_comp/ui";
-import {BadgeLabelContent} from "@/views/common/_comp/badges/BadgeLabelContent.tsx";
+import {Separator} from "@/views/shared/_comp/ui";
+import {BadgeLabelContent} from "@/views/shared/_comp/badges/BadgeLabelContent.tsx";
 import {ISO6391LanguageCode} from "@noovies-tickets/common";
-import {ISO6391LanguageLabels} from "@/common/_const/languages/ISO6391LanguageLabels.ts";
+import {ISO6391LanguageLabels} from "@/shared/_const/languages/ISO6391LanguageLabels.ts";
 
 /** Props for the MovieDetailsCardLanguageSection component. */
 type SectionProps = {

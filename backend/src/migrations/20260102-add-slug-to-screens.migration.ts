@@ -7,7 +7,7 @@
 import 'dotenv/config';
 
 import mongoose from "mongoose";
-import {connect} from "@/shared/config/database.js";
+import {connect} from "@/config/database.js";
 import {ScreenModel} from "@/domains/screen/_models/screen";
 import {generateSlug} from "@noovies-tickets/common";
 

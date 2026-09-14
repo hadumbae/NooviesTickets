@@ -2,7 +2,7 @@
  * @fileoverview Utility functions and types for formatting person entity data for editing.
  */
 
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
 import {PersonFormData} from "@/domains/persons/_feat/submit-form/PersonFormSchema.ts";
 

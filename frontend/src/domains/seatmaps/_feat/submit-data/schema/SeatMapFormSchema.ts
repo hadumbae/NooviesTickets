@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {IDStringSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
 import {SeatMapStatusSchema} from "@noovies-tickets/common";
 

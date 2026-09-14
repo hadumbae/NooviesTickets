@@ -4,7 +4,7 @@
 
 import { z } from "zod";
 import {IDStringSchema, NonEmptyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
+import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
 import { SeatTypeSchema, SeatLayoutTypeSchema } from "@noovies-tickets/common";
 
 

@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from "react";
-import {cn, FormFieldsetProps} from "@/common/_feat";
+import {cn, FormFieldsetProps} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsFormValues
 } from "@/domains/roletypes/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
-import {HookFormInput} from "@/views/common/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
 import {useFormContext} from "react-hook-form";
 import {LabelledFormInput} from "@/views/admin/movies/_comp/form-display/LabelledFormInput.tsx";
-import {HookFormSelect} from "@/views/common/_comp";
+import {HookFormSelect} from "@/views/shared/_comp";
 import {RoleTypeDepartmentSelectOptions} from "@/domains/roletypes/_const/RoleTypeDepartmentSelectOptions.ts";
 
 /**

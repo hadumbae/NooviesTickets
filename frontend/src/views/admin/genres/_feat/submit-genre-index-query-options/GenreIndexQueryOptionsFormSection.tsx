@@ -1,4 +1,4 @@
-import {createQueryOptionFormSection} from "@/common/_feat";
+import {createQueryOptionFormSection} from "@/shared/_feat";
 import {
     useGenreIndexQueryOptionsContext
 } from "@/domains/genres/_feat/handle-query-options/genre-index/GenreIndexQueryOptionsContext.ts";

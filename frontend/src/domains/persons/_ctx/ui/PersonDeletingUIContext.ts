@@ -2,7 +2,7 @@
  * @fileoverview React context provider and hooks for managing person deleting UI disclosure state.
  */
 
-import {createDisclosureContext} from "@/common/_feat";
+import {createDisclosureContext} from "@/shared/_feat";
 
 const {Provider, useDisclosureState, useDisclosureActions} = createDisclosureContext({
     stateName: "person-deleting-ui-state-context",

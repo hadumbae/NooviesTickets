@@ -3,10 +3,10 @@
  */
 
 import {ReactElement, ReactNode, useId} from "react";
-import {Form} from "@/views/common/_comp/ui/form.tsx";
+import {Form} from "@/views/shared/_comp/ui/form.tsx";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {MutationFormResetConfig, MutationResponseConfig} from "@/common/_feat/submit-data";
-import {BaseFormContextProvider} from "@/common/_feat/generic-form-context";
+import {MutationFormResetConfig, MutationResponseConfig} from "@/shared/_feat/submit-data";
+import {BaseFormContextProvider} from "@/shared/_feat/generic-form-context";
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {
     GenreImageUploadFormData,
@@ -14,7 +14,7 @@ import {
     useGenreImageUploadForm,
     useUploadGenreImage
 } from "@/domains/genres/_feat/manage-image";
-import {handleFormSubmitError, handleMutationCallback} from "@/common/_feat";
+import {handleFormSubmitError, handleMutationCallback} from "@/shared/_feat";
 import {DefaultValues} from "react-hook-form";
 
 /** Props for the GenreImageUploadForm component. */

@@ -2,16 +2,16 @@
  * @fileoverview Main content layout for the user's personal reservations list.
  */
 
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {PaginationRangeButtons} from "@/views/common/_comp";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {PaginationRangeButtons} from "@/views/shared/_comp";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {PopulatedReservation} from "@/domains/reservations/_schema";
 import {MyReservationCompactCard} from "@/views/client/reservations/_comp";
 import {ReactElement} from "react";
-import {PageHeader} from "@/views/common/_comp";
+import {PageHeader} from "@/views/shared/_comp";
 import {MyProfileNavigation, MyProfileNavigationDropdown} from "@/views/client/users/_comp/my-profile-nav";
-import {Separator} from "@/views/common/_comp/ui";
-import {useIsMobile} from "@/common/_feat/handle-ui/useIsMobile.tsx";
+import {Separator} from "@/views/shared/_comp/ui";
+import {useIsMobile} from "@/shared/_feat/handle-ui/useIsMobile.tsx";
 import {
     MyReservationsQueryOptionForm,
     MyReservationsQueryOptionFormCollapsible,

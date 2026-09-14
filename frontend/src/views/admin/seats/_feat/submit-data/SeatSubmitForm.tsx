@@ -2,7 +2,7 @@
  * @fileoverview Defines the form component and hook for submitting seat data.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {Seat, SeatDetails, SeatFormData, SeatFormSchema, SeatFormValues, useSeatSubmitMutation} from "@/domains/seats";
 
 const {SubmitForm, useSubmitForm} = createForm<

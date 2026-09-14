@@ -5,10 +5,10 @@
 import {MutationKey, useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {Movie, MovieSchema} from "@/domains/movies/_schema/movie";
-import {validateData} from "@/common/_feat/validate-data/validateData";
+import {validateData} from "@/shared/_feat/validate-data/validateData";
 import {MovieCRUDQueryKeys} from "@/domains/movies/_feat/crud-hooks";
 import {DeleteMovieImageRouteConfig} from "@/domains/movies/_feat/manage-images/remove-image/repository";
-import {FetchRequestReturns} from "@/common/_types";
+import {FetchRequestReturns} from "@/shared/_types";
 
 type FactoryConfig = {
     key: MutationKey;

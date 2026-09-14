@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from 'react';
-import {PageLoader} from "@/views/common/_comp/page";
-import {useFetchByIdentifierRouteParams} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
+import {PageLoader} from "@/views/shared/_comp/page";
+import {useFetchByIdentifierRouteParams} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {
     QueryErrorBoundary
-} from "@/views/common/_feat/error-boundary/query-error-fallback/boundary/QueryErrorBoundary.tsx";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {useParsedPaginationValue} from "@/common/_feat/fetch-pagination-search-params";
+} from "@/views/shared/_feat/error-boundary/query-error-fallback/boundary/QueryErrorBoundary.tsx";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {useParsedPaginationValue} from "@/shared/_feat/fetch-pagination-search-params";
 
 import {TheatreDetailsPageContent} from "@/views/admin/theatres/_pages/theatre-details-page/content.tsx";
 import {TheatreDetailsUIContextProvider} from "@/domains/theatres/_ctx/theatre-details-ui";

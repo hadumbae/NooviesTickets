@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for managing movie index query options.
  */
 
-import {createQueryOptionForm} from "@/common/_feat";
+import {createQueryOptionForm} from "@/shared/_feat";
 import {MovieIndexQueryOptionsSchema} from "@/domains/movies/_feat/handle-query-options/movie-index/MovieIndexQueryOptionsSchema.ts";
 
 const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({

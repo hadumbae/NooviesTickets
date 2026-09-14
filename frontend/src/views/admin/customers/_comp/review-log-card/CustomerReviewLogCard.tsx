@@ -4,8 +4,8 @@
 
 import {ReactElement} from "react";
 import {MovieReviewModerationLog} from "@/domains/movie-reviews/_feat/moderation/schema";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 import {MovieReviewModerationActionBadge, MovieReviewModerationLogAccentBar} from "@/views/admin/movie-reviews/_comp";
 
 /** Props for the CustomerReviewLogCard component. */

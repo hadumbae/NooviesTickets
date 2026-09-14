@@ -3,15 +3,15 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat/handle-ui/cn.ts";
-import {Card, CardContent, Separator} from "@/views/common/_comp/ui";
+import {cn} from "@/shared/_feat/handle-ui/cn.ts";
+import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
 import {MovieReviewDetails} from "@/domains/movie-reviews/_schema/model/MovieReviewDetailsSchema.ts";
 import {DeleteMovieReviewButton} from "@/views/client/movie-reviews/_feat/delete-button";
 import {IsRecommendedBadge} from "@/views/client/movie-reviews/_comp/badges/IsRecommendedBadge.tsx";
 import {MovieReviewHelpfulButton} from "@/views/client/movie-reviews/_comp/buttons/MovieReviewHelpfulButton.tsx";
 import {MovieReviewRatingStars} from "@/views/client/movie-reviews/_comp/display/MovieReviewRatingStars.tsx";
 import {MovieReviewText} from "@/views/client/movie-reviews/_comp/display/MovieReviewText.tsx";
-import {SubsectionTitle} from "@/views/common/_comp/headers/SubsectionTitle.tsx";
+import {SubsectionTitle} from "@/views/shared/_comp/headers/SubsectionTitle.tsx";
 
 /** Props for the MovieReviewDetailsCard component. */
 type CardProps = {

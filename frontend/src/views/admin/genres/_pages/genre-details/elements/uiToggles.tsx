@@ -3,8 +3,8 @@
  */
 
 import {Dispatch, ReactElement, ReactNode, SetStateAction, useState} from "react";
-import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/views/common/_comp/ui";
-import {useIsDeletingUIContextActions, useIsEditingUIContextActions} from "@/common/_ctx/ui";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/views/shared/_comp/ui";
+import {useIsDeletingUIContextActions, useIsEditingUIContextActions} from "@/shared/_ctx/ui";
 
 /** Props for the {@link GenreDetailsUIToggles} component. */
 type ToggleProps = {

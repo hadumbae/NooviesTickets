@@ -5,8 +5,8 @@
 import {ReactElement} from "react";
 import {SlugString} from "@noovies-tickets/common";
 import {ShowingDetails} from "@/domains/showings/_schema/showing";
-import {cn} from "@/common/_feat";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {cn} from "@/shared/_feat";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {ShowingSummaryCard} from "@/views/admin/showings/_comp/showing-summary-card";
 import {
     TheatreDetailsPageShowingsSectionHeader

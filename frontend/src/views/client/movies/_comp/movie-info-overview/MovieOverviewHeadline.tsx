@@ -3,7 +3,7 @@
  */
 
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
-import {buildString} from "@/common/_feat/formatters/buildString.ts"
+import {buildString} from "@/shared/_feat/formatters/buildString.ts"
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {ReactElement} from "react";
 

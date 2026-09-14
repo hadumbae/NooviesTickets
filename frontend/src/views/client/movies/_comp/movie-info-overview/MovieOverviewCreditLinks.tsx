@@ -4,10 +4,10 @@
  */
 
 import {ReactElement, useMemo} from "react";
-import {cn} from "@/common/_feat";
-import {Separator} from "@/views/common/_comp/ui";
-import {LabelContent} from "@/views/common/_comp";
-import {SeparatedLinks} from "@/views/common/_feat";
+import {cn} from "@/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui";
+import {LabelContent} from "@/views/shared/_comp";
+import {SeparatedLinks} from "@/views/shared/_feat";
 import {generateMovieCreditLinkConfigs, MovieCreditDetails} from "@/domains/movie-credits";
 
 /** Props for the MovieOverviewCreditLinks component. */

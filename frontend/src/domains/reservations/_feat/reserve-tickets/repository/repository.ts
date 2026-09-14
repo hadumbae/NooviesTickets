@@ -2,10 +2,10 @@
  * @fileoverview Repository for handling ticket reservation API requests.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
 import {ReserveTicketFormData} from "@/domains/reservations/_feat/reserve-tickets/schema/ReserveTicketFormSchema.ts";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
-import {buildURL} from "@/common/_feat/fetch-api";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {ReserveTicketBaseURL} from "@/domains/reservations/_feat/reserve-tickets/repository/baseURL.ts";
 
 /** Submits a ticket reservation request to the backend service. */

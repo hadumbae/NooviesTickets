@@ -2,16 +2,16 @@
  * @fileoverview Fieldset for managing showing start and end dates and times.
  */
 
-import {HookFormInput} from "@/views/common/_feat";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
+import {HookFormInput} from "@/views/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 import {ShowingFormValues} from "@/domains/showings/_schema/form";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {ReactElement} from "react";
 import {useFormContext} from "react-hook-form";
-import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/common/_feat";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
-import {HookFormSelect} from "@/views/common/_comp";
-import {IANATimezoneOptions} from "@/common/_const";
+import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/shared/_feat";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {IANATimezoneOptions} from "@/shared/_const";
 
 /**
  * Form section for showing schedule inputs.

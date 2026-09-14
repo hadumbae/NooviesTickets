@@ -3,8 +3,8 @@
  */
 
 import {ReactElement, ReactNode} from 'react';
-import {UIOpenStateProps} from "@/common/_types";
-import {cn, useBaseFormContext, useLockForFormUI} from "@/common/_feat";
+import {UIOpenStateProps} from "@/shared/_types";
+import {cn, useBaseFormContext, useLockForFormUI} from "@/shared/_feat";
 import {
     MovieImageSubmitFormView
 } from "@/views/admin/movies/_feat/submit-movie-image/MovieImageSubmitFormView.tsx";
@@ -19,7 +19,7 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 /** Props for the MoviePosterImageSubmitFormPanel component. */
 type FormPanelProps = UIOpenStateProps & {

@@ -12,11 +12,11 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger
-} from "@/views/common/_comp/ui";
-import {UIOpenStateProps} from "@/common/_types";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
-import {useLockForFormUI} from "@/common/_feat/handle-form/useLockForFormUI.ts";
+} from "@/views/shared/_comp/ui";
+import {UIOpenStateProps} from "@/shared/_types";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
+import {useLockForFormUI} from "@/shared/_feat/handle-form/useLockForFormUI.ts";
 import {GenreImageUploadFormView} from "@/views/admin/genres/_feat/image-upload-form/GenreImageUploadFormView.tsx";
 
 /** Props for the GenreImageUploadPanel component. */

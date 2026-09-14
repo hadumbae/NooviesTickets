@@ -1,7 +1,7 @@
 import {ReactElement} from "react";
 import {Plus} from "lucide-react";
-import {HeaderDescription, HeaderTitle} from "@/views/common/_comp/page-headers";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+import {HeaderDescription, HeaderTitle} from "@/views/shared/_comp/page-headers";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 
 /**
  * @fileoverview Header section for the Showings index page.

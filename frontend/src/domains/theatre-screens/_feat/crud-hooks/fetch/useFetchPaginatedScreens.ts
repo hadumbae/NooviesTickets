@@ -3,10 +3,10 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {PaginatedQueryConfig} from "@/common/_types";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
+import {PaginatedQueryConfig} from "@/shared/_types";
 
 import {paginated} from "@/domains/theatre-screens/_feat/crud";
 import {TheatreScreenQueryOptions} from "@/domains/theatre-screens/_schema";

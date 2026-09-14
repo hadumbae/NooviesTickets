@@ -4,7 +4,7 @@
 
 import {MovieQueryOptionSchema} from "@/domains/movies/_schema/queries/MovieQueryOptionSchema.ts";
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 
 /** Zod schema for filtering and sorting movie index queries. */
 export const MovieIndexQueryOptionsSchema = MovieQueryOptionSchema.pick({

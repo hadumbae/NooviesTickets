@@ -5,12 +5,12 @@
 import {ReactElement, ReactNode} from 'react';
 import {
     EntityDeleteWarningDialog
-} from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
-import {buildString, MutationResponseConfig} from "@/common/_feat";
+} from "@/views/shared/_feat/dialog/EntityDeleteWarningDialog.tsx";
+import {buildString, MutationResponseConfig} from "@/shared/_feat";
 import {SeatLayoutTypeLabelMap} from "@/domains/seats";
 import {Seat, SeatDetails} from "@/domains/seats";
 import {useDeleteSeatSubmitHandler} from "@/domains/seats";
-import {UIOpenStateProps} from "@/common/_types";
+import {UIOpenStateProps} from "@/shared/_types";
 import {ObjectIdString} from "@noovies-tickets/common";
 
 /** Props for the SeatDeleteWarningDialog component. */

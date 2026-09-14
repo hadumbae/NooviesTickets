@@ -2,8 +2,8 @@
  * @fileoverview Utility for normalizing and formatting theatre showing data for UI presentation.
  */
 
-import {ISO6391LanguageLabels as ISO6391LanguageConstant} from "@/common/_const/languages/ISO6391LanguageLabels.ts";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
+import {ISO6391LanguageLabels as ISO6391LanguageConstant} from "@/shared/_const/languages/ISO6391LanguageLabels.ts";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
 import {CloudinaryImage} from "@noovies-tickets/common";
 import {PopulatedShowing, ShowingDetails} from "@/domains/showings/_schema";

@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {IANATimezone} from "@noovies-tickets/common";
 import {ShowingDetails, ShowingWithMovie} from "@/domains/showings/_schema/showing";
 import {ShowingInfoLanguages, ShowingInfoMovieMeta} from "@/views/client/showings/_comp/showing-info-details";
-import {buttonVariants} from "@/views/common/_comp/ui";
+import {buttonVariants} from "@/views/shared/_comp/ui";
 import {Link} from "react-router-dom";
 
 /** Props for the TheatreShowingSelectSummary component. */

@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {useTitle} from "@/common/_feat";
-import {QueryDataLoader} from "@/views/common/_feat";
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
-import {PaginatedItems} from "@/common/_types";
+import {useTitle} from "@/shared/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+import {PaginatedItems} from "@/shared/_types";
 
 import {TheatreWithRecentShowings} from "@/domains/theatres/_schema/theatre/TheatreWithRecentShowingsSchema.ts";
 import {useFetchTheatresByLocation} from "@/domains/theatres/_feat/search-theatres/fetch/useFetchTheatresByLocation.ts";

@@ -2,7 +2,7 @@
  * @fileoverview Context provider and hooks for managing disclosure state during genre image update operations.
  */
 
-import {createDisclosureContext} from "@/common/_feat";
+import {createDisclosureContext} from "@/shared/_feat";
 
 const {Provider, useDisclosureState, useDisclosureActions} = createDisclosureContext({
     stateName: "updating-genre-image-ui-state-context",

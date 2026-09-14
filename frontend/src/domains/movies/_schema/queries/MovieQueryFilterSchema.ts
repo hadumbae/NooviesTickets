@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {IDStringSchema, DateOnlyStringSchema, preprocessOptionalField, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
+import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
 
 /** Zod schema defining available filter parameters for querying movie documents. */
 export const MovieQueryFilterSchema = z.object({

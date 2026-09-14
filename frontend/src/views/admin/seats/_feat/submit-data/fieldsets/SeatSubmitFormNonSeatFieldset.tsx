@@ -4,10 +4,10 @@
 
 import {ReactElement} from 'react';
 import {useFormContext} from "react-hook-form";
-import {cn} from "@/common/_feat";
-import {Separator} from "@/views/common/_comp/ui";
-import {HookFormInput} from "@/views/common/_feat";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {cn} from "@/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui";
+import {HookFormInput} from "@/views/shared/_feat";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {SeatFormValues} from "@/domains/seats";
 
 type ViewProps = FormFieldsetProps<SeatFormValues> & {

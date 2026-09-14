@@ -2,7 +2,7 @@
  * @fileoverview Options for the reservation status filter radio group.
  */
 
-import {HookRadioOption} from "@/common/_types/input/HookRadioOption.ts";
+import {HookRadioOption} from "@/shared/_types/input/HookRadioOption.ts";
 
 /** Radio group options for filtering reservations by their status. */
 export const ReservationStatusFilterRadioGroupOptions: HookRadioOption[] = [

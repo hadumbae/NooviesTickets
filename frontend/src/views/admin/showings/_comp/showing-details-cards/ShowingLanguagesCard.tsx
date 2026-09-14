@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
 import {Showing, ShowingDetails} from "@/domains/showings/_schema/showing";
-import {LabelContent} from "@/views/common/_comp/label-content/LabelContent.tsx";
-import {cn} from "@/common/_feat";
-import {CardClassNames} from "@/common/_types/card";
-import {ISO6391LanguageLabels} from "@/common/_const";
+import {LabelContent} from "@/views/shared/_comp/label-content/LabelContent.tsx";
+import {cn} from "@/shared/_feat";
+import {CardClassNames} from "@/shared/_types/card";
+import {ISO6391LanguageLabels} from "@/shared/_const";
 import {ISO6391LanguageCode} from "@noovies-tickets/common";
-import {BadgeEntry, BadgeList} from "@/views/common/_comp/badges";
+import {BadgeEntry, BadgeList} from "@/views/shared/_comp/badges";
 
 /** Props for the ShowingLanguagesCard component. */
 type CardProps = {

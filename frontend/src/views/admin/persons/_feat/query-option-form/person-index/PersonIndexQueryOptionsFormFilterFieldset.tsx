@@ -3,13 +3,13 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {LabelledFormInput} from "@/views/admin/movies/_comp/form-display/LabelledFormInput.tsx";
-import {HookFormInput} from "@/views/common/_feat";
-import {DisableFields, HideFields} from "@/common/_types";
+import {HookFormInput} from "@/views/shared/_feat";
+import {DisableFields, HideFields} from "@/shared/_types";
 import {useFormContext} from "react-hook-form";
-import {HookFormSelect} from "@/views/common/_comp";
-import {ISO3166Alpha2ShortCountryOptions} from "@/common/_const";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {ISO3166Alpha2ShortCountryOptions} from "@/shared/_const";
 import {
     PersonIndexQueryOptionsFormValues
 } from "@/domains/persons/_feat/validate-query-options/person-index/PersonIndexQueryOptionSchema.ts";

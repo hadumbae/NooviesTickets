@@ -2,9 +2,9 @@
  * @fileoverview Repository for fetching paginated movie reservations authored by a specific customer.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts"
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts"
-import {buildURL} from "@/common/_feat/fetch-api";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts"
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts"
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {CustomerReservationsViewData} from "@/domains/customers/_feat/manage-reservations/schema"
 import {
     ManageCustomerReservationsBaseURL

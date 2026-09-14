@@ -11,13 +11,13 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from "@/views/common/_comp/ui/dialog.tsx";
+} from "@/views/shared/_comp/ui/dialog.tsx";
 import {ReactElement, ReactNode} from "react";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
-import {useLockForFormUI} from "@/common/_feat/handle-form/useLockForFormUI.ts";
-import {UIOpenStateProps} from "@/common/_types";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
+import {useLockForFormUI} from "@/shared/_feat/handle-form/useLockForFormUI.ts";
+import {UIOpenStateProps} from "@/shared/_types";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
 import {MovieReviewSubmitFormView} from "@/views/client/movie-reviews/_feat/submit-form/MovieReviewSubmitFormView.tsx";
 
 /** Props for the SubmitMovieReviewPopup component. */

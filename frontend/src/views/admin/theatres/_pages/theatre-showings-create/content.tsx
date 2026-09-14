@@ -2,9 +2,9 @@
  * @fileoverview Main content component for the theatre showing creation administrative page.
  */
 
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
 import {
     ShowingSubmitForm,
     ShowingSubmitStorageKey
@@ -13,7 +13,7 @@ import {ReactElement} from "react";
 
 import {Theatre} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
 import {ShowingSubmitFormView} from "@/views/admin/showings/_feat/submit-form";
-import {PageHeader} from "@/views/common/_comp";
+import {PageHeader} from "@/views/shared/_comp";
 import {
     TheatreShowingCreateBreadcrumbs
 } from "@/views/admin/theatres/_pages/theatre-showings-create/elements/breadcrumbs.tsx";

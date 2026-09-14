@@ -4,8 +4,8 @@
 
 import {ReactElement} from "react";
 import {UserUniqueCode} from "@/domains/users/_schema/fields/UserUniqueCodeSchema.ts";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
-import {Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator} from "@/views/common/_comp/ui";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
+import {Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator} from "@/views/shared/_comp/ui";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {ReservationUniqueCode} from "@/domains/reservations/_schema/model/fields/ReservationUniqueCodeSchema.ts";
 

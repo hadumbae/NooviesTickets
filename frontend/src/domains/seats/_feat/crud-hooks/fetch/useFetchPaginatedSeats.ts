@@ -3,11 +3,11 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {SeatQueryOptions} from "@/domains/seats/_feat/handle-query-options/SeatQueryOptions.ts";
-import {PaginatedQueryConfig} from "@/common/_types";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {PaginatedQueryConfig} from "@/shared/_types";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 
 import {paginated} from "@/domains/seats/_feat/crud";
 import {SeatCRUDQueryKeys} from "@/domains/seats/_feat/crud-hooks/keys";

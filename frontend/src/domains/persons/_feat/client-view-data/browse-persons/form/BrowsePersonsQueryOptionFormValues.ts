@@ -2,7 +2,7 @@
  * @fileoverview Defines the form value types for the person browsing query options.
  */
 
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {
     BrowsePersonsQueryOptions
 } from "@/domains/persons/_feat/validate-query-options/person-browse/BrowsePersonsQueryOptionsSchema.ts";

@@ -4,13 +4,13 @@ import {ReactElement, ReactNode} from 'react';
 import {ObjectIdString} from "@noovies-tickets/common";
 import {
     EntityDeleteWarningDialog
-} from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
-import {UIOpenStateProps} from "@/common/_types";
+} from "@/views/shared/_feat/dialog/EntityDeleteWarningDialog.tsx";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
+import {UIOpenStateProps} from "@/shared/_types";
 import {
     handleSubmitResponseError
-} from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
-import {handleMutationCallback} from "@/common/_feat/handle-mutation-callback";
+} from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
+import {handleMutationCallback} from "@/shared/_feat/handle-mutation-callback";
 import {useMovieCreditDeleteMutation} from "@/domains/movie-credits";
 
 /** Props for the MovieCreditDeleteWarningDialog component. */

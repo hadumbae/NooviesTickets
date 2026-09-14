@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent, Separator} from "@/views/common/_comp/ui";
+import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
 import {Building} from "lucide-react";
 

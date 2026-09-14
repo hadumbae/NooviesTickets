@@ -1,0 +1,1 @@
+export * from "@/shared/_const/images/AcceptedImageTypeConstant.ts";

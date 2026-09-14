@@ -4,11 +4,11 @@
 
 import {ReactElement} from "react";
 import {FieldValues} from "react-hook-form";
-import {HookRadioOption} from "@/common/_types/input/HookRadioOption.ts";
-import {HookFormRadioGroup} from "@/views/common/_feat";
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
+import {HookRadioOption} from "@/shared/_types/input/HookRadioOption.ts";
+import {HookFormRadioGroup} from "@/views/shared/_feat";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
 import {RoleTypeDepartmentConstant} from "@noovies-tickets/common";
-import {HookFormInputProps} from "@/common/_types/input/HookFormInputProps.ts";
+import {HookFormInputProps} from "@/shared/_types/input/HookFormInputProps.ts";
 
 /** Radio group populated with department options from RoleTypeDepartmentConstant. */
 export function RoleTypeDepartmentRadioGroup<TValues extends FieldValues>(

@@ -3,16 +3,16 @@
  */
 
 import {ReactElement} from "react";
-import {PageLoader} from "@/views/common/_comp/page";
+import {PageLoader} from "@/views/shared/_comp/page";
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
+} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {
     QueryErrorBoundary
-} from "@/views/common/_feat/error-boundary/query-error-fallback/boundary/QueryErrorBoundary.tsx";
+} from "@/views/shared/_feat/error-boundary/query-error-fallback/boundary/QueryErrorBoundary.tsx";
 import {useFetchTheatreBySlug} from "@/domains/theatres/_feat/crud-hooks";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 
 import {Theatre, TheatreSchema} from "@/domains/theatres/_schema/theatre";
 import {TheatreHttpStatusOverrideText} from "@/domains/theatres/_const/TheatreHttpStatusOverrideText.ts";

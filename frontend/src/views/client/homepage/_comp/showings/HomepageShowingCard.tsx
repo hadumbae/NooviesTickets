@@ -4,11 +4,11 @@
 
 import {ReactElement} from "react";
 import {ShowingSummary} from "@/domains/showings/_schema/showing/ShowingSummarySchema.ts";
-import {Card, CardContent, CardHeader} from "@/views/common/_comp/ui";
+import {Card, CardContent, CardHeader} from "@/views/shared/_comp/ui";
 import {Clock, MapPin} from "lucide-react";
 import {ShowingSpecialEventBadge} from "@/views/admin/showings/_comp/badges/ShowingSpecialEventBadge.tsx";
 import {ShowingStatusBadge} from "@/views/admin/showings/_comp/badges/ShowingStatusBadge.tsx";
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 
 /** Props for the HomepageShowingCard component. */
 type CardProps = {

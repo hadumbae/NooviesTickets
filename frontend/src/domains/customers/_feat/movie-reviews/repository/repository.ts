@@ -2,10 +2,10 @@
  * @fileoverview Repository for fetching paginated movie reviews authored by a specific customer.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts"
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts"
 import {CustomerReviewsViewData} from "@/domains/customers/_feat/movie-reviews/schema/viewDataSchema.ts"
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts"
-import {buildURL} from "@/common/_feat/fetch-api";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts"
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {ManageCustomerMovieReviewsBaseURL} from "@/domains/customers/_feat/movie-reviews/repository/baseURL.ts";
 import {
     GetFetchCustomerReviewsViewDataConfig

@@ -4,8 +4,8 @@
 
 import {ReactElement} from "react";
 import {MovieDetails} from "@/domains/movies/_schema/movie";
-import {Separator} from "@/views/common/_comp/ui/separator.tsx";
-import {CollapsibleTextblock} from "@/views/common/_comp/text-display/text-blocks/CollapsibleTextblock.tsx";
+import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
+import {CollapsibleTextblock} from "@/views/shared/_comp/text-display/text-blocks/CollapsibleTextblock.tsx";
 
 /** Props for the MovieDetailsCardSynopsisSection component. */
 type SectionProps = {

@@ -2,7 +2,7 @@
  * @fileoverview Utility function and types for transforming showing entities into form edit data.
  */
 
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {ShowingFormData} from "@/domains/showings/_schema/form";
 import {PopulatedShowing, Showing, ShowingConfig, ShowingDetails} from "@/domains/showings/_schema/showing";
 import {getLocalShowingSchedule,} from "@/domains/showings/_feat/submit-data/getLocalShowingSchedule.ts";

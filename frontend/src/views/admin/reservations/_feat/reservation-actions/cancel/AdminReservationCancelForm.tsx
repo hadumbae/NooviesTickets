@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for canceling an admin reservation.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations";
 import {
     UpdateReservationNotesFormData,

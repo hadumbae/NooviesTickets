@@ -4,7 +4,7 @@
  */
 
 import "dotenv/config";
-import {connect} from "@/shared/config/database.js";
+import {connect} from "@/config/database.js";
 import mongoose from "mongoose";
 import {UserModel} from "@/domains/users/model/user/User.model";
 import {generateUserUniqueCode} from "@/domains/users/_feat/manage-user-unique-code/generators";

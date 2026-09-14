@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {Button, ButtonProps} from "@/views/common/_comp/ui";
-import {cn} from "@/common/_feat";
+import {Button, ButtonProps} from "@/views/shared/_comp/ui";
+import {cn} from "@/shared/_feat";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {Trash} from "lucide-react";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
 import {useDeleteCurrentUserMovieReviewMutation} from "@/domains/movie-reviews";
 
 /** Props for the DeleteMovieReviewButton component. */

@@ -1,7 +1,7 @@
 import {ObjectIdString} from "@noovies-tickets/common";
 import {MovieReviewAdminActionsBaseURL} from "@/domains/movie-reviews/_feat/admin-actions/baseURL";
-import {FetchRequestReturns} from "@/common/_types";
-import {buildURL, handleFetchOperation} from "@/common/_feat";
+import {FetchRequestReturns} from "@/shared/_types";
+import {buildURL, handleFetchOperation} from "@/shared/_feat";
 import {
     SetReviewRatingFormData
 } from "@/domains/movie-reviews/_feat/admin-actions/set-review-rating/SetReviewRatingFormSchema.ts";

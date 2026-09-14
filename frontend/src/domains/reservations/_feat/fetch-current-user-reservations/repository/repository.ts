@@ -2,11 +2,11 @@
  * @fileoverview Repository for retrieving paginated reservation history for the current client.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
-import {PaginatedItems} from "@/common/_types";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
+import {PaginatedItems} from "@/shared/_types";
 import {PopulatedReservation} from "@/domains/reservations/_schema";
-import {buildURL} from "@/common/_feat/fetch-api";
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {
     FetchClientReservationsBaseURL
 } from "@/domains/reservations/_feat//fetch-current-user-reservations/repository/baseURL";

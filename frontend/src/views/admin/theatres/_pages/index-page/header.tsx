@@ -4,12 +4,12 @@
 
 import {ReactElement, useState} from 'react';
 import {Plus} from "lucide-react";
-import {HeaderDescription, HeaderTitle} from "@/views/common/_comp/page-headers";
+import {HeaderDescription, HeaderTitle} from "@/views/shared/_comp/page-headers";
 
 import {Theatre} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
 import {useNavigateToTheatre} from "@/domains/theatres/_feat/navigation/useNavigateToTheatre.ts";
 import {TheatreSubmitForm, TheatreSubmitFormPanel} from "@/views/admin/theatres/_feat";
-import {Button} from "@/views/common/_comp/ui";
+import {Button} from "@/views/shared/_comp/ui";
 
 /**
  * Header component for the Theatre index view.

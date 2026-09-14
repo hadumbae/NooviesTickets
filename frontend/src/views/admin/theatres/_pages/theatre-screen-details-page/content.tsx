@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {
     TheatreScreenDetailsBreadcrumbs,
     TheatreScreenDetailsPageScreenActions,
@@ -13,8 +13,8 @@ import {
 import {TheatreScreenWithVirtuals} from "@/domains/theatre-screens/_schema/model";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
 import {SeatDetails} from "@/domains/seats/_schema/model";
-import {useSetAdminPageTitle} from "@/common/_feat/handle-pages";
-import {PageHeader} from "@/views/common/_comp";
+import {useSetAdminPageTitle} from "@/shared/_feat/handle-pages";
+import {PageHeader} from "@/views/shared/_comp";
 import {
     TheatreScreenDetailsFormSection,
     TheatreScreenDetailsLayoutSection

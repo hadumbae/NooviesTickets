@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent, Separator} from "@/views/common/_comp/ui";
-import {LabelContent, SubsectionTitle} from "@/views/common/_comp";
-import {ISO3166Alpha2CountryConstant} from "@/common/_const";
+import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
+import {LabelContent, SubsectionTitle} from "@/views/shared/_comp";
+import {ISO3166Alpha2CountryConstant} from "@/shared/_const";
 import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationSchema.ts";
 
 /** Props for the CustomerReservationTheatreSummaryCard component. */

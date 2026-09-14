@@ -2,7 +2,7 @@
  * @fileoverview Custom React Query hook for fetching and validating admin dashboard view metrics.
  */
 
-import {buildQueryFn, useQueryOptionDefaults} from "@/common/_feat";
+import {buildQueryFn, useQueryOptionDefaults} from "@/shared/_feat";
 import {
     getFetchAdminDashboardViewData
 } from "@/domains/pages/_feat/admin-view-data/admin-dashboard-data/getFetchAdminDashboardViewData.ts";
@@ -11,9 +11,9 @@ import {
     AdminDashboardViewDataSchema
 } from "@/domains/pages/_feat/admin-view-data/admin-dashboard-data/AdminDashboardViewDataSchema.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {FetchQueryOptions} from "@/common/_types";
+import {FetchQueryOptions} from "@/shared/_types";
 import {AdminPagesQueryKeys} from "@/domains/pages/_feat/admin-view-data/queryKeys.ts";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 
 /** Options for configuring the administrative dashboard query hook. */
 type FetchConfig = {

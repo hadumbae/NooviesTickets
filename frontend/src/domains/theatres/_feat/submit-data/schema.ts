@@ -2,9 +2,9 @@
 
 
 import {z} from "zod";
-import {LocationFormSchema} from "@/common/_models/location-form/LocationFormSchema.ts";
+import {LocationFormSchema} from "@/shared/_models/location-form/LocationFormSchema.ts";
 import {IDStringSchema} from "@noovies-tickets/common";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {TheatreNameSchema, TheatreSeatCapacitySchema} from "@/domains/theatres/_schema/fields";
 
 /** Schema for validating and cleaning theatre form submissions. */

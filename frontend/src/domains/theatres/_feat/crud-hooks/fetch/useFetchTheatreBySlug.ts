@@ -3,10 +3,10 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {SlugQueryConfig} from "@/common/_types";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
+import {SlugQueryConfig} from "@/shared/_types";
 
 import {findBySlug} from "@/domains/theatres/_feat/crud";
 import {TheatreCRUDQueryKeys} from "@/domains/theatres/_feat/crud-hooks/keys";

@@ -4,11 +4,11 @@
 
 import {ReactElement, useEffect, useRef} from "react";
 import {RoleTypeDepartmentRadioGroup, RoleTypeFormSelect} from "@/views/admin/role-types";
-import {HookFormInput} from "@/views/common/_feat";
+import {HookFormInput} from "@/views/shared/_feat";
 import {useFormContext} from "react-hook-form";
-import {cn, createFormFieldConfig, FormViewProps, useBaseFormContext} from "@/common/_feat";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
-import {renderFields} from "@/common/_feat/submit-data";
+import {cn, createFormFieldConfig, FormViewProps, useBaseFormContext} from "@/shared/_feat";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
+import {renderFields} from "@/shared/_feat/submit-data";
 import {MovieCreditFormValues} from "@/domains/movie-credits";
 import {PersonFormSelect} from "@/views/admin/persons/_feat/form-inputs/PersonFormSelect.tsx";
 

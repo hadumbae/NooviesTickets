@@ -6,10 +6,10 @@ import {ReactElement} from "react";
 import {ScreenTypeHookFormSelect} from "@/views/admin/theatre-screens/_feat/form-inputs";
 import {useFormContext} from "react-hook-form";
 import {TheatreHookFormSelect} from "@/views/admin/theatres/_feat/form-input/selects/TheatreHookFormSelect.tsx";
-import {useBaseFormContext} from "@/common/_feat/generic-form-context";
-import {HookFormInput} from "@/views/common/_feat";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {HookFormInput} from "@/views/shared/_feat";
 import {TheatreScreenFormValues} from "@/domains/theatre-screens";
-import {cn, FormViewProps} from "@/common/_feat";
+import {cn, FormViewProps} from "@/shared/_feat";
 
 /**
  * Form view component for rendering the input fields of the theatre screen form.

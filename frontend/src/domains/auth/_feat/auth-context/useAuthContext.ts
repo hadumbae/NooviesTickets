@@ -3,7 +3,7 @@
  */
 
 import {useContext} from "react";
-import {InvalidContextError} from "@/common/_err/invalid-context";
+import {InvalidContextError} from "@/shared/_err/invalid-context";
 import {AuthContext, AuthUserContextValue} from "@/domains/auth/_feat/auth-context/AuthContext.ts";
 
 /**

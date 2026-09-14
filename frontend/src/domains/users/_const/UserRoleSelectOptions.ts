@@ -2,7 +2,7 @@
  * @fileoverview Provides configuration options for user role selection components.
  */
 
-import {ReactSelectOption} from "@/common/_types";
+import {ReactSelectOption} from "@/shared/_types";
 import {UserRoleLabels} from "@/domains/users/_const/UserRoleLabels.ts";
 
 /** Array of select options mapped from user role labels. */

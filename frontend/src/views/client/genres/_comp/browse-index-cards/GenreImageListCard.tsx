@@ -2,7 +2,7 @@
  * @fileoverview Clickable genre card that navigates to the genre browse page.
  */
 
-import {Card, CardContent, CardHeader} from "@/views/common/_comp/ui/card.tsx";
+import {Card, CardContent, CardHeader} from "@/views/shared/_comp/ui/card.tsx";
 import {Genre} from "@/domains/genres/_schema";
 import {GenreImageBanner} from "@/views/admin/genres/_comp";
 import {ReactElement} from "react";

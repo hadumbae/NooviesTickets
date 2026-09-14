@@ -6,7 +6,7 @@ import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-qu
 import {
     patchSetReviewRating
 } from "@/domains/movie-reviews/_feat/admin-actions/set-review-rating/patchSetReviewRating.ts";
-import {validateData} from "@/common/_feat/validate-data/validateData.ts";
+import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {CustomerReviewActionMutationKeys} from "@/domains/movie-reviews/_feat/admin-actions/mutationKeys.ts";
 import {
     SetReviewRatingFormData

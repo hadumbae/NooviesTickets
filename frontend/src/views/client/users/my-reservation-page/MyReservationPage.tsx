@@ -4,14 +4,14 @@
 
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
+} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {Loader} from "lucide-react";
 import {
     MyReservationPageContent
 } from "@/views/client/users/my-reservation-page/MyReservationPageContent.tsx";
 import {useFetchReservationBySlug} from "@/domains/reservations/_feat/crud-hooks";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {PopulatedReservation, PopulatedReservationSchema} from "@/domains/reservations/_schema/model";
 import {ReactElement} from "react";
 

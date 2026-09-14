@@ -3,7 +3,7 @@
  */
 
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Mutation keys for submitting movie poster images. */
 export const ManageMovieImageMutationKeys = buildQueryKey(

@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent, Separator} from "@/views/common/_comp/ui";
-import {LabelContent, SubsectionSubtitle, SubsectionTitle} from "@/views/common/_comp";
+import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
+import {LabelContent, SubsectionSubtitle, SubsectionTitle} from "@/views/shared/_comp";
 import {LeanUserWithEmail} from "@/domains/users/_schema/user/LeanUserWithEmailSchema.ts";
 
 /** Props for the CustomerReservationUserSummaryCard component. */

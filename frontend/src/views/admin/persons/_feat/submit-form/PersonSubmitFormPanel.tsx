@@ -4,15 +4,15 @@
 
 import {ReactElement, ReactNode} from 'react';
 import {useFormContext} from "react-hook-form";
-import {cn} from "@/common/_feat";
-import {HookFormInput, HookFormTextArea} from "@/views/common/_feat";
-import {useRequiredContext} from "@/common/_feat/use-context/useRequiredContext.ts";
-import {BaseFormContext} from "@/common/_feat/generic-form-context";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
-import {UIOpenStateProps} from "@/common/_types";
+import {cn} from "@/shared/_feat";
+import {HookFormInput, HookFormTextArea} from "@/views/shared/_feat";
+import {useRequiredContext} from "@/shared/_feat/use-context/useRequiredContext.ts";
+import {BaseFormContext} from "@/shared/_feat/generic-form-context";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
+import {UIOpenStateProps} from "@/shared/_types";
 import {PersonFormValues} from "@/domains/persons/_feat/submit-form/PersonFormSchema.ts";
-import {HookFormSelect} from "@/views/common/_comp";
-import {ISO3166Alpha2CountryOptions} from "@/common/_const";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {ISO3166Alpha2CountryOptions} from "@/shared/_const";
 import {
     Button,
     ScrollArea,
@@ -22,7 +22,7 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger
-} from "@/views/common/_comp/ui";
+} from "@/views/shared/_comp/ui";
 
 /**
  * Props for the PersonSubmitFormPanel component.

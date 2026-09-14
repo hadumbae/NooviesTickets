@@ -2,13 +2,13 @@
  * @fileoverview Hook for managing the My Profile page state and URL parameters.
  */
 
-import {useParsedSearchParams} from "@/common/_feat/fetch-search-params";
+import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
 import {
     MyProfilePageSearchParams,
     MyProfilePageSearchParamsSchema
 } from "@/domains/users/_feat/my-profile-page/schema/MyProfilePageSearchParamsSchema.ts";
 import {MyProfilePageActiveTab} from "@/domains/users/_feat/my-profile-page/schema/MyProfilePageActiveTabSchema.ts";
-import {useIsMobile} from "@/common/_feat/handle-ui/useIsMobile.tsx";
+import {useIsMobile} from "@/shared/_feat/handle-ui/useIsMobile.tsx";
 
 /** State and control handlers for the My Profile page. */
 type ReturnType = {

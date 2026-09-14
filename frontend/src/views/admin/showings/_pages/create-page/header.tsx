@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {HeaderDescription, HeaderTitle} from "@/views/common/_comp";
+import {HeaderDescription, HeaderTitle} from "@/views/shared/_comp";
 
 /** Header for the Create Showings page that displays the title and submission instructions. */
 export function ShowingCreateHeader(): ReactElement {

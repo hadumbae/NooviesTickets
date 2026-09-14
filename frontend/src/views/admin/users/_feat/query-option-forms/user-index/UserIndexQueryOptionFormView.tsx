@@ -10,8 +10,8 @@ import {
 import {
     UserIndexQueryOptionFormSortFieldset
 } from "@/views/admin/users/_feat/query-option-forms/user-index/UserIndexQueryOptionFormSortFieldset.tsx";
-import {Button, Separator} from "@/views/common/_comp/ui";
-import {cn, QueryOptionFormViewProps, useAutoFormSubmit, useQueryOptionFormContext} from "@/common/_feat";
+import {Button, Separator} from "@/views/shared/_comp/ui";
+import {cn, QueryOptionFormViewProps, useAutoFormSubmit, useQueryOptionFormContext} from "@/shared/_feat";
 import {X} from "lucide-react";
 
 /** Form view for configuring filtering and sorting options for the user index. */

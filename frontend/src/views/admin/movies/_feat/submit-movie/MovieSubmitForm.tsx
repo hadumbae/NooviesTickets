@@ -2,7 +2,7 @@
  * @fileoverview Defines the form component and hook for submitting movie data.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 import {
     MovieEditData,

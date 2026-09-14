@@ -13,9 +13,9 @@ import {
     handleFindByID,
     handleFindBySlug,
     handleUpdate
-} from "@/common/_feat/crud-handlers";
-import {handlePaginated} from "@/common/_feat/crud-handlers/handlers/handlePaginated.ts";
-import {handleQuery} from "@/common/_feat/crud-handlers/handlers/handleQuery.ts";
+} from "@/shared/_feat/crud-handlers";
+import {handlePaginated} from "@/shared/_feat/crud-handlers/handlers/handlePaginated.ts";
+import {handleQuery} from "@/shared/_feat/crud-handlers/handlers/handleQuery.ts";
 import {TheatreCRUDBaseURL} from "@/domains/theatres/_feat/crud/baseURL.ts";
 
 /**

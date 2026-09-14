@@ -1,6 +1,6 @@
 import {ObjectIdString} from "@noovies-tickets/common";
-import {FetchRequestReturns} from "@/common/_types";
-import {buildURL, handleFetchOperation} from "@/common/_feat";
+import {FetchRequestReturns} from "@/shared/_types";
+import {buildURL, handleFetchOperation} from "@/shared/_feat";
 import {MovieReviewAdminActionsBaseURL} from "@/domains/movie-reviews/_feat/admin-actions/baseURL.ts";
 import {
     ResetReviewDisplayNameFormData

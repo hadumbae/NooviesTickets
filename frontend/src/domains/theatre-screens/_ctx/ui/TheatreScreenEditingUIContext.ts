@@ -2,7 +2,7 @@
  * @fileoverview Defines disclosure context provider and hooks for managing theatre screen editing UI visibility state.
  */
 
-import {createDisclosureContext} from "@/common/_feat";
+import {createDisclosureContext} from "@/shared/_feat";
 
 const {Provider, useDisclosureState, useDisclosureActions} = createDisclosureContext({
     stateName: "theatre-screen-editing-ui-state-context",

@@ -3,10 +3,10 @@
  */
 
 import {Dispatch, ReactElement, SetStateAction, useState} from "react";
-import {IconButton} from "@/views/common/_comp";
+import {IconButton} from "@/views/shared/_comp";
 import {Ellipsis} from "lucide-react";
-import {useIsDeletingUIContextActions, useIsEditingUIContextActions} from "@/common/_ctx/ui";
-import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/views/common/_comp/ui";
+import {useIsDeletingUIContextActions, useIsEditingUIContextActions} from "@/shared/_ctx/ui";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/views/shared/_comp/ui";
 
 /**
  * Renders an action menu for screen management that updates UI state via ScreenDetailsUIContext.

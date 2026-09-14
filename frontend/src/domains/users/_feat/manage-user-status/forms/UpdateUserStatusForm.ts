@@ -2,7 +2,7 @@
  * @fileoverview Defines the form component and hook for updating user status using form utilities.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {useUpdateUserStatus, UseUpdateUserStatusConfig} from "@/domains/users/_feat/manage-user-status/mutations";
 import {
     UpdateUserStatusFormData,

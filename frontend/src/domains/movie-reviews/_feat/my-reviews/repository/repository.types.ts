@@ -3,7 +3,7 @@
  */
 
 import {PaginationOptions} from "@noovies-tickets/common";
-import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
+import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {MovieReviewForm} from "@/domains/movie-reviews/_feat/submit-form/schema/MovieReviewFormSchema.ts";
 

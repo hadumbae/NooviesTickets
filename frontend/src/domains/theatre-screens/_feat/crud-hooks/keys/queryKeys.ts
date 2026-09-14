@@ -3,7 +3,7 @@
  * Provides a consistent naming convention for React Query caching.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /**
  * Unique query keys for Theatre Screen data fetching.

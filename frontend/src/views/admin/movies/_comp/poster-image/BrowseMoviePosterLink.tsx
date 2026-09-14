@@ -2,7 +2,7 @@
  * @fileoverview Clickable movie poster component that handles logged navigation and image fallbacks.
  */
 
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {ReactElement} from "react";
 import {SlugString, URLString} from "@noovies-tickets/common";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image/MoviePosterImage.tsx";

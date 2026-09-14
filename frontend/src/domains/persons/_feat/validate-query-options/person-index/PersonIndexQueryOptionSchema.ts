@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {PersonQueryOptionsSchema} from "@/domains/persons/_schema/query-options";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 
 /** Zod schema validating query parameters for filtering and sorting persons in an index list. */
 export const PersonIndexQueryOptionSchema = PersonQueryOptionsSchema.pick({

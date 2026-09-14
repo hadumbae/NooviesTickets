@@ -4,10 +4,10 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {SlugString} from "@noovies-tickets/common";
-import {FetchQueryOptions} from "@/common/_types/fetch-queries/FetchQueryOptions.ts";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {PersonAdminViewQueryKeys} from "@/domains/persons/_feat/admin-view-data/fetch/querykeys.ts";
 import {getFetchPersonDetailsViewData} from "@/domains/persons/_feat/admin-view-data/repository";
 import {PersonDetailsViewData, PersonDetailsViewSchema} from "@/domains/persons/_feat/admin-view-data/schema";

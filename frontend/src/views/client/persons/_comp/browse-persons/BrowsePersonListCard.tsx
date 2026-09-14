@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent, CardHeader} from "@/views/common/_comp/ui";
+import {Card, CardContent, CardHeader} from "@/views/shared/_comp/ui";
 import {PersonSummaryInfo} from "@/domains/persons/_feat/client-view-data";
-import {Image} from "@/views/common/_comp";
-import {cn} from "@/common/_feat";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {Image} from "@/views/shared/_comp";
+import {cn} from "@/shared/_feat";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 
 /** Props for the BrowsePersonListCard component. */
 type CardProps = {

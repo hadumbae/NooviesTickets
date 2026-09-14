@@ -3,13 +3,13 @@
  */
 
 import {ReactElement, useState} from 'react';
-import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/common/_comp/ui/collapsible.tsx";
+import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/shared/_comp/ui/collapsible.tsx";
 import {ChevronDown, ChevronRight, TriangleAlert} from "lucide-react";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {useRoleTypeDeleteMutation} from "@/domains/roletypes/_feat/crud-hooks/submit/useRoleTypeDeleteMutation.ts";
-import {handleMutateAsync} from "@/common/_feat";
+import {handleMutateAsync} from "@/shared/_feat";
 
 type DeleteByID = {
     _id: ObjectIdString

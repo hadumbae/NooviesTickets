@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/common/_schemas/boolean";
+import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
 import {MovieCreditFormBaseSchema} from "@/domains/movie-credits/_feat/submit-data/schemas/MovieCreditFormBaseSchema.ts";
 import {PositiveNumberSchema} from "@noovies-tickets/common";
 

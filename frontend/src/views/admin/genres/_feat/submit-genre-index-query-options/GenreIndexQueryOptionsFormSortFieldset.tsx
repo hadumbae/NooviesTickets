@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {createFormFieldConfig, FormViewProps, renderFields} from "@/common/_feat";
+import {createFormFieldConfig, FormViewProps, renderFields} from "@/shared/_feat";
 import {
     GenreIndexQueryOptionsFormValues
 } from "@/domains/genres/_feat/handle-query-options/genre-index/GenreIndexQueryOptionsSchema.ts";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
-import {HookFormSortToggle} from "@/views/common/_feat";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
+import {HookFormSortToggle} from "@/views/shared/_feat";
 
 /** Renders form fields for sorting genre query results. Requires wrapping in a React Hook Form context. */
 export function GenreIndexQueryOptionsFormSortFieldset(

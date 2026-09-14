@@ -4,12 +4,12 @@
 
 import {ReactElement} from 'react';
 import {Clapperboard, Sofa, TvMinimal} from "lucide-react";
-import {Card, CardContent} from "@/views/common/_comp/ui";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
 import {
     generateLocationAddressString
-} from "@/common/_feat/formatters/generateLocationAddressString.ts";
-import {TooltipStatItem} from "@/views/common/_comp/text-display/TooltipStatItem.tsx";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+} from "@/shared/_feat/formatters/generateLocationAddressString.ts";
+import {TooltipStatItem} from "@/views/shared/_comp/text-display/TooltipStatItem.tsx";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
 

@@ -2,7 +2,7 @@
  * @fileoverview Defines filtered select dropdown options for active and inactive user statuses.
  */
 
-import {ReactSelectOption} from "@/common/_types";
+import {ReactSelectOption} from "@/shared/_types";
 import {UserStatusConstant} from "@noovies-tickets/common";
 
 /** Select options for active user statuses formatted for React Select components. */

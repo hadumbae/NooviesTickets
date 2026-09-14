@@ -2,9 +2,9 @@
  * @fileoverview Utility function for revoking user sessions via the logout API endpoint.
  */
 
-import {buildURL} from "@/common/_feat/fetch-api/buildURL";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation";
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns";
+import {buildURL} from "@/shared/_feat/fetch-api/buildURL";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns";
 import {AuthBaseURL} from "@/domains/auth/_feat/common/baseURL.ts";
 
 /** Sends a request to log out the current user and invalidate their session. */

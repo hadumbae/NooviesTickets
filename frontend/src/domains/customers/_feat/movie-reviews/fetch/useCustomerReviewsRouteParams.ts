@@ -3,7 +3,7 @@
  */
 
 import {useParams} from "react-router-dom";
-import {RouteError} from "@/common/_err/RouteError.ts";
+import {RouteError} from "@/shared/_err/RouteError.ts";
 import {CustomerReviewsRouteParams, CustomerReviewsRouteParamsSchema} from "@/domains/customers/_feat/movie-reviews/schema/routeParamsSchema.ts";
 
 /**

@@ -2,10 +2,10 @@
  * @fileoverview Repository for fetching paginated moderation logs for a specific customer review.
  */
 
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts"
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts"
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts"
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts"
 import {CustomerReviewLogsViewData} from "@/domains/customers/_feat/movie-review-logs/schema/viewDataSchema.ts";
-import {buildURL} from "@/common/_feat/fetch-api";
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {
     GetFetchCustomerReviewLogsViewDataConfig
 } from "@/domains/customers/_feat/movie-review-logs/repository/repository.types";

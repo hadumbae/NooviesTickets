@@ -4,10 +4,10 @@
 
 import {ObjectIdString} from "@noovies-tickets/common";
 import {Ellipsis} from "lucide-react";
-import {IconButton} from "@/views/common/_comp";
+import {IconButton} from "@/views/shared/_comp";
 import {ReactElement, useState} from "react";
 import {toast} from "react-toastify";
-import {Button, Popover, PopoverContent, PopoverTrigger} from "@/views/common/_comp/ui";
+import {Button, Popover, PopoverContent, PopoverTrigger} from "@/views/shared/_comp/ui";
 import {useDeleteCurrentUserMovieReviewMutation} from "@/domains/movie-reviews";
 
 /** Props for the MovieReviewIndexCardActions component. */

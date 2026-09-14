@@ -5,8 +5,8 @@
 import {z} from "zod";
 import {preprocessOptionalField} from "@noovies-tickets/common";
 import {ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {LocationTargetSchema} from "@/common/_schemas";
-import {AnyValues} from "@/common/_types";
+import {LocationTargetSchema} from "@/shared/_schemas";
+import {AnyValues} from "@/shared/_types";
 
 /** Schema for validating theatre location query options. */
 export const TheatreLocationQueryOptionsSchema = z.object({

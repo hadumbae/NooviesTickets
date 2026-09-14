@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {AnimatedLoader} from "@/views/common/_comp/loaders/AnimatedLoader.tsx";
-import {Card, CardContent} from "@/views/common/_comp/ui";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {AnimatedLoader} from "@/views/shared/_comp/loaders/AnimatedLoader.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {FavouriteMovieHeartButton} from "@/views/client/movies/_comp";
 
 import {ObjectIdString} from "@noovies-tickets/common";
@@ -14,7 +14,7 @@ import {
     useCheckIsFavouriteMovie,
     useToggleUserFavouriteMovie
 } from "@/domains/users/_feat/manage-user-favourites";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 
 /** Props for the MovieOverviewFavouriteToggle component. */
 type SelectorProps = {

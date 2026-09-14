@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {UserRoleSchema} from "@noovies-tickets/common";
 import {UserRoleUpdateActionSchema} from "@/domains/users/_feat/manage-user-roles/schema";
 import {

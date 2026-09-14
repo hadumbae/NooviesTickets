@@ -1,7 +1,7 @@
 // 20260331-add-isPaid-to-reservations.migration.ts
 
 import "dotenv/config";
-import {connect} from "@/shared/config/database.js";
+import {connect} from "@/config/database.js";
 import mongoose from "mongoose";
 import {ReservationModel} from "@/domains/reservations/_model/reservation";
 

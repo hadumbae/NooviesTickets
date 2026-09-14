@@ -2,11 +2,11 @@
  * @fileoverview Data fetching utility for retrieving administrative dashboard view metrics.
  */
 
-import {FetchRequestReturns} from "@/common/_types";
+import {FetchRequestReturns} from "@/shared/_types";
 import {
     AdminDashboardViewData
 } from "@/domains/pages/_feat/admin-view-data/admin-dashboard-data/AdminDashboardViewDataSchema.ts";
-import {buildURL, handleFetchOperation} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/shared/_feat";
 import {AdminPageViewDataBaseURL} from "@/domains/pages/_feat/admin-view-data/baseURL.ts";
 
 /** Fetches aggregated analytics view data for the admin dashboard. */

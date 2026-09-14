@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper, PageSectionHeader} from "@/views/common/_comp/page";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
+import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {ReservationType} from "@noovies-tickets/common";

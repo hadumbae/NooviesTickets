@@ -6,8 +6,8 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {QueryClientProvider} from "@tanstack/react-query";
 import {AuthProvider} from "@/domains/auth/_feat";
 import {queryClient as ReactQueryClient} from "@/_config";
-import {RegisterRoutes} from "@/common/_routes";
-import {IPGeolocationContextProvider, ThemeProvider} from "@/common/_feat";
+import {RegisterRoutes} from "@/shared/_routes";
+import {IPGeolocationContextProvider, ThemeProvider} from "@/shared/_feat";
 
 const router = createBrowserRouter(RegisterRoutes);
 

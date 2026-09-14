@@ -4,9 +4,9 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
-import {PaginationRangeButtons} from "@/views/common/_comp";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
+import {PaginationRangeButtons} from "@/views/shared/_comp";
 
 import {ShowingIndexListDialog} from "@/views/admin/showings/_comp";
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";

@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from 'react';
-import {PageLoader} from "@/views/common/_comp/page";
-import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {PageLoader} from "@/views/shared/_comp/page";
+import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {PersonDetailsPageContent} from "@/views/admin/persons/_pages/details-page/content.tsx";
 import {PersonDetailsViewData, useFetchPersonDetailsViewData} from "@/domains/persons/_feat/admin-view-data";
 

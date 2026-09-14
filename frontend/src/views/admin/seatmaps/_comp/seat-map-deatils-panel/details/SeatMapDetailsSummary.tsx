@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {DetailsCardSpan} from "@/views/common/_comp/text-display/spans/DetailsCardSpan.tsx";
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
+import {DetailsCardSpan} from "@/views/shared/_comp/text-display/spans/DetailsCardSpan.tsx";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
 import {SeatMapDetails} from "@/domains/seatmaps";
-import {SectionTitle} from "@/views/common/_comp";
+import {SectionTitle} from "@/views/shared/_comp";
 
 /** Props for the SeatMapDetailsSummary component. */
 type SectionProps = {

@@ -3,15 +3,15 @@
  */
 
 import {ReactElement} from "react";
-import {PageLoader} from "@/views/common/_comp/page";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
+import {PageLoader} from "@/views/shared/_comp/page";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+} from "@/shared/_feat";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 
 import {MovieInfoReviewsPageContent} from "@/views/client/movies/_pages/movie-reviews/content.tsx";
-import {QueryDataLoader} from "@/views/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
 import {useFetchMovieInfoReviewsData} from "@/domains/movies/_feat/client-view-data/hooks/useFetchMovieInfoReviewsData.ts";
 
 /** Number of reviews displayed per page */

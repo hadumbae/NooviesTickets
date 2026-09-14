@@ -3,11 +3,11 @@
  */
 
 import {ReactElement, useState} from "react";
-import {Card, CardContent, Separator} from "@/views/common/_comp/ui";
+import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
 import {simplifyMovieReview} from "@/domains/movie-reviews/_feat/formatters";
 import {type MyMovieReview} from "@/domains/movie-reviews/_schema";
 import {MovieReviewFormPopup} from "@/views/client/movie-reviews/_feat";
-import {SubsectionTitle} from "@/views/common/_comp";
+import {SubsectionTitle} from "@/views/shared/_comp";
 import {IsRecommendedBadge} from "@/views/client/movie-reviews/_comp/badges";
 import {MovieReviewRatingStars, MovieReviewText} from "@/views/client/movie-reviews/_comp/display";
 import {

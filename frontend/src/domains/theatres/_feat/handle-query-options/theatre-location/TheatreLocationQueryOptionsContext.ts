@@ -2,7 +2,7 @@
  * @fileoverview Context provider and hook for managing theatre location query options state.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {
     TheatreLocationQueryOptionsSchema
 } from "@/domains/theatres/_feat/handle-query-options/theatre-location/TheatreLocationQueryOptionsSchema.ts";

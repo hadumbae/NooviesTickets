@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for setting a reservation code query option.
  */
 
-import {createQueryOptionForm} from "@/common/_feat";
+import {createQueryOptionForm} from "@/shared/_feat";
 import {FetchByCodeSearchParamsSchema} from "@/domains/reservations/_feat/fetch-reservation-by-code/reservation-query-options-form";
 
 const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({

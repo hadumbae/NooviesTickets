@@ -3,16 +3,16 @@
  */
 
 import {ReactElement, useState} from "react";
-import {PageSectionHeader} from "@/views/common/_comp/page";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
 import {TheatreScreenForm, TheatreScreenFormPanel} from "@/views/admin/theatre-screens/_feat/submit-data";
 import {ObjectIdString, SlugString} from "@noovies-tickets/common";
 import {TheatreScreenWithVirtuals} from "@/domains/theatre-screens/_schema/model";
 import {TheatreDetailsScreenListCard} from "@/views/admin/theatre-screens/_comp/theatre-details";
-import {SROnly} from "@/views/common/_comp/screen-readers";
-import {Button} from "@/views/common/_comp/ui/button.tsx";
+import {SROnly} from "@/views/shared/_comp/screen-readers";
+import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {Plus} from "lucide-react";
-import {PaginationRangeButtons} from "@/views/common/_comp";
-import {EmptyArrayContainer} from "@/views/common/_comp/text-display/EmptyArrayContainer.tsx";
+import {PaginationRangeButtons} from "@/views/shared/_comp";
+import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 
 const panelInfo = {
     title: "Add Screen",

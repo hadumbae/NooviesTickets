@@ -3,9 +3,9 @@
  */
 
 import {ReactElement, ReactNode} from "react";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
-import {cn} from "@/common/_feat";
-import {buttonVariants} from "@/views/common/_comp/ui";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
+import {cn} from "@/shared/_feat";
+import {buttonVariants} from "@/views/shared/_comp/ui";
 import {useLocation} from "react-router-dom";
 
 /** Props for the MyProfileNavigationButton component. */

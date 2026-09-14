@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {UserPasswordSchema} from "@/domains/users/_schema/fields";
 
 /** Zod schema for validating password update and confirmation fields. */

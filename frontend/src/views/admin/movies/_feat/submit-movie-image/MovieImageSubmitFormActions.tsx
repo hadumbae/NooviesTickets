@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {ImageUp} from "lucide-react";
-import {FormPendingSubmitButton} from "@/views/common/_feat";
+import {FormPendingSubmitButton} from "@/views/shared/_feat";
 
 /** Props for the MovieImageSubmitFormActions component. */
 type ActionProps = {

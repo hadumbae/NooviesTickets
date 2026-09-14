@@ -2,7 +2,7 @@
  * @fileoverview Query key factory for administrative Genre view-specific data.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Standardized query keys for the Genre administration module. */
 export const GenreAdminViewDataQueryKeys = buildQueryKey(

@@ -3,13 +3,13 @@
  */
 
 import {ReactElement} from "react";
-import {PageLoader} from "@/views/common/_comp/page";
+import {PageLoader} from "@/views/shared/_comp/page";
 import {
     useFetchByIdentifierRouteParams
-} from "@/common/_feat";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+} from "@/shared/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 
 import {
     TheatreShowingListViewData,

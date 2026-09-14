@@ -4,7 +4,7 @@
 
 import {GenreQueryOptionSchema} from "@/domains/genres/_schema/filters/GenreQueryOptionsSchema.ts";
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 
 /** Schema for validating genre index query search options. */
 export const GenreIndexQueryOptionsSchema = GenreQueryOptionSchema.pick({

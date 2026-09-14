@@ -6,14 +6,14 @@ import {ReactElement, ReactNode} from 'react';
 import {ObjectIdString} from "@noovies-tickets/common";
 import {
     EntityDeleteWarningDialog
-} from "@/views/common/_feat/dialog/EntityDeleteWarningDialog.tsx";
-import {MutationResponseConfig} from "@/common/_feat/submit-data";
+} from "@/views/shared/_feat/dialog/EntityDeleteWarningDialog.tsx";
+import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {useScreenDeleteMutation} from "@/domains/theatre-screens/_feat/crud-hooks";
-import {UIOpenStateProps} from "@/common/_types";
-import {handleMutationCallback} from "@/common/_feat/handle-mutation-callback";
+import {UIOpenStateProps} from "@/shared/_types";
+import {handleMutationCallback} from "@/shared/_feat/handle-mutation-callback";
 import {
     handleSubmitResponseError
-} from "@/common/_feat/error-handling/handleSubmitResponseError.ts";
+} from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
 
 /** Props for the ScreenDeleteWarningDialog component. */
 type DialogProps = MutationResponseConfig<void, { _id: ObjectIdString }> & UIOpenStateProps & {

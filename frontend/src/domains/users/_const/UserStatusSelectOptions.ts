@@ -2,7 +2,7 @@
  * @fileoverview Defines select dropdown options for user statuses.
  */
 
-import {ReactSelectOption} from "@/common/_types";
+import {ReactSelectOption} from "@/shared/_types";
 import {UserStatusConstant} from "@noovies-tickets/common";
 
 /** Select options for user statuses formatted for React Select components. */

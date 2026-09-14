@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {PageSectionHeader} from "@/views/common/_comp/page";
-import {TextCollapsible} from "@/views/common/_comp/text-display/text-blocks/TextCollapsible.tsx";
-import {Card, CardContent} from "@/views/common/_comp/ui";
-import {useIsMobile} from "@/common/_feat/handle-ui/useIsMobile.tsx";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
+import {TextCollapsible} from "@/views/shared/_comp/text-display/text-blocks/TextCollapsible.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
+import {useIsMobile} from "@/shared/_feat/handle-ui/useIsMobile.tsx";
 import {ObjectIdString, RoleTypeDepartment} from "@noovies-tickets/common";
 import {MovieCreditForm, MovieCreditFormActions, MovieCreditFormView} from "@/views/admin/movie-credits";
 

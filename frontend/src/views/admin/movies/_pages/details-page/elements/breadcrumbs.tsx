@@ -10,8 +10,8 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-} from "@/views/common/_comp/ui";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
+} from "@/views/shared/_comp/ui";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 
 /**
  * Renders the breadcrumb trail for navigating back to the movie management index.

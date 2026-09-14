@@ -5,9 +5,9 @@
 import {
     ClientHomepageViewRouteConfig
 } from "@/domains/pages/_feat/client-view-data/client-homepage-data/ClientHomepageViewRouteConfigSchema.ts";
-import {buildURL, handleFetchOperation} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/shared/_feat";
 import {ClientHomepageBaseURL} from "@/domains/pages/_feat/client-view-data/baseURL.ts";
-import {FetchRequestReturns} from "@/common/_types";
+import {FetchRequestReturns} from "@/shared/_types";
 import {
     ClientHomepageViewData
 } from "@/domains/pages/_feat/client-view-data/client-homepage-data/ClientHomepageViewDataSchema.ts";

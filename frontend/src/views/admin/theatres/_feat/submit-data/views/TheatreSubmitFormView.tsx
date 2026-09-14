@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from 'react';
-import {cn} from "@/common/_feat";
-import {FormViewProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {cn} from "@/shared/_feat";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {TheatreFormValues} from "@/domains/theatres/_feat/submit-data/schema.ts";
 import {
     TheatreSubmitFormDetailsFieldset,

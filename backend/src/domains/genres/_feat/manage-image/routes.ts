@@ -9,7 +9,7 @@ import {ManageGenreImageRouteConfigSchema} from "@/domains/genres/_feat/manage-i
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";
-import {uploadImage} from "@/shared/config/image-multr";
+import {uploadImage} from "@/config/image-multr";
 import {hasGenreImage} from "@/domains/genres/_feat/manage-image/middleware/hasGenreImage";
 
 const router = Router();

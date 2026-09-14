@@ -3,13 +3,13 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/common/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
 import {getFetchMovieReviewsByCurrentUser} from "@/domains/movie-reviews/_feat/my-reviews/repository/repository.ts";
 import {PaginationOptions} from "@noovies-tickets/common";
-import HttpResponseError from "@/common/_err/HttpResponseError.ts";
+import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {MyReviewsQueryKeys} from "@/domains/movie-reviews/_feat/my-reviews/hooks/queryKeys.ts";
-import {QueryConfig} from "@/common/_types";
-import {buildQueryFn} from "@/common/_feat/validate-fetch-data";
+import {QueryConfig} from "@/shared/_types";
+import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 
 /** Parameters for useFetchMyMovieReviews. */
 type FetchParams<TData = unknown> = PaginationOptions & QueryConfig<TData>;

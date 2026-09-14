@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {UserStatus} from "@noovies-tickets/common";
-import {Badge} from "@/views/common/_comp/ui";
+import {Badge} from "@/views/shared/_comp/ui";
 
 /** Props for the UserStatusBadge component. */
 type BadgeProps = {

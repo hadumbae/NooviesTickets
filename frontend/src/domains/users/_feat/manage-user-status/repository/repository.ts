@@ -3,9 +3,9 @@
  */
 
 import {UpdateUserStatusConfig} from "@/domains/users/_feat/manage-user-status/repository/repository.types.ts";
-import {FetchRequestReturns} from "@/common/_types";
+import {FetchRequestReturns} from "@/shared/_types";
 import {UpdateUserStatusReturns} from "@/domains/users/_feat/manage-user-status/schema";
-import {buildURL, handleFetchOperation} from "@/common/_feat";
+import {buildURL, handleFetchOperation} from "@/shared/_feat";
 import {ManageUserStatusBaseURL} from "@/domains/users/_feat/manage-user-status/repository/baseURL.ts";
 
 /**

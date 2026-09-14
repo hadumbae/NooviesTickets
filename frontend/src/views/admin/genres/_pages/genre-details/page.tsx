@@ -3,17 +3,17 @@
  */
 
 import {ReactElement} from 'react';
-import {useFetchByIdentifierRouteParams, useTitle} from "@/common/_feat";
-import useParsedPaginationValue from "@/common/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
-import {SlugRouteParamSchema} from "@/common/_schemas/route/SlugRouteParamSchema.ts";
+import {useFetchByIdentifierRouteParams, useTitle} from "@/shared/_feat";
+import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {
     GenreDetailsUIContextProvider,
     GenreDetailsUIPendingContextProvider
 } from "@/domains/genres/_feat/page-context";
 import {GenreDetailsViewData, useFetchGenreDetailsViewData} from "@/domains/genres/_feat/admin-view-data";
 import {GenreDetailsPageContent} from "@/views/admin/genres/_pages/genre-details/content.tsx";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {PageLoader} from "@/views/common/_comp/page";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {PageLoader} from "@/views/shared/_comp/page";
 import {GenreDetailsPageProviders} from "@/views/admin/genres/_pages/genre-details/providers.tsx";
 
 /** Default limit for the paginated movie sub-collection. */

@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for uploading a person's profile image.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {
     ProfileImageSubmitConfig,
     usePersonProfileImageSubmitMutation

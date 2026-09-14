@@ -3,7 +3,7 @@
  */
 
 import {ObjectIdString} from "@noovies-tickets/common";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {
     ReservationSeatingElement
 } from "@/views/client/reservations/_comp/seating-display/ReservationSeatingElement.tsx";

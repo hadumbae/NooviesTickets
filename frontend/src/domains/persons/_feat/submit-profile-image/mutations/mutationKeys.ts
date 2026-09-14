@@ -2,7 +2,7 @@
  * @fileoverview Mutation keys for person profile image upload operations.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /**
  * Standardized mutation keys for profile image uploads.

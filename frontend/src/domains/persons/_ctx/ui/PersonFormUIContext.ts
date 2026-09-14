@@ -2,7 +2,7 @@
  * @fileoverview React context provider and hooks for managing person form UI disclosure state.
  */
 
-import {createDisclosureContext} from "@/common/_feat";
+import {createDisclosureContext} from "@/shared/_feat";
 
 const {Provider, useDisclosureState, useDisclosureActions} = createDisclosureContext({
     stateName: "person-form-ui-state-context",

@@ -3,7 +3,7 @@
  *
  */
 
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {UserQueryOptions} from "@/domains/users/_schema/query-options";
 
 /** Form values derived from the user query options schema. */

@@ -2,7 +2,7 @@
  * @fileoverview Form section configuration combining context, form state, and view for movie index query options.
  */
 
-import {createQueryOptionFormSection} from "@/common/_feat";
+import {createQueryOptionFormSection} from "@/shared/_feat";
 import {
     useMovieIndexQueryOptionsContext
 } from "@/domains/movies/_feat/handle-query-options/movie-index/MovieIndexQueryOptionsContext.ts";

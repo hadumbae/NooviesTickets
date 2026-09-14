@@ -1,11 +1,11 @@
 /** @fileoverview Fieldset component for cast-specific movie credit form fields. */
 
 import {ReactElement} from "react";
-import {HookFormInput} from "@/views/common/_feat";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
+import {HookFormInput} from "@/views/shared/_feat";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
 import {useFormContext} from "react-hook-form";
-import {createFormFieldConfig, FormViewProps, renderFields} from "@/common/_feat/submit-data";
-import {cn, useBaseFormContext} from "@/common/_feat";
+import {createFormFieldConfig, FormViewProps, renderFields} from "@/shared/_feat/submit-data";
+import {cn, useBaseFormContext} from "@/shared/_feat";
 import {MovieCreditFormValues} from "@/domains/movie-credits";
 
 /** Renders input fields for billing order and character name. Requires wrapping in a Form provider. */

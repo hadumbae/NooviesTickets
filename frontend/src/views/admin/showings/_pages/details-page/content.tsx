@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {PageFlexWrapper, PageSectionHeader} from "@/views/common/_comp/page";
+import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {ShowingDetailsViewData} from "@/views/admin/showings/_feat";
 import {ShowingDetailsPageSeatingSection} from "@/views/admin/showings/_pages/details-page/sections";
 import {SeatMapDetailsPanelContextProvider} from "@/domains/seatmaps";
@@ -20,7 +20,7 @@ import {
     ShowingTimesCard,
     TheatreSummaryCard
 } from "@/views/admin/showings/_comp";
-import {IconButton, PageHeader} from "@/views/common/_comp";
+import {IconButton, PageHeader} from "@/views/shared/_comp";
 import {Ellipsis} from "lucide-react";
 
 /** Renders the core content of the Showing Details page. */

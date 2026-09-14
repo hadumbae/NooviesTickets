@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook for submitting theatre screen data.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {
     TheatreScreen,
     TheatreScreenDetails,

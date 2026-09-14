@@ -4,9 +4,9 @@
 
 import {ReactElement} from "react";
 import {ChevronLeft} from "lucide-react";
-import {Badge} from "@/views/common/_comp/ui";
-import {HoverLink} from "@/views/common/_feat/navigation/HoverLink.tsx";
-import {SROnly, SubsectionSubtitle, SubsectionTitle} from "@/views/common/_comp";
+import {Badge} from "@/views/shared/_comp/ui";
+import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
+import {SROnly, SubsectionSubtitle, SubsectionTitle} from "@/views/shared/_comp";
 
 import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {GenreImageBanner} from "@/views/admin/genres/_comp";

@@ -2,7 +2,7 @@
  * @fileoverview Form component and hook exports for setting a movie review rating with an optional moderation message.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {MovieReview} from "@/domains/movie-reviews";
 import {
     SetReviewRatingFormData,

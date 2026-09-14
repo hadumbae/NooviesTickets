@@ -4,10 +4,10 @@
 
 import {ReactElement} from "react";
 import {FieldValues} from "react-hook-form";
-import {HookFormSelect} from "@/views/common/_comp/form-select/HookFormSelect.tsx";
-import {ReactSelectOption} from "@/common/_types/input/ReactSelectOption.ts";
-import {convertToTitleCase} from "@/common/_feat/formatters/convertToTitleCase.ts";
-import {HookFormInputControlProps} from "@/common/_types/input/HookFormInputProps.ts";
+import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
+import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
+import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
+import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
 import {RoleTypeDepartmentConstant} from "@noovies-tickets/common";
 
 /**

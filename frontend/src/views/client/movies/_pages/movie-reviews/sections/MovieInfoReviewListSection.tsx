@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {PaginationRangeButtons} from "@/views/common/_comp";
-import {PageSectionHeader} from "@/views/common/_comp";
+import {PaginationRangeButtons} from "@/views/shared/_comp";
+import {PageSectionHeader} from "@/views/shared/_comp";
 import {MovieReviewDetails} from "@/domains/movie-reviews";
 import {MovieReviewDetailsCard} from "@/views/client/movie-reviews/_feat";
 

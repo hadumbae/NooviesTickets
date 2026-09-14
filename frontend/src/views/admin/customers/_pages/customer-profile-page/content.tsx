@@ -6,9 +6,9 @@ import {ReactElement} from "react";
 import {Reservation} from "@/domains/reservations/_schema/model";
 import {LeanUserWithEmail} from "@/domains/users/_schema/user/LeanUserWithEmailSchema.ts";
 import {PopulatedMovieReview} from "@/domains/movie-reviews/_schema/model/PopulatedMovieReviewSchema.ts";
-import {PageFlexWrapper} from "@/views/common/_comp/page";
+import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {CustomerDetailsCard} from "@/views/admin/customers/_comp";
-import {PageHeader} from "@/views/common/_comp";
+import {PageHeader} from "@/views/shared/_comp";
 import {
     CustomerProfileDetailsSection,
     CustomerProfilePageBreadcrumbs,

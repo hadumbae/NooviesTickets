@@ -2,7 +2,7 @@
  * @fileoverview Defines query keys for theatre client-side view data fetching.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /** Query key factory for theatre client views including browse lists and info. */
 export const TheatreClientViewQueryKeys = buildQueryKey(

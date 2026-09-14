@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/views/common/_comp/ui";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
-import {ISO3166Alpha2ShortCountryConstant} from "@/common/_const";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/views/shared/_comp/ui";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
+import {ISO3166Alpha2ShortCountryConstant} from "@/shared/_const";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {TheatreWithRecentShowings} from "@/domains/theatres/_schema/theatre/TheatreWithRecentShowingsSchema.ts";
 import {BrowseTheatreShowingSelector} from "@/views/client/showings/_comp";
 

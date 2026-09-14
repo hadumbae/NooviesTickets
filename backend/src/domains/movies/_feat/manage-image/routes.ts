@@ -3,7 +3,7 @@
  */
 
 import {Router} from "express";
-import {uploadImage} from "@/shared/config/image-multr";
+import {uploadImage} from "@/config/image-multr";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import asyncHandler from "@/shared/utility/handlers/asyncHandler";

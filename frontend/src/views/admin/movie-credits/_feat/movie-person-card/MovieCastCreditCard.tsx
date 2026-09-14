@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from 'react';
-import {Card, CardContent} from "@/views/common/_comp/ui";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
 import {MovieCreditDetails} from "@/domains/movie-credits";
-import {BooleanFlagLabelSpan, LabelContentItem, LabelContentList, TextQuote} from "@/views/common/_comp";
+import {BooleanFlagLabelSpan, LabelContentItem, LabelContentList, TextQuote} from "@/views/shared/_comp";
 import {
     MoviePersonDetailsCardHeader
 } from "@/views/admin/movie-credits/_feat/movie-person-card/MoviePersonDetailsCardHeader.tsx";

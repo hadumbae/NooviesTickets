@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
 

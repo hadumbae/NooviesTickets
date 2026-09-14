@@ -8,7 +8,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {Seat} from "@/domains/seats/_schema";
 import {SeatFormData, SeatFormSchema, SeatFormValues} from "@/domains/seats/_feat/submit-data/schema";
 import {useSeatSubmitFormDefaultValues} from "@/domains/seats/_feat/submit-data/form/useSeatSubmitFormDefaultValues.ts";
-import {FormValuesConfig} from "@/common/_feat/submit-data";
+import {FormValuesConfig} from "@/shared/_feat/submit-data";
 
 /**
  * Initializes a React Hook Form instance for seat data with Zod schema validation.

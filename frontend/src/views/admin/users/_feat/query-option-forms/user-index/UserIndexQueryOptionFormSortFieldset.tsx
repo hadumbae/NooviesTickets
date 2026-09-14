@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {FormFieldsetProps} from "@/common/_feat/submit-data/formTypes.ts";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {UserIndexQueryOptionFormValues} from "@/domains/users/_feat/submit-query-options";
-import {HookFormSortToggle} from "@/views/common/_feat";
-import {cn} from "@/common/_feat";
+import {HookFormSortToggle} from "@/views/shared/_feat";
+import {cn} from "@/shared/_feat";
 
 /** Props for the UserIndexQueryOptionFormSortFieldset component. */
 type FieldsetProps = Omit<FormFieldsetProps<UserIndexQueryOptionFormValues>, "isNestedView">;

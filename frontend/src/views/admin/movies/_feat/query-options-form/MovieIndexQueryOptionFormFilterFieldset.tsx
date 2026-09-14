@@ -4,13 +4,13 @@
 
 import {ReactElement} from 'react';
 import {useFormContext} from "react-hook-form";
-import {cn, createFormFieldConfig, FormViewProps, renderFields} from "@/common/_feat";
+import {cn, createFormFieldConfig, FormViewProps, renderFields} from "@/shared/_feat";
 import {MovieQueryOptionFormValues} from "@/domains/movies/_feat/submit-queries/MovieQueryOptionFormValues.ts";
-import {HookFormCheckbox, HookFormInput} from "@/views/common/_feat";
-import {HookFormSelect} from "@/views/common/_comp";
-import {ISO3166Alpha2CountryOptions} from "@/common/_const";
+import {HookFormCheckbox, HookFormInput} from "@/views/shared/_feat";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {ISO3166Alpha2CountryOptions} from "@/shared/_const";
 import {LabelledFormInput} from "@/views/admin/movies/_comp/form-display/LabelledFormInput.tsx";
-import {ConditionalRenderConfig} from "@/common/_types/form/HookFormFieldsetConfigTypes.ts";
+import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
 
 /** Renders the form fields for filtering movie index query options. */
 export function MovieIndexQueryOptionFormFilterFieldset(

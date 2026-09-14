@@ -3,7 +3,7 @@
  */
 
 import {RouteObject} from "react-router-dom";
-import AdminLayout from "@/views/common/_layout/admin-layout/AdminLayout.tsx";
+import AdminLayout from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 
 export const AdminCustomerRoutes: RouteObject[] = [
     {

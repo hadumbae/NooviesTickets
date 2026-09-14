@@ -2,7 +2,7 @@
  * @fileoverview Defines the multi-step form component, hook, and storage key for submitting showing data.
  */
 
-import {createMultiStepForm} from "@/common/_feat/forms/create-multi-step-form/createMultiStepForm.tsx";
+import {createMultiStepForm} from "@/shared/_feat/forms/create-multi-step-form/createMultiStepForm.tsx";
 import {
     ShowingDetails,
     ShowingFormData,

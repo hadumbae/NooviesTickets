@@ -2,7 +2,7 @@
  * @fileoverview Query keys for Genre mutations.
  */
 
-import {buildQueryKey} from "@/common/_feat";
+import {buildQueryKey} from "@/shared/_feat";
 
 /**
  * Standardized keys for Genre mutation invalidation and tracking.

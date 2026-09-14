@@ -2,9 +2,9 @@
  * @fileoverview Page component that displays and manages a customer's reservation history with pagination.
  */
 
-import {useParsedPaginationValue} from "@/common/_feat/fetch-pagination-search-params";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {useRouteParams, useTitle} from "@/common/_feat";
+import {useParsedPaginationValue} from "@/shared/_feat/fetch-pagination-search-params";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {useRouteParams, useTitle} from "@/shared/_feat";
 import {
     CustomerReservationsRouteParamsSchema,
     useFetchCustomerReservationsViewData

@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {ISO3166Alpha2CountryCodeSchema, NonFutureDateStringSchema, preprocessEmptyToUndefined, IDStringSchema} from "@noovies-tickets/common";
-import {AnyValues} from "@/common/_types";
+import {AnyValues} from "@/shared/_types";
 import {PersonBiographySchema, PersonNameSchema} from "@/domains/persons/_schema/fields";
 
 /** Zod schema for validating person form data. */

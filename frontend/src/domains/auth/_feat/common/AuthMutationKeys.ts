@@ -2,7 +2,7 @@
  * @fileoverview Defines mutation keys for authentication operations.
  */
 
-import {buildQueryKey} from "@/common/_feat/handle-query/buildQueryKeys.ts";
+import {buildQueryKey} from "@/shared/_feat/handle-query/buildQueryKeys.ts";
 
 /** Mutation keys for registration, login, and logout processes. */
 export const AuthMutationKeys = buildQueryKey(

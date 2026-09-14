@@ -2,7 +2,7 @@
  * @fileoverview Form component and custom hook exports for managing ticket reservation submissions.
  */
 
-import {createForm} from "@/common/_feat";
+import {createForm} from "@/shared/_feat";
 import {PopulatedReservation,} from "@/domains/reservations/_schema/model";
 import {useReserveTicketSubmitMutation} from "@/domains/reservations/_feat/reserve-tickets/mutations";
 import {

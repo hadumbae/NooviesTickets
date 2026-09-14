@@ -4,10 +4,10 @@
 
 import {ReactElement} from "react";
 import {useFormContext} from "react-hook-form";
-import {cn} from "@/common/_feat";
-import {DisableFields, HideFields} from "@/common/_types";
-import {HookFormSelect} from "@/views/common/_comp";
-import {HookFormCheckbox, HookFormInput} from "@/views/common/_feat";
+import {cn} from "@/shared/_feat";
+import {DisableFields, HideFields} from "@/shared/_types";
+import {HookFormSelect} from "@/views/shared/_comp";
+import {HookFormCheckbox, HookFormInput} from "@/views/shared/_feat";
 import {UserSuspensionUpdateActionSelectOptions} from "@/domains/users/_feat/manage-user-suspension/const";
 import {UpdateUserSuspensionFormValues} from "@/domains/users/_feat/manage-user-suspension/schema";
 

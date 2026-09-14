@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent, CardHeader} from "@/views/common/_comp/ui/card.tsx";
+import {Card, CardContent, CardHeader} from "@/views/shared/_comp/ui/card.tsx";
 import {formatShowingDetails} from "@/domains/showings/_feat/formatters/formatShowingDetails.ts";
 import {DollarSign, Star} from "lucide-react";
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {ShowingIsActiveBadge, ShowingStatusBadge, ShowingTypeBadge} from "@/views/admin/showings/_comp/badges";
-import {Image} from "@/views/common/_comp";
+import {Image} from "@/views/shared/_comp";
 
 /** Props for the ShowingIndexListCard component. */
 type ShowingIndexListCardProps = {

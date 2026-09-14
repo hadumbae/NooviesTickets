@@ -2,7 +2,7 @@
  * @fileoverview Defines the form component and hook for managing role type index query options.
  */
 
-import {createQueryOptionForm} from "@/common/_feat";
+import {createQueryOptionForm} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsSchema
 } from "@/domains/roletypes/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";

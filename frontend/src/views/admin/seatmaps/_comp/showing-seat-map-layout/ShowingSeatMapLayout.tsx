@@ -2,7 +2,7 @@
  * @fileoverview Renders the seat-map layout for a single movie showing.
  */
 
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {ReactElement} from "react";
 
 import {SeatMapDetails} from "@/domains/seatmaps";

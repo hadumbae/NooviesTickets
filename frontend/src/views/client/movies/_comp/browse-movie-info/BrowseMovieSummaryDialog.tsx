@@ -12,9 +12,9 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from "@/views/common/_comp/ui";
-import {cn} from "@/common/_feat";
-import {LoggedLink} from "@/views/common/_feat/navigation/LoggedLink.tsx";
+} from "@/views/shared/_comp/ui";
+import {cn} from "@/shared/_feat";
+import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {BrowseMoviePosterLink} from "@/views/admin/movies/_comp/poster-image";
 import {generateArraySchema} from "@noovies-tickets/common";
 import {MovieCreditDataLazyLoader} from "@/views/admin/movie-credits/_comp/movie-credit-loaders/MovieCreditDataLazyLoader.tsx";

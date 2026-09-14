@@ -1,4 +1,4 @@
-import {createQueryOptionForm} from "@/common/_feat";
+import {createQueryOptionForm} from "@/shared/_feat";
 import {
     PersonIndexQueryOptionSchema
 } from "@/domains/persons/_feat/validate-query-options/person-index/PersonIndexQueryOptionSchema.ts";

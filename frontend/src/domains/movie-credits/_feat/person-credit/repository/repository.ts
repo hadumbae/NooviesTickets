@@ -1,9 +1,9 @@
-import {FetchRequestReturns} from "@/common/_types/request/FetchRequestReturns.ts";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {handleFetchOperation} from "@/common/_feat/use-fetch-api/handleFetchOperation.ts";
-import {RequestOptions} from "@/common/_types/request/RequestOptions.ts";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation.ts";
+import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {PersonCreditBaseURL} from "@/domains/movie-credits/_feat/person-credit/repository/baseURL.ts";
-import {buildURL} from "@/common/_feat/fetch-api";
+import {buildURL} from "@/shared/_feat/fetch-api";
 import {PersonFilmography} from "@/domains/movie-credits/_feat/person-credit/schema";
 
 /**

@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 import {Link} from "react-router-dom";
 import {ShowingSummary} from "@/domains/showings/_schema/showing/ShowingSummarySchema.ts";
-import {PageSectionHeader} from "@/views/common/_comp";
+import {PageSectionHeader} from "@/views/shared/_comp";
 import {HomepageShowingCard} from "@/views/client/homepage/_comp";
 
 /** Props for the HomepageUpcomingShowingsSection component. */

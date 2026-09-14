@@ -10,7 +10,7 @@ import {
     handlePaginated,
     handleQuery,
     handleUpdate
-} from "@/common/_feat/crud-handlers";
+} from "@/shared/_feat/crud-handlers";
 
 /** Retrieves all movie credit records. */
 export const find = handleFind(MovieCreditCRUDBaseURL);

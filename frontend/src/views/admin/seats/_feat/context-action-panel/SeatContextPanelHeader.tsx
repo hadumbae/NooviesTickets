@@ -3,8 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {SheetDescription, SheetHeader, SheetTitle} from "@/views/common/_comp/ui/sheet";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
+import {SheetDescription, SheetHeader, SheetTitle} from "@/views/shared/_comp/ui/sheet";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 import {SeatLayoutTypeLabelMap, SeatTypeLabelMap, useSeatPanelStateContext} from "@/domains/seats";
 
 /** Header component for the seat-details panel. */

@@ -3,10 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {HookFormInputControlProps, ReactSelectOption, RequestOptions} from "@/common/_types";
+import {HookFormInputControlProps, ReactSelectOption, RequestOptions} from "@/shared/_types";
 import {generateArraySchema} from "@noovies-tickets/common";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {AnimatedLoader, HookFormSelect} from "@/views/common/_comp";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {AnimatedLoader, HookFormSelect} from "@/views/shared/_comp";
 import {FieldValues} from "react-hook-form";
 import {RoleType, RoleTypeSchema} from "@/domains/roletypes/_schema";
 import {RoleTypeQueryFilters, useFetchRoleTypes} from "@/domains/roletypes/_feat";

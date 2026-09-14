@@ -4,9 +4,9 @@
 
 import {useLocation, useParams} from "react-router-dom";
 import {UserUniqueCode, UserUniqueCodeSchema} from "@/domains/users/_schema/fields/UserUniqueCodeSchema.ts";
-import {buildContext} from "@/common/_feat/logger-builders/buildLoggerContext.ts";
-import {RouteError} from "@/common/_err/RouteError.ts";
-import {Logger} from "@/common/_feat/logger/Logger.ts";
+import {buildContext} from "@/shared/_feat/logger-builders/buildLoggerContext.ts";
+import {RouteError} from "@/shared/_err/RouteError.ts";
+import {Logger} from "@/shared/_feat/logger/Logger.ts";
 import {useMemo} from "react";
 
 /**

@@ -2,7 +2,7 @@
  * @fileoverview Context provider and hook exports for managing search and filter options on the genre index view.
  */
 
-import {createQueryOptionsContext} from "@/common/_feat";
+import {createQueryOptionsContext} from "@/shared/_feat";
 import {GenreIndexQueryOptionsSchema} from "@/domains/genres/_feat/handle-query-options/genre-index/GenreIndexQueryOptionsSchema.ts";
 
 const {Provider, useQueryOptionsContext} = createQueryOptionsContext({

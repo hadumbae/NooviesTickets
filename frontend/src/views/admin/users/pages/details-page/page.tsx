@@ -8,8 +8,8 @@ import {
     useFetchUserDetailsViewData,
     UserDetailsRouteParamsSchema
 } from "@/domains/users/_feat/admin-view-data/user-details";
-import {QueryDataLoader} from "@/views/common/_feat";
-import {useRouteParams, useTitle} from "@/common/_feat";
+import {QueryDataLoader} from "@/views/shared/_feat";
+import {useRouteParams, useTitle} from "@/shared/_feat";
 
 /** Admin page that fetches and displays a user's profile, reservations, and reviews. */
 export function UserDetailsPage(): ReactElement {

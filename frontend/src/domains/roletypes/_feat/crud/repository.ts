@@ -9,7 +9,7 @@ import {
     handlePaginated,
     handleQuery,
     handleUpdate
-} from "@/common/_feat/crud-handlers";
+} from "@/shared/_feat/crud-handlers";
 import {RoleTypeCRUDBaseURL} from "@/domains/roletypes/_feat/crud/baseURL.ts";
 
 /** Fetches all RoleType records. */

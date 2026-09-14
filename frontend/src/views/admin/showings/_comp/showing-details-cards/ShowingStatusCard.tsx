@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {Card, CardContent} from "@/views/common/_comp/ui/card.tsx";
+import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
 import {Showing, ShowingDetails} from "@/domains/showings/_schema/showing";
 import {ShowingIsActiveBadge, ShowingSpecialEventBadge, ShowingStatusBadge} from "@/views/admin/showings/_comp/badges";
-import {CardClassNames} from "@/common/_types/card";
-import {cn} from "@/common/_feat";
+import {CardClassNames} from "@/shared/_types/card";
+import {cn} from "@/shared/_feat";
 
 /** Props for the ShowingStatusCard component. */
 type CardProps = {

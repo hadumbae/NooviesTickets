@@ -4,12 +4,12 @@
 
 import {ReactElement} from "react";
 import {Film, Search, Sofa, Theater} from "lucide-react";
-import {Card, CardContent} from "@/views/common/_comp/ui";
-import {buildString} from "@/common/_feat/formatters/buildString.ts";
-import {useLoggedNavigate} from "@/common/_feat/navigation/useLoggedNavigate.ts";
-import {IconButton} from "@/views/common/_comp";
+import {Card, CardContent} from "@/views/shared/_comp/ui";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
+import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
+import {IconButton} from "@/views/shared/_comp";
 import {TheatreScreenDetails} from "@/domains/theatre-screens";
-import {SROnly, SubsectionSubtitle, SubsectionTitle} from "@/views/common/_comp";
+import {SROnly, SubsectionSubtitle, SubsectionTitle} from "@/views/shared/_comp";
 
 /** Props for the ScreenSummaryCard component. */
 type CardProps = {

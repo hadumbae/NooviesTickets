@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {cn} from "@/common/_feat";
+import {cn} from "@/shared/_feat";
 import {DateTime} from "luxon";
 
 /** Props for the PersonInfoCreditHeader component. */

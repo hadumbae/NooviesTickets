@@ -13,7 +13,7 @@ import {
     handleQuery,
     handleSoftDelete,
     handleUpdate
-} from "@/common/_feat/crud-handlers";
+} from "@/shared/_feat/crud-handlers";
 
 /** Retrieves all showing records. */
 export const find = handleFind(ShowingCRUDBaseURL);

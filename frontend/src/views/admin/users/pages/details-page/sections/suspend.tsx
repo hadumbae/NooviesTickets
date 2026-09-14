@@ -4,8 +4,8 @@
 
 import {ReactElement, useState} from "react";
 import {ObjectIdString} from "@noovies-tickets/common";
-import {AdminActionButton, PageSectionHeader} from "@/views/common/_comp";
-import {GenericFormDialog} from "@/views/common/_feat";
+import {AdminActionButton, PageSectionHeader} from "@/views/shared/_comp";
+import {GenericFormDialog} from "@/views/shared/_feat";
 import {UpdateUserSuspensionFormView} from "@/views/admin/users/_feat";
 import {UserStatus} from "@noovies-tickets/common";
 import {useInvalidateUserQueriesOnModeration,} from "@/domains/users/_feat/user-moderation-actions";

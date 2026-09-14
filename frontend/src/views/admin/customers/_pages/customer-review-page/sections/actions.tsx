@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {PageSectionHeader} from "@/views/common/_comp/page";
+import {PageSectionHeader} from "@/views/shared/_comp/page";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {
     ResetReviewDisplayNameAction,
