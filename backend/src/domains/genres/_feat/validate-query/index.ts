@@ -7,9 +7,9 @@ import {
     GenreQueryMatchSortsSchema
 } from "@/domains/genres/_feat/validate-query/GenreQueryMatchSortsSchema";
 import {
-    type GenreQueryOptions,
-    GenreQueryOptionsSchema
-} from "@/domains/genres/_feat/validate-query/GenreQueryOptionsSchema";
+    type GenreRequestQuery,
+    GenreRequestQuerySchema
+} from "@/domains/genres/_feat/validate-query/GenreRequestQuerySchema";
 import {
     type GenreQueryMatchStage,
     GenreQueryMatchStageSchema
@@ -23,13 +23,13 @@ import {
 export {
     GenreQueryMatchFiltersSchema,
     GenreQueryMatchSortsSchema,
-    GenreQueryOptionsSchema,
+    GenreRequestQuerySchema,
 }
 
 export type {
     GenreQueryMatchFilters,
     GenreQueryMatchSorts,
-    GenreQueryOptions,
+    GenreRequestQuery,
 }
 
 export {

@@ -13,7 +13,7 @@ import {MovieCreditQueryMatchSortsSchema} from "@/domains/movie-credits/_feat/va
 /**
  * Composite Zod schema for MovieCredit query options with an aggregation transformation.
  */
-export const MovieCreditQueryOptionsSchema = MovieCreditQueryMatchFiltersSchema
+export const MovieCreditRequestQuerySchema = MovieCreditQueryMatchFiltersSchema
     .merge(MovieCreditQueryMatchSortsSchema)
     .transform(
         (values): AggregateQueryOptions => ({
@@ -51,6 +51,6 @@ export const MovieCreditQueryOptionsSchema = MovieCreditQueryMatchFiltersSchema
     );
 
 /**
- * TypeScript type inferred from the transformed MovieCreditQueryOptionsSchema.
+ * TypeScript type inferred from the transformed MovieCreditRequestQuerySchema.
  */
-export type MovieCreditQueryOptions = z.infer<typeof MovieCreditQueryOptionsSchema>;
+export type MovieCreditRequestQuery = z.infer<typeof MovieCreditRequestQuerySchema>;

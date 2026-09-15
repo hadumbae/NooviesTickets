@@ -7,9 +7,9 @@ import {
     RoleTypeQueryMatchSortsSchema
 } from "@/domains/role-types/_feat/validate-query/RoleTypeQueryMatchSortsSchema";
 import {
-    type RoleTypeQueryOptions,
-    RoleTypeQueryOptionsSchema
-} from "@/domains/role-types/_feat/validate-query/RoleTypeQueryOptionsSchema";
+    type RoleTypeRequestQuery,
+    RoleTypeRequestQuerySchema
+} from "@/domains/role-types/_feat/validate-query/RoleTypeRequestQuerySchema";
 import {
     type RoleTypeQueryMatchStage,
     RoleTypeQueryMatchStageSchema
@@ -23,13 +23,13 @@ import {
 export {
     RoleTypeQueryMatchFiltersSchema,
     RoleTypeQueryMatchSortsSchema,
-    RoleTypeQueryOptionsSchema,
+    RoleTypeRequestQuerySchema,
 }
 
 export type {
     RoleTypeQueryMatchFilters,
     RoleTypeQueryMatchSorts,
-    RoleTypeQueryOptions,
+    RoleTypeRequestQuery,
 }
 
 export {

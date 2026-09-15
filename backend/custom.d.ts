@@ -19,7 +19,7 @@ declare module "express" {
 
         unsetFields?: any;
 
-        queryOptions?: AggregateQueryOptions;
+        requestQuery?: AggregateQueryOptions;
 
         queryMatchStage?: PipelineStage.Match;
         querySortStage?: PipelineStage.Sort;

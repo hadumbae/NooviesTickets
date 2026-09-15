@@ -1,29 +1,29 @@
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
-import {parseQueryOptions} from "@/shared/_feat/middleware";
-import {MovieQueryOptionsSchema} from "@/domains/movies/_feat/validate-query";
+import {parseRequestQuery} from "@/shared/_feat/middleware";
+import {MovieRequestQuerySchema} from "@/domains/movies/_feat/validate-query";
 import {getFetchMovieLeanData, getFetchPersonLeanData, getFetchRoleTypeLeanData} from "@/domains/ui-inputs/controller";
-import {PersonQueryOptionsSchema} from "@/domains/persons/_feat/validate-query";
-import {RoleTypeQueryOptionsSchema} from "@/domains/role-types/_feat/validate-query";
+import {PersonRequestQuerySchema} from "@/domains/persons/_feat/validate-query";
+import {RoleTypeRequestQuerySchema} from "@/domains/role-types/_feat/validate-query";
 
 const router = Router();
 
 router.get(
     '/movies',
-    [isAuth, parseQueryOptions({schema: MovieQueryOptionsSchema})],
+    [isAuth, parseRequestQuery({schema: MovieRequestQuerySchema})],
     asyncHandler(getFetchMovieLeanData),
 );
 
 router.get(
     '/persons',
-    [isAuth, parseQueryOptions({schema: PersonQueryOptionsSchema})],
+    [isAuth, parseRequestQuery({schema: PersonRequestQuerySchema})],
     asyncHandler(getFetchPersonLeanData),
 );
 
 router.get(
     '/role-types',
-    [isAuth, parseQueryOptions({schema: RoleTypeQueryOptionsSchema})],
+    [isAuth, parseRequestQuery({schema: RoleTypeRequestQuerySchema})],
     asyncHandler(getFetchRoleTypeLeanData),
 );
 

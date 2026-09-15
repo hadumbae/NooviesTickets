@@ -12,7 +12,7 @@ import {filterNullishAttributes} from "@noovies-tickets/common";
 /**
  * Composite Zod schema for Movie query options with an aggregation transformation.
  */
-export const MovieQueryOptionsSchema = MovieQuerySortsSchema
+export const MovieRequestQuerySchema = MovieQuerySortsSchema
     .merge(MovieQueryFiltersSchema)
     .transform(
         (values): AggregateQueryOptions => ({
@@ -44,6 +44,6 @@ export const MovieQueryOptionsSchema = MovieQuerySortsSchema
     );
 
 /**
- * TypeScript type inferred from the transformed MovieQueryOptionsSchema.
+ * TypeScript type inferred from the transformed MovieRequestQuerySchema.
  */
-export type MovieQueryOptions = z.infer<typeof MovieQueryOptionsSchema>;
+export type MovieRequestQuery = z.infer<typeof MovieRequestQuerySchema>;

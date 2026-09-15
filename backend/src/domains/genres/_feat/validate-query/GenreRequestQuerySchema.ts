@@ -13,7 +13,7 @@ import type {AggregateQueryOptions} from "@/shared/_feat/generic-aggregate/optio
 /**
  * Combined Zod schema for Genre query options.
  */
-export const GenreQueryOptionsSchema = GenreQueryMatchSortsSchema
+export const GenreRequestQuerySchema = GenreQueryMatchSortsSchema
     .merge(GenreQueryMatchFiltersSchema)
     .transform(
         (values): AggregateQueryOptions => ({
@@ -36,4 +36,4 @@ export const GenreQueryOptionsSchema = GenreQueryMatchSortsSchema
 /**
  * TypeScript type representing the transformed output of the Genre query options.
  */
-export type GenreQueryOptions = z.output<typeof GenreQueryOptionsSchema>;
+export type GenreRequestQuery = z.output<typeof GenreRequestQuerySchema>;

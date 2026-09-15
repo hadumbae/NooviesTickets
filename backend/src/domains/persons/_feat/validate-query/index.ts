@@ -3,9 +3,9 @@ import {
     PersonQueryMatchSortsSchema
 } from "@/domains/persons/_feat/validate-query/PersonQueryMatchSortsSchema";
 import {
-    type PersonQueryOptions,
-    PersonQueryOptionsSchema
-} from "@/domains/persons/_feat/validate-query/PersonQueryOptionsSchema";
+    type PersonRequestQuery,
+    PersonRequestQuerySchema
+} from "@/domains/persons/_feat/validate-query/PersonRequestQuerySchema";
 import {
     type PersonQueryMatchFilters,
     PersonQueryMatchFiltersSchema
@@ -21,12 +21,12 @@ import {
 
 export {
     PersonQueryMatchSortsSchema,
-    PersonQueryOptionsSchema,
+    PersonRequestQuerySchema,
     PersonQueryMatchFiltersSchema,
 }
 
 export type {
-    PersonQueryOptions,
+    PersonRequestQuery,
     PersonQueryMatchSorts,
     PersonQueryMatchFilters,
 }

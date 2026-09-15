@@ -1,12 +1,12 @@
-import {type QueryOptionParams, QueryOptionParamsSchema} from "@/shared/_schema/request-query/QueryOptionParamsSchema";
+import {type RequestQueryParams, RequestQueryParamsSchema} from "@/shared/_schema/request-query/RequestQueryParamsSchema";
 import {type QueryPaginationParams, QueryPaginationParamsSchema} from "@/shared/_schema/request-query/QueryPaginationParamsSchema";
 
 export {
-    QueryOptionParamsSchema,
+    RequestQueryParamsSchema,
     QueryPaginationParamsSchema,
 }
 
 export type {
-    QueryOptionParams,
+    RequestQueryParams,
     QueryPaginationParams,
 }

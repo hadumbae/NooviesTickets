@@ -9,7 +9,7 @@ import {
 } from "@/domains/movie-reviews/_feat/validate-query-options/query-schemas/MovieReviewQueryMatchFilterSchema";
 
 /** Zod schema merging movie review filter and sort options. */
-export const MovieReviewQueryOptionSchema = MovieReviewQueryMatchFilterSchema.merge(MovieReviewQueryMatchSortSchema);
+export const MovieReviewRequestQuerySchema = MovieReviewQueryMatchFilterSchema.merge(MovieReviewQueryMatchSortSchema);
 
 /** Type definition for movie review query options inferred from the schema. */
-export type MovieReviewQueryOptions = z.infer<typeof MovieReviewQueryOptionSchema>;
+export type MovieReviewRequestQuery = z.infer<typeof MovieReviewRequestQuerySchema>;

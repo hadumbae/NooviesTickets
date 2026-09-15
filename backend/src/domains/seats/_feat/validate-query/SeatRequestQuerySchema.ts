@@ -1,5 +1,5 @@
 /**
- * @file SeatQueryOptions.ts
+ * @file SeatRequestQuery.ts
  *
  * Unified query option schema for Seat endpoints.
  *
@@ -17,10 +17,10 @@ import {SeatQueryMatchSortsSchema} from "@/domains/seats/_feat/validate-query/Se
 /**
  * Combined query options for Seat queries.
  */
-export const SeatQueryOptionsSchema = SeatQueryMatchFiltersSchema.merge(SeatQueryMatchSortsSchema);
+export const SeatRequestQuerySchema = SeatQueryMatchFiltersSchema.merge(SeatQueryMatchSortsSchema);
 
 /**
  * Inferred type for seat query options.
  */
-export type SeatQueryOptions =
-    z.infer<typeof SeatQueryOptionsSchema>;
+export type SeatRequestQuery =
+    z.infer<typeof SeatRequestQuerySchema>;

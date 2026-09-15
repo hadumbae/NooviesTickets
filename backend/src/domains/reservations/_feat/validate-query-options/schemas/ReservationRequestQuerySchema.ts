@@ -11,9 +11,9 @@ import {
 } from "@/domains/reservations/_feat/validate-query-options/schemas/ReservationBaseQuerySortSchema";
 
 /** Zod schema merging reservation filter and sort criteria. */
-export const ReservationQueryOptionSchema =
+export const ReservationRequestQuerySchema =
     ReservationBaseQueryFilterSchema.merge(ReservationBaseQuerySortSchema);
 
 /** Combined filter and sort options for reservation queries. */
-export type ReservationQueryOptions =
-    z.infer<typeof ReservationQueryOptionSchema>;
+export type ReservationRequestQuery =
+    z.infer<typeof ReservationRequestQuerySchema>;

@@ -12,7 +12,7 @@ import {filterNullishAttributes} from "@noovies-tickets/common";
 /**
  * Composite Zod schema for RoleType query options with an aggregation transformation.
  */
-export const RoleTypeQueryOptionsSchema = RoleTypeQueryMatchSortsSchema
+export const RoleTypeRequestQuerySchema = RoleTypeQueryMatchSortsSchema
     .merge(RoleTypeQueryMatchFiltersSchema)
     .transform(
         (values): AggregateQueryOptions => ({
@@ -36,4 +36,4 @@ export const RoleTypeQueryOptionsSchema = RoleTypeQueryMatchSortsSchema
 /**
  * TypeScript type representing the fully transformed RoleType query options.
  */
-export type RoleTypeQueryOptions = z.infer<typeof RoleTypeQueryOptionsSchema>;
+export type RoleTypeRequestQuery = z.infer<typeof RoleTypeRequestQuerySchema>;

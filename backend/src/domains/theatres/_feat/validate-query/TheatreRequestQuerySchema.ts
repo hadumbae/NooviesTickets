@@ -12,7 +12,7 @@ import {filterNullishAttributes} from "@noovies-tickets/common";
 /**
  * Composite Zod schema for Theatre query options.
  */
-export const TheatreQueryOptionSchema = TheatreQueryMatchFilterSchema.merge(TheatreQueryMatchSortSchema).transform(
+export const TheatreRequestQuerySchema = TheatreQueryMatchFilterSchema.merge(TheatreQueryMatchSortSchema).transform(
     (values): AggregateQueryOptions => ({
         match: {
             filters: {
@@ -43,6 +43,6 @@ export const TheatreQueryOptionSchema = TheatreQueryMatchFilterSchema.merge(Thea
 );
 
 /**
- * TypeScript type inferred from TheatreQueryOptionSchema.
+ * TypeScript type inferred from TheatreRequestQuerySchema.
  */
-export type TheatreQueryOptions = z.infer<typeof TheatreQueryOptionSchema>;
+export type TheatreRequestQuery = z.infer<typeof TheatreRequestQuerySchema>;

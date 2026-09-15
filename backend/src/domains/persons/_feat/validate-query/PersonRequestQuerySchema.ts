@@ -12,7 +12,7 @@ import {PersonQueryMatchSortsSchema} from "@/domains/persons/_feat/validate-quer
 /**
  * Merges filter and sort schemas, transforming them into a structured AggregateQueryOptions object.
  */
-export const PersonQueryOptionsSchema = PersonQueryMatchSortsSchema
+export const PersonRequestQuerySchema = PersonQueryMatchSortsSchema
     .merge(PersonQueryMatchFiltersSchema)
     .transform((values): AggregateQueryOptions => ({
         match: {
@@ -37,4 +37,4 @@ export const PersonQueryOptionsSchema = PersonQueryMatchSortsSchema
 /**
  * Type representing the validated and transformed query options for Person documents.
  */
-export type PersonQueryOptions = z.infer<typeof PersonQueryOptionsSchema>;
+export type PersonRequestQuery = z.infer<typeof PersonRequestQuerySchema>;

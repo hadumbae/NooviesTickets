@@ -19,7 +19,7 @@ type ParseParams<TSchema extends ZodTypeAny> = {
 /**
  * Creates an Express middleware that intercepts the request to validate URL search parameters.
  */
-export function parseQueryOptions<TSchema extends ZodTypeAny>(
+export function parseRequestQuery<TSchema extends ZodTypeAny>(
     {schema, modelName}: ParseParams<TSchema>
 ): RequestHandler {
     return (req: Request, _res: Response, next: NextFunction) => {
@@ -33,7 +33,7 @@ export function parseQueryOptions<TSchema extends ZodTypeAny>(
             });
         }
 
-        req.queryOptions = data;
+        req.requestQuery = data;
 
         next();
     };

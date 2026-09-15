@@ -4,9 +4,9 @@ import {
     MovieQueryFiltersSchema
 } from "@/domains/movies/_feat/validate-query/MovieQueryFiltersSchema";
 import {
-    type MovieQueryOptions,
-    MovieQueryOptionsSchema
-} from "@/domains/movies/_feat/validate-query/MovieQueryOptionSchema";
+    type MovieRequestQuery,
+    MovieRequestQuerySchema
+} from "@/domains/movies/_feat/validate-query/MovieRequestQuerySchema";
 import {
     type MovieQueryMatchStage,
     MovieQueryMatchStageSchema
@@ -17,7 +17,7 @@ import {
 } from "@/domains/movies/_feat/validate-query/MovieQuerySortStageSchema";
 
 export {
-    MovieQueryOptionsSchema,
+    MovieRequestQuerySchema,
     MovieQueryFiltersSchema,
     MovieQuerySortsSchema,
     MovieQueryMatchStageSchema,
@@ -25,7 +25,7 @@ export {
 }
 
 export type {
-    MovieQueryOptions,
+    MovieRequestQuery,
     MovieQueryFilters,
     MovieQuerySorts,
     MovieQueryMatchStage,

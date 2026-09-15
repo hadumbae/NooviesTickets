@@ -13,7 +13,7 @@ import {filterNullishAttributes} from "@noovies-tickets/common";
 /**
  * Composite Zod schema for Showing query options with an aggregation transformation.
  */
-export const ShowingQueryOptionSchema =
+export const ShowingRequestQuerySchema =
     ShowingQueryMatchFilterSchema.merge(ShowingQueryMatchSortSchema).transform(
         (values): AggregateQueryOptions => ({
             match: {
@@ -39,6 +39,6 @@ export const ShowingQueryOptionSchema =
     );
 
 /**
- * TypeScript type inferred from the transformed ShowingQueryOptionSchema.
+ * TypeScript type inferred from the transformed ShowingRequestQuerySchema.
  */
-export type ShowingQueryOptions = z.infer<typeof ShowingQueryOptionSchema>;
+export type ShowingRequestQuery = z.infer<typeof ShowingRequestQuerySchema>;

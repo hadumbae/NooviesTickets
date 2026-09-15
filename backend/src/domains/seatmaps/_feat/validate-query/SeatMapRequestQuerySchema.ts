@@ -13,7 +13,7 @@ import {filterNullishAttributes} from "@noovies-tickets/common";
 /**
  * Composite Zod schema for SeatMap query options with an aggregation transformation.
  */
-export const SeatMapQueryOptionsSchema =
+export const SeatMapRequestQuerySchema =
     SeatMapQueryMatchFilterSchema.merge(SeatMapQueryMatchSortSchema).transform(
         (values): AggregateQueryOptions => ({
             match: {
@@ -38,6 +38,6 @@ export const SeatMapQueryOptionsSchema =
     );
 
 /**
- * TypeScript type inferred from the transformed SeatMapQueryOptionSchema.
+ * TypeScript type inferred from the transformed SeatMapRequestQuerySchema.
  */
-export type SeatMapQueryOptions = z.infer<typeof SeatMapQueryOptionsSchema>;
+export type SeatMapRequestQuery = z.infer<typeof SeatMapRequestQuerySchema>;

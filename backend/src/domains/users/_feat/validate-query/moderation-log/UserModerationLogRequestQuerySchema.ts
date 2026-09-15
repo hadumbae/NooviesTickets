@@ -11,7 +11,7 @@ import {
 } from "@/domains/users/_feat/validate-query/moderation-log/UserModerationLogQuerySortSchema";
 
 /** Zod schema merging moderation log filters and sort parameters. */
-export const UserModerationLogQueryOptionSchema = UserModerationLogQueryFilterSchema.merge(UserModerationLogQuerySortSchema);
+export const UserModerationLogRequestQuerySchema = UserModerationLogQueryFilterSchema.merge(UserModerationLogQuerySortSchema);
 
 /** Type definition for the combined user moderation log query options. */
-export type UserModerationLogQueryOptions = z.infer<typeof UserModerationLogQueryOptionSchema>;
+export type UserModerationLogRequestQuery = z.infer<typeof UserModerationLogRequestQuerySchema>;

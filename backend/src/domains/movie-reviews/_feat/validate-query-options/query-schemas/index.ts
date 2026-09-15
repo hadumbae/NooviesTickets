@@ -7,19 +7,19 @@ import {
     MovieReviewQueryMatchSortSchema
 } from "@/domains/movie-reviews/_feat/validate-query-options/query-schemas/MovieReviewQueryMatchSortSchema";
 import {
-    type MovieReviewQueryOptions,
-    MovieReviewQueryOptionSchema
-} from "@/domains/movie-reviews/_feat/validate-query-options/query-schemas/MovieReviewQueryOptionSchema";
+    type MovieReviewRequestQuery,
+    MovieReviewRequestQuerySchema
+} from "@/domains/movie-reviews/_feat/validate-query-options/query-schemas/MovieReviewRequestQuerySchema";
 
 
 export {
-    MovieReviewQueryOptionSchema,
+    MovieReviewRequestQuerySchema,
     MovieReviewQueryMatchFilterSchema,
     MovieReviewQueryMatchSortSchema,
 }
 
 export type {
-    MovieReviewQueryOptions,
+    MovieReviewRequestQuery,
     MovieReviewQueryMatchSorts,
     MovieReviewQueryMatchFilters,
 }

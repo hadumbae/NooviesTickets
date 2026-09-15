@@ -2,4 +2,4 @@ export * from "./stage-schemas";
 export * from "./option-schemas";
 export * from "./params-schemas";
 
-export * from "@/domains/theatre-screens/_feat/validate-query/TheatreScreenQueryOptionSchema";
+export * from "@/domains/theatre-screens/_feat/validate-query/TheatreScreenRequestQuerySchema";

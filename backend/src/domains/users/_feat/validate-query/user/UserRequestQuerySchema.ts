@@ -7,7 +7,7 @@ import {UserQuerySortSchema} from "@/domains/users/_feat/validate-query/user/Use
 import {z} from "zod";
 
 /** Zod schema that merges user filter and sort requirements. */
-export const UserQueryOptionSchema = UserQueryFilterSchema.merge(UserQuerySortSchema);
+export const UserRequestQuerySchema = UserQueryFilterSchema.merge(UserQuerySortSchema);
 
 /** Type definition for the combined user query options. */
-export type UserQueryOptions = z.infer<typeof UserQueryOptionSchema>;
+export type UserRequestQuery = z.infer<typeof UserRequestQuerySchema>;

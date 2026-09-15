@@ -1,7 +1,7 @@
 import {
-    type TheatreQueryOptions,
-    TheatreQueryOptionSchema
-} from "@/domains/theatres/_feat/validate-query/TheatreQueryOptionSchema";
+    type TheatreRequestQuery,
+    TheatreRequestQuerySchema
+} from "@/domains/theatres/_feat/validate-query/TheatreRequestQuerySchema";
 import {
     type TheatreQueryMatchSorts,
     TheatreQueryMatchSortSchema
@@ -20,13 +20,13 @@ import {
 } from "@/domains/theatres/_feat/validate-query/TheatreQuerySortStageSchema";
 
 export {
-    TheatreQueryOptionSchema,
+    TheatreRequestQuerySchema,
     TheatreQueryMatchSortSchema,
     TheatreQueryMatchFilterSchema,
 }
 
 export type {
-    TheatreQueryOptions,
+    TheatreRequestQuery,
     TheatreQueryMatchSorts,
     TheatreQueryMatchFilters,
 }

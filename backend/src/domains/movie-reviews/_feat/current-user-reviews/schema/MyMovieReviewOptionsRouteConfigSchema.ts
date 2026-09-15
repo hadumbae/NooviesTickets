@@ -3,10 +3,10 @@
  */
 
 import {z} from "zod";
-import {QueryOptionParamsSchema} from "@/shared/_schema";
+import {RequestQueryParamsSchema} from "@/shared/_schema";
 
 /** Zod schema for validating query option parameters on current-user movie review routes. */
-export const MyMovieReviewOptionsRouteConfigSchema = QueryOptionParamsSchema;
+export const MyMovieReviewOptionsRouteConfigSchema = RequestQueryParamsSchema;
 
 /** Type definition for the current-user movie review options route configuration. */
 export type MyMovieReviewOptionsRouteConfig = z.infer<typeof MyMovieReviewOptionsRouteConfigSchema>;

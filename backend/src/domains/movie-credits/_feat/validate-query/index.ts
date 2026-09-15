@@ -1,16 +1,16 @@
 import {
-    type MovieCreditQueryOptions,
-    MovieCreditQueryOptionsSchema
-} from "@/domains/movie-credits/_feat/validate-query/MovieCreditQueryOptionsSchema";
+    type MovieCreditRequestQuery,
+    MovieCreditRequestQuerySchema
+} from "@/domains/movie-credits/_feat/validate-query/MovieCreditRequestQuerySchema";
 
 export * from "./sorting";
 export * from "./filters";
 export * from "./stages";
 
 export {
-    MovieCreditQueryOptionsSchema,
+    MovieCreditRequestQuerySchema,
 }
 
 export type {
-    MovieCreditQueryOptions,
+    MovieCreditRequestQuery,
 }

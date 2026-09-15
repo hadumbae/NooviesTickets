@@ -7,19 +7,19 @@ import {
     ReservationBaseQueryFilterSchema
 } from "@/domains/reservations/_feat/validate-query-options/schemas/ReservationBaseQueryFilterSchema";
 import {
-    type ReservationQueryOptions,
-    ReservationQueryOptionSchema
-} from "@/domains/reservations/_feat/validate-query-options/schemas/ReservationQueryOptionSchema";
+    type ReservationRequestQuery,
+    ReservationRequestQuerySchema
+} from "@/domains/reservations/_feat/validate-query-options/schemas/ReservationRequestQuerySchema";
 
 
 export {
     ReservationBaseQueryFilterSchema,
     ReservationBaseQuerySortSchema,
-    ReservationQueryOptionSchema,
+    ReservationRequestQuerySchema,
 }
 
 export type {
     ReservationBaseQueryFilters,
     ReservationBaseQuerySorts,
-    ReservationQueryOptions,
+    ReservationRequestQuery,
 }
