@@ -1,0 +1,54 @@
+/**
+ * @file Aggregation pipelines for screen virtual fields.
+ * @filename TheatreScreenVirtualPipelines.ts
+ */
+
+
+
+import type {VirtualPipelineStages} from "@/shared/_types";
+
+/**
+ * Computes derived screen metrics from related collections.
+ *
+ * Adds:
+ * - `seatCount`
+ * - `futureShowingCount` (filtered by active statuses)
+ */
+export const TheatreScreenVirtualPipelines: VirtualPipelineStages = [
+    {
+        $lookup: {
+            from: "seats",
+            localField: "_id",
+            foreignField: "screen",
+            as: "vpSeats",
+        },
+    },
+    {
+        $lookup: {
+            from: "showings",
+            localField: "_id",
+            foreignField: "screen",
+            as: "vpShowings",
+            pipeline: [
+                {
+                    $match: {
+                        status: {$in: ["SCHEDULED", "SOLD_OUT"]},
+                        startTime: {$gte: new Date()},
+                    }
+                }
+            ],
+        },
+    },
+    {
+        $addFields: {
+            seatCount: {$size: "$vpSeats"},
+            futureShowingCount: {$size: "$vpShowings"},
+        },
+    },
+    {
+        $project: {
+            vpSeats: 0,
+            vpShowings: 0,
+        }
+    },
+];
