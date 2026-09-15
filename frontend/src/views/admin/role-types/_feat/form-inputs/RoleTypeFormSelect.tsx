@@ -8,8 +8,8 @@ import {generateArraySchema} from "@noovies-tickets/common";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {AnimatedLoader, HookFormSelect} from "@/views/shared/_comp";
 import {FieldValues} from "react-hook-form";
-import {RoleType, RoleTypeSchema} from "@/domains/roletypes/_schema";
-import {RoleTypeQueryFilters, useFetchRoleTypes} from "@/domains/roletypes/_feat";
+import {RoleType, RoleTypeSchema} from "@/domains/role-types/_schema";
+import {RoleTypeQueryFilters, useFetchRoleTypes} from "@/domains/role-types/_feat";
 
 type SelectProps<TFormValues extends FieldValues> = Omit<HookFormInputControlProps<TFormValues>, "control"> & {
     filters?: Partial<RoleTypeQueryFilters>;

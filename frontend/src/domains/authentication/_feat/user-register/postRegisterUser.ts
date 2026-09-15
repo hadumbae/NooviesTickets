@@ -1,0 +1,15 @@
+/**
+ * @fileoverview API mutation function for registering a new user via the registration endpoint.
+ */
+
+import {buildURL} from "@/shared/_feat/fetch-api/buildURL";
+import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOperation";
+import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns";
+import {AuthBaseURL} from "@/domains/authentication/_feat/common/baseURL.ts";
+import {AuthRegisterForm} from "@/domains/authentication/_feat/user-register/AuthRegisterFormSchema.ts";
+
+/** Sends registration data to the authentication API to create a new user account. */
+export function postRegisterUser(data: AuthRegisterForm): Promise<FetchRequestReturns> {
+    const url = buildURL({baseURL: AuthBaseURL, path: "/register"});
+    return handleFetchOperation({url, method: "POST", data});
+}

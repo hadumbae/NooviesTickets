@@ -7,9 +7,9 @@ import {RequestMethod} from "@/shared/_types/request/RequestMethod.ts";
 import {handleBadResponse} from "@/shared/_feat/use-fetch-api/bad-response";
 import {parseJSON} from "@/shared/_feat/use-fetch-api/json";
 import {executeFetch} from "@/shared/_feat/use-fetch-api/fetch";
-import {clearLocalAuthUser} from "@/domains/auth/_feat/storage/clearLocalAuthUser.ts";
-import {isRefreshEligible} from "@/domains/auth/_feat/user-refresh/isRefreshEligible.ts";
-import {getUserAuthTokenRefreshPromise} from "@/domains/auth/_feat/user-refresh/getUserAuthTokenRefreshPromise.ts";
+import {clearLocalAuthUser} from "@/domains/authentication/_feat/storage/clearLocalAuthUser.ts";
+import {isRefreshEligible} from "@/domains/authentication/_feat/user-refresh/isRefreshEligible.ts";
+import {getUserAuthTokenRefreshPromise} from "@/domains/authentication/_feat/user-refresh/getUserAuthTokenRefreshPromise.ts";
 
 type useFetchAPIParams<TPayload> = {
     url: string;

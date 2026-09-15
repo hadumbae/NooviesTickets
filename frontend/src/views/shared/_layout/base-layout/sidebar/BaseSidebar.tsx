@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import GuestSidebar from "@/views/shared/_layout/base-layout/sidebar/guest-side-bar/GuestSidebar.tsx";
 import ClientSidebar from "@/views/shared/_layout/base-layout/sidebar/client-side-bar/ClientSidebar.tsx";
-import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";
+import {useAuthContext} from "@/domains/authentication/_feat/auth-context/useAuthContext.ts";
 
 /**
  * Application sidebar switch.

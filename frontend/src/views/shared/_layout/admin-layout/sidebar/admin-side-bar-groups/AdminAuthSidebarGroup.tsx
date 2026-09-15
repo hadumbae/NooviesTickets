@@ -5,7 +5,7 @@
 import {ReactElement} from 'react';
 import {Link} from "react-router-dom";
 import {User} from "lucide-react";
-import {useAuthLogoutUser} from "@/domains/auth/_feat/user-logout/useAuthLogoutUser.ts";
+import {useAuthLogoutUser} from "@/domains/authentication/_feat/user-logout/useAuthLogoutUser.ts";
 import {useLoggedNavigate} from "@/shared/_feat/navigation";
 import {
     SidebarGroup,

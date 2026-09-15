@@ -8,7 +8,7 @@ import {ChevronDown, ChevronRight, TriangleAlert} from "lucide-react";
 import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {MutationResponseConfig} from "@/shared/_feat/submit-data";
-import {useRoleTypeDeleteMutation} from "@/domains/roletypes/_feat/crud-hooks/submit/useRoleTypeDeleteMutation.ts";
+import {useRoleTypeDeleteMutation} from "@/domains/role-types/_feat/crud-hooks/submit/useRoleTypeDeleteMutation.ts";
 import {handleMutateAsync} from "@/shared/_feat";
 
 type DeleteByID = {

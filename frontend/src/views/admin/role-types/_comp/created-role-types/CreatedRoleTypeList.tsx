@@ -4,7 +4,7 @@
 
 import {Dispatch, ReactElement, SetStateAction} from 'react';
 import {ObjectIdString} from "@noovies-tickets/common";
-import {RoleType} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
+import {RoleType} from "@/domains/role-types/_schema/model/RoleTypeSchema.ts";
 import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {X} from "lucide-react";
 import {cn} from "@/shared/_feat";

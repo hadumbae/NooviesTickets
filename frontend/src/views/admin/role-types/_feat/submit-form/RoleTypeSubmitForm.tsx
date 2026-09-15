@@ -3,7 +3,7 @@
  */
 
 import {createForm} from "@/shared/_feat";
-import {RoleTypeFormSchema, useRoleTypeSubmitMutation} from "@/domains/roletypes/_feat";
+import {RoleTypeFormSchema, useRoleTypeSubmitMutation} from "@/domains/role-types/_feat";
 
 const {SubmitForm, useSubmitForm} = createForm({
     formName: "role-type-form-schema",

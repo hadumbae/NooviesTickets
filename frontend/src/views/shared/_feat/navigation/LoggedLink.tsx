@@ -10,7 +10,7 @@ import {LogContext} from "@/shared/_feat/logger/Logger.types.ts";
 import {filterNullishAttributes} from "@noovies-tickets/common";
 import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {ParamError} from "@/shared/_err/ParamError.ts";
-import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";
+import {useAuthContext} from "@/domains/authentication/_feat/auth-context/useAuthContext.ts";
 
 /** Props for the LoggedLink component. */
 export type LoggedLinkProps = LinkProps & {

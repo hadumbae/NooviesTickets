@@ -8,9 +8,9 @@ import {ReactElement, useState} from 'react';
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/shared/_comp/ui/collapsible.tsx";
 import {ChevronDown, ChevronRight} from "lucide-react";
 import {RoleTypeSubmitForm} from "@/views/admin/role-types/_feat/submit-form/RoleTypeSubmitForm.tsx";
-import {RoleType} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
+import {RoleType} from "@/domains/role-types/_schema/model/RoleTypeSchema.ts";
 import {MutationResponseConfig} from "@/shared/_feat/submit-data/mutationTypes.ts";
-import {RoleTypeFormData} from "@/domains/roletypes/_feat/submit-data/schema/RoleTypeFormSchema.ts";
+import {RoleTypeFormData} from "@/domains/role-types/_feat/submit-data/schema/RoleTypeFormSchema.ts";
 
 /** Props for the RoleTypeListSheetEditCollapsible component. */
 type CollapsibleProps = {

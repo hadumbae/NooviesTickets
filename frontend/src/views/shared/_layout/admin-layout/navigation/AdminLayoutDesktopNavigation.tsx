@@ -6,7 +6,7 @@ import {ReactElement} from 'react';
 import {SROnly} from "@/views/shared/_comp";
 import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
-import {useAuthLogoutUser} from "@/domains/auth/_feat/user-logout/useAuthLogoutUser.ts";
+import {useAuthLogoutUser} from "@/domains/authentication/_feat/user-logout/useAuthLogoutUser.ts";
 import {
     BaseLayoutDesktopThemeDropdown
 } from "@/views/shared/_layout/common/navigation/desktop-theme-navigation/BaseLayoutDesktopThemeDropdown.tsx";

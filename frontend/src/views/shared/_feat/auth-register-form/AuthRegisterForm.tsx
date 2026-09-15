@@ -2,9 +2,9 @@
  * @fileoverview Container component for the user registration form.
  */
 
-import {useAuthRegisterForm} from "@/domains/auth/_feat/user-register/useAuthRegisterForm.ts";
-import {useAuthRegisterUser} from "@/domains/auth/_feat/user-register/useAuthRegisterUser.ts";
-import type {AuthRegisterForm} from "@/domains/auth/_feat/user-register/AuthRegisterFormSchema.ts";
+import {useAuthRegisterForm} from "@/domains/authentication/_feat/user-register/useAuthRegisterForm.ts";
+import {useAuthRegisterUser} from "@/domains/authentication/_feat/user-register/useAuthRegisterUser.ts";
+import type {AuthRegisterForm} from "@/domains/authentication/_feat/user-register/AuthRegisterFormSchema.ts";
 import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {ReactElement, ReactNode, useId} from "react";
 import {BaseFormContextProvider} from "@/shared/_feat/generic-form-context";

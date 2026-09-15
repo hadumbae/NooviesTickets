@@ -6,7 +6,7 @@ import {ReactElement} from "react";
 import {cn, FormFieldsetProps} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsFormValues
-} from "@/domains/roletypes/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
+} from "@/domains/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
 import {HookFormSortToggle} from "@/views/shared/_feat";
 
 /**

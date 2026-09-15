@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {RoleTypeNameSchema} from "@/domains/roletypes";
+import {RoleTypeNameSchema} from "@/domains/role-types";
 import {PersonSchema} from "@/domains/persons/_schema";
 
 /** Zod schema for a person summary including their associated role names. */

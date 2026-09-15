@@ -5,7 +5,7 @@
 import {createQueryOptionForm} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsSchema
-} from "@/domains/roletypes/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
+} from "@/domains/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
 
 const {useQueryOptionForm, QueryOptionForm} = createQueryOptionForm({
     schema: RoleTypeIndexQueryOptionsSchema,

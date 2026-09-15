@@ -6,12 +6,12 @@ import {ReactElement} from "react";
 import {cn, FormFieldsetProps} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsFormValues
-} from "@/domains/roletypes/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
+} from "@/domains/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
 import {HookFormInput} from "@/views/shared/_feat";
 import {useFormContext} from "react-hook-form";
 import {LabelledFormInput} from "@/views/admin/movies/_comp/form-display/LabelledFormInput.tsx";
 import {HookFormSelect} from "@/views/shared/_comp";
-import {RoleTypeDepartmentSelectOptions} from "@/domains/roletypes/_const/RoleTypeDepartmentSelectOptions.ts";
+import {RoleTypeDepartmentSelectOptions} from "@/domains/role-types/_const/RoleTypeDepartmentSelectOptions.ts";
 
 /**
  * Renders filter controls for role name and department within a role type index query options form.

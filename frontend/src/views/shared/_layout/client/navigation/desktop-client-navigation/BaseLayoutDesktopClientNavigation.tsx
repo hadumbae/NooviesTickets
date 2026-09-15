@@ -16,8 +16,8 @@ import {
 import {
     BaseLayoutDesktopThemeDropdown
 } from "@/views/shared/_layout/common/navigation/desktop-theme-navigation/BaseLayoutDesktopThemeDropdown.tsx";
-import {useAuthContext} from "@/domains/auth/_feat/auth-context/useAuthContext.ts";
-import {useAuthLogoutUser} from "@/domains/auth/_feat/user-logout/useAuthLogoutUser.ts";
+import {useAuthContext} from "@/domains/authentication/_feat/auth-context/useAuthContext.ts";
+import {useAuthLogoutUser} from "@/domains/authentication/_feat/user-logout/useAuthLogoutUser.ts";
 
 /**
  * Renders the primary horizontal navigation suite for desktop users.

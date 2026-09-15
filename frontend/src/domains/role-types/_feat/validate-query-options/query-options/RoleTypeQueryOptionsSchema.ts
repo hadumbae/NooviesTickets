@@ -1,0 +1,21 @@
+/**
+ * @fileoverview Zod schemas and TypeScript types for RoleType query options, filters, and sorting.
+ */
+
+import {z} from "zod";
+import {AnyValues} from "@/shared/_types";
+import {
+    RoleTypeQueryFiltersSchema
+} from "@/domains/role-types/_feat/validate-query-options/query-options/RoleTypeQueryFiltersSchema";
+import {
+    RoleTypeQuerySortsSchema
+} from "@/domains/role-types/_feat/validate-query-options/query-options/RoleTypeQuerySortsSchema";
+
+/** Zod schema for full RoleType query options, combining filters and sort options. */
+export const RoleTypeQueryOptionsSchema = RoleTypeQueryFiltersSchema.merge(RoleTypeQuerySortsSchema);
+
+/** Combines both filters and sorts into a single type for querying RoleType records. */
+export type RoleTypeQueryOptions = z.infer<typeof RoleTypeQueryOptionsSchema>;
+
+/** Represents the values used to initialize the RoleType query form. */
+export type RoleTypeQueryOptionsFormValues = AnyValues<RoleTypeQueryOptions>;

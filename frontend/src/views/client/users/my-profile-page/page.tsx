@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {useGetCurrentUser} from "@/domains/auth/_feat";
+import {useGetCurrentUser} from "@/domains/authentication/_feat";
 import {useTitle} from "@/shared/_feat";
 import {MyProfilePageContent} from "@/views/client/users/my-profile-page/content.tsx";
 

@@ -13,7 +13,7 @@ import {HookFormTextArea} from "@/views/shared/_feat/form-inputs/HookFormTextAre
 import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {RoleTypeCategorySelect} from "@/views/admin/role-types/_feat/form-inputs";
 import {RoleTypeDepartment, RoleTypeDepartmentConstant} from "@noovies-tickets/common";
-import {RoleTypeFormValues} from "@/domains/roletypes/_feat/submit-data/schema/RoleTypeFormSchema.ts";
+import {RoleTypeFormValues} from "@/domains/role-types/_feat/submit-data/schema/RoleTypeFormSchema.ts";
 
 /**
  * Form component for creating or editing a RoleType entity.

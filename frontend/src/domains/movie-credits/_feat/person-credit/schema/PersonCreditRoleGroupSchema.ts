@@ -10,7 +10,7 @@ import {
     PersonCreditSchema,
     PersonCrewCredit
 } from "@/domains/movie-credits/_feat/person-credit/schema/PersonCreditSchema.ts";
-import {RoleTypeSchema} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
+import {RoleTypeSchema} from "@/domains/role-types/_schema/model/RoleTypeSchema.ts";
 import {generateArraySchema} from "@noovies-tickets/common";
 
 /**

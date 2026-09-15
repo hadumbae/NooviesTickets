@@ -3,7 +3,7 @@
  */
 
 import {ReactElement, useEffect} from 'react';
-import {useAuthLogoutUser} from "@/domains/auth/_feat/user-logout/useAuthLogoutUser.ts";
+import {useAuthLogoutUser} from "@/domains/authentication/_feat/user-logout/useAuthLogoutUser.ts";
 import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {PageLoader} from "@/views/shared/_comp/page";
 

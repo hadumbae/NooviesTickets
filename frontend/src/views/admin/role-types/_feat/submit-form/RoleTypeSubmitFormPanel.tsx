@@ -5,7 +5,7 @@
 import {Dispatch, ReactElement, ReactNode, SetStateAction, useState} from 'react';
 import {Sheet} from "@/views/shared/_comp/ui/sheet/Sheet.tsx";
 import {ScrollArea} from "@/views/shared/_comp/ui/scroll-area.tsx";
-import {RoleType} from "@/domains/roletypes/_schema/model/RoleTypeSchema.ts";
+import {RoleType} from "@/domains/role-types/_schema/model/RoleTypeSchema.ts";
 import {ScrollAreaScrollbar} from "@radix-ui/react-scroll-area";
 import {CreatedRoleTypeList} from "@/views/admin/role-types/_comp";
 import {SheetContent} from "@/views/shared/_comp/ui/sheet/SheetContent.tsx";

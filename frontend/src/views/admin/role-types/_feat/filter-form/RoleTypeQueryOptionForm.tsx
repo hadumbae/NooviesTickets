@@ -6,7 +6,7 @@ import {ReactElement, ReactNode} from 'react';
 import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
 import {BaseFormContextProvider} from "@/shared/_feat/generic-form-context";
 import {Form} from "@/views/shared/_comp/ui/form.tsx";
-import {RoleTypeQueryOptions, RoleTypeQueryOptionsSchema, useRoleTypeQueryOptionForm} from "@/domains/roletypes/_feat/validate-query-options";
+import {RoleTypeQueryOptions, RoleTypeQueryOptionsSchema, useRoleTypeQueryOptionForm} from "@/domains/role-types/_feat/validate-query-options";
 import {useGenerateFormID} from "@/shared/_feat/generate-form-keys";
 
 /** Props for the RoleTypeQueryOptionForm component. */

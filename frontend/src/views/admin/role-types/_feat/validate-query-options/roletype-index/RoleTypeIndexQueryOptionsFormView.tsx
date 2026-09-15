@@ -6,7 +6,7 @@ import {ReactElement} from "react";
 import {QueryOptionFormViewProps} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsFormValues
-} from "@/domains/roletypes/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
+} from "@/domains/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
 import {QueryOptionFormLayout} from "@/views/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsFormFilterFieldset

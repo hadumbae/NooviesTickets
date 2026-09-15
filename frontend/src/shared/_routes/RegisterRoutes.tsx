@@ -1,9 +1,9 @@
 import {RouteObject} from "react-router-dom";
-import {AuthRoutes} from "@/domains/auth/routing/AuthRoutes.tsx";
+import {AuthRoutes} from "@/domains/authentication/routing/AuthRoutes.tsx";
 import {PersonRoutes} from "@/domains/persons/_routes/PersonRoutes.tsx";
 import {SystemRoutes} from "@/shared/_routes/SystemRoutes.tsx";
 import {AdminUserRoutes, UserProfileRoutes} from "@/domains/users";
-import {RoleTypeRoutes} from "@/domains/roletypes";
+import {RoleTypeRoutes} from "@/domains/role-types";
 import {AdminReservationRoutes} from "@/domains/reservations/_feat/fetch-reservation-by-code/routes/routes.tsx";
 import {AdminCustomerRoutes} from "@/domains/customers";
 import {TheatreRoutes} from "@/domains/theatres";

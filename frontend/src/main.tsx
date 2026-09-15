@@ -4,7 +4,7 @@ import './index.css'
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {QueryClientProvider} from "@tanstack/react-query";
-import {AuthProvider} from "@/domains/auth/_feat";
+import {AuthProvider} from "@/domains/authentication/_feat";
 import {queryClient as ReactQueryClient} from "@/_config";
 import {RegisterRoutes} from "@/shared/_routes";
 import {IPGeolocationContextProvider, ThemeProvider} from "@/shared/_feat";

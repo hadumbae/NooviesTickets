@@ -4,12 +4,12 @@
 
 import {createForm} from "@/shared/_feat";
 import {User} from "@/domains/users/_schema/user/UserSchema.ts";
-import {useAuthLoginUser} from "@/domains/auth/_feat/user-login/useAuthLoginUser.ts";
+import {useAuthLoginUser} from "@/domains/authentication/_feat/user-login/useAuthLoginUser.ts";
 import {
     AuthLoginFormData,
     AuthLoginFormSchema,
     AuthLoginFormValues
-} from "@/domains/auth/_feat/user-login/AuthLoginFormSchema";
+} from "@/domains/authentication/_feat/user-login/AuthLoginFormSchema";
 
 const {SubmitForm, useSubmitForm} = createForm<
     AuthLoginFormValues,
