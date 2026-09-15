@@ -1,5 +1,4 @@
 export * from "./controllers";
-export * from "./fetch-utils";
 export * from "./model";
 export * from "./mongoose";
 export * from "./mongoose-aggregation";

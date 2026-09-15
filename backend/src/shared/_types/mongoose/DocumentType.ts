@@ -3,7 +3,7 @@
  */
 
 import type {Document} from "mongoose";
-import type {ModelObject} from "@/shared/_types/model/ModelObject";
+import type {BaseModel} from "@/shared/_types/model/BaseModel";
 
 /** Represents a Mongoose document combined with its underlying schema interface. */
-export type DocumentType<TSchema extends ModelObject> = Document<unknown, {}, TSchema> & TSchema;
+export type DocumentType<TSchema extends BaseModel> = Document<unknown, {}, TSchema> & TSchema;

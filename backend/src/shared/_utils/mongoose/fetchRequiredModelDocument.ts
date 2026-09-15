@@ -3,11 +3,23 @@
  * @filename fetchRequiredModelDocument.ts
  */
 
-import type {FetchRequiredByIdentifierConfig} from "@/shared/_types/fetch-utils/FetchRequiredByIdentifierConfig";
-import type {ModelObject} from "@/shared/_types/model/ModelObject";
+import type {BaseModel} from "@/shared/_types/model/BaseModel";
+import type {QueryConfig} from "@/shared/_types/query-config/QueryConfig";
 import populateQuery from "./populateQuery.js";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import createHttpError from "http-errors";
+import {type Model, Types} from "mongoose";
+import type {SlugString} from "@noovies-tickets/common";
+
+/** Parameters for fetching a required document by either its ObjectId or unique slug. */
+type FetchRequiredByIdentifierConfig<TSchema extends BaseModel> = {
+    model: Model<TSchema>;
+    options?: Omit<QueryConfig, "limit">;
+    notFoundMessage?: string;
+} & (
+    | { _id: Types.ObjectId; slug?: never }
+    | { _id?: never; slug: SlugString }
+);
 
 /**
  * Fetches a single document by `_id` or `slug`.
@@ -16,7 +28,7 @@ import createHttpError from "http-errors";
  *
  * @typeParam TSchema - Schema field shape for the model.
  */
-export async function fetchRequiredModelDocument<TSchema extends ModelObject>(
+export async function fetchRequiredModelDocument<TSchema extends BaseModel>(
     {model, _id, slug, options, notFoundMessage}: FetchRequiredByIdentifierConfig<TSchema>
 ): Promise<DocumentType<TSchema>> {
     const filter = _id ? {_id} : {slug};
