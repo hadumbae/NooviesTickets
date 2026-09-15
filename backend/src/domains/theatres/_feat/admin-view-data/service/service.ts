@@ -1,0 +1,93 @@
+/**
+ * @fileoverview Data aggregation service for Theatre administrative views.
+ */
+
+import type {
+    FetchTheatreDetailsViewDataConfig,
+    FetchTheatreShowingListViewDataConfig,
+    TheatreDetailsViewData,
+    TheatreShowingListViewData
+} from "@/domains/theatres/_feat/admin-view-data/service/service.types";
+import {TheatreModel, type TheatreWithVirtuals} from "@/domains/theatres/_models/theatre";
+import {TheatreScreenModel, type TheatreScreenSchemaFields} from "@/domains/theatre-screens/_models/theatre-screen";
+import {TheatreVirtualPopulationPaths} from "@/domains/theatres/_feat/crud";
+import createHttpError from "http-errors";
+import {buildPaginationPipelines} from "@/shared/_feat/pagination-pipelines";
+import type {PipelineStage} from "mongoose";
+import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model";
+import {ShowingPopulationPaths} from "@/domains/showings/_feat/query-population";
+import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
+import {TheatreScreenVirtualPipelines} from "@/domains/theatre-screens/_feat/query-population";
+
+/**
+ * Aggregates data for the comprehensive Theatre Details dashboard.
+ */
+export async function fetchTheatreDetailsViewData(
+    {slug, screenPage = 1, screenPerPage = 25, showingLimit = 10}: FetchTheatreDetailsViewDataConfig
+): Promise<TheatreDetailsViewData> {
+    const theatre = await TheatreModel
+        .findOne({slug})
+        .populate(TheatreVirtualPopulationPaths)
+        .lean<TheatreWithVirtuals>({virtuals: true});
+
+    if (!theatre) {
+        throw createHttpError(404, "Theatre not found!");
+    }
+
+    const [screens] = await TheatreScreenModel.aggregate<PaginationReturns<TheatreScreenSchemaFields>>([
+        {$match: {theatre: theatre._id}},
+        ...buildPaginationPipelines({
+            innerStages: [
+                {$sort: {name: 1}},
+                {$skip: (screenPage - 1) * screenPerPage},
+                {$limit: screenPerPage},
+                ...(TheatreScreenVirtualPipelines as PipelineStage.FacetPipelineStage[])
+            ],
+        }),
+    ]);
+
+    const showings = await ShowingModel
+        .find({theatre: theatre._id, status: "SCHEDULED"})
+        .sort({startTime: -1})
+        .limit(showingLimit)
+        .populate(ShowingPopulationPaths)
+        .lean({virtuals: true});
+
+    return {
+        theatre,
+        screens,
+        showings,
+    };
+}
+
+/**
+ * Aggregates paginated showings and theatre context for the showing list view.
+ */
+export async function fetchTheatreShowingListViewData(
+    {slug, page = 1, perPage = 20}: FetchTheatreShowingListViewDataConfig
+): Promise<TheatreShowingListViewData> {
+    const theatre = await TheatreModel
+        .findOne({slug})
+        .populate(TheatreVirtualPopulationPaths)
+        .lean<TheatreWithVirtuals>({virtuals: true});
+
+    if (!theatre) {
+        throw createHttpError(404, "Theatre not found!");
+    }
+
+    const [totalItems, items] = await Promise.all([
+        ShowingModel.countDocuments({theatre: theatre._id}),
+        ShowingModel
+            .find({theatre: theatre._id})
+            .sort({startTime: -1})
+            .skip((page - 1) * perPage)
+            .limit(perPage)
+            .populate(ShowingPopulationPaths)
+            .lean({virtuals: true}),
+    ]);
+
+    return {
+        theatre,
+        showings: {totalItems, items},
+    }
+}

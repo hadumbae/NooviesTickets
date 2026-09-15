@@ -11,7 +11,7 @@ import type {
 } from "@/domains/reservations/_feat/update-reservations/service/service.types";
 import type {AdminReservation} from "@/domains/reservations/_feat/fetch-customer-reservations";
 import createHttpError from "http-errors";
-import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
+import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model";
 import {DateTime} from "luxon";
 
 import {

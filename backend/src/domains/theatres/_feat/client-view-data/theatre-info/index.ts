@@ -1,0 +1,2 @@
+export * from "@/domains/theatres/_feat/client-view-data/theatre-info/fetchTheatreInfoViewData";
+export * from "@/domains/theatres/_feat/client-view-data/theatre-info/FetchTheatreInfoViewRouteConfigSchema";

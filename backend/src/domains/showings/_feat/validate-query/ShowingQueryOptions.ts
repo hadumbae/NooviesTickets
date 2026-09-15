@@ -1,0 +1,44 @@
+/**
+ * @fileoverview Transformation logic for Showing query options.
+ * Consolidates match filters and sort orders into a structured
+ * Mongoose aggregation pipeline configuration for showtime scheduling.
+ */
+
+import {z} from "zod";
+import {ShowingQueryMatchFilterSchema} from "@/domains/showings/_feat/validate-query/match-schemas/ShowingQueryMatchFilterSchema";
+import {ShowingQueryMatchSortSchema} from "@/domains/showings/_feat/validate-query/match-schemas/ShowingQueryMatchSortSchema";
+import type {AggregateQueryOptions} from "@/shared/_feat/generic-aggregate";
+import {filterNullishAttributes} from "@noovies-tickets/common";
+
+/**
+ * Composite Zod schema for Showing query options with an aggregation transformation.
+ */
+export const ShowingQueryOptionSchema =
+    ShowingQueryMatchFilterSchema.merge(ShowingQueryMatchSortSchema).transform(
+        (values): AggregateQueryOptions => ({
+            match: {
+                filters: {
+                    $match: filterNullishAttributes({
+                        movie: values.movie,
+                        theatre: values.theatre,
+                        screen: values.screen,
+                        ticketPrice: values.ticketPrice,
+                        isSpecialEvent: values.isSpecialEvent,
+                        isActive: values.isActive,
+                        status: values.status,
+                    }),
+                },
+                sorts: {
+                    $sort: filterNullishAttributes({
+                        startTime: values.sortByStartTime,
+                        endTime: values.sortByEndTime,
+                    }),
+                },
+            },
+        }),
+    );
+
+/**
+ * TypeScript type inferred from the transformed ShowingQueryOptionSchema.
+ */
+export type ShowingQueryOptions = z.infer<typeof ShowingQueryOptionSchema>;

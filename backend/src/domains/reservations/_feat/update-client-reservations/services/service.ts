@@ -8,8 +8,8 @@ import type {
     CancelClientReservationParams,
     CheckoutClientReservationParams
 } from "@/domains/reservations/_feat/update-client-reservations/services/service.types";
-import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
-import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
+import type {ShowingSchemaFields} from "@/domains/showings/_models/showing/Showing.types";
+import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
 import {
     assertReservationExists,
     assertReservationNotExpired,

@@ -6,8 +6,8 @@ import type {HomepageViewDataRouteConfig} from "@/domains/homepage/_feat/load-da
 import {Types} from "mongoose";
 import {MovieModel, type MovieSchemaFields, MovieSummarySelect} from "@/domains/movies";
 import {GenreModel, type GenreSchemaFields, GenreSummarySelect} from "@/domains/genres";
-import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/_models/theatre";
-import {ShowingModel, type ShowingSchemaFields, ShowingSummarySelect} from "@/domains/showing";
+import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatres/_models/theatre";
+import {ShowingModel, type ShowingSchemaFields, ShowingSummarySelect} from "@/domains/showings";
 import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations";
 import {ReservationSummarySelect} from "@/domains/reservations/_feat/query-population/ReservationSummarySelect";
 

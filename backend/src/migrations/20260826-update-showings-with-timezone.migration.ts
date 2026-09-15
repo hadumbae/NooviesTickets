@@ -5,8 +5,8 @@
 import "dotenv/config";
 import mongoose from "mongoose";
 import {connect} from "@/config/database.js";
-import {ShowingModel} from "@/domains/showing";
-import {TheatreModel} from "@/domains/theatre/_models/theatre";
+import {ShowingModel} from "@/domains/showings";
+import {TheatreModel} from "@/domains/theatres/_models/theatre";
 
 connect().then(async () => {
 

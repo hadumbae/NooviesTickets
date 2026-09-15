@@ -7,10 +7,10 @@ import "dotenv/config";
 import {connect} from "@/config/database.js";
 import mongoose from "mongoose";
 import {ReservationModel} from "@/domains/reservations/_models/reservation";
-import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model.js";
+import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model.js";
 import createHttpError from "http-errors";
 import {generateSlug} from "@noovies-tickets/common";
-import type {PopulatedShowing} from "@/domains/showing/_models/showing/Showing.types";
+import type {PopulatedShowing} from "@/domains/showings/_models/showing/Showing.types";
 
 /**
  * Execution block for the Reservation slug migration.

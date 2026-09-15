@@ -6,9 +6,9 @@ import {z} from "zod";
 import {generateArraySchema} from "@noovies-tickets/common";
 import {BooleanValueSchema, ValidDateInstanceSchema, PositiveNumberSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
 import {ReservationTypeSchema} from "@noovies-tickets/common";
-import {ReservedSeatSnapshotInputSchema} from "@/domains/seatmap/_feat/validate-submit/ReservedSeatSnapshotInputSchema";
-import {TheatreScreenSnapshotInputSchema} from "@/domains/theatre-screen/_feat/validate-submit";
-import {TheatreSnapshotInputSchema} from "@/domains/theatre/_validation";
+import {ReservedSeatSnapshotInputSchema} from "@/domains/seatmaps/_feat/validate-submit/ReservedSeatSnapshotInputSchema";
+import {TheatreScreenSnapshotInputSchema} from "@/domains/theatre-screens/_feat/validate-submit";
+import {TheatreSnapshotInputSchema} from "@/domains/theatres/_validation";
 import {MovieSnapshotInputSchema} from "@/domains/movies/_feat/validate-submit";
 
 /** Zod validation schema for reserved showing snapshot input data. */

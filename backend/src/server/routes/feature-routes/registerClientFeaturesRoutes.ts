@@ -5,7 +5,7 @@
 import type {Express} from "express";
 import type {RouteRegistration} from "../../registerRoutes";
 import {FetchClientReservationRoutes} from "@/domains/reservations/_feat/fetch-client-reservations/routes";
-import {TheatreSearchRoutes} from "@/domains/theatre/_feat/search-theatres";
+import {TheatreSearchRoutes} from "@/domains/theatres/_feat/search-theatres";
 import {ReviewsByMovieRoutes} from "@/domains/movies/_feat/fetch-reviews-by-movie";
 import {ReserveTicketsRoutes} from "@/domains/reservations/_feat/reserve-tickets";
 import {UpdateClientReservationRoutes} from "@/domains/reservations/_feat/update-client-reservations";

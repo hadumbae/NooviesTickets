@@ -15,7 +15,7 @@ import 'dotenv/config';
 import mongoose from "mongoose";
 import {connect} from "@/config/database.js";
 import {generateSlug} from "@noovies-tickets/common";
-import {SeatModel} from "@/domains/seat/_models";
+import {SeatModel} from "@/domains/seats/_models";
 
 connect().then(async () => {
     const cursor = SeatModel.find().cursor();

@@ -4,10 +4,10 @@
 
 import type {ReservationType} from "@noovies-tickets/common";
 import type {ISO6391LanguageCode} from "@noovies-tickets/common";
-import type {ReservedSeatSnapshotSchemaFields} from "@/domains/seatmap/_models/seat-map-snapshot/ReservedSeatSnapshot.types";
+import type {ReservedSeatSnapshotSchemaFields} from "@/domains/seatmaps/_models/seat-map-snapshot/ReservedSeatSnapshot.types";
 import type {MovieSnapshotSchemaFields} from "@/domains/movies/_models/movie-snapshot/MovieSnapshot.types";
-import type {TheatreScreenSnapshotSchemaFields} from "@/domains/theatre-screen/_models/theatre-screen-snapshot";
-import type {TheatreSnapshotSchemaFields} from "@/domains/theatre/_models/theatre-snapshot";
+import type {TheatreScreenSnapshotSchemaFields} from "@/domains/theatre-screens/_models/theatre-screen-snapshot";
+import type {TheatreSnapshotSchemaFields} from "@/domains/theatres/_models/theatre-snapshot";
 
 /** Represents the fully resolved state of a showing at the moment a reservation is created. */
 export type ReservedShowingSnapshotSchemaFields = {

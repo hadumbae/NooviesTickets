@@ -6,10 +6,10 @@ import {type FilterQuery, Types} from "mongoose";
 import type {NonNegativeNumber, PositiveInteger} from "@noovies-tickets/common";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import type {ISO3166Alpha2CountryCode} from "@noovies-tickets/common";
-import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
+import type {ShowingSchemaFields} from "@/domains/showings/_models/showing/Showing.types";
 import {generateFuzzyRegexPattern} from "@/shared/_utils/regex/generateFuzzyRegexPattern";
-import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
-import {ShowingPopulationPipelines} from "@/domains/showing/_feat/query-population/ShowingPopulationPipelines";
+import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model";
+import {ShowingPopulationPipelines} from "@/domains/showings/_feat/query-population/ShowingPopulationPipelines";
 
 /** Parameters for the fetchShowingsForMovie function. */
 export type FetchShowingsForMovieConfig = {

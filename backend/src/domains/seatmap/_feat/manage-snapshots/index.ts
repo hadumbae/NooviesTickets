@@ -1,1 +1,0 @@
-export * from "@/domains/seatmap/_feat/manage-snapshots/createReservedSeatSnapshot"

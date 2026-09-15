@@ -3,14 +3,14 @@
  */
 
 import {Types} from "mongoose";
-import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
+import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model";
 import {DocumentNotFoundError} from "@/shared/_errors/DocumentNotFoundError";
 import {InconsistentDataError} from "@/shared/_errors/InconsistentDataError";
 import {createMovieSnapshot} from "@/domains/movies/_feat/manage-snapshots/createMovieSnapshot";
-import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
-import {createReservedSeatSnapshot} from "@/domains/seatmap/_feat/manage-snapshots/createReservedSeatSnapshot";
+import type {ShowingSchemaFields} from "@/domains/showings/_models/showing/Showing.types";
+import {createReservedSeatSnapshot} from "@/domains/seatmaps/_feat/manage-snapshots/createReservedSeatSnapshot";
 import {ReservedShowingSnapshotInputSchema} from "@/domains/reservations/_feat/reserve-tickets/schemas";
-import {createTheatreScreenSnapshot} from "@/domains/theatre-screen/_feat/build-snapshot";
+import {createTheatreScreenSnapshot} from "@/domains/theatre-screens/_feat/build-snapshot";
 import type {ReservationType} from "@noovies-tickets/common";
 import type {ReservedShowingSnapshotSchemaFields} from "@/domains/reservations/_models/showing-snapshot";
 

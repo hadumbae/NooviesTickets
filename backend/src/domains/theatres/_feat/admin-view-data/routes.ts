@@ -1,0 +1,50 @@
+/**
+ * @fileoverview Express router for administrative theatre view data aggregation.
+ */
+
+import {Router} from "express";
+import {isAuth} from "@/domains/authentication/_middleware/isAuth";
+import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
+import {
+    TheatreScreenDetailsViewRouteConfigSchema
+} from "@/domains/theatre-screens/_feat/view-data-admin/schemas/TheatreScreenDetailsViewRouteConfigSchema";
+import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
+import {
+    getFetchTheatreDetailsViewData,
+    getFetchTheatreShowingListViewData
+} from "@/domains/theatres/_feat/admin-view-data/controller";
+import {
+    TheatreDetailsViewRouteConfigSchema
+} from "@/domains/theatres/_feat/admin-view-data/schemas/TheatreDetailsViewRouteConfigSchema";
+import {
+    TheatreShowingListRouteConfigSchema
+} from "@/domains/theatres/_feat/admin-view-data/schemas/TheatreShowingListRouteConfigSchema";
+import {getFetchTheatreScreenDetailsViewData} from "@/domains/theatre-screens/_feat/view-data-admin/controller";
+
+const router = Router();
+
+router.get(
+    '/item/:theatreSlug/screen/:screenSlug/details',
+    [isAuth, isAdmin, validateRequestConfig({schema: TheatreScreenDetailsViewRouteConfigSchema})],
+    asyncHandler(getFetchTheatreScreenDetailsViewData)
+);
+
+router.get(
+    '/item/:slug/details',
+    [isAuth, isAdmin, validateRequestConfig({schema: TheatreDetailsViewRouteConfigSchema})],
+    asyncHandler(getFetchTheatreDetailsViewData)
+);
+
+router.get(
+    '/item/:slug/showings/list',
+    [isAuth, isAdmin, validateRequestConfig({schema: TheatreShowingListRouteConfigSchema})],
+    asyncHandler(getFetchTheatreShowingListViewData)
+);
+
+/**
+ * Router containing administrative theatre and screen data endpoints.
+ */
+export {
+    router as TheatreAdminViewDataRoutes
+};

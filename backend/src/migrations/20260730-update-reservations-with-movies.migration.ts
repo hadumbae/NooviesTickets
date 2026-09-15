@@ -6,7 +6,7 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import {connect} from "@/config/database.js";
 import {ReservationModel} from "@/domains/reservations";
-import type {ShowingSchemaFields} from "@/domains/showing";
+import type {ShowingSchemaFields} from "@/domains/showings";
 
 connect()
     .then(async () => {

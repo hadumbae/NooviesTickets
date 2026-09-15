@@ -5,10 +5,10 @@
 import type {Express} from "express";
 import type {RouteRegistration} from "@/server/registerRoutes";
 import {GenreClientViewDataRoutes} from "@/domains/genres/_feat/client-view-data";
-import {TheatreClientViewDataRoutes} from "@/domains/theatre/_feat/client-view-data";
+import {TheatreClientViewDataRoutes} from "@/domains/theatres/_feat/client-view-data";
 import {MovieClientViewDataRoutes} from "@/domains/movies/_feat/client-view-data";
 import {PersonClientViewDataRoutes} from "@/domains/persons/_feat/client-view-data";
-import {TheatreScreenClientViewDataRoutes} from "@/domains/theatre-screen";
+import {TheatreScreenClientViewDataRoutes} from "@/domains/theatre-screens";
 import {HomepageRoutes} from "@/domains/homepage/_feat";
 
 const pageRouteGroups: RouteRegistration[] = [

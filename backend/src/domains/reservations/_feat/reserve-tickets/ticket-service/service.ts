@@ -3,17 +3,17 @@
  */
 
 import {calculateFutureDate} from "@noovies-tickets/common";
-import {fetchPopulatedShowing} from "@/domains/showing/_feat/fetch-showings/fetchPopulatedShowing";
+import {fetchPopulatedShowing} from "@/domains/showings/_feat/fetch-showings/fetchPopulatedShowing";
 import {BookingError} from "@/shared/_errors/reservations/BookingError";
 import type {
     ReserveGeneralTicketData,
     ReserveSeatTicketData,
     ReserveTicketsParams
 } from "@/domains/reservations/_feat/reserve-tickets/ticket-service/service.types";
-import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
-import type {SeatMapSchemaFields} from "@/domains/seatmap/_models/seat-map/SeatMap.types";
+import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
+import type {SeatMapSchemaFields} from "@/domains/seatmaps/_models/seat-map/SeatMap.types";
 import {type ReserveTicketPersistenceData} from "@/domains/reservations/_feat/reserve-tickets/schemas";
-import {SeatModel} from "@/domains/seat/_models";
+import {SeatModel} from "@/domains/seats/_models";
 import {
     saveValidatedReservation
 } from "@/domains/reservations/_feat/reserve-tickets/ticket-service/saveValidatedReservation";

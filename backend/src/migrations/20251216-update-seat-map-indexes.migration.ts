@@ -12,7 +12,7 @@
 
 import mongoose from "mongoose";
 import {connect} from "@/config/database.js";
-import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
 
 connect()
     .then(async () => await SeatMapModel.createIndexes())

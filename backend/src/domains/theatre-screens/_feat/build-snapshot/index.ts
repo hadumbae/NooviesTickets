@@ -1,0 +1,1 @@
+export * from "@/domains/theatre-screens/_feat/build-snapshot/createTheatreScreenSnapshot";

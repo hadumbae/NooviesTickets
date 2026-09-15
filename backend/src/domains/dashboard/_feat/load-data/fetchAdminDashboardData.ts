@@ -4,9 +4,9 @@
 
 import {GenreModel} from "@/domains/genres";
 import {PersonModel} from "@/domains/persons";
-import {TheatreModel} from "@/domains/theatre/_models/theatre";
+import {TheatreModel} from "@/domains/theatres/_models/theatre";
 import {MovieModel} from "@/domains/movies";
-import {ShowingModel} from "@/domains/showing";
+import {ShowingModel} from "@/domains/showings";
 import {ReservationModel} from "@/domains/reservations";
 import {RoleTypeModel} from "@/domains/role-types";
 import {MovieReviewModel} from "@/domains/movie-reviews";

@@ -13,7 +13,7 @@
 import "dotenv/config";
 import {connect} from "@/config/database.js";
 import mongoose from "mongoose";
-import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model.js";
+import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model.js";
 
 /**
  * Executes the migration logic.

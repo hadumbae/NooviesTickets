@@ -8,9 +8,9 @@ import type {ReservationDoc, ReservationSchemaFields} from "./Reservation.types.
 import {DateTime} from "luxon";
 import {generateReservationUniqueCode} from "@/domains/reservations/_feat/generate-reservation-code/index.js";
 import type {ReservationStatus} from "@noovies-tickets/common";
-import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
 import {generateSlug} from "@noovies-tickets/common";
-import type {PopulatedShowing} from "@/domains/showing/_models/showing/Showing.types";
+import type {PopulatedShowing} from "@/domains/showings/_models/showing/Showing.types";
 import {createReservedShowingSnapshot, reserveReservationSeats} from "@/domains/reservations/_feat/reserve-tickets";
 import {createSoftDeleteMiddleware} from "@/shared/_feat";
 
