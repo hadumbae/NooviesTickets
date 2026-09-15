@@ -1,6 +1,5 @@
 /**
- * @file Main sidebar navigation component for the administrative dashboard.
- * @filename AdminSidebar.tsx
+ * @fileoverview Main sidebar navigation component for the administrative dashboard.
  */
 
 import {ReactElement} from 'react';
@@ -17,6 +16,7 @@ import {
     AdminSetupSidebarGroup
 } from "@/views/shared/_layout/admin-layout/sidebar/admin-side-bar-groups";
 
+/** Renders the administrative sidebar navigation shell and grouping structure. */
 export function AdminSidebar(): ReactElement {
     return (
         <Sidebar>

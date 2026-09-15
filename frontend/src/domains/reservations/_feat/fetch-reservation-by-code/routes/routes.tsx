@@ -3,7 +3,7 @@
  */
 
 import {RouteObject} from "react-router-dom";
-import AdminLayout from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
+import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 import {AuthLoader} from "@/shared/_loaders";
 import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
 

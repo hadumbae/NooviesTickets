@@ -4,7 +4,7 @@
 
 import {RouteObject} from "react-router-dom";
 import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
-import AdminLayout from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
+import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 
 /** Route definitions for showing administration pages. */
 export const ShowingRoutes: RouteObject[] = [

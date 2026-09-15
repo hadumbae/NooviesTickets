@@ -1,20 +1,15 @@
-import {FC} from 'react';
+/**
+ * @fileoverview Main content area wrapper for the administrative layout.
+ */
+
+import {ReactElement} from 'react';
 import {cn} from "@/shared/_feat";
 import {Outlet} from "react-router-dom";
 import {Bounce, ToastContainer} from "react-toastify";
-import {
-    AppErrorBoundary
-} from "@/views/shared/_feat/error-boundary/app-error-boundary/boundary/AppErrorBoundary.tsx";
+import {AppErrorBoundary} from "@/views/shared/_feat/error-boundary/app-error-boundary/boundary/AppErrorBoundary.tsx";
 
-/**
- * Admin layout content wrapper.
- *
- * @remarks
- * - Renders routed content via {@link Outlet}
- * - Provides a global {@link ToastContainer}
- * - Applies consistent spacing and max-width constraints
- */
-const AdminLayoutContent: FC = () => {
+/** Renders the routed content inside an error boundary alongside the global toast container. */
+export function AdminLayoutContent(): ReactElement {
     return (
         <section className={cn(
             "flex-1 font-roboto py-5",
@@ -40,6 +35,4 @@ const AdminLayoutContent: FC = () => {
             />
         </section>
     );
-};
-
-export default AdminLayoutContent;
+}

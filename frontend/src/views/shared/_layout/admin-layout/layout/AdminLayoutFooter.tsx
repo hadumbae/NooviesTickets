@@ -1,13 +1,11 @@
-import {FC} from 'react';
-
 /**
- * Admin layout footer.
- *
- * @remarks
- * - Displays current year dynamically
- * - Intended for use at the bottom of the admin layout
+ * @fileoverview Footer component for the administrative dashboard layout.
  */
-const AdminLayoutFooter: FC = () => {
+
+import {ReactElement} from 'react';
+
+/** Renders the admin dashboard footer with dynamic copyright year. */
+export function AdminLayoutFooter(): ReactElement {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -17,6 +15,4 @@ const AdminLayoutFooter: FC = () => {
             </span>
         </footer>
     );
-};
-
-export default AdminLayoutFooter;
+}

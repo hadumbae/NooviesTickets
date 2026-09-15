@@ -2,7 +2,7 @@
  * @fileoverview React Router configuration for the Theatre administration module.
  */
 
-import AdminLayout from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
+import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 
 /**
  * Defines the routing hierarchy for theatre management.

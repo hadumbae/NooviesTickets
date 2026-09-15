@@ -1,6 +1,5 @@
 /**
- * @file Dashboard and client-access navigation dropdown for the administrative layout.
- * @filename AdminLayoutDashboardNavigationDropdown.tsx
+ * @fileoverview Dashboard and client-access navigation dropdown component for the administrative layout.
  */
 
 import {ReactElement} from 'react';
@@ -9,9 +8,7 @@ import {useCurrentURLPath} from "@/shared/_feat/navigation/useCurrentURLPath.ts"
 import {DropdownMenuLink} from "@/views/shared/_feat/navigation/DropdownMenuLink.tsx";
 import {NavigationDropdownButton} from "@/views/shared/_comp/buttons/NavigationDropdownButton.tsx";
 
-/**
- * A navigation dropdown providing high-level redirection between Admin and Client contexts.
- */
+/** Navigation dropdown component providing high-level redirection between Admin and Client contexts. */
 export function AdminLayoutDashboardNavigationDropdown(): ReactElement {
     const url = useCurrentURLPath();
 

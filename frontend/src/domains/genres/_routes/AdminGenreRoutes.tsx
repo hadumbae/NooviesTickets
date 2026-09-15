@@ -4,7 +4,7 @@
 
 import {AuthLoader} from "@/shared/_loaders";
 import {RouteObject} from "react-router-dom";
-import AdminLayout from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
+import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 
 /** Route definitions for genre administration, including index and detail views. */
 export const AdminGenreRoutes: RouteObject[] = [
