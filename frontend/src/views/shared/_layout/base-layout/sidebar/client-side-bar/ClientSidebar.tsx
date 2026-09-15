@@ -1,12 +1,12 @@
 /**
- * @file Main sidebar navigation component for the client-facing application.
- * @filename ClientSidebar.tsx
+ * @fileoverview Main sidebar navigation component for the client-facing application.
  */
 
-import {FC} from 'react';
+import {ReactElement} from 'react';
 import {Sidebar, SidebarContent, SidebarHeader} from "@/views/shared/_comp/ui/sidebar/sidebar.tsx";
-import ClientProfileSidebarGroup
-    from "@/views/shared/_layout/base-layout/sidebar/client-side-bar/ClientProfileSidebarGroup.tsx";
+import {
+    ClientProfileSidebarGroup
+} from "@/views/shared/_layout/base-layout/sidebar/client-side-bar/ClientProfileSidebarGroup.tsx";
 import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 import {
     AdminAuthSidebarGroup
@@ -18,10 +18,8 @@ import AdminLinksSidebarGroup from "@/views/shared/_layout/common/navigation/sid
 import {LayoutThemeSidebarGroup} from "@/views/shared/_layout/common/sidebar/LayoutThemeSidebarGroup.tsx";
 import {useAuthContext} from "@/domains/authentication/_feat/auth-context/useAuthContext.ts";
 
-/**
- * Orchestrates the sidebar content for client users, with conditional administrative shortcuts.
- */
-const ClientSidebar: FC = () => {
+/** Renders the client sidebar navigation including browsing links, profile options, and conditional administrative links. Requires AuthContext. */
+export function ClientSidebar(): ReactElement {
     const {isAdmin} = useAuthContext();
 
     return (
@@ -52,6 +50,4 @@ const ClientSidebar: FC = () => {
             </SidebarContent>
         </Sidebar>
     );
-};
-
-export default ClientSidebar;
+}

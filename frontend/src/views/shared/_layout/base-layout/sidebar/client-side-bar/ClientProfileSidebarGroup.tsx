@@ -1,10 +1,10 @@
 /**
- * @file ClientProfileSidebarGroup.tsx
- * @description Sidebar group for user profile and personal account navigation.
- * Displays links for managing the user’s profile, favourites, and reviews.
+ * @fileoverview Sidebar navigation group for user profile and personal account links.
  */
 
-import { FC } from 'react';
+import {ReactElement} from 'react';
+import {Link} from "react-router-dom";
+import {TableOfContents} from "lucide-react";
 import {
     SidebarGroup,
     SidebarGroupContent,
@@ -13,64 +13,46 @@ import {
     SidebarMenuButton,
     SidebarMenuItem
 } from "@/views/shared/_comp/ui/sidebar/sidebar.tsx";
-import { Link } from "react-router-dom";
-import { TableOfContents } from "lucide-react";
 
-/**
- * `ClientProfileSidebarGroup` renders a sidebar section for profile-related pages
- * in the client interface.
- *
- * - Provides links to **My Profile**, **My Favourites**, and **My Reviews** pages.
- * - Intended for use within the client dashboard or account sidebar.
- *
- * @component
- * @example
- * ```tsx
- * <ClientProfileSidebarGroup />
- * ```
- */
-const ClientProfileSidebarGroup: FC = () => {
+/** Renders sidebar navigation options for managing account profile, favourites, reviews, and reservations. */
+export function ClientProfileSidebarGroup(): ReactElement {
     return (
         <SidebarGroup>
             <SidebarGroupLabel>My Profile</SidebarGroupLabel>
             <SidebarGroupContent>
                 <SidebarMenu>
 
-                    {/* Profile Page */}
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link to="/account/profile">
-                                <TableOfContents />
+                                <TableOfContents/>
                                 <span>My Profile</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
 
-                    {/* My Favourites */}
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link to="/account/favourites">
-                                <TableOfContents />
+                                <TableOfContents/>
                                 <span>My Favourites</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
 
-                    {/* My Reviews */}
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link to="/account/reviews">
-                                <TableOfContents />
+                                <TableOfContents/>
                                 <span>My Reviews</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
 
-                    {/* My Reservations */}
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link to="/account/reservations">
-                                <TableOfContents />
+                                <TableOfContents/>
                                 <span>My Reservations</span>
                             </Link>
                         </SidebarMenuButton>
@@ -80,6 +62,4 @@ const ClientProfileSidebarGroup: FC = () => {
             </SidebarGroupContent>
         </SidebarGroup>
     );
-};
-
-export default ClientProfileSidebarGroup;
+}

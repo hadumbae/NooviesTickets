@@ -1,30 +1,25 @@
 /**
- * @file Layout content wrapper for rendering routed components and global notifications.
- * @filename BaseLayoutContent.tsx
+ * @fileoverview Main content area wrapper for the base layout.
  */
 
 import {ReactElement} from 'react';
-import {cn} from "@/shared/_feat";
 import {Outlet} from "react-router-dom";
 import {Bounce, ToastContainer} from "react-toastify";
-import {AppErrorBoundary} from "@/views/shared/_feat";
+import {cn} from "@/shared/_feat/handle-ui/cn.ts";
+import {AppErrorBoundary} from "@/views/shared/_feat/error-boundary/app-error-boundary/boundary/AppErrorBoundary.tsx";
 
-/**
- * Manages the primary viewport for routed content and the global notification system.
- */
-const BaseLayoutContent = (): ReactElement => {
+/** Renders the routed content inside an error boundary alongside the global toast container. */
+export function BaseLayoutContent(): ReactElement {
     return (
         <section className={cn(
             "flex-1 font-offside py-5",
             "max-w-screen-2xl max-md:w-full",
             "xl:mx-36",
         )}>
-            {/* Contextual window for the currently matched route */}
             <AppErrorBoundary>
                 <Outlet/>
             </AppErrorBoundary>
 
-            {/* Global toast configuration for consistent UI feedback */}
             <ToastContainer
                 position="bottom-center"
                 autoClose={5000}
@@ -40,6 +35,5 @@ const BaseLayoutContent = (): ReactElement => {
             />
         </section>
     );
-};
+}
 
-export default BaseLayoutContent;

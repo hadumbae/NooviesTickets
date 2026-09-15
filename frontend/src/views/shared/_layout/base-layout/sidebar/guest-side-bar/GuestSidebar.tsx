@@ -1,28 +1,15 @@
-import {FC} from 'react';
-import {
-    Sidebar,
-    SidebarContent,
-    SidebarHeader,
-} from "@/views/shared/_comp/ui/sidebar/sidebar.tsx";
-import GuestAuthSidebarGroup from "@/views/shared/_layout/base-layout/sidebar/guest-side-bar/GuestAuthSidebarGroup.tsx";
-
 /**
- * **GuestSidebar**
- *
- * Sidebar component for **unauthenticated (guest) users**.
- *
- * ### Features
- * - Displays the application title/logo (`Noovies`) in the header.
- * - Provides authentication-related actions for guests via:
- *   - `GuestAuthSidebarGroup`
- *
- * ### Notes
- * - Designed to work with the main `Sidebar` layout component.
- * - Intended for guests only; should not be used for authenticated client or admin users.
- *
- * @returns {JSX.Element} A fully structured sidebar for guest users
+ * @fileoverview Main sidebar navigation component for guest users.
  */
-const GuestSidebar: FC = () => {
+
+import {ReactElement} from 'react';
+import {Sidebar, SidebarContent, SidebarHeader,} from "@/views/shared/_comp/ui/sidebar/sidebar.tsx";
+import {
+    GuestAuthSidebarGroup
+} from "@/views/shared/_layout/base-layout/sidebar/guest-side-bar/GuestAuthSidebarGroup.tsx";
+
+/** Renders the guest navigation sidebar containing authentication options. */
+export function GuestSidebar(): ReactElement {
     return (
         <Sidebar>
             <SidebarHeader>
@@ -30,10 +17,8 @@ const GuestSidebar: FC = () => {
             </SidebarHeader>
 
             <SidebarContent className="font-spaceGrotesk">
-                <GuestAuthSidebarGroup />
+                <GuestAuthSidebarGroup/>
             </SidebarContent>
         </Sidebar>
     );
-};
-
-export default GuestSidebar;
+}

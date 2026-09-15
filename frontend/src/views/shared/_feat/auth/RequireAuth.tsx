@@ -2,7 +2,7 @@
  * @fileoverview Route guard component that restricts access to authenticated users.
  */
 
-import {ReactNode} from "react";
+import {ReactNode, useEffect} from "react";
 import {Navigate} from "react-router-dom";
 import {toast} from "react-toastify";
 import {useAuthContext} from "@/domains/authentication/_feat/auth-context/useAuthContext.ts";
@@ -22,10 +22,14 @@ export function RequireAuth(
     const {user} = useAuthContext();
     const setPath = useSetRedirectPath();
 
-    if (!user) {
-        setPath();
-        toast.error("Authentication required. Please login in.");
+    useEffect(() => {
+        if (!user) {
+            setPath();
+            toast.error("Authentication required. Please login in.");
+        }
+    }, [user, setPath]);
 
+    if (!user) {
         return (
             <Navigate to="/auth/login"/>
         );

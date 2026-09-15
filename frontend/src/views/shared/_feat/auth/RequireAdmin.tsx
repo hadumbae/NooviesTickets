@@ -2,7 +2,7 @@
  * @fileoverview Route guard component that restricts access to authenticated users with admin privileges.
  */
 
-import {ReactNode} from "react";
+import {ReactNode, useEffect} from "react";
 import {toast} from "react-toastify";
 import {Navigate} from "react-router-dom";
 import {useAuthContext} from "@/domains/authentication/_feat/auth-context/useAuthContext.ts";
@@ -22,22 +22,17 @@ export function RequireAdmin(
     const {user, isAdmin} = useAuthContext();
     const setPath = useSetRedirectPath();
 
-    if (!user) {
-        setPath();
-        toast.error("Authentication required. Please login in.");
+    useEffect(() => {
+        if (!user) {
+            setPath();
+            toast.error("Authentication required. Please login in.");
+        } else if (!isAdmin) {
+            toast.error("Forbidden.");
+        }
+    }, [user, isAdmin, setPath]);
 
-        return (
-            <Navigate to="/auth/login"/>
-        );
-    }
-
-    if (!isAdmin) {
-        toast.error("Forbidden.");
-
-        return (
-            <Navigate to="/"/>
-        );
-    }
+    if (!user) return <Navigate to="/auth/login"/>;
+    if (!isAdmin) return <Navigate to="/"/>;
 
     return (
         children

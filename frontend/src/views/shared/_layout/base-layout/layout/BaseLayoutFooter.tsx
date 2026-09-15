@@ -1,15 +1,11 @@
 /**
- * @file Footer component for the primary application layout.
- * @filename BaseLayoutFooter.tsx
+ * @fileoverview Footer component for the primary application base layout.
  */
 
 import {ReactElement} from "react";
 
-/**
- * Renders a consistent, minimal visual anchor at the bottom of the page.
- */
-const BaseLayoutFooter = (): ReactElement => {
-    /** Extracts the current year for the copyright notice. */
+/** Renders the base application layout footer with a dynamic copyright year. */
+export const BaseLayoutFooter = (): ReactElement => {
     const currentYear = (new Date()).getFullYear();
 
     return (
@@ -19,6 +15,4 @@ const BaseLayoutFooter = (): ReactElement => {
             </span>
         </footer>
     );
-};
-
-export default BaseLayoutFooter;
+}

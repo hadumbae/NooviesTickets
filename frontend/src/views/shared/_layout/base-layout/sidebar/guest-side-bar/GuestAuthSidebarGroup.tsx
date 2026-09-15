@@ -1,10 +1,10 @@
 /**
- * @file GuestAuthSidebarGroup.tsx
- * @description Sidebar group for guest authentication links. Displays navigation
- * options for unauthenticated users such as registration and login.
+ * @fileoverview Sidebar navigation group for guest authentication actions.
  */
 
-import { FC } from 'react';
+import {ReactElement} from 'react';
+import {User} from "lucide-react";
+import {Link} from "react-router-dom";
 import {
     SidebarGroup,
     SidebarGroupContent,
@@ -13,45 +13,28 @@ import {
     SidebarMenuButton,
     SidebarMenuItem
 } from "@/views/shared/_comp/ui/sidebar/sidebar.tsx";
-import { Link } from "react-router-dom";
-import { User } from "lucide-react";
 
-/**
- * `GuestAuthSidebarGroup` renders the sidebar section dedicated to authentication
- * actions for guest users.
- *
- * - Provides links to **Register** and **Login** pages.
- * - Intended for display when the user is not logged in.
- * - Uses shared `Sidebar` UI components for consistent layout and style.
- *
- * @component
- * @example
- * ```tsx
- * <GuestAuthSidebarGroup />
- * ```
- */
-const GuestAuthSidebarGroup: FC = () => {
+/** Renders sidebar menu items for guest registration and login routes. */
+export function GuestAuthSidebarGroup(): ReactElement {
     return (
         <SidebarGroup>
             <SidebarGroupLabel>Authentication</SidebarGroupLabel>
             <SidebarGroupContent>
                 <SidebarMenu>
 
-                    {/* Register */}
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link to="/auth/register">
-                                <User />
+                                <User/>
                                 <span>Register</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
 
-                    {/* Login */}
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link to="/auth/login">
-                                <User />
+                                <User/>
                                 <span>Login</span>
                             </Link>
                         </SidebarMenuButton>
@@ -61,6 +44,4 @@ const GuestAuthSidebarGroup: FC = () => {
             </SidebarGroupContent>
         </SidebarGroup>
     );
-};
-
-export default GuestAuthSidebarGroup;
+}

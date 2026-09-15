@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Header component for the primary client-side base layout handling top navigation and responsive triggers.
+ */
+
 import {ReactElement} from 'react';
 import {LayoutTitle} from "@/views/shared/_comp/layout/LayoutTitle.tsx";
 import {
@@ -8,14 +12,7 @@ import {useRequiredContext} from "@/shared/_feat/use-context/useRequiredContext.
 import {SidebarContext} from "@/views/shared/_comp/ui/sidebar/SidebarContext.ts";
 import BaseLayoutDesktopNavigation from "@/views/shared/_layout/client/navigation/BaseLayoutDesktopNavigation.tsx";
 
-/**
- * @fileoverview Header component for the base layout that handles responsive navigation.
- */
-
-/**
- * Renders the application header with title and navigation.
- * Requires SidebarContext to determine mobile or desktop layout.
- */
+/** Renders the application header with title and navigation controls. Requires SidebarContext. */
 export function BaseLayoutHeader(): ReactElement {
     const {isMobile} = useRequiredContext({context: SidebarContext});
 
