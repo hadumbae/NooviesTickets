@@ -3,12 +3,11 @@ import {
     BrowsePersonsQueryOptionsSchema
 } from "@/domains/persons/_feat/validate-query-options/person-browse/BrowsePersonsQueryOptionsSchema.ts";
 
-const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({
+const {QueryOptionForm} = createQueryOptionForm({
     name: "BrowsePersonsQueryOptions",
     schema: BrowsePersonsQueryOptionsSchema,
 });
 
 export {
     QueryOptionForm as BrowsePersonsQueryOptionForm,
-    useQueryOptionForm as useBrowsePersonsQueryOptionForm,
 }

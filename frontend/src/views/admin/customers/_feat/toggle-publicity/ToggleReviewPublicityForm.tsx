@@ -12,7 +12,7 @@ import {
 import {useToggleReviewPublicityMutation} from "@/domains/movie-reviews/_feat/admin-actions/toggle-review-publicity";
 import {MovieReviewMutationConfig} from "@/domains/movie-reviews/_types";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     ModerationMessageFormValues,
     ModerationMessageFormData,
     unknown,
@@ -30,6 +30,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for toggling movie review publicity. */
         SubmitForm as ToggleReviewPublicityForm,
-    /** Hook for managing review publicity toggle form state and submission. */
-        useSubmitForm as useToggleReviewPublicityForm,
 }

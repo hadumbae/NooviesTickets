@@ -5,7 +5,7 @@
 import {createQueryOptionForm} from "@/shared/_feat";
 import {MovieIndexQueryOptionsSchema} from "@/domains/movies/_feat/handle-query-options/movie-index/MovieIndexQueryOptionsSchema.ts";
 
-const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({
+const {QueryOptionForm} = createQueryOptionForm({
     name: "movie-index-query-option-form",
     schema: MovieIndexQueryOptionsSchema,
 });
@@ -13,6 +13,4 @@ const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({
 export {
     /** Form component for managing movie index query options. */
         QueryOptionForm as MovieIndexQueryOptionForm,
-    /** Hook for controlling the movie index query option form state. */
-        useQueryOptionForm as useMovieIndexQueryOptionForm,
 }

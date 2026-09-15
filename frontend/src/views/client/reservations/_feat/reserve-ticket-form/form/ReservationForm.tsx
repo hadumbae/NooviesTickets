@@ -12,7 +12,7 @@ import {
 } from "@/domains/reservations/_feat/reserve-tickets/schema";
 
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     ReserveTicketFormValues,
     ReserveTicketFormData,
     unknown,
@@ -34,6 +34,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for submitting ticket reservations. */
         SubmitForm as ReservationForm,
-    /** Hook for managing ticket reservation form state and submission logic. */
-        useSubmitForm as useReservationForm,
 }

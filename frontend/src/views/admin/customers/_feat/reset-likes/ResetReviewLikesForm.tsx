@@ -12,7 +12,7 @@ import {
 import {useResetReviewLikesMutation} from "@/domains/movie-reviews/_feat/admin-actions/reset-review-likes";
 import {MovieReviewMutationConfig} from "@/domains/movie-reviews/_types";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     ModerationMessageFormValues,
     ModerationMessageFormData,
     unknown,
@@ -30,6 +30,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for resetting movie review likes. */
         SubmitForm as ResetReviewLikesForm,
-    /** Hook for managing review likes reset form state and submission. */
-        useSubmitForm as useResetReviewLikesForm,
 }

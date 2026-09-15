@@ -5,7 +5,7 @@
 import {createForm} from "@/shared/_feat";
 import {RoleTypeFormSchema, useRoleTypeSubmitMutation} from "@/domains/role-types/_feat";
 
-const {SubmitForm, useSubmitForm} = createForm({
+const {SubmitForm} = createForm({
     formName: "role-type-form-schema",
     schema: RoleTypeFormSchema,
     mutation: useRoleTypeSubmitMutation,
@@ -20,6 +20,4 @@ const {SubmitForm, useSubmitForm} = createForm({
 export {
     /** Form component for submitting role type creation and update forms. */
         SubmitForm as RoleTypeSubmitForm,
-    /** Custom hook for managing the role type submit form state and mutation handler. */
-        useSubmitForm as useRoleTypeSubmitForm,
 }

@@ -7,7 +7,7 @@ import {SeatMap, SeatMapDetails,} from "@/domains/seatmaps/_schema/model";
 import {SeatMapFormData, SeatMapFormSchema, SeatMapFormValues,} from "@/domains/seatmaps/_feat/submit-data/schema";
 import {useSeatMapSubmitMutation} from "@/domains/seatmaps/_feat/crud-hooks/submit";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     SeatMapFormValues,
     SeatMapFormData,
     SeatMap,
@@ -29,6 +29,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for submitting seat map configuration data. */
         SubmitForm as SeatMapSubmitForm,
-    /** Hook for managing seat map submit form state. */
-        useSubmitForm as useSeatMapSubmitForm,
 }

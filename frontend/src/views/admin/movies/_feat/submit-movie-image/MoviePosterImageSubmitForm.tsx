@@ -7,7 +7,7 @@ import {Movie} from "@/domains/movies/_schema/movie";
 import {MovieImageFormData, MovieImageFormSchema, MovieImageFormValues} from "@/domains/movies/_feat/manage-images";
 import {SubmitMovieImageConfig, useSubmitMoviePosterImage} from "@/domains/movies/_feat/manage-images/upload-image";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     MovieImageFormValues,
     MovieImageFormData,
     unknown,
@@ -25,7 +25,5 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for managing and submitting movie poster image uploads. */
         SubmitForm as MoviePosterImageSubmitForm,
-    /** Custom hook for accessing the movie poster image submission form state and context. */
-        useSubmitForm as useMoviePosterImageSubmitForm,
 }
 

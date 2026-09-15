@@ -7,7 +7,7 @@ import {
     GenreIndexQueryOptionsSchema
 } from "@/domains/genres/_feat/handle-query-options/genre-index/GenreIndexQueryOptionsSchema.ts";
 
-const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({
+const {QueryOptionForm} = createQueryOptionForm({
     schema: GenreIndexQueryOptionsSchema,
     name: "genre-index-query-options-form",
 });
@@ -15,6 +15,4 @@ const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({
 export {
     /** Form component for genre index query options. */
         QueryOptionForm as GenreIndexQueryOptionsForm,
-    /** Hook for managing genre index query options form state. */
-        useQueryOptionForm as useGenreIndexQueryOptionsForm,
 }

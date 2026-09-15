@@ -12,7 +12,7 @@ import {
 } from "@/domains/movies/_feat/submit-data";
 import {useMovieSubmitMutation} from "@/domains/movies/_feat/crud-hooks";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     MovieFormStarterValues,
     MovieFormData,
     MovieEditData,
@@ -42,6 +42,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for submitting movie creation and update forms. */
         SubmitForm as MovieSubmitForm,
-    /** Custom hook for managing the movie submit form state and mutation handler. */
-        useSubmitForm as useMovieSubmitForm,
 }

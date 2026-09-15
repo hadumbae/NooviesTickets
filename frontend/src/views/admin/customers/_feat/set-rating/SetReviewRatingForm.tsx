@@ -12,7 +12,7 @@ import {
 } from "@/domains/movie-reviews/_feat/admin-actions/set-review-rating";
 import {MovieReviewMutationConfig} from "@/domains/movie-reviews/_types";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     SetReviewRatingFormValues,
     SetReviewRatingFormData,
     unknown,
@@ -31,6 +31,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for setting a movie review rating. */
         SubmitForm as SetReviewRatingForm,
-    /** Hook for managing review rating form state and submission. */
-        useSubmitForm as useSetReviewRatingForm,
 }

@@ -8,8 +8,8 @@ import {Card, CardContent} from "@/views/shared/_comp/ui";
 import {PageHeader} from "@/views/shared/_comp";
 
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
-import {buildShowingEditData, useNavigateToShowingDetails} from "@/domains/showings/_feat";
-import {ShowingSubmitForm, ShowingSubmitFormView, ShowingSubmitStorageKey} from "@/views/admin/showings/_feat";
+import {buildShowingEditData, ShowingSubmitStorageKey, useNavigateToShowingDetails} from "@/domains/showings/_feat";
+import {ShowingSubmitForm, ShowingSubmitFormView} from "@/views/admin/showings/_feat";
 import {ShowingEditBreadcrumbs} from "@/views/admin/showings/_pages/edit-page/breadcrumbs.tsx";
 
 /** Props for the ShowingEditPageContent component. */

@@ -12,7 +12,7 @@ import {
     useTheatreScreenSubmitMutation
 } from "@/domains/theatre-screens";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     TheatreScreenFormValues,
     TheatreScreenFormData,
     TheatreScreen,
@@ -32,6 +32,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for submitting theatre screen data. */
         SubmitForm as TheatreScreenForm,
-    /** Custom hook for managing the theatre screen submit form state and mutation handler. */
-        useSubmitForm as useTheatreScreenForm,
 }

@@ -5,7 +5,7 @@
 import {createQueryOptionForm} from "@/shared/_feat";
 import {TheatreLocationQueryOptionsSchema} from "@/domains/theatres/_feat/handle-query-options/theatre-location/TheatreLocationQueryOptionsSchema.ts";
 
-const {useQueryOptionForm, QueryOptionForm} = createQueryOptionForm({
+const {QueryOptionForm} = createQueryOptionForm({
     schema: TheatreLocationQueryOptionsSchema,
     name: "theatre-location-query-options-form",
 });
@@ -13,6 +13,4 @@ const {useQueryOptionForm, QueryOptionForm} = createQueryOptionForm({
 export {
     /** Form component for editing theatre location query options. */
         QueryOptionForm as TheatreLocationQueryOptionForm,
-    /** Hook for managing the theatre location query options form state. */
-        useQueryOptionForm as useTheatreLocationQueryOptionForm,
 }

@@ -5,7 +5,7 @@
 import {createQueryOptionForm} from "@/shared/_feat";
 import {FetchByCodeSearchParamsSchema} from "@/domains/reservations/_feat/fetch-reservation-by-code/reservation-query-options-form";
 
-const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({
+const {QueryOptionForm} = createQueryOptionForm({
     schema: FetchByCodeSearchParamsSchema,
     name: "set-reservation-code-form",
 });
@@ -13,6 +13,4 @@ const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({
 export {
     /** Form component for setting the reservation code query option. */
         QueryOptionForm as SetReservationCodeForm,
-    /** Hook for managing the reservation code query option form state. */
-        useQueryOptionForm as useSetReservationCodeForm,
 }

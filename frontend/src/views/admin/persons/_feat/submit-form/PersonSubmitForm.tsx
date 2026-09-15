@@ -7,7 +7,7 @@ import {PersonEditData, PersonFormData, PersonFormSchema, PersonFormValues,} fro
 import {useSubmitPersonData} from "@/domains/persons/_feat/crud-hooks";
 import {Person} from "@/domains/persons/_schema";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     PersonFormValues,
     PersonFormData,
     PersonEditData,
@@ -27,6 +27,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** React form component for submitting person entity data. */
         SubmitForm as PersonSubmitForm,
-    /** Custom hook for managing state and submission of the person form. */
-        useSubmitForm as usePersonSubmitForm,
 }

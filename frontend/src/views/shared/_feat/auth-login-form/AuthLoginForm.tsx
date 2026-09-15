@@ -11,7 +11,7 @@ import {
     AuthLoginFormValues
 } from "@/domains/authentication/_feat/user-login/AuthLoginFormSchema";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     AuthLoginFormValues,
     AuthLoginFormData,
     unknown,
@@ -29,6 +29,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component provider for authentication login. */
         SubmitForm as AuthLoginForm,
-    /** Hook for accessing and managing the authentication login form state. */
-        useSubmitForm as useAuthLoginForm,
 }

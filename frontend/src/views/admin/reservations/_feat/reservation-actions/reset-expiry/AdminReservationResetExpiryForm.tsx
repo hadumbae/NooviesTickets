@@ -10,7 +10,7 @@ import {
     useResetReservationExpiryMutation
 } from "@/domains/reservations/_feat/update-reservations/mutations";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     EmptyFormValues,
     EmptyFormData,
     unknown,
@@ -28,6 +28,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for resetting an admin reservation's expiration time. */
         SubmitForm as AdminReservationResetExpiryForm,
-    /** Hook for managing admin reservation expiry reset form state and submission. */
-        useSubmitForm as useAdminReservationResetExpiryForm,
 }

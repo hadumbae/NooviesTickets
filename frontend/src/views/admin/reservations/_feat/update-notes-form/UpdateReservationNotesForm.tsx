@@ -14,7 +14,7 @@ import {
 } from "@/domains/reservations/_feat/update-reservations/mutations";
 import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationSchema.ts";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     UpdateReservationNotesFormValues,
     UpdateReservationNotesFormData,
     unknown,
@@ -32,6 +32,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for updating reservation notes. */
         SubmitForm as UpdateReservationNotesForm,
-    /** Hook for managing reservation notes form state and submission. */
-        useSubmitForm as useUpdateReservationNotesForm,
 }

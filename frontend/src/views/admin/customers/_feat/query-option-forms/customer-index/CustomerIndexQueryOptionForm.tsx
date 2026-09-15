@@ -6,7 +6,7 @@ import {createQueryOptionForm} from "@/shared/_feat";
 import {CustomerIndexQueryOptionFormValues} from "@/domains/customers/_types";
 import {CustomerQueryOptionsSchema} from "@/domains/customers/_schema/query-options";
 
-const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm<
+const {QueryOptionForm} = createQueryOptionForm<
     CustomerIndexQueryOptionFormValues,
     typeof CustomerQueryOptionsSchema.shape
 >({
@@ -17,6 +17,4 @@ const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm<
 export {
     /** Form component for filtering and sorting the customer index list. */
     QueryOptionForm as CustomerIndexQueryOptionForm,
-    /** Hook for managing customer index query option form state. */
-    useQueryOptionForm as useCustomerIndexQueryOptionForm,
 }

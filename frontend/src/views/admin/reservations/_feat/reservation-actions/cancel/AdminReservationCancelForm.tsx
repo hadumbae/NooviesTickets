@@ -14,7 +14,7 @@ import {
     UseCancelReservationMutationConfig
 } from "@/domains/reservations/_feat/update-reservations/mutations";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     UpdateReservationNotesFormValues,
     UpdateReservationNotesFormData,
     unknown,
@@ -32,6 +32,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for canceling an admin reservation. */
         SubmitForm as AdminReservationCancelForm,
-    /** Hook for managing admin reservation cancellation form state and submission. */
-        useSubmitForm as useAdminReservationCancelForm,
 }

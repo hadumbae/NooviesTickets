@@ -11,7 +11,7 @@ import {
     useSubmitUserMovieReviewMutation
 } from "@/domains/movie-reviews";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     MovieReviewFormValues,
     MovieReviewForm,
     MovieReview,
@@ -33,6 +33,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for submitting a user movie review. */
         SubmitForm as MovieReviewSubmitForm,
-    /** Hook for managing movie review form state and submission. */
-        useSubmitForm as useMovieReviewSubmitForm,
 }

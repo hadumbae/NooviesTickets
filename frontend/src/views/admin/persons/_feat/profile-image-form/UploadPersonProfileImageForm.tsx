@@ -13,7 +13,7 @@ import {
     PersonProfileImageFormValues,
 } from "@/domains/persons/_feat/submit-profile-image/form";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     PersonProfileImageFormValues,
     PersonProfileImageFormData,
     unknown,
@@ -31,6 +31,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for uploading a person's profile image. */
         SubmitForm as UploadPersonProfileImageForm,
-    /** Hook for managing person profile image upload form state. */
-        useSubmitForm as useUploadPersonProfileImageForm,
 }

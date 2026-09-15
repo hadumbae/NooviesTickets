@@ -5,7 +5,7 @@
 import {createForm} from "@/shared/_feat";
 import {Seat, SeatDetails, SeatFormData, SeatFormSchema, SeatFormValues, useSeatSubmitMutation} from "@/domains/seats";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     SeatFormValues,
     SeatFormData,
     Seat,
@@ -32,6 +32,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for submitting seat creation and update forms. */
         SubmitForm as SeatSubmitForm,
-    /** Custom hook for managing the seat submit form state and mutation handler. */
-        useSubmitForm as useSeatSubmitForm,
 }

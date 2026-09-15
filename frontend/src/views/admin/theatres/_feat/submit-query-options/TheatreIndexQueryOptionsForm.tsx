@@ -7,7 +7,7 @@ import {
     TheatreIndexQueryOptionsSchema
 } from "@/domains/theatres/_feat/handle-query-options/theatre-index/TheatreIndexQueryOptionsSchema.ts";
 
-const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({
+const {QueryOptionForm} = createQueryOptionForm({
     name: "theatre-index-query-options-form",
     schema: TheatreIndexQueryOptionsSchema,
 });
@@ -15,6 +15,4 @@ const {QueryOptionForm, useQueryOptionForm} = createQueryOptionForm({
 export {
     /** React form component for configuring theatre index query options. */
         QueryOptionForm as TheatreIndexQueryOptionsForm,
-    /** Custom hook for managing the theatre index query options form state. */
-        useQueryOptionForm as useTheatreIndexQueryOptionsForm,
 }

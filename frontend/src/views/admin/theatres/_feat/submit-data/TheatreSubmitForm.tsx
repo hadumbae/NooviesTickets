@@ -9,7 +9,7 @@ import {TheatreFormData} from "@/domains/theatres/_feat/submit-data/schema.ts";
 import {useTheatreSubmitMutation} from "@/domains/theatres/_feat/crud-hooks/submit/useTheatreSubmitMutation.ts";
 import {TheatreFormSchema} from "@/domains/theatres/_feat/submit-data/schema.ts";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     TheatreFormValues,
     TheatreFormData,
     TheatreEditData,
@@ -43,6 +43,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for submitting theatre creation and update forms. */
         SubmitForm as TheatreSubmitForm,
-    /** Custom hook for managing the theatre submit form state and mutation handler. */
-        useSubmitForm as useTheatreSubmitForm,
 }

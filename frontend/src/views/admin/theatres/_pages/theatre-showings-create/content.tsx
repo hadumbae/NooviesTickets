@@ -5,10 +5,8 @@
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
-import {
-    ShowingSubmitForm,
-    ShowingSubmitStorageKey
-} from "@/views/admin/showings/_feat/submit-form/ShowingSubmitForm.tsx";
+import {ShowingSubmitForm} from "@/views/admin/showings/_feat/submit-form/ShowingSubmitForm.tsx";
+import {ShowingSubmitStorageKey} from "@/domains/showings/_feat/submit-data/ShowingSubmitStorageKey.ts";
 import {ReactElement} from "react";
 
 import {Theatre} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";

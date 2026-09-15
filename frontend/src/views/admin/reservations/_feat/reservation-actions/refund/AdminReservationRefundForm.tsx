@@ -14,7 +14,7 @@ import {
     UseRefundReservationMutationConfig
 } from "@/domains/reservations/_feat/update-reservations/mutations";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     UpdateReservationNotesFormValues,
     UpdateReservationNotesFormData,
     unknown,
@@ -32,6 +32,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for processing an admin reservation refund. */
         SubmitForm as AdminReservationRefundForm,
-    /** Hook for managing admin reservation refund form state and submission. */
-        useSubmitForm as useAdminReservationRefundForm,
 }

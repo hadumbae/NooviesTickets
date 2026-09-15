@@ -7,7 +7,7 @@ import {
     RoleTypeIndexQueryOptionsSchema
 } from "@/domains/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
 
-const {useQueryOptionForm, QueryOptionForm} = createQueryOptionForm({
+const {QueryOptionForm} = createQueryOptionForm({
     schema: RoleTypeIndexQueryOptionsSchema,
     name: "role-type-index-query-options-form"
 });
@@ -15,6 +15,4 @@ const {useQueryOptionForm, QueryOptionForm} = createQueryOptionForm({
 export {
 /** React form component for configuring role type index query options. */
     QueryOptionForm as RoleTypeIndexQueryOptionsForm,
-/** Custom hook for managing the role type index query options form state. */
-    useQueryOptionForm as useRoleTypeIndexQueryOptionForm,
 }

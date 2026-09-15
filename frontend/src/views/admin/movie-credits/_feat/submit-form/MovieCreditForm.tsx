@@ -12,7 +12,7 @@ import {
     useMovieCreditSubmitMutation
 } from "@/domains/movie-credits";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     MovieCreditFormValues,
     MovieCreditFormData,
     MovieCredit,
@@ -43,6 +43,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for submitting movie credit creation and update forms. */
         SubmitForm as MovieCreditForm,
-    /** Custom hook for managing the movie credit submit form state and mutation handler. */
-        useSubmitForm as useMovieCreditSubmitForm,
 }

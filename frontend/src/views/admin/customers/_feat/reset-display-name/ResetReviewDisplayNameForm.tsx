@@ -12,7 +12,7 @@ import {
     useResetReviewDisplayNameMutation
 } from "@/domains/movie-reviews/_feat/admin-actions/reset-review-display-name";
 
-const {SubmitForm, useSubmitForm} = createForm<
+const {SubmitForm} = createForm<
     ResetReviewDisplayNameFormValues,
     ResetReviewDisplayNameFormData,
     unknown,
@@ -31,6 +31,4 @@ const {SubmitForm, useSubmitForm} = createForm<
 export {
     /** Form component for resetting a review author's display name with a moderation message. */
         SubmitForm as ResetReviewDisplayNameForm,
-    /** Hook for managing the display name reset form state and submission. */
-        useSubmitForm as useResetReviewDisplayNameForm,
 }
