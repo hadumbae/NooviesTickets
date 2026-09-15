@@ -1,7 +1,7 @@
 import type {Request, Response, NextFunction} from "express";
 import type {ZodTypeAny} from "zod";
 import asyncHandler from "../../handlers/asyncHandler.js";
-import handleZodError from "../handlers/handleZodError.js";
+import handleZodError from "./handleZodError.js";
 
 /**
  * Creates an Express middleware to asynchronously validate `req.body` against a Zod schema.

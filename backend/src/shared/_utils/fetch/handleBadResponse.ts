@@ -1,5 +1,5 @@
 import {HttpResponseError} from "../../_errors/HttpResponseError.js";
-import {parseJSON} from "../parseJSON.js";
+import {parseJSON} from "./parseJSON.js";
 import type {URLString} from "@noovies-tickets/common";
 
 type HandlerParams = {

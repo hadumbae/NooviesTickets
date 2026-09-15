@@ -1,6 +1,6 @@
 import { type RefinementCtx, z } from "zod";
 import {AcceptedImageTypeConstant} from "@noovies-tickets/common";
-import isMulterFile from "./file-upload/isMulterFile.js";
+import isMulterFile from "../file-upload/isMulterFile.js";
 
 /**
  * Parameters for `refineRequiredImageFile`.

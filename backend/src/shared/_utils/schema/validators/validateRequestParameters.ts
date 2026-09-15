@@ -7,7 +7,7 @@
 
 import {z, type ZodTypeAny} from "zod";
 import type {Request} from "express";
-import {BadRequestError} from "../../_errors/BadRequestError.js";
+import {BadRequestError} from "../../../_errors/BadRequestError.js";
 
 /**
  * Parameters for request validation.

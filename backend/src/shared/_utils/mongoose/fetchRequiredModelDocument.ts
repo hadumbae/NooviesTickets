@@ -5,7 +5,7 @@
 
 import type {FetchRequiredByIdentifierConfig} from "@/shared/_types/fetch-utils/FetchRequiredByIdentifierConfig";
 import type {ModelObject} from "@/shared/_types/model/ModelObject";
-import populateQuery from "../mongoose/populateQuery.js";
+import populateQuery from "./populateQuery.js";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import createHttpError from "http-errors";
 

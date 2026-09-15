@@ -1,6 +1,6 @@
 import { type ZodTypeAny } from "zod";
 import type { Request, Response, NextFunction, RequestHandler } from "express";
-import handleZodError from "../handlers/handleZodError.js";
+import handleZodError from "./handleZodError.js";
 
 /**
  * Factory function that creates an Express middleware for validating request bodies using a Zod schema.

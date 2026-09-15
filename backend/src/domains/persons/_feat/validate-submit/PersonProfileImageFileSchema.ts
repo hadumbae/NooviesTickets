@@ -4,34 +4,14 @@
  */
 
 import {z} from "zod";
-import {AcceptedImageTypeConstant} from "@noovies-tickets/common";
-import isMulterFile from "@/shared/_utils/schema/file-upload/isMulterFile";
+import refineRequiredImageFile from "@/shared/_utils/schema/validators/refineRequiredImageFile";
 
 /**
  * Validates that an uploaded file is a valid image processed by Multer.
  */
 export const PersonProfileImageFileSchema = z
     .object({file: z.any()})
-    .superRefine(({file}, ctx) => {
-        const code = "custom";
-        const path = ["profileImage"];
-        const fatal = true;
-
-        if (!file) {
-            ctx.addIssue({code, path, fatal, message: "Required."});
-            return z.NEVER;
-        }
-
-        if (!isMulterFile(file)) {
-            ctx.addIssue({code, path, fatal, message: "Invalid file."});
-            return z.NEVER;
-        }
-
-        if (!AcceptedImageTypeConstant.includes(file.mimetype as any)) {
-            ctx.addIssue({code, path, fatal, message: "Invalid file type."});
-            return z.NEVER;
-        }
-    });
+    .superRefine(refineRequiredImageFile({pathName: "profileImage"}));
 
 /**
  * Type representing the validated profile image file data.

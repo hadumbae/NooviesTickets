@@ -3,7 +3,7 @@
  */
 
 import type {Request, Response} from "express";
-import {validateRequestParameters} from "@/shared/_utils/schema/validateRequestParameters";
+import {validateRequestParameters} from "@/shared/_utils/schema/validators/validateRequestParameters";
 import {fetchShowingsByScreens} from "@/domains/screen/_feat/view-data-client/service/fetchShowingsByScreens";
 import {ShowingsByScreenQuerySchema} from "@/domains/screen/_feat/view-data-client/schema/ShowingsByScreenQuerySchema";
 
