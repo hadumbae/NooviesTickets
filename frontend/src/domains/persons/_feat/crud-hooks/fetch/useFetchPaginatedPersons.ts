@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {PaginatedQueryConfig} from "@/shared/_types";
 import {query} from "@/domains/persons/_feat/crud";
@@ -22,6 +22,6 @@ export function useFetchPaginatedPersons<TData = unknown>(
     return useQuery({
         queryKey: PersonCRUDQueryKeys.queryPaginated({page, perPage, ...queries, ...config}),
         queryFn: fetchPersons,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {PersonClientViewQueryKeys} from "@/domains/persons/_feat/client-view-data/keys";
@@ -37,6 +37,6 @@ export function useFetchBrowsePersonsViewData(
     return useQuery({
         queryKey: PersonClientViewQueryKeys.browse({page, perPage, ...queries}),
         queryFn: fetchPersons,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

@@ -15,7 +15,7 @@ import {generateArraySchema} from "@noovies-tickets/common";
 
 import {useFetchTheatres} from "@/domains/theatres/_feat/crud-hooks/fetch/useFetchTheatres.ts";
 import {Theatre, TheatreSchema} from "@/domains/theatres/_schema/theatre";
-import {TheatreQueryOptions} from "@/domains/theatres/_feat/handle-query-options/options/TheatreQueryOptionSchema.ts";
+import {TheatreQueryOptions} from "@/domains/theatres/_feat/handle-query-options/options/TheatreQueryOptionsSchema.ts";
 
 /** Props for the TheatreHookFormSelect component. */
 type HookProps<TSubmit extends FieldValues> = Omit<HookFormInputControlProps<TSubmit>, "control"> & {

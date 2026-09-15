@@ -3,7 +3,7 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {getFetchMovieReviewsByCurrentUser} from "@/domains/movie-reviews/_feat/my-reviews/repository/repository.ts";
 import {PaginationOptions} from "@noovies-tickets/common";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
@@ -28,6 +28,6 @@ export function useFetchMyMovieReviews<TData = unknown>(
     return useQuery({
         queryKey: MyReviewsQueryKeys.current({page, perPage, ...config}),
         queryFn: fetchReviews,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

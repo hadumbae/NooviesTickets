@@ -7,27 +7,27 @@ import {FieldValues} from "react-hook-form";
 import {
     cn,
     FormViewProps,
-    QueryOptionFormViewClassNames,
+    QueryOptionsFormViewClassNames,
     useAutoFormSubmit,
-    useQueryOptionFormContext
+    useQueryOptionsFormContext
 } from "@/shared/_feat";
 import {DisableFields, HideFields} from "@/shared/_types/form";
 import {Separator} from "@/views/shared/_comp/ui";
 
-type QueryOptionFormLayoutProps<TValues extends FieldValues> = {
+type QueryOptionsFormLayoutProps<TValues extends FieldValues> = {
     filterFieldset: ComponentType<FormViewProps<TValues>>;
     sortFieldset: ComponentType<FormViewProps<TValues>>;
     disableFields?: DisableFields<TValues>;
     hideFields?: HideFields<TValues>;
-    classNames?: QueryOptionFormViewClassNames,
+    classNames?: QueryOptionsFormViewClassNames,
     autoSubmitTimeout?: number
 }
 
 /**
  * Renders a layout for query option forms.
  */
-export function QueryOptionFormLayout<TValues extends FieldValues>(
-    params: QueryOptionFormLayoutProps<TValues>
+export function QueryOptionsFormLayout<TValues extends FieldValues>(
+    params: QueryOptionsFormLayoutProps<TValues>
 ): ReactElement {
     const {
         filterFieldset: FilterFieldset,
@@ -38,7 +38,7 @@ export function QueryOptionFormLayout<TValues extends FieldValues>(
         autoSubmitTimeout = 450
     } = params;
 
-    const {submitHandler} = useQueryOptionFormContext();
+    const {submitHandler} = useQueryOptionsFormContext();
     useAutoFormSubmit({submitHandler, timeout: autoSubmitTimeout});
 
     return (

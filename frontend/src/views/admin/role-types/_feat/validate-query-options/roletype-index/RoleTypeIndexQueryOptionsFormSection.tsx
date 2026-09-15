@@ -2,7 +2,7 @@
  * @fileoverview Creates the form section component for managing role type index query options.
  */
 
-import {createQueryOptionFormSection} from "@/shared/_feat";
+import {createQueryOptionsFormSection} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsForm
 } from "@/views/admin/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsForm.tsx";
@@ -11,8 +11,8 @@ import {
 } from "@/views/admin/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsFormView.tsx";
 import {useRoleTypeIndexQueryOptionsContext} from "@/domains/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsContext.ts";
 
-const section = createQueryOptionFormSection({
-    queryOptionForm: RoleTypeIndexQueryOptionsForm,
+const section = createQueryOptionsFormSection({
+    queryOptionsForm: RoleTypeIndexQueryOptionsForm,
     formView: RoleTypeIndexQueryOptionsFormView,
     useQueryOptionsContext: useRoleTypeIndexQueryOptionsContext,
 });

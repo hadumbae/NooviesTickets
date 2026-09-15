@@ -7,10 +7,10 @@ import {SeatMapReferenceFilterSchema} from "@/domains/seatmaps/_feat/handle-quer
 import {SeatMapMatchFilterSchema, SeatMapMatchSortSchema} from "@/domains/seatmaps/_feat/handle-query-options/SeatMapMatchOptionsSchema.ts";
 
 /** Combined Zod schema merging reference filters, match filters, and sort parameters. */
-export const SeatMapQueryOptionSchema =
+export const SeatMapQueryOptionsSchema =
     SeatMapReferenceFilterSchema
         .merge(SeatMapMatchFilterSchema)
         .merge(SeatMapMatchSortSchema);
 
 /** TypeScript type representing the merged seat map query options. */
-export type SeatMapQueryOptions = z.infer<typeof SeatMapQueryOptionSchema>;
+export type SeatMapQueryOptions = z.infer<typeof SeatMapQueryOptionsSchema>;

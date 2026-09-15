@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {SeatQueryOptions} from "@/domains/seats/_feat/handle-query-options/SeatQueryOptions.ts";
 import {PaginatedQueryConfig} from "@/shared/_types";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
@@ -26,6 +26,6 @@ export function useFetchPaginatedSeats<TData = unknown>(
     return useQuery({
         queryKey: SeatCRUDQueryKeys.paginated({page, perPage, ...queries, ...config}),
         queryFn: fetchSeats,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

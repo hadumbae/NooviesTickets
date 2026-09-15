@@ -6,7 +6,7 @@ import {PaginationOptions} from "@noovies-tickets/common";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {
     getFetchCustomerReservationsViewData
 } from "@/domains/customers/_feat/manage-reservations/repository/repository.ts";
@@ -36,6 +36,6 @@ export function useFetchCustomerReservationsViewData(
     return useQuery({
         queryKey: CustomerReservationsViewQueryKeys.reservations({customerID, ...pagination}),
         queryFn: fetchDetails,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

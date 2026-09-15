@@ -3,7 +3,7 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {PaginatedQueryConfig} from "@/shared/_types";
 import {paginated} from "@/domains/seatmaps/_feat/crud/repository.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
@@ -22,6 +22,6 @@ export function useFetchPaginatedSeatMaps<TData = unknown>(
     return useQuery({
         queryKey: SeatMapCRUDQueryKeys.paginated({page, perPage, ...config, ...queries}),
         queryFn: fetchSeatMap,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

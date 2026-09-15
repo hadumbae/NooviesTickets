@@ -6,7 +6,7 @@ import {PaginationOptions} from "@noovies-tickets/common";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {getFetchCustomerReviewsViewData} from "@/domains/customers/_feat/movie-reviews/repository/repository.ts";
 import {CustomerReviewsViewQueryKeys} from "@/domains/customers/_feat/movie-reviews/fetch/queryKeys.ts";
 import {ObjectIdString} from "@noovies-tickets/common";
@@ -34,6 +34,6 @@ export function useFetchCustomerReviewsViewData(
     return useQuery({
         queryKey: CustomerReviewsViewQueryKeys.reviews({customerID, ...pagination}),
         queryFn: fetchDetails,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

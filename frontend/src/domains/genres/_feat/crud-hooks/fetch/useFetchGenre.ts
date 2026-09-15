@@ -7,7 +7,7 @@ import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {GenreCRUDQueryKeys} from "@/domains/genres/_feat/crud-hooks/keys/GenreCRUDQueryKeys.ts";
 import {ZodType, ZodTypeDef} from "zod";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
@@ -37,6 +37,6 @@ export function useFetchGenre<TData = unknown>(
     return useQuery({
         queryKey: GenreCRUDQueryKeys._id({_id, ...config}),
         queryFn: fetchGenre,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

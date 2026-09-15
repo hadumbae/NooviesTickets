@@ -2,7 +2,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {MovieCreditQueryOptions} from "@/domains/movie-credits/_schemas/query-options/MovieCreditQueryOptionsSchema.ts";
 import {ListQueryConfig} from "@/shared/_types";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
@@ -24,6 +24,6 @@ export function useFetchMovieCredits<TData = unknown>(
     return useQuery({
         queryKey: MovieCreditCRUDQueryKeys.query({...queries, ...config}),
         queryFn: fetchMovieCredits,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

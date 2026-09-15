@@ -12,7 +12,7 @@ import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts
 import {MovieIndexCard} from "@/views/admin/movies/_comp";
 import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {Plus} from "lucide-react";
-import {MovieIndexQueryOptionFormSection} from "@/views/admin/movies/_feat/query-options-form";
+import {MovieIndexQueryOptionsFormSection} from "@/views/admin/movies/_feat/query-options-form";
 
 /** Props for the MovieIndexPageContent component. */
 type ContentProps = {
@@ -39,7 +39,7 @@ export function MovieIndexPageContent(
                 </section>
             )}/>
 
-            <MovieIndexQueryOptionFormSection/>
+            <MovieIndexQueryOptionsFormSection/>
 
             {movies.length > 0 ? (
                 <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">

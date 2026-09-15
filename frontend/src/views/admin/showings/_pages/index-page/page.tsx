@@ -9,7 +9,7 @@ import {generatePaginationSchema} from "@noovies-tickets/common";
 import {QueryDataLoader} from "@/views/shared/_feat";
 
 import {ShowingIndexPageContent} from "@/views/admin/showings/_pages/index-page/content.tsx";
-import {ShowingDetailsSchema, ShowingQueryOptionSchema} from "@/domains/showings/_schema";
+import {ShowingDetailsSchema, ShowingQueryOptionsSchema} from "@/domains/showings/_schema";
 import {useFetchPaginatedShowings} from "@/domains/showings/_feat";
 
 const SHOWINGS_PER_PAGE = 10;
@@ -19,7 +19,7 @@ const SHOWINGS_PER_PAGE = 10;
  */
 export function ShowingIndexPage(): ReactElement {
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
-    const {searchParams} = useParsedSearchParams({schema: ShowingQueryOptionSchema});
+    const {searchParams} = useParsedSearchParams({schema: ShowingQueryOptionsSchema});
 
     const query = useFetchPaginatedShowings({
         page,

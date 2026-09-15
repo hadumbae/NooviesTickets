@@ -25,7 +25,7 @@ export * from "./multi-step-form";
 export * from "./navigation";
 export * from "./pagination-range";
 export * from "./query-options-form";
-export * from "./query-option-form-context";
+export * from "./query-options-form-context";
 export * from "./submit-data";
 export * from "./theme";
 export * from "./use-context";

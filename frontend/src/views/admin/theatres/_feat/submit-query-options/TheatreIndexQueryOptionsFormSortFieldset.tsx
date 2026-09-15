@@ -16,7 +16,7 @@ export function TheatreIndexQueryOptionsFormSortFieldset(
     {className, disableFields, hideFields}: FormViewProps<TheatreIndexQueryOptionsFormValues>
 ): ReactElement {
     return (
-        <fieldset className={cn("query-option-fieldset-flex", className)}>
+        <fieldset className={cn("query-options-fieldset-flex", className)}>
             {
                 !hideFields?.sortByName && (
                     <HookFormSortToggle

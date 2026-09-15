@@ -7,7 +7,7 @@ import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {generateArraySchema} from "@noovies-tickets/common";
 import {SlugString, ObjectIdString, DateOnlyString} from "@noovies-tickets/common";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 
 import {TheatreScreenSchedule, TheatreScreenScheduleSchema} from "@/domains/theatre-screens/_schema";
@@ -34,6 +34,6 @@ export function useFetchScreensWithShowings(
     return useQuery({
         queryKey: TheatreScreenClientViewQueryKeys.withShowings({theatreID, dateString}),
         queryFn: fetchScreens,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

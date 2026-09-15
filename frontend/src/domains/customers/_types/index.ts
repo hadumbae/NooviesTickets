@@ -1,2 +1,2 @@
-export * from "@/domains/customers/_types/CustomerIndexQueryOptionFormValues.ts";
+export * from "@/domains/customers/_types/CustomerIndexQueryOptionsFormValues.ts";
 

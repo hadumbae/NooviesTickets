@@ -6,7 +6,7 @@ import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {SlugString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {getOverviewDataForMovieInfoView} from "@/domains/movies/_feat/client-view-data/repository";
 import {MovieClientViewDataQueryKeys} from "@/domains/movies/_feat/client-view-data/hooks/queryKeys.ts";
@@ -34,6 +34,6 @@ export function useFetchMovieInfoOverviewViewData(
     return useQuery({
         queryKey: MovieClientViewDataQueryKeys.infoOverview({slug, ...queries}),
         queryFn: fetchViewData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

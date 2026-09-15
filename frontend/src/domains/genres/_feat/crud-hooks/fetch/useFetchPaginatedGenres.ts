@@ -5,7 +5,7 @@
 import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {PaginationOptions} from "@noovies-tickets/common";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {paginated} from "@/domains/genres/_feat/crud";
@@ -38,6 +38,6 @@ export function useFetchPaginatedGenres<TData = unknown>(
     return useQuery({
         queryKey: GenreCRUDQueryKeys.paginated({page, perPage, ...queries, ...config}),
         queryFn: fetchGenres,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

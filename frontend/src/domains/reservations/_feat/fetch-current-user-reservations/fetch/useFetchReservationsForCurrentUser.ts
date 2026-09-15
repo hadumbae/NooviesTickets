@@ -5,7 +5,7 @@
 import {PaginationOptions} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {PopulatedReservation, PopulatedReservationSchema} from "@/domains/reservations/_schema";
 import {PaginatedItems} from "@/shared/_types";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
@@ -40,6 +40,6 @@ export function useFetchReservationsForCurrentUser(
     return useQuery({
         queryKey: CurrentUserReservationQueryKeys.currentUser({page, perPage, ...queries}),
         queryFn: fetchReservations,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

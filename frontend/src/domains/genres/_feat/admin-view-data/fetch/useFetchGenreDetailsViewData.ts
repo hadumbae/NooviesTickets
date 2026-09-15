@@ -7,7 +7,7 @@ import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions
 import {PaginationOptions} from "@noovies-tickets/common";
 import {SlugString} from "@noovies-tickets/common";
 import {getFetchGenreDetails} from "@/domains/genres/_feat/admin-view-data/repository";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {GenreAdminViewDataQueryKeys} from "@/domains/genres/_feat/admin-view-data/fetch/GenreAdminViewDataQueryKeys.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
@@ -36,6 +36,6 @@ export function useFetchGenreDetailsViewData(
     return useQuery({
         queryKey: GenreAdminViewDataQueryKeys.itemDetails({slug, page, perPage}),
         queryFn: fetchGenreData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

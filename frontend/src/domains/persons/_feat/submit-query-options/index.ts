@@ -1,10 +1,10 @@
-import {usePersonQueryOptionForm} from "@/domains/persons/_feat/submit-query-options/usePersonQueryOptionForm.ts";
-import {PersonQueryOptionFormValues} from "@/domains/persons/_feat/submit-query-options/schema.ts";
+import {usePersonQueryOptionsForm} from "@/domains/persons/_feat/submit-query-options/usePersonQueryOptionsForm.ts";
+import {PersonQueryOptionsFormValues} from "@/domains/persons/_feat/submit-query-options/schema.ts";
 
 export {
-    usePersonQueryOptionForm,
+    usePersonQueryOptionsForm,
 }
 
 export type {
-    PersonQueryOptionFormValues,
+    PersonQueryOptionsFormValues,
 }

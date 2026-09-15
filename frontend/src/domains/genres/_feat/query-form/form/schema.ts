@@ -6,4 +6,4 @@ import {AnyValues} from "@/shared/_types";
 import {GenreQueryOptions} from "@/domains/genres/_schema";
 
 /** Type representing the initial values for the genre query option form. */
-export type GenreQueryOptionFormStarter = AnyValues<GenreQueryOptions>;
+export type GenreQueryOptionsFormStarter = AnyValues<GenreQueryOptions>;

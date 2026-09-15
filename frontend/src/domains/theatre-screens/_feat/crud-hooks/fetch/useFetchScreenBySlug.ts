@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 
 import {findBySlug} from "@/domains/theatre-screens/_feat/crud";
@@ -25,6 +25,6 @@ export function useFetchScreenBySlug<TData = unknown>(
     return useQuery({
         queryKey: TheatreScreenCRUDQueryKeys.slug({slug, ...config}),
         queryFn: fetchScreen,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

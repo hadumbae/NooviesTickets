@@ -4,7 +4,7 @@ import {useUserIndexQueryOptionsContext} from "@/domains/users/_ctx/UserIndexQue
 import {PageFlexWrapper, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {UserIndexCard} from "@/views/admin/users/_comp/index-card";
 import {QueryOptionsFormCollapsible} from "@/views/shared/_feat";
-import {UserIndexQueryOptionForm, UserIndexQueryOptionFormView} from "@/views/admin/users/_feat";
+import {UserIndexQueryOptionsForm, UserIndexQueryOptionsFormView} from "@/views/admin/users/_feat";
 
 type ContentProps = {
     users: User[];
@@ -28,15 +28,15 @@ export function UserIndexPageContent(
                 description="Browse, filter, and manage all registered user accounts."
             />
 
-            <UserIndexQueryOptionForm
+            <UserIndexQueryOptionsForm
                 queryOptions={values}
                 setQueryOptions={setValues}
                 activeOptions={activeOptions}
             >
                 <QueryOptionsFormCollapsible isOpen={isOpen} setIsOpen={setIsOpen} disableClear={true}>
-                    <UserIndexQueryOptionFormView/>
+                    <UserIndexQueryOptionsFormView/>
                 </QueryOptionsFormCollapsible>
-            </UserIndexQueryOptionForm>
+            </UserIndexQueryOptionsForm>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {users.map(user => <UserIndexCard key={user._id} user={user}/>)}

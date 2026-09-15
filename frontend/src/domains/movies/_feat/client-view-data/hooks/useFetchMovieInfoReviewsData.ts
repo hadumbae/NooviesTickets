@@ -13,7 +13,7 @@ import {
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 
 /** Configuration for the movie reviews fetch hook. */
 type FetchConfig = {
@@ -37,6 +37,6 @@ export function useFetchMovieInfoReviewsData(
     return useQuery({
         queryKey: MovieClientViewDataQueryKeys.infoReviews({slug, ...queries}),
         queryFn: fetchReviewData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

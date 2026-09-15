@@ -9,7 +9,7 @@ import {buildQueryFn} from "@/shared/_feat/validate-fetch-data"
 import {PaginationOptions} from "@noovies-tickets/common"
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts"
 import {CustomerReviewLogsQueryKeys} from "@/domains/customers/_feat/movie-review-logs/fetch/queryKeys.ts"
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts"
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts"
 import {getFetchCustomerReviewLogsViewData} from "@/domains/customers/_feat/movie-review-logs/repository/repository.ts";
 import {
     CustomerReviewLogsViewData,
@@ -38,6 +38,6 @@ export function useFetchCustomerReviewLogsViewData(
     return useQuery({
         queryKey: CustomerReviewLogsQueryKeys.reviewLogs({customerID, reviewID, ...pagination}),
         queryFn: fetchLogs,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     })
 }

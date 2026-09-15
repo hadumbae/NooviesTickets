@@ -9,7 +9,7 @@ import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {PersonIndexCard} from "@/views/admin/persons/_comp";
-import {PersonIndexQueryOptionFormSection, PersonSubmitForm, PersonSubmitFormPanel} from "@/views/admin/persons/_feat";
+import {PersonIndexQueryOptionsFormSection, PersonSubmitForm, PersonSubmitFormPanel} from "@/views/admin/persons/_feat";
 import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
 import {useNavigateToPerson} from "@/domains/persons/_feat/navigation/useNavigateToPerson.ts";
 import {Plus} from "lucide-react";
@@ -53,7 +53,7 @@ export function PersonIndexPageContent(
                 }
             />
 
-            <PersonIndexQueryOptionFormSection/>
+            <PersonIndexQueryOptionsFormSection/>
 
             {persons.length > 0 ? (
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">

@@ -7,7 +7,7 @@ import {ObjectIdString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {CustomerReservationViewQueryKeys} from "@/domains/customers/_feat/manage-reservation/fetch/queryKeys.ts";
 import {getFetchCustomerReservationViewData} from "@/domains/customers/_feat/manage-reservation/repository";
@@ -35,6 +35,6 @@ export function useFetchCustomerReservationViewData(
     return useQuery({
         queryKey: CustomerReservationViewQueryKeys.reservation({customerID, reservationID}),
         queryFn: fetchDetails,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

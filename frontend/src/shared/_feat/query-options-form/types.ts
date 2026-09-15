@@ -7,7 +7,7 @@ import {ReactNode} from "react";
 import {DisableFields, HideFields} from "@/shared/_types";
 
 /** Represents the combined state of preset values and active query options. */
-export type QueryOptionFormValues<TPreset extends FieldValues, TOptions extends FieldValues = TPreset> = {
+export type QueryOptionsFormValues<TPreset extends FieldValues, TOptions extends FieldValues = TPreset> = {
     presetValues?: Partial<TPreset>;
     queryOptions: TOptions;
 };
@@ -18,23 +18,23 @@ export type QueryOptionsSetterConfig<TOptions = unknown> = {
     activeOptions: number;
 }
 
-/** Props for the QueryOptionFormContainer component. */
-export type QueryOptionFormContainerProps<TPreset extends FieldValues, TOptions extends FieldValues = TPreset> =
-    QueryOptionFormValues<TPreset, TOptions> & QueryOptionsSetterConfig<TOptions> & {
+/** Props for the QueryOptionsFormContainer component. */
+export type QueryOptionsFormContainerProps<TPreset extends FieldValues, TOptions extends FieldValues = TPreset> =
+    QueryOptionsFormValues<TPreset, TOptions> & QueryOptionsSetterConfig<TOptions> & {
     children: ReactNode;
 };
 
 /** CSS class names for styling the query option form view. */
-export type QueryOptionFormViewClassNames = {
+export type QueryOptionsFormViewClassNames = {
     container?: string;
     content?: string;
     filters?: string;
     sorts?: string;
 }
 
-/** Props for the QueryOptionFormView component. */
-export type QueryOptionFormViewProps<TValues extends FieldValues> = {
+/** Props for the QueryOptionsFormView component. */
+export type QueryOptionsFormViewProps<TValues extends FieldValues> = {
     disableFields?: DisableFields<TValues>;
     hideFields?: HideFields<TValues>;
-    classNames?: QueryOptionFormViewClassNames;
+    classNames?: QueryOptionsFormViewClassNames;
 };

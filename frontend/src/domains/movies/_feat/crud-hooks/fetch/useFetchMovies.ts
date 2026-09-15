@@ -3,7 +3,7 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {MovieQueryOptions} from "@/domains/movies/_schema/queries";
 import {ListQueryConfig} from "@/shared/_types";
@@ -25,6 +25,6 @@ export function useFetchMovies<TData = unknown>(
     return useQuery({
         queryKey: MovieCRUDQueryKeys.find({...queries, ...config}),
         queryFn: fetchMovies,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

@@ -4,7 +4,7 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {PaginatedQueryConfig} from "@/shared/_types";
@@ -26,6 +26,6 @@ export function useFetchPaginatedTheatres<TData = unknown>(
     return useQuery({
         queryKey: TheatreCRUDQueryKeys.paginated({page, perPage, ...queries, ...config}),
         queryFn: fetchTheatres,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

@@ -1,0 +1,35 @@
+/**
+ * @fileoverview Fieldset containing sort toggle controls for the user index query options form.
+ */
+
+import {ReactElement} from "react";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {UserIndexQueryOptionsFormValues} from "@/domains/users/_feat/submit-query-options";
+import {HookFormSortToggle} from "@/views/shared/_feat";
+import {cn} from "@/shared/_feat";
+
+/** Props for the UserIndexQueryOptionsFormSortFieldset component. */
+type FieldsetProps = Omit<FormFieldsetProps<UserIndexQueryOptionsFormValues>, "isNestedView">;
+
+/**
+ * Renders a group of sort toggles for user-related fields like name, email, and unique code.
+ */
+export function UserIndexQueryOptionsFormSortFieldset(
+    {className, disableFields}: FieldsetProps
+): ReactElement {
+    return (
+        <fieldset className={cn("flex flex-wrap space-x-2", className)}>
+            {!disableFields?.sortByName && (
+                <HookFormSortToggle name="sortByName" label="Name"/>
+            )}
+
+            {!disableFields?.sortByEmail && (
+                <HookFormSortToggle name="sortByEmail" label="Email"/>
+            )}
+
+            {!disableFields?.sortByUniqueCode && (
+                <HookFormSortToggle name="sortByUniqueCode" label="Unique Code"/>
+            )}
+        </fieldset>
+    );
+}

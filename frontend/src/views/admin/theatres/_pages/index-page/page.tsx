@@ -17,7 +17,7 @@ import {generatePaginationSchema} from "@noovies-tickets/common";
 import {PaginatedItems} from "@/shared/_types";
 
 import {TheatreDetails, TheatreDetailsSchema} from "@/domains/theatres/_schema/theatre";
-import {TheatreQueryOptionSchema} from "@/domains/theatres/_feat/handle-query-options/options/TheatreQueryOptionSchema.ts";
+import {TheatreQueryOptionsSchema} from "@/domains/theatres/_feat/handle-query-options/options/TheatreQueryOptionsSchema.ts";
 
 /** Default number of theatre records displayed per pagination page. */
 const THEATRES_PER_PAGE = 20;
@@ -29,7 +29,7 @@ export function TheatreIndexPage(): ReactElement {
     useTitle("Admin | Theatre Management");
 
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
-    const {searchParams} = useParsedSearchParams({schema: TheatreQueryOptionSchema});
+    const {searchParams} = useParsedSearchParams({schema: TheatreQueryOptionsSchema});
 
     const query = useFetchPaginatedTheatres({
         schema: generatePaginationSchema(TheatreDetailsSchema),

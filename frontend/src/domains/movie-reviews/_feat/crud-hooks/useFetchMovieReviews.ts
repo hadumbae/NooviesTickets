@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {ListQueryConfig} from "@/shared/_types";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {MovieReviewCRUDQueryKeys} from "@/domains/movie-reviews/_feat/crud-hooks/queryKeys.ts";
@@ -24,6 +24,6 @@ export function useFetchMovieReviews<TData = unknown>(
     return useQuery({
         queryKey: MovieReviewCRUDQueryKeys.find({...queries, ...config}),
         queryFn: fetchReviews,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

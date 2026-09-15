@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {find} from "@/domains/seatmaps/_feat/crud/repository.ts";
 import {ListQueryConfig} from "@/shared/_types";
 import {SeatMapCRUDQueryKeys} from "@/domains/seatmaps/_feat/crud-hooks/keys/queryKey.ts";
@@ -22,6 +22,6 @@ export function useFetchSeatMaps<TData = unknown>(
     return useQuery({
         queryKey: SeatMapCRUDQueryKeys.list({...queries, ...config}),
         queryFn: fetchData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

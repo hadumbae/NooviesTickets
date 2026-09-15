@@ -5,7 +5,7 @@
 import {ObjectIdString} from "@noovies-tickets/common";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {buildQueryFn, useQueryOptionDefaults} from "@/shared/_feat";
+import {buildQueryFn, useQueryOptionsDefaults} from "@/shared/_feat";
 import {FetchQueryOptions} from "@/shared/_types";
 import {getFetchUserDetailsViewData} from "@/domains/users/_feat/admin-view-data/repository/repository.ts";
 import {UserAdminViewDataQueryKeys} from "@/domains/users/_feat/admin-view-data/queryKeys.ts";
@@ -34,6 +34,6 @@ export function useFetchUserDetailsViewData(
     return useQuery({
         queryKey: UserAdminViewDataQueryKeys.userDetails(),
         queryFn: fetchUserDetails,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

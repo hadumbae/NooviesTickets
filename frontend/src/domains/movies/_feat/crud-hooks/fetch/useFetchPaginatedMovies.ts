@@ -5,7 +5,7 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {MovieCRUDQueryKeys} from "@/domains/movies/_feat/crud-hooks/keys/queryKeys.ts";
 import {paginated} from "@/domains/movies/_feat/crud";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
@@ -23,6 +23,6 @@ export function useFetchPaginatedMovies<TData = unknown>(
     return useQuery({
         queryKey: MovieCRUDQueryKeys.paginated({page, perPage, ...queries, ...config}),
         queryFn: fetchPaginatedMovies,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

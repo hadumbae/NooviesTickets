@@ -8,7 +8,7 @@ import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {getFetchReviewDetailsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/repository.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {FetchByMovieQueryKeys} from "@/domains/movie-reviews/_feat/fetch-by-movie/fetch/queryKeys.ts";
 import {MovieReviewSummaryData, MovieReviewSummarySchema} from "@/domains/movie-reviews/_feat/fetch-by-movie/schemas/MovieReviewSummarySchema.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data/buildQueryFn.ts";
@@ -32,6 +32,6 @@ export function useFetchReviewDetailsByMovie(
     return useQuery({
         queryKey: FetchByMovieQueryKeys.details({...config, page, perPage, movieID}),
         queryFn: fetchReviews,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

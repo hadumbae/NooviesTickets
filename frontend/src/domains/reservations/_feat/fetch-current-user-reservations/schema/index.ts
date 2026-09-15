@@ -1,10 +1,10 @@
 import {
     CurrentUserReservationsQueryOptions,
-    CurrentUserReservationsQueryOptionSchema
+    CurrentUserReservationsQueryOptionsSchema
 } from "@/domains/reservations/_feat/fetch-current-user-reservations/schema/querySchema.ts";
 
 export {
-    CurrentUserReservationsQueryOptionSchema,
+    CurrentUserReservationsQueryOptionsSchema,
 }
 
 export type {

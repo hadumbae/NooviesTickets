@@ -22,7 +22,7 @@ export function TheatreIndexQueryOptionsFormFilterFieldset(
     const {control} = useFormContext();
 
     return (
-        <fieldset className={cn("query-option-fieldset-grid", className)}>
+        <fieldset className={cn("query-options-fieldset-grid", className)}>
             {
                 !hideFields?.name && (
                     <LabelledFormInput label="Name">

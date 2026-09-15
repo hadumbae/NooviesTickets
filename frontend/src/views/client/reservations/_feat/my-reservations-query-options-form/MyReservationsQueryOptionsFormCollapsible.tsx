@@ -1,0 +1,57 @@
+/**
+ * @fileoverview Collapsible container for the reservation query option form that displays active filters.
+ */
+
+import {ReactElement, ReactNode, useState} from "react";
+import {useParsedSearchParams} from "@/shared/_feat";
+import {Button, Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/shared/_comp/ui";
+import {ChevronsUpDown} from "lucide-react";
+import {
+    CurrentUserReservationsQueryOptionsSchema
+} from "@/domains/reservations/_feat/fetch-current-user-reservations";
+import {
+    ReservationStatusLabelMap,
+    ReservationTypeLabelMap
+} from "@/domains/reservations/_const/label-maps";
+
+type CollapsibleProps = {
+    children: ReactNode;
+};
+
+/**
+ * A collapsible wrapper that displays a summary of active reservation filters in the trigger button.
+ */
+export function MyReservationsQueryOptionsFormCollapsible(
+    {children}: CollapsibleProps
+): ReactElement {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const {
+        searchParams: {uniqueCode, status, reservationType, sortByDateReserved, sortByStatus},
+    } = useParsedSearchParams({schema: CurrentUserReservationsQueryOptionsSchema});
+
+    const filterText = [
+        uniqueCode && uniqueCode,
+        status && ReservationStatusLabelMap[status],
+        reservationType && ReservationTypeLabelMap[reservationType],
+        sortByStatus && "Sorted By Status",
+        sortByDateReserved && "Sorted By Date Reserved",
+    ].filter(Boolean);
+
+    const spanText = filterText.length
+        ? "Toggle Filters • " + filterText.join(", ")
+        : "Toggle Filters";
+
+    return (
+        <Collapsible open={isOpen} onOpenChange={setIsOpen} className="space-y-2">
+            <CollapsibleTrigger asChild>
+                <Button variant="ghost" className="secondary-text">
+                    <ChevronsUpDown/>
+                    <span>{spanText}</span>
+                </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="border p-3 rounded-md w-fit">
+                {children}
+            </CollapsibleContent>
+        </Collapsible>
+    );
+}

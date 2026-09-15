@@ -8,7 +8,7 @@ import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {findByID} from "@/domains/seatmaps/_feat/crud/repository.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {SeatMapCRUDQueryKeys} from "@/domains/seatmaps/_feat/crud-hooks/keys/queryKey.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 
 /** Fetches a seat map document and validates it against a provided schema. */
 export function useFetchSeatMap<TData = unknown>(
@@ -22,6 +22,6 @@ export function useFetchSeatMap<TData = unknown>(
     return useQuery({
         queryKey: SeatMapCRUDQueryKeys._id({_id, ...config}),
         queryFn: fetchSeatMap,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

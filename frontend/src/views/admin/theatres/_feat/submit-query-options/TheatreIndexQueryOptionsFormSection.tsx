@@ -2,7 +2,7 @@
  * @fileoverview Creates the form section component for managing theatre index query options.
  */
 
-import {createQueryOptionFormSection} from "@/shared/_feat";
+import {createQueryOptionsFormSection} from "@/shared/_feat";
 import {
     TheatreIndexQueryOptions,
     TheatreIndexQueryOptionsFormValues,
@@ -15,13 +15,13 @@ import {
     TheatreIndexQueryOptionsForm
 } from "@/views/admin/theatres/_feat/submit-query-options/TheatreIndexQueryOptionsForm.tsx";
 
-const section = createQueryOptionFormSection<
+const section = createQueryOptionsFormSection<
     TheatreIndexQueryOptionsFormValues,
     TheatreIndexQueryOptions
 >({
     useQueryOptionsContext: useTheatreIndexQueryOptionsContext,
     formView: TheatreIndexQueryOptionsFormView,
-    queryOptionForm: TheatreIndexQueryOptionsForm
+    queryOptionsForm: TheatreIndexQueryOptionsForm
 });
 
 /** Form section component for filtering and sorting theatres in the index view. */

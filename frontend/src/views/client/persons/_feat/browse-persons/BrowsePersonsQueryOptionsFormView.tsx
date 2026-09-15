@@ -4,24 +4,24 @@
 
 import {ReactElement} from "react";
 import {useFormContext} from "react-hook-form";
-import {cn, QueryOptionFormViewProps, useQueryOptionFormContext} from "@/shared/_feat";
+import {cn, QueryOptionsFormViewProps, useQueryOptionsFormContext} from "@/shared/_feat";
 import {useAutoFormSubmit} from "@/shared/_feat/submit-data";
 import {HookFormInput, HookFormSortToggle} from "@/views/shared/_feat";
 import {Button} from "@/views/shared/_comp/ui";
 import {X} from "lucide-react";
 import {LabelledFormInput} from "@/views/admin/movies/_comp/form-display/LabelledFormInput.tsx";
 import {
-    BrowsePersonsQueryOptionFormValues
-} from "@/domains/persons/_feat/client-view-data/browse-persons/form/BrowsePersonsQueryOptionFormValues.ts";
+    BrowsePersonsQueryOptionsFormValues
+} from "@/domains/persons/_feat/client-view-data/browse-persons/form/BrowsePersonsQueryOptionsFormValues.ts";
 
 /**
  * Form section for filtering and sorting persons.
  */
 export function BrowsePersonsQueryOptionsFormView(
-    {classNames, disableFields, hideFields}: QueryOptionFormViewProps<BrowsePersonsQueryOptionFormValues>
+    {classNames, disableFields, hideFields}: QueryOptionsFormViewProps<BrowsePersonsQueryOptionsFormValues>
 ): ReactElement {
     const {control, watch, reset} = useFormContext();
-    const {submitHandler} = useQueryOptionFormContext();
+    const {submitHandler} = useQueryOptionsFormContext();
 
     useAutoFormSubmit({submitHandler, timeout: 450});
 

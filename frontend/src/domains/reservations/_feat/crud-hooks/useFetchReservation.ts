@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {IDQueryConfig} from "@/shared/_types";
 import {findByID} from "@/domains/reservations/_feat/crud";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
@@ -24,6 +24,6 @@ export function useFetchReservation<TData = unknown>(
     return useQuery({
         queryKey: ReservationCRUDQueryKeys._id({_id, ...config}),
         queryFn: fetchReservation,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

@@ -7,7 +7,7 @@ import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions
 import {TheatreClientViewQueryKeys,} from "@/domains/theatres/_feat/client-view-data/queryKeys.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {
     TheatreInfoViewData,
@@ -39,6 +39,6 @@ export function useFetchTheatreInfoViewData(
     return useQuery({
         queryKey: TheatreClientViewQueryKeys.browseInfo({theatreSlug, localDateString, ...queries}),
         queryFn: fetchViewData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

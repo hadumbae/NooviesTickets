@@ -13,10 +13,10 @@ import {MyProfileNavigation, MyProfileNavigationDropdown} from "@/views/client/u
 import {Separator} from "@/views/shared/_comp/ui";
 import {useIsMobile} from "@/shared/_feat/handle-ui/useIsMobile.tsx";
 import {
-    MyReservationsQueryOptionForm,
-    MyReservationsQueryOptionFormCollapsible,
-    MyReservationsQueryOptionFormView
-} from "@/views/client/reservations/_feat/my-reservations-query-option-form";
+    MyReservationsQueryOptionsForm,
+    MyReservationsQueryOptionsFormCollapsible,
+    MyReservationsQueryOptionsFormView
+} from "@/views/client/reservations/_feat/my-reservations-query-options-form";
 
 /** Props for the MyReservationsPageContent component. */
 type ContentProps = {
@@ -45,11 +45,11 @@ export function MyReservationsPageContent(
 
             {!isMobile && <MyProfileNavigation/>}
 
-            <MyReservationsQueryOptionForm>
-                <MyReservationsQueryOptionFormCollapsible>
-                    <MyReservationsQueryOptionFormView/>
-                </MyReservationsQueryOptionFormCollapsible>
-            </MyReservationsQueryOptionForm>
+            <MyReservationsQueryOptionsForm>
+                <MyReservationsQueryOptionsFormCollapsible>
+                    <MyReservationsQueryOptionsFormView/>
+                </MyReservationsQueryOptionsFormCollapsible>
+            </MyReservationsQueryOptionsForm>
 
             {
                 reservations.length > 0 ? (

@@ -9,7 +9,7 @@ import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {getFetchReviewsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/repository.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {FetchByMovieQueryKeys} from "@/domains/movie-reviews/_feat/fetch-by-movie/fetch/queryKeys.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data/buildQueryFn.ts";
 import {generatePaginationSchema} from "@noovies-tickets/common";
@@ -35,6 +35,6 @@ export function useFetchReviewsByMovie(
     return useQuery({
         queryKey: FetchByMovieQueryKeys.movie({...config, movieID}),
         queryFn: fetchReviews,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

@@ -6,7 +6,7 @@ import {ObjectIdString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {getFetchFeaturedReviewsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/repository.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {
     FeaturedReviewsByMovie,
@@ -36,6 +36,6 @@ export function useFetchFeaturedReviewsByMovie(
     return useQuery({
         queryKey: FetchByMovieQueryKeys.featured({...config, movieID}),
         queryFn: fetchReviews,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

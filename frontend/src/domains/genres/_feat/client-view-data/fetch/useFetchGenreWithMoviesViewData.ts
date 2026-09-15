@@ -6,7 +6,7 @@ import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {PaginationOptions} from "@noovies-tickets/common";
 import {SlugString} from "@noovies-tickets/common";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {getFetchGenreWithMovies} from "@/domains/genres/_feat/client-view-data/repository/repository.ts";
@@ -39,6 +39,6 @@ export function useFetchGenreWithMoviesViewData(
     return useQuery({
         queryKey: GenreClientViewDataQueryKeys.withMovies({slug, page, perPage}),
         queryFn: fetchGenreData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

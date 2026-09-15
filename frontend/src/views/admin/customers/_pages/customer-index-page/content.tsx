@@ -6,7 +6,7 @@ import {ReactElement} from "react";
 import {UserDetails} from "@/domains/users/_schema/user";
 import {EmptyArrayContainer, PageFlexWrapper, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {CustomerIndexCard} from "@/views/admin/customers/_comp/customer-index";
-import {CustomerIndexQueryOptionFormSection} from "@/views/admin/customers/_feat/query-option-forms";
+import {CustomerIndexQueryOptionsFormSection} from "@/views/admin/customers/_feat/query-options-forms";
 
 /** Props for the CustomerIndexPageContent component. */
 type ContentProps = {
@@ -29,7 +29,7 @@ export function CustomerIndexPageContent(
                 title="Customers"
             />
 
-            <CustomerIndexQueryOptionFormSection/>
+            <CustomerIndexQueryOptionsFormSection/>
 
             {
                 customers.length > 0 ? (

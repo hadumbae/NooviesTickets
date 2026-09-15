@@ -12,7 +12,7 @@ import {
 } from "@/domains/pages/_feat/client-view-data/client-homepage-data/ClientHomepageViewRouteConfigSchema.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {buildQueryFn, useQueryOptionDefaults} from "@/shared/_feat";
+import {buildQueryFn, useQueryOptionsDefaults} from "@/shared/_feat";
 import {
     getFetchClientHomepageViewData
 } from "@/domains/pages/_feat/client-view-data/client-homepage-data/getFetchClientHomepageViewData.ts";
@@ -36,6 +36,6 @@ export function useFetchClientHomepageViewData(
     return useQuery({
         queryKey: ClientHomepageQueryKeys.homepage(queries),
         queryFn: fetchData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     })
 }

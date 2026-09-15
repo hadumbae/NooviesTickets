@@ -2,12 +2,12 @@
  * @fileoverview Zod schema and TypeScript types for movie index query options and form values.
  */
 
-import {MovieQueryOptionSchema} from "@/domains/movies/_schema/queries/MovieQueryOptionSchema.ts";
+import {MovieQueryOptionsSchema} from "@/domains/movies/_schema/queries/MovieQueryOptionsSchema.ts";
 import {z} from "zod";
 import {AnyValues} from "@/shared/_types";
 
 /** Zod schema for filtering and sorting movie index queries. */
-export const MovieIndexQueryOptionsSchema = MovieQueryOptionSchema.pick({
+export const MovieIndexQueryOptionsSchema = MovieQueryOptionsSchema.pick({
     title: true,
     releaseDate: true,
     country: true,

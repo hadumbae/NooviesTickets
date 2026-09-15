@@ -1,1 +1,0 @@
-export * from "@/views/admin/customers/_feat/query-option-forms/customer-index";

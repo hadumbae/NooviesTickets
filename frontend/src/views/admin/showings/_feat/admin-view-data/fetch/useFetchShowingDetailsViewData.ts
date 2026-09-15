@@ -7,7 +7,7 @@ import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {getFetchShowingDetailsViewData} from "@/views/admin/showings/_feat/admin-view-data/repository";
 import {ShowingAdminViewDataQueryKeys} from "@/views/admin/showings/_feat/admin-view-data/fetch/queryKeys.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 
 type FetchConfig<TData = unknown> = {
     slug: SlugString;
@@ -26,6 +26,6 @@ export function useFetchShowingDetailsViewData(
     return useQuery({
         queryKey: ShowingAdminViewDataQueryKeys.showingDetails({slug}),
         queryFn: fetchViewData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     })
 }

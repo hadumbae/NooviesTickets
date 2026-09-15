@@ -7,7 +7,7 @@ import {SlugString} from "@noovies-tickets/common";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 
 import {TheatreScreenAdminViewDataQueryKeys} from "@/domains/theatre-screens/_feat/admin-view-data/keys";
 import {getFetchTheatreScreenAdminViewData,} from "@/domains/theatre-screens/_feat/admin-view-data/repository";
@@ -40,7 +40,7 @@ export function useFetchTheatreScreenDetailsViewData(
     return useQuery({
         queryKey: TheatreScreenAdminViewDataQueryKeys.details(payload),
         queryFn: fetchViewData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
         structuralSharing: false,
     });
 }

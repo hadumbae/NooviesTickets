@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {ListQueryConfig} from "@/shared/_types";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 
@@ -26,6 +26,6 @@ export function useFetchSeats<TData = unknown>(
     return useQuery({
         queryKey: SeatCRUDQueryKeys.query({...queries, ...config}),
         queryFn: fetchSeats,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

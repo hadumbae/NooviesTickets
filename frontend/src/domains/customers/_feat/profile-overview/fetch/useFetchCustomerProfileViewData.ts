@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {getFetchCustomerProfileViewData} from "@/domains/customers/_feat/profile-overview/repository/repository.ts";
 import {CustomerProfileOverviewViewQueryKeys} from "@/domains/customers/_feat/profile-overview/fetch/queryKeys.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
@@ -30,6 +30,6 @@ export function useFetchCustomerProfileViewData(
     return useQuery({
         queryKey: CustomerProfileOverviewViewQueryKeys.profile({customerID}),
         queryFn: fetchDetails,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

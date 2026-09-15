@@ -22,7 +22,7 @@ export function RoleTypeIndexQueryOptionsFormFilterFieldset(
     const {control} = useFormContext();
 
     return (
-        <fieldset className={cn("query-option-fieldset-grid", className)}>
+        <fieldset className={cn("query-options-fieldset-grid", className)}>
             {
                 !hideFields?.roleName && (
                     <LabelledFormInput label="Role Name">

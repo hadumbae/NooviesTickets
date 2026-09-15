@@ -5,7 +5,7 @@
 
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {PaginationOptions} from "@noovies-tickets/common";
 import {getUserFavourites} from "@/domains/users/_feat/manage-user-favourites/repository";
 import {ManageUserFavouritesQueryKeys} from "@/domains/users/_feat/manage-user-favourites/hooks/queryKeys.ts";
@@ -34,6 +34,6 @@ export function useFetchCurrentUserFavourites(
     return useQuery({
         queryKey: ManageUserFavouritesQueryKeys.fetchCurrent(),
         queryFn: fetchUserFavourites,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

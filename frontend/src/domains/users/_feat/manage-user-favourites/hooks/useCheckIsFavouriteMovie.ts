@@ -5,7 +5,7 @@
 import {ObjectIdString} from "@noovies-tickets/common";
 import { FetchQueryOptions } from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {IsFavouriteMovieMetadata, IsFavouriteMovieSchema} from "@/domains/users/_feat/manage-user-favourites/schema";
@@ -30,6 +30,6 @@ export function useCheckIsFavouriteMovie(
     return useQuery({
         queryKey: ManageUserFavouritesQueryKeys.checkMovie({_id}),
         queryFn: getCheckMovie,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

@@ -8,7 +8,7 @@ import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {getFetchFilmographyForPerson} from "@/domains/movie-credits/_feat/person-credit/repository";
 import {PersonFilmography, PersonFilmographySchema} from "@/domains/movie-credits/_feat/person-credit/schema";
 import {PersonCreditQueryKeys} from "@/domains/movie-credits/_feat/person-credit/fetch/PersonCreditQueryKeys.ts";
@@ -35,6 +35,6 @@ export function useFetchFilmographyForPerson(
     return useQuery({
         queryKey: PersonCreditQueryKeys.filmography({_id, ...config}),
         queryFn: fetchCredits,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

@@ -7,7 +7,7 @@ import {useFormContext} from "react-hook-form";
 import {HookFormInput} from "@/views/shared/_feat";
 import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
 import {Button} from "@/views/shared/_comp/ui/button.tsx";
-import {cn, useQueryOptionFormContext} from "@/shared/_feat";
+import {cn, useQueryOptionsFormContext} from "@/shared/_feat";
 
 /** Props for the SetReservationCodeFormCard component. */
 type ViewProps = {
@@ -22,7 +22,7 @@ export function SetReservationCodeFormCard(
     {className, containerClassName}: ViewProps
 ): ReactElement {
     const {control} = useFormContext();
-    const {formID} = useQueryOptionFormContext();
+    const {formID} = useQueryOptionsFormContext();
 
     return (
         <Card className={containerClassName}>

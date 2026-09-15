@@ -6,7 +6,7 @@ import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {TheatreAdminViewDataQueryKeys} from "@/domains/theatres/_feat/admin-view-data/fetch/queryKeys";
 import {getFetchTheatreDetailsViewData} from "@/domains/theatres/_feat/admin-view-data/repository";
 import {TheatreDetailsViewData, TheatreDetailsViewDataSchema} from "@/domains/theatres/_feat/admin-view-data/schema";
@@ -36,6 +36,6 @@ export function useFetchTheatreDetailsViewData(
     return useQuery({
         queryKey: TheatreAdminViewDataQueryKeys.details({slug, ...queries}),
         queryFn: fetchTheatreDetails,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

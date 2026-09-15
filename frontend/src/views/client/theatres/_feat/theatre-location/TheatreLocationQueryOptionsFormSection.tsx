@@ -2,9 +2,9 @@
  * @fileoverview Defines and exports the query option form section for theatre location options.
  */
 
-import {createQueryOptionFormSection} from "@/shared/_feat";
+import {createQueryOptionsFormSection} from "@/shared/_feat";
 import {
-    TheatreLocationQueryOptionForm
+    TheatreLocationQueryOptionsForm
 } from "@/views/client/theatres/_feat/theatre-location/TheatreLocationQueryOptionsForm.tsx";
 import {
     useTheatreLocationQueryOptionsContext
@@ -13,8 +13,8 @@ import {
     TheatreLocationQueryOptionsFormView
 } from "@/views/client/theatres/_feat/theatre-location/TheatreLocationQueryOptionsFormView.tsx";
 
-const section = createQueryOptionFormSection({
-    queryOptionForm: TheatreLocationQueryOptionForm,
+const section = createQueryOptionsFormSection({
+    queryOptionsForm: TheatreLocationQueryOptionsForm,
     formView: TheatreLocationQueryOptionsFormView,
     useQueryOptionsContext: useTheatreLocationQueryOptionsContext,
 });

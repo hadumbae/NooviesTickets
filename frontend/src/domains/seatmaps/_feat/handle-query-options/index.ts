@@ -4,7 +4,7 @@ import {
 } from "@/domains/seatmaps/_feat/handle-query-options/SeatMapReferenceParams.ts";
 import {
     SeatMapQueryOptions,
-    SeatMapQueryOptionSchema
+    SeatMapQueryOptionsSchema
 } from "@/domains/seatmaps/_feat/handle-query-options/SeatMapQueryOptions.ts";
 import {
     SeatMapMatchFilterSchema,
@@ -15,7 +15,7 @@ import {
 
 export {
     SeatMapReferenceFilterSchema,
-    SeatMapQueryOptionSchema,
+    SeatMapQueryOptionsSchema,
     SeatMapMatchFilterSchema,
     SeatMapMatchSortSchema,
     SeatMapMatchOptionsSchema,

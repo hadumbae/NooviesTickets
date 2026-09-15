@@ -1,18 +1,18 @@
 import {
-    BrowsePersonsQueryOptionFormValues
-} from "@/domains/persons/_feat/client-view-data/browse-persons/form/BrowsePersonsQueryOptionFormValues.ts";
+    BrowsePersonsQueryOptionsFormValues
+} from "@/domains/persons/_feat/client-view-data/browse-persons/form/BrowsePersonsQueryOptionsFormValues.ts";
 import {
-    useBrowsePersonsQueryOptionFormDefaultValues
-} from "@/domains/persons/_feat/client-view-data/browse-persons/form/useBrowsePersonsQueryOptionFormDefaultValues.ts";
+    useBrowsePersonsQueryOptionsFormDefaultValues
+} from "@/domains/persons/_feat/client-view-data/browse-persons/form/useBrowsePersonsQueryOptionsFormDefaultValues.ts";
 import {
-    useBrowsePersonsQueryOptionForm
-} from "@/domains/persons/_feat/client-view-data/browse-persons/form/useBrowsePersonsQueryOptionForm.ts";
+    useBrowsePersonsQueryOptionsForm
+} from "@/domains/persons/_feat/client-view-data/browse-persons/form/useBrowsePersonsQueryOptionsForm.ts";
 
 export {
-    useBrowsePersonsQueryOptionForm,
-    useBrowsePersonsQueryOptionFormDefaultValues,
+    useBrowsePersonsQueryOptionsForm,
+    useBrowsePersonsQueryOptionsFormDefaultValues,
 }
 
 export type {
-    BrowsePersonsQueryOptionFormValues,
+    BrowsePersonsQueryOptionsFormValues,
 }

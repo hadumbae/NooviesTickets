@@ -7,7 +7,7 @@ import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import HttpResponseError from "@/shared/_err/HttpResponseError";
 import {SlugString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {MovieClientViewDataQueryKeys} from "@/domains/movies/_feat/client-view-data/hooks/queryKeys.ts";
 import {MovieInfoShowingViewData, MovieInfoShowingViewSchema} from "@/domains/movies/_feat/client-view-data/schemas";
 import {
@@ -34,6 +34,6 @@ export function useFetchMovieInfoShowingsData(
     return useQuery({
         queryKey: MovieClientViewDataQueryKeys.infoShowings({slug, ...queries}),
         queryFn: fetchData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

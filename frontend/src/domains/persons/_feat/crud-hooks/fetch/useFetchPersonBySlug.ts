@@ -5,7 +5,7 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {SlugQueryConfig} from "@/shared/_types";
 import {findBySlug} from "@/domains/persons/_feat/crud";
 import {PersonCRUDQueryKeys} from "@/domains/persons/_feat/crud-hooks/keys";
@@ -22,6 +22,6 @@ export function useFetchPersonBySlug<TData = unknown>(
     return useQuery({
         queryKey: PersonCRUDQueryKeys.slug({slug, ...config}),
         queryFn: fetchPerson,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

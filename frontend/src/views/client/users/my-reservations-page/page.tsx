@@ -7,7 +7,7 @@ import {MyReservationsPageContent} from "@/views/client/users/my-reservations-pa
 import {ReactElement} from "react";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {
-    CurrentUserReservationsQueryOptionSchema,
+    CurrentUserReservationsQueryOptionsSchema,
     useFetchReservationsForCurrentUser
 } from "@/domains/reservations/_feat";
 import {useParsedSearchParams} from "@/shared/_feat";
@@ -19,7 +19,7 @@ const RESERVATIONS_PER_PAGE = 20;
  */
 export function MyReservationsPage(): ReactElement {
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
-    const {searchParams} = useParsedSearchParams({schema: CurrentUserReservationsQueryOptionSchema});
+    const {searchParams} = useParsedSearchParams({schema: CurrentUserReservationsQueryOptionsSchema});
 
     const query = useFetchReservationsForCurrentUser({
         pagination: {page, perPage: RESERVATIONS_PER_PAGE},

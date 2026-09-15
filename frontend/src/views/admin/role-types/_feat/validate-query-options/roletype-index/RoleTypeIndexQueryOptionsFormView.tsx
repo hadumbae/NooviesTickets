@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {QueryOptionFormViewProps} from "@/shared/_feat";
+import {QueryOptionsFormViewProps} from "@/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsFormValues
 } from "@/domains/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsSchema.ts";
-import {QueryOptionFormLayout} from "@/views/shared/_feat";
+import {QueryOptionsFormLayout} from "@/views/shared/_feat";
 import {
     RoleTypeIndexQueryOptionsFormFilterFieldset
 } from "@/views/admin/role-types/_feat/validate-query-options/roletype-index/RoleTypeIndexQueryOptionsFormFilterFieldset.tsx";
@@ -19,10 +19,10 @@ import {
  * Renders the layout view for role type index filter and sort form fieldsets.
  */
 export function RoleTypeIndexQueryOptionsFormView(
-    {disableFields, classNames}: QueryOptionFormViewProps<RoleTypeIndexQueryOptionsFormValues>
+    {disableFields, classNames}: QueryOptionsFormViewProps<RoleTypeIndexQueryOptionsFormValues>
 ): ReactElement {
     return (
-        <QueryOptionFormLayout
+        <QueryOptionsFormLayout
             filterFieldset={RoleTypeIndexQueryOptionsFormFilterFieldset}
             sortFieldset={RoleTypeIndexQueryOptionsFormSortFieldset}
             classNames={classNames}

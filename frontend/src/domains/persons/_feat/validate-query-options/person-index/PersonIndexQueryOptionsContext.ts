@@ -4,11 +4,11 @@
 
 import {createQueryOptionsContext} from "@/shared/_feat";
 import {
-    PersonIndexQueryOptionSchema
-} from "@/domains/persons/_feat/validate-query-options/person-index/PersonIndexQueryOptionSchema.ts";
+    PersonIndexQueryOptionsSchema
+} from "@/domains/persons/_feat/validate-query-options/person-index/PersonIndexQueryOptionsSchema.ts";
 
 const {Provider, useQueryOptionsContext} = createQueryOptionsContext({
-    schema: PersonIndexQueryOptionSchema,
+    schema: PersonIndexQueryOptionsSchema,
     name: "person-index-query-options-context",
 })
 

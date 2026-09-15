@@ -2,7 +2,7 @@
  * @fileoverview Custom React Query hook for fetching and validating admin dashboard view metrics.
  */
 
-import {buildQueryFn, useQueryOptionDefaults} from "@/shared/_feat";
+import {buildQueryFn, useQueryOptionsDefaults} from "@/shared/_feat";
 import {
     getFetchAdminDashboardViewData
 } from "@/domains/pages/_feat/admin-view-data/admin-dashboard-data/getFetchAdminDashboardViewData.ts";
@@ -32,6 +32,6 @@ export function useFetchAdminDashboardViewData(
     return useQuery({
         queryKey: AdminPagesQueryKeys.dashboard(),
         queryFn: fetchData,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

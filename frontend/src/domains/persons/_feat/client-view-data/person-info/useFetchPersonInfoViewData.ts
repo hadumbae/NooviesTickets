@@ -13,7 +13,7 @@ import {SlugString} from "@noovies-tickets/common";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 
 /** Configuration for fetching person information. */
 type FetchConfig = {
@@ -36,6 +36,6 @@ export function useFetchPersonInfoViewData(
     return useQuery({
         queryKey: PersonClientViewQueryKeys.info({slug, limit}),
         queryFn: fetchPersonInfo,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

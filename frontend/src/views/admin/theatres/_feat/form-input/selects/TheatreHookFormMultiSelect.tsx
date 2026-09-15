@@ -12,7 +12,7 @@ import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProp
 import {generateArraySchema} from "@noovies-tickets/common";
 
 import {Theatre, TheatreSchema} from "@/domains/theatres/_schema/theatre";
-import {TheatreQueryOptions} from "@/domains/theatres/_feat/handle-query-options/options/TheatreQueryOptionSchema.ts";
+import {TheatreQueryOptions} from "@/domains/theatres/_feat/handle-query-options/options/TheatreQueryOptionsSchema.ts";
 import {useFetchTheatres} from "@/domains/theatres/_feat/crud-hooks/fetch/useFetchTheatres.ts";
 
 /** Props for the TheatreHookFormMultiSelect component. */

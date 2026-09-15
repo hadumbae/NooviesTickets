@@ -1,10 +1,10 @@
 /** @fileoverview Schema and type definitions for querying the current user's reservations. */
 
 import {z} from "zod";
-import {ReservationBaseQueryOptionSchema} from "@/domains/reservations/_schema/model/query-options";
+import {ReservationBaseQueryOptionsSchema} from "@/domains/reservations/_schema/model/query-options";
 
 /** Zod schema for validating current user reservation query parameters. */
-export const CurrentUserReservationsQueryOptionSchema = ReservationBaseQueryOptionSchema.pick({
+export const CurrentUserReservationsQueryOptionsSchema = ReservationBaseQueryOptionsSchema.pick({
     uniqueCode: true,
     status: true,
     reservationType: true,
@@ -13,4 +13,4 @@ export const CurrentUserReservationsQueryOptionSchema = ReservationBaseQueryOpti
 });
 
 /** Type inferred from the current user reservations query schema. */
-export type CurrentUserReservationsQueryOptions = z.infer<typeof CurrentUserReservationsQueryOptionSchema>;
+export type CurrentUserReservationsQueryOptions = z.infer<typeof CurrentUserReservationsQueryOptionsSchema>;

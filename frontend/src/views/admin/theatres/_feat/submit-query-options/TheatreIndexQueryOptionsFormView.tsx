@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {QueryOptionFormViewProps} from "@/shared/_feat";
+import {QueryOptionsFormViewProps} from "@/shared/_feat";
 import {
     TheatreIndexQueryOptionsFormValues
 } from "@/domains/theatres/_feat/handle-query-options/theatre-index/TheatreIndexQueryOptionsSchema.ts";
-import {QueryOptionFormLayout} from "@/views/shared/_feat";
+import {QueryOptionsFormLayout} from "@/views/shared/_feat";
 import {
     TheatreIndexQueryOptionsFormFilterFieldset
 } from "@/views/admin/theatres/_feat/submit-query-options/TheatreIndexQueryOptionsFormFilterFieldset.tsx";
@@ -19,10 +19,10 @@ import {
  * Renders the layout view for theatre index filter and sort form fieldsets.
  */
 export function TheatreIndexQueryOptionsFormView(
-    {classNames, disableFields}: QueryOptionFormViewProps<TheatreIndexQueryOptionsFormValues>
+    {classNames, disableFields}: QueryOptionsFormViewProps<TheatreIndexQueryOptionsFormValues>
 ): ReactElement {
     return (
-        <QueryOptionFormLayout
+        <QueryOptionsFormLayout
             filterFieldset={TheatreIndexQueryOptionsFormFilterFieldset}
             sortFieldset={TheatreIndexQueryOptionsFormSortFieldset}
             disableFields={disableFields}

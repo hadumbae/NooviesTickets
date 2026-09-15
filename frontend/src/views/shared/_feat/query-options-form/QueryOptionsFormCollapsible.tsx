@@ -7,7 +7,7 @@ import {Button, Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/vie
 import {ChevronsUpDown, X} from "lucide-react";
 import {UIOpenStateProps} from "@/shared/_types";
 import {cn} from "@/shared/_feat/handle-ui/cn.ts";
-import {useQueryOptionFormContext} from "@/shared/_feat/query-option-form-context/useQueryOptionFormContext.ts";
+import {useQueryOptionsFormContext} from "@/shared/_feat/query-options-form-context/useQueryOptionsFormContext.ts";
 
 /** Props for the QueryOptionsFormCollapsible component. */
 type CollapsibleProps = UIOpenStateProps & {
@@ -19,12 +19,12 @@ type CollapsibleProps = UIOpenStateProps & {
 
 /**
  * A collapsible wrapper that provides a toggle trigger and a clear button for query filters.
- * Requires QueryOptionFormContext to manage active option counts and reset functionality.
+ * Requires QueryOptionsFormContext to manage active option counts and reset functionality.
  */
 export function QueryOptionsFormCollapsible(
     {children, isOpen, setIsOpen, className, triggerText, disableClear = false}: CollapsibleProps
 ): ReactElement {
-    const {activeOptions, resetValues} = useQueryOptionFormContext();
+    const {activeOptions, resetValues} = useQueryOptionsFormContext();
     const triggerTextDisplay = !triggerText
         ? activeOptions > 0 ? `Toggle Filters • ${activeOptions}` : "Toggle Filters"
         : triggerText;

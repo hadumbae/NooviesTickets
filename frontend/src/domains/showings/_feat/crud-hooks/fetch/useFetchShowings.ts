@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {ListQueryConfig} from "@/shared/_types";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {find} from "@/domains/showings/_feat/crud";
@@ -22,6 +22,6 @@ export function useFetchShowings<TData = unknown>(
     return useQuery({
         queryKey: ShowingCRUDQueryKeys.find({...queries, ...config}),
         queryFn: fetchShowingsByQuery,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

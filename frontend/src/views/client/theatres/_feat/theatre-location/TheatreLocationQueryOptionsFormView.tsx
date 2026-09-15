@@ -9,7 +9,7 @@ import {
     FormViewProps,
     renderFields,
     useAutoFormSubmit,
-    useQueryOptionFormContext
+    useQueryOptionsFormContext
 } from "@/shared/_feat";
 import {TheatreLocationQueryOptionsFormValues} from "@/domains/theatres/_feat/handle-query-options/theatre-location/TheatreLocationQueryOptionsSchema.ts";
 import {HookFormInput} from "@/views/shared/_feat";
@@ -25,7 +25,7 @@ export function TheatreLocationQueryOptionsFormView(
     const {control} = useFormContext();
     const field = createFormFieldConfig({hideFields, disableFields});
 
-    const {submitHandler} = useQueryOptionFormContext();
+    const {submitHandler} = useQueryOptionsFormContext();
     useAutoFormSubmit({submitHandler, timeout: 450});
 
     const fields: ConditionalRenderConfig[] = [

@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {ListQueryConfig} from "@/shared/_types";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {find} from "@/domains/role-types/_feat/crud";
@@ -22,6 +22,6 @@ export function useFetchRoleTypes<TData = unknown>(
     return useQuery({
         queryKey: RoleTypeCRUDQueryKeys.find({...queries, ...config}),
         queryFn: fetchRoleTypes,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }

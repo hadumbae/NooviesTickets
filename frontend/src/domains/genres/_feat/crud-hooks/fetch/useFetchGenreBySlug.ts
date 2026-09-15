@@ -4,7 +4,7 @@
 
 import {ZodType, ZodTypeDef} from "zod";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
@@ -34,6 +34,6 @@ export function useFetchGenreBySlug<TData = unknown>(
     return useQuery({
         queryKey: GenreCRUDQueryKeys.slug({slug, ...config}),
         queryFn: fetchGenre,
-        ...useQueryOptionDefaults<TData>(options),
+        ...useQueryOptionsDefaults<TData>(options),
     });
 }

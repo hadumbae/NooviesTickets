@@ -8,8 +8,8 @@ import {
 } from "@/domains/showings/_schema/queries/ShowingQueryMatchSortSchema.ts";
 import {
     ShowingQueryOptions,
-    ShowingQueryOptionSchema
-} from "@/domains/showings/_schema/queries/ShowingQueryOptionSchema.ts";
+    ShowingQueryOptionsSchema
+} from "@/domains/showings/_schema/queries/ShowingQueryOptionsSchema.ts";
 import {
     ShowingQueryReferenceFilters,
     ShowingQueryReferenceFilterSchema
@@ -19,7 +19,7 @@ export {
     ShowingQueryMatchFilterSchema,
     ShowingQueryMatchSortSchema,
     ShowingQueryReferenceFilterSchema,
-    ShowingQueryOptionSchema,
+    ShowingQueryOptionsSchema,
 }
 
 export type {

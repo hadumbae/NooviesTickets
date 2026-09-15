@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {useQueryOptionDefaults} from "@/shared/_feat/handle-query/useQueryOptionDefaults.ts";
+import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {SlugQueryConfig} from "@/shared/_types";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {MovieCRUDQueryKeys} from "@/domains/movies/_feat/crud-hooks/keys/queryKeys.ts";
@@ -22,6 +22,6 @@ export function useFetchMovieBySlug<TData = unknown>(
     return useQuery({
         queryKey: MovieCRUDQueryKeys.slug({slug, ...config}),
         queryFn: fetchMovie,
-        ...useQueryOptionDefaults(options),
+        ...useQueryOptionsDefaults(options),
     });
 }
