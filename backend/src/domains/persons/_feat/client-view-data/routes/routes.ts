@@ -15,10 +15,10 @@ import {
 } from "@/domains/persons/_feat/client-view-data/browse-persons";
 import {PersonInfoViewRouteConfigSchema} from "@/domains/persons/_feat/client-view-data/person-info";
 
-const routes = Router();
+const router = Router();
 const modelName = PersonModel.modelName;
 
-routes.get(
+router.get(
     "/browse",
     [
         isAuth,
@@ -29,7 +29,7 @@ routes.get(
     asyncHandler(getFetchBrowsePersonViewData),
 );
 
-routes.get(
+router.get(
     "/person/:slug/info",
     [
         isAuth,
@@ -39,5 +39,5 @@ routes.get(
 );
 
 export {
-    routes as PersonClientViewDataRoutes
+    router as PersonClientViewDataRoutes
 }

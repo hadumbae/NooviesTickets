@@ -1,4 +1,4 @@
-import {GenreViewDataRoutes} from "@/domains/genres/_feat/admin-view-data/routes";
+import {GenreAdminViewDataRoutes} from "@/domains/genres/_feat/admin-view-data/routes";
 import {fetchGenreDetails} from "@/domains/genres/_feat/admin-view-data/services/service";
 import {getFetchGenreDetailsViewData} from "@/domains/genres/_feat/admin-view-data/controller";
 import type {
@@ -11,7 +11,7 @@ import {
 } from "@/domains/genres/_feat/admin-view-data/schemas/GenreDetailsViewRouteConfigSchema";
 
 export {
-    GenreViewDataRoutes,
+    GenreAdminViewDataRoutes,
     fetchGenreDetails,
     getFetchGenreDetailsViewData,
     GenreDetailsViewRouteConfigSchema,

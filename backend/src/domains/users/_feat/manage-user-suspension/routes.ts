@@ -28,5 +28,5 @@ router.patch(
 
 /** Express router instance containing user suspension administration endpoints. */
 export {
-    router as ManageUserSuspensionRoutes
+    router as UserAdminSuspensionRoutes
 }

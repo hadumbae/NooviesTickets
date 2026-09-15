@@ -63,5 +63,5 @@ router.patch(
 
 /** Express router instance for movie image management HTTP endpoints. */
 export {
-    router as MovieImageManagementRoutes
+    router as MovieAdminImageManagementRoutes
 }

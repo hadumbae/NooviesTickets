@@ -21,5 +21,5 @@ router.patch(
 );
 
 export {
-    router as PersonImageRoutes
+    router as PersonAdminImageManagementRoutes
 }

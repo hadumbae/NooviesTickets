@@ -4,7 +4,7 @@
 
 import type {Express} from "express";
 import type {RouteRegistration} from "../registerRoutes.js";
-import {IpApiRoutes} from "@/domains/external/ipapi/routing/IpApiRoutes.js";
+import {IpApiRoutes} from "@/domains/external/ipapi/routing/routes.js";
 
 /** Configures the Express application with routes for external service integrations. */
 export function registerExternalRoutes(app: Express) {

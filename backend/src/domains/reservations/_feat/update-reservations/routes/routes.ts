@@ -17,9 +17,9 @@ import {
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema} from "@/shared/_schema";
 
-const routes = Router();
+const router = Router();
 
-routes.patch(
+router.patch(
     "/update/:_id/notes",
     [
         isAuth,
@@ -30,7 +30,7 @@ routes.patch(
     asyncHandler(patchUpdateReservationNotes),
 );
 
-routes.patch(
+router.patch(
     "/update/:_id/expiry",
     [
         isAuth,
@@ -40,7 +40,7 @@ routes.patch(
     asyncHandler(patchResetReservationExpiry),
 );
 
-routes.patch(
+router.patch(
     "/update/:_id/cancel",
     [
         isAuth,
@@ -51,7 +51,7 @@ routes.patch(
     asyncHandler(patchCancelReservation),
 );
 
-routes.patch(
+router.patch(
     "/update/:_id/refund",
     [
         isAuth,
@@ -64,5 +64,5 @@ routes.patch(
 
 /** Express router instance for reservation update operations. */
 export {
-        routes as ReservationUpdateRoutes
+        router as ReservationAdminUpdateRoutes
 }

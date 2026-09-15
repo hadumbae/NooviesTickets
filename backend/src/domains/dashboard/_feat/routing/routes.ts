@@ -8,5 +8,5 @@ const router = Router();
 router.get("/dashboard-data", [isAuth, isAdmin], asyncHandler(getFetchAdminDashboardData));
 
 export {
-    router as AdminDashboardRoutes
+    router as DashboardAdminRoutes
 }

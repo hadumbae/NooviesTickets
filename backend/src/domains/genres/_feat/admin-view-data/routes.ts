@@ -24,4 +24,4 @@ router.get(
     asyncHandler(GenreAdminViewDataController.getFetchGenreDetailsViewData),
 );
 
-export {router as GenreViewDataRoutes};
+export {router as GenreAdminViewDataRoutes};

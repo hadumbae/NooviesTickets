@@ -76,5 +76,5 @@ router.post(
 
 /** Express router instance containing authentication and user management routes. */
 export {
-    router as ManageUsersRoutes,
+    router as AuthManageUsersRoutes,
 };

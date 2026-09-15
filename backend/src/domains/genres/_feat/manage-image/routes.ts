@@ -38,5 +38,5 @@ router.patch(
 
 /** Router instance for genre image management endpoints. */
 export {
-    router as GenreImageManagementRoutes
+    router as GenreAdminImageManagementRoutes
 }

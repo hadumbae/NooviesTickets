@@ -1,6 +1,5 @@
 /**
  * @file Express routes for IP-based geolocation endpoints.
- * @filename IpApiRoutes.ts
  */
 
 import {Router} from "express";

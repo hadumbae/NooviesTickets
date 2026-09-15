@@ -26,5 +26,5 @@ router.patch(
 
 /** Express router handling route definitions for managing user status. */
 export {
-    router as ManageUserStatusRoutes
+    router as UserAdminStatusRoutes
 }

@@ -4,12 +4,12 @@
 
 import type {Express} from "express";
 import type {RouteRegistration} from "@/server/registerRoutes";
-import {MyMovieReviewsRoutes} from "@/domains/movie-reviews";
-import {UserFavouritesRoutes} from "@/domains/users";
+import {MovieReviewMyReviewsRoutes} from "@/domains/movie-reviews";
+import {UserMyFavouritesRoutes} from "@/domains/users";
 
 const userRoutes: RouteRegistration[] = [
-    {path: "/api/v1/client/users/feat/my-reviews", router: MyMovieReviewsRoutes},
-    {path: "/api/v1/client/users/feat/my-favourites", router: UserFavouritesRoutes},
+    {path: "/api/v1/client/users/feat/my-reviews", router: MovieReviewMyReviewsRoutes},
+    {path: "/api/v1/client/users/feat/my-favourites", router: UserMyFavouritesRoutes},
 ];
 
 /** Registers feature-specific route groups to the Express application instance. */

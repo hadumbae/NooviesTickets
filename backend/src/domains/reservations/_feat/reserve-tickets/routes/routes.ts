@@ -1,6 +1,5 @@
 /**
- * @file TicketRoutes.ts
- * Client-facing ticket reservation routes.
+ * @file Client-facing ticket reservation routes.
  */
 
 import {Router} from "express";
@@ -24,5 +23,5 @@ router.post(
 
 
 export {
-    router as ReserveTicketsRoutes,
+    router as ReservationClientReserveRoutes,
 };

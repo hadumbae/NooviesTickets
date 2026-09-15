@@ -1,6 +1,5 @@
 /**
  * @file Authenticated routes for user favourite movie actions.
- * UserProfileRoutes.ts
  */
 
 import {Router} from 'express';
@@ -36,5 +35,5 @@ router.patch(
 );
 
 export {
-    router as UserFavouritesRoutes,
+    router as UserMyFavouritesRoutes,
 }

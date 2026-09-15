@@ -4,19 +4,19 @@
 
 import type {Express} from "express";
 import type {RouteRegistration} from "../../registerRoutes";
-import {GenreViewDataRoutes} from "@/domains/genres/_feat/admin-view-data";
+import {GenreAdminViewDataRoutes} from "@/domains/genres/_feat/admin-view-data";
 import {PersonAdminViewDataRoutes} from "@/domains/persons/_feat/admin-view-data";
 import {TheatreAdminViewDataRoutes} from "@/domains/theatres/_feat/admin-view-data";
 import {TheatreScreenAdminViewDataRoutes} from "@/domains/theatre-screens/_feat/view-data-admin";
 import {ShowingAdminViewDataRoutes} from "@/domains/showings/_feat/admin-view-data";
 import {UserAdminViewDataRoutes} from "@/domains/users/_feat/admin-view-data";
 import {CustomerAdminViewDataRoutes} from "@/domains/customer/_feat/customer-details";
-import {AdminDashboardRoutes} from "@/domains/dashboard";
+import {DashboardAdminRoutes} from "@/domains/dashboard";
 
 const pageRouteGroups: RouteRegistration[] = [
     {
         path: "/api/v1/views/desktop/admin/dashboard",
-        router: AdminDashboardRoutes,
+        router: DashboardAdminRoutes,
     },
 ];
 
@@ -34,7 +34,7 @@ const userRouteGroups: RouteRegistration[] = [
 const setupRouteGroups: RouteRegistration[] = [
     {
         path: "/api/v1/views/desktop/admin/genres",
-        router: GenreViewDataRoutes
+        router: GenreAdminViewDataRoutes
     },
     {
         path: "/api/v1/views/desktop/admin/persons",

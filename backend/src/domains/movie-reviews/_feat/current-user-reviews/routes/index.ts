@@ -1,5 +1,5 @@
-import {MyMovieReviewsRoutes} from "@/domains/movie-reviews/_feat/current-user-reviews/routes/MyMovieReviewsRoutes";
+import {MovieReviewMyReviewsRoutes} from "@/domains/movie-reviews/_feat/current-user-reviews/routes/routes";
 
 export {
-    MyMovieReviewsRoutes,
+    MovieReviewMyReviewsRoutes,
 }

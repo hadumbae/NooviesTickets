@@ -2,7 +2,7 @@ import {
     type ManageGenreImageRouteConfig,
     ManageGenreImageRouteConfigSchema
 } from "@/domains/genres/_feat/manage-image/schema/ManageGenreImageRouteConfig";
-import {GenreImageManagementRoutes} from "@/domains/genres/_feat/manage-image/routes";
+import {GenreAdminImageManagementRoutes} from "@/domains/genres/_feat/manage-image/routes";
 import {patchRemoveGenreImage, patchUpdateGenreImage} from "@/domains/genres/_feat/manage-image/controller";
 import {removeGenreImage, updateGenreImage} from "@/domains/genres/_feat/manage-image/service/service";
 import type {
@@ -17,7 +17,7 @@ import {hasGenreImage} from "@/domains/genres/_feat/manage-image/middleware/hasG
 
 export {
     ManageGenreImageRouteConfigSchema,
-    GenreImageManagementRoutes,
+    GenreAdminImageManagementRoutes,
     patchUpdateGenreImage,
     patchRemoveGenreImage,
     updateGenreImage,

@@ -28,5 +28,5 @@ router.patch(
 
 /** Express router instance containing user role adjustment routes. */
 export {
-    router as ManageUserRolesRoutes
+    router as UserAdminRolesRoutes
 }

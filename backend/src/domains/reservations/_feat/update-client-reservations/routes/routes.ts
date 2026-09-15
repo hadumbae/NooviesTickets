@@ -33,5 +33,5 @@ router.patch(
 
 /** Router handling client reservation updates including checkout and cancellation. */
 export {
-    router as UpdateClientReservationRoutes,
+    router as ReservationClientUpdateRoutes,
 };

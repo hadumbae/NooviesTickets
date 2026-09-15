@@ -1,6 +1,5 @@
 /**
  * @file Express router defining administrative endpoints for reservation retrieval.
- * @filename FetchRoutes.ts
  */
 
 import {Router} from "express";
@@ -12,18 +11,17 @@ import {getFetchByUniqueCode} from "@/domains/reservations/_feat/fetch-customer-
 /**
  * Express Router instance for administrative Fetch operations.
  */
-const routes = Router();
+const router = Router();
 
 /**
  * GET /fetch-by-code/:code
  */
-routes.get(
+router.get(
     "/fetch-by-code/:code",
     [isAuth, isAdmin],
     asyncHandler(getFetchByUniqueCode)
 );
 
 export {
-    /** Exported as FetchRoutes to be mounted under the main reservation admin router. */
-        routes as FetchAdminReservationRoutes,
+    router as ReservationAdminFetchRoutes,
 }

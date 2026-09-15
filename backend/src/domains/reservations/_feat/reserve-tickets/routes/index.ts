@@ -1,5 +1,5 @@
-import {ReserveTicketsRoutes} from "@/domains/reservations/_feat/reserve-tickets/routes/routes";
+import {ReservationClientReserveRoutes} from "@/domains/reservations/_feat/reserve-tickets/routes/routes";
 
 export {
-    ReserveTicketsRoutes,
+    ReservationClientReserveRoutes,
 }

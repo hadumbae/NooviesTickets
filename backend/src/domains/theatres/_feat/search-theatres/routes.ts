@@ -23,5 +23,5 @@ router.get(
 );
 
 export {
-    router as TheatreSearchRoutes,
+    router as TheatreClientSearchRoutes,
 };

@@ -73,5 +73,5 @@ router.patch(
 
 /** Router handling administrative moderation actions for customer movie reviews. */
 export {
-    router as CustomerMovieReviewActions,
+    router as MovieReviewAdminModerationRoutes,
 };

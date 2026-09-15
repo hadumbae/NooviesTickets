@@ -1,6 +1,5 @@
 /**
  * @file Movie review browse route registrations.
- * @filename MovieBrowseRoutes.ts
  */
 
 import { Router } from "express";
@@ -43,5 +42,5 @@ router.get(
 );
 
 export {
-    router as ReviewsByMovieRoutes,
+    router as MovieClientReviewsRoutes,
 };

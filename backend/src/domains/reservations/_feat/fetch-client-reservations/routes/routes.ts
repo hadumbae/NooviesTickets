@@ -34,5 +34,5 @@ router.get(
 );
 
 export {
-    router as FetchClientReservationRoutes,
+    router as ReservationClientFetchRoutes,
 };

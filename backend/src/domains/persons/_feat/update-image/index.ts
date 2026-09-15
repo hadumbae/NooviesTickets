@@ -4,7 +4,7 @@ import type {
     UploadPersonProfileImageConfig
 } from "@/domains/persons/_feat/update-image/service.types";
 import {deleteRemoveProfileImage, patchUpdateProfileImage} from "@/domains/persons/_feat/update-image/controller";
-import {PersonImageRoutes} from "@/domains/persons/_feat/update-image/routes";
+import {PersonAdminImageManagementRoutes} from "@/domains/persons/_feat/update-image/routes";
 import {hasProfileImage} from "@/domains/persons/_feat/update-image/hasProfileImage";
 
 export {
@@ -12,7 +12,7 @@ export {
     deleteProfileImage,
     patchUpdateProfileImage,
     deleteRemoveProfileImage,
-    PersonImageRoutes,
+    PersonAdminImageManagementRoutes,
     hasProfileImage,
 }
 export type {

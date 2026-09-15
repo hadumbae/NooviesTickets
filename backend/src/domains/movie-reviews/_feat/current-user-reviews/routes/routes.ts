@@ -64,5 +64,5 @@ router.delete(
 
 /** Router instance containing movie review management routes for the authenticated user. */
 export {
-    router as MyMovieReviewsRoutes
+    router as MovieReviewMyReviewsRoutes
 };
