@@ -6,8 +6,8 @@ import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import createHttpError from "http-errors";
 import {SeatModel} from "@/domains/seat/_models";
 import {type AnyBulkWriteOperation, Types} from "mongoose";
-import type {SeatMapInputData} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
-import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import type {SeatMapInputData} from "@/domains/seatmap/_models/seat-map/SeatMap.types";
+import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
 
 /** Configuration object containing the unique identifier for a showing. */
 type ShowingConfig = {

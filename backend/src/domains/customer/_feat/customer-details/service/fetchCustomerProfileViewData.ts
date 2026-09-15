@@ -2,10 +2,10 @@
  * @fileoverview Service to fetch and aggregate data for the customer profile view.
  */
 
-import type {LeanUserSchemaFields} from "@/domains/users/model/user/User.types";
-import type {ReservationSchemaFields} from "@/domains/reservations/_model/reservation/Reservation.types";
+import type {LeanUserSchemaFields} from "@/domains/users/_models/user/User.types";
+import type {ReservationSchemaFields} from "@/domains/reservations/_models/reservation/Reservation.types";
 import type {MovieReviewSchemaFields} from "@/domains/movie-reviews/_models/review/MovieReview.types";
-import {ReservationModel} from "@/domains/reservations/_model/reservation/Reservation.model";
+import {ReservationModel} from "@/domains/reservations/_models/reservation/Reservation.model";
 import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
 import {Types} from "mongoose";
 import {LeanUserQuerySelectFields, UserModel} from "@/domains/users";

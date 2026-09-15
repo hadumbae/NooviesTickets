@@ -8,7 +8,7 @@ import {BooleanValueSchema, ValidDateInstanceSchema, PositiveNumberSchema, ISO63
 import {ReservationTypeSchema} from "@noovies-tickets/common";
 import {ReservedSeatSnapshotInputSchema} from "@/domains/seatmap/_feat/validate-submit/ReservedSeatSnapshotInputSchema";
 import {ScreenSnapshotInputSchema} from "@/domains/screen/_feat/validate-submit";
-import {TheatreSnapshotInputSchema} from "@/domains/theatre/validation";
+import {TheatreSnapshotInputSchema} from "@/domains/theatre/_validation";
 import {MovieSnapshotInputSchema} from "@/domains/movies/_feat/validate-submit";
 
 /** Zod validation schema for reserved showing snapshot input data. */

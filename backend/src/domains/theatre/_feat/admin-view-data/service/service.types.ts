@@ -3,7 +3,7 @@
  */
 
 import type {SlugString} from "@noovies-tickets/common";
-import type {TheatreSchemaFields} from "@/domains/theatre/model/theatre/Theatre.types";
+import type {TheatreSchemaFields} from "@/domains/theatre/_models/theatre/Theatre.types";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";

@@ -6,12 +6,12 @@ import {ShowingSchema} from "./Showing.schema.js";
 import {type HydratedDocument, type Query} from "mongoose";
 import type {ShowingSchemaFields} from "./Showing.types.js";
 import {fetchRequiredModelDocument} from "@/shared/_utils/mongoose/fetchRequiredModelDocument";
-import {TheatreModel} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/_models/theatre";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import {ShowingVirtualPopulationPaths} from "@/domains/showing/_feat/query-population";
 import {createShowingSeatMap} from "@/domains/seatmap/_feat/manage-showing-seat-maps";
 import {ShowingSeatMapVirtualPipelines} from "@/domains/showing/_feat/query-population/ShowingSeatMapVirtualPipelines";
-import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
 import {MovieModel} from "@/domains/movies/_models/movie";
 import {generateSlug} from "@noovies-tickets/common";
 

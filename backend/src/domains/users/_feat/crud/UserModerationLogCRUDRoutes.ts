@@ -14,7 +14,7 @@ import {
     UserModerationLogQuerySortStageSchema
 } from "@/domains/users/_feat/validate-query";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
-import {UserModerationLogModel, type UserModerationLogSchemaFields} from "@/domains/users/model/moderation-log";
+import {UserModerationLogModel, type UserModerationLogSchemaFields} from "@/domains/users/_models/moderation-log";
 
 const modelName = UserModerationLogModel.modelName;
 const matchSchema = UserModerationLogQueryMatchStageSchema;

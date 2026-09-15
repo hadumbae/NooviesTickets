@@ -9,9 +9,9 @@ import type {
     UserFavouriteMovieConfig
 } from "@/domains/users/_feat/manage-user-favourties/service/service.types";
 
-import {UserModel} from "@/domains/users/model/user/User.model";
+import {UserModel} from "@/domains/users/_models/user/User.model";
 import createHttpError from "http-errors";
-import type {UserSchemaFields} from "@/domains/users/model/user/User.types";
+import type {UserSchemaFields} from "@/domains/users/_models/user/User.types";
 import {MovieModel} from "@/domains/movies/_models/movie/Movie.model";
 import {fetchRequiredMovie} from "@/domains/movies/_feat/fetch-movies";
 

@@ -4,8 +4,8 @@
 
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
 import type {MovieSchemaFields} from "@/domains/movies/_models/movie";
-import type {SeatMapSchemaFields} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
-import type {TheatreSchemaFields} from "@/domains/theatre/model/theatre";
+import type {SeatMapSchemaFields} from "@/domains/seatmap/_models/seat-map/SeatMap.types";
+import type {TheatreSchemaFields} from "@/domains/theatre/_models/theatre";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
 
 /** Configuration for fetching showing details view data. */

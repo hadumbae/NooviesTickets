@@ -10,14 +10,14 @@ import type {
     ReserveSeatTicketData,
     ReserveTicketsParams
 } from "@/domains/reservations/_feat/reserve-tickets/ticket-service/service.types";
-import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
-import type {SeatMapSchemaFields} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
+import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
+import type {SeatMapSchemaFields} from "@/domains/seatmap/_models/seat-map/SeatMap.types";
 import {type ReserveTicketPersistenceData} from "@/domains/reservations/_feat/reserve-tickets/schemas";
 import {SeatModel} from "@/domains/seat/_models";
 import {
     saveValidatedReservation
 } from "@/domains/reservations/_feat/reserve-tickets/ticket-service/saveValidatedReservation";
-import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
 
 /** Initiates a ticket reservation hold based on the provided type and identity context. */
 export async function reserveTickets(

@@ -13,7 +13,7 @@ import {DeletedAtSchemaTypeOptions} from "@/shared/_models/DeletedAtSchemaTypeOp
 import type {ModelSoftDeleteMethods} from "@/shared/_types/model/ModelSoftDelete";
 import {IANAZone} from "luxon";
 import type {SoftDeleteSchemaModel} from "@/shared/_types";
-import {TheatreSnapshotSchema} from "@/domains/theatre/model/theatre-snapshot";
+import {TheatreSnapshotSchema} from "@/domains/theatre/_models/theatre-snapshot";
 
 /** Mongoose model type for the Showing collection including soft-delete methods. */
 export type ShowingSchemaModel = SoftDeleteSchemaModel<ShowingSchemaFields>;

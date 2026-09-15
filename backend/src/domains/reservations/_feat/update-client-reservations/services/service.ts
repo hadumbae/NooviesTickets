@@ -9,14 +9,14 @@ import type {
     CheckoutClientReservationParams
 } from "@/domains/reservations/_feat/update-client-reservations/services/service.types";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
-import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
 import {
     assertReservationExists,
     assertReservationNotExpired,
     assertReservationOwnership
 } from "@/domains/reservations/_feat/assert-reservations";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
-import type {ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
+import type {ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
 
 /**
  * Transitions a reservation from a temporary hold (`RESERVED`) to a finalized `PAID` state.

@@ -5,7 +5,7 @@
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import type {AdminReservation} from "@/domains/reservations/_feat/fetch-customer-reservations";
 import {Types} from "mongoose";
-import {ReservationModel} from "@/domains/reservations/_model/reservation";
+import {ReservationModel} from "@/domains/reservations/_models/reservation";
 import {LeanUserQuerySelectFields} from "@/domains/users";
 
 /** Retrieves a reservation by its unique identifier with administrative-level detail. */

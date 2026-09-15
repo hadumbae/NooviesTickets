@@ -8,7 +8,7 @@ import type {
     TheatreDetailsViewData,
     TheatreShowingListViewData
 } from "@/domains/theatre/_feat/admin-view-data/service/service.types";
-import {TheatreModel, type TheatreWithVirtuals} from "@/domains/theatre/model/theatre";
+import {TheatreModel, type TheatreWithVirtuals} from "@/domains/theatre/_models/theatre";
 import {ScreenModel, type ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import {TheatreVirtualPopulationPaths} from "@/domains/theatre/_feat/crud";
 import createHttpError from "http-errors";

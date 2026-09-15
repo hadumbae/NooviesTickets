@@ -8,7 +8,7 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {fetchReservationsForUser} from "@/domains/reservations/_feat/fetch-client-reservations/controllers";
 import {parseQueryFilters, parseQuerySorts} from "@/shared/_feat";
-import {ReservationModel} from "@/domains/reservations/_model";
+import {ReservationModel} from "@/domains/reservations/_models";
 import {
     CurrentUserReservationQueryFilterSchema,
     CurrentUserReservationQuerySortSchema,

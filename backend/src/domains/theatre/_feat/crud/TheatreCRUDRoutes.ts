@@ -14,10 +14,10 @@ import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import {TheatreQueryMatchStageSchema, TheatreQuerySortStageSchema} from "@/domains/theatre/_feat/validate-query";
-import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
+import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/_models/theatre";
 import {TheatreVirtualPipelines} from "@/domains/theatre/_feat/aggregate";
 import {TheatreVirtualPopulationPaths} from "@/domains/theatre/_feat/crud/options/TheatreVirtualPopulationPaths";
-import {TheatreInputSchema} from "@/domains/theatre/validation";
+import {TheatreInputSchema} from "@/domains/theatre/_validation";
 
 const modelName = TheatreModel.modelName;
 const matchSchema = TheatreQueryMatchStageSchema;

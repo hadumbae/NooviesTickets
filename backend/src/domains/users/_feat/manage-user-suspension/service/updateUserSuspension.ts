@@ -5,8 +5,8 @@
 import {Types} from "mongoose";
 import createHttpError from "http-errors";
 import type {UserStatus} from "@noovies-tickets/common";
-import {type UserModerationLogSchemaFields} from "@/domains/users/model/moderation-log";
-import {UserModel, type UserSchemaFields,} from "@/domains/users/model/user";
+import {type UserModerationLogSchemaFields} from "@/domains/users/_models/moderation-log";
+import {UserModel, type UserSchemaFields,} from "@/domains/users/_models/user";
 import {LeanUserQuerySelectFields} from "@/domains/users/_feat/query-population";
 import {saveUserModerationLog} from "@/domains/users/_feat/user-moderation";
 import {

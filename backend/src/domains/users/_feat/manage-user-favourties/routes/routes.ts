@@ -10,7 +10,7 @@ import * as UserFavouriteController from "@/domains/users/_feat/manage-user-favo
 import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema.js";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {UserFavouriteMoviesRouteConfigSchema} from "@/domains/users/_feat/manage-user-favourties/schema";
-import {UserFavouriteMovieInputSchema} from "@/domains/users/validation/submit/UserFavouriteMovieInputSchema";
+import {UserFavouriteMovieInputSchema} from "@/domains/users/_validation/submit/UserFavouriteMovieInputSchema";
 
 const router = Router();
 

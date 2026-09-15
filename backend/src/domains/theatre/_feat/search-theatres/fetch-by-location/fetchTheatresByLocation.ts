@@ -1,4 +1,4 @@
-import {TheatreModel, type TheatreWithShowings} from "@/domains/theatre/model/theatre";
+import {TheatreModel, type TheatreWithShowings} from "@/domains/theatre/_models/theatre";
 import type {LookupPipelineStages} from "@/shared/_types";
 import {ShowingPopulationPipelines, ShowingSeatMapVirtualPipelines} from "@/domains/showing";
 import type {PipelineStage} from "mongoose";

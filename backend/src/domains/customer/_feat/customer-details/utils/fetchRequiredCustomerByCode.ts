@@ -2,11 +2,11 @@
  * @fileoverview Utility for retrieving non-sensitive customer profile information by unique code.
  */
 
-import {UserModel} from "@/domains/users/model/user/User.model";
+import {UserModel} from "@/domains/users/_models/user/User.model";
 import createHttpError from "http-errors";
 import type {UserUniqueCode} from "@/domains/users/_feat/manage-user-unique-code/schemas";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
-import type {LeanUserSchemaFields} from "@/domains/users/model/user/User.types";
+import type {LeanUserSchemaFields} from "@/domains/users/_models/user/User.types";
 import {LeanUserQuerySelectFields} from "@/domains/users";
 
 /** Retrieves a customer document by their unique system code and throws a 404 error if not found. */

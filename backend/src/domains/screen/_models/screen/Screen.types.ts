@@ -5,7 +5,7 @@
  */
 
 import {Types} from "mongoose";
-import type {TheatreSchemaFields} from "@/domains/theatre/model/theatre";
+import type {TheatreSchemaFields} from "@/domains/theatre/_models/theatre";
 import type {ScreenType} from "@noovies-tickets/common";
 import type {ShowingWithMovie} from "@/domains/showing/_models/showing/Showing.types";
 

@@ -12,7 +12,7 @@ import {createReservedSeatSnapshot} from "@/domains/seatmap/_feat/manage-snapsho
 import {ReservedShowingSnapshotInputSchema} from "@/domains/reservations/_feat/reserve-tickets/schemas";
 import {createScreenSnapshot} from "@/domains/screen/_feat/build-snapshot";
 import type {ReservationType} from "@noovies-tickets/common";
-import type {ReservedShowingSnapshotSchemaFields} from "@/domains/reservations/_model/showing-snapshot";
+import type {ReservedShowingSnapshotSchemaFields} from "@/domains/reservations/_models/showing-snapshot";
 
 type ShowingWithReferences = Omit<ShowingSchemaFields, "movie" | "theatre" | "screen"> & {
     movie: Types.ObjectId;

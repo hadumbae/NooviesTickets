@@ -5,14 +5,14 @@
 import {Types} from "mongoose";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen/Screen.types";
 import type {ShowingStatus} from "@noovies-tickets/common";
-import type {TheatreSchemaFields} from "@/domains/theatre/model/theatre";
+import type {TheatreSchemaFields} from "@/domains/theatre/_models/theatre";
 import type {ISO6391LanguageCode} from "@noovies-tickets/common";
 import type {MovieWithGenres} from "@/domains/movies/_models/movie/Movie.types";
 import type {ShowingConfigSchemaFields} from "@/domains/showing/_models/showing-config/ShowingConfig.types.js";
 import type {LocationSchemaFields} from "@/shared/_models/location/LocationSchemaFields";
 import type {BaseSoftDeleteModel} from "@/shared/_types/model/BaseModel";
 import type {IANATimezone} from "@noovies-tickets/common";
-import type {TheatreSnapshotSchemaFields} from "@/domains/theatre/model/theatre-snapshot";
+import type {TheatreSnapshotSchemaFields} from "@/domains/theatre/_models/theatre-snapshot";
 
 /** Core schema fields for a theatre showing. */
 export type ShowingSchemaFields = BaseSoftDeleteModel & {

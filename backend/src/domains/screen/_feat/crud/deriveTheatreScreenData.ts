@@ -3,7 +3,7 @@
  */
 
 import type {ZodIssue} from "zod";
-import {TheatreModel} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/_models/theatre";
 import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 import type {ScreenInputData} from "@/domains/screen/_feat/validate-submit/ScreenInputSchema";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen/Screen.types";

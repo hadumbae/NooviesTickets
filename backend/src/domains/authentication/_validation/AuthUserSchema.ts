@@ -9,7 +9,7 @@ import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {
     UserEmailSchema,
     UserPersonalNameSchema,
-} from "@/domains/users/validation/fields";
+} from "@/domains/users/_validation/fields";
 import {UserRoleSchema, UserStatusSchema} from "@noovies-tickets/common";
 
 /** Zod validation schema for authenticated user objects. */

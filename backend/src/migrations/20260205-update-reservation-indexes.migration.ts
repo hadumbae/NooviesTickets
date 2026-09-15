@@ -18,7 +18,7 @@
 import "dotenv/config";
 import {connect} from "@/config/database.js";
 import mongoose from "mongoose";
-import {ReservationModel} from "@/domains/reservations/_model/reservation";
+import {ReservationModel} from "@/domains/reservations/_models/reservation";
 
 connect()
     .then(async () => {

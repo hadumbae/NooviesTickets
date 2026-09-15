@@ -3,7 +3,7 @@
  */
 
 import type {ShowingInput, ShowingSchemaFields} from "@/domains/showing";
-import {createTheatreSnapshot} from "@/domains/theatre/utilities";
+import {createTheatreSnapshot} from "@/domains/theatre/_utils";
 import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 
 /** Constructs derived fields such as theatre snapshots required for showing documents. */

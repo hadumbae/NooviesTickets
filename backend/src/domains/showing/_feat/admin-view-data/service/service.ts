@@ -8,10 +8,10 @@ import type {
 } from "@/domains/showing/_feat/admin-view-data/service/service.types";
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import createHttpError from "http-errors";
-import {TheatreModel} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/_models/theatre";
 import {ScreenModel} from "@/domains/screen/_models/screen";
 import {ScreenPopulationPaths} from "@/domains/screen/_feat/query-population";
-import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
 import {SeatMapPopulationPaths} from "@/domains/seatmap/_feat/query-population";
 import {MovieModel} from "@/domains/movies/_models/movie";
 import {MoviePopulationPaths} from "@/domains/movies/_feat/query-population";

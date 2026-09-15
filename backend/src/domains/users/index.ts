@@ -1,3 +1,3 @@
 export * from "./_feat";
-export * from "./model";
-export * from "./validation";
+export * from "./_models";
+export * from "./_validation";

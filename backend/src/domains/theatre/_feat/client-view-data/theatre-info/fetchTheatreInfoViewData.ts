@@ -3,7 +3,7 @@
  */
 
 import createHttpError from "http-errors";
-import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/model/theatre";
+import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/_models/theatre";
 import type {SlugString, DateOnlyString} from "@noovies-tickets/common";
 import {type MovieSchemaFields} from "@/domains/movies/_models/movie";
 import {type ScreenSchemaFields, type ScreenWithShowings} from "@/domains/screen/_models/screen";

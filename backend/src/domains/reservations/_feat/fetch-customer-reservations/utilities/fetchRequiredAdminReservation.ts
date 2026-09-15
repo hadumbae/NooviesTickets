@@ -6,7 +6,7 @@ import {Types} from "mongoose";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import type {AdminReservation} from "@/domains/reservations/_feat/fetch-customer-reservations";
 import createHttpError from "http-errors";
-import {ReservationModel} from "@/domains/reservations/_model/reservation";
+import {ReservationModel} from "@/domains/reservations/_models/reservation";
 import {LeanUserQuerySelectFields} from "@/domains/users";
 
 /**

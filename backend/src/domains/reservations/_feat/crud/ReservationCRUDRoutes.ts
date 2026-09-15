@@ -1,4 +1,4 @@
-import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
 import {ReservationQueryMatchStageSchema, ReservationQuerySortStageSchema} from "@/domains/reservations/_feat/validate-query-options";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {destroy, findById, findBySlug} from "@/shared/_feat/generic-crud/path-handlers";

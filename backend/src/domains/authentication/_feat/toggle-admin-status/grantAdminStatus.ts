@@ -3,7 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import {UserModel, type UserSchemaFields} from "@/domains/users/model/user";
+import {UserModel, type UserSchemaFields} from "@/domains/users/_models/user";
 import createHttpError from "http-errors";
 
 /** Updates a user document to include the ADMIN role if it is not already present. */

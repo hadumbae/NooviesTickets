@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import createHttpError from "http-errors";
-import {UserModel, type UserModerationLogSchemaFields, type UserSchemaFields} from "@/domains/users/model";
+import {UserModel, type UserModerationLogSchemaFields, type UserSchemaFields} from "@/domains/users/_models";
 import {saveUserModerationLog,} from "@/domains/users/_feat/user-moderation";
 import {LeanUserQuerySelectFields,} from "@/domains/users/_feat/query-population";
 import {type UserRoleUpdateAction, type UserAdminRoleUpdateInputData} from "@/domains/users/_feat/manage-user-roles/schema";

@@ -3,7 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import type {ReservationSchemaFields} from "@/domains/reservations/_model/reservation";
+import type {ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
 
 /** Parameters required to validate and assert reservation ownership. */
 export type AssertReservationOwnershipConfig = {

@@ -1,0 +1,66 @@
+/**
+ * @fileoverview Type definitions and schema field structures for the Mongoose Reservation model.
+ */
+
+import type {ReservedShowingSnapshotSchemaFields} from "@/domains/reservations/_models/showing-snapshot";
+import {Types} from "mongoose";
+import type {ISO4217CurrencyCode, ReservationStatus, NonNegativeNumber} from "@noovies-tickets/common";
+import type {ReservationType} from "@noovies-tickets/common";
+import type {BaseModelWithSlug} from "@/shared/_types/model/BaseModel";
+import type {ModelTimestamps} from "@/shared/_types/model/ModelTimestamps";
+import type {ModelSoftDelete} from "@/shared/_types/model/ModelSoftDelete";
+
+/** Composite metadata for the Reservation model including slug, timestamps, and soft-delete fields. */
+type ReservationModelMeta = BaseModelWithSlug & ModelTimestamps & ModelSoftDelete;
+
+/** Lifecycle date fields for tracking reservation state transitions and TTL logic. */
+type ReservationDateSchemaFields = {
+    dateReserved: Date;
+    datePaid?: Date | null;
+    dateCancelled?: Date | null;
+    dateRefunded?: Date | null;
+    dateExpired?: Date | null;
+    expiresAt: Date;
+}
+
+/** Financial and quantity data for the reservation transaction. */
+type ReservationPaymentSchemaFields = {
+    ticketCount: number;
+    pricePaid: NonNegativeNumber;
+    currency: ISO4217CurrencyCode;
+    isPaid: boolean;
+}
+
+/** Relational associations and immutable data snapshots for the reservation. */
+type ReservationRelatedSchemaFields = {
+    user: Types.ObjectId;
+    movie: Types.ObjectId;
+    showing: Types.ObjectId;
+    snapshot: ReservedShowingSnapshotSchemaFields;
+}
+
+/** Identification and configuration metadata for the reservation. */
+type ReservationMetaSchemaFields = {
+    selectedSeating?: Types.ObjectId[] | null;
+    status: ReservationStatus;
+    reservationType: ReservationType;
+    uniqueCode: string;
+    notes?: string | null;
+};
+
+/** Comprehensive field definitions for the Reservation schema. */
+export type ReservationSchemaFields =
+    ReservationModelMeta &
+    ReservationDateSchemaFields &
+    ReservationPaymentSchemaFields &
+    ReservationRelatedSchemaFields &
+    ReservationMetaSchemaFields;
+
+/** Refined TypeScript type for the Reservation document using Discriminated Unions. */
+export type ReservationDoc = Omit<ReservationSchemaFields, "reservationType" | "selectedSeating"> & (| {
+    reservationType: "GENERAL_ADMISSION";
+    selectedSeating?: null
+} | {
+    reservationType: "RESERVED_SEATS";
+    selectedSeating: Types.ObjectId[]
+});

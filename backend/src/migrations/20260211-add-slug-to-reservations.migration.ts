@@ -6,7 +6,7 @@
 import "dotenv/config";
 import {connect} from "@/config/database.js";
 import mongoose from "mongoose";
-import {ReservationModel} from "@/domains/reservations/_model/reservation";
+import {ReservationModel} from "@/domains/reservations/_models/reservation";
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model.js";
 import createHttpError from "http-errors";
 import {generateSlug} from "@noovies-tickets/common";

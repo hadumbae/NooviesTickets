@@ -3,7 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import {UserModel, type UserSchemaFields} from "@/domains/users/model/user";
+import {UserModel, type UserSchemaFields} from "@/domains/users/_models/user";
 import {LeanUserQuerySelectFields} from "@/domains/users/_feat/query-population";
 import createHttpError from "http-errors";
 import {saveUserModerationLog, type UserModerationLogSchemaFields} from "@/domains/users";

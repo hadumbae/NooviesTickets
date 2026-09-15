@@ -4,7 +4,7 @@
 
 import {Types} from "mongoose";
 import type {ModerationLogMessage, UserModerationLogAction} from "@noovies-tickets/common";
-import {UserModerationLogModel, type UserModerationLogSchemaFields} from "@/domains/users/model";
+import {UserModerationLogModel, type UserModerationLogSchemaFields} from "@/domains/users/_models";
 
 /** Configuration parameters required to persist a user moderation log. */
 type SaveConfig<TAction extends string = UserModerationLogAction> = {

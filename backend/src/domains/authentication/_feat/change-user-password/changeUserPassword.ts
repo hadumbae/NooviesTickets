@@ -5,7 +5,7 @@
 import {Types} from "mongoose";
 import createHttpError from "http-errors";
 import bcrypt from "bcryptjs";
-import {UserModel} from "@/domains/users/model/user";
+import {UserModel} from "@/domains/users/_models/user";
 import type {
     UserPasswordUpdateInput
 } from "@/domains/authentication/_feat/change-user-password/UserPasswordUpdateInputSchema";

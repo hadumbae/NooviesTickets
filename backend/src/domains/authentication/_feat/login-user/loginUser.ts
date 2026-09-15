@@ -6,7 +6,7 @@ import type {ZodIssue} from "zod";
 import bcrypt from "bcryptjs";
 import createHttpError from "http-errors";
 import type {UserLoginInput} from "@/domains/authentication/_feat/login-user/UserLoginInputSchema";
-import {UserModel} from "@/domains/users/model/user";
+import {UserModel} from "@/domains/users/_models/user";
 import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 import {type AuthUserCredentials} from "@/domains/authentication";
 import {generateAuthenticationPayload} from "@/domains/authentication/_feat/login-user/generateAuthenticationPayload";

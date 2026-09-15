@@ -15,12 +15,12 @@ import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateR
 import {IDRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
-import type {SeatMapSchemaFields} from "@/domains/seatmap/_model/seat-map/SeatMap.types";
-import {SeatMapModel} from "@/domains/seatmap/_model/seat-map/SeatMap.model";
+import type {SeatMapSchemaFields} from "@/domains/seatmap/_models/seat-map/SeatMap.types";
+import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
 import {SeatMapInputSchema} from "@/domains/seatmap/_feat/validate-submit/SeatMapInputSchema";
 import {SeatMapQueryOptionsSchema} from "@/domains/seatmap/_feat/validate-query";
 import {SeatMapPopulationPaths} from "@/domains/seatmap/_feat/query-population";
-import {handleDuplicateIndex} from "@/domains/seatmap/_model/seat-map/SeatMap.handlers";
+import {handleDuplicateIndex} from "@/domains/seatmap/_models/seat-map/SeatMap.handlers";
 import {verifyReferencesExist} from "@/shared/_feat";
 import {SeatModel} from "@/domains/seat";
 import {ShowingModel} from "@/domains/showing";

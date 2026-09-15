@@ -3,7 +3,7 @@
  */
 
 import {z, type ZodIssue} from "zod";
-import {UserModel} from "@/domains/users/model/user";
+import {UserModel} from "@/domains/users/_models/user";
 import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 
 /** Checks for email uniqueness and throws a validation error if the email is taken. */

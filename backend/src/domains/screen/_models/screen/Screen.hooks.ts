@@ -17,7 +17,7 @@ import type { ScreenSchemaFields } from "./Screen.types";
 
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import {generateSlug} from "@noovies-tickets/common";
-import {TheatreModel} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/_models/theatre";
 import {SeatModel} from "@/domains/seat/_models";
 
 /**

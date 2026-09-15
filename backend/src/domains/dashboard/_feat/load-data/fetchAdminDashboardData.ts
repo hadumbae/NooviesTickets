@@ -4,7 +4,7 @@
 
 import {GenreModel} from "@/domains/genres";
 import {PersonModel} from "@/domains/persons";
-import {TheatreModel} from "@/domains/theatre/model/theatre";
+import {TheatreModel} from "@/domains/theatre/_models/theatre";
 import {MovieModel} from "@/domains/movies";
 import {ShowingModel} from "@/domains/showing";
 import {ReservationModel} from "@/domains/reservations";

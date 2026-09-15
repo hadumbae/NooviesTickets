@@ -4,7 +4,7 @@
  */
 
 import type {SlugString} from "@noovies-tickets/common";
-import type {TheatreWithVirtuals} from "@/domains/theatre/model/theatre";
+import type {TheatreWithVirtuals} from "@/domains/theatre/_models/theatre";
 import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
 import type {SeatSchemaFields} from "@/domains/seat/_models";
 import type {ShowingSchemaFields} from "@/domains/showing";
