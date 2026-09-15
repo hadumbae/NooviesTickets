@@ -3,7 +3,9 @@
  */
 
 import {z} from "zod";
-import generateURLParamArraySchema from "@/shared/_utils/schema/url-params/generateURLParamArraySchema";
+import {
+    generateURLParamArraySchema
+} from "@/shared/_utils/schema/url-params/generateURLParamArraySchema";
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {
     BooleanValueSchema,
