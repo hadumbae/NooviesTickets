@@ -8,7 +8,7 @@ import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {
     TheatreScreenDetailsViewRouteConfigSchema
-} from "@/domains/screen/_feat/view-data-admin/schemas/TheatreScreenDetailsViewRouteConfigSchema";
+} from "@/domains/theatre-screen/_feat/view-data-admin/schemas/TheatreScreenDetailsViewRouteConfigSchema";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {
     getFetchTheatreDetailsViewData,
@@ -20,7 +20,7 @@ import {
 import {
     TheatreShowingListRouteConfigSchema
 } from "@/domains/theatre/_feat/admin-view-data/schemas/TheatreShowingListRouteConfigSchema";
-import {getFetchTheatreScreenDetailsViewData} from "@/domains/screen/_feat/view-data-admin/controller";
+import {getFetchTheatreScreenDetailsViewData} from "@/domains/theatre-screen/_feat/view-data-admin/controller";
 
 const router = Router();
 

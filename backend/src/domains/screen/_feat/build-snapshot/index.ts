@@ -1,1 +1,0 @@
-export * from "@/domains/screen/_feat/build-snapshot/createScreenSnapshot";

@@ -3,7 +3,7 @@ export * from "./movie-reviews";
 export * from "./movies";
 export * from "./reservations";
 export * from "./roletypes";
-export * from "./screens";
+export * from "./theatre-screens";
 export * from "./seatmaps";
 export * from "./seats";
 export * from "./showings";

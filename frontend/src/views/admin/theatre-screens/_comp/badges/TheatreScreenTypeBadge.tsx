@@ -5,11 +5,11 @@
 import {ReactElement} from "react";
 import {cn} from "@/shared/_feat";
 import {Badge} from "@/views/shared/_comp/ui";
-import {ScreenType} from "@noovies-tickets/common";
+import {TheatreScreenType} from "@noovies-tickets/common";
 
 /** Props for the TheatreScreenTypeBadge component. */
 type BadgeProps = {
-    type: ScreenType;
+    type: TheatreScreenType;
     className?: string;
 };
 

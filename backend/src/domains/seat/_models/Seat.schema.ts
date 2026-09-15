@@ -23,7 +23,7 @@ export const SeatSchema = new Schema<SeatSchemaFields>(
         screen: {
             type: Schema.Types.ObjectId,
             ref: "Screen",
-            required: [true, "Screen is required."],
+            required: [true, "TheatreScreen is required."],
         },
 
         /** Row identifier (e.g., 'A', 'B', 'C'). */

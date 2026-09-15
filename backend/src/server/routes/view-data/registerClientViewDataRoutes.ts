@@ -8,7 +8,7 @@ import {GenreClientViewDataRoutes} from "@/domains/genres/_feat/client-view-data
 import {TheatreClientViewDataRoutes} from "@/domains/theatre/_feat/client-view-data";
 import {MovieClientViewDataRoutes} from "@/domains/movies/_feat/client-view-data";
 import {PersonClientViewDataRoutes} from "@/domains/persons/_feat/client-view-data";
-import {TheatreScreenClientViewDataRoutes} from "@/domains/screen";
+import {TheatreScreenClientViewDataRoutes} from "@/domains/theatre-screen";
 import {HomepageRoutes} from "@/domains/homepage/_feat";
 
 const pageRouteGroups: RouteRegistration[] = [

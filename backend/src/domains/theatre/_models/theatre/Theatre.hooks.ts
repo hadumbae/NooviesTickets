@@ -6,7 +6,7 @@
 
 import {TheatreSchema} from "./Theatre.schema";
 import type {HydratedDocument, Query} from "mongoose";
-import {ScreenModel} from "@/domains/screen/_models/screen";
+import {TheatreScreenModel} from "@/domains/theatre-screen/_models/theatre-screen";
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import type {TheatreSchemaFields} from "./Theatre.types";
 import {generateSlug} from "@noovies-tickets/common";
@@ -58,7 +58,7 @@ const performCascadeCleanup = async (theatreId: any) => {
     if (!theatreId) return;
 
     await Promise.all([
-        ScreenModel.deleteMany({theatre: theatreId}),
+        TheatreScreenModel.deleteMany({theatre: theatreId}),
         SeatModel.deleteMany({theatre: theatreId}),
         ShowingModel.deleteMany({theatre: theatreId}),
     ]);

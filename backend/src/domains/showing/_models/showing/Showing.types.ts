@@ -3,7 +3,7 @@
  */
 
 import {Types} from "mongoose";
-import type {ScreenSchemaFields} from "@/domains/screen/_models/screen/Screen.types";
+import type {TheatreScreenSchemaFields} from "@/domains/theatre-screen/_models/theatre-screen/TheatreScreen.types";
 import type {ShowingStatus} from "@noovies-tickets/common";
 import type {TheatreSchemaFields} from "@/domains/theatre/_models/theatre";
 import type {ISO6391LanguageCode} from "@noovies-tickets/common";
@@ -35,7 +35,7 @@ export type ShowingSchemaFields = BaseSoftDeleteModel & {
 /** Representation of a showing with joined theatre, screen, and movie details. */
 export type PopulatedShowing = Omit<ShowingSchemaFields, "theatre" | "screen" | "movie"> & {
     theatre: TheatreSchemaFields;
-    screen: ScreenSchemaFields;
+    screen: TheatreScreenSchemaFields;
     movie: MovieWithGenres;
 }
 
@@ -47,5 +47,5 @@ export type ShowingWithMovie = Omit<ShowingSchemaFields, "movie"> & {
 /** Representation of a theatre showing with joined movie and screen details. */
 export type TheatreShowingSchema = Omit<ShowingSchemaFields, "movie" | "screen"> & {
     movie: MovieWithGenres;
-    screen: ScreenSchemaFields;
+    screen: TheatreScreenSchemaFields;
 }

@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {ScreenTypeSchema} from "@noovies-tickets/common";
+import {TheatreScreenTypeSchema} from "@noovies-tickets/common";
 import {IDStringSchema, PositiveNumberSchema, preprocessToNumber} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
 
@@ -15,7 +15,7 @@ export const TheatreScreenSchema = z.object({
     _id: IDStringSchema.readonly(),
     name: NonEmptyStringSchema.max(255, "Name must be 255 characters or less."),
     capacity: preprocessToNumber(PositiveNumberSchema),
-    screenType: ScreenTypeSchema,
+    screenType: TheatreScreenTypeSchema,
     theatre: IDStringSchema,
     slug: NonEmptyStringSchema.readonly(),
 });

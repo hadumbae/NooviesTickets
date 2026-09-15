@@ -9,7 +9,7 @@ import type {
     TheatreShowingListViewData
 } from "@/domains/theatre/_feat/admin-view-data/service/service.types";
 import {TheatreModel, type TheatreWithVirtuals} from "@/domains/theatre/_models/theatre";
-import {ScreenModel, type ScreenSchemaFields} from "@/domains/screen/_models/screen";
+import {TheatreScreenModel, type TheatreScreenSchemaFields} from "@/domains/theatre-screen/_models/theatre-screen";
 import {TheatreVirtualPopulationPaths} from "@/domains/theatre/_feat/crud";
 import createHttpError from "http-errors";
 import {buildPaginationPipelines} from "@/shared/_feat/pagination-pipelines";
@@ -17,7 +17,7 @@ import type {PipelineStage} from "mongoose";
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import {ShowingPopulationPaths} from "@/domains/showing/_feat/query-population";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
-import {ScreenVirtualPipelines} from "@/domains/screen/_feat/query-population";
+import {TheatreScreenVirtualPipelines} from "@/domains/theatre-screen/_feat/query-population";
 
 /**
  * Aggregates data for the comprehensive Theatre Details dashboard.
@@ -34,14 +34,14 @@ export async function fetchTheatreDetailsViewData(
         throw createHttpError(404, "Theatre not found!");
     }
 
-    const [screens] = await ScreenModel.aggregate<PaginationReturns<ScreenSchemaFields>>([
+    const [screens] = await TheatreScreenModel.aggregate<PaginationReturns<TheatreScreenSchemaFields>>([
         {$match: {theatre: theatre._id}},
         ...buildPaginationPipelines({
             innerStages: [
                 {$sort: {name: 1}},
                 {$skip: (screenPage - 1) * screenPerPage},
                 {$limit: screenPerPage},
-                ...(ScreenVirtualPipelines as PipelineStage.FacetPipelineStage[])
+                ...(TheatreScreenVirtualPipelines as PipelineStage.FacetPipelineStage[])
             ],
         }),
     ]);

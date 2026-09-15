@@ -1,5 +1,5 @@
 /**
- * @fileoverview Express router configuration for the Screen domain.
+ * @fileoverview Express router configuration for the Seat domain.
  */
 
 import {Router} from "express";
@@ -24,7 +24,7 @@ const modelName = SeatModel.modelName;
 const matchSchema = SeatQueryMatchStageSchema;
 const sortSchema = SeatQuerySortStageSchema;
 
-/** CRUD route definitions for the Screen entity. */
+/** CRUD route definitions for the Seat entity. */
 const routes: CRUDRoute<SeatSchemaFields>[] = [
     {
         /** Basic retrieval based on query filters. */
@@ -41,28 +41,28 @@ const routes: CRUDRoute<SeatSchemaFields>[] = [
         handler: paginated
     },
     {
-        /** Creation of a new Screen instance. */
+        /** Creation of a new Seat instance. */
         path: `/item`,
         method: "post",
         middleware: [isAuth, isAdmin, validateZodSchema(SeatInputSchema)],
         handler: create
     },
     {
-        /** Retrieval of a specific Screen by Object ID. */
+        /** Retrieval of a specific Seat by Object ID. */
         path: `/item/:_id`,
         method: "get",
         middleware: [isAuth, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: findById
     },
     {
-        /** Retrieval of a specific Screen by slug. */
+        /** Retrieval of a specific Seat by slug. */
         path: `/item/:slug/slug`,
         method: "get",
         middleware: [isAuth, validateRequestConfig({schema: SlugRouteConfigSchema})],
         handler: findBySlug
     },
     {
-        /** Partial update of an existing Screen record. */
+        /** Partial update of an existing Seat record. */
         path: `/item/:_id`,
         method: "patch",
         middleware: [
@@ -78,7 +78,7 @@ const routes: CRUDRoute<SeatSchemaFields>[] = [
         handler: update
     },
     {
-        /** Permanent deletion of a Screen record. */
+        /** Permanent deletion of a Seat record. */
         path: `/item/:_id`,
         method: "delete",
         middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],

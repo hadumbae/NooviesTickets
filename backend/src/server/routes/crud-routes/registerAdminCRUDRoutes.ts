@@ -8,7 +8,7 @@ import type {Express} from "express";
 import type {RouteRegistration} from "../../registerRoutes.js";
 import {GenreCRUDRoutes} from "@/domains/genres/_feat/crud";
 import {PersonCRUDRoutes} from "@/domains/persons/_feat/crud";
-import {ScreenCRUDRoutes} from "@/domains/screen/_feat/crud";
+import {TheatreScreenCRUDRoutes} from "@/domains/theatre-screen/_feat/crud";
 import {SeatCRUDRoutes} from "@/domains/seat/_feat/crud";
 import {TheatreCRUDRoutes} from "@/domains/theatre/_feat/crud";
 import {MovieCRUDRoutes} from "@/domains/movies/_feat/crud/MovieCRUDRoutes";
@@ -29,7 +29,7 @@ const setupRoutes: RouteRegistration[] = [
     {path: "/api/v1/admin/persons/crud", router: PersonCRUDRoutes},
     {path: "/api/v1/admin/genres/crud", router: GenreCRUDRoutes},
 
-    {path: "/api/v1/admin/theatre-screens/crud", router: ScreenCRUDRoutes},
+    {path: "/api/v1/admin/theatre-screens/crud", router: TheatreScreenCRUDRoutes},
     {path: "/api/v1/admin/seats/crud", router: SeatCRUDRoutes},
     {path: "/api/v1/admin/theatres/crud", router: TheatreCRUDRoutes},
 

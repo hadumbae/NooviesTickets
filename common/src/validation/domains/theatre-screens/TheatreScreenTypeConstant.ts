@@ -3,7 +3,7 @@
  */
 
 /** List of available cinema screen formats and technologies. */
-export const ScreenTypeConstant = [
+export const TheatreScreenTypeConstant = [
     "2D",
     "3D",
     "IMAX",

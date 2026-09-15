@@ -6,7 +6,7 @@ import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showin
 import type {MovieSchemaFields} from "@/domains/movies/_models/movie";
 import type {SeatMapSchemaFields} from "@/domains/seatmap/_models/seat-map/SeatMap.types";
 import type {TheatreSchemaFields} from "@/domains/theatre/_models/theatre";
-import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
+import type {TheatreScreenSchemaFields} from "@/domains/theatre-screen/_models/theatre-screen";
 
 /** Configuration for fetching showing details view data. */
 export type FetchShowingDetailsViewDataConfig = {
@@ -19,5 +19,5 @@ export type ShowingDetailsViewData = {
     movie: MovieSchemaFields;
     seating: SeatMapSchemaFields[];
     theatre: TheatreSchemaFields;
-    screen: ScreenSchemaFields;
+    screen: TheatreScreenSchemaFields;
 }

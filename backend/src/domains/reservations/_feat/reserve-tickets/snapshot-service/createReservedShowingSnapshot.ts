@@ -10,7 +10,7 @@ import {createMovieSnapshot} from "@/domains/movies/_feat/manage-snapshots/creat
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
 import {createReservedSeatSnapshot} from "@/domains/seatmap/_feat/manage-snapshots/createReservedSeatSnapshot";
 import {ReservedShowingSnapshotInputSchema} from "@/domains/reservations/_feat/reserve-tickets/schemas";
-import {createScreenSnapshot} from "@/domains/screen/_feat/build-snapshot";
+import {createTheatreScreenSnapshot} from "@/domains/theatre-screen/_feat/build-snapshot";
 import type {ReservationType} from "@noovies-tickets/common";
 import type {ReservedShowingSnapshotSchemaFields} from "@/domains/reservations/_models/showing-snapshot";
 
@@ -49,7 +49,7 @@ export async function createReservedShowingSnapshot(
 
     const [movieSnapshot, screenSnapshot, seatSnapshot] = await Promise.all([
         createMovieSnapshot(movie),
-        createScreenSnapshot(screen),
+        createTheatreScreenSnapshot(screen),
         createReservedSeatSnapshot(selectedSeating),
     ])
 

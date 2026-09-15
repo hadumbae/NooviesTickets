@@ -7,7 +7,7 @@ import type {RouteRegistration} from "../../registerRoutes";
 import {GenreViewDataRoutes} from "@/domains/genres/_feat/admin-view-data";
 import {PersonAdminViewDataRoutes} from "@/domains/persons/_feat/admin-view-data";
 import {TheatreAdminViewDataRoutes} from "@/domains/theatre/_feat/admin-view-data";
-import {TheatreScreenAdminViewDataRoutes} from "@/domains/screen/_feat/view-data-admin";
+import {TheatreScreenAdminViewDataRoutes} from "@/domains/theatre-screen/_feat/view-data-admin";
 import {ShowingAdminViewDataRoutes} from "@/domains/showing/_feat/admin-view-data";
 import {UserAdminViewDataRoutes} from "@/domains/users/_feat/admin-view-data";
 import {CustomerAdminViewDataRoutes} from "@/domains/customer/_feat/customer-details";

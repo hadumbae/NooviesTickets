@@ -8,7 +8,7 @@ import 'dotenv/config';
 
 import mongoose from "mongoose";
 import {connect} from "@/config/database.js";
-import {ScreenModel} from "@/domains/screen/_models/screen";
+import {TheatreScreenModel as ScreenModel} from "@/domains/theatre-screen/_models/theatre-screen";
 import {generateSlug} from "@noovies-tickets/common";
 
 /**

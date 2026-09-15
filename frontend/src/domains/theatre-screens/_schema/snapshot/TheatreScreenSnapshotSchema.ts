@@ -6,14 +6,14 @@
 import {z} from "zod";
 import {IDStringSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {ScreenTypeSchema} from "@noovies-tickets/common";
+import {TheatreScreenTypeSchema} from "@noovies-tickets/common";
 
 /**
  * Represents the finalized state of a theatre screen at the moment of a transaction.
  */
 export const TheatreScreenSnapshotSchema = z.object({
     theatre: IDStringSchema,
-    screenType: ScreenTypeSchema,
+    screenType: TheatreScreenTypeSchema,
     name: NonEmptyStringSchema
         .min(1, "Required.")
         .max(255, "Name must be 255 characters or less."),

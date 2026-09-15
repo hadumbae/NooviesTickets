@@ -11,7 +11,7 @@ import type {ModelTimestamps} from "@/shared/_types/model/ModelTimestamps";
  * Type representing the persistence structure of a Seat document in MongoDB.
  */
 export type SeatSchemaFields = BaseModel & ModelTimestamps & {
-    /** Reference to the parent Screen. */
+    /** Reference to the parent TheatreScreen. */
     screen: Types.ObjectId;
 
     /** Reference to the parent Theatre. */

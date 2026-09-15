@@ -9,8 +9,8 @@ import type {
 import {ShowingModel} from "@/domains/showing/_models/showing/Showing.model";
 import createHttpError from "http-errors";
 import {TheatreModel} from "@/domains/theatre/_models/theatre";
-import {ScreenModel} from "@/domains/screen/_models/screen";
-import {ScreenPopulationPaths} from "@/domains/screen/_feat/query-population";
+import {TheatreScreenModel} from "@/domains/theatre-screen/_models/theatre-screen";
+import {TheatreScreenPopulationPaths} from "@/domains/theatre-screen/_feat/query-population";
 import {SeatMapModel} from "@/domains/seatmap/_models/seat-map/SeatMap.model";
 import {SeatMapPopulationPaths} from "@/domains/seatmap/_feat/query-population";
 import {MovieModel} from "@/domains/movies/_models/movie";
@@ -33,7 +33,7 @@ export async function fetchShowingDetailsViewData(
     const [movie, theatre, screen, seating] = await Promise.all([
         MovieModel.findById(showing.movie).populate(MoviePopulationPaths).lean({virtuals: true}),
         TheatreModel.findById(showing.theatre).lean({virtuals: true}),
-        ScreenModel.findById(showing.screen).populate(ScreenPopulationPaths).lean({virtuals: true}),
+        TheatreScreenModel.findById(showing.screen).populate(TheatreScreenPopulationPaths).lean({virtuals: true}),
         SeatMapModel.find({showing: showing._id}).populate(SeatMapPopulationPaths).lean({virtuals: true}),
     ]);
 

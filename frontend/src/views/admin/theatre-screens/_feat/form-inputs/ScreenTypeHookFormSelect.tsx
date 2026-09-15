@@ -7,7 +7,7 @@ import {Control, FieldValues, Path} from "react-hook-form";
 import {HookFormMultiSelect} from "@/views/shared/_comp/form-select/HookFormMultiSelect.tsx";
 import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
 import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
-import {ScreenTypeConstant} from "@noovies-tickets/common";
+import {TheatreScreenTypeConstant} from "@noovies-tickets/common";
 
 /** Props for the ScreenTypeHookFormSelect component. */
 type Props<TSubmit extends FieldValues> = {
@@ -20,11 +20,11 @@ type Props<TSubmit extends FieldValues> = {
     disabled?: boolean;
 };
 
-/** Form select component that populates options from the ScreenTypeConstant. */
+/** Form select component that populates options from the TheatreScreenTypeConstant. */
 export function ScreenTypeHookFormSelect<TSubmit extends FieldValues>(
     {isMulti, ...rest}: Props<TSubmit>
 ): ReactElement {
-    const options: ReactSelectOption[] = ScreenTypeConstant.map(
+    const options: ReactSelectOption[] = TheatreScreenTypeConstant.map(
         (screenType): ReactSelectOption => ({
             label: screenType,
             value: screenType

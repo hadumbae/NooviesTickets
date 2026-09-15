@@ -6,7 +6,7 @@
 import {z} from "zod";
 import {IDStringSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {ScreenTypeSchema} from "@noovies-tickets/common";
+import {TheatreScreenTypeSchema} from "@noovies-tickets/common";
 
 /**
  * Zod schema for validating screen query filters.
@@ -16,7 +16,7 @@ export const TheatreScreenQueryMatchFiltersSchema = z.object({
     name: NonEmptyStringSchema.optional(),
     theatre: IDStringSchema.optional(),
     capacity: NonNegativeNumberSchema.optional(),
-    screenType: ScreenTypeSchema.optional(),
+    screenType: TheatreScreenTypeSchema.optional(),
 });
 
 /**

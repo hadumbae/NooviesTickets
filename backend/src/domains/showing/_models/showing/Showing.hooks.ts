@@ -7,7 +7,7 @@ import {type HydratedDocument, type Query} from "mongoose";
 import type {ShowingSchemaFields} from "./Showing.types.js";
 import {fetchRequiredModelDocument} from "@/shared/_utils/mongoose/fetchRequiredModelDocument";
 import {TheatreModel} from "@/domains/theatre/_models/theatre";
-import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
+import type {TheatreScreenSchemaFields} from "@/domains/theatre-screen/_models/theatre-screen";
 import {ShowingVirtualPopulationPaths} from "@/domains/showing/_feat/query-population";
 import {createShowingSeatMap} from "@/domains/seatmap/_feat/manage-showing-seat-maps";
 import {ShowingSeatMapVirtualPipelines} from "@/domains/showing/_feat/query-population/ShowingSeatMapVirtualPipelines";
@@ -49,7 +49,7 @@ ShowingSchema.post("save", {document: true}, async function (doc: HydratedDocume
 ShowingSchema.pre(
     ["find", "findOne", "findOneAndUpdate"],
     {document: false, query: true},
-    function (this: Query<any, ScreenSchemaFields>, next: () => void) {
+    function (this: Query<any, TheatreScreenSchemaFields>, next: () => void) {
         if (!this.mongooseOptions().getSoftDeleted) {
             this.where({isDeleted: false, deletedAt: null});
         }

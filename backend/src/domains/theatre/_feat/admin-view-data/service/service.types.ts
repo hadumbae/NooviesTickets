@@ -4,7 +4,7 @@
 
 import type {SlugString} from "@noovies-tickets/common";
 import type {TheatreSchemaFields} from "@/domains/theatre/_models/theatre/Theatre.types";
-import type {ScreenSchemaFields} from "@/domains/screen/_models/screen";
+import type {TheatreScreenSchemaFields} from "@/domains/theatre-screen/_models/theatre-screen";
 import type {PaginationReturns} from "@/shared/_types/pagination/PaginationReturns";
 import type {ShowingSchemaFields} from "@/domains/showing/_models/showing/Showing.types";
 
@@ -22,7 +22,7 @@ export type FetchTheatreDetailsViewDataConfig = {
 export type TheatreDetailsViewData = {
     theatre: TheatreSchemaFields;
     showings: ShowingSchemaFields[];
-    screens: PaginationReturns<ScreenSchemaFields>;
+    screens: PaginationReturns<TheatreScreenSchemaFields>;
 };
 
 /** Configuration for fetching paginated showings for a specific theatre. */

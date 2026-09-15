@@ -6,8 +6,8 @@ import createHttpError from "http-errors";
 import {TheatreModel, type TheatreSchemaFields} from "@/domains/theatre/_models/theatre";
 import type {SlugString, DateOnlyString} from "@noovies-tickets/common";
 import {type MovieSchemaFields} from "@/domains/movies/_models/movie";
-import {type ScreenSchemaFields, type ScreenWithShowings} from "@/domains/screen/_models/screen";
-import {fetchTheatreScreensWithShowings} from "@/domains/screen/_feat/fetch-theatre-screens/screens-with-showings";
+import {type TheatreScreenSchemaFields, type TheatreScreenWithShowings} from "@/domains/theatre-screen/_models/theatre-screen";
+import {fetchTheatreScreensWithShowings} from "@/domains/theatre-screen/_feat/fetch-theatre-screens/screens-with-showings";
 
 import {
     ShowingModel,
@@ -24,7 +24,7 @@ export type FetchTheatreInfoViewDataConfig = {
 };
 
 type TheatreScreenShowingGroup = {
-    screen: ScreenSchemaFields;
+    screen: TheatreScreenSchemaFields;
     showings: TheatreShowingSchema[];
 }
 
@@ -36,7 +36,7 @@ type TheatreMovieShowtimes = {
 /** Composite data structure containing information and schedule details for the theatre view. */
 export type TheatreInfoViewData = {
     theatre: TheatreSchemaFields;
-    screens: ScreenWithShowings[];
+    screens: TheatreScreenWithShowings[];
     upcoming: TheatreMovieShowtimes[];
 };
 

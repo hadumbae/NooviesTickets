@@ -4,10 +4,10 @@
 
 import type {PopulatePath} from "@/shared/_types";
 import {MovieSummarySelect} from "@/domains/movies/_feat/query-population";
-import {ScreenSummarySelect} from "@/domains/screen/_feat/query-population";
+import {TheatreScreenSummarySelect} from "@/domains/theatre-screen/_feat/query-population";
 
 /** Array of Mongoose populate path definitions for theatre showing relations. */
 export const TheatreShowingPopulationPaths: PopulatePath[] = [
     {path: "movie", select: MovieSummarySelect, populate: {path: "genres"}},
-    {path: "screen", select: ScreenSummarySelect},
+    {path: "screen", select: TheatreScreenSummarySelect},
 ];

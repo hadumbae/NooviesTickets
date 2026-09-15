@@ -7,7 +7,7 @@ import {generateArraySchema} from "@noovies-tickets/common";
 import {BooleanValueSchema, ValidDateInstanceSchema, PositiveNumberSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
 import {ReservationTypeSchema} from "@noovies-tickets/common";
 import {ReservedSeatSnapshotInputSchema} from "@/domains/seatmap/_feat/validate-submit/ReservedSeatSnapshotInputSchema";
-import {ScreenSnapshotInputSchema} from "@/domains/screen/_feat/validate-submit";
+import {TheatreScreenSnapshotInputSchema} from "@/domains/theatre-screen/_feat/validate-submit";
 import {TheatreSnapshotInputSchema} from "@/domains/theatre/_validation";
 import {MovieSnapshotInputSchema} from "@/domains/movies/_feat/validate-submit";
 
@@ -15,7 +15,7 @@ import {MovieSnapshotInputSchema} from "@/domains/movies/_feat/validate-submit";
 export const ReservedShowingSnapshotInputSchema = z.object({
     movie: MovieSnapshotInputSchema,
     theatre: TheatreSnapshotInputSchema,
-    screen: ScreenSnapshotInputSchema,
+    screen: TheatreScreenSnapshotInputSchema,
     selectedSeats: generateArraySchema(ReservedSeatSnapshotInputSchema).nullable().optional(),
     startTime: ValidDateInstanceSchema,
     endTime: ValidDateInstanceSchema.nullable().optional(),
