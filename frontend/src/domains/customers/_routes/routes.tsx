@@ -4,11 +4,16 @@
 
 import {RouteObject} from "react-router-dom";
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
+import {RequireAdmin} from "@/views/shared/_feat/auth";
 
 export const AdminCustomerRoutes: RouteObject[] = [
     {
         path: "/admin/customers",
-        element: <AdminLayout/>,
+        element: (
+            <RequireAdmin>
+                <AdminLayout/>
+            </RequireAdmin>
+        ),
         children: [
             {
                 path: '/admin/customers',

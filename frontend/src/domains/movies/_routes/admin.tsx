@@ -5,12 +5,17 @@
 import {RouteObject} from "react-router-dom";
 import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
+import {RequireAdmin} from "@/views/shared/_feat/auth";
 
 /** Route configuration for movie-related administrative pages. */
 export const AdminMovieRoutes: RouteObject[] = [
     {
         path: '/admin/movies',
-        element: <AdminLayout/>,
+        element: (
+            <RequireAdmin>
+                <AdminLayout/>
+            </RequireAdmin>
+        ),
         children: [
             {
                 path: "/admin/movies",

@@ -3,6 +3,7 @@
  */
 
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
+import {RequireAdmin} from "@/views/shared/_feat/auth";
 
 /**
  * Defines the routing hierarchy for theatre management.
@@ -10,7 +11,11 @@ import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 const routes = [
     {
         path: "/admin/theatres",
-        element: <AdminLayout/>,
+        element: (
+            <RequireAdmin>
+                <AdminLayout/>
+            </RequireAdmin>
+        ),
         children: [
             {
                 index: true,

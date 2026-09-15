@@ -4,15 +4,18 @@
 
 import {RouteObject} from "react-router-dom";
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
-import {AuthLoader} from "@/shared/_loaders";
 import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
+import {RequireAdmin} from "@/views/shared/_feat/auth";
 
 /** Configuration for reservation-related administrative routes. */
 export const AdminReservationRoutes: RouteObject[] = [
     {
         path: "/admin/reservations",
-        element: <AdminLayout/>,
-        loader: AuthLoader,
+        element: (
+            <RequireAdmin>
+                <AdminLayout/>
+            </RequireAdmin>
+        ),
         children: [
             {
                 /** Page for verifying individual reservation via their unique verification string. */

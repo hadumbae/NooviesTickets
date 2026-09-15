@@ -3,12 +3,17 @@
  */
 
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
+import {RequireAdmin} from "@/views/shared/_feat/auth";
 
 /** Route configurations for the administration application views. */
 export const AdminPageRoutes = [
     {
         path: "/admin",
-        element: <AdminLayout/>,
+        element: (
+            <RequireAdmin>
+                <AdminLayout/>
+            </RequireAdmin>
+        ),
         children: [
             {
                 path: "/admin/dashboard",

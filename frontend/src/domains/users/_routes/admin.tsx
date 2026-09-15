@@ -6,12 +6,17 @@ import {RouteObject} from "react-router-dom";
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 import {ErrorPage} from "@/views/shared/_pages";
 import {ComponentErrorHandler} from "@/views/shared/_feat";
+import {RequireAdmin} from "@/views/shared/_feat/auth";
 
 /** Route definitions for the user administration module. */
 export const AdminUserRoutes: RouteObject[] = [
     {
         path: "/admin/users",
-        element: <AdminLayout/>,
+        element: (
+            <RequireAdmin>
+                <AdminLayout/>
+            </RequireAdmin>
+        ),
         errorElement: <ErrorPage/>,
         children: [
             {

@@ -4,6 +4,7 @@
 
 import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
+import {RequireAdmin} from "@/views/shared/_feat/auth";
 
 /**
  * Admin "Persons" route definitions.
@@ -11,7 +12,11 @@ import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 export const PersonRoutes = [
     {
         path: '/admin/persons',
-        element: <AdminLayout/>,
+        element: (
+            <RequireAdmin>
+                <AdminLayout/>
+            </RequireAdmin>
+        ),
         children: [
             {
                 path: "/admin/persons",
