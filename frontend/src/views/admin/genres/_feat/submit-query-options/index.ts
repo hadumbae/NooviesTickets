@@ -1,0 +1,1 @@
+export * from "@/views/admin/movies/_feat/submit-movie-image";

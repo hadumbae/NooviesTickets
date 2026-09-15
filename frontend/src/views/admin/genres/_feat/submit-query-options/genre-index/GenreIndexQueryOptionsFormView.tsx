@@ -9,10 +9,10 @@ import {
 } from "@/domains/genres/_feat/handle-query-options/genre-index/GenreIndexQueryOptionsSchema.ts";
 import {
     GenreIndexQueryOptionsFormFilterFieldset
-} from "@/views/admin/genres/_feat/submit-genre-index-query-options/GenreIndexQueryOptionsFormFilterFieldset.tsx";
+} from "@/views/admin/genres/_feat/submit-query-options/genre-index/GenreIndexQueryOptionsFormFilterFieldset.tsx";
 import {
     GenreIndexQueryOptionsFormSortFieldset
-} from "@/views/admin/genres/_feat/submit-genre-index-query-options/GenreIndexQueryOptionsFormSortFieldset.tsx";
+} from "@/views/admin/genres/_feat/submit-query-options/genre-index/GenreIndexQueryOptionsFormSortFieldset.tsx";
 import {QueryOptionFormLayout} from "@/views/shared/_feat";
 
 /** Form view that combines filter and sort fieldsets for genre index query options. */

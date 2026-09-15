@@ -4,10 +4,10 @@ import {
 } from "@/domains/genres/_feat/handle-query-options/genre-index/GenreIndexQueryOptionsContext.ts";
 import {
     GenreIndexQueryOptionsForm
-} from "@/views/admin/genres/_feat/submit-genre-index-query-options/GenreIndexQueryOptionsForm.tsx";
+} from "@/views/admin/genres/_feat/submit-query-options/genre-index/GenreIndexQueryOptionsForm.tsx";
 import {
     GenreIndexQueryOptionsFormView
-} from "@/views/admin/genres/_feat/submit-genre-index-query-options/GenreIndexQueryOptionsFormView.tsx";
+} from "@/views/admin/genres/_feat/submit-query-options/genre-index/GenreIndexQueryOptionsFormView.tsx";
 
 const section = createQueryOptionFormSection({
     useQueryOptionsContext: useGenreIndexQueryOptionsContext,

@@ -2,12 +2,12 @@
  * @fileoverview Zod schema and type definitions for filtering and sorting genres on the index page.
  */
 
-import {GenreQueryOptionSchema} from "@/domains/genres/_schema/filters/GenreQueryOptionsSchema.ts";
+import {GenreQueryOptionsSchema} from "@/domains/genres/_schema/filters/GenreQueryOptionsSchema.ts";
 import {z} from "zod";
 import {AnyValues} from "@/shared/_types";
 
 /** Schema for validating genre index query search options. */
-export const GenreIndexQueryOptionsSchema = GenreQueryOptionSchema.pick({
+export const GenreIndexQueryOptionsSchema = GenreQueryOptionsSchema.pick({
     name: true,
     sortByName: true,
 });

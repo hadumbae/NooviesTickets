@@ -1,17 +1,17 @@
 import {describe, it, expect} from "vitest";
-import {GenreQueryOptionSchema} from "@/domains/genres/_schema/filters/GenreQueryOptionsSchema.ts";
+import {GenreQueryOptionsSchema} from "@/domains/genres/_schema/filters/GenreQueryOptionsSchema.ts";
 
 describe("GenreQueryOptionsSchema", () => {
     describe("Valid query options for schema", () => {
         it("accepts empty data", () => {
-            const {success, data} = GenreQueryOptionSchema.safeParse({});
+            const {success, data} = GenreQueryOptionsSchema.safeParse({});
 
             expect(success).toBe(true);
             expect(data).toEqual({});
         });
 
         it("accepts empty strings as data", () => {
-            const {success, data} = GenreQueryOptionSchema.safeParse({
+            const {success, data} = GenreQueryOptionsSchema.safeParse({
                 name: "",
                 sortByName: "",
             });
@@ -21,7 +21,7 @@ describe("GenreQueryOptionsSchema", () => {
         });
 
         it("accepts valid data", () => {
-            const {success, data} = GenreQueryOptionSchema.safeParse({
+            const {success, data} = GenreQueryOptionsSchema.safeParse({
                 name: "Drama",
                 sortByName: "-1",
             });
@@ -31,7 +31,7 @@ describe("GenreQueryOptionsSchema", () => {
         });
 
         it("accepts null as data", () => {
-            const {success, data} = GenreQueryOptionSchema.safeParse({
+            const {success, data} = GenreQueryOptionsSchema.safeParse({
                 name: null,
                 sortByName: null,
             });
@@ -43,7 +43,7 @@ describe("GenreQueryOptionsSchema", () => {
 
     describe("Invalid query options for schema", () => {
         it("rejects an overly long name as data", () => {
-            const {success, error} = GenreQueryOptionSchema.safeParse({
+            const {success, error} = GenreQueryOptionsSchema.safeParse({
                 name: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.",
                 sortByName: -1,
             });

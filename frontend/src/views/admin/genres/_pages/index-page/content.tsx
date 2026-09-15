@@ -15,7 +15,7 @@ import {useNavigateToGenreDetails} from "@/domains/genres/_feat/navigation/useNa
 import {GenreSubmitForm, GenreSubmitFormPanel} from "@/views/admin/genres/_feat";
 import {
     GenreIndexQueryOptionsFormSection
-} from "@/views/admin/genres/_feat/submit-genre-index-query-options/GenreIndexQueryOptionsFormSection.tsx";
+} from "@/views/admin/genres/_feat/submit-query-options/genre-index/GenreIndexQueryOptionsFormSection.tsx";
 
 /** Props for the GenreIndexPageContent component. */
 type GenreIndexPageContentProps = {

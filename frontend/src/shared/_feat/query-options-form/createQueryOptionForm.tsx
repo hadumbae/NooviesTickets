@@ -19,8 +19,8 @@ type FactoryConfig<TShape extends ZodRawShape> = {
 };
 
 type FactoryReturns<TFormValues extends FieldValues, TOptions extends FieldValues> = {
-    useQueryOptionForm: (config: QueryOptionFormValues<TFormValues, TOptions>) => UseFormReturn<TFormValues, unknown, TOptions>;
-    QueryOptionForm: (props: QueryOptionFormContainerProps<TFormValues, TOptions>) => ReactElement;
+    useQueryOptionsForm: (config: QueryOptionFormValues<TFormValues, TOptions>) => UseFormReturn<TFormValues, unknown, TOptions>;
+    QueryOptionsForm: (props: QueryOptionFormContainerProps<TFormValues, TOptions>) => ReactElement;
 };
 
 /** Generates a specialised form hook and container component for managing search and filter query options. */
@@ -51,7 +51,7 @@ export function createQueryOptionForm<
         return heldValues.current;
     }
 
-    function useQueryOptionForm(
+    function useQueryOptionsForm(
         config: QueryOptionFormValues<TFormValues, TOptions>
     ): UseFormReturn<TFormValues, unknown, TOptions> {
         const defaultValues = useDefaultValues(config);
@@ -62,13 +62,13 @@ export function createQueryOptionForm<
         });
     }
 
-    function QueryOptionForm(
+    function QueryOptionsForm(
         params: QueryOptionFormContainerProps<TFormValues, TOptions>
     ): ReactElement {
         const {children, activeOptions, queryOptions, setQueryOptions, presetValues} = params;
 
         const formID = useGenerateFormID(name);
-        const form = useQueryOptionForm({presetValues, queryOptions});
+        const form = useQueryOptionsForm({presetValues, queryOptions});
 
         const resetForm = () => form.reset(formDefaults as DefaultValues<TFormValues>);
         const updateSearchParams = (values: TOptions) => setQueryOptions(values);
@@ -81,7 +81,8 @@ export function createQueryOptionForm<
                 activeOptions={activeOptions}
             >
                 <Form {...form}>
-                    <form id={formID} onSubmit={form.handleSubmit(updateSearchParams as Parameters<typeof form.handleSubmit>[0])}>
+                    <form id={formID}
+                          onSubmit={form.handleSubmit(updateSearchParams as Parameters<typeof form.handleSubmit>[0])}>
                         {children}
                     </form>
                 </Form>
@@ -89,5 +90,5 @@ export function createQueryOptionForm<
         );
     }
 
-    return {useQueryOptionForm, QueryOptionForm};
+    return {useQueryOptionsForm, QueryOptionsForm};
 }
