@@ -3,12 +3,10 @@
  */
 
 import {z} from "zod";
-import {NumberValueSchema} from "./NumberValueSchema";
+import {NonNegativeNumberSchema} from "./NonNegativeNumberSchema";
 
 /** Zod schema that validates a number is an integer and greater than or equal to zero. */
-export const NonNegativeIntegerSchema = NumberValueSchema
-    .int({message: "Must Be An Integer."})
-    .nonnegative({message: "Must Be Non-Negative."});
+export const NonNegativeIntegerSchema = NonNegativeNumberSchema.int({message: "Must Be An Integer"});
 
 /** Type inferred from the NonNegativeIntegerSchema. */
 export type NonNegativeInteger = z.infer<typeof NonNegativeIntegerSchema>;
