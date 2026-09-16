@@ -5,8 +5,7 @@
 import {ReactElement} from "react";
 import {Link} from "react-router-dom";
 import {Card, CardContent} from "@/views/shared/_comp/ui";
-import {SlugString} from "@noovies-tickets/common";
-import {GenreName} from "@/domains/genres/_schema/fields/GenreNameSchema.ts";
+import {SlugString, GenreName} from "@noovies-tickets/common";
 import {Plus} from "lucide-react";
 
 /** Props for the HomepageGenreSeeMoreCard component. */

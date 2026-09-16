@@ -6,7 +6,7 @@ import {z} from "zod";
 import {BooleanValueSchema, IDStringSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {CloudinaryImageSchema} from "@noovies-tickets/common";
-import {GenreDescriptionSchema, GenreNameSchema} from "@/domains/genres/_schema/fields";
+import {GenreDescriptionSchema, GenreNameSchema} from "@noovies-tickets/common";
 
 /** Zod validation schema for Genre documents. */
 export const GenreSchema = z.object({

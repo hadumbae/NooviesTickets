@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {preprocessEmptyToUndefined} from "@noovies-tickets/common";
-import {GenreNameSchema} from "@/domains/genres/_schema/fields/GenreNameSchema.ts";
+import {preprocessEmptyToUndefined, GenreNameSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating genre query filter parameters. */
 export const GenreQueryFilterSchema = z.object({

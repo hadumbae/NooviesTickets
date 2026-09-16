@@ -2,6 +2,7 @@
   "name": "noovies-tickets",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "workspaces": [
     "frontend",
     "backend",
@@ -13,5 +14,8 @@
     "luxon": "3.7.2",
     "@types/luxon": "3.7.1",
     "@vvo/tzdb": "6.178.0"
+  },
+  "devDependencies": {
+    "vitest": "4.1.4"
   }
 }

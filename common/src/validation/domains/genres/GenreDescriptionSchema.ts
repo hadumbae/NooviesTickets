@@ -2,7 +2,7 @@
  * @fileoverview Zod schema and type definition for genre descriptions.
  */
 
-import {StringValueSchema} from "@noovies-tickets/common";
+import {StringValueSchema} from "../../schema/strings/StringValueSchema";
 import {z} from "zod";
 
 /** Zod schema for validating genre description strings. */

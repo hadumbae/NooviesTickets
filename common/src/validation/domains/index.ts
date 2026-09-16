@@ -1,3 +1,4 @@
+export * from "./genres";
 export * from "./movie-credits";
 export * from "./movie-reviews";
 export * from "./movies";
