@@ -9,4 +9,3 @@ export * from "./mongoose";
 export * from "./pagination";
 export * from "./strings";
 export * from "./numbers";
-export * from "./url-params";

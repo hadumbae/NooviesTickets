@@ -9,7 +9,7 @@ import {
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {
     BooleanValueSchema,
-    DateOnlyInstanceSchema,
+    UTCDateOnlySchema,
     ISO3166Alpha2CountryCodeSchema,
     preprocessToBoolean
 } from "@noovies-tickets/common";
@@ -19,7 +19,7 @@ import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 export const MovieQueryFiltersSchema = z.object({
     _id: ObjectIdSchema.optional(),
     title: URLParamRegexPatternSchema,
-    releaseDate: DateOnlyInstanceSchema.optional(),
+    releaseDate: UTCDateOnlySchema.optional(),
     genres: generateURLParamArraySchema(ObjectIdSchema),
     originalTitle: URLParamRegexPatternSchema,
     isReleased: preprocessToBoolean(BooleanValueSchema.optional()).optional(),

@@ -3,13 +3,12 @@
  */
 
 import {z} from "zod";
+import {DateTime} from "luxon";
 import {DateOnlyStringSchema} from "./DateOnlyStringSchema";
 
 /** Zod schema that validates a yyyy-MM-dd string and transforms it into a Date at UTC midnight. */
-export const UTCDateOnlySchema = DateOnlyStringSchema.transform((dateString) => {
-    const [year, month, day] = dateString.split("-").map(Number);
-    return new Date(Date.UTC(year, month - 1, day));
-});
+export const UTCDateOnlySchema = DateOnlyStringSchema
+    .transform((dateString) => DateTime.fromISO(`${dateString}T00:00:00.000Z`, {zone: "utc"}).toJSDate());
 
 /** Type representing a UTC Date parsed from a valid yyyy-MM-dd string. */
 export type UTCDateOnly = z.infer<typeof UTCDateOnlySchema>;

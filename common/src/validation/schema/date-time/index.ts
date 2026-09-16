@@ -1,5 +1,4 @@
 export * from "./DateInstanceSchema";
-export * from "./DateOnlyInstanceSchema";
 export * from "./DateOnlyStringSchema";
 export * from "./DateTimeInstanceSchema";
 export * from "./IANATimezoneSchema";

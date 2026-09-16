@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
-import {DateOnlyInstanceSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
+import {UTCDateOnlySchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
 import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 
 /**
@@ -13,7 +13,7 @@ import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 export const PersonQueryMatchFiltersSchema = z.object({
     _id: ObjectIdSchema.optional(),
     name: URLParamRegexPatternSchema,
-    dob: DateOnlyInstanceSchema.optional(),
+    dob: UTCDateOnlySchema.optional(),
     nationality: ISO3166Alpha2CountryCodeSchema.optional(),
 });
 

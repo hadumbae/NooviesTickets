@@ -3,16 +3,13 @@
  */
 
 import {z} from "zod";
-import {PositiveNumberSchema} from "../numbers";
+import {PositiveIntegerSchema} from "../numbers";
 import {preprocessToNumber} from "../../preprocessors";
 
 /** Validates and transforms incoming pagination parameters. */
 export const PaginationOptionsSchema = z.object({
-    /** The current page index (1-based). */
-    page: preprocessToNumber(PositiveNumberSchema),
-
-    /** The number of records to retrieve per result set. */
-    perPage: preprocessToNumber(PositiveNumberSchema),
+    page: preprocessToNumber(PositiveIntegerSchema).catch(1),
+    perPage: preprocessToNumber(PositiveIntegerSchema).catch(10),
 });
 
 /** TypeScript type inferred from the PaginationOptionsSchema. */

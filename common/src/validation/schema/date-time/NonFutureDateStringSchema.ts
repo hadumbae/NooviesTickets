@@ -3,23 +3,14 @@
  */
 
 import {z} from "zod";
-import { DateTime } from "luxon";
-import { DateOnlyStringSchema } from "./DateOnlyStringSchema";
+import {DateOnlyStringSchema} from "./DateOnlyStringSchema";
+import {UTCDateOnlySchema} from "./UTCDateOnlySchema";
 
-/** Validates that a string is a valid date in yyyy-MM-dd format and does not occur in the future. */
+/** Validates that a string is a valid date in yyyy-MM-dd format and does not occur in the future, compared in UTC. */
 export const NonFutureDateStringSchema = DateOnlyStringSchema.superRefine((value: string, ctx) => {
-    const parsedDate = DateTime.fromFormat(value, "yyyy-MM-dd");
+    const result = UTCDateOnlySchema.safeParse(value);
 
-    if (!parsedDate.isValid) {
-        ctx.addIssue({
-            code: "custom",
-            path: [],
-            message: "Must be a valid date string in the `yyyy-MM-dd` format.",
-            fatal: true,
-        });
-    }
-
-    if (parsedDate > DateTime.now()) {
+    if (result.success && result.data.getTime() > Date.now()) {
         ctx.addIssue({
             code: "custom",
             path: [],
