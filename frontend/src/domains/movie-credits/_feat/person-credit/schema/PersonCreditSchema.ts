@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, MovieCreditCastSchema, MovieCreditCrewSchema, RoleTypeSchema} from "@noovies-tickets/common";
-import {MovieSchema} from "@/domains/movies/_schema/movie/MovieSchema.ts";
+import {IDStringSchema, MovieCreditCastSchema, MovieCreditCrewSchema, MovieSchema, RoleTypeSchema} from "@noovies-tickets/common";
 
 /**
  * Extension fields that define the hydration state of the credit.

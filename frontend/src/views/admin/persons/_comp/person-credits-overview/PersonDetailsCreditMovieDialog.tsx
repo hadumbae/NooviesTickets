@@ -10,7 +10,8 @@ import {Search} from "lucide-react";
 import {cn} from "@/shared/_feat";
 import {MoviePosterImage} from "@/views/admin/movies/_comp/poster-image";
 import {SROnly} from "@/views/shared/_comp/screen-readers";
-import {Movie, MovieDetails} from "@/domains/movies/_schema/movie";
+import {Movie} from "@noovies-tickets/common";
+import {MovieDetails} from "@/domains/movies/_schema/movie";
 import {PersonCredit} from "@/domains/movie-credits";
 
 /** Props for the PersonDetailsCreditMovieDialog component. */

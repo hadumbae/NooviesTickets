@@ -7,7 +7,8 @@ import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieR
 import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {cn} from "@/shared/_feat";
-import {Movie, MovieDetails, MovieWithGenres} from "@/domains/movies/_schema/movie";
+import {Movie} from "@noovies-tickets/common";
+import {MovieDetails, MovieWithGenres} from "@/domains/movies/_schema/movie";
 
 /** Props for the MovieMetaRow component. */
 type MetaProps = {

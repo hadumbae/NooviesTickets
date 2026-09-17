@@ -14,7 +14,7 @@ import {
 import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
 import {RoleTypeDepartment} from "@noovies-tickets/common";
 import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
-import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
+import {Movie} from "@noovies-tickets/common";
 
 /** Props for the MoviePersonListBreadcrumb component. */
 type PersonListBreadcrumbProps = {

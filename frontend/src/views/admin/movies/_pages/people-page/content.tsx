@@ -6,7 +6,7 @@ import {MoviePeopleHeader} from "@/views/admin/movies/_pages/people-page/section
 import {MoviePeoplePageFormSection} from "@/views/admin/movies/_pages/people-page/sections/MoviePeoplePageFormSection.tsx";
 import {MoviePeoplePageCreditSection} from "@/views/admin/movies/_pages/people-page/sections/MoviePeoplePageCreditSection.tsx";
 
-import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
+import {Movie} from "@noovies-tickets/common";
 import {RoleTypeDepartment} from "@noovies-tickets/common";
 
 /** Props for the MoviePeoplePageContent component. */

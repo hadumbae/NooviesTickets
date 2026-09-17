@@ -13,7 +13,7 @@ import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-par
 import {MoviePeoplePageContent} from "@/views/admin/movies/_pages/people-page/content.tsx";
 
 import {RoleTypeDepartment} from "@noovies-tickets/common";
-import {Movie, MovieSchema} from "@/domains/movies/_schema/movie/MovieSchema.ts";
+import {Movie, MovieSchema} from "@noovies-tickets/common";
 import {useFetchMovieBySlug} from "@/domains/movies/_feat/crud-hooks/fetch/useFetchMovieBySlug.ts";
 
 /** Props for the MoviePeoplePage component. */

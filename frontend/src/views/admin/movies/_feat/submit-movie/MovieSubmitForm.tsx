@@ -3,7 +3,7 @@
  */
 
 import {createForm} from "@/shared/_feat";
-import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
+import {Movie} from "@noovies-tickets/common";
 import {
     MovieEditData,
     MovieFormData,

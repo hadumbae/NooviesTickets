@@ -1,1 +1,2 @@
-export * from "./MovieImageTypeSchema";
+export * from "./fields";
+export * from "./models";

@@ -2,8 +2,8 @@
  * @fileoverview Defines the validation schema for movie trailer URLs.
  */
 
-import {URLStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
+import {URLStringSchema} from "../../../schema/strings/URLStringSchema";
 
 /** Zod schema for an optional and nullable movie trailer URL string. */
 export const MovieTrailerURLSchema = URLStringSchema.optional().nullable();

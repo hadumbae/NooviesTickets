@@ -3,12 +3,16 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {URLStringSchema} from "@noovies-tickets/common";
-import {ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {generateArraySchema} from "@noovies-tickets/common";
-import {ISO8601DateTimeSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-import {MovieTaglineSchema, MovieTitleSchema} from "@/domains/movies/_schema/fields";
+import {
+    NonEmptyStringSchema,
+    URLStringSchema,
+    ISO3166Alpha2CountryCodeSchema,
+    generateArraySchema,
+    ISO8601DateTimeSchema,
+    PositiveNumberSchema,
+    MovieTaglineSchema,
+    MovieTitleSchema,
+} from "@noovies-tickets/common";
 
 /** Zod schema for validating movie snapshot data. */
 export const MovieSnapshotSchema = z.object({

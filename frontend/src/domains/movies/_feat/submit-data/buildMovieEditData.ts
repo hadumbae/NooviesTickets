@@ -3,7 +3,8 @@
  */
 
 import {AnyValues} from "@/shared/_types";
-import {Movie, MovieDetails} from "@/domains/movies/_schema/movie";
+import {Movie} from "@noovies-tickets/common";
+import {MovieDetails} from "@/domains/movies/_schema/movie";
 import {MovieFormData} from "@/domains/movies/_feat/submit-data/schema/MovieFormSchema.ts";
 
 /** Form values type for editing existing movie entity fields. */

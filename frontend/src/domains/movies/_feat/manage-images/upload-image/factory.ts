@@ -3,8 +3,7 @@
  */
 
 import {MutationKey, useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectIdString} from "@noovies-tickets/common";
-import {Movie, MovieSchema} from "@/domains/movies/_schema";
+import {ObjectIdString, Movie, MovieSchema} from "@noovies-tickets/common";
 import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {MovieCRUDQueryKeys} from "@/domains/movies/_feat/crud-hooks";
 import {MovieImageFormData} from "@/domains/movies/_feat/manage-images/formSchema.ts";

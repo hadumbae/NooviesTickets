@@ -4,11 +4,10 @@
 
 import {ReactElement} from 'react';
 import {EntityDeleteWarningDialog} from "@/views/shared/_feat/dialog/EntityDeleteWarningDialog.tsx";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {ObjectIdString, Movie} from "@noovies-tickets/common";
 import {DeleteMovieImageConfig, RemoveMovieImageMutation} from "@/domains/movies/_feat/manage-images";
 import {MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {UIOpenStateProps} from "@/shared/_types";
-import {Movie} from "@/domains/movies/_schema/movie";
 import {handleMutateAsync} from "@/shared/_feat/handle-mutate-async/handleMutateAsync.ts";
 
 type FactoryConfig = {

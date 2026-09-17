@@ -5,7 +5,7 @@
 import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {buildStandardLog} from "@/shared/_feat/logger-builders/buildStandardLog.ts";
-import {Movie, MovieSchema} from "@/domains/movies/_schema/movie/MovieSchema.ts";
+import {Movie, MovieSchema} from "@noovies-tickets/common";
 import {MovieFormData} from "@/domains/movies/_feat/submit-data/schema/MovieFormSchema.ts";
 import {create, update} from "@/domains/movies/_feat/crud";
 import {MovieCRUDMutationKeys} from "@/domains/movies/_feat/crud-hooks/keys/mutationKeys.ts";

@@ -1,30 +1,26 @@
 /**
  * @fileoverview Validated movie schema with identifier and relational references for the movie domain.
- *
  */
 
-import {MovieReleaseDateRefinement} from "@/domains/movies/_schema/movie/MovieSchemaUtilities.ts";
 import {z} from "zod";
-import {
-    BaseModelDTOSchema,
-    BooleanValueSchema,
-    CloudinaryImageSchema,
-    DateTimeInstanceSchema,
-    ISO3166Alpha2CountryCodeSchema,
-    ISO6391LanguageCodeSchema,
-    NonEmptyStringSchema,
-    PositiveNumberSchema,
-    preprocessEmptyToUndefined,
-    UTCDayOnlyDateTimeSchema
-} from "@noovies-tickets/common";
-
+import {MovieReleaseDateRefinement} from "./MovieSchemaUtilities";
 import {
     MovieGenreIDsSchema,
     MovieSynopsisSchema,
     MovieTaglineSchema,
     MovieTitleSchema,
     MovieTrailerURLSchema
-} from "@/domains/movies/_schema/fields";
+} from "../fields";
+import {BaseModelDTOSchema} from "../../../schema/model/BaseModelDTOSchema";
+import {BooleanValueSchema} from "../../../schema/booleans/BooleanValueSchema";
+import {CloudinaryImageSchema} from "../../../schema/cloudinary/CloudinaryImageSchema";
+import {DateTimeInstanceSchema} from "../../../schema/date-time/DateTimeInstanceSchema";
+import {UTCDayOnlyDateTimeSchema} from "../../../schema/date-time/UTCDayOnlyDateTimeSchema";
+import {ISO3166Alpha2CountryCodeSchema} from "../../../schema/enums/country/ISO3166Alpha2CountryCodeSchema";
+import {ISO6391LanguageCodeSchema} from "../../../schema/enums/languages/ISO6391LanguageCodeSchema";
+import {NonEmptyStringSchema} from "../../../schema/strings/NonEmptyStringSchema";
+import {PositiveNumberSchema} from "../../../schema/numbers/PositiveNumberSchema";
+import {preprocessEmptyToUndefined} from "../../../preprocessors/preprocessEmptyToUndefined";
 
 /** Core Zod schema defining the base structure and constraints of a Movie. */
 export const MovieBaseSchema = BaseModelDTOSchema.extend({

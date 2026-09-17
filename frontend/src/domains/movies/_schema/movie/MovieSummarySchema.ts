@@ -2,9 +2,8 @@
  * @fileoverview Zod schema and type definitions for movie summary projections.
  */
 
-import {MovieBaseSchema} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 import {z} from "zod";
-import {GenreSchema, generateArraySchema} from "@noovies-tickets/common";
+import {GenreSchema, generateArraySchema, MovieBaseSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating movie summary attributes. */
 export const MovieSummarySchema = MovieBaseSchema.pick({

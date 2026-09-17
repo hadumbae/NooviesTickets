@@ -6,7 +6,7 @@ import {ObjectIdString} from "@noovies-tickets/common";
 import {FetchRequestReturns} from "@/shared/_types";
 import {buildURL, handleFetchOperation} from "@/shared/_feat";
 import {ManageMovieImagesBaseURL} from "@/domains/movies/_feat/manage-images/baseURL.ts";
-import {Movie} from "@/domains/movies/_schema/movie/MovieSchema.ts";
+import {Movie} from "@noovies-tickets/common";
 
 /** Parameters required to remove a movie image asset. */
 export type DeleteMovieImageRouteConfig = {

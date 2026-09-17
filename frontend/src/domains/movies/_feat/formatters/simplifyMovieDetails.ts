@@ -3,7 +3,7 @@
  */
 
 import { ParseError } from "@/shared/_err/ParseError.ts";
-import {Movie, MovieSchema} from "@/domains/movies/_schema/movie/MovieSchema.ts";
+import {Movie, MovieSchema} from "@noovies-tickets/common";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 
 /** Transforms a MovieDetails object into a Movie object and validates it against MovieSchema. */

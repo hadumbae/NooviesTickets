@@ -3,17 +3,24 @@
  */
 
 import {z} from "zod";
-import {preprocessEmptyToUndefined, preprocessOptionalField, preprocessToNumber, NonFutureDateStringSchema, PositiveNumberSchema, IDStringSchema, ISO3166Alpha2CountryCodeSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
-import {CloudinaryImageSchema} from "@noovies-tickets/common";
-import {AnyValues} from "@/shared/_types";
 import {
+    preprocessEmptyToUndefined,
+    preprocessOptionalField,
+    preprocessToNumber,
+    NonFutureDateStringSchema,
+    PositiveNumberSchema,
+    IDStringSchema,
+    ISO3166Alpha2CountryCodeSchema,
+    ISO6391LanguageCodeSchema,
+    CloudinaryImageSchema,
     MovieGenreIDsSchema,
     MovieSynopsisSchema,
     MovieTaglineSchema,
     MovieTitleSchema,
-    MovieTrailerURLSchema
-} from "@/domains/movies/_schema";
+    MovieTrailerURLSchema,
+} from "@noovies-tickets/common";
+import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
+import {AnyValues} from "@/shared/_types";
 
 /** Zod schema for validating movie creation and update forms including conditional release date logic. */
 export const MovieFormSchema = z.object({

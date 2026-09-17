@@ -6,7 +6,7 @@ import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema
 import {
     useFetchByIdentifierRouteParams
 } from "@/shared/_feat";
-import {Movie, MovieSchema} from "@/domains/movies/_schema/movie/MovieSchema.ts";
+import {Movie, MovieSchema} from "@noovies-tickets/common";
 import {MovieEditPageContent} from "@/views/admin/movies/_pages/edit-page/content.tsx";
 import {PageLoader} from "@/views/shared/_comp/page";
 import {ReactElement} from "react";
