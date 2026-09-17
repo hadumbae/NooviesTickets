@@ -3,7 +3,8 @@
  */
 
 import {createForm} from "@/shared/_feat";
-import {Seat, SeatDetails, SeatFormData, SeatFormSchema, SeatFormValues, useSeatSubmitMutation} from "@/domains/seats";
+import {Seat} from "@noovies-tickets/common";
+import {SeatDetails, SeatFormData, SeatFormSchema, SeatFormValues, useSeatSubmitMutation} from "@/domains/seats";
 
 const {SubmitForm} = createForm<
     SeatFormValues,

@@ -3,9 +3,18 @@
  */
 
 import {z} from "zod";
-import {SeatLabelSchema, SeatRowSchema} from "@/domains/seats/_schema/fields";
-import {SeatLayoutTypeSchema, SeatTypeSchema} from "@noovies-tickets/common";
-import {IDStringSchema, NonNegativeNumberSchema, PositiveIntegerSchema, preprocessEmptyToUndefined, preprocessOptionalField, preprocessToNumber} from "@noovies-tickets/common";
+import {
+    SeatLabelSchema,
+    SeatRowSchema,
+    SeatLayoutTypeSchema,
+    SeatTypeSchema,
+    IDStringSchema,
+    NonNegativeNumberSchema,
+    PositiveIntegerSchema,
+    preprocessEmptyToUndefined,
+    preprocessOptionalField,
+    preprocessToNumber,
+} from "@noovies-tickets/common";
 import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
 import {AnyUnionValues} from "@/shared/_types";
 

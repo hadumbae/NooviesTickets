@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
 import {LabelContent, SubsectionTitle} from "@/views/shared/_comp";
-import {ISO3166Alpha2CountryConstant} from "@/shared/_const";
+import {ISO3166Alpha2CountryLabelMap} from "@noovies-tickets/common";
 import {AdminReservation} from "@/domains/reservations/_schema/model/admin-reservations/AdminReservationSchema.ts";
 
 /** Props for the CustomerReservationTheatreSummaryCard component. */
@@ -47,7 +47,7 @@ export function CustomerReservationTheatreSummaryCard(
                     </LabelContent>
 
                     <LabelContent label="Country" classNames={{container: "col-span-2"}}>
-                        {ISO3166Alpha2CountryConstant[country]}
+                        {ISO3166Alpha2CountryLabelMap[country]}
                     </LabelContent>
 
                     <LabelContent label="Postal Code">

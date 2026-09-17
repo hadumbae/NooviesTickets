@@ -9,7 +9,7 @@ import {ShowingSubmitForm} from "@/views/admin/showings/_feat/submit-form/Showin
 import {ShowingSubmitStorageKey} from "@/domains/showings/_feat/submit-data/ShowingSubmitStorageKey.ts";
 import {ReactElement} from "react";
 
-import {Theatre} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
+import {Theatre} from "@noovies-tickets/common";
 import {ShowingSubmitFormView} from "@/views/admin/showings/_feat/submit-form";
 import {PageHeader} from "@/views/shared/_comp";
 import {

@@ -3,7 +3,7 @@
  */
 
 import {createForm} from "@/shared/_feat";
-import {Theatre} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
+import {Theatre} from "@noovies-tickets/common";
 import {TheatreEditData, TheatreFormValues} from "@/domains/theatres/_feat/submit-data";
 import {TheatreFormData} from "@/domains/theatres/_feat/submit-data/schema.ts";
 import {useTheatreSubmitMutation} from "@/domains/theatres/_feat/crud-hooks/submit/useTheatreSubmitMutation.ts";

@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, RoleTypeSchema} from "@noovies-tickets/common";
-import {MovieCreditCastSchema, MovieCreditCrewSchema} from "@/domains/movie-credits/_schemas/model/MovieCreditSchema.ts";
+import {IDStringSchema, MovieCreditCastSchema, MovieCreditCrewSchema, RoleTypeSchema} from "@noovies-tickets/common";
 import {MovieSchema} from "@/domains/movies/_schema/movie/MovieSchema.ts";
 
 /**

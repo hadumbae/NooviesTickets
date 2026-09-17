@@ -9,10 +9,10 @@ import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.ts
 import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
 import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 import {QueryDataLoader} from "@/views/shared/_feat";
-import {generateArraySchema} from "@noovies-tickets/common";
+import {generateArraySchema, Seat, SeatSchema} from "@noovies-tickets/common";
 import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
 
-import {Seat, SeatQueryFilters, SeatSchema, useFetchSeats} from "@/domains/seats";
+import {SeatQueryFilters, useFetchSeats} from "@/domains/seats";
 
 /** Props for the SeatHookFormSelect component. */
 type SelectProps<TValues extends FieldValues> = Omit<HookFormInputControlProps<TValues>, "control"> & {

@@ -3,13 +3,17 @@
  */
 
 import {z} from "zod";
-import {SeatBaseSchema} from "./SeatSchema.ts";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {BooleanValueSchema, NumberValueSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
-
-import {SeatTypeSchema} from "@noovies-tickets/common";
-import {TheatreScreenSchema} from "@/domains/theatre-screens/_schema";
-import {TheatreSchema} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
+import {
+    NonEmptyStringSchema,
+    BooleanValueSchema,
+    NumberValueSchema,
+    preprocessToNumber,
+    PositiveNumberSchema,
+    SeatBaseSchema,
+    SeatTypeSchema,
+    TheatreSchema,
+    TheatreScreenSchema,
+} from "@noovies-tickets/common";
 
 /** Schema for seating positions with full theatre and screen references. */
 const SeatDetailsReferenceSchema = SeatBaseSchema.extend({

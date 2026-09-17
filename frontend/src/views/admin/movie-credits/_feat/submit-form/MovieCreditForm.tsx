@@ -3,8 +3,8 @@
  */
 
 import {createForm} from "@/shared/_feat";
+import {MovieCredit} from "@noovies-tickets/common";
 import {
-    MovieCredit,
     MovieCreditDetails,
     MovieCreditFormData,
     MovieCreditFormSchema,

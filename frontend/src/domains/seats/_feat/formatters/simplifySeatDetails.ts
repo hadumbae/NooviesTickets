@@ -3,7 +3,8 @@
  */
 
 
-import {Seat, SeatDetails, SeatSchema} from "@/domains/seats/_schema/model";
+import {Seat, SeatSchema} from "@noovies-tickets/common";
+import {SeatDetails} from "@/domains/seats/_schema/model";
 import {ParseError} from "@/shared/_err/ParseError.ts";
 
 /** Converts a fully populated seat details object into a simplified seat object. */

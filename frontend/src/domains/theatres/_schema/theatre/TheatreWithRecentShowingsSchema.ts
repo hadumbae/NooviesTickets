@@ -1,8 +1,7 @@
 /** @fileoverview Zod schema and type definitions for a theatre with its associated showing details. */
 
-import {TheatreSchema} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
 import {z} from "zod";
-import {generateArraySchema} from "@noovies-tickets/common";
+import {generateArraySchema, TheatreSchema} from "@noovies-tickets/common";
 import {ShowingDetailsSchema} from "@/domains/showings/_schema/showing";
 
 /** Zod schema for a theatre object extended with a list of detailed showings. */

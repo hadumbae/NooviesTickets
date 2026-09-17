@@ -1,4 +1,2 @@
-export * from "./SeatTypeConstant";
-export * from "./SeatTypeSchema";
-export * from "./SeatLayoutTypeConstant";
-export * from "./SeatLayoutTypeSchema";
+export * from "./fields";
+export * from "./models";

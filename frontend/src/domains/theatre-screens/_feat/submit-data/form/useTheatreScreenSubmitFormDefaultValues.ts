@@ -4,7 +4,7 @@
 
 import {useRef} from "react";
 import {isEqual} from "lodash";
-import {TheatreScreen} from "@/domains/theatre-screens/_schema";
+import {TheatreScreen} from "@noovies-tickets/common";
 import {TheatreScreenFormValues} from "@/domains/theatre-screens/_feat/submit-data/schema";
 import {FormValuesConfig} from "@/shared/_feat/submit-data";
 

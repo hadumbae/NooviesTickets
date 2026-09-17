@@ -9,8 +9,7 @@ import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
 import {HookFormMultiSelect} from "@/views/shared/_comp/form-select/HookFormMultiSelect.tsx";
 import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
 import {QueryDataLoader} from "@/views/shared/_feat";
-import {TheatreScreen, TheatreScreenSchema} from "@/domains/theatre-screens/_schema/model";
-import {generateArraySchema} from "@noovies-tickets/common";
+import {generateArraySchema, TheatreScreen, TheatreScreenSchema} from "@noovies-tickets/common";
 import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
 import {TheatreScreenQueryFilters, useFetchScreens} from "@/domains/theatre-screens";
 

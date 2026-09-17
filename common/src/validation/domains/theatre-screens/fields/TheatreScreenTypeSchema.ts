@@ -4,12 +4,12 @@
 
 import {z} from "zod";
 import {TheatreScreenTypeConstant} from "./TheatreScreenTypeConstant";
-import {ZodEnumParamHandler} from "../../schema/enums/handler/ZodEnumParamHandler";
+import {ZodEnumParamHandler} from "../../../schema/enums/handler/ZodEnumParamHandler";
 
 /** Zod schema for validating and restricting string values to known theatre screen types. */
 export const TheatreScreenTypeSchema = z.enum(TheatreScreenTypeConstant, ZodEnumParamHandler({
-    invalidValue: "Invalid Screen Type.",
-    invalidType: "Must be a screen type.",
+    invalidValue: "Invalid Screen Type",
+    invalidType: "Must Be A Screen Type String",
 }));
 
 /** TypeScript type representing a validated screen type format. */

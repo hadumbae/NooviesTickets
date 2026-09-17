@@ -11,7 +11,8 @@ import {useRequiredContext} from "@/shared/_feat/use-context/useRequiredContext.
 import {
     TheatreDetailsUIStateContext
 } from "@/domains/theatres/_ctx/theatre-details-ui/TheatreDetailsUIStateContext.ts";
-import {Theatre, TheatreDetails} from "@/domains/theatres/_schema/theatre";
+import {Theatre} from "@noovies-tickets/common";
+import {TheatreDetails} from "@/domains/theatres/_schema/theatre";
 import {buildTheatreEditData} from "@/domains/theatres/_feat/submit-data/buildTheatreEditData.ts";
 import {TheatreDetailsUISetterContext} from "@/domains/theatres/_ctx/theatre-details-ui/TheatreDetailsUISetterContext.ts";
 

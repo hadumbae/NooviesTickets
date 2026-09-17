@@ -3,8 +3,19 @@
  */
 
 import {z} from "zod";
-import {CityStringSchema, IDStringSchema, NumberValueSchema, IANATimezoneSchema, PostalCodeSchema, preprocessOptionalField, preprocessToNumber, ISO3166Alpha2CountryCodeSchema, StateStringSchema, StreetStringSchema} from "@noovies-tickets/common";
-import {TheatreNameSchema} from "@/domains/theatres/_schema/fields/TheatreNameSchema.ts";
+import {
+    CityStringSchema,
+    IDStringSchema,
+    NumberValueSchema,
+    IANATimezoneSchema,
+    PostalCodeSchema,
+    preprocessOptionalField,
+    preprocessToNumber,
+    ISO3166Alpha2CountryCodeSchema,
+    StateStringSchema,
+    StreetStringSchema,
+    TheatreNameSchema,
+} from "@noovies-tickets/common";
 
 /** Zod schema defining filter parameters for querying theatre data. */
 export const TheatreQueryMatchFilterSchema = z.object({

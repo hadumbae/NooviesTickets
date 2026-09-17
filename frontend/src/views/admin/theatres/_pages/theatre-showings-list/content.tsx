@@ -8,7 +8,8 @@ import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/shared/_co
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {ShowingSummaryCard} from "@/views/admin/showings/_comp/showing-summary-card";
 
-import {Theatre, TheatreDetails} from "@/domains/theatres/_schema/theatre";
+import {Theatre} from "@noovies-tickets/common";
+import {TheatreDetails} from "@/domains/theatres/_schema/theatre";
 import {ShowingDetails} from "@/domains/showings/_schema/showing";
 import {
     TheatreShowingListBreadcrumbs

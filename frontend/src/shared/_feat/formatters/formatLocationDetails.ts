@@ -2,14 +2,13 @@
  * @fileoverview Formatter utility for transforming raw location data into displayable address strings.
  */
 
-import {Location} from "@noovies-tickets/common";
-import {ISO3166Alpha2CountryConstant} from "@/shared/_const";
+import {Location, ISO3166Alpha2CountryLabelMap} from "@noovies-tickets/common";
 
 /** Formats a location object into a structured address with a human-readable country name. */
 export function formatLocationDetails(location: Location) {
     const {country, state, city, street, timezone, postalCode} = location;
 
-    const countryName = ISO3166Alpha2CountryConstant[country];
+    const countryName = ISO3166Alpha2CountryLabelMap[country];
 
     const address = [street, city, state, countryName]
         .filter(v => !!v)

@@ -5,7 +5,7 @@
 import {useForm, UseFormReturn} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 
-import {Seat} from "@/domains/seats/_schema";
+import {Seat} from "@noovies-tickets/common";
 import {SeatFormData, SeatFormSchema, SeatFormValues} from "@/domains/seats/_feat/submit-data/schema";
 import {useSeatSubmitFormDefaultValues} from "@/domains/seats/_feat/submit-data/form/useSeatSubmitFormDefaultValues.ts";
 import {FormValuesConfig} from "@/shared/_feat/submit-data";

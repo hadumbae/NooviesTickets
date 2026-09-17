@@ -5,9 +5,8 @@
 import {ReactElement} from 'react';
 import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
 import {DetailsCardSpan} from "@/views/shared/_comp/text-display/spans/DetailsCardSpan.tsx";
-import {ISO3166Alpha2CountryConstant} from "@/shared/_const";
 import {TextQuote} from "@/views/shared/_comp/text-display/text-blocks/TextQuote.tsx";
-import {Person} from "@noovies-tickets/common";
+import {ISO3166Alpha2CountryLabelMap, Person} from "@noovies-tickets/common";
 
 /**
  * Props for the PersonDetailsCard component.
@@ -25,8 +24,8 @@ export function PersonDetailsCard(
     {movieCount, creditCount, person: {name, dob, nationality, biography}}: DetailCardProps
 ): ReactElement {
     const formattedDOB = dob.toFormat("dd MMM, yyyy");
-    const formattedNationality = nationality in ISO3166Alpha2CountryConstant
-        ? ISO3166Alpha2CountryConstant[nationality]
+    const formattedNationality = nationality in ISO3166Alpha2CountryLabelMap
+        ? ISO3166Alpha2CountryLabelMap[nationality]
         : "Unknown";
 
     return (

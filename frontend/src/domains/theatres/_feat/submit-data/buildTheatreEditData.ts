@@ -4,7 +4,8 @@
 
 import {AnyValues} from "@/shared/_types";
 import {TheatreFormData} from "@/domains/theatres/_feat/submit-data/schema.ts";
-import {Theatre, TheatreDetails} from "@/domains/theatres/_schema/theatre";
+import {Theatre} from "@noovies-tickets/common";
+import {TheatreDetails} from "@/domains/theatres/_schema/theatre";
 import {CoordinateFormStarterValues} from "@/shared/_models/coordinate-form";
 import {LocationFormStarterValues} from "@/shared/_models/location-form";
 

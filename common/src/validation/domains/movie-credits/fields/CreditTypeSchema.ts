@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {CreditTypeConstant} from "./CreditTypeConstant";
-import {ZodEnumParamHandler} from "../../schema/enums/handler/ZodEnumParamHandler";
+import {ZodEnumParamHandler} from "../../../schema/enums/handler/ZodEnumParamHandler";
 
 /** Zod schema for validating credit type strings against allowed constants. */
 export const CreditTypeSchema = z.enum(CreditTypeConstant, ZodEnumParamHandler({

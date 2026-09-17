@@ -9,9 +9,7 @@ import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {HookFormMultiSelect} from "@/views/shared/_comp/form-select/HookFormMultiSelect.tsx";
 import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
-import {generateArraySchema} from "@noovies-tickets/common";
-
-import {Theatre, TheatreSchema} from "@/domains/theatres/_schema/theatre";
+import {generateArraySchema, Theatre, TheatreSchema} from "@noovies-tickets/common";
 import {TheatreQueryOptions} from "@/domains/theatres/_feat/handle-query-options/options/TheatreQueryOptionsSchema.ts";
 import {useFetchTheatres} from "@/domains/theatres/_feat/crud-hooks/fetch/useFetchTheatres.ts";
 

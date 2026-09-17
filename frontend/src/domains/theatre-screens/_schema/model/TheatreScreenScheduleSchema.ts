@@ -4,8 +4,7 @@
 
 import {z} from "zod";
 import {ShowingWithMovieSchema} from "@/domains/showings/_schema/showing";
-import {generateArraySchema} from "@noovies-tickets/common";
-import {TheatreScreenSchema} from "@/domains/theatre-screens/_schema/model/TheatreScreenSchema.ts";
+import {generateArraySchema, TheatreScreenSchema} from "@noovies-tickets/common";
 
 /** Zod schema representing a Theatre Screen that includes both its parent Theatre and its scheduled Showings. */
 export const TheatreScreenScheduleSchema = TheatreScreenSchema.extend({

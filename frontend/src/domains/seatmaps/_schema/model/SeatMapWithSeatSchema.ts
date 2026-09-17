@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {SeatMapSchema} from "@/domains/seatmaps/_schema/model/SeatMapSchema.ts";
-import {SeatingStructureSchema} from "@/domains/seats/_schema/model/SeatSchema.ts";
+import {SeatingStructureSchema} from "@noovies-tickets/common";
 
 /** Zod schema for a SeatMap with a populated seat layout. */
 export const SeatMapWithSeatSchema = SeatMapSchema.extend({

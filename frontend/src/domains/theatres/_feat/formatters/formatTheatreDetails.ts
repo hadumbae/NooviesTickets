@@ -2,7 +2,7 @@
  * @fileoverview Formats theatre details into display-ready structures.
  */
 
-import {ISO3166Alpha2CountryConstant} from "@/shared/_const";
+import {ISO3166Alpha2CountryLabelMap} from "@noovies-tickets/common";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
 import {buildString} from "@/shared/_feat/formatters/buildString.ts";
 
@@ -13,7 +13,7 @@ export function formatTheatreDetails(theatre: TheatreDetails) {
     const {location, seatCount, screenCount, futureShowingCount} = theatre;
     const {street, city, state, country} = location;
 
-    const countryLabel = ISO3166Alpha2CountryConstant[country];
+    const countryLabel = ISO3166Alpha2CountryLabelMap[country];
 
     const address = buildString(
         [street, city, state, countryLabel],

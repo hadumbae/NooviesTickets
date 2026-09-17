@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {TheatreScreenSchema} from "@/domains/theatre-screens/_schema/model/TheatreScreenSchema";
+import {TheatreScreenSchema} from "@noovies-tickets/common";
 
 /** Schema for validating key metadata fields of a theatre screen summary. */
 export const TheatreScreenSummarySchema = TheatreScreenSchema.pick({

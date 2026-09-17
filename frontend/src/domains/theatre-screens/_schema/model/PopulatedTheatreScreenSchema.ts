@@ -2,9 +2,8 @@
  * @fileoverview Zod schema and TypeScript type for a populated theatre screen.
  */
 
-import {TheatreScreenSchema} from "./TheatreScreenSchema.ts";
 import {z} from "zod";
-import {TheatreSchema} from "@/domains/theatres/_schema/theatre";
+import {TheatreScreenSchema, TheatreSchema} from "@noovies-tickets/common";
 
 
 /** Zod schema for a Theatre Screen that includes the full Theatre object instead of just an ID. */

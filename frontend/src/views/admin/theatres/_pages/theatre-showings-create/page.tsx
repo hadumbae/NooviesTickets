@@ -14,7 +14,7 @@ import {
 import {useFetchTheatreBySlug} from "@/domains/theatres/_feat/crud-hooks";
 import {QueryDataLoader} from "@/views/shared/_feat";
 
-import {Theatre, TheatreSchema} from "@/domains/theatres/_schema/theatre";
+import {Theatre, TheatreSchema} from "@noovies-tickets/common";
 import {TheatreHttpStatusOverrideText} from "@/domains/theatres/_const/TheatreHttpStatusOverrideText.ts";
 import {TheatreShowingCreatePageContent} from "@/views/admin/theatres/_pages/theatre-showings-create/content.tsx";
 

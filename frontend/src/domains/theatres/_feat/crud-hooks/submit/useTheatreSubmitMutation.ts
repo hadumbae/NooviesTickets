@@ -6,7 +6,7 @@ import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-qu
 import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {create, update} from "@/domains/theatres/_feat/crud";
 import {TheatreFormData} from "@/domains/theatres/_feat/submit-data/schema.ts";
-import {Theatre, TheatreSchema} from "@/domains/theatres/_schema/theatre/TheatreSchema.ts";
+import {Theatre, TheatreSchema} from "@noovies-tickets/common";
 import {TheatreCRUDMutationKeys, TheatreCRUDQueryKeys} from "@/domains/theatres/_feat/crud-hooks/keys";
 
 /**

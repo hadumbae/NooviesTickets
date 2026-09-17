@@ -2,9 +2,8 @@
  * @fileoverview Extended schemas for movie credits with populated relation details.
  */
 import {z} from "zod";
-import {MovieCreditCastSchema, MovieCreditCrewSchema} from "@/domains/movie-credits/_schemas/model/MovieCreditSchema.ts";
 import {MovieWithGenresSchema} from "@/domains/movies/_schema/movie/MovieWithGenresSchema.ts";
-import {PersonSchema, RoleTypeSchema} from "@noovies-tickets/common";
+import {MovieCreditCastSchema, MovieCreditCrewSchema, PersonSchema, RoleTypeSchema} from "@noovies-tickets/common";
 
 /**
  * Zod shape for populated movie credit relations.

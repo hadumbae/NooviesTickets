@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, PersonSchema, RoleTypeSchema} from "@noovies-tickets/common";
-import {MovieCreditCastSchema, MovieCreditCrewSchema} from "@/domains/movie-credits/_schemas/model/MovieCreditSchema.ts";
+import {IDStringSchema, MovieCreditCastSchema, MovieCreditCrewSchema, PersonSchema, RoleTypeSchema} from "@noovies-tickets/common";
 
 /**
  * Relation fields populated while preserving movie as an identifier.

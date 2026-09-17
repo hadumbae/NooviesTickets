@@ -3,13 +3,17 @@
  */
 
 import {z} from "zod";
-import {BooleanValueSchema, IDStringSchema, preprocessEmptyToUndefined, NonNegativeNumberSchema, PositiveNumberSchema, SlugStringSchema} from "@noovies-tickets/common";
-import {SeatLabelSchema, SeatRowSchema} from "@/domains/seats/_schema/fields";
-import {SeatLayoutTypeSchema, SeatTypeSchema} from "@noovies-tickets/common";
+import {SeatLabelSchema, SeatRowSchema, SeatLayoutTypeSchema, SeatTypeSchema} from "../fields";
+import {BaseModelDTOSchema} from "../../../schema/model/BaseModelDTOSchema";
+import {IDStringSchema} from "../../../schema/additional-strings/id-strings/IDStringSchema";
+import {SlugStringSchema} from "../../../schema/additional-strings/slug-strings/SlugString";
+import {PositiveNumberSchema} from "../../../schema/numbers/PositiveNumberSchema";
+import {NonNegativeNumberSchema} from "../../../schema/numbers/NonNegativeNumberSchema";
+import {BooleanValueSchema} from "../../../schema/booleans/BooleanValueSchema";
+import {preprocessEmptyToUndefined} from "../../../preprocessors/preprocessEmptyToUndefined";
 
 /** Base layout entry shared across all structure types. */
-export const SeatBaseSchema = z.object({
-    _id: IDStringSchema.readonly(),
+export const SeatBaseSchema = BaseModelDTOSchema.extend({
     row: SeatRowSchema,
     x: PositiveNumberSchema,
     y: PositiveNumberSchema,

@@ -2,7 +2,8 @@
  * @fileoverview Utility for transforming complex movie credit objects into a simplified flat structure.
  */
 
-import {MovieCredit, MovieCreditDetails, MovieCreditSchema} from "@/domains/movie-credits/_schemas";
+import {MovieCredit, MovieCreditSchema} from "@noovies-tickets/common";
+import {MovieCreditDetails} from "@/domains/movie-credits/_schemas";
 import {ParseError} from "@/shared/_err/ParseError.ts";
 
 /** Converts nested movie credit details into a flat MovieCredit object and validates the result. */

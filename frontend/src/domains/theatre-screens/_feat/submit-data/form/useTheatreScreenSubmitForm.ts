@@ -6,7 +6,7 @@ import {useForm, UseFormReturn} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 
 import {FormValuesConfig} from "@/shared/_feat/submit-data";
-import {TheatreScreen} from "@/domains/theatre-screens/_schema/model/TheatreScreenSchema.ts";
+import {TheatreScreen} from "@noovies-tickets/common";
 import {
     useTheatreScreenSubmitFormDefaultValues
 } from "@/domains/theatre-screens/_feat/submit-data/form/useTheatreScreenSubmitFormDefaultValues.ts";

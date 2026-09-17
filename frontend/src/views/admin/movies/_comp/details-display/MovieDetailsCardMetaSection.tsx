@@ -5,7 +5,8 @@
 import {ReactElement} from "react";
 import {Separator} from "@/views/shared/_comp/ui";
 import {formatMovieRuntime} from "@/domains/movies/_feat/formatters/formatMovieRuntime.ts";
-import {ISO3166Alpha2CountryConstant, ISO6391LanguageLabels} from "@/shared/_const";
+import {ISO3166Alpha2CountryLabelMap} from "@noovies-tickets/common";
+import {ISO6391LanguageLabels} from "@/shared/_const";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {LabelContentList, NoneSpan} from "@/views/shared/_comp";
 import {BadgeList} from "@/views/shared/_comp/badges";
@@ -21,7 +22,7 @@ export function MovieDetailsCardMetaSection(
     {movie: {title, originalTitle, originalLanguage, country, runtime, genres, bannerImage}}: SectionProps
 ): ReactElement {
     const movieDuration = formatMovieRuntime(runtime);
-    const countryName = ISO3166Alpha2CountryConstant[country] ?? country?.toUpperCase() ?? "Unknown";
+    const countryName = ISO3166Alpha2CountryLabelMap[country] ?? country?.toUpperCase() ?? "Unknown";
     const originalLanguageName = ISO6391LanguageLabels[originalLanguage] ?? originalLanguage?.toUpperCase() ?? "Unknown";
 
     const genreBadges = genres.length > 0

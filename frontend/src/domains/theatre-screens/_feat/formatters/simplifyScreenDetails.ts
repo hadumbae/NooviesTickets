@@ -4,11 +4,11 @@
 
 
 import {ParseError} from "@/shared/_err/ParseError.ts";
+import {TheatreScreen, TheatreScreenSchema} from "@noovies-tickets/common";
 import {
     PopulatedTheatreScreen,
-    TheatreScreen,
     TheatreScreenDetails,
-    TheatreScreenSchema, TheatreScreenWithVirtuals
+    TheatreScreenWithVirtuals
 } from "@/domains/theatre-screens/_schema/model";
 
 /**

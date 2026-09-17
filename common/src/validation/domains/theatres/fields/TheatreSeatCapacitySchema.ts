@@ -3,7 +3,8 @@
  */
 
 import {z} from "zod";
-import {NonNegativeNumberSchema, preprocessToNumber} from "@noovies-tickets/common";
+import {NonNegativeNumberSchema} from "../../../schema/numbers/NonNegativeNumberSchema";
+import {preprocessToNumber} from "../../../preprocessors/preprocessToNumber";
 
 /** Zod schema for validating and coercing theatre seat capacity values. */
 export const TheatreSeatCapacitySchema = preprocessToNumber(

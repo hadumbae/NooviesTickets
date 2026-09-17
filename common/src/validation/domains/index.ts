@@ -6,6 +6,7 @@ export * from "./persons";
 export * from "./reservations";
 export * from "./roletypes";
 export * from "./theatre-screens";
+export * from "./theatres";
 export * from "./seatmaps";
 export * from "./seats";
 export * from "./showings";
