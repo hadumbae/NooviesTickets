@@ -5,6 +5,7 @@ export * from "./date-time";
 export * from "./enums";
 export * from "./images";
 export * from "./location";
+export * from "./model";
 export * from "./mongoose";
 export * from "./pagination";
 export * from "./strings";
