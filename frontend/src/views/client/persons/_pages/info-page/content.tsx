@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {PageFlexWrapper} from "@/views/shared/_comp";
-import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
+import {Person} from "@noovies-tickets/common";
 import {organisePersonFilmography, PersonCreditRoleGroup} from "@/domains/movie-credits";
 import {
     PersonInfoCastSection

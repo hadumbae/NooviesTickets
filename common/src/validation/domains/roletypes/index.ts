@@ -1,5 +1,2 @@
-export * from "./RoleTypeDepartmentConstant";
-export * from "./RoleTypeDepartmentSchema";
-export * from "./RoleTypeCastCategoryConstant";
-export * from "./RoleTypeCrewCategoryConstant";
-export * from "./RoleTypeCategorySchema";
+export * from "./fields";
+export * from "./models";

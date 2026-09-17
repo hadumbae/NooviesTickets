@@ -6,7 +6,7 @@ import {ReactElement} from "react";
 import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {BrowseMovieOverviewCard} from "@/views/client/movies/_comp";
 import {PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
-import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
+import {Genre} from "@noovies-tickets/common";
 import {MovieWithGenres} from "@/domains/movies/_schema/movie/MovieWithGenresSchema.ts";
 import {GenreInfoBanner} from "@/views/client/genres/_comp";
 

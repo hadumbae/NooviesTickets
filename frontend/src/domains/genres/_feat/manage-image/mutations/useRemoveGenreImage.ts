@@ -10,9 +10,8 @@ import {
 } from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
 import {patchRemoveGenreImage} from "@/domains/genres/_feat/manage-image/repository";
 import {ManageGenreImageMutationKeys} from "@/domains/genres/_feat/manage-image/mutations/mutationKeys.ts";
-import {type Genre, GenreSchema} from "@/domains/genres/_schema";
 import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {type Genre, GenreSchema, ObjectIdString} from "@noovies-tickets/common";
 
 /** Payload for the remove genre image mutation. */
 type RemovePayload = {

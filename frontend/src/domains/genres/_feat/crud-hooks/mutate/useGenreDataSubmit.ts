@@ -4,7 +4,7 @@
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
 import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
-import {Genre, GenreSchema} from "@/domains/genres/_schema";
+import {Genre, GenreSchema} from "@noovies-tickets/common";
 import {create, update} from "@/domains/genres/_feat/crud";
 import {GenreFormData} from "@/domains/genres/_feat/submit-form/schema/GenreFormSchema.ts";
 import {GenreCRUDMutationKeys, GenreCRUDQueryKeys} from "@/domains/genres/_feat/crud-hooks/keys";

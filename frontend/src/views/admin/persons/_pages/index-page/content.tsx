@@ -10,7 +10,7 @@ import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/shared/_co
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {PersonIndexCard} from "@/views/admin/persons/_comp";
 import {PersonIndexQueryOptionsFormSection, PersonSubmitForm, PersonSubmitFormPanel} from "@/views/admin/persons/_feat";
-import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
+import {Person} from "@noovies-tickets/common";
 import {useNavigateToPerson} from "@/domains/persons/_feat/navigation/useNavigateToPerson.ts";
 import {Plus} from "lucide-react";
 

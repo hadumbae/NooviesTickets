@@ -3,8 +3,7 @@
  */
 
 import {z} from "zod";
-import {RoleTypeNameSchema} from "@/domains/role-types";
-import {PersonSchema} from "@/domains/persons/_schema";
+import {PersonSchema, RoleTypeNameSchema} from "@noovies-tickets/common";
 
 /** Zod schema for a person summary including their associated role names. */
 export const PersonSummaryInfoSchema = PersonSchema.extend({

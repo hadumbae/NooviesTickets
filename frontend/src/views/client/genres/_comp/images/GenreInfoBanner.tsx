@@ -8,7 +8,7 @@ import {Badge} from "@/views/shared/_comp/ui";
 import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
 import {SROnly, SubsectionSubtitle, SubsectionTitle} from "@/views/shared/_comp";
 
-import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
+import {Genre} from "@noovies-tickets/common";
 import {GenreImageBanner} from "@/views/admin/genres/_comp";
 
 /** Props for the GenreInfoBanner component. */

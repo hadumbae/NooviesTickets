@@ -3,15 +3,18 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {RoleTypeDepartmentSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
+import {
+    NonEmptyStringSchema,
+    RoleTypeDepartmentSchema,
+    NonNegativeNumberSchema,
+    RoleTypeSchema,
+    generateArraySchema,
+} from "@noovies-tickets/common";
 import {
     PersonCastCredit,
     PersonCreditSchema,
     PersonCrewCredit
 } from "@/domains/movie-credits/_feat/person-credit/schema/PersonCreditSchema.ts";
-import {RoleTypeSchema} from "@/domains/role-types/_schema/model/RoleTypeSchema.ts";
-import {generateArraySchema} from "@noovies-tickets/common";
 
 /**
  * Schema representing a collection of movie credits associated with a single role name.

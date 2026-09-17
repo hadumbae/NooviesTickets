@@ -3,7 +3,7 @@
  */
 
 import {AnyValues} from "@/shared/_types";
-import {GenreQueryOptions} from "@/domains/genres/_schema";
+import {GenreQueryOptions} from "@noovies-tickets/common";
 
 /** Type representing the initial values for the genre query option form. */
 export type GenreQueryOptionsFormStarter = AnyValues<GenreQueryOptions>;

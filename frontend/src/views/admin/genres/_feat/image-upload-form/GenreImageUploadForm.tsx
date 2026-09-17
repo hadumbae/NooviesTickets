@@ -4,10 +4,9 @@
 
 import {ReactElement, ReactNode, useId} from "react";
 import {Form} from "@/views/shared/_comp/ui/form.tsx";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {Genre, ObjectIdString} from "@noovies-tickets/common";
 import {MutationFormResetConfig, MutationResponseConfig} from "@/shared/_feat/submit-data";
 import {BaseFormContextProvider} from "@/shared/_feat/generic-form-context";
-import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {
     GenreImageUploadFormData,
     GenreImageUploadFormValues,

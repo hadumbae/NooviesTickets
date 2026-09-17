@@ -7,7 +7,7 @@ import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {PersonCRUDMutationKeys, PersonCRUDQueryKeys} from "@/domains/persons/_feat/crud-hooks/keys";
 import {create, update} from "@/domains/persons/_feat/crud";
 import {PersonFormData} from "@/domains/persons/_feat/submit-form";
-import {Person, PersonSchema} from "@/domains/persons/_schema";
+import {Person, PersonSchema} from "@noovies-tickets/common";
 import {PersonAdminViewQueryKeys} from "@/domains/persons/_feat/admin-view-data/fetch/querykeys.ts";
 
 /**

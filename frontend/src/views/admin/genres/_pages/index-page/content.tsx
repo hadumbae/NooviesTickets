@@ -10,7 +10,7 @@ import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayC
 import {GenreIndexCard} from "@/views/admin/genres/_comp";
 import {Button} from "@/views/shared/_comp/ui";
 import {Plus} from "lucide-react";
-import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
+import {Genre} from "@noovies-tickets/common";
 import {useNavigateToGenreDetails} from "@/domains/genres/_feat/navigation/useNavigateToGenreDetails.ts";
 import {GenreSubmitForm, GenreSubmitFormPanel} from "@/views/admin/genres/_feat";
 import {

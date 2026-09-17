@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {RoleTypeDepartmentConstant} from "./RoleTypeDepartmentConstant";
-import {ZodEnumParamHandler} from "../../schema/enums/handler/ZodEnumParamHandler";
+import {ZodEnumParamHandler} from "../../../schema/enums/handler/ZodEnumParamHandler";
 
 /** Zod schema for validating role type department strings. */
 export const RoleTypeDepartmentSchema = z.enum(RoleTypeDepartmentConstant, ZodEnumParamHandler({

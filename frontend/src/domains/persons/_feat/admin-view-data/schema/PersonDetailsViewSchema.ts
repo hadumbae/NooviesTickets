@@ -11,7 +11,7 @@ import {
     PersonCreditStatsSchema,
     PersonFilmographySchema
 } from "@/domains/movie-credits/_feat/person-credit";
-import {PersonSchema} from "@/domains/persons/_schema/person/PersonSchema";
+import {PersonSchema} from "@noovies-tickets/common";
 
 /**
  * Schema representing the comprehensive data required for a Person's detailed view.

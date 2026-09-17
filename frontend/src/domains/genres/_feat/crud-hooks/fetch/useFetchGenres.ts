@@ -12,7 +12,7 @@ import {GenreCRUDQueryKeys} from "@/domains/genres/_feat/crud-hooks/keys/GenreCR
 import {ZodType, ZodTypeDef} from "zod";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {query} from "@/domains/genres/_feat/crud";
-import {GenreQueryOptions} from "@/domains/genres/_schema";
+import {GenreQueryOptions} from "@noovies-tickets/common";
 import {RequestPaginationOptions} from "@/shared/_types/request/RequestPaginationOptions";
 
 /** Parameters for the useFetchGenres hook. */

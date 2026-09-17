@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {cn} from "@/shared/_feat";
-import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
+import {Person} from "@noovies-tickets/common";
 import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
 import {ISO3166Alpha2ShortCountryConstant} from "@/shared/_const";
 import {PersonProfileAvatar} from "@/views/admin/persons/_comp/person-details/PersonProfileAvatar.tsx";

@@ -2,6 +2,7 @@ export * from "./genres";
 export * from "./movie-credits";
 export * from "./movie-reviews";
 export * from "./movies";
+export * from "./persons";
 export * from "./reservations";
 export * from "./roletypes";
 export * from "./theatre-screens";

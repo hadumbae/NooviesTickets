@@ -5,20 +5,29 @@
 
 import {MovieReleaseDateRefinement} from "@/domains/movies/_schema/movie/MovieSchemaUtilities.ts";
 import {z} from "zod";
-import {BooleanValueSchema, IDStringSchema, preprocessEmptyToUndefined, DateTimeInstanceSchema, UTCDayOnlyDateTimeSchema, PositiveNumberSchema, ISO3166Alpha2CountryCodeSchema, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {CloudinaryImageSchema} from "@noovies-tickets/common";
+import {
+    BaseModelDTOSchema,
+    BooleanValueSchema,
+    CloudinaryImageSchema,
+    DateTimeInstanceSchema,
+    ISO3166Alpha2CountryCodeSchema,
+    ISO6391LanguageCodeSchema,
+    NonEmptyStringSchema,
+    PositiveNumberSchema,
+    preprocessEmptyToUndefined,
+    UTCDayOnlyDateTimeSchema
+} from "@noovies-tickets/common";
 
 import {
     MovieGenreIDsSchema,
     MovieSynopsisSchema,
     MovieTaglineSchema,
-    MovieTitleSchema, MovieTrailerURLSchema
+    MovieTitleSchema,
+    MovieTrailerURLSchema
 } from "@/domains/movies/_schema/fields";
 
 /** Core Zod schema defining the base structure and constraints of a Movie. */
-export const MovieBaseSchema = z.object({
-    _id: IDStringSchema.readonly(),
+export const MovieBaseSchema = BaseModelDTOSchema.extend({
     slug: NonEmptyStringSchema.readonly(),
 
     title: MovieTitleSchema,

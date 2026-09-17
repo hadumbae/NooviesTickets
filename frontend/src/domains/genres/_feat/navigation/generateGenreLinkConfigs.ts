@@ -4,7 +4,7 @@
  */
 
 import {LinkItemConfig} from "@/shared/_types/navigation/LinkItemConfig.ts";
-import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
+import {Genre} from "@noovies-tickets/common";
 
 /**
  * Maps a collection of genre entities to standardized {@link LinkItemConfig} objects.

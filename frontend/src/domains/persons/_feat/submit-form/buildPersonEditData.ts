@@ -3,7 +3,7 @@
  */
 
 import {AnyValues} from "@/shared/_types";
-import {Person} from "@/domains/persons/_schema/person/PersonSchema.ts";
+import {Person} from "@noovies-tickets/common";
 import {PersonFormData} from "@/domains/persons/_feat/submit-form/PersonFormSchema.ts";
 
 /** Type representing editable form field values derived from PersonFormData. */

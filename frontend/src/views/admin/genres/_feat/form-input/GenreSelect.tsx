@@ -6,13 +6,9 @@ import {ReactElement} from "react";
 import {FieldValues} from "react-hook-form";
 import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
 import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
-import {
-    filterNullishAttributes
-} from "@noovies-tickets/common";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
-import {generateArraySchema} from "@noovies-tickets/common";
-import {Genre, GenreQueryOptions, GenreSchema} from "@/domains/genres/_schema";
+import {filterNullishAttributes, generateArraySchema, Genre, GenreQueryOptions, GenreSchema} from "@noovies-tickets/common";
 import {useFetchGenres} from "@/domains/genres/_feat/crud-hooks/fetch/useFetchGenres.ts";
 
 /** Props for the GenreMultiSelect component. */

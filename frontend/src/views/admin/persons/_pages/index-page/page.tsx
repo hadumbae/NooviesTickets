@@ -10,9 +10,8 @@ import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-par
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {useFetchPaginatedPersons} from "@/domains/persons/_feat/crud-hooks";
 import {PersonIndexPageContent} from "@/views/admin/persons/_pages/index-page/content.tsx";
-import {generatePaginationSchema} from "@noovies-tickets/common";
+import {generatePaginationSchema, Person, PersonSchema} from "@noovies-tickets/common";
 import {PaginatedItems} from "@/shared/_types";
-import {Person, PersonSchema} from "@/domains/persons/_schema/person";
 import {
     usePersonIndexQueryOptionsContext
 } from "@/domains/persons/_feat/validate-query-options/person-index/PersonIndexQueryOptionsContext.ts";

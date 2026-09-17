@@ -3,7 +3,7 @@
  */
 
 import {Card, CardContent, CardHeader} from "@/views/shared/_comp/ui/card.tsx";
-import {Genre} from "@/domains/genres/_schema";
+import {Genre} from "@noovies-tickets/common";
 import {GenreImageBanner} from "@/views/admin/genres/_comp";
 import {ReactElement} from "react";
 import {Link} from "react-router-dom";

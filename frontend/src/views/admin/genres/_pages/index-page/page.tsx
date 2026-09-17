@@ -10,8 +10,7 @@ import {useFetchPaginatedGenres} from "@/domains/genres/_feat/crud-hooks";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {GenreIndexPageContent} from "@/views/admin/genres/_pages/index-page/content.tsx";
 import {useParsedPaginationValue} from "@/shared/_feat/fetch-pagination-search-params";
-import {Genre, GenreSchema} from "@/domains/genres/_schema";
-import {generatePaginationSchema} from "@noovies-tickets/common";
+import {Genre, GenreSchema, generatePaginationSchema} from "@noovies-tickets/common";
 import {PaginatedItems} from "@/shared/_types";
 import {
     useGenreIndexQueryOptionsContext

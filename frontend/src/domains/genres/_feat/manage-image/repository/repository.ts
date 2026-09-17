@@ -3,7 +3,7 @@
  */
 
 import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
-import {Genre} from "@/domains/genres/_schema";
+import {Genre} from "@noovies-tickets/common";
 import {
     RemoveGenreImageConfig,
     UpdateGenreImageConfig

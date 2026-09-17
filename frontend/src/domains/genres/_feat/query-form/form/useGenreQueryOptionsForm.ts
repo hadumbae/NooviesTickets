@@ -6,7 +6,7 @@
 import {useForm, UseFormReturn} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {GenreQueryOptionsFormStarter} from "@/domains/genres/_feat/query-form/form/schema.ts";
-import {GenreQueryOptionsSchema} from "@/domains/genres/_schema";
+import {GenreQueryOptionsSchema} from "@noovies-tickets/common";
 
 /** Parameters for the useGenreQueryOptionsForm hook. */
 type QueryOptionsFormParams = {

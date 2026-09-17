@@ -6,7 +6,7 @@ import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-qu
 import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 import {create, update,} from "@/domains/role-types/_feat/crud";
 import {RoleTypeFormData} from "@/domains/role-types/_feat/submit-data";
-import {RoleType, RoleTypeSchema} from "@/domains/role-types/_schema";
+import {RoleType, RoleTypeSchema} from "@noovies-tickets/common";
 import {RoleTypeCRUDMutationKeys, RoleTypeCRUDQueryKeys} from "@/domains/role-types/_feat/crud-hooks/keys";
 
 /** Hook that manages the submission lifecycle for Role Type creation and updates. */

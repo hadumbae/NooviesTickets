@@ -2,9 +2,8 @@
  * @fileoverview Zod schema and type definitions for genre summary projections.
  */
 
-import {GenreSchema} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {z} from "zod";
-import {generateArraySchema} from "@noovies-tickets/common";
+import {GenreSchema, generateArraySchema} from "@noovies-tickets/common";
 import {MovieSummarySchema} from "@/domains/movies/_schema/movie/MovieSummarySchema.ts";
 
 /** Zod schema for validating genre summary attributes. */

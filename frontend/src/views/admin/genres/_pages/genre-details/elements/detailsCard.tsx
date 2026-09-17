@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from 'react';
-import {Genre} from "@/domains/genres/_schema";
+import {Genre} from "@noovies-tickets/common";
 import {LabelContent} from "@/views/shared/_comp";
 import {Card, CardContent, Separator} from "@/views/shared/_comp/ui";
 import {TextQuote} from "@/views/shared/_comp/text-display/text-blocks/TextQuote.tsx";

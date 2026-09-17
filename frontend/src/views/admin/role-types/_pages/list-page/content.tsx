@@ -6,7 +6,7 @@ import {ReactElement, useState} from "react";
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {PageHeader, SROnly} from "@/views/shared/_comp";
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
-import {RoleType} from "@/domains/role-types/_schema/model/RoleTypeSchema.ts";
+import {RoleType} from "@noovies-tickets/common";
 import {RoleTypeDetailsSheet, RoleTypeSubmitForm, RoleTypeSubmitFormPanel} from "@/views/admin/role-types/_feat";
 import {Button} from "@/views/shared/_comp/ui";
 import {Plus} from "lucide-react";

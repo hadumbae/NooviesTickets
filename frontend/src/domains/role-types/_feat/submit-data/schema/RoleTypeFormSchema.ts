@@ -4,9 +4,16 @@
  */
 
 import {z} from "zod";
-import {RoleTypeDepartmentSchema, RoleTypeCastCategorySchema, RoleTypeCrewCategorySchema, preprocessEmptyToUndefined, IDStringSchema} from "@noovies-tickets/common";
+import {
+    RoleTypeDepartmentSchema,
+    RoleTypeCastCategorySchema,
+    RoleTypeCrewCategorySchema,
+    preprocessEmptyToUndefined,
+    IDStringSchema,
+    RoleTypeDescriptionSchema,
+    RoleTypeNameSchema,
+} from "@noovies-tickets/common";
 import {AnyValues} from "@/shared/_types";
-import {RoleTypeDescriptionSchema, RoleTypeNameSchema} from "@/domains/role-types/_schema";
 
 /** Base validation schema containing shared fields for all role type forms. */
 const RoleTypeFormBaseSchema = z.object({

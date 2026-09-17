@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {RoleType} from "@/domains/role-types/_schema/model/RoleTypeSchema.ts";
+import {RoleType} from "@noovies-tickets/common";
 import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {X} from "lucide-react";

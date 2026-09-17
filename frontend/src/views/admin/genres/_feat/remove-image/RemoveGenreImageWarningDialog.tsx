@@ -4,9 +4,8 @@
 
 import {ReactElement, ReactNode} from "react";
 import {MutationResponseConfig} from "@/shared/_feat/submit-data";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {Genre, ObjectIdString} from "@noovies-tickets/common";
 import {UIOpenStateProps} from "@/shared/_types";
-import {Genre} from "@/domains/genres/_schema/genre/GenreSchema.ts";
 import {useRemoveGenreImage} from "@/domains/genres/_feat/manage-image/mutations/useRemoveGenreImage.ts";
 import {
     AlertDialog,

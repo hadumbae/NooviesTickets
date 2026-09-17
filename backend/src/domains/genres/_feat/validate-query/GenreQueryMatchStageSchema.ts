@@ -3,11 +3,11 @@
  */
 
 import {z} from "zod";
-import {GenreQueryMatchFiltersSchema} from "@/domains/genres/_feat/validate-query/GenreQueryMatchFiltersSchema";
+import {GenreQueryFilterSchema} from "@noovies-tickets/common";
 import {normaliseQueryMatchValues} from "@/shared/_feat/pipeline-schema-transformers";
 
 /** Zod schema that transforms genre query match values into a Mongoose match pipeline stage. */
-export const GenreQueryMatchStageSchema = GenreQueryMatchFiltersSchema.transform(normaliseQueryMatchValues);
+export const GenreQueryMatchStageSchema = GenreQueryFilterSchema.transform(normaliseQueryMatchValues);
 
 /** Inferred type representing the validated and transformed Mongoose match stage for genres. */
 export type GenreQueryMatchStage = z.infer<typeof GenreQueryMatchStageSchema>;

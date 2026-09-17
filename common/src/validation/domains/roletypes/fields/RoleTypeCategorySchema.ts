@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {RoleTypeCastCategoryConstant} from "./RoleTypeCastCategoryConstant";
 import {RoleTypeCrewCategoryConstant} from "./RoleTypeCrewCategoryConstant";
-import {ZodEnumParamHandler} from "../../schema/enums/handler/ZodEnumParamHandler";
+import {ZodEnumParamHandler} from "../../../schema/enums/handler/ZodEnumParamHandler";
 
 /** Enum schema for cast role categories. */
 export const RoleTypeCastCategorySchema = z.enum(RoleTypeCastCategoryConstant, ZodEnumParamHandler({

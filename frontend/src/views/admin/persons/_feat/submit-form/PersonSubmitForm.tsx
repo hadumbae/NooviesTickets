@@ -5,7 +5,7 @@
 import {createForm} from "@/shared/_feat";
 import {PersonEditData, PersonFormData, PersonFormSchema, PersonFormValues,} from "@/domains/persons/_feat/submit-form";
 import {useSubmitPersonData} from "@/domains/persons/_feat/crud-hooks";
-import {Person} from "@/domains/persons/_schema";
+import {Person} from "@noovies-tickets/common";
 
 const {SubmitForm} = createForm<
     PersonFormValues,
