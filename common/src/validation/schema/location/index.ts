@@ -1,3 +1,4 @@
+export * from "./CoordinateValuesSchema";
 export * from "./StreetStringSchema";
 export * from "./CityStringSchema";
 export * from "./StateStringSchema";

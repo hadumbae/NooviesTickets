@@ -38,7 +38,10 @@ export function createSchemaTests<TType extends ZodTypeAny>(
         for (const {description: suiteDesc, tasks} of suites) {
             describe(suiteDesc, () => {
                 for (const {description: taskDesc, values: taskValues, success: taskSuccess, callback} of tasks) {
-                    it.each(taskValues)(taskDesc, (value) => {
+                    // Each value is wrapped in its own single-element array so vitest's it.each treats it as
+                    // one argument, even when the value is itself an array (e.g. a coordinate tuple) — otherwise
+                    // it.each spreads an array value into multiple callback arguments instead of passing it whole.
+                    it.each(taskValues.map((value) => [value]))(taskDesc, (value) => {
                         const results = schema.safeParse(value);
                         const { success } = results;
 

@@ -6,7 +6,7 @@ import {NonEmptyStringSchema} from "../strings";
 import {z} from "zod";
 
 /** Zod schema for validating a state or province name. */
-export const StateStringSchema = NonEmptyStringSchema.max(500, {message: "Must be 500 characters or less."});
+export const StateStringSchema = NonEmptyStringSchema.max(500, {message: "Max. 500 Chars"});
 
 /** TypeScript type for a valid state or province name. */
 export type StateString = z.infer<typeof StateStringSchema>;
