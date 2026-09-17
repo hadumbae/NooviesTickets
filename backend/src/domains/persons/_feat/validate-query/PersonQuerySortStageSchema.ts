@@ -3,11 +3,11 @@
  */
 
 import {z} from "zod";
+import {PersonQuerySortSchema} from "@noovies-tickets/common";
 import {normaliseQuerySortValues} from "@/shared/_feat/pipeline-schema-transformers";
-import {PersonQueryMatchSortsSchema} from "@/domains/persons/_feat/validate-query/PersonQueryMatchSortsSchema";
 
 /** Zod schema that transforms person query sort values into a Mongoose sort pipeline stage. */
-export const PersonQuerySortStageSchema = PersonQueryMatchSortsSchema.transform(normaliseQuerySortValues);
+export const PersonQuerySortStageSchema = PersonQuerySortSchema.transform(normaliseQuerySortValues);
 
 /** Inferred type representing the validated and transformed Mongoose sort stage for persons. */
 export type PersonQuerySortStage = z.infer<typeof PersonQuerySortStageSchema>;

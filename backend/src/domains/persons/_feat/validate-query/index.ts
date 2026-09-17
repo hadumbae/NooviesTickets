@@ -1,15 +1,15 @@
 import {
-    type PersonQueryMatchSorts,
-    PersonQueryMatchSortsSchema
-} from "@/domains/persons/_feat/validate-query/PersonQueryMatchSortsSchema";
+    type PersonQuerySorts,
+    PersonQuerySortSchema
+} from "@noovies-tickets/common";
 import {
     type PersonRequestQuery,
     PersonRequestQuerySchema
 } from "@/domains/persons/_feat/validate-query/PersonRequestQuerySchema";
 import {
-    type PersonQueryMatchFilters,
-    PersonQueryMatchFiltersSchema
-} from "@/domains/persons/_feat/validate-query/PersonQueryMatchFiltersSchema";
+    type PersonRequestQueryFilters,
+    PersonRequestQueryFiltersSchema
+} from "@/domains/persons/_feat/validate-query/PersonRequestQueryFiltersSchema";
 import {
     type PersonQueryMatchStage,
     PersonQueryMatchStageSchema
@@ -20,15 +20,15 @@ import {
 } from "@/domains/persons/_feat/validate-query/PersonQuerySortStageSchema";
 
 export {
-    PersonQueryMatchSortsSchema,
+    PersonQuerySortSchema,
     PersonRequestQuerySchema,
-    PersonQueryMatchFiltersSchema,
+    PersonRequestQueryFiltersSchema,
 }
 
 export type {
     PersonRequestQuery,
-    PersonQueryMatchSorts,
-    PersonQueryMatchFilters,
+    PersonQuerySorts,
+    PersonRequestQueryFilters,
 }
 
 export {
@@ -40,4 +40,3 @@ export type {
     PersonQueryMatchStage,
     PersonQuerySortStage,
 }
-

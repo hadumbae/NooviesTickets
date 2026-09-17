@@ -1,12 +1,11 @@
 import {
     PersonQueryFilters,
-    PersonQueryFilterSchema
-} from "@/domains/persons/_schema/query-options/PersonQueryFilterSchema.ts";
-import {PersonQuerySorts, PersonQuerySortSchema} from "@/domains/persons/_schema/query-options/PersonQuerySortSchema.ts";
-import {
+    PersonQueryFilterSchema,
+    PersonQuerySorts,
+    PersonQuerySortSchema,
     PersonQueryOptions,
     PersonQueryOptionsSchema
-} from "@/domains/persons/_schema/query-options/PersonQueryOptionsSchema.ts";
+} from "@noovies-tickets/common";
 
 export {
     PersonQueryFilterSchema,

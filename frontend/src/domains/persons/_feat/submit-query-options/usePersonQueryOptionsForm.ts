@@ -21,7 +21,7 @@ export function usePersonQueryOptionsForm(
         dob: "",
         nationality: "",
         sortByName: "",
-        sortByDOB: "",
+        sortByDob: "",
         sortByNationality: "",
         ...presetValues
     };
