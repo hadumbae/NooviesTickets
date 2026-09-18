@@ -3,7 +3,12 @@
  */
 
 import { z } from "zod";
-import {IDStringSchema, NonEmptyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
+import {
+    IDStringSchema,
+    NonEmptyStringSchema, NonNegativeNumberSchema,
+    PositiveNumberSchema,
+    preprocessOptionalField, preprocessToNumber, SeatRowSchema
+} from "@noovies-tickets/common";
 import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
 import { SeatTypeSchema, SeatLayoutTypeSchema } from "@noovies-tickets/common";
 
@@ -12,13 +17,13 @@ import { SeatTypeSchema, SeatLayoutTypeSchema } from "@noovies-tickets/common";
  * Zod schema for Seat-specific query filters used to build database match conditions.
  */
 export const SeatQueryFiltersSchema = z.object({
-    _id: IDStringSchema.optional(),
-    row: NonEmptyStringSchema.optional(),
-    seatNumber: NonEmptyStringSchema.optional(),
-    seatType: SeatTypeSchema.optional(),
-    layoutType: SeatLayoutTypeSchema.optional(),
+    _id: preprocessOptionalField(IDStringSchema),
+    row: preprocessOptionalField(SeatRowSchema),
+    seatNumber: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
+    seatType: preprocessOptionalField(SeatTypeSchema),
+    layoutType: preprocessOptionalField(SeatLayoutTypeSchema),
     isAvailable: URLParamBooleanSchema,
-    priceMultiplier: PositiveNumberSchema.optional(),
+    priceMultiplier: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
     theatre: IDStringSchema.optional(),
     theatreSlug: NonEmptyStringSchema.optional(),
     screen: IDStringSchema.optional(),

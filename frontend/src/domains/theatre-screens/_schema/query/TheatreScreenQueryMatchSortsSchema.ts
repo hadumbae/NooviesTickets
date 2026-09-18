@@ -4,16 +4,16 @@
  */
 
 import {z} from "zod";
-import {MongooseSortOrderSchema} from "@noovies-tickets/common";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /**
  * Zod schema for validating theatre screen sort configurations.
  */
 export const TheatreScreenQueryMatchSortsSchema = z.object({
-    sortByName: MongooseSortOrderSchema.optional(),
-    sortByCapacity: MongooseSortOrderSchema.optional(),
-    sortByScreenType: MongooseSortOrderSchema.optional(),
-    sortByCreatedAt: MongooseSortOrderSchema.optional(),
+    sortByName: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByCapacity: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByScreenType: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByCreatedAt: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /**

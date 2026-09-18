@@ -5,15 +5,15 @@
  */
 
 import {z} from "zod";
-import {MongooseNumericSortOrderSchema} from "@noovies-tickets/common";
+import {MongooseNumericSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /**
  * Sort options for MovieCredit queries.
  */
 export const MovieCreditQueryMatchSortsSchema = z.object({
-    sortByCreditedAs: MongooseNumericSortOrderSchema.optional(),
-    sortByCharacterName: MongooseNumericSortOrderSchema.optional(),
-    sortByBillingOrder: MongooseNumericSortOrderSchema.optional(),
+    sortByCreditedAs: preprocessOptionalField(MongooseNumericSortOrderSchema),
+    sortByCharacterName: preprocessOptionalField(MongooseNumericSortOrderSchema),
+    sortByBillingOrder: preprocessOptionalField(MongooseNumericSortOrderSchema),
 });
 
 /**

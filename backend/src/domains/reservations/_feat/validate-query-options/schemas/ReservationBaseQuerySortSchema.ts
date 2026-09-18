@@ -3,17 +3,17 @@
  */
 
 import {z} from "zod";
-import {URLParamSortOrderSchema} from "@/shared/_feat/parse-query-string";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema for reservation query sorting options. */
 export const ReservationBaseQuerySortSchema = z.object({
-    sortByMovie: URLParamSortOrderSchema,
-    sortByStatus: URLParamSortOrderSchema,
-    sortByDateReserved: URLParamSortOrderSchema,
-    sortByDatePaid: URLParamSortOrderSchema,
-    sortByDateCancelled: URLParamSortOrderSchema,
-    sortByDateRefunded: URLParamSortOrderSchema,
-    sortByDateExpired: URLParamSortOrderSchema,
+    sortByMovie: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByStatus: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByDateReserved: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByDatePaid: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByDateCancelled: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByDateRefunded: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByDateExpired: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /** Sort options for reservation queries. */

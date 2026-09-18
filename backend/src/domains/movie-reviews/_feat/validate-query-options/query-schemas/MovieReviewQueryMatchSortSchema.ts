@@ -3,11 +3,11 @@
  */
 
 import {z} from "zod";
-import {URLParamSortOrderSchema} from "@/shared/_feat/parse-query-string";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema for validating movie review sort parameters. */
 export const MovieReviewQueryMatchSortSchema = z.object({
-    sortByRating: URLParamSortOrderSchema,
+    sortByRating: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /** Type definition for movie review match query sort options. */

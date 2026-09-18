@@ -4,28 +4,30 @@
  */
 
 import {z} from "zod";
+import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
+import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string/URLParamRegexPatternSchema";
 import {
     IANATimezoneSchema,
     ISO3166Alpha2CountryCodeSchema,
     NonNegativeNumberSchema,
+    PostalCodeSchema,
     preprocessOptionalField,
-    preprocessToNumber,
-    TrimmedStringSchema
+    preprocessToNumber
 } from "@noovies-tickets/common";
-import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
 
 /**
  * Zod schema defining the available match filters for Theatre queries.
  */
 export const TheatreQueryMatchFilterSchema = z.object({
+    _id: preprocessOptionalField(ObjectIdSchema),
     name: URLParamRegexPatternSchema,
     seatCapacity: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
     street: URLParamRegexPatternSchema,
     city: URLParamRegexPatternSchema,
     state: URLParamRegexPatternSchema,
-    country: ISO3166Alpha2CountryCodeSchema.optional(),
-    postalCode: preprocessOptionalField(TrimmedStringSchema),
-    timezone: IANATimezoneSchema.optional(),
+    country: preprocessOptionalField(ISO3166Alpha2CountryCodeSchema),
+    postalCode: preprocessOptionalField(PostalCodeSchema),
+    timezone: preprocessOptionalField(IANATimezoneSchema),
 });
 
 /**

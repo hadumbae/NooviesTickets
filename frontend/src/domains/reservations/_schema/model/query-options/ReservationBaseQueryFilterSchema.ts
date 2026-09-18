@@ -3,14 +3,18 @@
  */
 
 import {z} from "zod";
-import {StringValueSchema} from "@noovies-tickets/common";
-import {IDStringSchema, preprocessOptionalField, ReservationStatusSchema, ReservationTypeSchema} from "@noovies-tickets/common";
+import {
+    IDStringSchema,
+    preprocessOptionalField,
+    ReservationStatusSchema,
+    ReservationTypeSchema
+} from "@noovies-tickets/common";
 
 /** Zod schema for validating base reservation query filter parameters. */
 export const ReservationBaseQueryFilterSchema = z.object({
-    userID: preprocessOptionalField(IDStringSchema),
-    showingID: preprocessOptionalField(IDStringSchema),
-    uniqueCode: preprocessOptionalField(StringValueSchema),
+    movie: preprocessOptionalField(IDStringSchema),
+    user: preprocessOptionalField(IDStringSchema),
+    showing: preprocessOptionalField(IDStringSchema),
     status: preprocessOptionalField(ReservationStatusSchema),
     reservationType: preprocessOptionalField(ReservationTypeSchema),
 });

@@ -8,7 +8,7 @@ import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {
     BooleanValueSchema,
     NonNegativeNumberSchema,
-    PositiveNumberSchema,
+    PositiveNumberSchema, preprocessOptionalField,
     preprocessToBoolean,
     preprocessToNumber,
     SeatLayoutTypeSchema,
@@ -20,16 +20,20 @@ import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
  * Zod schema defining match-level filters for Seat queries.
  */
 export const SeatQueryMatchFiltersSchema = z.object({
-    _id: ObjectIdSchema.optional(),
+    _id: preprocessOptionalField(ObjectIdSchema),
     row: URLParamRegexPatternSchema,
     seatNumber: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
     seatLabel: URLParamRegexPatternSchema,
-    seatType: SeatTypeSchema.optional(),
-    layoutType: SeatLayoutTypeSchema.optional(),
+    seatType: preprocessOptionalField(SeatTypeSchema),
+    layoutType: preprocessOptionalField(SeatLayoutTypeSchema),
     isAvailable: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
-    theatre: ObjectIdSchema.optional(),
-    screen: ObjectIdSchema.optional(),
     priceMultiplier: preprocessToNumber(NonNegativeNumberSchema.optional()).optional(),
+    theatre: preprocessOptionalField(ObjectIdSchema),
+    theatreSlug: preprocessOptionalField(ObjectIdSchema),
+    screen: preprocessOptionalField(ObjectIdSchema),
+    screenSlug: preprocessOptionalField(ObjectIdSchema),
+    showing: preprocessOptionalField(ObjectIdSchema),
+    showingSlug: preprocessOptionalField(ObjectIdSchema),
 });
 
 /**

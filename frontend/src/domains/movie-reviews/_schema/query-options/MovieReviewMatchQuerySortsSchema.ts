@@ -4,13 +4,13 @@
  */
 
 import {z} from "zod";
-import {MongooseSortOrderSchema} from "@noovies-tickets/common";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /**
  * Sort criteria for movie review queries.
  */
 export const MovieReviewMatchQuerySortsSchema = z.object({
-    sortByRating: MongooseSortOrderSchema.optional(),
+    sortByRating: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /**

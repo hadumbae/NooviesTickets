@@ -4,14 +4,14 @@
  */
 
 import {z} from "zod";
-import {URLParamSortOrderSchema} from "@/shared/_feat/parse-query-string";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining sort criteria for SeatMap queries.
  */
 export const SeatMapQueryMatchSortSchema = z.object({
-    sortByPrice: URLParamSortOrderSchema,
-    sortByStatus: URLParamSortOrderSchema,
+    sortByPrice: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByStatus: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /**

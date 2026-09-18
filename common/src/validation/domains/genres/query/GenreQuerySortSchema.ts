@@ -3,12 +3,12 @@
  */
 
 import {z} from "zod";
-import {MongooseNumericSortOrderSchema} from "../../../schema/mongoose/MongooseNumericSortOrderSchema";
-import {preprocessEmptyToUndefined} from "../../../preprocessors/preprocessEmptyToUndefined";
+import {MongooseSortOrderSchema} from "../../../schema/mongoose/MongooseSortOrderSchema";
+import {preprocessOptionalField} from "../../../preprocessors/preprocessOptionalField";
 
 /** Zod schema for validating genre query sorting parameters. */
 export const GenreQuerySortSchema = z.object({
-    sortByName: preprocessEmptyToUndefined(MongooseNumericSortOrderSchema.optional()).optional(),
+    sortByName: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /** Sorting parameters for genre queries. */

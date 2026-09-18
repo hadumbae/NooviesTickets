@@ -4,19 +4,24 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {TheatreScreenTypeSchema} from "@noovies-tickets/common";
+import {
+    IDStringSchema,
+    PositiveNumberSchema,
+    preprocessOptionalField,
+    preprocessToNumber,
+    TheatreScreenNameSchema,
+    TheatreScreenTypeSchema
+} from "@noovies-tickets/common";
 
 /**
  * Zod schema for validating screen query filters.
  */
 export const TheatreScreenQueryMatchFiltersSchema = z.object({
-    _id: IDStringSchema.optional(),
-    name: NonEmptyStringSchema.optional(),
-    theatre: IDStringSchema.optional(),
-    capacity: NonNegativeNumberSchema.optional(),
-    screenType: TheatreScreenTypeSchema.optional(),
+    _id: preprocessOptionalField(IDStringSchema),
+    name: preprocessOptionalField(TheatreScreenNameSchema),
+    theatre: preprocessOptionalField(IDStringSchema),
+    capacity: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
+    screenType: preprocessOptionalField(TheatreScreenTypeSchema),
 });
 
 /**

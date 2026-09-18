@@ -5,33 +5,35 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema, PositiveNumberSchema, RoleTypeDepartmentSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
+import {
+    BooleanValueSchema,
+    IDStringSchema,
+    MovieCreditNameStringSchema,
+    PositiveNumberSchema,
+    preprocessOptionalField,
+    preprocessToBoolean,
+    RoleTypeDepartmentSchema
+} from "@noovies-tickets/common";
 
 /**
  * Match-level filters for MovieCredit queries.
  */
 export const MovieCreditQueryMatchFiltersSchema = z.object({
-    _id: IDStringSchema.optional(),
-    movie: IDStringSchema.optional(),
-    person: IDStringSchema.optional(),
-    roleType: IDStringSchema.optional(),
-    department: RoleTypeDepartmentSchema.optional(),
-    characterName: NonEmptyStringSchema.optional(),
-    billingOrder: PositiveNumberSchema.optional(),
-    uncredited: URLParamBooleanSchema,
-    voiceOnly: URLParamBooleanSchema,
-    cameo: URLParamBooleanSchema,
-    motionCapture: URLParamBooleanSchema,
-    isPrimary: URLParamBooleanSchema,
-    archiveFootage: URLParamBooleanSchema,
-    displayRoleName: NonEmptyStringSchema
-        .max(150, {message: "Must be 150 characters or less."})
-        .optional(),
-    creditedAs: NonEmptyStringSchema
-        .max(150, {message: "Must be 150 characters or less."})
-        .optional(),
+    _id: preprocessOptionalField(IDStringSchema),
+    movie: preprocessOptionalField(IDStringSchema),
+    person: preprocessOptionalField(IDStringSchema),
+    roleType: preprocessOptionalField(IDStringSchema),
+    department: preprocessOptionalField(RoleTypeDepartmentSchema),
+    characterName: preprocessOptionalField(MovieCreditNameStringSchema),
+    billingOrder: preprocessOptionalField(PositiveNumberSchema),
+    uncredited: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    voiceOnly: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    cameo: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    motionCapture: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    isPrimary: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    archiveFootage: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
+    displayRoleName: preprocessOptionalField(MovieCreditNameStringSchema),
+    creditedAs: preprocessOptionalField(MovieCreditNameStringSchema),
 });
 
 /**

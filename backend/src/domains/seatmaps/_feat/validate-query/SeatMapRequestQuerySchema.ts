@@ -1,43 +1,13 @@
 /**
- * @fileoverview Transformation logic for SeatMap query options.
- * Consolidates seating availability, pricing filters, and occupancy sorting into
- * a structured Mongoose aggregation pipeline configuration.
+ * @fileoverview Zod schema and type definitions for validating SeatMap request query options.
  */
 
 import {z} from "zod";
 import {SeatMapQueryMatchFilterSchema} from "@/domains/seatmaps/_feat/validate-query/SeatMapQueryMatchFilterSchema";
 import {SeatMapQueryMatchSortSchema} from "@/domains/seatmaps/_feat/validate-query/SeatMapQueryMatchSortSchema";
-import type {AggregateQueryOptions} from "@/shared/_feat/generic-aggregate";
-import {filterNullishAttributes} from "@noovies-tickets/common";
 
-/**
- * Composite Zod schema for SeatMap query options with an aggregation transformation.
- */
-export const SeatMapRequestQuerySchema =
-    SeatMapQueryMatchFilterSchema.merge(SeatMapQueryMatchSortSchema).transform(
-        (values): AggregateQueryOptions => ({
-            match: {
-                /** Constructs the MongoDB $match stage for the seat mapping. */
-                filters: {
-                    $match: filterNullishAttributes({
-                        showing: values.showing,
-                        seat: values.seat,
-                        price: values.price,
-                        status: values.status,
-                    }),
-                },
-                /** Constructs the MongoDB $sort stage for ordering seats by price or availability. */
-                sorts: {
-                    $sort: filterNullishAttributes({
-                        price: values.sortByPrice,
-                        status: values.sortByStatus,
-                    }),
-                },
-            },
-        }),
-    );
+/** Schema for validating and merging SeatMap query filter and sort options. */
+export const SeatMapRequestQuerySchema = SeatMapQueryMatchFilterSchema.merge(SeatMapQueryMatchSortSchema);
 
-/**
- * TypeScript type inferred from the transformed SeatMapRequestQuerySchema.
- */
+/** Inferred TypeScript type for SeatMap request query options. */
 export type SeatMapRequestQuery = z.infer<typeof SeatMapRequestQuerySchema>;

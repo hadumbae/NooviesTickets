@@ -3,12 +3,12 @@
  */
 
 import {z} from "zod";
-import {URLParamSortOrderSchema} from "@/shared/_feat/parse-query-string";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema defining the allowed sort fields and orders for user moderation log queries. */
 export const UserModerationLogQuerySortSchema = z.object({
-    sortByAction: URLParamSortOrderSchema,
-    sortByModDate: URLParamSortOrderSchema,
+    sortByAction: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByModDate: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /** Type definition for user moderation log query sorting parameters. */

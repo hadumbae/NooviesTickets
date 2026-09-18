@@ -7,7 +7,7 @@ import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {
     BooleanValueSchema,
-    NumberValueSchema,
+    NumberValueSchema, preprocessOptionalField,
     preprocessToBoolean,
     preprocessToNumber,
     RoleTypeDepartmentSchema
@@ -18,13 +18,13 @@ import {URLParamRegexPatternSchema} from "@/shared/_feat/parse-query-string";
  * Zod schema defining match-level filters for MovieCredit queries.
  */
 export const MovieCreditQueryMatchFiltersSchema = z.object({
-    _id: ObjectIdSchema.optional(),
-    movie: ObjectIdSchema.optional(),
-    person: ObjectIdSchema.optional(),
-    roleType: ObjectIdSchema.optional(),
+    _id: preprocessOptionalField(ObjectIdSchema),
+    movie: preprocessOptionalField(ObjectIdSchema),
+    person: preprocessOptionalField(ObjectIdSchema),
+    roleType: preprocessOptionalField(ObjectIdSchema),
     department: RoleTypeDepartmentSchema.optional(),
-    displayRoleName: ObjectIdSchema.optional(),
-    creditedAs: ObjectIdSchema.optional(),
+    displayRoleName: URLParamRegexPatternSchema,
+    creditedAs: URLParamRegexPatternSchema,
     isPrimary: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
     characterName: URLParamRegexPatternSchema,
     billingOrder: preprocessToNumber(NumberValueSchema.optional()).optional(),

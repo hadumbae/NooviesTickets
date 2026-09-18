@@ -4,20 +4,20 @@
  */
 
 import {z} from "zod";
-import {URLParamSortOrderSchema} from "@/shared/_feat/parse-query-string";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining sort criteria for Seat queries.
  */
 export const SeatQueryMatchSortsSchema = z.object({
-    sortByTheatre: URLParamSortOrderSchema,
-    sortByScreen: URLParamSortOrderSchema,
-    sortByRow: URLParamSortOrderSchema,
-    sortBySeatNumber: URLParamSortOrderSchema,
-    sortBySeatLabel: URLParamSortOrderSchema,
-    sortBySeatType: URLParamSortOrderSchema,
-    sortByIsAvailable: URLParamSortOrderSchema,
-    sortByPriceMultiplier: URLParamSortOrderSchema,
+    sortByTheatre: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByScreen: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByRow: preprocessOptionalField(MongooseSortOrderSchema),
+    sortBySeatNumber: preprocessOptionalField(MongooseSortOrderSchema),
+    sortBySeatLabel: preprocessOptionalField(MongooseSortOrderSchema),
+    sortBySeatType: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByIsAvailable: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByPriceMultiplier: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /**

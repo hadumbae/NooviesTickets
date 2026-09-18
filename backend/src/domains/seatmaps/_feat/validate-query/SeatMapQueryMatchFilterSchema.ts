@@ -5,16 +5,23 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
-import {PositiveNumberSchema, preprocessToNumber, SeatMapStatusSchema} from "@noovies-tickets/common";
+import {
+    PositiveNumberSchema,
+    preprocessOptionalField,
+    preprocessToNumber,
+    SeatMapStatusSchema
+} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining match-level filters for SeatMap queries.
  */
 export const SeatMapQueryMatchFilterSchema = z.object({
-    showing: ObjectIdSchema.optional(),
-    seat: ObjectIdSchema.optional(),
+    // showing: preprocessOptionalField(IDStringSchema),
+    showing: preprocessOptionalField(ObjectIdSchema),
+    // seat: preprocessOptionalField(IDStringSchema),
+    seat: preprocessOptionalField(ObjectIdSchema),
+    status: preprocessOptionalField(SeatMapStatusSchema),
     price: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
-    status: SeatMapStatusSchema.optional(),
 });
 
 /**

@@ -8,19 +8,19 @@ import {
     PositiveNumberSchema,
     preprocessOptionalField,
     preprocessToNumber,
-    TheatreScreenTypeSchema,
-    TrimmedStringSchema
+    TheatreScreenNameSchema,
+    TheatreScreenTypeSchema
 } from "@noovies-tickets/common";
 
 /**
  * Zod schema for matching/filtering TheatreScreen documents via URL parameters.
  */
 export const TheatreScreenQueryMatchFilterSchema = z.object({
-    _id: ObjectIdSchema.optional(),
-    name: preprocessOptionalField(TrimmedStringSchema),
-    theatre: ObjectIdSchema.optional(),
+    _id: preprocessOptionalField(ObjectIdSchema),
+    name: preprocessOptionalField(TheatreScreenNameSchema),
+    theatre: preprocessOptionalField(ObjectIdSchema),
     capacity: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
-    screenType: TheatreScreenTypeSchema.optional(),
+    screenType: preprocessOptionalField(TheatreScreenTypeSchema),
 });
 
 /**

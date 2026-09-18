@@ -4,15 +4,15 @@
  */
 
 import {z} from "zod";
-import {URLParamSortOrderSchema} from "@/shared/_feat/parse-query-string";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining sort criteria for MovieCredit queries.
  */
 export const MovieCreditQueryMatchSortsSchema = z.object({
-    sortByCreditedAs: URLParamSortOrderSchema,
-    sortByCharacterName: URLParamSortOrderSchema,
-    sortByBillingOrder: URLParamSortOrderSchema,
+    sortByCreditedAs: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByCharacterName: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByBillingOrder: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /**

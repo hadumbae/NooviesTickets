@@ -4,14 +4,14 @@
  */
 
 import {z} from "zod";
-import {URLParamSortOrderSchema} from "@/shared/_feat/parse-query-string";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /**
  * Zod schema defining sort criteria for Showing queries.
  */
 export const ShowingQueryMatchSortSchema = z.object({
-    sortByStartTime: URLParamSortOrderSchema,
-    sortByEndTime: URLParamSortOrderSchema,
+    sortByStartTime: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByEndTime: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /**

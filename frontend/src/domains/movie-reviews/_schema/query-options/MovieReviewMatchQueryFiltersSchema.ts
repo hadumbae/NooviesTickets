@@ -4,19 +4,26 @@
  */
 
 import {z} from "zod";
-import {BooleanValueSchema, IDStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
-
+import {MovieReviewRatingSchema} from "@/domains/movie-reviews/_schema/fields/MovieReviewRatingSchema.ts";
+import {MovieReviewUniqueCodeSchema} from "@/domains/movie-reviews/_schema/fields/MovieReviewUniqueCodeSchema.ts";
+import {
+    BooleanValueSchema,
+    IDStringSchema,
+    preprocessOptionalField,
+    preprocessToBoolean,
+    preprocessToNumber, SlugStringSchema
+} from "@noovies-tickets/common";
 
 /**
  * Filter criteria for movie review queries.
  */
 export const MovieReviewMatchQueryFiltersSchema = z.object({
-    movieID: IDStringSchema.optional(),
-    isRecommended: BooleanValueSchema.optional(),
-    rating: PositiveNumberSchema
-        .min(1, "Must be at least 1.")
-        .max(5, "Must be no more than 5.")
-        .optional(),
+    user: preprocessOptionalField(IDStringSchema),
+    movie: preprocessOptionalField(IDStringSchema),
+    isRecommended: preprocessToBoolean(BooleanValueSchema),
+    rating: preprocessToNumber(MovieReviewRatingSchema.optional()).optional(),
+    slug: preprocessOptionalField(SlugStringSchema),
+    uniqueCode: preprocessOptionalField(MovieReviewUniqueCodeSchema),
 });
 
 /**

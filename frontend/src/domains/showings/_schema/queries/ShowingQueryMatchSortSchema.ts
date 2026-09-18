@@ -3,12 +3,12 @@
  */
 
 import {z} from "zod";
-import {MongooseSortOrderSchema} from "@noovies-tickets/common";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Zod schema for validating sort criteria for Showing query fields. */
 export const ShowingQueryMatchSortSchema = z.object({
-    sortByStartTime: MongooseSortOrderSchema.optional(),
-    sortByEndTime: MongooseSortOrderSchema.optional(),
+    sortByStartTime: preprocessOptionalField(MongooseSortOrderSchema),
+    sortByEndTime: preprocessOptionalField(MongooseSortOrderSchema),
 });
 
 /** Sort criteria for querying Showings. */

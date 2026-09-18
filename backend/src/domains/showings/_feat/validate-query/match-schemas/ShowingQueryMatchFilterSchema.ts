@@ -7,9 +7,8 @@ import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {
     BooleanValueSchema,
-    PositiveNumberSchema,
+    preprocessOptionalField,
     preprocessToBoolean,
-    preprocessToNumber,
     ShowingStatusSchema
 } from "@noovies-tickets/common";
 
@@ -17,13 +16,12 @@ import {
  * Zod schema defining match-level filters for Showing queries.
  */
 export const ShowingQueryMatchFilterSchema = z.object({
-    movie: ObjectIdSchema.optional(),
-    theatre: ObjectIdSchema.optional(),
-    screen: ObjectIdSchema.optional(),
-    ticketPrice: preprocessToNumber(PositiveNumberSchema.optional()).optional(),
+    movie: preprocessOptionalField(ObjectIdSchema),
+    theatre: preprocessOptionalField(ObjectIdSchema),
+    screen: preprocessOptionalField(ObjectIdSchema),
     isSpecialEvent: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
     isActive: preprocessToBoolean(BooleanValueSchema.optional()).optional(),
-    status: ShowingStatusSchema.optional(),
+    status: preprocessOptionalField(ShowingStatusSchema),
 });
 
 /**

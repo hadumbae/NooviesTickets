@@ -3,13 +3,13 @@
  */
 
 import {z} from "zod";
-import {URLParamSortOrderSchema} from "@/shared/_feat/parse-query-string";
 import {normaliseQuerySortValues} from "@/shared/_feat/pipeline-schema-transformers";
+import {MongooseSortOrderSchema, preprocessOptionalField} from "@noovies-tickets/common";
 
 /** Schema for the sort stage of the browse persons query. */
-export const BrowsePersonsQuerySortStageSchema = z.object({
-    sortByName: URLParamSortOrderSchema,
-}).transform(normaliseQuerySortValues);
+export const BrowsePersonsQuerySortStageSchema = z
+    .object({sortByName: preprocessOptionalField(MongooseSortOrderSchema)})
+    .transform(normaliseQuerySortValues);
 
 /** Type definition for the browse persons query sort stage. */
 export type BrowsePersonsQuerySortStage = z.infer<typeof BrowsePersonsQuerySortStageSchema>;
