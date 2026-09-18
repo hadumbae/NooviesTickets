@@ -7,11 +7,10 @@ import {Loader} from "lucide-react";
 import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
 import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.tsx";
 import {ReactElement} from "react";
-import {generateArraySchema, Movie, MovieSchema} from "@noovies-tickets/common";
+import {generateArraySchema, Movie, MovieQueryFilters, MovieSchema} from "@noovies-tickets/common";
 import {useFetchMovies} from "@/domains/movies/_feat/crud-hooks";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
-import {MovieQueryFilters} from "@/domains/movies/_schema/queries/MovieQueryFilterSchema.ts";
 
 /** Props for the MovieHookFormSelect component. */
 type SelectProps<TSubmit extends FieldValues> = Omit<HookFormInputControlProps<TSubmit>, "control"> & {

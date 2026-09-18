@@ -1,49 +1,17 @@
 /**
- * @fileoverview Transformation logic for Movie query options.
- * Consolidates filters and sorts into a structured Mongoose aggregation pipeline configuration.
+ * @fileoverview Combined validation schema and type for Movie query options.
  */
 
 import {z} from "zod";
-import {MovieQueryFiltersSchema} from "@/domains/movies/_feat/validate-query/MovieQueryFiltersSchema";
-import {MovieQuerySortsSchema} from "@/domains/movies/_feat/validate-query/MovieQuerySortsSchema";
-import type {AggregateQueryOptions} from "@/shared/_feat/generic-aggregate";
-import {filterNullishAttributes} from "@noovies-tickets/common";
+import {MovieQuerySortSchema} from "@noovies-tickets/common";
+import {MovieRequestQueryFiltersSchema} from "@/domains/movies/_feat/validate-query/MovieRequestQueryFiltersSchema";
 
 /**
- * Composite Zod schema for Movie query options with an aggregation transformation.
+ * Composite Zod schema for Movie query options.
  */
-export const MovieRequestQuerySchema = MovieQuerySortsSchema
-    .merge(MovieQueryFiltersSchema)
-    .transform(
-        (values): AggregateQueryOptions => ({
-            match: {
-                filters: {
-                    $match: filterNullishAttributes({
-                        _id: values._id,
-                        title: values.title,
-                        releaseDate: values.releaseDate,
-                        genres: values.genres,
-                        originalTitle: values.originalTitle,
-                        isReleased: values.isReleased,
-                        country: values.country,
-                        isAvailable: values.isAvailable,
-                    }),
-                },
-                sorts: {
-                    $sort: filterNullishAttributes({
-                        releaseDate: values.sortByReleaseDate,
-                        title: values.sortByTitle,
-                        originalTitle: values.sortByOriginalTitle,
-                        isReleased: values.sortByIsReleased,
-                        isAvailable: values.sortByIsAvailable,
-                        country: values.sortByCountry,
-                    }),
-                },
-            }
-        })
-    );
+export const MovieRequestQuerySchema = MovieQuerySortSchema.merge(MovieRequestQueryFiltersSchema);
 
 /**
- * TypeScript type inferred from the transformed MovieRequestQuerySchema.
+ * TypeScript type representing the validated query options for Movie documents.
  */
 export type MovieRequestQuery = z.infer<typeof MovieRequestQuerySchema>;

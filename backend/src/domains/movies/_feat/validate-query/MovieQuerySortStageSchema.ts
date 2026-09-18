@@ -3,11 +3,11 @@
  */
 
 import {z} from "zod";
-import {MovieQuerySortsSchema} from "@/domains/movies/_feat/validate-query/MovieQuerySortsSchema";
+import {MovieQuerySortSchema} from "@noovies-tickets/common";
 import {normaliseQuerySortValues} from "@/shared/_feat/pipeline-schema-transformers";
 
 /** Zod schema that validates and normalises movie sort parameters. */
-export const MovieQuerySortStageSchema = MovieQuerySortsSchema.transform(normaliseQuerySortValues);
+export const MovieQuerySortStageSchema = MovieQuerySortSchema.transform(normaliseQuerySortValues);
 
 /** Type definition for the validated movie query sort stage. */
 export type MovieQuerySortStage = z.infer<typeof MovieQuerySortStageSchema>;

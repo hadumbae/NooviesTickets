@@ -1,11 +1,11 @@
 import {
-    type RoleTypeQueryMatchFilters,
-    RoleTypeQueryMatchFiltersSchema
-} from "@/domains/role-types/_feat/validate-query/RoleTypeQueryMatchFiltersSchema";
+    type RoleTypeQuerySorts,
+    RoleTypeQuerySortSchema
+} from "@noovies-tickets/common";
 import {
-    type RoleTypeQueryMatchSorts,
-    RoleTypeQueryMatchSortsSchema
-} from "@/domains/role-types/_feat/validate-query/RoleTypeQueryMatchSortsSchema";
+    type RoleTypeRequestQueryFilters,
+    RoleTypeRequestQueryFiltersSchema
+} from "@/domains/role-types/_feat/validate-query/RoleTypeRequestQueryFiltersSchema";
 import {
     type RoleTypeRequestQuery,
     RoleTypeRequestQuerySchema
@@ -19,16 +19,15 @@ import {
     RoleTypeQuerySortStageSchema
 } from "@/domains/role-types/_feat/validate-query/RoleTypeQuerySortStageSchema";
 
-
 export {
-    RoleTypeQueryMatchFiltersSchema,
-    RoleTypeQueryMatchSortsSchema,
+    RoleTypeRequestQueryFiltersSchema,
+    RoleTypeQuerySortSchema,
     RoleTypeRequestQuerySchema,
 }
 
 export type {
-    RoleTypeQueryMatchFilters,
-    RoleTypeQueryMatchSorts,
+    RoleTypeRequestQueryFilters,
+    RoleTypeQuerySorts,
     RoleTypeRequestQuery,
 }
 

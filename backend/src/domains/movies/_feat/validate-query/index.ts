@@ -1,8 +1,8 @@
-import {type MovieQuerySorts, MovieQuerySortsSchema} from "@/domains/movies/_feat/validate-query/MovieQuerySortsSchema";
+import {type MovieQuerySorts, MovieQuerySortSchema} from "@noovies-tickets/common";
 import {
-    type MovieQueryFilters,
-    MovieQueryFiltersSchema
-} from "@/domains/movies/_feat/validate-query/MovieQueryFiltersSchema";
+    type MovieRequestQueryFilters,
+    MovieRequestQueryFiltersSchema
+} from "@/domains/movies/_feat/validate-query/MovieRequestQueryFiltersSchema";
 import {
     type MovieRequestQuery,
     MovieRequestQuerySchema
@@ -18,17 +18,16 @@ import {
 
 export {
     MovieRequestQuerySchema,
-    MovieQueryFiltersSchema,
-    MovieQuerySortsSchema,
+    MovieRequestQueryFiltersSchema,
+    MovieQuerySortSchema,
     MovieQueryMatchStageSchema,
     MovieQuerySortStageSchema,
 }
 
 export type {
     MovieRequestQuery,
-    MovieQueryFilters,
+    MovieRequestQueryFilters,
     MovieQuerySorts,
     MovieQueryMatchStage,
     MovieQuerySortStage,
 }
-

@@ -1,20 +1,18 @@
 import {
     RoleTypeQueryFilters,
-    RoleTypeQueryFiltersSchema
-} from "@/domains/role-types/_feat/validate-query-options/query-options/RoleTypeQueryFiltersSchema.ts";
-import {
+    RoleTypeQueryFilterSchema,
     RoleTypeQuerySorts,
-    RoleTypeQuerySortsSchema
-} from "@/domains/role-types/_feat/validate-query-options/query-options/RoleTypeQuerySortsSchema.ts";
-import {
+    RoleTypeQuerySortSchema,
     RoleTypeQueryOptions,
-    RoleTypeQueryOptionsFormValues,
     RoleTypeQueryOptionsSchema
+} from "@noovies-tickets/common";
+import {
+    RoleTypeQueryOptionsFormValues
 } from "@/domains/role-types/_feat/validate-query-options/query-options/RoleTypeQueryOptionsSchema.ts";
 
 export {
-    RoleTypeQueryFiltersSchema,
-    RoleTypeQuerySortsSchema,
+    RoleTypeQueryFilterSchema,
+    RoleTypeQuerySortSchema,
     RoleTypeQueryOptionsSchema,
 }
 

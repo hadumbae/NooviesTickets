@@ -3,11 +3,11 @@
  */
 
 import {z} from "zod";
-import {MovieQueryFiltersSchema} from "@/domains/movies/_feat/validate-query/MovieQueryFiltersSchema";
+import {MovieRequestQueryFiltersSchema} from "@/domains/movies/_feat/validate-query/MovieRequestQueryFiltersSchema";
 import {normaliseQueryMatchValues} from "@/shared/_feat/pipeline-schema-transformers";
 
 /** Zod schema that transforms raw movie filters into a valid MongoDB match stage. */
-export const MovieQueryMatchStageSchema = MovieQueryFiltersSchema.transform(normaliseQueryMatchValues);
+export const MovieQueryMatchStageSchema = MovieRequestQueryFiltersSchema.transform(normaliseQueryMatchValues);
 
 /** Type definition for the validated movie query match stage. */
 export type MovieQueryMatchStage = z.infer<typeof MovieQueryMatchStageSchema>;

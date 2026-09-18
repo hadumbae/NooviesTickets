@@ -3,11 +3,11 @@
  */
 
 import {z} from "zod";
-import {RoleTypeQueryMatchSortsSchema} from "@/domains/role-types/_feat/validate-query/RoleTypeQueryMatchSortsSchema";
+import {RoleTypeQuerySortSchema} from "@noovies-tickets/common";
 import {normaliseQuerySortValues} from "@/shared/_feat/pipeline-schema-transformers";
 
 /** Zod schema that transforms role type query sort values into a Mongoose sort pipeline stage. */
-export const RoleTypeQuerySortStageSchema = RoleTypeQueryMatchSortsSchema.transform(normaliseQuerySortValues);
+export const RoleTypeQuerySortStageSchema = RoleTypeQuerySortSchema.transform(normaliseQuerySortValues);
 
 /** Inferred type representing the validated and transformed Mongoose sort stage for role types. */
 export type RoleTypeQuerySortStage = z.infer<typeof RoleTypeQuerySortStageSchema>;

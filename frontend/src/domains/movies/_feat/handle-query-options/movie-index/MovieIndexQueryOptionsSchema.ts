@@ -2,7 +2,7 @@
  * @fileoverview Zod schema and TypeScript types for movie index query options and form values.
  */
 
-import {MovieQueryOptionsSchema} from "@/domains/movies/_schema/queries/MovieQueryOptionsSchema.ts";
+import {MovieQueryOptionsSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 import {AnyValues} from "@/shared/_types";
 

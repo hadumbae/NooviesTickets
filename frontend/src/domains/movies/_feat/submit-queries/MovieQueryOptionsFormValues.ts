@@ -3,7 +3,7 @@
  */
 
 import {AnyValues} from "@/shared/_types/form/AnyValues";
-import {MovieQueryOptions} from "@/domains/movies/_schema/queries/MovieQueryOptionsSchema";
+import {MovieQueryOptions} from "@noovies-tickets/common";
 
 /** Form values derived from movie query options. */
 export type MovieQueryOptionsFormValues = AnyValues<MovieQueryOptions>;

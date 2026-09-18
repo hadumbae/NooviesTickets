@@ -1,39 +1,17 @@
 /**
- * @fileoverview Transformation logic for RoleType query options.
- * Maps raw URL parameters into a structured Mongoose aggregation pipeline configuration.
+ * @fileoverview Combined validation schema and type for RoleType query options.
  */
 
 import {z} from "zod";
-import {RoleTypeQueryMatchFiltersSchema} from "@/domains/role-types/_feat/validate-query/RoleTypeQueryMatchFiltersSchema";
-import {RoleTypeQueryMatchSortsSchema} from "@/domains/role-types/_feat/validate-query/RoleTypeQueryMatchSortsSchema";
-import type {AggregateQueryOptions} from "@/shared/_feat/generic-aggregate";
-import {filterNullishAttributes} from "@noovies-tickets/common";
+import {RoleTypeQuerySortSchema} from "@noovies-tickets/common";
+import {RoleTypeRequestQueryFiltersSchema} from "@/domains/role-types/_feat/validate-query/RoleTypeRequestQueryFiltersSchema";
 
 /**
- * Composite Zod schema for RoleType query options with an aggregation transformation.
+ * Composite Zod schema for RoleType query options.
  */
-export const RoleTypeRequestQuerySchema = RoleTypeQueryMatchSortsSchema
-    .merge(RoleTypeQueryMatchFiltersSchema)
-    .transform(
-        (values): AggregateQueryOptions => ({
-            match: {
-                filters: {
-                    $match: filterNullishAttributes({
-                        roleName: values.roleName,
-                        department: values.department,
-                    }),
-                },
-                sorts: {
-                    $sort: filterNullishAttributes({
-                        roleName: values.sortByRoleName,
-                        department: values.sortByDepartment,
-                    }),
-                },
-            },
-        })
-    );
+export const RoleTypeRequestQuerySchema = RoleTypeQuerySortSchema.merge(RoleTypeRequestQueryFiltersSchema);
 
 /**
- * TypeScript type representing the fully transformed RoleType query options.
+ * TypeScript type representing the validated query options for RoleType documents.
  */
 export type RoleTypeRequestQuery = z.infer<typeof RoleTypeRequestQuerySchema>;
