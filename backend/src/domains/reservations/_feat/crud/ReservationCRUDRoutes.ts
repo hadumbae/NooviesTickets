@@ -12,7 +12,6 @@ import {ReservationPopulatePaths} from "@/domains/reservations/_feat/query-popul
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 
-const modelName = ReservationModel.modelName;
 const matchSchema = ReservationQueryMatchStageSchema;
 const sortSchema = ReservationQuerySortStageSchema;
 
@@ -45,7 +44,7 @@ const router: Router = buildCRUDRoutes<ReservationSchemaFields>({
 
 router.get(
     "/query",
-    buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+    buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
     asyncHandler(aggregate({model: ReservationModel})),
 );
 

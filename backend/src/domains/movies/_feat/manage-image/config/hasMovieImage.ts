@@ -3,8 +3,8 @@
  */
 
 import type {NextFunction, Request, Response} from "express";
+import {ValidationError} from "@noovies-tickets/common";
 import {MovieImageInputSchema} from "@/domains/movies/_feat/manage-image/config/MovieImageInputSchema";
-import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 
 /**
  * Validates that an uploaded movie image file exists and meets schema constraints.
@@ -14,10 +14,12 @@ export function hasMovieImage(req: Request, res: Response, next: NextFunction): 
     const {data, success, error} = MovieImageInputSchema.safeParse(requestBody);
 
     if (!success) {
-        throw new RequestValidationError({
+        throw new ValidationError({
+            errorCode: "ERR_REQUEST_VALIDATION",
+            message: "Invalid Movie Image Upload.",
             errors: error.errors,
             raw: requestBody,
-            message: "Invalid Movie Image Upload."
+            statusCode: 422,
         });
     }
 

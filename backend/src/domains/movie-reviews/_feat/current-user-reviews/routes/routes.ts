@@ -6,7 +6,7 @@ import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth.js";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler.js";
 import * as MyMovieReviewController from "@/domains/movie-reviews/_feat/current-user-reviews/controller";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema.js";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema.js";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {MyReviewIDRouteConfigSchema} from "@/domains/movie-reviews/_feat/current-user-reviews/schema/MyReviewIDRouteConfigSchema";
 import {

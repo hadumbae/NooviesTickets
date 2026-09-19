@@ -8,7 +8,7 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, findBySlug, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
@@ -19,7 +19,6 @@ import {TheatreVirtualPipelines} from "@/domains/theatres/_feat/aggregate";
 import {TheatreVirtualPopulationPaths} from "@/domains/theatres/_feat/crud/options/TheatreVirtualPopulationPaths";
 import {TheatreInputSchema} from "@/domains/theatres/_validation";
 
-const modelName = TheatreModel.modelName;
 const matchSchema = TheatreQueryMatchStageSchema;
 const sortSchema = TheatreQuerySortStageSchema;
 
@@ -29,14 +28,14 @@ const routes: CRUDRoute<TheatreSchemaFields>[] = [
         /** Basic retrieval of theatres based on geographical or capacity filters. */
         path: "/find",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: find
     },
     {
         /** Paginated retrieval for the Theatre Management administrative table. */
         path: "/paginated",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: paginated
     },
     {
@@ -86,7 +85,7 @@ const router: Router = buildCRUDRoutes<TheatreSchemaFields>({
 /** Advanced aggregation endpoint for complex reports or cross-entity data fetching. */
 router.get(
     "/query",
-    buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+    buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
     asyncHandler(aggregate({model: TheatreModel, virtualsPipelines: TheatreVirtualPipelines})),
 );
 

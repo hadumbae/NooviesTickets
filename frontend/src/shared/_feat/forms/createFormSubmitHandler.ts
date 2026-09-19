@@ -47,7 +47,6 @@ export function createFormSubmitHandler<TFormValues extends FieldValues, TForm e
             });
 
             const data = await mutateAsync(values);
-            console.log("Mutation Response:", data);
 
             if (resetOnSuccess) {
                 form.reset(resetValues);

@@ -10,7 +10,7 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {parseRequestQuery} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
@@ -43,7 +43,7 @@ const routes: CRUDRoute<SeatMapSchemaFields>[] = [
         method: "get",
         middleware: [
             isAuth,
-            parseRequestQuery({schema: SeatMapRequestQuerySchema, modelName: SeatMapModel.modelName})
+            parseRequestQuery({schema: SeatMapRequestQuerySchema})
         ],
         handler: find
     },
@@ -53,7 +53,7 @@ const routes: CRUDRoute<SeatMapSchemaFields>[] = [
         method: "get",
         middleware: [
             isAuth,
-            parseRequestQuery({schema: SeatMapRequestQuerySchema, modelName: SeatMapModel.modelName})
+            parseRequestQuery({schema: SeatMapRequestQuerySchema})
         ],
         handler: paginated
     },
@@ -102,7 +102,7 @@ const router: Router = buildCRUDRoutes<SeatMapSchemaFields>({
  */
 router.get(
     "/query",
-    [isAuth, parseRequestQuery({schema: SeatMapRequestQuerySchema, modelName: SeatMapModel.modelName})],
+    [isAuth, parseRequestQuery({schema: SeatMapRequestQuerySchema})],
     asyncHandler(aggregate({model: SeatMapModel})),
 );
 

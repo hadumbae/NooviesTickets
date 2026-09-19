@@ -3,8 +3,6 @@
  */
 
 import {useEffect} from "react";
-import {Logger} from "@/shared/_feat/logger/Logger.ts";
-import {ParseError} from "@/shared/_err/ParseError.ts";
 import {UseQueryResult} from "@tanstack/react-query";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {IpifyLocalStorageData, IpifyPayloadSchema} from "@/shared/_feat/external/ipify-country/schema";
@@ -27,7 +25,7 @@ export function useFetchUserCountry(): CountryReturns {
 
     useEffect(() => {
         if (query.isSuccess && query.data) {
-            const {success, data, error} = IpifyPayloadSchema.safeParse(query.data);
+            const {success, data} = IpifyPayloadSchema.safeParse(query.data);
 
             if (success) {
                 setFetched(true);
@@ -35,16 +33,6 @@ export function useFetchUserCountry(): CountryReturns {
             } else {
                 setFetched(true);
                 setPayload(null);
-
-                Logger.error({
-                    type: "ERROR",
-                    msg: "Invalid Ipify Data Received.",
-                    error: new ParseError({
-                        errors: error.errors,
-                        message: "Invalid Ipify Data Received.",
-                        raw: query.data,
-                    }),
-                });
             }
         }
 

@@ -11,18 +11,17 @@ import type {PipelineStage} from "mongoose";
 
 /** Props configuration for the CRUD query middleware factory. */
 type MiddlewareConfig = {
-    modelName: string;
     matchSchema: ZodType<PipelineStage.Match, ZodTypeDef, unknown>;
     sortSchema: ZodType<PipelineStage.Sort, ZodTypeDef, unknown>;
 };
 
 /** Returns an array of request handlers for authentication, query matching, and sorting operations. */
 export function buildAuthCRUDQueryStageMiddleware(
-    {modelName, matchSchema, sortSchema}: MiddlewareConfig
+    {matchSchema, sortSchema}: MiddlewareConfig
 ): RequestHandler[] {
     return [
         isAuth,
-        parseQueryMatchStage({schema: matchSchema, modelName}),
-        parseQuerySortStage({schema: sortSchema, modelName}),
+        parseQueryMatchStage({schema: matchSchema}),
+        parseQuerySortStage({schema: sortSchema}),
     ];
 }

@@ -13,11 +13,10 @@ import {UserModel, type UserSchemaFields} from "@/domains/users/_models/user";
 import {UserQueryMatchStageSchema, UserQuerySortStageSchema} from "@/domains/users/_feat/validate-query";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 
-const modelName = UserModel.modelName;
 const matchSchema = UserQueryMatchStageSchema;
 const sortSchema = UserQuerySortStageSchema;
 
-const queryMiddleware = buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema});
+const queryMiddleware = buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema});
 
 const routes: CRUDRoute<UserSchemaFields>[] = [
     {

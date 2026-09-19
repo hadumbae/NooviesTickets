@@ -4,11 +4,10 @@
  * @filename useFetchAPI.ts
  */
 
-import type {URLString} from "@noovies-tickets/common";
+import {parseJSON, type URLString} from "@noovies-tickets/common";
 import {executeFetch} from "./executeFetch.js";
 import type {RequestMethod} from "@/shared/_types/requests/RequestMethods";
 import {handleBadResponse} from "./handleBadResponse.js";
-import {parseJSON} from "./parseJSON.js";
 import {getResponseText} from "./getResponseText.js";
 
 /**
@@ -69,8 +68,7 @@ export const useFetchAPI = async <TReturns = unknown>(
     }
 
     return parseJSON<TReturns>({
-        jsonString: rawString,
-        source: useFetchAPI.name,
+        raw: rawString,
         statusCode: status,
     });
 };

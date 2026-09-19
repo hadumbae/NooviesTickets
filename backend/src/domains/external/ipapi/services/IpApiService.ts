@@ -1,28 +1,14 @@
 /**
- * @file Service for retrieving IP geolocation data from the Ipify API.
- * @filename IpApiService.ts
+ * @fileoverview Service for retrieving and validating IP geolocation data from the Ipify API.
  */
 
 import "dotenv/config";
 import {useFetchAPI} from "@/shared/_utils/fetch/useFetchAPI.js";
 import * as process from "node:process";
-import {IpifyCountryDataSchema, type IpifyCountryData} from "@/domains/external/ipapi/schema/IpifyCountryDataSchema.js";
-import {DataValidationError} from "@/shared/_errors/DataValidationError.js";
+import {type IpifyCountryData, IpifyCountryDataSchema} from "@/domains/external/ipapi/schema/IpifyCountryDataSchema.js";
+import {ValidationError} from "@noovies-tickets/common";
 
-/**
- * Fetches geolocation data for the provided IP address.
- *
- * The response payload is validated against {@link IpifyCountryDataSchema}
- * before being returned.
- *
- * @param ipAddress - IP address to resolve.
- * @returns Validated Ipify geolocation data.
- *
- * @throws {UseFetchError} When a network or fetch-level error occurs.
- * @throws {HttpResponseError} When the external API returns a non-success response.
- * @throws {JSONParseError} When the response body cannot be parsed as JSON.
- * @throws {DataValidationError} When the response payload fails schema validation.
- */
+/** Fetches and validates IP geolocation data from the Ipify service. */
 export const fetchIPData = async (ipAddress: string): Promise<IpifyCountryData> => {
     const url = `https://geo.ipify.org/api/v2/country?apiKey=${process.env.IPIFY_KEY}&ipAddress=${ipAddress}`;
 
@@ -34,11 +20,12 @@ export const fetchIPData = async (ipAddress: string): Promise<IpifyCountryData> 
     const {data, success, error} = IpifyCountryDataSchema.safeParse(fetchedData);
 
     if (!success) {
-        throw new DataValidationError({
+        throw new ValidationError({
+            errorCode: "ERR_DATA_VALIDATION",
             message: "Invalid Country Data.",
-            source: fetchIPData.name,
             raw: fetchedData,
             errors: error.errors,
+            statusCode: 500,
         });
     }
 

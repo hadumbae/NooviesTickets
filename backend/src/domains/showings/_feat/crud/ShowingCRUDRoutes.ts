@@ -18,7 +18,7 @@ import {
     paginated,
     update
 } from "@/shared/_feat/generic-crud/path-handlers";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
@@ -33,7 +33,6 @@ import {ShowingSeatMapVirtualPipelines} from "@/domains/showings/_feat/query-pop
 import {buildShowingDerivedFields} from "@/domains/showings/_feat/crud/buildShowingDerivedFields";
 
 const authCRUDMiddleware = buildAuthCRUDQueryStageMiddleware({
-    modelName: ShowingModel.modelName,
     matchSchema: ShowingQueryMatchStageSchema,
     sortSchema: ShowingQuerySortStageSchema,
 });

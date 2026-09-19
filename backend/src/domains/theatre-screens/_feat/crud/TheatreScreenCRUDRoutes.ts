@@ -12,8 +12,11 @@ import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
 import {TheatreScreenModel, type TheatreScreenSchemaFields} from "@/domains/theatre-screens/_models/theatre-screen";
 import {TheatreScreenInputSchema} from "@/domains/theatre-screens/_feat/validate-submit";
-import {TheatreScreenQueryMatchStageSchema, TheatreScreenQuerySortStageSchema} from "@/domains/theatre-screens/_feat/validate-query";
-import validateZodSchemaAsync from "@/shared/_utils/schema/validators/validateZodSchemaAsync";
+import {
+    TheatreScreenQueryMatchStageSchema,
+    TheatreScreenQuerySortStageSchema
+} from "@/domains/theatre-screens/_feat/validate-query";
+import {validateZodSchemaAsync} from "@/shared/_utils/schema/validators/validateZodSchemaAsync";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import {
@@ -32,7 +35,6 @@ import {
 } from "@/shared/_feat/generic-crud/path-handlers";
 import {deriveTheatreScreenData} from "@/domains/theatre-screens/_feat/crud/deriveTheatreScreenData";
 
-const modelName = TheatreScreenModel.modelName;
 const matchSchema = TheatreScreenQueryMatchStageSchema;
 const sortSchema = TheatreScreenQuerySortStageSchema;
 
@@ -44,14 +46,14 @@ const routes: CRUDRoute<TheatreScreenSchemaFields>[] = [
         /** Basic retrieval based on query filters. */
         path: "/find",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: find
     },
     {
         /** Paginated retrieval for UI tables and infinite scrolls. */
         path: "/paginated",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: paginated
     },
     {
@@ -102,13 +104,12 @@ const router: Router = buildCRUDRoutes<TheatreScreenSchemaFields>({
 });
 
 
-
 /**
  * Custom aggregation endpoint for complex queries and data reporting.
  */
 router.get(
     "/query",
-    buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+    buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
     asyncHandler(aggregate({
         model: TheatreScreenModel,
         virtualsPipelines: TheatreScreenVirtualPipelines,

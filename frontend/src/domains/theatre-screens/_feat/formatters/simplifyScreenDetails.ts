@@ -3,8 +3,7 @@
  */
 
 
-import {ParseError} from "@/shared/_err/ParseError.ts";
-import {TheatreScreen, TheatreScreenSchema} from "@noovies-tickets/common";
+import {TheatreScreen, TheatreScreenSchema, ValidationError} from "@noovies-tickets/common";
 import {
     PopulatedTheatreScreen,
     TheatreScreenDetails,
@@ -27,7 +26,8 @@ export function simplifyScreenDetails(
     const {success, error, data} = TheatreScreenSchema.safeParse(raw);
 
     if (!success) {
-        throw new ParseError({
+        throw new ValidationError({
+            errorCode: "ERR_DATA_VALIDATION",
             message: "Failed to simplify screen details. Invalid values.",
             raw,
             errors: error?.errors,

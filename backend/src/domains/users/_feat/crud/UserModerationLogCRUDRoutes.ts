@@ -16,11 +16,10 @@ import {
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {UserModerationLogModel, type UserModerationLogSchemaFields} from "@/domains/users/_models/moderation-log";
 
-const modelName = UserModerationLogModel.modelName;
 const matchSchema = UserModerationLogQueryMatchStageSchema;
 const sortSchema = UserModerationLogQuerySortStageSchema;
 
-const queryMiddleware = buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema});
+const queryMiddleware = buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema});
 
 const routes: CRUDRoute<UserModerationLogSchemaFields>[] = [
     {

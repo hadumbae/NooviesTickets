@@ -6,7 +6,7 @@ import {Router} from 'express';
 import {isAuth} from "@/domains/authentication/_middleware/isAuth.js";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler.js";
 import * as UserFavouriteController from "@/domains/users/_feat/manage-user-favourties/controller/controller";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema.js";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema.js";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {UserFavouriteMoviesRouteConfigSchema} from "@/domains/users/_feat/manage-user-favourties/schema";
 import {UserFavouriteMovieInputSchema} from "@/domains/users/_validation/submit/UserFavouriteMovieInputSchema";

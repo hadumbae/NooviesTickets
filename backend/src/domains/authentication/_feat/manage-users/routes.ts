@@ -4,10 +4,9 @@
 
 import {Router} from "express";
 import {hasRefreshToken, isAdmin, isAuth} from "@/domains/authentication/_middleware";
-import {parseRouteParams} from "@/shared/_feat/middleware";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
-import validateZodSchemaAsync from "@/shared/_utils/schema/validators/validateZodSchemaAsync";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchemaAsync} from "@/shared/_utils/schema/validators/validateZodSchemaAsync";
 import {ManageUserRouteConfigSchema} from "@/domains/authentication/_feat/manage-users/routeSchema";
 import {postRegisterUser, UserRegisterInputSchema} from "@/domains/authentication/_feat/register-user";
 import {postLoginUser, UserLoginInputSchema} from "@/domains/authentication/_feat/login-user";
@@ -24,6 +23,7 @@ import {
 import {
     postRefreshUserAuthentication
 } from "@/domains/authentication/_feat/manage-refresh-tokens/postRefreshUserAuthentication";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 
 const router = Router();
 
@@ -51,8 +51,8 @@ router.post(
 );
 
 router.post(
-    "/password/:userID/update",
-    [isAuth, parseRouteParams({schema: ManageUserRouteConfigSchema}), validateZodSchema(UserPasswordUpdateInputSchema)],
+    "/password/:userId/update",
+    [isAuth, validateRequestConfig({schema: ManageUserRouteConfigSchema}), validateZodSchema(UserPasswordUpdateInputSchema)],
     asyncHandler(postChangeUserPassword),
 );
 
@@ -64,13 +64,13 @@ router.get(
 
 router.post(
     "/status/admin/:userId/grant",
-    [isAuth, isAdmin, parseRouteParams({schema: ManageUserRouteConfigSchema})],
+    [isAuth, isAdmin, validateRequestConfig({schema: ManageUserRouteConfigSchema})],
     asyncHandler(postGrantAdminStatus),
 );
 
 router.post(
     "/status/admin/:userId/revoke",
-    [isAuth, isAdmin, parseRouteParams({schema: ManageUserRouteConfigSchema})],
+    [isAuth, isAdmin, validateRequestConfig({schema: ManageUserRouteConfigSchema})],
     asyncHandler(postRevokeAdminStatus),
 );
 

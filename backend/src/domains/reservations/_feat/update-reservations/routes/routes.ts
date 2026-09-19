@@ -5,7 +5,7 @@
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {ReservationNotesInputSchema} from "@/domains/reservations/_feat/update-reservations/schemas";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {

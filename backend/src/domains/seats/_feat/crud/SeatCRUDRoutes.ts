@@ -8,7 +8,7 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware, buildUnsetFields} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, findBySlug, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
@@ -20,7 +20,6 @@ import {
     SeatQuerySortStageSchema
 } from "@/domains/seats/_feat/validate-query";
 
-const modelName = SeatModel.modelName;
 const matchSchema = SeatQueryMatchStageSchema;
 const sortSchema = SeatQuerySortStageSchema;
 
@@ -30,14 +29,14 @@ const routes: CRUDRoute<SeatSchemaFields>[] = [
         /** Basic retrieval based on query filters. */
         path: "/find",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: find
     },
     {
         /** Paginated retrieval for UI tables and infinite scrolls. */
         path: "/paginated",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: paginated
     },
     {
@@ -96,7 +95,7 @@ const router: Router = buildCRUDRoutes<SeatSchemaFields>({
 /** Custom aggregation endpoint for complex queries and data reporting. */
 router.get(
     "/query",
-    buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+    buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
     asyncHandler(aggregate({model: SeatModel})),
 );
 

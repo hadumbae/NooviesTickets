@@ -4,7 +4,7 @@
 
 import {Router} from "express";
 import {isAdmin, isAuth} from "@/domains/authentication";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {patchUpdateUserAdminRole} from "@/domains/users/_feat/manage-user-roles/controller";

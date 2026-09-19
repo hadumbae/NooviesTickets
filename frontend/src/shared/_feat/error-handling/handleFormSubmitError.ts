@@ -3,9 +3,8 @@
  */
 
 import {FieldValues, Path, UseFormReturn} from "react-hook-form";
-import {FormValidationError} from "@/shared/_err/FormValidationError.ts";
+import {ValidationError} from "@noovies-tickets/common";
 import {handleSubmitResponseError} from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
-import {Logger} from "@/shared/_feat/logger/Logger.ts";
 
 /** Configuration for the form submit error handler. */
 type HandlerConfig<TFormValues extends FieldValues, TForm extends FieldValues = TFormValues> = {
@@ -19,9 +18,8 @@ type HandlerConfig<TFormValues extends FieldValues, TForm extends FieldValues = 
 export function handleFormSubmitError<TFormValues extends FieldValues, TForm extends FieldValues = TFormValues>(
     {form, error, displayMessage}: HandlerConfig<TFormValues, TForm>
 ): void {
-    if (error instanceof FormValidationError) {
+    if (error instanceof ValidationError && error.errorCode === "ERR_REQUEST_VALIDATION") {
         const {errors} = error;
-        Logger.error({msg: "Form Validation Failed: ", error, context: {errors}});
 
         for (const {path, message} of errors) {
             const formPath = path.map((v) => typeof v === "number" ? `${v}` : v).join(".") as Path<TFormValues>;

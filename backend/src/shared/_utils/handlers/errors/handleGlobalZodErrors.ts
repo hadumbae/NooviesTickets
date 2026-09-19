@@ -4,30 +4,15 @@
 
 import type {Response} from 'express';
 import {ZodError} from "zod";
-import { RequestValidationError } from "@/shared/_errors/RequestValidationError";
 import {ZodDuplicateIndexError} from "@/shared/_errors/zod/ZodDuplicateIndexError";
-import {InvalidRequestQueryError} from "../../../_errors/InvalidRequestQueryError";
 
 /** Determines whether an error is a globally handled Zod-related or request validation error. */
 export const isGlobalZodError = (error: unknown) =>
     error instanceof ZodError ||
-    error instanceof RequestValidationError ||
-    error instanceof ZodDuplicateIndexError ||
-    error instanceof InvalidRequestQueryError;
+    error instanceof ZodDuplicateIndexError;
 
 /** Maps globally recognized Zod and validation errors to their corresponding HTTP responses. */
 export const handleGlobalZodErrors = (error: unknown, res: Response) => {
-    if (error instanceof InvalidRequestQueryError) {
-        const {
-            errorType,
-            message = "[INVALID] Malformed Query Options",
-            model,
-            errors,
-        } = error.toJSON();
-
-        res.status(400).json({errorType, message, model, errors});
-    }
-
     if (error instanceof ZodDuplicateIndexError) {
         const {errors, message = "Duplicate Index. Uniqueness violated."} = error.toJSON();
 
@@ -44,13 +29,6 @@ export const handleGlobalZodErrors = (error: unknown, res: Response) => {
         };
 
         res.status(422).json(payload);
-        return;
-    }
-
-    if (error instanceof RequestValidationError) {
-        const {message, errors, statusCode = 422} = error;
-
-        res.status(statusCode).json({message, errors});
         return;
     }
 };

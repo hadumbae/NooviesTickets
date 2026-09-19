@@ -2,12 +2,9 @@
  * @fileoverview Handler for HTTP 422 Unprocessable Entity responses that parses validation errors.
  */
 
-import {ValidationErrorResponsePayloadSchema} from "@/shared/_schemas";
-import {buildContext} from "@/shared/_feat/logger-builders/buildLoggerContext.ts";
-import {Logger} from "@/shared/_feat/logger/Logger.ts";
-import {FormValidationError} from "@/shared/_err/FormValidationError.ts";
 import {ZodIssue} from "zod";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {ValidationError, ValidationErrorPayloadSchema} from "@noovies-tickets/common";
 
 type HandleParams = {
     url: string;
@@ -22,30 +19,21 @@ type HandleParams = {
  * Validates the error payload and throws a FormValidationError containing specific field errors.
  */
 export function handle422Response(
-    {payload, source, url, status, statusText, headers}: HandleParams
+    {payload, url, status, statusText, headers}: HandleParams
 ): never {
-    const {success: isFormError, data} = ValidationErrorResponsePayloadSchema.safeParse(payload);
-    const {statusCode, errorCode, issue, errors} = data ?? {};
+    const {success: isFormError, data} = ValidationErrorPayloadSchema.safeParse(payload);
 
     if (!isFormError) {
         const message = "HTTP 422: Unprocessable Entity (Malformed Error Payload)";
         throw new HttpResponseError({url, headers, status, message, statusText, payload});
     }
 
-    Logger.warn({
-        msg: "HTTP 422 : Validation Error",
-        type: "ERROR",
-        context: buildContext([
-            {key: "statusCode", value: statusCode},
-            {key: "errorCode", value: errorCode},
-            {key: "issue", value: issue},
-            {key: "source", value: source},
-            {key: "errors", value: errors},
-        ]),
-    });
+    const {statusCode, errorCode, errors} = data;
 
-    throw new FormValidationError({
-        message: "HTTP 422: Validation Failed",
+    throw new ValidationError({
+        errorCode,
+        statusCode,
         errors: errors as ZodIssue[],
+        message: "HTTP 422: Validation Failed",
     });
 }

@@ -4,25 +4,25 @@
 
 import {type ZodType, type ZodTypeDef} from "zod";
 import type {NextFunction, Request, RequestHandler, Response} from "express";
-import {InvalidRequestQueryError} from "@/shared/_errors/InvalidRequestQueryError";
 import type {PipelineStage} from "mongoose";
+import {ValidationError} from "@noovies-tickets/common";
 
 /** Props configuration for the parse query match stage middleware. */
 type ParseParams = {
     schema: ZodType<PipelineStage.Sort, ZodTypeDef, unknown>;
-    modelName?: string;
 };
 
 /** Validates request query parameters against a Zod schema and attaches the parsed match stage to the request object. */
-export function parseQuerySortStage({schema, modelName}: ParseParams): RequestHandler {
+export function parseQuerySortStage({schema}: ParseParams): RequestHandler {
     return (req: Request, _res: Response, next: NextFunction) => {
         const {data, success, error} = schema.safeParse(req.query);
 
         if (!success) {
-            throw new InvalidRequestQueryError({
-                modelName,
+            throw new ValidationError({
+                errorCode: "ERR_QUERY_VALIDATION",
+                message: "Invalid query sorting options.",
                 errors: error?.errors,
-                message: "Invalid query sorting options."
+                statusCode: 400,
             });
         }
 

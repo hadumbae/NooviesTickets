@@ -1,6 +1,9 @@
+/**
+ * @fileoverview Handler function for processing unsuccessful HTTP responses by parsing error details and throwing an HttpResponseError.
+ */
+
+import {parseJSON, type URLString} from "@noovies-tickets/common";
 import {HttpResponseError} from "../../_errors/HttpResponseError.js";
-import {parseJSON} from "./parseJSON.js";
-import type {URLString} from "@noovies-tickets/common";
 
 type HandlerParams = {
     url: URLString;
@@ -9,14 +12,11 @@ type HandlerParams = {
     raw: string;
 }
 
+/** Processes a failed HTTP response by parsing its body and throwing a structured error. */
 export async function handleBadResponse(
     {url, raw, status, statusText}: HandlerParams
 ): Promise<never> {
-    const responseData = parseJSON({
-        jsonString: raw,
-        statusCode: status,
-        source: handleBadResponse.name,
-    });
+    const responseData = parseJSON({raw, statusCode: status});
 
     throw new HttpResponseError({
         url,

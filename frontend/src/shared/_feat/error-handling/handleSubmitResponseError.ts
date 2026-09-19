@@ -2,10 +2,10 @@
  * @fileoverview Utility for handling and logging errors resulting from mutation responses.
  */
 
-import {ParseError} from "@/shared/_err/ParseError.ts";
 import {toast} from "react-toastify";
 import {Logger} from "@/shared/_feat/logger/Logger.ts";
 import {buildContext} from "@/shared/_feat/logger-builders/buildLoggerContext.ts";
+import {ValidationError} from "@noovies-tickets/common";
 
 /** Configuration for the mutation error handler. */
 type ErrorParams = {
@@ -17,7 +17,7 @@ type ErrorParams = {
  * Processes mutation errors by displaying a toast notification and logging the error context.
  */
 export function handleSubmitResponseError({error, displayMessage}: ErrorParams) {
-    if (error instanceof ParseError) {
+    if (error instanceof ValidationError) {
         const context = buildContext([
             {key: "message", value: displayMessage},
             {key: "raw", value: error.raw},

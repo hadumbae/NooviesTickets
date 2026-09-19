@@ -6,7 +6,7 @@ import {Logger} from "@/shared/_feat/logger/Logger.ts";
 import {buildContext} from "@/shared/_feat/logger-builders/buildLoggerContext.ts";
 import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {handle422Response} from "@/shared/_feat/use-fetch-api/bad-response/handle422Response.ts";
-import {parseJSON} from "@/shared/_feat/use-fetch-api/json/parseJSON.ts";
+import {parseJSON} from "@noovies-tickets/common";
 
 type HandlerParams = {
     response: Response;
@@ -22,10 +22,8 @@ export function handleBadResponse(
     const {url, headers, status, statusText} = response;
 
     const payload = parseJSON({
-        url,
         raw: rawPayload,
         statusCode: status,
-        source,
         message: "Invalid Response Body.",
     });
 

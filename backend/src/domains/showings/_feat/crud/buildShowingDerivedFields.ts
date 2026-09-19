@@ -4,17 +4,21 @@
 
 import type {ShowingInput, ShowingSchemaFields} from "@/domains/showings";
 import {createTheatreSnapshot} from "@/domains/theatres/_utils";
-import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
+import {ValidationError} from "@noovies-tickets/common";
 
 /** Constructs derived fields such as theatre snapshots required for showing documents. */
 export async function buildShowingDerivedFields(data: Partial<ShowingInput>): Promise<Partial<ShowingSchemaFields>> {
     if (data.theatre === undefined) {
-        throw new RequestValidationError({
+        throw new ValidationError({
+            errorCode: "ERR_REQUEST_VALIDATION",
+            message: "Theatre Is Required",
+            raw: data,
             statusCode: 422,
-            message: "Theatre is required.",
-            errors: [
-                {code: "custom", message: "Theatre is required.", path: ["theatre"]}
-            ]
+            errors: [{
+                code: "custom",
+                message: "Theatre Is Required",
+                path: ["theatre"],
+            }],
         });
     }
 

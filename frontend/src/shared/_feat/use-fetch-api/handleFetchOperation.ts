@@ -5,11 +5,11 @@
 import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
 import {RequestMethod} from "@/shared/_types/request/RequestMethod.ts";
 import {handleBadResponse} from "@/shared/_feat/use-fetch-api/bad-response";
-import {parseJSON} from "@/shared/_feat/use-fetch-api/json";
 import {executeFetch} from "@/shared/_feat/use-fetch-api/fetch";
 import {clearLocalAuthUser} from "@/domains/authentication/_feat/storage/clearLocalAuthUser.ts";
 import {isRefreshEligible} from "@/domains/authentication/_feat/user-refresh/isRefreshEligible.ts";
 import {getUserAuthTokenRefreshPromise} from "@/domains/authentication/_feat/user-refresh/getUserAuthTokenRefreshPromise.ts";
+import { parseJSON } from "@noovies-tickets/common";
 
 type useFetchAPIParams<TPayload> = {
     url: string;
@@ -64,9 +64,7 @@ export async function handleFetchOperation<TReturns = unknown, TPayload = unknow
 
     const result = parseJSON<TReturns>({
         raw,
-        source: funcName,
         statusCode: response.status,
-        url
     });
 
     return {

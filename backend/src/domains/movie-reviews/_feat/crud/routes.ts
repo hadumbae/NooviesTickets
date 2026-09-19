@@ -16,7 +16,6 @@ import {
     MovieReviewQuerySortStageSchema
 } from "@/domains/movie-reviews/_feat/validate-query-options";
 
-const modelName = MovieReviewModel.modelName;
 const matchSchema = MovieReviewQueryMatchStageSchema;
 const sortSchema = MovieReviewQuerySortStageSchema;
 
@@ -36,13 +35,13 @@ const routes: CRUDRoute<MovieReviewSchemaFields>[] = [
     {
         path: "/find",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: find
     },
     {
         path: "/paginated",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: paginated
     },
     {

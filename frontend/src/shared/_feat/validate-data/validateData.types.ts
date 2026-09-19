@@ -3,7 +3,7 @@
  */
 
 import {ZodTypeAny} from "zod";
-import {ParseError} from "@/shared/_err/ParseError.ts";
+import {ValidationError} from "@noovies-tickets/common";
 
 /** Parameters for the validateData utility function. */
 export type ValidateDataParams<TData = unknown, TSchema extends ZodTypeAny = ZodTypeAny> = {
@@ -13,7 +13,7 @@ export type ValidateDataParams<TData = unknown, TSchema extends ZodTypeAny = Zod
 }
 
 type ValidResults<TReturn> = { success: true, data: TReturn, error: null };
-type InvalidResults = { success: false, data: null, error: ParseError };
+type InvalidResults = { success: false, data: null, error: ValidationError };
 
 /** Discriminated union representing the result of a data validation attempt. */
 export type DataValidationResults<TReturn> = ValidResults<TReturn> | InvalidResults;

@@ -1,5 +1,5 @@
-import {ParseError} from "@/shared/_err/ParseError.ts";
 import {SeatMap, SeatMapDetails, SeatMapSchema} from "@/domains/seatmaps/_schema";
+import {ValidationError} from "@noovies-tickets/common";
 
 export function simplifySeatMapDetails(seatMap: SeatMapDetails): SeatMap {
     const {
@@ -12,10 +12,11 @@ export function simplifySeatMapDetails(seatMap: SeatMapDetails): SeatMap {
 
     if (!success) {
         const {errors} = error;
-        throw new ParseError({
+        throw new ValidationError({
+            errorCode: "ERR_DATA_VALIDATION",
+            message: "Failed to simplify seatF map details.",
             raw,
             errors,
-            message: "Failed to simplify seat map details.",
         });
     }
 

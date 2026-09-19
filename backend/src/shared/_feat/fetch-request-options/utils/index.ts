@@ -1,9 +1,2 @@
-import {fetchRequestOptions} from "@/shared/_feat/fetch-request-options/utils/fetchRequestOptions";
-import {
-    fetchRequestPaginationOptions
-} from "@/shared/_feat/fetch-request-options/utils/fetchRequestPaginationOptions";
-
-export {
-    fetchRequestOptions,
-    fetchRequestPaginationOptions,
-}
+export * from "@/shared/_feat/fetch-request-options/utils/fetchRequestOptions";
+export * from "@/shared/_feat/fetch-request-options/utils/fetchRequestPaginationOptions";

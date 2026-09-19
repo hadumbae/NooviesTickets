@@ -8,7 +8,7 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
@@ -18,7 +18,6 @@ import {RoleTypeInputSchema} from "@/domains/role-types/_feat/validate-submit";
 import type {RoleTypeSchemaFields} from "@/domains/role-types/_models/RoleType.types";
 import {RoleTypeQueryMatchStageSchema, RoleTypeQuerySortStageSchema} from "@/domains/role-types/_feat/validate-query";
 
-const modelName = RoleTypeModel.modelName;
 const matchSchema = RoleTypeQueryMatchStageSchema;
 const sortSchema = RoleTypeQuerySortStageSchema;
 
@@ -30,14 +29,14 @@ const routes: CRUDRoute<RoleTypeSchemaFields>[] = [
         /** Basic retrieval of roles based on name or department. */
         path: "/find",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: find
     },
     {
         /** Paginated retrieval for administrative role-management tables. */
         path: "/paginated",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: paginated
     },
     {
@@ -83,7 +82,7 @@ const router: Router = buildCRUDRoutes<RoleTypeSchemaFields>({
  */
 router.get(
     "/query",
-    buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+    buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
     asyncHandler(aggregate({model: RoleTypeModel})),
 );
 

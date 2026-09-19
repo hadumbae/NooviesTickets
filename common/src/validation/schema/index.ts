@@ -3,6 +3,7 @@ export * from "./booleans";
 export * from "./cloudinary";
 export * from "./date-time";
 export * from "./enums";
+export * from "./errors";
 export * from "./images";
 export * from "./location";
 export * from "./model";

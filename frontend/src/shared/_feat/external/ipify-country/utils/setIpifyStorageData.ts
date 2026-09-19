@@ -2,8 +2,8 @@
  * @fileoverview Utility for persisting Ipify geolocation data to local storage.
  */
 
-import { LocalStorageKeys } from "@/shared/_const/storage/LocalStorageKeys.ts";
-import { ParseError } from "@/shared/_err/ParseError.ts";
+import {ValidationError} from "@noovies-tickets/common";
+import {LocalStorageKeys} from "@/shared/_const/storage/LocalStorageKeys.ts";
 import {
     IpifyLocalStorageData,
     IpifyLocalStorageSchema
@@ -15,13 +15,14 @@ export function setIpifyStorageData(value: IpifyLocalStorageData | null): void {
         localStorage.removeItem(LocalStorageKeys.ipifyCountry);
     }
 
-    const { success, data, error } = IpifyLocalStorageSchema.safeParse(value);
+    const {success, data, error} = IpifyLocalStorageSchema.safeParse(value);
 
     if (!success) {
-        throw new ParseError({
-            raw: value,
+        throw new ValidationError({
+            errorCode: "ERR_DATA_VALIDATION",
             message: "Invalid Ipify Data Input.",
             errors: error?.errors,
+            raw: value,
         });
     }
 

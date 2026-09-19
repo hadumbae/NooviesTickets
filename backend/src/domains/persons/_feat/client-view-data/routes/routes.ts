@@ -16,15 +16,14 @@ import {
 import {PersonInfoViewRouteConfigSchema} from "@/domains/persons/_feat/client-view-data/person-info";
 
 const router = Router();
-const modelName = PersonModel.modelName;
 
 router.get(
     "/browse",
     [
         isAuth,
         validateRequestConfig({schema: BrowsePersonRouteConfigSchema, errorMessage: "Invalid pagination values."}),
-        parseQueryMatchStage({schema: BrowsePersonsQueryMatchStageSchema, modelName}),
-        parseQuerySortStage({schema: BrowsePersonsQuerySortStageSchema, modelName}),
+        parseQueryMatchStage({schema: BrowsePersonsQueryMatchStageSchema}),
+        parseQuerySortStage({schema: BrowsePersonsQuerySortStageSchema}),
     ],
     asyncHandler(getFetchBrowsePersonViewData),
 );

@@ -3,9 +3,8 @@
  */
 
 
-import {Seat, SeatSchema} from "@noovies-tickets/common";
+import {Seat, SeatSchema, ValidationError} from "@noovies-tickets/common";
 import {SeatDetails} from "@/domains/seats/_schema/model";
-import {ParseError} from "@/shared/_err/ParseError.ts";
 
 /** Converts a fully populated seat details object into a simplified seat object. */
 export function simplifySeatDetails(seat: Seat | SeatDetails): Seat {
@@ -22,10 +21,11 @@ export function simplifySeatDetails(seat: Seat | SeatDetails): Seat {
     if (!success) {
         const {errors} = error;
 
-        throw new ParseError({
+        throw new ValidationError({
+            errorCode: "ERR_DATA_VALIDATION",
+            message: "Invalid Seat Object. Please try again.",
             errors,
             raw: dataObject,
-            message: "Invalid Seat Object. Please try again.",
         });
     }
 

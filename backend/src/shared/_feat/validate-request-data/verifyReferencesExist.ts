@@ -5,7 +5,7 @@
 import {type Model} from "mongoose";
 import type {NextFunction, Request, Response} from "express";
 import type {ZodIssue} from "zod";
-import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
+import {ValidationError} from "@noovies-tickets/common";
 
 type ReferenceCheck = {
     model: Model<any>;
@@ -30,10 +30,11 @@ export function verifyReferencesExist({refs, statusCode = 422}: VerifyConfig) {
                 ({key}): ZodIssue => ({code: "custom", path: [key], message: "Invalid value!"})
             );
 
-            throw new RequestValidationError({
+            throw new ValidationError({
+                errorCode: "ERR_REQUEST_VALIDATION",
+                message: "Invalid request data.",
                 errors,
                 statusCode,
-                message: "Invalid request data.",
             });
         }
 

@@ -2,9 +2,8 @@
  * @fileoverview Utility for transforming complex movie credit objects into a simplified flat structure.
  */
 
-import {MovieCredit, MovieCreditSchema} from "@noovies-tickets/common";
+import {MovieCredit, MovieCreditSchema, ValidationError} from "@noovies-tickets/common";
 import {MovieCreditDetails} from "@/domains/movie-credits/_schemas";
-import {ParseError} from "@/shared/_err/ParseError.ts";
 
 /** Converts nested movie credit details into a flat MovieCredit object and validates the result. */
 export function simplifyMovieCreditDetails(
@@ -20,7 +19,8 @@ export function simplifyMovieCreditDetails(
     const {data, error, success} = MovieCreditSchema.safeParse(simpleCredit);
 
     if (!success || error || !data) {
-        throw new ParseError({
+        throw new ValidationError({
+            errorCode: "ERR_DATA_VALIDATION",
             message: "Failed to simplify movie credit details.",
             errors: error.errors,
             raw: simpleCredit,

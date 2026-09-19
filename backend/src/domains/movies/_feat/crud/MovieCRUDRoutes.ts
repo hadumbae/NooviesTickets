@@ -10,7 +10,7 @@ import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, findBySlug, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
@@ -21,7 +21,6 @@ import {MovieInputSchema} from "@/domains/movies/_feat/validate-submit/MovieInpu
 import {MoviePopulationPaths} from "@/domains/movies/_feat/query-population";
 import {MovieQueryMatchStageSchema, MovieQuerySortStageSchema} from "@/domains/movies/_feat/validate-query";
 
-const modelName = MovieModel.modelName;
 const matchSchema = MovieQueryMatchStageSchema;
 const sortSchema = MovieQuerySortStageSchema;
 
@@ -33,14 +32,14 @@ const routes: CRUDRoute<MovieSchemaFields>[] = [
         /** Basic retrieval of movie records based on query filters (title, genre, etc.). */
         path: "/find",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: find
     },
     {
         /** Paginated retrieval optimized for administrative dashboards and catalog browsers. */
         path: "/paginated",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: paginated
     },
     {
@@ -94,7 +93,7 @@ const router: Router = buildCRUDRoutes<MovieSchemaFields>({
  */
 router.get(
     "/query",
-    buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+    buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
     asyncHandler(aggregate({model: MovieModel})),
 );
 

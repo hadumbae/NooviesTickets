@@ -4,10 +4,10 @@
 
 import {
     type CloudinaryImage as CloudinaryImageObject,
-    CloudinaryImageSchema as CloudinaryImageObjectSchema
+    CloudinaryImageSchema as CloudinaryImageObjectSchema,
+    ValidationError
 } from "@noovies-tickets/common";
 import {Cloudinary} from "@/config/cloudinary";
-import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
 import type {MulterImageFile} from "@/shared/_feat/manage-multer-images";
 
 type UploadImageConfig = {
@@ -32,8 +32,13 @@ export async function uploadCloudinaryImage(
     const {error, success, data} = CloudinaryImageObjectSchema.safeParse(response);
 
     if (!success) {
-        const message = "Invalid return from Cloudinary. Please check image data and try again.";
-        throw new RequestValidationError({message, errors: error?.errors});
+        throw new ValidationError({
+            raw: response,
+            errorCode: "ERR_REQUEST_VALIDATION",
+            message: "Invalid return from Cloudinary. Please check image data and try again.",
+            errors: error?.errors,
+            statusCode: 422,
+        });
     }
 
     return data;

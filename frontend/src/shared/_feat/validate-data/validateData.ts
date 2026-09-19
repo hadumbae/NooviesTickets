@@ -3,8 +3,8 @@
  */
 
 import {z, ZodTypeAny} from "zod";
-import {ParseError} from "@/shared/_err/ParseError.ts";
 import {DataValidationResults, ValidateDataParams} from "@/shared/_feat/validate-data/validateData.types.ts";
+import {ValidationError} from "@noovies-tickets/common";
 
 /** Validates input data against a provided Zod schema and returns a structured result or a ParseError. */
 export function validateData<TData = unknown, TSchema extends ZodTypeAny = ZodTypeAny>(
@@ -12,7 +12,16 @@ export function validateData<TData = unknown, TSchema extends ZodTypeAny = ZodTy
 ): DataValidationResults<z.infer<TSchema>> {
     const {data: parsedData, success, error: parseError} = schema.safeParse(data);
 
-    if (success) return {success: true, data: parsedData, error: null};
-    const error = new ParseError({message: message ?? "Invalid Data.", errors: parseError.errors, raw: data,});
+    if (success) {
+        return {success: true, data: parsedData, error: null};
+    }
+
+    const error = new ValidationError({
+        errorCode: "ERR_DATA_VALIDATION",
+        message: message ?? "Invalid Data.",
+        errors: parseError.errors,
+        raw: data,
+    });
+
     return {success: false, data: null, error};
 }

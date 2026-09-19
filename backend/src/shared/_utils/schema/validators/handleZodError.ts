@@ -1,34 +1,11 @@
-import { ZodError } from "zod";
-import {RequestValidationError} from "../../../_errors/RequestValidationError.js";
-
 /**
- * Handles errors thrown during Zod schema validation.
- *
- * If the provided error is an instance of `ZodError`, it augments
- * each issue with a `pathString` property (a dot-joined string of
- * the path array) and throws a `ZodParseError` containing all issues
- * and a custom message.
- *
- * If the error is not a `ZodError`, it is re-thrown unchanged.
- *
- * This function **never returns**; it always throws.
- *
- * @param error - The error to handle, typically caught from `ZodSchema.parse`.
- * @param message - Optional custom message for the thrown `ZodParseError`.
- *                  Defaults to `"Validation Failed."`.
- *
- * @throws {RequestValidationError} When `error` is a `ZodError`.
- * @throws {Error} Re-throws the original error if it is not a `ZodError`.
- *
- * @example
- * ```ts
- * try {
- *   MySchema.parse(data);
- * } catch (e) {
- *   handleZodError(e, "Failed to validate input");
- * }
- * ```
+ * @fileoverview Utility function for handling and transforming Zod validation errors into request validation errors.
  */
+
+import { ZodError } from "zod";
+import {ValidationError} from "@noovies-tickets/common";
+
+/** Handles Zod errors by converting them into structured request validation errors or re-throwing other exceptions. */
 export default (error: unknown, message: string = "Validation Failed."): never => {
     if (error instanceof ZodError) {
         const errors = error.issues.map(issue => {
@@ -37,7 +14,12 @@ export default (error: unknown, message: string = "Validation Failed."): never =
             return issue;
         });
 
-        throw new RequestValidationError({ message, errors });
+        throw new ValidationError({
+            errorCode: "ERR_REQUEST_VALIDATION",
+            message,
+            errors,
+            statusCode: 422,
+        });
     }
 
     throw error;

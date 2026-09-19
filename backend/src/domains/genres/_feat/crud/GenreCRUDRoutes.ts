@@ -9,7 +9,7 @@ import {buildCRUDRoutes, type CRUDRoute} from "@/shared/_feat/generic-crud/route
 import type {GenreSchemaFields} from "@/domains/genres/_models/genre/Genre.types";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {aggregate} from "@/shared/_feat/generic-aggregate";
@@ -22,7 +22,6 @@ import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route
 import {GenreInputSchema} from "@/domains/genres/_feat/validate-submit";
 import {GenreQueryMatchStageSchema, GenreQuerySortStageSchema} from "@/domains/genres/_feat/validate-query";
 
-const modelName = GenreModel.modelName;
 const matchSchema = GenreQueryMatchStageSchema;
 const sortSchema = GenreQuerySortStageSchema;
 
@@ -33,13 +32,13 @@ const routes: CRUDRoute<GenreSchemaFields>[] = [
     {
         path: "/find",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: find
     },
     {
         path: "/paginated",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: paginated
     },
     {
@@ -87,7 +86,7 @@ const router: Router = buildCRUDRoutes<GenreSchemaFields>({
  */
 router.get(
     "/query",
-    buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+    buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
     asyncHandler(aggregate({model: GenreModel})),
 );
 

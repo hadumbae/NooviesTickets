@@ -2,13 +2,12 @@
  * @fileoverview Handles user authentication by validating credentials and generating a JWT.
  */
 
-import type {ZodIssue} from "zod";
 import bcrypt from "bcryptjs";
 import createHttpError from "http-errors";
-import type {UserLoginInput} from "@/domains/authentication/_feat/login-user/UserLoginInputSchema";
+import {ValidationError} from "@noovies-tickets/common";
 import {UserModel} from "@/domains/users/_models/user";
-import {RequestValidationError} from "@/shared/_errors/RequestValidationError";
-import {type AuthUserCredentials} from "@/domains/authentication";
+import type {UserLoginInput} from "@/domains/authentication/_feat/login-user/UserLoginInputSchema";
+import {type AuthUserCredentials} from "@/domains/authentication/_validation/AuthUserCredentialsSchema";
 import {generateAuthenticationPayload} from "@/domains/authentication/_feat/login-user/generateAuthenticationPayload";
 
 type LoginConfig = {
@@ -31,8 +30,15 @@ export async function loginUser(
     const isValid = await bcrypt.compare(inputPassword, password);
 
     if (!isValid) {
-        const error = {code: "invalid_string", message: "Incorrect Password.", path: ["password"]};
-        throw new RequestValidationError({message: "Authentication failed.", errors: [error as ZodIssue]});
+        throw new ValidationError({
+            errorCode: "ERR_REQUEST_VALIDATION",
+            message: "Authentication failed.",
+            statusCode: 422,
+            errors: [
+                {code: "custom", message: "Invalid Credentials.", path: ["email"]},
+                {code: "custom", message: "Invalid Credentials.", path: ["password"]},
+            ],
+        });
     }
 
     return generateAuthenticationPayload({user});

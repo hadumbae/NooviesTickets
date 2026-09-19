@@ -18,7 +18,7 @@ import {
     paginated,
     update
 } from "@/shared/_feat/generic-crud/path-handlers";
-import validateZodSchema from "@/shared/_utils/schema/validators/validateZodSchema";
+import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema, SlugRouteConfigSchema} from "@/shared/_schema/route-config";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
@@ -34,7 +34,6 @@ import {MovieCreditPopulationPaths} from "@/domains/movie-credits/_feat/query-po
 import {MovieCreditPopulationPipelines} from "@/domains/movie-credits/_feat/aggregation";
 import {handleDuplicateCreditIndex} from "@/domains/movie-credits/_models";
 
-const modelName = MovieCreditModel.modelName;
 const matchSchema = MovieCreditQueryMatchStageSchema;
 const sortSchema = MovieCreditQuerySortStageSchema;
 
@@ -46,14 +45,14 @@ const routes: CRUDRoute<MovieCreditSchemaFields>[] = [
         /** Basic retrieval based on relational filters (e.g., all credits for a specific Movie ID). */
         path: "/find",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: find
     },
     {
         /** Paginated retrieval optimized for cast/crew lists in admin panels or movie detail pages. */
         path: "/paginated",
         method: "get",
-        middleware: buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: paginated
     },
     {
@@ -108,7 +107,7 @@ const router: Router = buildCRUDRoutes<MovieCreditSchemaFields>({
  */
 router.get(
     "/query",
-    buildAuthCRUDQueryStageMiddleware({modelName, matchSchema, sortSchema}),
+    buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
     asyncHandler(aggregate({model: MovieCreditModel, populationPipelines: MovieCreditPopulationPipelines})),
 );
 
