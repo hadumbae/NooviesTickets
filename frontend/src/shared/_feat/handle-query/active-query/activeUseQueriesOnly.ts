@@ -4,7 +4,7 @@
 
 import {ManagedUseQuery} from "@/shared/_feat/handle-query/active-query/ManagedUseQuery.ts";
 import {ZodTypeAny} from "zod";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {UseQueryResult} from "@tanstack/react-query";
 
 /** Result object containing filtered query instances and their associated validation metadata. */

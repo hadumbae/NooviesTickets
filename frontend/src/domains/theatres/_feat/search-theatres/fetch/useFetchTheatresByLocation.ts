@@ -5,10 +5,9 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {PaginatedItems} from "@/shared/_types";
-import {generatePaginationSchema} from "@noovies-tickets/common";
+import {HttpResponseError, generatePaginationSchema} from "@noovies-tickets/common";
 
 import {TheatreWithRecentShowings, TheatreWithRecentShowingsSchema} from "@/domains/theatres/_schema";
 import {SearchTheatreQueryKeys} from "@/domains/theatres/_feat/search-theatres/fetch/queryKeys.ts"

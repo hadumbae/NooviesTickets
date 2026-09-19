@@ -3,8 +3,7 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {SlugString} from "@noovies-tickets/common";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError, SlugString} from "@noovies-tickets/common";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";

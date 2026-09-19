@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {IDQueryConfig} from "@/shared/_types";
 

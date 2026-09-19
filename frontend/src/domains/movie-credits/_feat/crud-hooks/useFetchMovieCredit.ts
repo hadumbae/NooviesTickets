@@ -1,8 +1,7 @@
 /** @fileoverview Hook for fetching a single movie credit by its unique identifier. */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {HttpResponseError, ObjectIdString} from "@noovies-tickets/common";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {QueryConfig} from "@/shared/_types";
 import {MovieCreditCRUDQueryKeys} from "@/domains/movie-credits/_feat/crud-hooks/queryKeys.ts";

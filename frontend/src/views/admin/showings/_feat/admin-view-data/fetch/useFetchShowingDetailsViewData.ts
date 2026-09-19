@@ -1,7 +1,6 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {ShowingDetailsViewData} from "@/views/admin/showings/_feat/admin-view-data/schema";
-import {SlugString} from "@noovies-tickets/common";
+import {HttpResponseError, SlugString} from "@noovies-tickets/common";
 import {ZodType, ZodTypeDef} from "zod";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";

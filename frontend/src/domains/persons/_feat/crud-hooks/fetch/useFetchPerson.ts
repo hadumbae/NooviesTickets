@@ -5,7 +5,7 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {IDQueryConfig} from "@/shared/_types";
 import {findByID} from "@/domains/persons/_feat/crud";
 import {PersonCRUDQueryKeys} from "@/domains/persons/_feat/crud-hooks/keys";

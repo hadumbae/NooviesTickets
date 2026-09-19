@@ -9,8 +9,7 @@ import {getFetchCustomerProfileViewData} from "@/domains/customers/_feat/profile
 import {CustomerProfileOverviewViewQueryKeys} from "@/domains/customers/_feat/profile-overview/fetch/queryKeys.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {CustomerProfileViewData, CustomerProfileViewDataSchema} from "@/domains/customers/_feat/profile-overview/schema/viewDataSchema.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {HttpResponseError, ObjectIdString} from "@noovies-tickets/common";
 
 /** Parameters for the customer profile fetch hook. */
 export type FetchParams = {

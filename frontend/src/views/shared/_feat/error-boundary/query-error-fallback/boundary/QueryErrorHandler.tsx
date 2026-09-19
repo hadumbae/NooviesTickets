@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {NetworkError} from "@/shared/_err/NetworkError.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {ErrorHandlerProps} from "@/shared/_types/error/ErrorHandlerProps.ts";
 import {HttpStatusOverrideText} from "@/shared/_types/error/HttpErrorTypes.ts";
 import {AppErrorDisplay} from "@/views/shared/_feat/error-boundary/app-error-boundary/display/AppErrorDisplay.tsx";

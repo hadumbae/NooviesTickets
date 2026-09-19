@@ -4,10 +4,9 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
-import {PaginationOptions} from "@noovies-tickets/common";
+import {HttpResponseError, PaginationOptions} from "@noovies-tickets/common";
 import {SlugString} from "@noovies-tickets/common";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {getFetchGenreWithMovies} from "@/domains/genres/_feat/client-view-data/repository/repository.ts";
 import {

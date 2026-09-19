@@ -4,7 +4,7 @@
  * execution control, and error handling across the application.
  */
 
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import type {UseQueryOptions as QueryOptions} from "@tanstack/react-query";
 
 /**

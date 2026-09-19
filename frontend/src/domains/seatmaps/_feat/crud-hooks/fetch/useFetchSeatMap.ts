@@ -4,7 +4,7 @@
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {IDQueryConfig} from "@/shared/_types";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {findByID} from "@/domains/seatmaps/_feat/crud/repository.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {SeatMapCRUDQueryKeys} from "@/domains/seatmaps/_feat/crud-hooks/keys/queryKey.ts";

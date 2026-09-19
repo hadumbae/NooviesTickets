@@ -13,7 +13,7 @@ import {
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {FetchQueryOptions} from "@/shared/_types";
 import {AdminPagesQueryKeys} from "@/domains/pages/_feat/admin-view-data/queryKeys.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 
 /** Options for configuring the administrative dashboard query hook. */
 type FetchConfig = {

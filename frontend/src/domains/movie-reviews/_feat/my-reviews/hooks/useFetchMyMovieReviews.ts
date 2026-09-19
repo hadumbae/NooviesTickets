@@ -5,8 +5,7 @@
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {getFetchMovieReviewsByCurrentUser} from "@/domains/movie-reviews/_feat/my-reviews/repository/repository.ts";
-import {PaginationOptions} from "@noovies-tickets/common";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError, PaginationOptions} from "@noovies-tickets/common";
 import {MyReviewsQueryKeys} from "@/domains/movie-reviews/_feat/my-reviews/hooks/queryKeys.ts";
 import {QueryConfig} from "@/shared/_types";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";

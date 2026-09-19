@@ -1,12 +1,11 @@
 /**
  * @fileoverview Hook for fetching paginated movie reviews and their aggregate details.
  */
-import {ObjectIdString} from "@noovies-tickets/common";
+import {HttpResponseError, ObjectIdString} from "@noovies-tickets/common";
 import {PaginationOptions} from "@noovies-tickets/common";
 import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {getFetchReviewDetailsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/repository.ts";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {FetchByMovieQueryKeys} from "@/domains/movie-reviews/_feat/fetch-by-movie/fetch/queryKeys.ts";

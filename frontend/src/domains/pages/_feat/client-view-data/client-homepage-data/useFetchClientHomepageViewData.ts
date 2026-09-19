@@ -11,7 +11,7 @@ import {
     ClientHomepageViewRouteConfig
 } from "@/domains/pages/_feat/client-view-data/client-homepage-data/ClientHomepageViewRouteConfigSchema.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {buildQueryFn, useQueryOptionsDefaults} from "@/shared/_feat";
 import {
     getFetchClientHomepageViewData

@@ -5,7 +5,7 @@
 import {PaginatedQueryConfig} from "@/shared/_types";
 import {UserQueryOptions} from "@/domains/users/_schema/query-options";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {buildQueryFn, useQueryOptionsDefaults} from "@/shared/_feat";
 import {paginated} from "@/domains/users/_feat/crud";
 import {UserCRUDQueryKeys} from "@/domains/users/_feat/crud-hooks/keys";

@@ -2,13 +2,12 @@
  * @fileoverview Hook for fetching and validating theatre information and schedule data for the client view.
  */
 
-import {DateOnlyString, SlugString} from "@noovies-tickets/common";
+import {DateOnlyString, HttpResponseError, SlugString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {TheatreClientViewQueryKeys,} from "@/domains/theatres/_feat/client-view-data/queryKeys.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {
     TheatreInfoViewData,
     TheatreInfoViewDataSchema

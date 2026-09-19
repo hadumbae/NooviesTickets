@@ -6,7 +6,7 @@ import {Logger} from "@/shared/_feat/logger/Logger.ts";
 import {buildContext} from "@/shared/_feat/logger-builders/buildLoggerContext.ts";
 import {Network} from "lucide-react";
 import {cn} from "@/shared/_feat";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {ErrorHandlerDisplayProps} from "@/shared/_types/error/ErrorHandlerProps.ts";
 import {HttpStatusOverrideText} from "@/shared/_types/error/HttpErrorTypes.ts";
 import {ReactElement} from "react";
@@ -19,22 +19,20 @@ type DisplayProps = ErrorHandlerDisplayProps<HttpResponseError> & {
 export function HttpResponseErrorDisplay(
     {error, className, statusTextOverride}: DisplayProps
 ): ReactElement {
-    const {message, status, statusText, url, model, payload} = error;
+    const {message, statusCode, url, errorCode} = error;
 
     const errorMessage = message ? message : undefined;
-    const statusMessage = statusTextOverride?.[status] || statusText;
+    const statusMessage = statusTextOverride?.[statusCode];
 
     Logger.error({
         error,
         type: "ERROR",
-        msg: `HTTP ${status}: ${statusText}`,
+        msg: `HTTP ${statusCode}: ${errorCode}`,
         context: buildContext([
             {key: "url", value: url},
-            {key: "model", value: model},
-            {key: "status", value: status},
-            {key: "payload", value: payload},
+            {key: "errorCode", value: errorCode},
+            {key: "statusCode", value: statusCode},
             {key: "message", value: errorMessage},
-            {key: "statusText", value: statusMessage},
         ]),
     });
 
@@ -43,8 +41,10 @@ export function HttpResponseErrorDisplay(
             <Network size={30}/>
 
             <div className="space-y-2 text-center">
-                <h2 className="section-title italic">HTTP {status}</h2>
-                <span className="secondary-text text-sm">{errorMessage ?? statusMessage}</span>
+                <h2 className="section-title italic">HTTP {statusCode}</h2>
+                <span className="secondary-text text-sm">
+                    {errorMessage ?? statusMessage ?? "Oops. Something went wrong. Please try again."}
+                </span>
             </div>
         </div>
     );

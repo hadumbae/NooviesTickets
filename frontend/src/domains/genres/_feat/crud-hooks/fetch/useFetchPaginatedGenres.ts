@@ -4,10 +4,9 @@
 
 import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
-import {PaginationOptions} from "@noovies-tickets/common";
+import {HttpResponseError, PaginationOptions} from "@noovies-tickets/common";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {paginated} from "@/domains/genres/_feat/crud";
 import {GenreCRUDQueryKeys} from "@/domains/genres/_feat/crud-hooks/keys/GenreCRUDQueryKeys.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";

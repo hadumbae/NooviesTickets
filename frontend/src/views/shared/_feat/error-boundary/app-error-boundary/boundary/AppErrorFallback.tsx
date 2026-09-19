@@ -10,7 +10,7 @@ import {
 import {RouteError} from "@/shared/_err/RouteError.ts";
 import {RouteErrorDisplay} from "@/views/shared/_feat/error-boundary/app-error-boundary/display/RouteErrorDisplay.tsx";
 import {NetworkError} from "@/shared/_err/NetworkError.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {ReactElement} from "react";
 
 /** Props for the AppErrorFallback component. */

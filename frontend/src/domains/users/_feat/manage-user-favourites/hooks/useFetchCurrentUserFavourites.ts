@@ -6,14 +6,13 @@
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
-import {PaginationOptions} from "@noovies-tickets/common";
+import {HttpResponseError, PaginationOptions} from "@noovies-tickets/common";
 import {getUserFavourites} from "@/domains/users/_feat/manage-user-favourites/repository";
 import {ManageUserFavouritesQueryKeys} from "@/domains/users/_feat/manage-user-favourites/hooks/queryKeys.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 import {MovieDetails, MovieDetailsSchema} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {PaginatedItems} from "@/shared/_types";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 
 /** Pagination params with optional query options. */
 type FetchParams = Partial<PaginationOptions> & {

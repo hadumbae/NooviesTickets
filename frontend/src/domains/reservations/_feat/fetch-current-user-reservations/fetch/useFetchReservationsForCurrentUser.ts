@@ -2,13 +2,12 @@
  * @fileoverview Hook for fetching paginated reservations for the authenticated user.
  */
 
-import {PaginationOptions} from "@noovies-tickets/common";
+import {HttpResponseError, PaginationOptions} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {PopulatedReservation, PopulatedReservationSchema} from "@/domains/reservations/_schema";
 import {PaginatedItems} from "@/shared/_types";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 import {getFetchUserReservations} from "@/domains/reservations/_feat/fetch-current-user-reservations/repository";

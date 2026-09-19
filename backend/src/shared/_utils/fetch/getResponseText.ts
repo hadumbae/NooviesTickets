@@ -4,7 +4,7 @@
  * @filename getResponseText.ts
  */
 
-import {HttpResponseError} from "../../_errors/HttpResponseError.js";
+import {deriveHttpResponseErrorCode, HttpResponseError} from "@noovies-tickets/common";
 
 /**
  * Reads the text body from a Fetch API response.
@@ -17,24 +17,24 @@ import {HttpResponseError} from "../../_errors/HttpResponseError.js";
  * @throws {HttpResponseError} If reading the response body fails.
  */
 export async function getResponseText(response: Response): Promise<string> {
-    const {url, status, statusText} = response;
+    const {url, status} = response;
 
     try {
         return await response.text();
     } catch (error: unknown) {
         if (error instanceof Error) {
             throw new HttpResponseError({
+                errorCode: deriveHttpResponseErrorCode(status),
                 url,
-                statusText,
                 statusCode: status,
                 message: error.message ?? "Failed to get response payload.",
             });
         }
 
         throw new HttpResponseError({
+            errorCode: deriveHttpResponseErrorCode(status),
             url,
             message: "An unknown error occurred.",
-            statusText,
             statusCode: status,
         });
     }

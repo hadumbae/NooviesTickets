@@ -2,12 +2,11 @@
  * @fileoverview React Query hook for fetching featured movie reviews.
  */
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {HttpResponseError, ObjectIdString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {getFetchFeaturedReviewsByMovie} from "@/domains/movie-reviews/_feat/fetch-by-movie/repository/repository.ts";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {
     FeaturedReviewsByMovie,
     FeaturedReviewsByMovieSchema,

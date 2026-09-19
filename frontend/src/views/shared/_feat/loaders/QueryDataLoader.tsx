@@ -3,7 +3,7 @@
 import {ComponentType, ReactElement, ReactNode} from 'react';
 import {PageLoader} from "@/views/shared/_comp/page";
 import {UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 
 /** Props for the QueryDataLoader component. */
 type LoaderProps<TData = unknown> = {

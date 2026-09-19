@@ -2,7 +2,7 @@
  * @fileoverview Hook for fetching and validating paginated movie review data for the client view.
  */
 
-import {SlugString} from "@noovies-tickets/common";
+import {HttpResponseError, SlugString} from "@noovies-tickets/common";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {getReviewsForMovieInfoView} from "@/domains/movies/_feat/client-view-data/repository/repository.ts";
 import {MovieClientViewDataQueryKeys} from "@/domains/movies/_feat/client-view-data/hooks/queryKeys.ts";
@@ -10,7 +10,6 @@ import {
     MovieInfoReviewsViewData,
     MovieInfoReviewsViewSchema
 } from "@/domains/movies/_feat/client-view-data/schemas/MovieInfoReviewsViewSchema.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";

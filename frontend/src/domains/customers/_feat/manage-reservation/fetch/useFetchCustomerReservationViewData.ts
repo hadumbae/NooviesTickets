@@ -3,10 +3,9 @@
  *
  */
 
-import {ObjectIdString} from "@noovies-tickets/common";
+import {HttpResponseError, ObjectIdString} from "@noovies-tickets/common";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {CustomerReservationViewQueryKeys} from "@/domains/customers/_feat/manage-reservation/fetch/queryKeys.ts";

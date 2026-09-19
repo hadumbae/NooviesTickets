@@ -4,7 +4,7 @@
 
 import {useEffect} from "react";
 import {UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {IpifyLocalStorageData, IpifyPayloadSchema} from "@/shared/_feat/external/ipify-country/schema";
 import {useFetchIPGeolocationData} from "@/shared/_feat/external/ipify-country/hooks/useFetchIPGeolocationData.ts";
 import {useGetIpifyLocalStorageData} from "@/shared/_feat/external/ipify-country/hooks/useGetIpifyLocalStorageData.ts";

@@ -55,14 +55,13 @@ export const useFetchAPI = async <TReturns = unknown>(
         signal,
     });
 
-    const {status, statusText} = response;
+    const {status} = response;
     const rawString = await getResponseText(response);
 
     if (!response.ok) {
         await handleBadResponse({
             url,
             status,
-            statusText,
             raw: rawString,
         });
     }

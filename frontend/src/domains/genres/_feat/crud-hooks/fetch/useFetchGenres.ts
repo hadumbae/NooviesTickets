@@ -4,7 +4,6 @@
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {RequestOptions} from "@/shared/_types/request/RequestOptions.ts";
 import {FetchQueryOptions} from "@/shared/_types/fetch-queries/FetchQueryOptions.ts";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
@@ -12,7 +11,7 @@ import {GenreCRUDQueryKeys} from "@/domains/genres/_feat/crud-hooks/keys/GenreCR
 import {ZodType, ZodTypeDef} from "zod";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 import {query} from "@/domains/genres/_feat/crud";
-import {GenreQueryOptions} from "@noovies-tickets/common";
+import {GenreQueryOptions, HttpResponseError} from "@noovies-tickets/common";
 import {RequestPaginationOptions} from "@/shared/_types/request/RequestPaginationOptions";
 
 /** Parameters for the useFetchGenres hook. */

@@ -3,7 +3,7 @@
  */
 
 import {ZodTypeAny} from "zod";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
+import {HttpResponseError} from "@noovies-tickets/common";
 import {UseQueryResult} from "@tanstack/react-query";
 
 /** Represents a query result bundled with its activation state, cache key, and Zod validation schema. */

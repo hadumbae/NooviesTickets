@@ -4,9 +4,8 @@
 
 import {Logger} from "@/shared/_feat/logger/Logger.ts";
 import {buildContext} from "@/shared/_feat/logger-builders/buildLoggerContext.ts";
-import HttpResponseError from "@/shared/_err/HttpResponseError.ts";
 import {handle422Response} from "@/shared/_feat/use-fetch-api/bad-response/handle422Response.ts";
-import {parseJSON} from "@noovies-tickets/common";
+import {deriveHttpResponseErrorCode, HttpResponseError, parseJSON} from "@noovies-tickets/common";
 
 type HandlerParams = {
     response: Response;
@@ -19,7 +18,7 @@ type HandlerParams = {
 export function handleBadResponse(
     {response, source, rawPayload, message}: HandlerParams
 ): never {
-    const {url, headers, status, statusText} = response;
+    const {url, status} = response;
 
     const payload = parseJSON({
         raw: rawPayload,
@@ -28,7 +27,7 @@ export function handleBadResponse(
     });
 
     if (status === 422) {
-        handle422Response({source, url, headers, status, statusText, payload});
+        handle422Response({source, url, status, payload});
     }
 
     Logger.warn({
@@ -41,11 +40,9 @@ export function handleBadResponse(
     });
 
     throw new HttpResponseError({
+        errorCode: deriveHttpResponseErrorCode(status),
         url,
-        headers,
-        status,
-        statusText,
+        statusCode: status,
         message,
-        payload,
     });
 }
