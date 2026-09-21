@@ -17,7 +17,7 @@ import type {TheatreSnapshotSchemaFields} from "@/domains/theatres/_models/theat
 /** Core schema fields for a theatre showing. */
 export type ShowingSchemaFields = BaseSoftDeleteModel & {
     startTime: Date;
-    endTime?: Date | null;
+    endTime: Date;
     timezone: IANATimezone;
     ticketPrice: number;
     language: ISO6391LanguageCode;

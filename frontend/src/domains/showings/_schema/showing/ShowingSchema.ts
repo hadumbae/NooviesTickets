@@ -15,7 +15,7 @@ import {TheatreSnapshotSchema} from "@/domains/theatres/_schema/snapshot/Theatre
 export const ShowingSchema = z.object({
     _id: IDStringSchema.readonly(),
     startTime: ShowingTimeSchema,
-    endTime: ShowingTimeSchema.optional().nullable(),
+    endTime: ShowingTimeSchema,
     timezone: IANATimezoneSchema,
     ticketPrice: TicketPriceSchema,
     language: ISO6391LanguageCodeSchema,

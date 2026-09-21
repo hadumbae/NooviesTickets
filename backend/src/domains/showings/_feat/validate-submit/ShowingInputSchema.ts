@@ -13,8 +13,8 @@ export const ShowingInputSchema = z.object({
     startAtDate: DateOnlyStringSchema,
     startAtTime: TimeStringSchema,
 
-    endAtDate: DateOnlyStringSchema.optional(),
-    endAtTime: TimeStringSchema.optional(),
+    endAtDate: DateOnlyStringSchema,
+    endAtTime: TimeStringSchema,
     timezone: IANATimezoneSchema,
 
     ticketPrice: PositiveNumberSchema,
@@ -35,25 +35,23 @@ export const ShowingInputSchema = z.object({
 }).superRefine((values, ctx) => {
     const {startAtDate, startAtTime, endAtDate, endAtTime} = values;
 
-    if (endAtDate && endAtTime) {
-        const start = DateTime.fromISO(`${startAtDate}T${startAtTime}`);
-        const end = DateTime.fromISO(`${endAtDate}T${endAtTime}`);
+    const start = DateTime.fromISO(`${startAtDate}T${startAtTime}`);
+    const end = DateTime.fromISO(`${endAtDate}T${endAtTime}`);
 
-        if (end < start) {
-            const message = "Ending time cannot be earlier than starting time.";
+    if (end < start) {
+        const message = "Ending time cannot be earlier than starting time.";
 
-            ctx.addIssue({
-                code: "custom",
-                path: ["endAtDate"],
-                message,
-            });
+        ctx.addIssue({
+            code: "custom",
+            path: ["endAtDate"],
+            message,
+        });
 
-            ctx.addIssue({
-                code: "custom",
-                path: ["endAtTime"],
-                message,
-            });
-        }
+        ctx.addIssue({
+            code: "custom",
+            path: ["endAtTime"],
+            message,
+        });
     }
 }).transform(({startAtTime, startAtDate, endAtTime, endAtDate, timezone, ...values}) => {
     const startTime = DateTime
@@ -61,9 +59,10 @@ export const ShowingInputSchema = z.object({
         .toUTC()
         .toJSDate();
 
-    const endTime = (endAtDate && endAtTime)
-        ? DateTime.fromISO(`${endAtDate}T${endAtTime}`, {zone: timezone}).toUTC().toJSDate()
-        : null;
+    const endTime = DateTime
+        .fromISO(`${endAtDate}T${endAtTime}`, {zone: timezone})
+        .toUTC()
+        .toJSDate();
 
     return {
         ...values,

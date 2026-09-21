@@ -3,16 +3,16 @@
  */
 
 import {z} from "zod";
-import {TimeStringSchema, DateOnlyStringSchema, preprocessEmptyToUndefined, preprocessOptionalField, IANATimezoneSchema} from "@noovies-tickets/common";
+import {TimeStringSchema, DateOnlyStringSchema, preprocessEmptyToUndefined, IANATimezoneSchema} from "@noovies-tickets/common";
 
 /**
- * Schema for showing date and time inputs that normalizes empty strings to undefined for optional end fields.
+ * Schema for showing date and time inputs that normalizes empty strings to undefined.
  */
 export const ShowingFormDateTimeSchema = z.object({
     startAtTime: preprocessEmptyToUndefined(TimeStringSchema),
     startAtDate: preprocessEmptyToUndefined(DateOnlyStringSchema),
-    endAtTime: preprocessOptionalField(TimeStringSchema),
-    endAtDate: preprocessOptionalField(DateOnlyStringSchema),
+    endAtTime: preprocessEmptyToUndefined(TimeStringSchema),
+    endAtDate: preprocessEmptyToUndefined(DateOnlyStringSchema),
     timezone: preprocessEmptyToUndefined(IANATimezoneSchema),
 });
 

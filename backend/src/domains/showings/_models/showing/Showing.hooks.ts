@@ -13,7 +13,10 @@ import {createShowingSeatMap} from "@/domains/seatmaps/_feat/manage-showing-seat
 import {ShowingSeatMapVirtualPipelines} from "@/domains/showings/_feat/query-population/ShowingSeatMapVirtualPipelines";
 import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
 import {MovieModel} from "@/domains/movies/_models/movie";
+import type {MovieSchemaFields} from "@/domains/movies/_models/movie";
+import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 import {generateSlug} from "@noovies-tickets/common";
+import {DateTime} from "luxon";
 
 ShowingSchema.pre("validate", {document: true}, async function () {
     if (this.isModified("theatre")) {
@@ -26,14 +29,29 @@ ShowingSchema.pre("validate", {document: true}, async function () {
         this.location = theatre.location;
     }
 
+    let movie: DocumentType<MovieSchemaFields> | undefined;
+
     if (this.isModified("movie")) {
-        const movie = await fetchRequiredModelDocument({
+        movie = await fetchRequiredModelDocument({
             model: MovieModel,
             _id: this.movie,
             notFoundMessage: "Movie Not Found.",
         });
 
         this.slug = generateSlug(movie.title);
+    }
+
+    if (!this.endTime && this.startTime) {
+        movie ??= await fetchRequiredModelDocument({
+            model: MovieModel,
+            _id: this.movie,
+            notFoundMessage: "Movie Not Found.",
+        });
+
+        this.endTime = DateTime
+            .fromJSDate(this.startTime)
+            .plus({minutes: movie.runtime})
+            .toJSDate();
     }
 });
 

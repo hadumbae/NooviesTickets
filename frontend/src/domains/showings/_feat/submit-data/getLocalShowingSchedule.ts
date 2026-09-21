@@ -6,8 +6,8 @@ import {IANATimezone, ISO8601DateTime} from "@noovies-tickets/common";
 
 /** Parameters for extracting showing date and time values. */
 type ShowingDateTimeParams = {
-    startTime?: ISO8601DateTime | null;
-    endTime?: ISO8601DateTime | null;
+    startTime: ISO8601DateTime;
+    endTime: ISO8601DateTime;
     localTimezone?: IANATimezone;
 };
 
@@ -23,28 +23,17 @@ type ShowingDateTimeReturns = {
 export function getLocalShowingSchedule(
     {startTime, endTime, localTimezone}: ShowingDateTimeParams
 ): ShowingDateTimeReturns {
-    const values = {
-        startAtDate: "",
-        startAtTime: "",
-        endAtDate: "",
-        endAtTime: "",
-    };
-
     if (!localTimezone) {
-        return values;
+        return {startAtDate: "", startAtTime: "", endAtDate: "", endAtTime: ""};
     }
 
-    if (startTime) {
-        const start = startTime.setZone(localTimezone);
-        values.startAtDate = start.toFormat("yyyy-MM-dd");
-        values.startAtTime = start.toFormat("HH:mm");
-    }
+    const start = startTime.setZone(localTimezone);
+    const end = endTime.setZone(localTimezone);
 
-    if (endTime) {
-        const end = endTime.setZone(localTimezone);
-        values.endAtDate = end.toFormat("yyyy-MM-dd");
-        values.endAtTime = end.toFormat("HH:mm");
-    }
-
-    return values;
+    return {
+        startAtDate: start.toFormat("yyyy-MM-dd"),
+        startAtTime: start.toFormat("HH:mm"),
+        endAtDate: end.toFormat("yyyy-MM-dd"),
+        endAtTime: end.toFormat("HH:mm"),
+    };
 }

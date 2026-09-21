@@ -26,9 +26,9 @@ export function MovieShowingSummaryCard(
     const {canReserveSeats, isSpecialEvent} = config;
 
     const startFormatted = startTime.toFormat("LLL dd, yyyy (hh:mm)");
-    const endFormatted = endTime
-        ? startTime.hasSame(endTime, "day") ? endTime.toFormat("hh:mm") : endTime.toFormat("LLL dd, yyyy (hh:mm)")
-        : null;
+    const endFormatted = startTime.hasSame(endTime, "day")
+        ? endTime.toFormat("hh:mm")
+        : endTime.toFormat("LLL dd, yyyy (hh:mm)");
 
     return (
         <Card>
@@ -50,7 +50,7 @@ export function MovieShowingSummaryCard(
 
                 <div>
                     <p className="primary-text text-sm font-medium">{startFormatted}</p>
-                    {endFormatted && <p className="secondary-text text-sm">Ends {endFormatted}</p>}
+                    <p className="secondary-text text-sm">Ends {endFormatted}</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">

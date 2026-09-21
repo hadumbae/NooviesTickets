@@ -32,7 +32,7 @@ export function TheatreScreenScheduleCard({showing}: CardProps): ReactElement {
     const formattedStatus = convertToTitleCase(status);
     const formattedRuntime = formatMovieRuntime(runtime);
     const formattedStartTime = startTime.toFormat("MMM dd, yyyy (hh:mm)");
-    const formattedTimeMetadata = buildString([endTime?.toFormat("MMM dd, yyyy (hh:mm)"), formattedRuntime], " • ");
+    const formattedTimeMetadata = buildString([endTime.toFormat("MMM dd, yyyy (hh:mm)"), formattedRuntime], " • ");
 
     return (
         <Link to={`/admin/showings/get/${slug}`}>

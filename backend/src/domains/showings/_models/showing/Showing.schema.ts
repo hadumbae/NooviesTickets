@@ -52,10 +52,10 @@ export const ShowingSchema = new Schema<ShowingSchemaFields, ShowingSchemaModel,
 
         endTime: {
             type: Date,
-            default: null,
+            required: [true, "End Time is required."],
             validate: {
-                validator(value: Date | null | undefined) {
-                    return !value || value > this.startTime;
+                validator(value: Date) {
+                    return value > this.startTime;
                 },
                 message: "End Time must be later than Start Time.",
             },
