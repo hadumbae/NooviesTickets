@@ -2,7 +2,7 @@
  * @fileoverview Presentational content layer for the Showing Details page.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 
@@ -15,17 +15,22 @@ import {ReservationForm, ReservationFormView} from "@/views/client/reservations/
 /** Props for the ShowingInfoPageContent component. */
 type ContentProps = {
     showing: ShowingDetails;
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders formatted showing metadata and the interactive ticket reservation workflow.
  */
 export function ShowingInfoPageContent(
-    {showing}: ContentProps
+    {showing, setTitle}: ContentProps
 ): ReactElement {
     const navigate = useLoggedNavigate();
 
-    const {_id: showingID, movie: {_id: movieID}, config: {canReserveSeats}} = showing;
+    const {_id: showingID, movie: {_id: movieID, title: movieTitle}, theatre: {name: theatreName}, config: {canReserveSeats}} = showing;
+
+    useEffect(() => {
+        setTitle(`${movieTitle} • ${theatreName}`);
+    }, [movieTitle, theatreName, setTitle]);
     const reservationType: ReservationType = canReserveSeats
         ? "RESERVED_SEATS"
         : "GENERAL_ADMISSION";

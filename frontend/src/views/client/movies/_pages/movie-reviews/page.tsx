@@ -6,7 +6,7 @@ import {ReactElement} from "react";
 import {PageLoader} from "@/views/shared/_comp/page";
 import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {
-    useFetchByIdentifierRouteParams
+    useFetchByIdentifierRouteParams, useSetPageTitle
 } from "@/shared/_feat";
 import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 
@@ -19,6 +19,8 @@ const REVIEWS_PER_PAGE = 20;
 
 /** Coordinates routing, pagination, and multi-query data loading for movie reviews. */
 export function MovieInfoReviewsPage(): ReactElement {
+    const {setTitle} = useSetPageTitle({presetTitle: "Movie Reviews"});
+
     const params = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,
         errorTo: "/browse/movies",
@@ -49,6 +51,7 @@ export function MovieInfoReviewsPage(): ReactElement {
                     page={page}
                     perPage={REVIEWS_PER_PAGE}
                     setPage={setPage}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

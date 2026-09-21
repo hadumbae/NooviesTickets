@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from 'react';
-import {useTitle} from "@/shared/_feat";
+import {useSetPageTitle} from "@/shared/_feat";
 import {
     useFetchCurrentUserFavourites
 } from "@/domains/users/_feat/manage-user-favourites/hooks/useFetchCurrentUserFavourites.ts";
@@ -20,7 +20,7 @@ const MOVIES_PER_PAGE = 20;
  * Renders the My Favourites page with paginated movie data.
  */
 export function MyFavouritesPage(): ReactElement {
-    useTitle('My Favourites');
+    useSetPageTitle({presetTitle: "My Favourites"});
 
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
     const query = useFetchCurrentUserFavourites({page, perPage: MOVIES_PER_PAGE});

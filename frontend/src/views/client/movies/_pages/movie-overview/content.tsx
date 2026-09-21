@@ -2,7 +2,7 @@
  * @fileoverview Layout composition for the movie overview page.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
@@ -22,14 +22,19 @@ type ContentProps = {
     movie: MovieDetails;
     credits: MovieCreditDetails[];
     reviewDetails: MovieReviewSummaryData;
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the movie overview page sections including header, credits, and reviews.
  */
 export function MovieInfoPageContent(
-    {movie, credits, reviewDetails: {averageRating, userReview, items: reviews}}: ContentProps
+    {movie, credits, reviewDetails: {averageRating, userReview, items: reviews}, setTitle}: ContentProps
 ): ReactElement {
+    useEffect(() => {
+        setTitle(movie.title);
+    }, [movie, setTitle]);
+
     return (
         <PageFlexWrapper className="space-y-10">
             <MovieOverviewHeader

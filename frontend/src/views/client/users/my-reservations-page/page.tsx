@@ -10,7 +10,7 @@ import {
     CurrentUserReservationsQueryOptionsSchema,
     useFetchReservationsForCurrentUser
 } from "@/domains/reservations/_feat";
-import {useParsedSearchParams} from "@/shared/_feat";
+import {useParsedSearchParams, useSetPageTitle} from "@/shared/_feat";
 
 const RESERVATIONS_PER_PAGE = 20;
 
@@ -18,6 +18,8 @@ const RESERVATIONS_PER_PAGE = 20;
  * Orchestrates pagination state and data loading for the authenticated user's reservations.
  */
 export function MyReservationsPage(): ReactElement {
+    useSetPageTitle({presetTitle: "My Reservations"});
+
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
     const {searchParams} = useParsedSearchParams({schema: CurrentUserReservationsQueryOptionsSchema});
 

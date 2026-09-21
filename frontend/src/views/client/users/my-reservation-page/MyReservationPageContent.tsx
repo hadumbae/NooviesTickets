@@ -17,20 +17,25 @@ import {
 } from "@/views/client/users/my-reservation-page/mutations/MyReservationStatusActions.tsx";
 import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {PopulatedReservation} from "@/domains/reservations/_schema/model";
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 
 /** Props for the MyReservationPageContent component. */
 type ContentProps = {
     reservation: PopulatedReservation;
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the reservation details view including conditional seating maps and status management actions.
  */
 export function MyReservationPageContent(
-    {reservation}: ContentProps
+    {reservation, setTitle}: ContentProps
 ): ReactElement {
     const navigate = useLoggedNavigate();
+
+    useEffect(() => {
+        setTitle(reservation.uniqueCode);
+    }, [reservation, setTitle]);
 
     const {
         _id,

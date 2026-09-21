@@ -3,7 +3,7 @@
  */
 
 import {
-    useFetchByIdentifierRouteParams
+    useFetchByIdentifierRouteParams, useSetPageTitle
 } from "@/shared/_feat";
 import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {PageLoader} from "@/views/shared/_comp/page";
@@ -17,6 +17,8 @@ import {QueryDataLoader} from "@/views/shared/_feat";
  * Fetches and renders the movie credits page based on the URL slug.
  */
 export function MovieInfoCreditsPage(): ReactElement {
+    const {setTitle} = useSetPageTitle({presetTitle: "Movie Credits"});
+
     const {slug} = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,
         errorTo: "/browse/movies",
@@ -39,6 +41,7 @@ export function MovieInfoCreditsPage(): ReactElement {
                     movie={movie}
                     castCredits={castCredits}
                     crewCredits={crewCredits}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

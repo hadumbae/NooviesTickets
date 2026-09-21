@@ -2,7 +2,7 @@
  * @fileoverview Content layout for the person information page.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper} from "@/views/shared/_comp";
 import {Person} from "@noovies-tickets/common";
 import {organisePersonFilmography, PersonCreditRoleGroup} from "@/domains/movie-credits";
@@ -18,21 +18,24 @@ import {
 import {
     PersonInfoPageBreadcrumbs
 } from "@/views/client/persons/_pages/info-page/sections/breadcrumbs.tsx";
-import {useTitle} from "@/shared/_feat";
 
 /** Props for the PersonInfoContent component. */
 type ContentProps = {
     person: Person;
     filmography: PersonCreditRoleGroup[];
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the detailed information, cast credits, and crew credits for a specific person.
  */
 export function PersonInfoContent(
-    {person, filmography}: ContentProps
+    {person, filmography, setTitle}: ContentProps
 ): ReactElement {
-    useTitle(`Browse • ${person.name}`);
+    useEffect(() => {
+        setTitle(person.name);
+    }, [person, setTitle]);
+
     const {cast, crew} = organisePersonFilmography({filmography});
 
     return (

@@ -10,13 +10,13 @@ import {PageLoader} from "@/views/shared/_comp";
 import {toast} from "react-toastify";
 import {useFetchPersonInfoViewData} from "@/domains/persons/_feat/client-view-data";
 import {QueryDataLoader} from "@/views/shared/_feat";
-import {useTitle} from "@/shared/_feat";
+import {useSetPageTitle} from "@/shared/_feat";
 
 /**
  * Entry point for the person details view.
  */
 export function PersonInfoPage(): ReactElement {
-    useTitle("Browse • Person");
+    const {setTitle} = useSetPageTitle({presetTitle: "Person"});
 
     const navigate = useLoggedNavigate();
     const {slug} = usePersonInfoRouteParams();
@@ -38,7 +38,8 @@ export function PersonInfoPage(): ReactElement {
             {({person, filmography}) => (
                 <PersonInfoContent
                     person={person}
-                    filmography={filmography}/>
+                    filmography={filmography}
+                    setTitle={setTitle}/>
             )}
         </QueryDataLoader>
     );

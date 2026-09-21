@@ -1,5 +1,4 @@
 export * from "./crud-handlers";
-export * from "./document";
 export * from "./error-handling";
 export * from "./external";
 export * from "./fetch-api";

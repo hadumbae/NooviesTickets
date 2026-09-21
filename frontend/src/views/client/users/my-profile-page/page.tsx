@@ -4,14 +4,14 @@
 
 import {ReactElement} from "react";
 import {useGetCurrentUser} from "@/domains/authentication/_feat";
-import {useTitle} from "@/shared/_feat";
+import {useSetPageTitle} from "@/shared/_feat";
 import {MyProfilePageContent} from "@/views/client/users/my-profile-page/content.tsx";
 
 /**
  * Renders the profile page for the current authenticated user.
  */
 export function MyProfilePage(): ReactElement {
-    useTitle("My Profile");
+    useSetPageTitle({presetTitle: "My Profile"});
     const user = useGetCurrentUser();
 
     return (

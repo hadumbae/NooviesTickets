@@ -20,7 +20,7 @@ export function useSetPageTitle({presetTitle}: HookConfig): HookReturn {
     const [title, setTitle] = useState<string>(presetTitle);
 
     useEffect(() => {
-        const docTitle = `Noovies | ${title}`;
+        const docTitle = `${title} - Noovies`;
 
         if (title && document.title !== docTitle) {
             document.title = docTitle;

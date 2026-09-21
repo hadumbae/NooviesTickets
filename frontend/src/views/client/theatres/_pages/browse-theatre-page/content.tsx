@@ -29,7 +29,7 @@ export function BrowseTheatreListPageContent(
         <PageFlexWrapper className="space-y-4">
             <PageHeader
                 title="Theatres"
-                description="Theatres Near You"
+                description="Finding Showings Near You"
             />
 
             <TheatreLocationQueryOptionsFormSection triggerText="Toggle Form"/>
@@ -52,7 +52,7 @@ export function BrowseTheatreListPageContent(
                     </section>
                 ) : (
                     <EmptyArrayContainer
-                        text="No Theatres"
+                        text="No Theatres With Showings"
                         className="flex-1"
                     />
                 )

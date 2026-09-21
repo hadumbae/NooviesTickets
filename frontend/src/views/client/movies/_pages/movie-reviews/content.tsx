@@ -2,7 +2,7 @@
  * @fileoverview Presentational layout for the movie reviews page.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
@@ -23,13 +23,18 @@ type ContentProps = {
     page: number;
     perPage: number;
     setPage: (page: number) => void;
+    setTitle: (title: string) => void;
 };
 
 /** Renders the structured layout and sections for the movie reviews view. */
 export function MovieInfoReviewsPageContent(
-    {movie, totalItems, reviews, userReview, ...paginationProps}: ContentProps
+    {movie, totalItems, reviews, userReview, setTitle, ...paginationProps}: ContentProps
 ): ReactElement {
     const {_id: movieID, title: movieTitle, posterImage, slug: movieSlug} = movie;
+
+    useEffect(() => {
+        setTitle(`${movie.title} Reviews`);
+    }, [movie, setTitle]);
 
     return (
         <PageFlexWrapper>

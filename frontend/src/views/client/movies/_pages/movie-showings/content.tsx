@@ -2,7 +2,7 @@
  * @fileoverview Renders the movie showings page content including filters and the paginated list of showings.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {PaginationRangeButtons} from "@/views/shared/_comp";
 
@@ -20,15 +20,20 @@ type ContentProps = {
     movie: MovieDetails;
     totalShowings: number;
     showings: PopulatedShowing[];
+    setTitle: (title: string) => void;
 };
 
 /**
  * Displays a list of movie showings with a search form and pagination controls.
  */
 export function MovieInfoShowingsPageContent(
-    {page, perPage, movie, totalShowings, showings, setPage}: ContentProps
+    {page, perPage, movie, totalShowings, showings, setPage, setTitle}: ContentProps
 ): ReactElement {
     const {title, posterImage, slug} = movie;
+
+    useEffect(() => {
+        setTitle(`${movie.title} Showings`);
+    }, [movie, setTitle]);
 
     return (
         <PageFlexWrapper className="space-y-6">

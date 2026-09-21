@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {
-    useFetchByIdentifierRouteParams
+    useFetchByIdentifierRouteParams, useSetPageTitle
 } from "@/shared/_feat";
 import {PageLoader} from "@/views/shared/_comp/page";
 import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
@@ -18,6 +18,8 @@ import {useFetchShowingBySlug} from "@/domains/showings/_feat/crud-hooks/fetch/u
  * Entry point for the showing details view.
  */
 export function ShowingInfoPage(): ReactElement {
+    const {setTitle} = useSetPageTitle({presetTitle: "Showing"});
+
     const {slug} = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,
         sourceComponent: ShowingInfoPage.name,
@@ -39,7 +41,7 @@ export function ShowingInfoPage(): ReactElement {
     return (
         <QueryDataLoader query={query}>
             {(showing: ShowingDetails) => (
-                <ShowingInfoPageContent showing={showing}/>
+                <ShowingInfoPageContent showing={showing} setTitle={setTitle}/>
             )}
         </QueryDataLoader>
     );

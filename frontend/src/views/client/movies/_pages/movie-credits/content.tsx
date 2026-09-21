@@ -2,7 +2,7 @@
  * @fileoverview Content component for the movie credits page displaying organized cast and crew lists.
  */
 
-import {ReactElement, useMemo} from "react";
+import {ReactElement, useEffect, useMemo} from "react";
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {MovieInfoHeader} from "@/views/client/movies/_comp";
 import {
@@ -19,11 +19,12 @@ type ContentProps = {
     movie: MovieDetails;
     castCredits: CastCreditExceptMovie[];
     crewCredits: GroupedCrewCreditsExceptMovie[];
+    setTitle: (title: string) => void;
 }
 
 /** Renders the full list of cast and crew credits for a specific movie. */
 export function MovieInfoCreditsPageContent(
-    {movie, castCredits, crewCredits}: ContentProps
+    {movie, castCredits, crewCredits, setTitle}: ContentProps
 ): ReactElement {
     const {title, slug, posterImage} = movie;
 
@@ -31,6 +32,10 @@ export function MovieInfoCreditsPageContent(
         () => buildFullCreditListByCategoryOrder({castCredits, crewDetails: crewCredits}),
         [castCredits, crewCredits]
     );
+
+    useEffect(() => {
+        setTitle(`${movie.title} • Cast & Crew`);
+    }, [movie, setTitle]);
 
     return (
         <PageFlexWrapper className="space-y-8">

@@ -5,7 +5,7 @@
 
 import { ReactElement } from "react";
 import {
-    useFetchByIdentifierRouteParams
+    useFetchByIdentifierRouteParams, useSetPageTitle
 } from "@/shared/_feat";
 import { SlugRouteParamSchema } from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import { PageLoader } from "@/views/shared/_comp/page";
@@ -21,6 +21,8 @@ const MOVIES_PER_PAGE = 10;
  * Page component that manages the lifecycle of fetching a specific genre and its associated movies.
  */
 export function BrowseGenreInfoPage(): ReactElement {
+    const { setTitle } = useSetPageTitle({ presetTitle: "Genre" });
+
     const { slug } = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,
         errorTo: "/browse/genres",
@@ -49,6 +51,7 @@ export function BrowseGenreInfoPage(): ReactElement {
                     page={page}
                     perPage={MOVIES_PER_PAGE}
                     setPage={setPage}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

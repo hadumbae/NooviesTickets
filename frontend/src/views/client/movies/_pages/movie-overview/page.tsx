@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 
 import {
-    useFetchByIdentifierRouteParams
+    useFetchByIdentifierRouteParams, useSetPageTitle
 } from "@/shared/_feat";
 import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {PageLoader} from "@/views/shared/_comp/page";
@@ -15,6 +15,8 @@ import {QueryDataLoader} from "@/views/shared/_feat";
 
 /** Loads data and renders the movie overview page. */
 export function MovieInfoPage(): ReactElement {
+    const {setTitle} = useSetPageTitle({presetTitle: "Movie"});
+
     const {slug} = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,
         errorTo: "/browse/movies",
@@ -38,6 +40,7 @@ export function MovieInfoPage(): ReactElement {
                         movie={movie}
                         credits={credits}
                         reviewDetails={reviewDetails}
+                        setTitle={setTitle}
                     />
                 );
             }}

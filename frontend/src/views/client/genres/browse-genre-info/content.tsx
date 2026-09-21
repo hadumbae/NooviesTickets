@@ -2,7 +2,7 @@
  * @fileoverview Presentational content for the client-facing Genre Detail page.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {BrowseMovieOverviewCard} from "@/views/client/movies/_comp";
 import {PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
@@ -18,12 +18,17 @@ type ContentProps = {
     page: number;
     perPage: number;
     setPage: (page: number) => void;
+    setTitle: (title: string) => void;
 };
 
 /** Renders the primary layout for the Genre Detail view. */
 export function BrowseGenreInfoPageContent(
-    {genre, movies, totalMovies, page, perPage, setPage}: ContentProps
+    {genre, movies, totalMovies, page, perPage, setPage, setTitle}: ContentProps
 ): ReactElement {
+    useEffect(() => {
+        setTitle(genre.name);
+    }, [genre, setTitle]);
+
     return (
         <PageFlexWrapper>
             <PageHeader

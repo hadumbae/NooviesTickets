@@ -2,7 +2,7 @@
  * @fileoverview Orchestrates route params and data fetching for movie showings.
  */
 
-import {getUserCountry, useFetchByIdentifierRouteParams} from "@/shared/_feat";
+import {getUserCountry, useFetchByIdentifierRouteParams, useSetPageTitle} from "@/shared/_feat";
 import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {PageLoader} from "@/views/shared/_comp/page";
 import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
@@ -21,6 +21,8 @@ const SHOWINGS_PER_PAGE = 20;
  * Resolves search and route params to render a validated movie showings view.
  */
 export const MovieInfoShowingsPage = () => {
+    const {setTitle} = useSetPageTitle({presetTitle: "Movie Showings"});
+
     const userCountry = getUserCountry({presetCountry: "NZ"});
 
     console.log("User Country:", userCountry);
@@ -66,6 +68,7 @@ export const MovieInfoShowingsPage = () => {
                         setPage={setPage}
                         showings={items}
                         totalShowings={totalItems}
+                        setTitle={setTitle}
                     />
                 );
             }}
