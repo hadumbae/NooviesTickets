@@ -14,7 +14,7 @@ import {PersonDetailsViewData, useFetchPersonDetailsViewData} from "@/domains/pe
  * Renders the person's detailed profile page using route parameters to fetch biographical and filmography data.
  */
 export function PersonDetailsPage(): ReactElement {
-    useSetAdminPageTitle({presetTitle: "Person Details"})
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Person Details"})
 
     const routeParams = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,
@@ -41,6 +41,7 @@ export function PersonDetailsPage(): ReactElement {
                     creditCount={stats.creditCount}
                     movieCount={stats.movieCount}
                     filmography={filmography}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

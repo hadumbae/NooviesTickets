@@ -1,12 +1,11 @@
 /** @fileoverview Presentation component for the Genre Details page, orchestrating metadata display and associated movies. */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
 import {MovieIndexCard} from "@/views/admin/movies/_comp/index-list-display";
-import {useSetAdminPageTitle} from "@/shared/_feat/handle-pages";
 import {Ellipsis} from "lucide-react";
 import {Genre} from "@noovies-tickets/common";
 import {
@@ -25,16 +24,20 @@ type ContentProps = {
     page: number;
     perPage: number;
     setPage: (page: number | string) => void;
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the layout for a specific genre, including its metadata, associated movies, and admin controls.
  */
 export function GenreDetailsPageContent(
-    {page, perPage, setPage, movies, genre, totalItems}: ContentProps
+    {page, perPage, setPage, movies, genre, totalItems, setTitle}: ContentProps
 ): ReactElement {
     const {name: genreName} = genre;
-    useSetAdminPageTitle({presetTitle: `Genre • ${genreName}`});
+
+    useEffect(() => {
+        setTitle(genre.name);
+    }, [genre, setTitle]);
 
     return (
         <PageFlexWrapper>

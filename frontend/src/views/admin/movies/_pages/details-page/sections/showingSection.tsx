@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {ObjectIdString, SlugString} from "@noovies-tickets/common";
 import {PageSectionHeaderLink} from "@/views/shared/_comp/page";
 import {generateArraySchema} from "@noovies-tickets/common";
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
@@ -16,13 +16,14 @@ import {ShowingDetails, ShowingDetailsSchema} from "@/domains/showings/_schema/s
 /** Props for the MovieDetailsPageShowingSection component. */
 type TabProps = {
     _id: ObjectIdString;
+    slug: SlugString;
 };
 
 /**
  * Displays a list of screenings for a specific movie with a link to full management.
  */
 export function MovieDetailsPageShowingSection(
-    {_id}: TabProps
+    {_id, slug}: TabProps
 ): ReactElement {
     const query = useFetchShowings({
         queries: {movie: _id, sortByStartTime: 1},
@@ -33,7 +34,7 @@ export function MovieDetailsPageShowingSection(
     return (
         <div className="space-y-4">
             <PageSectionHeaderLink
-                to={`/admin/showings?movie=${_id}`}
+                to={`/admin/movies/get/${slug}/showings`}
                 text="Showings"
             />
 

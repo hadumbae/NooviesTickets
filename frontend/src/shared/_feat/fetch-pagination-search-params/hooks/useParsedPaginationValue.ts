@@ -1,6 +1,5 @@
 /**
- * @file React hook for managing a single, schema-validated pagination parameter in the URL.
- * @filename useParsedPaginationValue.ts
+ * @fileoverview React hook for managing a single, schema-validated pagination parameter in the URL.
  */
 
 import {useSearchParams} from "react-router-dom";
@@ -9,28 +8,15 @@ import {Logger} from "@/shared/_feat/logger/Logger.ts";
 import {PaginationValueSchema} from "@/shared/_feat/fetch-pagination-search-params/schemas/PaginationValueSchema.ts";
 import {getPaginationDefaultValue} from "@/shared/_feat/fetch-pagination-search-params/getPaginationDefaultValue.ts";
 
-/**
- * Structured return object for the {@link useParsedPaginationValue} hook.
- */
+/** Props for the PaginationValueReturn type. */
 type PaginationValueReturn = {
-    /** The validated and coerced numeric value (e.g., the current page number). */
     value: number;
-
-    /** * Updates the specific parameter in the browser's URL.
-     * @param val - The new numeric or string value to persist.
-     */
     setValue: (val: number | string) => void;
-
-    /** Flag indicating if the parameter was explicitly defined in the URL query string. */
     hasValue: boolean;
 };
 
 /**
- * A specialized hook for handling individual pagination segments (page or perPage) with Zod validation.
- * @param key - The URL parameter key to manage ('page' or 'perPage').
- * @param fallbackValue - An optional number to use if the parameter is missing from the URL.
- * @returns An object containing the current numeric value, a setter, and a presence flag.
- * @throws {Error} If the resolved value fails to meet the schema requirements.
+ * Custom hook for managing individual pagination segments with Zod validation.
  */
 export function useParsedPaginationValue(
     key: "page" | "perPage",

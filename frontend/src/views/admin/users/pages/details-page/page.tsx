@@ -9,11 +9,12 @@ import {
     UserDetailsRouteParamsSchema
 } from "@/domains/users/_feat/admin-view-data/user-details";
 import {QueryDataLoader} from "@/views/shared/_feat";
-import {useRouteParams, useTitle} from "@/shared/_feat";
+import {useRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 
 /** Admin page that fetches and displays a user's profile, reservations, and reviews. */
 export function UserDetailsPage(): ReactElement {
-    useTitle("User Details");
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "User Details"});
+
     const {userID} = useRouteParams({
         schema: UserDetailsRouteParamsSchema,
         errorConfig: {description: "Valid User ID Is Required."},
@@ -28,6 +29,7 @@ export function UserDetailsPage(): ReactElement {
                     user={user}
                     totalReviews={totalReviews}
                     totalReservations={totalReservations}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

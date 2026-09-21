@@ -7,7 +7,6 @@ import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {Button} from "@/views/shared/_comp/ui";
 import {PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
-import {useSetAdminPageTitle} from "@/shared/_feat/handle-pages";
 
 import {Theatre} from "@noovies-tickets/common";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre";
@@ -35,8 +34,6 @@ type ContentProps = {
 export function TheatreIndexPageContent(
     {theatres, page, perPage, setPage, totalItems}: ContentProps
 ): ReactElement {
-    useSetAdminPageTitle({presetTitle: "Theatre Index"});
-
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
     const navigateToTheatre = useNavigateToTheatre();

@@ -4,17 +4,12 @@
 
 import {ReactElement} from "react";
 import {PageLoader} from "@/views/shared/_comp/page";
-import {
-    useFetchByIdentifierRouteParams
-} from "@/shared/_feat";
+import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 
-import {
-    TheatreShowingListViewData,
-    useFetchTheatreShowingListViewData
-} from "@/domains/theatres/_feat/admin-view-data";
+import {TheatreShowingListViewData, useFetchTheatreShowingListViewData} from "@/domains/theatres/_feat/admin-view-data";
 import {TheatreShowingListPageContent} from "@/views/admin/theatres/_pages/theatre-showings-list/content.tsx";
 
 const SHOWINGS_PER_PAGE = 10;
@@ -23,6 +18,8 @@ const SHOWINGS_PER_PAGE = 10;
  * Page component that resolves theatre route parameters and fetches paginated showing data.
  */
 export function TheatreShowingListPage(): ReactElement {
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Showings For Theatre"});
+
     const {slug} = useFetchByIdentifierRouteParams({
         errorTo: "/admin/theatres",
         schema: SlugRouteParamSchema,
@@ -51,6 +48,7 @@ export function TheatreShowingListPage(): ReactElement {
                     page={page}
                     perPage={SHOWINGS_PER_PAGE}
                     setPage={setPage}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

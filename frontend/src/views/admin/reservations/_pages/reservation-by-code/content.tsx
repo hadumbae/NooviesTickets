@@ -2,7 +2,7 @@
  * @fileoverview Presentation layer for the reservation lookup interface.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
@@ -19,13 +19,18 @@ import {ReservationByCodeDataContent} from "@/views/admin/reservations/_pages/re
 type ContentProps = {
     code: ReservationUniqueCode | null;
     reservation: AdminReservation | null;
+    setTitle: (title: string) => void;
 };
 
 /** Renders the layout and sections for the reservation-by-code feature. */
 export function ReservationByCodePageContent(
-    {reservation}: ContentProps
+    {reservation, setTitle}: ContentProps
 ): ReactElement {
     const {values, setValues, activeOptions} = useFetchReservationByCodeQueryOptionsContext();
+
+    useEffect(() => {
+        setTitle(reservation?.uniqueCode ?? "Invalid Reservation");
+    }, [setTitle, reservation]);
 
     return (
         <PageFlexWrapper>

@@ -3,12 +3,11 @@
  */
 
 import {Ellipsis} from "lucide-react";
-import {HeaderSubtitle, HeaderTitle, IconButton, Image} from "@/views/shared/_comp";
-
-import {formatMovieData} from "@/domains/movies/_feat/formatters/formatMovieData.ts";
+import {IconButton} from "@/views/shared/_comp";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {MovieDetailsDropdown} from "@/views/admin/movies/_pages/details-page/elements/dropdown.tsx";
 import {MovieDetailsBreadcrumb} from "@/views/admin/movies/_pages/details-page/elements/breadcrumbs.tsx";
+import {MovieSummaryHeaderBanner} from "@/views/admin/movies/_comp/movie-summary/MovieSummaryHeaderBanner.tsx";
 
 /** Props for the MovieDetailsHeader component. */
 type HeaderProps = {
@@ -19,38 +18,19 @@ type HeaderProps = {
  * Primary administrative header for a movie profile displaying the poster, titles, and metadata.
  */
 export function MovieDetailsHeader({movie}: HeaderProps) {
-    const {title, tagline, posterImage, bannerImage, slug} = movie;
-    const {formatted: {genreList, yearAndDuration}} = formatMovieData(movie);
+    const {posterImage, bannerImage, slug} = movie;
 
     return (
         <header className="flex flex-col">
             <div className="flex justify-between items-center">
-                <MovieDetailsBreadcrumb/>
+                <MovieDetailsBreadcrumb title={movie.title}/>
 
                 <MovieDetailsDropdown slug={slug} hasPoster={!!posterImage} hasBanner={!!bannerImage}>
                     <IconButton icon={Ellipsis}/>
                 </MovieDetailsDropdown>
             </div>
 
-            <div className="flex space-x-3">
-                <Image
-                    src={posterImage?.secure_url}
-                    alt="Poster Image"
-                    className="aspect-[2/3] h-36"
-                />
-
-                <div className="flex-grow grid grid-cols-1 gap-1">
-                    <div className="space-y-3 flex flex-col justify-center">
-                        <HeaderTitle>{title}</HeaderTitle>
-                        <HeaderSubtitle>{tagline}</HeaderSubtitle>
-                    </div>
-
-                    <div className="space-y-1 flex flex-col justify-center">
-                        <h3 className="text-xs font-medium secondary-text">{yearAndDuration}</h3>
-                        <h3 className="text-xs font-medium secondary-text">{genreList}</h3>
-                    </div>
-                </div>
-            </div>
+            <MovieSummaryHeaderBanner movie={movie}/>
         </header>
     );
 }

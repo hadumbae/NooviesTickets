@@ -7,7 +7,7 @@ import {PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {CustomerMovieReviewSummary} from "@/domains/movie-reviews/_schema/customer-reviews";
 import {LeanUserWithEmail} from "@/domains/users/_schema/user";
 import {CustomerDetailsCard, CustomerMovieReviewSummaryCard} from "@/views/admin/customers/_comp";
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {CustomerReviewsPageBreadcrumbs} from "@/views/admin/customers/_pages/customer-reviews-page/sections";
 
 /** Props for the CustomerReviewsPageContent component. */
@@ -18,17 +18,18 @@ type ContentProps = {
     perPage: number;
     setPage: (value: number) => void;
     totalItems: number;
+    setTitle: (title: string) => void;
 };
 
 /** Renders the list of movie reviews for a specific customer with pagination controls. */
 export function CustomerReviewsPageContent(
-    {customer, reviews, page, perPage, setPage, totalItems}: ContentProps
+    {customer, reviews, page, perPage, setPage, totalItems, setTitle}: ContentProps
 ): ReactElement {
-    const {
-        _id: customerID,
-        uniqueCode: customerCode,
-        name: customerName,
-    } = customer;
+    const {_id: customerID, uniqueCode: customerCode, name: customerName} = customer;
+
+    useEffect(() => {
+        setTitle(`${customer.name} • Reviews`);
+    }, [customer, setTitle]);
 
     return (
         <PageFlexWrapper>

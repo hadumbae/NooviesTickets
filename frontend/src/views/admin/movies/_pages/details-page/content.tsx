@@ -2,7 +2,7 @@
  * @fileoverview Presentation component for the Movie Details page.
  */
 
-import {ReactElement} from 'react';
+import {ReactElement, useEffect} from 'react';
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {MovieDetails} from "@/domains/movies/_schema/movie/MovieDetailsSchema.ts";
 import {MovieDetailsHeader} from "@/views/admin/movies/_pages/details-page/elements/header.tsx";
@@ -11,24 +11,22 @@ import {MovieDetailsPageItemActions} from "@/views/admin/movies/_pages/details-p
 import {SROnly} from "@/views/shared/_comp/screen-readers";
 import {MovieDetailsPageCreditSection} from "@/views/admin/movies/_pages/details-page/sections/creditSection.tsx";
 import {MovieDetailsPageShowingSection} from "@/views/admin/movies/_pages/details-page/sections/showingSection.tsx";
-import {useSetAdminPageTitle} from "@/shared/_feat";
-import {
-    MovieDetailsPageBannerActions,
-    MovieDetailsPagePosterActions
-} from "@/views/admin/movies/_pages/details-page/actions";
+import {MovieDetailsPageBannerActions, MovieDetailsPagePosterActions} from "@/views/admin/movies/_pages/details-page/actions";
 
 export type MovieDetailsPageContentProps = {
     movie: MovieDetails;
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the primary administrative view for a specific movie.
  */
 export function MovieDetailsPageContent(
-    {movie}: MovieDetailsPageContentProps
+    {movie, setTitle}: MovieDetailsPageContentProps
 ): ReactElement {
-    const {_id, slug, title} = movie;
-    useSetAdminPageTitle({presetTitle: `Movie • ${title}`});
+    useEffect(() => {
+        setTitle(movie.title);
+    }, [setTitle, movie]);
 
     return (
         <PageFlexWrapper>
@@ -41,14 +39,14 @@ export function MovieDetailsPageContent(
                 </div>
 
                 <div className="2xl:col-span-2 space-y-4">
-                    <MovieDetailsPageCreditSection _id={_id} slug={slug}/>
-                    <MovieDetailsPageShowingSection _id={_id}/>
+                    <MovieDetailsPageCreditSection _id={movie._id} slug={movie.slug}/>
+                    <MovieDetailsPageShowingSection _id={movie._id} slug={movie.slug}/>
                 </div>
             </section>
 
-            <MovieDetailsPageItemActions movieID={_id} className="hidden"/>
-            <MovieDetailsPageBannerActions movieID={_id} className="hidden"/>
-            <MovieDetailsPagePosterActions movieID={_id} className="hidden"/>
+            <MovieDetailsPageItemActions movieID={movie._id} className="hidden"/>
+            <MovieDetailsPageBannerActions movieID={movie._id} className="hidden"/>
+            <MovieDetailsPagePosterActions movieID={movie._id} className="hidden"/>
         </PageFlexWrapper>
     );
 }

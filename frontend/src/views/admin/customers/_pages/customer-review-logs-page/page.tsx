@@ -7,7 +7,7 @@ import {CustomerReviewLogsPageContent} from "@/views/admin/customers/_pages/cust
 import {useFetchCustomerReviewLogsViewData} from "@/domains/customers/_feat/movie-review-logs";
 import {useParsedPaginationValue} from "@/shared/_feat/fetch-pagination-search-params";
 import {QueryDataLoader} from "@/views/shared/_feat";
-import {useRouteParams} from "@/shared/_feat";
+import {useRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 import {CustomerReviewRouteParamsSchema} from "@/domains/customers/_feat/movie-review/schema/routeParamsSchema.ts";
 
 const LOGS_PER_PAGE = 20;
@@ -16,6 +16,8 @@ const LOGS_PER_PAGE = 20;
  * Page controller that fetches and displays moderation audit logs for a specific review.
  */
 export function CustomerReviewLogsPage(): ReactElement {
+    useSetAdminPageTitle({presetTitle: "Movie Review Moderation Logs"})
+
     const {customerID, reviewID} = useRouteParams({
         schema: CustomerReviewRouteParamsSchema,
         errorConfig: {

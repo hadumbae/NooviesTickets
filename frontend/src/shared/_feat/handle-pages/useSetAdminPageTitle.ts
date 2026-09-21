@@ -20,7 +20,7 @@ export function useSetAdminPageTitle({presetTitle}: HookConfig): HookReturn {
     const [title, setTitle] = useState<string>(presetTitle);
 
     useEffect(() => {
-        const docTitle = `Noovies Admin | ${title}`;
+        const docTitle = `${title} - Noovies Admin`;
 
         if (title && document.title !== docTitle) {
             document.title = docTitle;

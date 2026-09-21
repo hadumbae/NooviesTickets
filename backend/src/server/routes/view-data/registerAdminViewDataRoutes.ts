@@ -12,6 +12,7 @@ import {ShowingAdminViewDataRoutes} from "@/domains/showings/_feat/admin-view-da
 import {UserAdminViewDataRoutes} from "@/domains/users/_feat/admin-view-data";
 import {CustomerAdminViewDataRoutes} from "@/domains/customer/_feat/customer-details";
 import {DashboardAdminRoutes} from "@/domains/dashboard";
+import {MovieAdminViewDataRoutes} from "@/domains/movies";
 
 const pageRouteGroups: RouteRegistration[] = [
     {
@@ -50,6 +51,13 @@ const setupRouteGroups: RouteRegistration[] = [
     },
 ];
 
+const movieRouteGroups: RouteRegistration[] = [
+    {
+        path: "/api/v1/views/desktop/admin/movies",
+        router: MovieAdminViewDataRoutes,
+    },
+];
+
 const showingRouteGroups: RouteRegistration[] = [
     {
         path: "/api/v1/views/desktop/admin/showings",
@@ -63,6 +71,7 @@ export function registerAdminViewDataRoutes(app: Express) {
         pageRouteGroups,
         userRouteGroups,
         setupRouteGroups,
+        movieRouteGroups,
         showingRouteGroups,
     ];
 

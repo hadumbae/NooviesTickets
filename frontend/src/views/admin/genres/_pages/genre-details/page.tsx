@@ -3,13 +3,10 @@
  */
 
 import {ReactElement} from 'react';
-import {useFetchByIdentifierRouteParams, useTitle} from "@/shared/_feat";
+import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
-import {
-    GenreDetailsUIContextProvider,
-    GenreDetailsUIPendingContextProvider
-} from "@/domains/genres/_feat/page-context";
+import {GenreDetailsUIContextProvider, GenreDetailsUIPendingContextProvider} from "@/domains/genres/_feat/page-context";
 import {GenreDetailsViewData, useFetchGenreDetailsViewData} from "@/domains/genres/_feat/admin-view-data";
 import {GenreDetailsPageContent} from "@/views/admin/genres/_pages/genre-details/content.tsx";
 import {QueryDataLoader} from "@/views/shared/_feat";
@@ -23,7 +20,7 @@ const MOVIES_PER_PAGE = 12;
  * Administrative entry point for the Genre Details view.
  */
 export function GenreDetailsPage(): ReactElement {
-    useTitle("Genre Details");
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Genre"});
 
     const {value: page, setValue: setPage} =
         useParsedPaginationValue("page", 1);
@@ -58,9 +55,9 @@ export function GenreDetailsPage(): ReactElement {
                                     page={page}
                                     perPage={MOVIES_PER_PAGE}
                                     setPage={setPage}
+                                    setTitle={setTitle}
                                 />
                             </GenreDetailsPageProviders>
-
                         )
                     }
                 </QueryDataLoader>

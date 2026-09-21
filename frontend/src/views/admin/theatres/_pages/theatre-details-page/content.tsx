@@ -2,10 +2,9 @@
  * @fileoverview Main content component for the Theatre Details administrative page.
  */
 
-import {ReactElement} from 'react';
+import {ReactElement, useEffect} from 'react';
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {SROnly} from "@/views/shared/_comp/screen-readers";
-import {useSetAdminPageTitle} from "@/shared/_feat/handle-pages";
 
 import {TheatreDetailsViewData} from "@/domains/theatres/_feat";
 import {TheatreDetailsCard} from "@/views/admin/theatres/_comp";
@@ -27,18 +26,21 @@ type TheatreDetailsPageContentProps = {
     screenPage: number;
     screenPerPage: number;
     setScreenPage: (page: number) => void;
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the layout for theatre management, including details cards and related data tabs.
  */
 export function TheatreDetailsPageContent(
-    {pageData, screenPage, screenPerPage, setScreenPage}: TheatreDetailsPageContentProps
+    {pageData, screenPage, screenPerPage, setScreenPage, setTitle}: TheatreDetailsPageContentProps
 ): ReactElement {
     const {theatre, screens, showings} = pageData;
     const {_id: theatreID, slug: theatreSlug, name: theatreName} = theatre;
 
-    useSetAdminPageTitle({presetTitle: `Theatre | ${theatreName}`})
+    useEffect(() => {
+        setTitle(pageData.theatre.name);
+    }, [pageData, setTitle]);
 
     return (
         <PageFlexWrapper>

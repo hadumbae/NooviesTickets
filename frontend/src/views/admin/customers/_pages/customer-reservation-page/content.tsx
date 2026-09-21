@@ -2,7 +2,7 @@
  * @fileoverview Main content view layout component for displaying details of a specific customer reservation.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {CustomerDetailsCard} from "@/views/admin/customers/_comp";
 import {PageHeader} from "@/views/shared/_comp";
@@ -12,14 +12,11 @@ import {
     CustomerReservationMetadataSection,
     CustomerReservationPageBreadcrumbs
 } from "@/views/admin/customers/_pages/customer-reservation-page/sections";
-import {useTitle} from "@/shared/_feat";
 import {Separator} from "@/views/shared/_comp/ui";
 import {
     AdminReservationActionsSection
 } from "@/views/admin/reservations/_feat/sections/AdminReservationActionsSection.tsx";
-import {
-    AdminReservationNotesSection
-} from "@/views/admin/reservations/_feat/sections/AdminReservationNotesSection.tsx";
+import {AdminReservationNotesSection} from "@/views/admin/reservations/_feat/sections/AdminReservationNotesSection.tsx";
 import {
     CustomerReservationDateList
 } from "@/views/admin/reservations/_comp/customer-reservation-details/CustomerReservationDateList.tsx";
@@ -31,18 +28,21 @@ import {
 type ContentProps = {
     customer: LeanUserWithEmail;
     reservation: AdminReservation;
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the structural page content layout for a specific customer reservation details view.
  */
 export function CustomerReservationPageContent(
-    {customer, reservation}: ContentProps
+    {customer, reservation, setTitle}: ContentProps
 ): ReactElement {
     const {_id: customerID, name: customerName, uniqueCode: customerCode} = customer;
     const {_id: reservationID, uniqueCode: reservationCode, notes: reservationNotes} = reservation;
 
-    useTitle(`Customer Reservation • ${reservationCode}`);
+    useEffect(() => {
+        setTitle(`${reservation.uniqueCode} • Reservation`);
+    }, [reservation, setTitle]);
 
     return (
         <PageFlexWrapper>
@@ -61,7 +61,7 @@ export function CustomerReservationPageContent(
                 customer={customer}
             />
 
-            <Separator />
+            <Separator/>
 
             <CustomerReservationMetadataSection
                 reservation={reservation}
@@ -69,13 +69,13 @@ export function CustomerReservationPageContent(
 
             <div className="grid grid-cols-2 gap-4">
                 <section className="space-y-2">
-                    <PageSectionHeader text="Theatre" />
-                    <CustomerReservationTheatreSummaryCard reservation={reservation} />
+                    <PageSectionHeader text="Theatre"/>
+                    <CustomerReservationTheatreSummaryCard reservation={reservation}/>
                 </section>
 
                 <section className="space-y-2">
-                    <PageSectionHeader text="Dates" />
-                    <CustomerReservationDateList reservation={reservation} />
+                    <PageSectionHeader text="Dates"/>
+                    <CustomerReservationDateList reservation={reservation}/>
                 </section>
             </div>
 

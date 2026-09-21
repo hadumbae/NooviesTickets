@@ -6,6 +6,14 @@ import {RouteObject} from "react-router-dom";
 import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 import {RequireAdmin} from "@/views/shared/_feat/auth";
+import {buildRouteParamLoader} from "@/shared/_loaders";
+import {SlugRouteParamSchema} from "@/shared/_schemas";
+
+const showingSlugLoader = buildRouteParamLoader({
+   schema: SlugRouteParamSchema,
+   onErrorMessage: "Invalid Params.",
+   redirectTo: "/admin/showings",
+});
 
 /** Route definitions for showing administration pages. */
 export const ShowingRoutes: RouteObject[] = [
@@ -36,6 +44,7 @@ export const ShowingRoutes: RouteObject[] = [
             {
                 path: "/admin/showings/get/:slug",
                 errorElement: <ComponentErrorHandler/>,
+                loader: showingSlugLoader,
                 lazy: async () => {
                     const {ShowingDetailsPage} = await import("@/views/admin/showings/_pages");
                     return {Component: ShowingDetailsPage};
@@ -44,6 +53,7 @@ export const ShowingRoutes: RouteObject[] = [
             {
                 path: "/admin/showings/edit/:slug",
                 errorElement: <ComponentErrorHandler/>,
+                loader: showingSlugLoader,
                 lazy: async () => {
                     const {ShowingEditPage} = await import("@/views/admin/showings/_pages");
                     return {Component: ShowingEditPage};

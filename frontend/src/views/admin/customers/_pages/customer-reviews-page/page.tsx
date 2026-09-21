@@ -9,7 +9,7 @@ import {
     CustomerReviewsRouteParamsSchema,
     useFetchCustomerReviewsViewData
 } from "@/domains/customers/_feat/movie-reviews";
-import {useRouteParams} from "@/shared/_feat";
+import {useRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 
 /** Number of reviews to display per page. */
 const REVIEWS_PER_PAGE = 10;
@@ -18,6 +18,8 @@ const REVIEWS_PER_PAGE = 10;
  * Renders the customer reviews page using URL pagination parameters and the customer code.
  */
 export function CustomerReviewsPage() {
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Customer Reviews"});
+
     const {customerID} = useRouteParams({
         schema: CustomerReviewsRouteParamsSchema,
         errorConfig: {description: "Valid Customer ID Is Required."},
@@ -40,6 +42,7 @@ export function CustomerReviewsPage() {
                     page={page}
                     perPage={REVIEWS_PER_PAGE}
                     setPage={setPage}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

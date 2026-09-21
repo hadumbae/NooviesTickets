@@ -2,7 +2,7 @@
  * @fileoverview Main content component for the theatre showing list administrative page.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {IconButton, PageHeader, PaginationRangeButtons} from "@/views/shared/_comp";
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
@@ -25,15 +25,20 @@ type ContentProps = {
     page: number;
     perPage: number;
     setPage: (page: number) => void;
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the layout for the theatre showings list, including pagination and empty state handling.
  */
 export function TheatreShowingListPageContent(
-    {theatre, totalShowings, showings, page, perPage, setPage}: ContentProps
+    {theatre, totalShowings, showings, page, perPage, setPage, setTitle}: ContentProps
 ): ReactElement {
     const {slug, name} = theatre;
+
+    useEffect(() => {
+        setTitle(`Showings For ${theatre.name}`);
+    }, [setTitle, theatre])
 
     return (
         <PageFlexWrapper>

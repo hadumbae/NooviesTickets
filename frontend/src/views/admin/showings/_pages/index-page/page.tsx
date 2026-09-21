@@ -11,6 +11,7 @@ import {QueryDataLoader} from "@/views/shared/_feat";
 import {ShowingIndexPageContent} from "@/views/admin/showings/_pages/index-page/content.tsx";
 import {ShowingDetailsSchema, ShowingQueryOptionsSchema} from "@/domains/showings/_schema";
 import {useFetchPaginatedShowings} from "@/domains/showings/_feat";
+import {useSetAdminPageTitle} from "@/shared/_feat";
 
 const SHOWINGS_PER_PAGE = 10;
 
@@ -18,6 +19,8 @@ const SHOWINGS_PER_PAGE = 10;
  * Orchestrates data fetching and pagination state for the showings index view.
  */
 export function ShowingIndexPage(): ReactElement {
+    useSetAdminPageTitle({presetTitle: "Showings"});
+
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
     const {searchParams} = useParsedSearchParams({schema: ShowingQueryOptionsSchema});
 

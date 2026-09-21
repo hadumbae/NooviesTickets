@@ -11,6 +11,7 @@ import {generatePaginationSchema} from "@noovies-tickets/common";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {useFetchPaginatedMovies} from "@/domains/movies/_feat/crud-hooks";
 import {useMovieIndexQueryOptionsContext} from "@/domains/movies/_feat/handle-query-options/movie-index/MovieIndexQueryOptionsContext.ts";
+import {useSetAdminPageTitle} from "@/shared/_feat";
 
 const MOVIES_PER_PAGE = 20;
 
@@ -18,6 +19,8 @@ const MOVIES_PER_PAGE = 20;
  * Orchestrates data fetching and state management for the movie library index.
  */
 export function MovieIndexPage() {
+    useSetAdminPageTitle({presetTitle: "Movies"})
+
     const {data: paginationState} = usePaginationLocationState();
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", paginationState?.page ?? 1);
     const {values: searchParams} = useMovieIndexQueryOptionsContext();

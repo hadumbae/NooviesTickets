@@ -5,3 +5,4 @@ export * from "@/domains/showings/_feat/query-population/ShowingSeatMapVirtualPi
 export * from "@/domains/showings/_feat/query-population/ShowingPopulationPaths";
 export * from "@/domains/showings/_feat/query-population/ShowingVirtualPopulationPaths";
 export * from "@/domains/showings/_feat/query-population/ShowingPopulateRefs";
+export * from "@/domains/showings/_feat/query-population/MovieShowingSummarySelect";

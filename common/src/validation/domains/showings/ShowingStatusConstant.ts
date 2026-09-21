@@ -1,8 +1,8 @@
 /**
- * @fileoverview Defines the valid lifecycle states for a movie showing.
+ * @fileoverview Constant array containing valid showing lifecycle status values.
  */
 
-/** List of constant status strings for showings. */
+/** Array of valid showing statuses. */
 export const ShowingStatusConstant = [
     "SCHEDULED",
     "RUNNING",

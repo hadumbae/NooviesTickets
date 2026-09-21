@@ -4,17 +4,16 @@
 
 import {cn} from "@/shared/_feat";
 import {buttonVariants} from "@/views/shared/_comp/ui";
-import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
-import {HeaderDescription, HeaderTitle} from "@/views/shared/_comp/page-headers";
 
-import {Movie} from "@noovies-tickets/common";
 import {RoleTypeDepartment} from "@noovies-tickets/common";
 import {LoggedLink} from "@/views/shared/_feat/navigation/LoggedLink.tsx";
 import {MoviePersonListBreadcrumb} from "@/views/admin/movies/_pages/people-page/sections/breadcrumb.tsx";
+import {MovieSummaryHeaderBanner} from "@/views/admin/movies";
+import {MovieDetails} from "@/domains/movies";
 
 /** Props for the MoviePeopleHeader component. */
 type HeaderProps = {
-    movie: Movie;
+    movie: MovieDetails;
     department: RoleTypeDepartment;
 };
 
@@ -22,21 +21,15 @@ type HeaderProps = {
  * Administrative header for movie personnel lists providing navigation between cast and crew.
  */
 export function MoviePeopleHeader({movie, department}: HeaderProps) {
-    const {slug, title} = movie;
-    const parsedType = convertToTitleCase(department);
+    const {slug} = movie;
 
     const isCrew = department === "CREW";
     const isCast = department === "CAST";
 
     return (
         <header className="space-y-2">
-            <MoviePersonListBreadcrumb movie={movie} department={department}/>
-
-            <div className="flex max-md:flex-col max-md:space-y-5 md:justify-between md:items-center">
-                <div>
-                    <HeaderTitle>{title}</HeaderTitle>
-                    <HeaderDescription>{parsedType}</HeaderDescription>
-                </div>
+            <div className="flex max-md:flex-col max-md:space-y-2 md:justify-between md:items-center">
+                <MoviePersonListBreadcrumb movie={movie} department={department}/>
 
                 <nav className="flex space-x-2 items-center max-md:justify-center md:justify-end">
                     <LoggedLink to={`/admin/movies/get/${slug}/people/crew`} className={cn(
@@ -54,6 +47,9 @@ export function MoviePeopleHeader({movie, department}: HeaderProps) {
                     </LoggedLink>
                 </nav>
             </div>
+
+
+            <MovieSummaryHeaderBanner movie={movie}/>
         </header>
     );
 }

@@ -6,7 +6,7 @@ import {LeanUserWithEmail} from "@/domains/users/_schema/user/LeanUserWithEmailS
 import {CustomerMovieReview} from "@/domains/movie-reviews";
 import {AdminMovieWithRatingCard, CustomerDetailsCard, CustomerMovieReviewCard} from "@/views/admin/customers/_comp";
 import {PageFlexWrapper, PageSectionHeader, PageSectionHeaderLink} from "@/views/shared/_comp/page";
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {
     CustomerReviewPageActionSection,
     CustomerReviewPageBreadcrumbs,
@@ -17,11 +17,12 @@ import {PageHeader} from "@/views/shared/_comp";
 type ContentProps = {
     customer: LeanUserWithEmail;
     review: CustomerMovieReview;
+    setTitle: (title: string) => void;
 };
 
 /** Main content component for displaying a specific customer movie review and associated details. */
 export function CustomerReviewPageContent(
-    {customer, review}: ContentProps
+    {customer, review, setTitle}: ContentProps
 ): ReactElement {
     const {_id: customerID, name: customerName, uniqueCode: customerCode} = customer;
     const {
@@ -31,6 +32,10 @@ export function CustomerReviewPageContent(
         rating,
         movie
     } = review;
+
+    useEffect(() => {
+        setTitle(`${review.uniqueCode} • Review`);
+    }, [review, setTitle]);
 
     return (
         <PageFlexWrapper>

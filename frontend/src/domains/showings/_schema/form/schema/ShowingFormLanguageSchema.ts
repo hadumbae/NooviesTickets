@@ -3,17 +3,12 @@
  */
 
 import {z} from "zod";
-import {preprocessEmptyToUndefined, ISO6391LanguageCodeSchema} from "@noovies-tickets/common";
+import {preprocessEmptyToUndefined, ISO6391LanguageCodeSchema, generateArraySchema} from "@noovies-tickets/common";
 
 /** Schema for showing language configuration with normalization for form input. */
 export const ShowingFormLanguageSchema = z.object({
     language: preprocessEmptyToUndefined(ISO6391LanguageCodeSchema),
-    subtitleLanguages: z
-        .array(ISO6391LanguageCodeSchema, {
-            required_error: "Required.",
-            invalid_type_error: "Must be an array of ISO 639-1 codes.",
-        })
-        .nonempty({message: "Required."}),
+    subtitleLanguages: generateArraySchema(ISO6391LanguageCodeSchema).nonempty({message: "Required."}),
 });
 
 /** Inferred type for showing language form values. */

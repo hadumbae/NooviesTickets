@@ -4,7 +4,7 @@
 
 import {useParsedPaginationValue} from "@/shared/_feat/fetch-pagination-search-params";
 import {QueryDataLoader} from "@/views/shared/_feat";
-import {useRouteParams, useTitle} from "@/shared/_feat";
+import {useRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 import {
     CustomerReservationsRouteParamsSchema,
     useFetchCustomerReservationsViewData
@@ -17,7 +17,7 @@ const RESERVATIONS_PER_PAGE = 10;
  * Renders the customer reviews and reservations management page.
  */
 export function CustomerReservationsPage() {
-    useTitle("Customer Reservations");
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Customer Reservations"})
 
     const {customerID} = useRouteParams({
         schema: CustomerReservationsRouteParamsSchema,
@@ -41,6 +41,7 @@ export function CustomerReservationsPage() {
                     page={page}
                     perPage={RESERVATIONS_PER_PAGE}
                     setPage={setPage}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

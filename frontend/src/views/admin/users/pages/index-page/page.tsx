@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {useParsedPaginationValue, useTitle} from "@/shared/_feat";
+import {useParsedPaginationValue, useSetAdminPageTitle} from "@/shared/_feat";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 import {useFetchPaginatedUsers} from "@/domains/users/_feat/crud-hooks/hooks/useFetchPaginatedUsers.ts";
 import {UserSchema} from "@/domains/users/_schema/user/UserSchema.ts";
@@ -18,7 +18,8 @@ const USERS_PER_PAGE = 20;
  * Requires UserIndexQueryOptionsContext to provide active search and filter parameters.
  */
 export function UserIndexPage(): ReactElement {
-    useTitle("User Index");
+    useSetAdminPageTitle({presetTitle: "Users"})
+
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
 
     const {values: queries} = useUserIndexQueryOptionsContext();

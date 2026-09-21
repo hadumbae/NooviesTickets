@@ -2,7 +2,7 @@
  * @fileoverview Main content layout for the Customer Profile administrative page.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {Reservation} from "@/domains/reservations/_schema/model";
 import {LeanUserWithEmail} from "@/domains/users/_schema/user/LeanUserWithEmailSchema.ts";
 import {PopulatedMovieReview} from "@/domains/movie-reviews/_schema/model/PopulatedMovieReviewSchema.ts";
@@ -21,13 +21,18 @@ type ContentProps = {
     reviews: PopulatedMovieReview[];
     reservationCount: number;
     reviewCount: number;
+    setTitle: (title: string) => void;
 };
 
 /** Orchestrates the display of customer-specific data within the Admin dashboard. */
 export function CustomerProfilePageContent(
-    {customer, reservations, reservationCount, reviewCount, reviews}: ContentProps
+    {customer, reservations, reservationCount, reviewCount, reviews, setTitle}: ContentProps
 ): ReactElement {
     const {_id, name, uniqueCode} = customer;
+
+    useEffect(() => {
+        setTitle(`${customer.name} • Profile`);
+    }, [customer, setTitle]);
 
     return (
         <PageFlexWrapper>

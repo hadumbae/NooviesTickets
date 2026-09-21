@@ -5,7 +5,7 @@
 
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {ReactElement} from "react";
-import {useRouteParams} from "@/shared/_feat";
+import {useRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 import {CustomerReviewPageContent} from "@/views/admin/customers/_pages/customer-review-page/content.tsx";
 import {
     CustomerReviewRouteParamsSchema,
@@ -17,6 +17,8 @@ import {
  * Orchestrates the data fetching and validation lifecycle for the Customer Review Moderation view.
  */
 export function CustomerReviewPage(): ReactElement {
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Customer Review Details"})
+
     const {customerID, reviewID} = useRouteParams({
         schema: CustomerReviewRouteParamsSchema,
         errorConfig: {description: "Valid Customer ID And Review ID Are Required."},
@@ -30,6 +32,7 @@ export function CustomerReviewPage(): ReactElement {
                 <CustomerReviewPageContent
                     customer={customer}
                     review={review}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

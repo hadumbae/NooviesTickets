@@ -3,20 +3,25 @@
  */
 
 import {z} from "zod";
-import {ShowingStatusSchema, preprocessToNumber, PositiveNumberSchema} from "@noovies-tickets/common";
-import {URLParamBooleanSchema} from "@/shared/_schemas/boolean";
-
+import {
+    BooleanValueSchema,
+    PositiveNumberSchema,
+    preprocessEmptyToUndefined,
+    preprocessToBoolean,
+    preprocessToNumber,
+    ShowingStatusSchema
+} from "@noovies-tickets/common";
 
 /**
  * Schema for showing pricing, lifecycle state, and configuration flags.
  */
 export const ShowingFormStatusSchema = z.object({
     ticketPrice: preprocessToNumber(PositiveNumberSchema),
-    status: ShowingStatusSchema,
+    status: preprocessEmptyToUndefined(ShowingStatusSchema),
     config: z.object({
-        isActive: URLParamBooleanSchema,
-        isSpecialEvent: URLParamBooleanSchema,
-        canReserveSeats: URLParamBooleanSchema,
+        isActive: preprocessToBoolean(BooleanValueSchema),
+        isSpecialEvent: preprocessToBoolean(BooleanValueSchema),
+        canReserveSeats: preprocessToBoolean(BooleanValueSchema),
     }),
 });
 

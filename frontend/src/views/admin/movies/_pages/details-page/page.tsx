@@ -9,19 +9,13 @@ import {MovieDetails, MovieDetailsSchema} from "@/domains/movies/_schema/movie/M
 import {MovieDetailsPageContent} from "@/views/admin/movies/_pages/details-page/content.tsx";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {useFetchMovieBySlug} from "@/domains/movies/_feat/crud-hooks";
-import {
-    IsDeletingMovieBannerUIContextProvider,
-    IsDeletingMoviePosterUIContextProvider,
-    IsUpdatingMovieBannerUIContextProvider,
-    IsUpdatingMoviePosterUIContextProvider
-} from "@/domains/movies/_ctx/ui";
-import {IsDeletingUIContextProvider} from "@/shared/_ctx/ui";
+import {MovieDetailsPageContext} from "@/views/admin/movies/_pages/details-page/context.tsx";
 
 /**
  * Controller component for the movie profile view that fetches data and provides UI context.
  */
 export function MovieDetailsPage() {
-    useSetAdminPageTitle({presetTitle: "Movie Details"});
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Movie"});
 
     const {slug} = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,
@@ -42,17 +36,9 @@ export function MovieDetailsPage() {
     return (
         <QueryDataLoader query={query}>
             {(movie: MovieDetails) => (
-                <IsDeletingUIContextProvider>
-                    <IsUpdatingMoviePosterUIContextProvider>
-                        <IsDeletingMoviePosterUIContextProvider>
-                            <IsUpdatingMovieBannerUIContextProvider>
-                                <IsDeletingMovieBannerUIContextProvider>
-                                    <MovieDetailsPageContent movie={movie}/>
-                                </IsDeletingMovieBannerUIContextProvider>
-                            </IsUpdatingMovieBannerUIContextProvider>
-                        </IsDeletingMoviePosterUIContextProvider>
-                    </IsUpdatingMoviePosterUIContextProvider>
-                </IsDeletingUIContextProvider>
+                <MovieDetailsPageContext>
+                    <MovieDetailsPageContent movie={movie} setTitle={setTitle}/>
+                </MovieDetailsPageContext>
             )}
         </QueryDataLoader>
     );

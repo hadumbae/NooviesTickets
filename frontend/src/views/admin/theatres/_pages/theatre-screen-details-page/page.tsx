@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {PageLoader} from "@/views/shared/_comp/page";
-import {useFetchByIdentifierRouteParams} from "@/shared/_feat";
+import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {TheatreScreenDetailsPageContent} from "@/views/admin/theatres/_pages/theatre-screen-details-page/content.tsx";
 import {
@@ -21,6 +21,8 @@ import {IsDeletingUIContextProvider, IsEditingUIContextProvider} from "@/shared/
  * Orchestrates route parameter validation and data fetching for the screen details view.
  */
 export function TheatreScreenDetailsPage(): ReactElement {
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Theatre Screen"})
+
     const routeParams = useFetchByIdentifierRouteParams({
         schema: TheatreScreenDetailsRouteParamSchema,
         errorTo: "admin/theatres",
@@ -51,6 +53,7 @@ export function TheatreScreenDetailsPage(): ReactElement {
                             screen={screen}
                             seats={seats}
                             recentShowings={recentShowings}
+                            setTitle={setTitle}
                         />
                     </IsDeletingUIContextProvider>
                 </IsEditingUIContextProvider>

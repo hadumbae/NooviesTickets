@@ -20,6 +20,7 @@ export const EnvironmentVariablesSchema = z.object({
     PORT: preprocessToNumber(NumberValueSchema),
     TZ: z.union([IANATimezoneSchema, z.literal("UTC")]),
     MONGO_DB_STRING: StringValueSchema,
+    REDIS_CONNECT_STRING: StringValueSchema,
     CORS_ALLOWED_ORIGINS: StringValueSchema.transform(value => value.split(",").map(origin => origin.trim())),
     CLOUDINARY_CLOUD_NAME: StringValueSchema,
     CLOUDINARY_API_KEY: StringValueSchema,

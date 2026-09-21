@@ -4,9 +4,7 @@
 
 import {ReactElement} from "react";
 import {PageLoader} from "@/views/shared/_comp/page";
-import {
-    useFetchByIdentifierRouteParams
-} from "@/shared/_feat";
+import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {
     QueryErrorBoundary
@@ -22,6 +20,8 @@ import {TheatreShowingCreatePageContent} from "@/views/admin/theatres/_pages/the
  * Page component that resolves theatre route parameters and initializes the showing creation flow.
  */
 export function TheatreShowingCreatePage(): ReactElement {
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Create Showing For Theatre"})
+
     const {slug} = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,
         errorTo: "/admin/theatres",
@@ -41,7 +41,12 @@ export function TheatreShowingCreatePage(): ReactElement {
     return (
         <QueryErrorBoundary statusTextOverride={TheatreHttpStatusOverrideText}>
             <QueryDataLoader query={query}>
-                {(theatre: Theatre) => <TheatreShowingCreatePageContent theatre={theatre}/>}
+                {(theatre: Theatre) => (
+                    <TheatreShowingCreatePageContent
+                        theatre={theatre}
+                        setTitle={setTitle}
+                    />
+                )}
             </QueryDataLoader>
         </QueryErrorBoundary>
     );

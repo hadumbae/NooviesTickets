@@ -4,7 +4,7 @@
 
 import {ReactElement} from 'react';
 import {PageLoader} from "@/views/shared/_comp/page";
-import {useFetchByIdentifierRouteParams} from "@/shared/_feat";
+import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {
     QueryErrorBoundary
@@ -29,6 +29,8 @@ const SHOWINGS_LIMIT = 10;
  * Administrative page component for viewing and managing a specific theatre's details.
  */
 export function TheatreDetailsPage(): ReactElement {
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Theatre Details"})
+
     const routeParams = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,
         errorTo: "/admin/theatres",
@@ -57,6 +59,7 @@ export function TheatreDetailsPage(): ReactElement {
                             screenPage={page}
                             screenPerPage={SCREENS_PER_PAGE}
                             setScreenPage={setPage}
+                            setTitle={setTitle}
                         />
                     )}
                 </QueryDataLoader>

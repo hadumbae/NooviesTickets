@@ -2,7 +2,7 @@
  * @fileoverview Presentation component for the Person Details page.
  */
 
-import {ReactElement} from 'react';
+import {ReactElement, useEffect} from 'react';
 import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {PersonDetailsPageActions} from "@/views/admin/persons/_pages/details-page/sections/actions.tsx";
 import {PersonDetailsPageHeader} from "@/views/admin/persons/_pages/details-page/sections/header.tsx";
@@ -11,7 +11,6 @@ import {PersonDetailsCard} from "@/views/admin/persons/_comp/person-details";
 import {PersonDetailsCreditOverview} from "@/views/admin/persons/_comp";
 import {Person} from "@noovies-tickets/common";
 import {PersonFilmography} from "@/domains/movie-credits";
-import {useSetAdminPageTitle} from "@/shared/_feat";
 
 
 /** Props for the PersonDetailsPageContent component. */
@@ -20,14 +19,18 @@ export type PersonDetailsPageContentProps = {
     creditCount: number;
     movieCount: number;
     filmography: PersonFilmography;
+    setTitle: (title: string) => void;
 };
 
 /** Renders the primary profile view for a person in the administrative interface. */
 export function PersonDetailsPageContent(
-    {person, filmography, creditCount, movieCount}: PersonDetailsPageContentProps
+    {person, filmography, creditCount, movieCount, setTitle}: PersonDetailsPageContentProps
 ): ReactElement {
     const {name} = person;
-    useSetAdminPageTitle({presetTitle: `Person Details • ${name}`})
+
+    useEffect(() => {
+        setTitle(person.name);
+    }, [person, setTitle]);
 
 
     return (

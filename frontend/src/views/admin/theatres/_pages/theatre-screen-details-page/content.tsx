@@ -2,7 +2,7 @@
  * @fileoverview Layout component for rendering the structural sections of the Theatre Screen details page.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper} from "@/views/shared/_comp/page";
 import {
     TheatreScreenDetailsBreadcrumbs,
@@ -13,7 +13,6 @@ import {
 import {TheatreScreenWithVirtuals} from "@/domains/theatre-screens/_schema/model";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
 import {SeatDetails} from "@/domains/seats/_schema/model";
-import {useSetAdminPageTitle} from "@/shared/_feat/handle-pages";
 import {PageHeader} from "@/views/shared/_comp";
 import {
     TheatreScreenDetailsFormSection,
@@ -30,18 +29,21 @@ type ContentProps = {
     screen: TheatreScreenWithVirtuals;
     seats: SeatDetails[];
     recentShowings: ShowingDetails[];
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the breadcrumbs, header, and tabbed interface for the screen details view.
  */
 export function TheatreScreenDetailsPageContent(
-    {theatre, screen, seats, recentShowings}: ContentProps
+    {theatre, screen, seats, recentShowings, setTitle}: ContentProps
 ): ReactElement {
     const {_id: screenID, name: screenName} = screen;
     const {_id: theatreID, name: theatreName, slug: theatreSlug,} = theatre;
 
-    useSetAdminPageTitle({presetTitle: `Screen | ${screenName}`})
+    useEffect(() => {
+        setTitle(`${screen.name} (${screen.screenType})`)
+    }, [screen, setTitle]);
 
     return (
         <PageFlexWrapper>

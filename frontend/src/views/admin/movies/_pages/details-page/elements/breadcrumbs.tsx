@@ -12,11 +12,18 @@ import {
     BreadcrumbSeparator
 } from "@/views/shared/_comp/ui";
 import {HoverLink} from "@/views/shared/_feat/navigation/HoverLink.tsx";
+import {ReactElement} from "react";
+
+type BreadcrumbProps = {
+    title: string;
+}
 
 /**
  * Renders the breadcrumb trail for navigating back to the movie management index.
  */
-export function MovieDetailsBreadcrumb() {
+export function MovieDetailsBreadcrumb(
+    { title }: BreadcrumbProps
+): ReactElement {
     return (
         <Breadcrumb>
             <BreadcrumbList>
@@ -31,7 +38,7 @@ export function MovieDetailsBreadcrumb() {
                 <BreadcrumbSeparator/>
 
                 <BreadcrumbItem>
-                    <BreadcrumbPage>Movie Details</BreadcrumbPage>
+                    <BreadcrumbPage>{title}</BreadcrumbPage>
                 </BreadcrumbItem>
             </BreadcrumbList>
         </Breadcrumb>

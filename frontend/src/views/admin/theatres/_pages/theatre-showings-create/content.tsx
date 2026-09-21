@@ -7,7 +7,7 @@ import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts"
 import {Card, CardContent} from "@/views/shared/_comp/ui/card.tsx";
 import {ShowingSubmitForm} from "@/views/admin/showings/_feat/submit-form/ShowingSubmitForm.tsx";
 import {ShowingSubmitStorageKey} from "@/domains/showings/_feat/submit-data/ShowingSubmitStorageKey.ts";
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 
 import {Theatre} from "@noovies-tickets/common";
 import {ShowingSubmitFormView} from "@/views/admin/showings/_feat/submit-form";
@@ -19,16 +19,21 @@ import {
 /** Props for the TheatreShowingCreatePageContent component. */
 type ContentProps = {
     theatre: Theatre;
+    setTitle: (title: string) => void;
 };
 
 /**
  * Renders the layout for the showing creation flow, including the header and submission form.
  */
 export function TheatreShowingCreatePageContent(
-    {theatre}: ContentProps
+    {theatre, setTitle}: ContentProps
 ): ReactElement {
     const navigate = useLoggedNavigate();
     const {_id: theatreID, name: theatreName, slug: theatreSlug} = theatre;
+
+    useEffect(() => {
+        setTitle(`Create Showing For ${theatre.name}`);
+    }, [theatre, setTitle]);
 
     const onSubmit = () => {
         navigate({
@@ -60,7 +65,10 @@ export function TheatreShowingCreatePageContent(
                         onSubmitSuccess={onSubmit}
                         resetOnSuccess={true}
                     >
-                        <ShowingSubmitFormView disableFields={{theatre: true}}/>
+                        <ShowingSubmitFormView
+                            disableFields={{theatre: true}}
+                            hideFields={{theatre: true}}
+                        />
                     </ShowingSubmitForm>
                 </CardContent>
             </Card>

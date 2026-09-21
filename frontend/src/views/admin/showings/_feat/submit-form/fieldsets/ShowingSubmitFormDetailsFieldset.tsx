@@ -5,9 +5,8 @@
 import {ReactElement} from 'react';
 import {useFormContext} from "react-hook-form";
 import {Plus, X} from "lucide-react";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {filterFalsyAttributes, ObjectIdString, Theatre} from "@noovies-tickets/common";
 import {cn, createFormFieldConfig, renderFields, useBaseMultiStepFormContext} from "@/shared/_feat";
-import {filterFalsyAttributes} from "@noovies-tickets/common";
 import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 
 import {HookFormInput} from "@/views/shared/_feat";
@@ -15,10 +14,10 @@ import {Button, Collapsible, CollapsibleContent, CollapsibleTrigger, Separator} 
 import {MovieHookFormSelect} from "@/views/admin/movies/_feat/form-inputs/MovieHookFormSelect.tsx";
 import {MovieQuickOverviewFetchCard} from "@/views/admin/movies/_comp/form-display/MovieQuickOverviewFetchCard.tsx";
 import {TheatreHookFormSelect} from "@/views/admin/theatres/_feat/form-input/selects/TheatreHookFormSelect.tsx";
-import {TheatreQuickOverviewFetchCard} from "@/views/admin/theatres/_comp/display-cards/TheatreQuickOverviewFetchCard.tsx";
+import {
+    TheatreQuickOverviewFetchCard
+} from "@/views/admin/theatres/_comp/display-cards/TheatreQuickOverviewFetchCard.tsx";
 import {ScreenHookFormSelect} from "@/views/admin/theatre-screens";
-
-import {Theatre} from "@noovies-tickets/common";
 import {ShowingFormValues} from "@/domains/showings/_schema/form/form-values/ShowingFormValues.ts";
 import {useHandleShowingFormFiltering} from "@/domains/showings/_feat/submit-data/useHandleShowingFormFiltering.ts";
 import {HookFormSelect} from "@/views/shared/_comp";
@@ -119,20 +118,24 @@ export function ShowingSubmitFormDetailsFieldset(
 
             {renderFields({fields: detailsFields.slice(0, 1)})}
 
-            <Collapsible open={isFiltering} onOpenChange={setIsFiltering}>
-                <CollapsibleTrigger asChild>
-                    <Button variant="link" size="sm">
-                        {isFiltering ? <X/> : <Plus/>}
-                        {isFiltering ? "Clear Filters" : "Add Theatre Filters"}
-                    </Button>
-                </CollapsibleTrigger>
+            {
+                !hideFields?.theatre && (
+                    <Collapsible open={isFiltering} onOpenChange={setIsFiltering}>
+                        <CollapsibleTrigger asChild>
+                            <Button variant="link" size="sm">
+                                {isFiltering ? <X/> : <Plus/>}
+                                {isFiltering ? "Clear Filters" : "Add Theatre Filters"}
+                            </Button>
+                        </CollapsibleTrigger>
 
-                <CollapsibleContent className="p-3 rounded-2xl border border-neutral-800 dark:border-neutral-500">
-                    <div className="grid grid-cols-2 gap-1">
-                        {renderFields({fields: filterFields})}
-                    </div>
-                </CollapsibleContent>
-            </Collapsible>
+                        <CollapsibleContent className="p-3 rounded-2xl border border-neutral-800 dark:border-neutral-500">
+                            <div className="grid grid-cols-2 gap-1">
+                                {renderFields({fields: filterFields})}
+                            </div>
+                        </CollapsibleContent>
+                    </Collapsible>
+                )
+            }
 
             {renderFields({fields: detailsFields.slice(1)})}
         </fieldset>

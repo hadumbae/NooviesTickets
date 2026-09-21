@@ -13,6 +13,7 @@ import {
 import {
     useFetchReservationByCode
 } from "@/domains/reservations/_feat/fetch-reservation-by-code/fetch/useFetchReservationByCode.ts";
+import {useSetAdminPageTitle} from "@/shared/_feat";
 
 /**
  * Coordinates search parameter parsing and data fetching for the reservation lookup view.
@@ -21,6 +22,8 @@ export function ReservationByCodePage(): ReactElement {
     const {searchParams: {code}} = useParsedSearchParams({
         schema: FetchByCodeSearchParamsSchema
     });
+
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Reservation by Code"});
 
     const query = useFetchReservationByCode({
         code: code!,
@@ -32,6 +35,7 @@ export function ReservationByCodePage(): ReactElement {
             <ReservationByCodePageContent
                 code={null}
                 reservation={null}
+                setTitle={setTitle}
             />
         );
     }
@@ -39,7 +43,11 @@ export function ReservationByCodePage(): ReactElement {
     return (
         <QueryDataLoader query={query}>
             {({reservation}: FetchByCodeData) => (
-                <ReservationByCodePageContent code={code} reservation={reservation}/>
+                <ReservationByCodePageContent
+                    code={code}
+                    reservation={reservation}
+                    setTitle={setTitle}
+                />
             )}
         </QueryDataLoader>
     );

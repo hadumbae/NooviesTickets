@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {useParsedPaginationValue, useTitle} from "@/shared/_feat";
+import {useParsedPaginationValue, useSetAdminPageTitle} from "@/shared/_feat";
 import {generatePaginationSchema} from "@noovies-tickets/common";
 import {useFetchPaginatedUsers} from "@/domains/users/_feat";
 import {UserDetailsSchema} from "@/domains/users/_schema/user";
@@ -18,7 +18,8 @@ const CUSTOMERS_PER_PAGE = 20;
  * Requires CustomerIndexQueryOptionsContext.
  */
 export function CustomerIndexPage(): ReactElement {
-    useTitle("User Index");
+    useSetAdminPageTitle({presetTitle: "Customers"})
+
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
     const {values: queries} = useCustomerIndexQueryOptionsContext();
 

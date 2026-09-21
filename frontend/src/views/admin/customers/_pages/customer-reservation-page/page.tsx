@@ -4,7 +4,7 @@
 
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {ReactElement} from "react";
-import {useRouteParams, useTitle} from "@/shared/_feat";
+import {useRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 import {CustomerReservationPageContent} from "@/views/admin/customers/_pages/customer-reservation-page/content.tsx";
 import {
     CustomerReservationRouteParamsSchema,
@@ -16,7 +16,7 @@ import {
  * Renders the customer reservation detail page by parsing route parameters and loading the view data.
  */
 export function CustomerReservationPage(): ReactElement {
-    useTitle("Customer Reservation Details");
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Customer Reservation Details"})
 
     const {customerID, reservationID} = useRouteParams({
         schema: CustomerReservationRouteParamsSchema,
@@ -31,6 +31,7 @@ export function CustomerReservationPage(): ReactElement {
                 <CustomerReservationPageContent
                     customer={customer}
                     reservation={reservation}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

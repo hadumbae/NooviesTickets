@@ -3,12 +3,8 @@
  */
 
 import {FC} from "react";
-import {PageLoader} from "@/views/shared/_comp/page";
 import {ShowingDetailsPageContent} from "@/views/admin/showings/_pages/details-page/content.tsx";
-import {
-    useFetchByIdentifierRouteParams
-} from "@/shared/_feat";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {
     ShowingDetailsViewDataSchema,
@@ -16,28 +12,21 @@ import {
 } from "@/views/admin/showings/_feat/admin-view-data";
 import {ShowingDetailsUIContextProvider} from "@/domains/showings/_ctx/showing-details-ui-context/provider.tsx";
 import {IsDeletingUIContextProvider} from "@/shared/_ctx/ui";
+import {useLoaderData} from "react-router-dom";
+import {useSetAdminPageTitle} from "@/shared/_feat";
 
 /**
  * Entry point for the Showing Details admin page.
  * Validates route parameters and orchestrates parallel data fetching for showings and seating.
  */
 export const ShowingDetailsPage: FC = () => {
-    const {slug} = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        errorTo: "/admin/showings",
-        errorMessage: "Invalid showing. Please try again later.",
-        sourceComponent: ShowingDetailsPage.name,
-    }) ?? {};
+    const {slug} = useLoaderData<SlugRouteParamObject>();
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Showing Details"});
 
     const query = useFetchShowingDetailsViewData({
-        slug: slug!,
+        slug,
         schema: ShowingDetailsViewDataSchema,
-        options: {enabled: !!slug},
     });
-
-    if (!slug) {
-        return <PageLoader/>;
-    }
 
     return (
         <QueryDataLoader query={query}>
@@ -50,6 +39,7 @@ export const ShowingDetailsPage: FC = () => {
                             theatre={theatre}
                             screen={screen}
                             movie={movie}
+                            setTitle={setTitle}
                         />
                     </ShowingDetailsUIContextProvider>
                 </IsDeletingUIContextProvider>

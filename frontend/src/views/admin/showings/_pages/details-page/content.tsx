@@ -2,7 +2,7 @@
  * @fileoverview Main content layout for the Showing Details admin page.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
 import {ShowingDetailsViewData} from "@/views/admin/showings/_feat";
 import {ShowingDetailsPageSeatingSection} from "@/views/admin/showings/_pages/details-page/sections";
@@ -23,14 +23,22 @@ import {
 import {IconButton, PageHeader} from "@/views/shared/_comp";
 import {Ellipsis} from "lucide-react";
 
+type ContentPage = ShowingDetailsViewData & {
+    setTitle: (title: string) => void;
+}
+
 /** Renders the core content of the Showing Details page. */
 export function ShowingDetailsPageContent(
-    {showing, seating, theatre, screen, movie}: ShowingDetailsViewData
+    {showing, seating, theatre, screen, movie, setTitle}: ContentPage
 ): ReactElement {
     const {_id: showingID, slug: showingSlug, startTime, timezone} = showing;
     const {name: theatreName} = theatre;
     const {name: screenName} = screen;
     const {title: movieTitle, releaseDate} = movie;
+
+    useEffect(() => {
+        setTitle(movie.title);
+    }, [movie, setTitle]);
 
     const formattedReleaseDate = releaseDate?.toFormat("yyyy") ?? "Unreleased";
 

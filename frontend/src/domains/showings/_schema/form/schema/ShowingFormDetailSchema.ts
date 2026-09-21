@@ -2,39 +2,27 @@
  * @fileoverview Zod validation schema for the showing details form.
  */
 
-import {preprocessEmptyToUndefined, IDStringSchema, ISO3166Alpha2CountryCodeSchema} from "@noovies-tickets/common";
-import {NonEmptyStringSchema} from "@noovies-tickets/common";
 import {z} from "zod";
-
-/**
- * Optional string field normalized from empty input.
- */
-const citySchema = preprocessEmptyToUndefined(
-    NonEmptyStringSchema
-        .max(500, {message: "Must be 500 characters or less."})
-        .optional()
-).optional();
-
-/**
- * Optional string field normalized from empty input.
- */
-const stateSchema = preprocessEmptyToUndefined(
-    NonEmptyStringSchema
-        .max(500, {message: "Must be 500 characters or less."})
-        .optional()
-).optional();
+import {
+    CityStringSchema,
+    IDStringSchema,
+    ISO3166Alpha2CountryCodeSchema,
+    preprocessEmptyToUndefined,
+    preprocessOptionalField,
+    StateStringSchema
+} from "@noovies-tickets/common";
 
 /**
  * Zod schema for validating showing form identifiers and location context.
  */
 export const ShowingFormDetailSchema = z.object({
     _id: IDStringSchema.optional().readonly(),
-    movie: IDStringSchema,
-    screen: IDStringSchema,
-    theatre: IDStringSchema,
-    theatreCity: citySchema,
-    theatreState: stateSchema,
-    theatreCountry: ISO3166Alpha2CountryCodeSchema.optional(),
+    movie: preprocessEmptyToUndefined(IDStringSchema),
+    screen: preprocessEmptyToUndefined(IDStringSchema),
+    theatre: preprocessEmptyToUndefined(IDStringSchema),
+    theatreCity: preprocessOptionalField(CityStringSchema),
+    theatreState: preprocessOptionalField(StateStringSchema),
+    theatreCountry: preprocessOptionalField(ISO3166Alpha2CountryCodeSchema),
 });
 
 /**

@@ -8,12 +8,14 @@ import {CustomerProfileOverviewRouteParamsSchema} from "@/domains/customers/_fea
 import {CustomerProfileViewData} from "@/domains/customers/_feat/profile-overview/schema/viewDataSchema.ts";
 import {useFetchCustomerProfileViewData} from "@/domains/customers/_feat/profile-overview/fetch/useFetchCustomerProfileViewData.ts";
 import {CustomerProfilePageContent} from "@/views/admin/customers/_pages/customer-profile-page/content.tsx";
-import {useRouteParams} from "@/shared/_feat";
+import {useRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
 
 /**
  * Orchestrates data fetching and validation for the Customer Profile view.
  */
 export function CustomerProfilePage(): ReactElement {
+    const {setTitle} = useSetAdminPageTitle({presetTitle: "Customer Details"})
+
     const {customerID} = useRouteParams({
         schema: CustomerProfileOverviewRouteParamsSchema,
         errorConfig: {description: "Valid Customer ID Is Required."},
@@ -30,6 +32,7 @@ export function CustomerProfilePage(): ReactElement {
                     reviews={review.items}
                     reservationCount={reservation.total}
                     reviewCount={review.total}
+                    setTitle={setTitle}
                 />
             )}
         </QueryDataLoader>

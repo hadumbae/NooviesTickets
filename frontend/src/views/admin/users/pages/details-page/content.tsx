@@ -2,14 +2,14 @@
  * @fileoverview Content layout for the admin user details page displaying profile info, reviews, and reservations.
  */
 
-import {ReactElement} from "react";
+import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper, PageHeader} from "@/views/shared/_comp";
 import {User} from "@/domains/users/_schema/user";
 import {AdminUserDetailsCard} from "@/views/admin/users/_comp";
-import {useTitle} from "@/shared/_feat";
 import {
     UserDetailsPageBreadcrumbs,
-    UserDetailsPageRoleManagementSection, UserDetailsPageStatusManagementSection,
+    UserDetailsPageRoleManagementSection,
+    UserDetailsPageStatusManagementSection,
     UserDetailsPageSuspensionSection
 } from "@/views/admin/users/pages";
 
@@ -18,15 +18,18 @@ type ContentProps = {
     user: User;
     totalReviews: number;
     totalReservations: number;
+    setTitle: (title: string) => void;
 };
 
 /** Renders the detailed profile view for a specific user including their activity summaries. */
 export function UserDetailsPageContent(
-    {user, totalReviews, totalReservations}: ContentProps
+    {user, totalReviews, totalReservations, setTitle}: ContentProps
 ): ReactElement {
     const {name, uniqueCode, status} = user;
-    useTitle(`User • ${name}`);
-    useTitle(`User Status • ${status}`);
+
+    useEffect(() => {
+        setTitle(user.name)
+    }, [user, setTitle]);
 
     return (
         <PageFlexWrapper>
