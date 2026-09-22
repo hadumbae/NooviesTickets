@@ -13,7 +13,7 @@ import type {
  */
 export async function patchCancelShowing(req: Request, res: Response): Promise<Response> {
     const {_id} = req.parsedConfig as CancelShowingRouteConfig;
-    const data = cancelShowing({_id});
+    const data = await cancelShowing({_id});
 
     return res.status(200).json(data);
 }
