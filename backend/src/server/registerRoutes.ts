@@ -3,12 +3,13 @@
  */
 
 import type {Express, Router} from "express";
-import {
-    registerAdminCRUDRoutes,
-    registerAdminModelFeatureRoutes, registerAdminViewDataRoutes,
-    registerAuthRoutes, registerClientFeaturesRoutes,
-    registerClientModelFeatureRoutes, registerClientViewDataRoutes, registerDataRoutes, registerExternalRoutes
-} from "@/server/routes";
+import {registerAuthRoutes} from "@/server/routes/registerAuthRoutes";
+import {registerDataRoutes} from "@/server/routes/registerDataRoutes";
+import {registerExternalRoutes} from "@/server/routes/registerExternalRoutes";
+import {registerAdminCRUDRoutes} from "@/server/routes/crud-routes";
+import {registerAdminViewDataRoutes, registerClientViewDataRoutes,} from "@/server/routes/view-data";
+import {registerAdminModelFeatureRoutes, registerClientModelFeatureRoutes} from "@/server/routes/model-feature-routes";
+import {registerAdminFeaturesRoutes, registerClientFeaturesRoutes} from "@/server/routes/feature-routes";
 
 
 /** Represents a route path and its associated Express router. */
@@ -23,6 +24,7 @@ export function registerRoutes(app: Express) {
     registerDataRoutes(app);
     registerExternalRoutes(app);
 
+    registerAdminFeaturesRoutes(app);
     registerClientFeaturesRoutes(app);
 
     registerAdminCRUDRoutes(app);
