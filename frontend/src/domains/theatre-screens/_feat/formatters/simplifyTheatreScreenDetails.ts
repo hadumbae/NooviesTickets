@@ -13,7 +13,7 @@ import {
 /**
  * Normalises complex screen objects into a flat structure by extracting the theatre ID.
  */
-export function simplifyScreenDetails(
+export function simplifyTheatreScreenDetails(
     {theatre, ...rem}: TheatreScreen | PopulatedTheatreScreen | TheatreScreenWithVirtuals | TheatreScreenDetails
 ): TheatreScreen {
     const raw = {

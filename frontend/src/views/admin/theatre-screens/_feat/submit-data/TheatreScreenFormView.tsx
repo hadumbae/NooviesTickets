@@ -3,7 +3,7 @@
  */
 
 import {ReactElement} from "react";
-import {ScreenTypeHookFormSelect} from "@/views/admin/theatre-screens/_feat/form-inputs";
+import {TheatreScreenTypeHookFormSelect} from "@/views/admin/theatre-screens/_feat/form-inputs";
 import {useFormContext} from "react-hook-form";
 import {TheatreHookFormSelect} from "@/views/admin/theatres/_feat/form-input/selects/TheatreHookFormSelect.tsx";
 import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
@@ -55,7 +55,7 @@ export function TheatreScreenFormView(
 
             {
                 !hideFields?.screenType &&
-                <ScreenTypeHookFormSelect
+                <TheatreScreenTypeHookFormSelect
                     control={control}
                     disabled={isPending || disableFields?.screenType}
                     name="screenType"

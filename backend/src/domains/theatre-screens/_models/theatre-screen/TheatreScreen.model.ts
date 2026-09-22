@@ -15,4 +15,4 @@ import "./TheatreScreen.indexes";
 /**
  * The TheatreScreen Model.
  */
-export const TheatreScreenModel: Model<TheatreScreenSchemaFields> = model<TheatreScreenSchemaFields>("Screen", TheatreScreenSchema);
+export const TheatreScreenModel: Model<TheatreScreenSchemaFields> = model<TheatreScreenSchemaFields>("TheatreScreen", TheatreScreenSchema);

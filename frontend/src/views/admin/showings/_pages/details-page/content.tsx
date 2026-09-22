@@ -13,7 +13,7 @@ import {
     ShowingDetailsPageToggles
 } from "@/views/admin/showings/_pages/details-page/elements";
 import {
-    ScreenSummaryCard,
+    TheatreScreenSummaryCard,
     ShowingLanguagesCard,
     ShowingMovieCard,
     ShowingStatusCard,
@@ -87,7 +87,7 @@ export function ShowingDetailsPageContent(
 
                 <section className="space-y-3 lg:h-1/2">
                     <PageSectionHeader text="Screen"/>
-                    <ScreenSummaryCard screen={screen}/>
+                    <TheatreScreenSummaryCard screen={screen}/>
                 </section>
             </div>
 

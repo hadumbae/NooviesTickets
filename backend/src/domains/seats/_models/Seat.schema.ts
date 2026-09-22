@@ -22,7 +22,7 @@ export const SeatSchema = new Schema<SeatSchemaFields>(
         /** Reference to the parent screen. */
         screen: {
             type: Schema.Types.ObjectId,
-            ref: "Screen",
+            ref: "TheatreScreen",
             required: [true, "TheatreScreen is required."],
         },
 

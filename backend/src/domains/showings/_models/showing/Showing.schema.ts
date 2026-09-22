@@ -41,7 +41,7 @@ export const ShowingSchema = new Schema<ShowingSchemaFields, ShowingSchemaModel,
 
         screen: {
             type: Schema.Types.ObjectId,
-            ref: "Screen",
+            ref: "TheatreScreen",
             required: true,
         },
 

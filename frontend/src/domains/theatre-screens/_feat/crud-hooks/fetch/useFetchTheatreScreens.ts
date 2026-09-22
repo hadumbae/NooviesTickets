@@ -1,30 +1,30 @@
 /**
- * @fileoverview React Query hook for fetching paginated theatre screen data.
+ * @fileoverview React Query hook for fetching theatre screens based on query filters.
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
 import {HttpResponseError} from "@noovies-tickets/common";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
-import {PaginatedQueryConfig} from "@/shared/_types";
 
-import {paginated} from "@/domains/theatre-screens/_feat/crud";
+import {find} from "@/domains/theatre-screens/_feat/crud";
 import {TheatreScreenQueryOptions} from "@/domains/theatre-screens/_schema";
 import {TheatreScreenCRUDQueryKeys} from "@/domains/theatre-screens/_feat/crud-hooks/keys";
+import {ListQueryConfig} from "@/shared/_types";
 
 /**
- * Fetches and validates a paginated list of theatre screens.
+ * Fetches and validates a list of theatre screens using standardized query filtering.
  */
-export function useFetchPaginatedScreens<TData = unknown>(
-    {schema, page, perPage, queries, config, options}: PaginatedQueryConfig<TData, TheatreScreenQueryOptions>
+export function useFetchTheatreScreens<TData = unknown>(
+    {schema, queries, config, options}: ListQueryConfig<TData, TheatreScreenQueryOptions>
 ): UseQueryResult<TData, HttpResponseError> {
     const fetchScreens = buildQueryFn<TData>({
-        action: () => paginated({pagination: {page, perPage}, queries, config}),
-        schema,
+        action: () => find({queries, config}),
+        schema
     });
 
     return useQuery({
-        queryKey: TheatreScreenCRUDQueryKeys.paginated({page, perPage, ...queries, ...config}),
+        queryKey: TheatreScreenCRUDQueryKeys.find({...queries, ...config}),
         queryFn: fetchScreens,
         ...useQueryOptionsDefaults(options),
     });

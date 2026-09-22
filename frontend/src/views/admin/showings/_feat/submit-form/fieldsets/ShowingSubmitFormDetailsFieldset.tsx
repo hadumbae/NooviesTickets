@@ -17,7 +17,7 @@ import {TheatreHookFormSelect} from "@/views/admin/theatres/_feat/form-input/sel
 import {
     TheatreQuickOverviewFetchCard
 } from "@/views/admin/theatres/_comp/display-cards/TheatreQuickOverviewFetchCard.tsx";
-import {ScreenHookFormSelect} from "@/views/admin/theatre-screens";
+import {TheatreScreenHookFormSelect} from "@/views/admin/theatre-screens";
 import {ShowingFormValues} from "@/domains/showings/_schema/form/form-values/ShowingFormValues.ts";
 import {useHandleShowingFormFiltering} from "@/domains/showings/_feat/submit-data/useHandleShowingFormFiltering.ts";
 import {HookFormSelect} from "@/views/shared/_comp";
@@ -99,7 +99,7 @@ export function ShowingSubmitFormDetailsFieldset(
             key: "screen",
             render: !hideFields?.screen && theatre,
             disabled: disableFields?.screen,
-            element: <ScreenHookFormSelect
+            element: <TheatreScreenHookFormSelect
                 control={control}
                 name="screen"
                 label="Screen"

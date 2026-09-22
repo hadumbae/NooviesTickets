@@ -1,2 +1,2 @@
 export * from "./ui";
-export * from "./screen-details";
+export * from "./theatre-screen-details";

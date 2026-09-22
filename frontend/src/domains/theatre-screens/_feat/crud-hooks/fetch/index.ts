@@ -1,11 +1,11 @@
-import {useFetchPaginatedScreens} from "@/domains/theatre-screens/_feat/crud-hooks/fetch/useFetchPaginatedScreens.ts";
-import {useFetchScreen} from "@/domains/theatre-screens/_feat/crud-hooks/fetch/useFetchScreen.ts";
-import {useFetchScreenBySlug} from "@/domains/theatre-screens/_feat/crud-hooks/fetch/useFetchScreenBySlug.ts";
-import {useFetchScreens} from "@/domains/theatre-screens/_feat/crud-hooks/fetch/useFetchScreens.ts";
+import {useFetchPaginatedTheatreScreens} from "@/domains/theatre-screens/_feat/crud-hooks/fetch/useFetchPaginatedTheatreScreens.ts";
+import {useFetchTheatreScreen} from "@/domains/theatre-screens/_feat/crud-hooks/fetch/useFetchTheatreScreen.ts";
+import {useFetchTheatreScreenBySlug} from "@/domains/theatre-screens/_feat/crud-hooks/fetch/useFetchTheatreScreenBySlug.ts";
+import {useFetchTheatreScreens} from "@/domains/theatre-screens/_feat/crud-hooks/fetch/useFetchTheatreScreens.ts";
 
 export {
-    useFetchScreen,
-    useFetchScreens,
-    useFetchScreenBySlug,
-    useFetchPaginatedScreens,
+    useFetchTheatreScreen,
+    useFetchTheatreScreens,
+    useFetchTheatreScreenBySlug,
+    useFetchPaginatedTheatreScreens,
 }

@@ -8,14 +8,14 @@ import {
     EntityDeleteWarningDialog
 } from "@/views/shared/_feat/dialog/EntityDeleteWarningDialog.tsx";
 import {MutationResponseConfig} from "@/shared/_feat/submit-data";
-import {useScreenDeleteMutation} from "@/domains/theatre-screens/_feat/crud-hooks";
+import {useTheatreScreenDeleteMutation} from "@/domains/theatre-screens/_feat/crud-hooks";
 import {UIOpenStateProps} from "@/shared/_types";
 import {handleMutationCallback} from "@/shared/_feat/handle-mutation-callback";
 import {
     handleSubmitResponseError
 } from "@/shared/_feat/error-handling/handleSubmitResponseError.ts";
 
-/** Props for the ScreenDeleteWarningDialog component. */
+/** Props for the TheatreScreenDeleteWarningDialog component. */
 type DialogProps = MutationResponseConfig<void, { _id: ObjectIdString }> & UIOpenStateProps & {
     children?: ReactNode;
     screenID: ObjectIdString;
@@ -23,11 +23,11 @@ type DialogProps = MutationResponseConfig<void, { _id: ObjectIdString }> & UIOpe
 };
 
 /** A domain-specific warning dialog that confirms a user's intent to delete a Theatre Screen. */
-export function ScreenDeleteWarningDialog(
+export function TheatreScreenDeleteWarningDialog(
     {children, screenID, screenName, isOpen, setIsOpen, ...submitConfig}: DialogProps
 ): ReactElement {
     const dialogTitle = `Proceed to delete ${screenName ?? "screen"}?`;
-    const {mutateAsync} = useScreenDeleteMutation();
+    const {mutateAsync} = useTheatreScreenDeleteMutation();
 
     const deleteScreen = async () => {
         try {

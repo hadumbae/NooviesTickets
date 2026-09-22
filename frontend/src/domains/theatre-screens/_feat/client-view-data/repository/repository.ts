@@ -9,14 +9,14 @@ import {handleFetchOperation} from "@/shared/_feat/use-fetch-api/handleFetchOper
 import {TheatreScreenSchedule} from "@/domains/theatre-screens/_schema";
 import {TheatreScreenClientViewBaseURL} from "@/domains/theatre-screens/_feat/client-view-data/repository/baseURL.ts";
 import {
-    FetchScreensWithShowingsConfig
+    FetchTheatreScreensWithShowingsConfig
 } from "@/domains/theatre-screens/_feat/client-view-data/repository/repository.types.ts";
 
 /**
  * Fetches screens with their scheduled showings from the API.
  */
-export function fetchScreensWithShowings(
-    {theatreID, localDate}: FetchScreensWithShowingsConfig
+export function fetchTheatreScreensWithShowings(
+    {theatreID, localDate}: FetchTheatreScreensWithShowingsConfig
 ): Promise<FetchRequestReturns<TheatreScreenSchedule[]>> {
     const url = buildURL({
         baseURL: TheatreScreenClientViewBaseURL,

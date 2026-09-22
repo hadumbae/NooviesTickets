@@ -10,7 +10,7 @@ import mongooseLeanVirtuals from "mongoose-lean-virtuals";
  * Virtual: screenCount
  */
 TheatreSchema.virtual("screenCount", {
-    ref: "Screen",
+    ref: "TheatreScreen",
     localField: "_id",
     foreignField: "theatre",
     count: true,

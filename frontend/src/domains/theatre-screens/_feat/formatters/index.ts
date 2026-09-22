@@ -1,5 +1,5 @@
-import {simplifyScreenDetails} from "@/domains/theatre-screens/_feat/formatters/simplifyScreenDetails.ts";
+import {simplifyTheatreScreenDetails} from "@/domains/theatre-screens/_feat/formatters/simplifyTheatreScreenDetails.ts";
 
 export {
-    simplifyScreenDetails,
+    simplifyTheatreScreenDetails,
 }

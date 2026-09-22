@@ -24,7 +24,7 @@ export async function getFetchTheatreScreenAdminViewData(
 ): Promise<FetchRequestReturns<TheatreScreenDetailsViewData>> {
     const url = buildURL({
         baseURL: TheatreScreenAdminViewDataBaseURL,
-        path: `/theatre/${theatreSlug}/screen/${screenSlug}/details`,
+        path: `/theatre/${theatreSlug}/theatre-screen/${screenSlug}/details`,
         queries: {recentShowingsCount}
     });
 

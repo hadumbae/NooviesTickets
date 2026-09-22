@@ -1,5 +1,5 @@
 /**
- * @fileoverview React Query hook for fetching a single theatre screen by its unique identifier.
+ * @fileoverview React Query hook for fetching a single theatre screen by its slug.
  */
 
 import {useQuery, UseQueryResult} from "@tanstack/react-query";
@@ -7,23 +7,23 @@ import {HttpResponseError} from "@noovies-tickets/common";
 import {useQueryOptionsDefaults} from "@/shared/_feat/handle-query/useQueryOptionsDefaults.ts";
 import {buildQueryFn} from "@/shared/_feat/validate-fetch-data";
 
-import {findByID} from "@/domains/theatre-screens/_feat/crud";
+import {findBySlug} from "@/domains/theatre-screens/_feat/crud";
 import {TheatreScreenCRUDQueryKeys} from "@/domains/theatre-screens/_feat/crud-hooks/keys";
-import {IDQueryConfig} from "@/shared/_types";
+import {SlugQueryConfig} from "@/shared/_types";
 
 /**
- * Fetches and validates a single theatre screen record by ID.
+ * Fetches and validates a single theatre screen record using its slug.
  */
-export function useFetchScreen<TData = unknown>(
-    {schema, _id, config, options}: IDQueryConfig<TData>
+export function useFetchTheatreScreenBySlug<TData = unknown>(
+    {schema, slug, config, options}: SlugQueryConfig<TData>
 ): UseQueryResult<TData, HttpResponseError> {
     const fetchScreen = buildQueryFn<TData>({
-        action: () => findByID({_id, config}),
+        action: () => findBySlug({slug, config}),
         schema,
     });
 
     return useQuery({
-        queryKey: TheatreScreenCRUDQueryKeys._id({_id, ...config}),
+        queryKey: TheatreScreenCRUDQueryKeys.slug({slug, ...config}),
         queryFn: fetchScreen,
         ...useQueryOptionsDefaults(options),
     });

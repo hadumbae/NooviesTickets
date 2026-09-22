@@ -16,7 +16,7 @@ import {getFetchTheatreScreenDetailsViewData} from "@/domains/theatre-screens/_f
 const router = Router();
 
 router.get(
-    '/theatre/:theatreSlug/screen/:screenSlug/details',
+    '/theatre/:theatreSlug/theatre-screen/:screenSlug/details',
     [isAuth, isAdmin, validateRequestConfig({schema: TheatreScreenDetailsViewRouteConfigSchema})],
     asyncHandler(getFetchTheatreScreenDetailsViewData)
 );

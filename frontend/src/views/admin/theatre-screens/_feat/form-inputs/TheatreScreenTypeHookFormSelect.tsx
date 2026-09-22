@@ -9,7 +9,7 @@ import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.ts
 import {ReactSelectOption} from "@/shared/_types/input/ReactSelectOption.ts";
 import {TheatreScreenTypeConstant} from "@noovies-tickets/common";
 
-/** Props for the ScreenTypeHookFormSelect component. */
+/** Props for the TheatreScreenTypeHookFormSelect component. */
 type Props<TSubmit extends FieldValues> = {
     name: Path<TSubmit>;
     label: string;
@@ -21,7 +21,7 @@ type Props<TSubmit extends FieldValues> = {
 };
 
 /** Form select component that populates options from the TheatreScreenTypeConstant. */
-export function ScreenTypeHookFormSelect<TSubmit extends FieldValues>(
+export function TheatreScreenTypeHookFormSelect<TSubmit extends FieldValues>(
     {isMulti, ...rest}: Props<TSubmit>
 ): ReactElement {
     const options: ReactSelectOption[] = TheatreScreenTypeConstant.map(

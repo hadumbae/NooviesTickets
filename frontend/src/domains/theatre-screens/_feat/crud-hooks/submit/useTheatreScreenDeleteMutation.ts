@@ -13,7 +13,7 @@ type DeleteValue = {
     _id: ObjectIdString;
 }
 /** React Query mutation hook for deleting a theatre screen. */
-export function useScreenDeleteMutation(): UseMutationResult<void, unknown, DeleteValue> {
+export function useTheatreScreenDeleteMutation(): UseMutationResult<void, unknown, DeleteValue> {
     const queryClient = useQueryClient();
     const deleteScreen = async ({_id}: DeleteValue) => {
         await destroy({_id});

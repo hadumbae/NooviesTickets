@@ -10,8 +10,8 @@ import {useLocation} from "react-router-dom";
 import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {useNavigateToTheatre} from "@/domains/theatres/_feat/navigation";
 
-import {simplifyScreenDetails} from "@/domains/theatre-screens/_feat/formatters";
-import {ScreenDeleteWarningDialog} from "@/views/admin/theatre-screens/_feat/model-options";
+import {simplifyTheatreScreenDetails} from "@/domains/theatre-screens/_feat/formatters";
+import {TheatreScreenDeleteWarningDialog} from "@/views/admin/theatre-screens/_feat/model-options";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
 import {
     useIsDeletingUIContext,
@@ -39,7 +39,7 @@ export function TheatreScreenDetailsPageScreenActions(
     const navigate = useLoggedNavigate();
     const navigateToTheatre = useNavigateToTheatre();
 
-    const simplifiedScreen = simplifyScreenDetails(screen);
+    const simplifiedScreen = simplifyTheatreScreenDetails(screen);
 
     const isEditing = useIsEditingUIContext();
     const {close: closeEditing, toggle: toggleEditing} = useIsEditingUIContextActions();
@@ -83,7 +83,7 @@ export function TheatreScreenDetailsPageScreenActions(
                 />
             </TheatreScreenForm>
 
-            <ScreenDeleteWarningDialog
+            <TheatreScreenDeleteWarningDialog
                 screenID={screen._id}
                 screenName={screen.name}
                 isOpen={isDeleting}

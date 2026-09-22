@@ -11,10 +11,10 @@ import {HookFormSelect} from "@/views/shared/_comp/form-select/HookFormSelect.ts
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {generateArraySchema, TheatreScreen, TheatreScreenSchema} from "@noovies-tickets/common";
 import {HookFormInputControlProps} from "@/shared/_types/input/HookFormInputProps.ts";
-import {TheatreScreenQueryFilters, useFetchScreens} from "@/domains/theatre-screens";
+import {TheatreScreenQueryFilters, useFetchTheatreScreens} from "@/domains/theatre-screens";
 
 /**
- * Props for the ScreenHookFormSelect component.
+ * Props for the TheatreScreenHookFormSelect component.
  */
 type SelectProps<TSubmit extends FieldValues> = HookFormInputControlProps<TSubmit> & {
     isMulti?: boolean;
@@ -24,10 +24,10 @@ type SelectProps<TSubmit extends FieldValues> = HookFormInputControlProps<TSubmi
 /**
  * A form select component that fetches theatre screen data and connects to react-hook-form.
  */
-export function ScreenHookFormSelect<TSubmit extends FieldValues>(
+export function TheatreScreenHookFormSelect<TSubmit extends FieldValues>(
     {isMulti = false, filters, ...rest}: SelectProps<TSubmit>
 ): ReactElement {
-    const query = useFetchScreens({
+    const query = useFetchTheatreScreens({
         queries: filters,
         schema: generateArraySchema(TheatreScreenSchema)
     });

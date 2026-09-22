@@ -4,14 +4,14 @@
 
 import {createContext, Dispatch, SetStateAction} from "react";
 
-/** Values exposed by the screen details UI setter context. */
-export type ScreenDetailsUISetterContextValues = {
+/** Values exposed by the theatre screen details UI setter context. */
+export type TheatreScreenDetailsUISetterContextValues = {
     setIsEditing: Dispatch<SetStateAction<boolean>>;
     setShowDeleteWarning: Dispatch<SetStateAction<boolean>>;
 };
 
 /** React context providing setter functions for theatre screen details UI state. */
-export const ScreenDetailsUISetterContext =
-    createContext<ScreenDetailsUISetterContextValues | undefined>(undefined);
+export const TheatreScreenDetailsUISetterContext =
+    createContext<TheatreScreenDetailsUISetterContextValues | undefined>(undefined);
 
-ScreenDetailsUISetterContext.displayName = "ScreenDetailsUISetterContext";
+TheatreScreenDetailsUISetterContext.displayName = "TheatreScreenDetailsUISetterContext";

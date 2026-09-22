@@ -11,7 +11,7 @@ import {IconButton} from "@/views/shared/_comp";
 import {TheatreScreenDetails} from "@/domains/theatre-screens";
 import {SROnly, SubsectionSubtitle, SubsectionTitle} from "@/views/shared/_comp";
 
-/** Props for the ScreenSummaryCard component. */
+/** Props for the TheatreScreenSummaryCard component. */
 type CardProps = {
     screen: TheatreScreenDetails;
 };
@@ -19,7 +19,7 @@ type CardProps = {
 /**
  * Admin summary card displaying high-level screen information.
  */
-export function ScreenSummaryCard({screen}: CardProps): ReactElement {
+export function TheatreScreenSummaryCard({screen}: CardProps): ReactElement {
     const {
         name,
         screenType,
@@ -35,7 +35,7 @@ export function ScreenSummaryCard({screen}: CardProps): ReactElement {
     const navigateToScreen = () => {
         navigate({
             level: "log",
-            component: ScreenSummaryCard.name,
+            component: TheatreScreenSummaryCard.name,
             message: "Navigate to screen from summary.",
             to: `/admin/theatres/get/${theatreSlug}/screen/${screenSlug}`,
         });
