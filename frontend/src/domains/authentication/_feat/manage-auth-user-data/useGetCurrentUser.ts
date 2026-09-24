@@ -4,7 +4,7 @@
  */
 
 import {useCurrentURLPath} from "@/shared/_feat/navigation/useCurrentURLPath.ts";
-import {UnauthorisedError} from "@/shared/_err/UnauthorisedError.ts";
+import {UnauthorisedError} from "@noovies-tickets/common";
 import {User} from "@/domains/users/_schema/user/UserSchema";
 import {useAuthContext} from "@/domains/authentication/_feat/auth-context/useAuthContext.ts";
 

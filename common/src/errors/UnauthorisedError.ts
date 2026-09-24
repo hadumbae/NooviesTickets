@@ -1,9 +1,9 @@
 /**
- * @file UnauthorisedError.ts
+ * @fileoverview Custom error representing an unauthorised access attempt.
  *
- * Custom error representing an unauthorised access attempt.
- * Optionally carries redirect and source metadata for
- * client-side handling and logging.
+ * Distinct from HttpResponseError's ERR_UNAUTHORIZED: this is a local
+ * authorisation failure (e.g. a missing/insufficient auth context) that
+ * occurs without any request ever being made.
  */
 
 import {DateTime} from "luxon";

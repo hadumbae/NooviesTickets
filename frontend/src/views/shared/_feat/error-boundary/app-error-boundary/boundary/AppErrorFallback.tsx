@@ -9,7 +9,8 @@ import {
 } from "@/views/shared/_feat/error-boundary/query-error-fallback/boundary/QueryErrorHandler.tsx";
 import {RouteError} from "@/shared/_err/RouteError.ts";
 import {RouteErrorDisplay} from "@/views/shared/_feat/error-boundary/app-error-boundary/display/RouteErrorDisplay.tsx";
-import {HttpResponseError} from "@noovies-tickets/common";
+import {UnauthorisedErrorDisplay} from "@/views/shared/_feat/error-boundary/app-error-boundary/display/UnauthorisedErrorDisplay.tsx";
+import {HttpResponseError, UnauthorisedError} from "@noovies-tickets/common";
 import {ReactElement} from "react";
 
 /** Props for the AppErrorFallback component. */
@@ -30,6 +31,12 @@ export function AppErrorFallback(
     if (error instanceof RouteError) {
         return (
             <RouteErrorDisplay error={error} className={className}/>
+        );
+    }
+
+    if (error instanceof UnauthorisedError) {
+        return (
+            <UnauthorisedErrorDisplay error={error} className={className}/>
         );
     }
 
