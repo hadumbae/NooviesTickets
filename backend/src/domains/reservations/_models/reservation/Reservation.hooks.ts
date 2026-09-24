@@ -94,6 +94,7 @@ ReservationSchema.pre("validate", async function (this: HydratedDocument<Reserva
 ReservationSchema.post("save", async function (this: HydratedDocument<ReservationDoc>) {
     if (this.isNew) {
         await reserveReservationSeats(this);
+        return;
     }
 
     if (this.status !== "RESERVED" && this.status !== "PAID") {

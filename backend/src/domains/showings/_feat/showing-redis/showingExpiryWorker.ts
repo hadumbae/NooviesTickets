@@ -35,3 +35,11 @@ export const showingExpiryWorker = new Worker(
     },
     {connection: redisConnection}
 );
+
+showingExpiryWorker.on("failed", (job, error) => {
+    console.warn(`[${SHOWING_EXPIRY_QUEUE_NAME}] Job ${job?.id} Failed: `, error.message);
+});
+
+showingExpiryWorker.on("error", (error) => {
+    console.error(`[${SHOWING_EXPIRY_QUEUE_NAME}] Worker Encountered Error: `, error.message);
+});

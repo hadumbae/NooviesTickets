@@ -5,24 +5,22 @@
 import type {ControllerAsyncFunc} from "@/shared/_types/controllers/ControllerTypes";
 import type {Request, Response} from "express";
 import {
-    cancelReservation, refundReservation,
+    cancelReservation,
+    refundReservation,
     resetReservationExpiry,
     updateReservationNotes
 } from "@/domains/reservations/_feat/update-reservations/service";
-import isValidObjectId from "@/shared/_utils/mongoose/isValidObjectId";
+import type {IDRouteConfig} from "@/shared/_schema";
 
 /** Handles the partial update of a reservation's administrative notes. */
 export const patchUpdateReservationNotes: ControllerAsyncFunc = async (
     req: Request, res: Response
 ): Promise<Response> => {
     const data = req.validatedBody;
-    const {_id} = req.params;
-
-    /** Ensure the ID string is a valid BSON format before hitting the service. */
-    const reservationID = isValidObjectId(_id);
+    const {_id} = req.parsedConfig as IDRouteConfig;
 
     const reservation = await updateReservationNotes({
-        reservationID,
+        reservationID: _id,
         data,
     });
 
@@ -33,12 +31,10 @@ export const patchUpdateReservationNotes: ControllerAsyncFunc = async (
 export const patchResetReservationExpiry: ControllerAsyncFunc = async (
     req: Request, res: Response
 ): Promise<Response> => {
-    const {_id} = req.params;
-
-    const reservationID = isValidObjectId(_id);
+    const {_id} = req.parsedConfig as IDRouteConfig;
 
     const reservation = await resetReservationExpiry({
-        reservationID,
+        reservationID: _id,
         duration: {days: 1},
     });
 
@@ -50,12 +46,10 @@ export const patchCancelReservation: ControllerAsyncFunc = async (
     req: Request, res: Response
 ): Promise<Response> => {
     const data = req.validatedBody;
-    const {_id} = req.params;
-
-    const reservationID = isValidObjectId(_id);
+    const {_id} = req.parsedConfig as IDRouteConfig;
 
     const reservation = await cancelReservation({
-        reservationID,
+        reservationID: _id,
         data,
     });
 
@@ -67,12 +61,10 @@ export const patchRefundReservation: ControllerAsyncFunc = async (
     req: Request, res: Response
 ): Promise<Response> => {
     const data = req.validatedBody;
-    const {_id} = req.params;
-
-    const reservationID = isValidObjectId(_id);
+    const {_id} = req.parsedConfig as IDRouteConfig;
 
     const reservation = await refundReservation({
-        reservationID,
+        reservationID: _id,
         data,
     });
 

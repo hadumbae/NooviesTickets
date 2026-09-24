@@ -14,10 +14,11 @@ import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
 import type {SeatMapSchemaFields} from "@/domains/seatmaps/_models/seat-map/SeatMap.types";
 import {type ReserveTicketPersistenceData} from "@/domains/reservations/_feat/reserve-tickets/schemas";
 import {SeatModel} from "@/domains/seats/_models";
-import {
-    saveValidatedReservation
-} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/saveValidatedReservation";
+import {saveTicketReservation} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/saveTicketReservation";
 import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
+import {
+    addReservationLifecycleJob
+} from "@/domains/reservations/_feat/reservation-queues/lifecycle/addReservationLifecycleJob";
 
 /** Initiates a ticket reservation hold based on the provided type and identity context. */
 export async function reserveTickets(
@@ -33,19 +34,37 @@ export async function reserveTickets(
         pricePaid: 0,
     };
 
-    if (persistenceData.reservationType === "GENERAL_ADMISSION") {
-        return ReserveHandlers.GENERAL_ADMISSION(persistenceData);
+    let reservation;
+    const {reservationType} = persistenceData;
+
+    if (reservationType === "GENERAL_ADMISSION") {
+        reservation = await ReserveHandlers.GENERAL_ADMISSION(persistenceData);
+    } else if (reservationType === "RESERVED_SEATS") {
+        reservation = await ReserveHandlers.RESERVED_SEATS(persistenceData);
+    } else {
+        throw new BookingError({
+            statusCode: 409,
+            errorCode: "ERR_INVALID_RESERVATION_TYPE",
+            message: `Invalid Reservation Type. Received: ${reservationType}`,
+        });
     }
 
-    if (persistenceData.reservationType === "RESERVED_SEATS") {
-        return ReserveHandlers.RESERVED_SEATS(persistenceData);
+    try {
+        await addReservationLifecycleJob({
+            _id: reservation._id,
+            job: "payment_expiry",
+            time: reservation.expiresAt,
+        });
+    } catch (error: unknown) {
+        throw new BookingError({
+            statusCode: 500,
+            errorCode: "ERR_LIFECYCLE_QUEUE_FAILED",
+            message: "Ticket Reserved, But Queueing Updates Failed",
+
+        });
     }
 
-    throw new BookingError({
-        statusCode: 409,
-        errorCode: "ERR_INVALID_RESERVATION_TYPE",
-        message: `Invalid Reservation Type. Received: ${(persistenceData as any).reservationType}`,
-    });
+    return reservation as ReservationSchemaFields;
 }
 
 /** Internal strategy handlers for specific reservation types. */
@@ -89,7 +108,7 @@ const ReserveHandlers = {
 
         data.pricePaid = ticketPrice * seatsToReserve;
 
-        return saveValidatedReservation(data);
+        return saveTicketReservation(data);
     },
 
     /**
@@ -141,7 +160,7 @@ const ReserveHandlers = {
             .map(({overridePrice, basePrice, priceMultiplier}) => overridePrice ?? basePrice * priceMultiplier)
             .reduce((acc, cur) => acc + cur, 0);
 
-        return saveValidatedReservation(data);
+        return saveTicketReservation(data);
     },
 };
 

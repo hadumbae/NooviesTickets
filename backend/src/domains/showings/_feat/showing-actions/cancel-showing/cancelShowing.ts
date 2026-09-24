@@ -7,6 +7,8 @@ import createHttpError from "http-errors";
 import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model";
 import type {ShowingSchemaFields} from "@/domains/showings/_models/showing/Showing.types";
 import {removeShowingExpiryJob} from "@/domains/showings/_feat/showing-redis/service/removeShowingExpiryJob";
+import {ReservationModel} from "@/domains/reservations";
+import {addReservationCancellationJob} from "@/domains/reservations/_feat/reservation-queues";
 
 /** Props for the CancelConfig type. */
 type CancelConfig = {
@@ -41,11 +43,25 @@ export async function cancelShowing(
         await removeShowingExpiryJob({_id, job: "start"});
         await removeShowingExpiryJob({_id, job: "complete"});
     } catch (error: unknown) {
-        throw createHttpError(500, "500, Showing Cancelled, Error In Clean Up");
+        throw createHttpError(500, "Showing Cancelled, Error In Clean Up");
     }
 
-    // # TODO
-    // Run Cancellation Job Per Reservation
+    const reservations = await ReservationModel
+        .find({showing: showing._id, status: {$in: ["RESERVED", "PAID"]}},)
+        .select("_id status")
+        .lean();
+
+    try {
+        const queuePromises = [];
+
+        for (const reservation of reservations) {
+            queuePromises.push(addReservationCancellationJob({_id: reservation._id, job: "cancellation"}));
+        }
+
+        await Promise.all(queuePromises);
+    } catch (error: unknown) {
+        throw createHttpError(500, "Showing Cancelled, Error In Setting Reservation Queue");
+    }
 
     return showing;
 }

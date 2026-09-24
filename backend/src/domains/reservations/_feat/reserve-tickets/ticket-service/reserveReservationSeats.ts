@@ -5,11 +5,11 @@ import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservat
 
 /** Finalizes seat status from pending to reserved for a specific reservation. */
 export async function reserveReservationSeats(
-    reservation: DocumentType<ReservationSchemaFields>
+    {_id, selectedSeating, reservationType}: DocumentType<ReservationSchemaFields>
 ): Promise<void> {
-    const {_id, selectedSeating, reservationType} = reservation;
-
-    if (reservationType === "GENERAL_ADMISSION") return;
+    if (reservationType === "GENERAL_ADMISSION") {
+        return;
+    }
 
     const seatsToReserve = selectedSeating!.map(({_id}) => _id);
 

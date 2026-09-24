@@ -12,7 +12,7 @@ import {
 } from "@/domains/reservations/_feat/reserve-tickets/schemas/persistenceSchema";
 
 /** Validates the input data against the persistence schema before saving and populating the reservation document. */
-export async function saveValidatedReservation(
+export async function saveTicketReservation(
     data: ReserveTicketPersistenceData
 ): Promise<ReservationSchemaFields> {
     const {data: parsedData, success, error} = ReserveTicketPersistenceSchema.safeParse(data);
