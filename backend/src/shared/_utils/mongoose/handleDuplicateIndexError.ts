@@ -4,11 +4,10 @@
  */
 
 import { isDuplicateIndexError } from "./isDuplicateIndexError.js";
-import { ZodDuplicateIndexError } from "../../_errors/zod/ZodDuplicateIndexError.js";
+import { ValidationError } from "@noovies-tickets/common";
 
 type ErrorParams = {
     error: unknown;
-    modelName?: string;
     handleIndex?: (indexString: string) => void | never;
 };
 
@@ -16,7 +15,7 @@ type ErrorParams = {
  * Normalizes MongoDB duplicate index errors.
  */
 export function handleDuplicateIndexError(
-    { error, modelName, handleIndex }: ErrorParams
+    { error, handleIndex }: ErrorParams
 ): never {
     const isValidError = isDuplicateIndexError(error);
 
@@ -25,10 +24,10 @@ export function handleDuplicateIndexError(
 
         handleIndex?.(indexString);
 
-        throw new ZodDuplicateIndexError({
+        throw new ValidationError({
+            errorCode: "ERR_DUPLICATE_INDEX",
             message: `Duplicate Error: ${indexString}`,
-            index: indexString,
-            model: modelName,
+            statusCode: 422,
             errors: [],
         });
     }

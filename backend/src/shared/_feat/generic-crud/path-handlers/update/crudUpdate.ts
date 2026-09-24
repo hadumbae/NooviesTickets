@@ -52,7 +52,6 @@ export async function updateDocument<TModel extends BaseModel>(
         if (isDuplicateIndexError(error)) {
             handleDuplicateIndexError({
                 error,
-                modelName: model.modelName,
                 handleIndex: onDuplicateIndex,
             });
         }

@@ -1,16 +1,15 @@
 /**
- * @fileoverview Maps MongoDB duplicate index errors to ZodDuplicateIndexError for the MovieReview model.
+ * @fileoverview Maps MongoDB duplicate index errors to ValidationError for the MovieReview model.
  */
 
-import {ZodDuplicateIndexError} from "@/shared/_errors/zod/ZodDuplicateIndexError.js";
-import {MovieReviewModel} from "@/domains/movie-reviews/_models/review/MovieReview.model";
+import {ValidationError} from "@noovies-tickets/common";
 
-/** Translates a MongoDB duplicate index string into a typed ZodDuplicateIndexError. */
+/** Translates a MongoDB duplicate index string into a typed ValidationError. */
 export function handleMovieReviewDuplicateIndex(indexString: string): never {
     if (indexString === "user_1_movie_1") {
-        throw new ZodDuplicateIndexError({
-            index: indexString,
-            model: MovieReviewModel.modelName,
+        throw new ValidationError({
+            errorCode: "ERR_DUPLICATE_INDEX",
+            statusCode: 422,
             message: "Duplicate movie review detected. Reviews must not have the same user and movie.",
             errors: [
                 {
@@ -27,9 +26,9 @@ export function handleMovieReviewDuplicateIndex(indexString: string): never {
         });
     }
 
-    throw new ZodDuplicateIndexError({
-        index: indexString,
-        model: MovieReviewModel.modelName,
+    throw new ValidationError({
+        errorCode: "ERR_DUPLICATE_INDEX",
+        statusCode: 422,
         errors: [],
         message: "Movie review with duplicate indexes detected."
     });

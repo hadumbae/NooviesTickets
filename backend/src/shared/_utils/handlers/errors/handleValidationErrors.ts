@@ -43,6 +43,17 @@ export const handleValidationErrors = (error: unknown, res: Response) => {
             return;
         }
 
+        if (errorCode === "ERR_DUPLICATE_INDEX") {
+            res.status(statusCode ?? 422).json({
+                statusCode: statusCode ?? 422,
+                message: message ?? "[DUPLICATE] Uniqueness Violated",
+                errorCode,
+                errors,
+            });
+
+            return;
+        }
+
         res.status(statusCode ?? 500).json({
             errorCode: "ERR_UNKNOWN_VALIDATION_ISSUE",
             statusCode: statusCode ?? 500,

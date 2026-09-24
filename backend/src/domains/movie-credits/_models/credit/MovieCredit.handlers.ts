@@ -3,10 +3,7 @@
  */
 
 import type {ZodIssue} from "zod";
-import {ZodDuplicateIndexError} from "@/shared/_errors/zod/ZodDuplicateIndexError";
-import {
-    MovieCreditModel
-} from "@/domains/movie-credits/_models/credit/MovieCredit.model";
+import {ValidationError} from "@noovies-tickets/common";
 
 /**
  * Maps database duplicate key errors to specific Zod validation issues for movie credits.
@@ -26,9 +23,9 @@ export function handleDuplicateCreditIndex(indexString: string) {
             },
         ];
 
-        throw new ZodDuplicateIndexError({
-            model: MovieCreditModel.modelName,
-            index: indexString,
+        throw new ValidationError({
+            errorCode: "ERR_DUPLICATE_INDEX",
+            statusCode: 422,
             errors,
             message: "Duplicate billing order detected. Each cast member in a movie must have a unique billing order.",
         });
@@ -57,9 +54,9 @@ export function handleDuplicateCreditIndex(indexString: string) {
             },
         ];
 
-        throw new ZodDuplicateIndexError({
-            model: MovieCreditModel.modelName,
-            index: indexString,
+        throw new ValidationError({
+            errorCode: "ERR_DUPLICATE_INDEX",
+            statusCode: 422,
             errors,
             message: "Duplicate cast entry detected. A person cannot be credited with the same role and character more than once in a movie.",
         });
@@ -88,9 +85,9 @@ export function handleDuplicateCreditIndex(indexString: string) {
             },
         ];
 
-        throw new ZodDuplicateIndexError({
-            model: MovieCreditModel.modelName,
-            index: indexString,
+        throw new ValidationError({
+            errorCode: "ERR_DUPLICATE_INDEX",
+            statusCode: 422,
             errors,
             message: "Duplicate crew entry detected. A person cannot be credited with the same role and display role more than once in a movie.",
         });

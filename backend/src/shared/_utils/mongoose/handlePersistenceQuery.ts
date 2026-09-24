@@ -16,8 +16,6 @@ import {isMongooseVersionError} from "./isMongooseVersionError.js";
 type QueryParams<TReturn> = {
     /** Function that performs the persistence operation. */
     query: () => Promise<TReturn>;
-    /** Optional model name used for error context. */
-    modelName?: string;
     /** Number of retry attempts on version conflict. */
     retries?: number;
     /** Optional handler for mapping duplicate index identifiers. */
@@ -34,7 +32,7 @@ type QueryParams<TReturn> = {
  * @returns The query result promise.
  */
 export function handlePersistenceQuery<TReturn>(params: QueryParams<TReturn>): Promise<TReturn> {
-    const {query, modelName, retries = 0, onDuplicateIndexError, onVersionError} = params;
+    const {query, retries = 0, onDuplicateIndexError, onVersionError} = params;
 
     try {
         return query();
@@ -49,7 +47,6 @@ export function handlePersistenceQuery<TReturn>(params: QueryParams<TReturn>): P
         if (isDuplicateIndexError(error)) {
             handleDuplicateIndexError({
                 error,
-                modelName,
                 handleIndex: onDuplicateIndexError,
             });
         }

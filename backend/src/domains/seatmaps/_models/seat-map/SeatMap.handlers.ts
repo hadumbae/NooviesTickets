@@ -3,10 +3,9 @@
  */
 
 import type {ZodIssue} from "zod";
-import {ZodDuplicateIndexError} from "@/shared/_errors/zod/ZodDuplicateIndexError";
-import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
+import {ValidationError} from "@noovies-tickets/common";
 
-/** Handles MongoDB duplicate key errors by transforming them into formatted ZodDuplicateIndexErrors. */
+/** Handles MongoDB duplicate key errors by transforming them into formatted ValidationErrors. */
 export function handleDuplicateIndex(indexString: string): void | never {
     if (indexString === "showing_1_seat_1") {
         const errors: ZodIssue[] = [
@@ -22,9 +21,9 @@ export function handleDuplicateIndex(indexString: string): void | never {
             },
         ];
 
-        throw new ZodDuplicateIndexError({
-            index: indexString,
-            model: SeatMapModel.modelName,
+        throw new ValidationError({
+            errorCode: "ERR_DUPLICATE_INDEX",
+            statusCode: 422,
             errors,
             message: "Duplicate seat mapping detected. Each seat can be assigned only once per showing.",
         });

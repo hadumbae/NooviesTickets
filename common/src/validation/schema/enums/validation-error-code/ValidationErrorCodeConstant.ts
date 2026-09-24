@@ -8,5 +8,6 @@ export const ValidationErrorCodeConstant = [
     "ERR_QUERY_VALIDATION",
     "ERR_REQUEST_VALIDATION",
     "ERR_DATA_VALIDATION",
+    "ERR_DUPLICATE_INDEX",
     "ERR_UNKNOWN_VALIDATION_ISSUE",
 ] as const;

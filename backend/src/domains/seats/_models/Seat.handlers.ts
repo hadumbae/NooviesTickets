@@ -3,13 +3,12 @@
  */
 
 import type { ZodIssue } from "zod";
-import { ZodDuplicateIndexError } from "@/shared/_errors/zod/ZodDuplicateIndexError";
-import {SeatModel} from "@/domains/seats/_models/Seat.model";
+import { ValidationError } from "@noovies-tickets/common";
 
 /**
  * Intercepts MongoDB duplicate key errors for Seat indexes and transforms them
- * into structured ZodDuplicateIndexErrors for consistent API error responses.
- * @throws {ZodDuplicateIndexError} structured error mapping database conflicts to form fields.
+ * into structured ValidationErrors for consistent API error responses.
+ * @throws {ValidationError} structured error mapping database conflicts to form fields.
  */
 export function handleDuplicateIndex(indexString: string): void | never {
     // Conflict: Natural Key (Theatre + Screen + Row + Seat Number)
@@ -21,9 +20,9 @@ export function handleDuplicateIndex(indexString: string): void | never {
             { path: ["seatNumber"], code: "custom", message: "Seat number already taken in this row." },
         ];
 
-        throw new ZodDuplicateIndexError({
-            index: indexString,
-            model: SeatModel.modelName,
+        throw new ValidationError({
+            errorCode: "ERR_DUPLICATE_INDEX",
+            statusCode: 422,
             errors,
             message: "Duplicate seat: row + seat number must be unique.",
         });
@@ -38,9 +37,9 @@ export function handleDuplicateIndex(indexString: string): void | never {
             { path: ["y"], code: "custom", message: "Y coordinate already used." },
         ];
 
-        throw new ZodDuplicateIndexError({
-            index: indexString,
-            model: SeatModel.modelName,
+        throw new ValidationError({
+            errorCode: "ERR_DUPLICATE_INDEX",
+            statusCode: 422,
             errors,
             message: "Duplicate seat: coordinates (x, y) must be unique.",
         });

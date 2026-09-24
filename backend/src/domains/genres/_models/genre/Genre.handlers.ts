@@ -4,12 +4,11 @@
  */
 
 import type {ZodIssue} from "zod";
-import {ZodDuplicateIndexError} from "@/shared/_errors/zod/ZodDuplicateIndexError";
-import {GenreModel} from "@/domains/genres/_models/genre/Genre.model";
+import {ValidationError} from "@noovies-tickets/common";
 
 /**
  * Handles unique constraint violations for Genres.
- * @throws {ZodDuplicateIndexError} With a mapped error path and message.
+ * @throws {ValidationError} With a mapped error path and message.
  */
 export function handleGenreDuplicateIndex(indexString: string): void | never {
     if (indexString === "name_1") {
@@ -21,9 +20,9 @@ export function handleGenreDuplicateIndex(indexString: string): void | never {
             }
         ];
 
-        throw new ZodDuplicateIndexError({
-            index: indexString,
-            model: GenreModel.modelName,
+        throw new ValidationError({
+            errorCode: "ERR_DUPLICATE_INDEX",
+            statusCode: 422,
             errors,
             message: "Duplicate genre name detected."
         });

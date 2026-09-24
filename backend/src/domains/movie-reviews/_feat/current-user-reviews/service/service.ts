@@ -103,7 +103,6 @@ export async function updateMovieReviewForCurrentUser(
     await handlePersistenceQuery({
         query: () => docToUpdate.save(),
         retries: 3,
-        modelName: MovieReviewModel.modelName,
         onDuplicateIndexError: handleMovieReviewDuplicateIndex,
         onVersionError: () => {
             throw new DocumentVersionError({
