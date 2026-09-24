@@ -8,4 +8,5 @@ export const HttpResponseErrorCodeConstant = [
     "ERR_UNAUTHORIZED",
     "ERR_FORBIDDEN",
     "ERR_HTTP_RESPONSE",
+    "ERR_NETWORK",
 ] as const;

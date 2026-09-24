@@ -3,7 +3,6 @@
  */
 
 import {ReactElement} from "react";
-import {NetworkError} from "@/shared/_err/NetworkError.ts";
 import {HttpResponseError} from "@noovies-tickets/common";
 import {ErrorHandlerProps} from "@/shared/_types/error/ErrorHandlerProps.ts";
 import {HttpStatusOverrideText} from "@/shared/_types/error/HttpErrorTypes.ts";
@@ -22,16 +21,16 @@ type HandlerProps = ErrorHandlerProps & {
 export function QueryErrorHandler(
     {error, className, statusTextOverride}: HandlerProps
 ): ReactElement {
-    if (error instanceof NetworkError) {
-        return (
-            <NetworkErrorDisplay
-                error={error}
-                className={className}
-            />
-        );
-    }
-
     if (error instanceof HttpResponseError) {
+        if (error.errorCode === "ERR_NETWORK") {
+            return (
+                <NetworkErrorDisplay
+                    error={error}
+                    className={className}
+                />
+            );
+        }
+
         return (
             <HttpResponseErrorDisplay
                 statusTextOverride={statusTextOverride}

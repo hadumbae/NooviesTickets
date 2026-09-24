@@ -9,7 +9,6 @@ import {
 } from "@/views/shared/_feat/error-boundary/query-error-fallback/boundary/QueryErrorHandler.tsx";
 import {RouteError} from "@/shared/_err/RouteError.ts";
 import {RouteErrorDisplay} from "@/views/shared/_feat/error-boundary/app-error-boundary/display/RouteErrorDisplay.tsx";
-import {NetworkError} from "@/shared/_err/NetworkError.ts";
 import {HttpResponseError} from "@noovies-tickets/common";
 import {ReactElement} from "react";
 
@@ -22,7 +21,7 @@ type HandlerProps = FallbackProps & { className?: string };
 export function AppErrorFallback(
     {error, className}: HandlerProps
 ): ReactElement {
-    if (error instanceof NetworkError || error instanceof HttpResponseError) {
+    if (error instanceof HttpResponseError) {
         return (
             <QueryErrorHandler error={error} className={className}/>
         );

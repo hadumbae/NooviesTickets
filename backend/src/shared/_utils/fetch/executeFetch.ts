@@ -3,9 +3,8 @@
  * @filename executeFetch.ts
  */
 
-import type {URLString} from "@noovies-tickets/common";
+import {HttpResponseError, type URLString} from "@noovies-tickets/common";
 import type {RequestMethod} from "@/shared/_types/requests/RequestMethods";
-import {UseFetchError} from "../../_errors/UseFetchError.js";
 
 /**
  * Parameters for {@link executeFetch}.
@@ -32,7 +31,7 @@ type FetchParams = {
  *
  * @param params - Fetch execution parameters.
  * @returns The raw `Response` from the fetch request.
- * @throws {UseFetchError} When a network, system, or unknown error occurs.
+ * @throws {HttpResponseError} When a network, system, or unknown error occurs.
  */
 export async function executeFetch(
     {url, method, headers, body, signal}: FetchParams,
@@ -41,21 +40,21 @@ export async function executeFetch(
         return fetch(url, {method, headers, body, signal});
     } catch (error: unknown) {
         if (error instanceof TypeError) {
-            throw new UseFetchError({
+            throw new HttpResponseError({
+                errorCode: "ERR_NETWORK",
                 url,
-                method,
                 message: "Network Error Or CORS Issue",
             });
         } else if (error instanceof Error) {
-            throw new UseFetchError({
+            throw new HttpResponseError({
+                errorCode: "ERR_NETWORK",
                 url,
-                method,
                 message: `System Error: ${error.message}`,
             });
         } else {
-            throw new UseFetchError({
+            throw new HttpResponseError({
+                errorCode: "ERR_NETWORK",
                 url,
-                method,
                 message: `Unknown Error Occurred`,
             });
         }
