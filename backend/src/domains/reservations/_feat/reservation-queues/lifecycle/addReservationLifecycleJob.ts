@@ -27,6 +27,6 @@ export async function addReservationLifecycleJob(
     return reservationLifecycleQueue.add(
         job,
         {reservationId: _id},
-        {jobId: `${_id}:${job}`, delay: time.getTime() - Date.now()}
+        {jobId: `${_id}-${job}`, delay: time.getTime() - Date.now()}
     );
 }

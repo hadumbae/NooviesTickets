@@ -22,6 +22,7 @@ export const showingExpiryWorker = new Worker(
             if (status !== "SCHEDULED" && status !== "SOLD_OUT") return;
             showing.status = "RUNNING";
             await showing.save();
+            console.log(`[${SHOWING_EXPIRY_QUEUE_NAME}] Showing ${showingId} -> RUNNING`);
             return
         }
 
@@ -29,11 +30,12 @@ export const showingExpiryWorker = new Worker(
             if (status !== "RUNNING") return;
             showing.status = "COMPLETED";
             await showing.save();
+            console.log(`[${SHOWING_EXPIRY_QUEUE_NAME}] Showing ${showingId} -> COMPLETED`);
             return
         }
 
     },
-    {connection: redisConnection}
+    {connection: redisConnection, stalledInterval: 60 * 60 * 1000}
 );
 
 showingExpiryWorker.on("failed", (job, error) => {

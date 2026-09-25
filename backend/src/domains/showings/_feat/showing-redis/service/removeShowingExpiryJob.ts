@@ -17,7 +17,7 @@ type JobConfig = {
 export async function removeShowingExpiryJob(
     {_id, job}: JobConfig
 ): Promise<void> {
-    const existingJob = await showingExpiryQueue.getJob(`${_id}:${job}`);
+    const existingJob = await showingExpiryQueue.getJob(`${_id}-${job}`);
 
     if (existingJob) {
         await existingJob.remove();

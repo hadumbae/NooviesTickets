@@ -21,6 +21,6 @@ export function addShowingExpiryJob(
     return showingExpiryQueue.add(
         job,
         {showingId: _id},
-        {jobId:`${_id}:${job}` , delay: time.getTime() - Date.now()}
+        {jobId: `${_id}-${job}`, delay: time.getTime() - Date.now()}
     );
 }

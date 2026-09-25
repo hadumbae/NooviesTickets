@@ -26,6 +26,6 @@ export async function addReservationCancellationJob(
     return reservationCancellationQueue.add(
         job,
         {reservationId: _id},
-        {jobId: `${_id}:${job}`}
+        {jobId: `${_id}-${job}`}
     );
 }

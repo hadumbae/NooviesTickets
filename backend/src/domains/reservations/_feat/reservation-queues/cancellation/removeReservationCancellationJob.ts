@@ -22,7 +22,7 @@ type JobConfig = {
 export async function removeReservationCancellationJob(
     {_id, job}: JobConfig,
 ): Promise<void> {
-    const existingJob = await reservationCancellationQueue.getJob(`${_id}:${job}`);
+    const existingJob = await reservationCancellationQueue.getJob(`${_id}-${job}`);
 
     if (existingJob) {
         await existingJob.remove();

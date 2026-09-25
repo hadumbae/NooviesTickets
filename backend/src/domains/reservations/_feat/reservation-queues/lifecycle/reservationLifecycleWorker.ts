@@ -29,10 +29,11 @@ export const reservationLifecycleWorker = new Worker(
             reservation.dateExpired = new Date();
 
             await reservation.save();
+            console.log(`[${RESERVATION_LIFECYCLE_QUEUE_NAME}] Reservation ${reservationId} -> EXPIRED`);
             return;
         }
     },
-    {connection: redisConnection},
+    {connection: redisConnection, stalledInterval: 60 * 60 * 1000},
 );
 
 reservationLifecycleWorker.on("failed", (job, error) => {

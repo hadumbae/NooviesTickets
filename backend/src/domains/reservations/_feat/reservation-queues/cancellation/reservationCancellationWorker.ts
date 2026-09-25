@@ -37,10 +37,11 @@ export const reservationCancellationWorker = new Worker(
                 console.error(`[${RESERVATION_CANCELLATION_QUEUE_NAME}] Failed to Clear Lifecycle Job For ${reservation._id}:`, e);
             }
 
+            console.log(`[${RESERVATION_CANCELLATION_QUEUE_NAME}] Reservation ${reservationId} -> CANCELLED`);
             return;
         }
     },
-    {connection: redisConnection}
+    {connection: redisConnection, stalledInterval: 60 * 60 * 1000}
 );
 
 reservationCancellationWorker.on("failed", (job, error) => {
