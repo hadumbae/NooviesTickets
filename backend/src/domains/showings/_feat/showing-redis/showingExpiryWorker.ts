@@ -35,7 +35,7 @@ export const showingExpiryWorker = new Worker(
         }
 
     },
-    {connection: redisConnection, stalledInterval: 60 * 60 * 1000}
+    {connection: redisConnection, stalledInterval: 30 * 60 * 1000}
 );
 
 showingExpiryWorker.on("failed", (job, error) => {

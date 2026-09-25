@@ -41,7 +41,7 @@ export const reservationCancellationWorker = new Worker(
             return;
         }
     },
-    {connection: redisConnection, stalledInterval: 60 * 60 * 1000}
+    {connection: redisConnection, stalledInterval: 30 * 60 * 1000}
 );
 
 reservationCancellationWorker.on("failed", (job, error) => {
