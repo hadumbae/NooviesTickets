@@ -34,7 +34,7 @@ export const ShowingPopulationPipelines: PopulationPipelineStages = [
     },
     {
         $lookup: {
-            from: "screens",
+            from: "theatrescreens",
             localField: "screen",
             foreignField: "_id",
             as: "screen"
