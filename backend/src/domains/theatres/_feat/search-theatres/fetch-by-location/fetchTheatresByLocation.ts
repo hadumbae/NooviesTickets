@@ -30,7 +30,7 @@ export async function fetchTheatresByLocation(
     const limitedPerPage = Math.min(perPage, 20);
 
     const showingPipelines: LookupPipelineStages = [
-        {$match: {status: "SCHEDULED", startTime: {$gte: new Date()}}},
+        {$match: {status: "SCHEDULED", startTime: {$gte: new Date()}, isDeleted: false, deletedAt: null}},
         {$sort: {startTime: 1}},
         ...ShowingPopulationPipelines,
         ...ShowingSeatMapVirtualPipelines,
