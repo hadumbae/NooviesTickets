@@ -15,7 +15,7 @@ import {
     find,
     findById,
     findBySlug,
-    paginated,
+    paginated, softDelete,
     update
 } from "@/shared/_feat/generic-crud/path-handlers";
 import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
@@ -87,6 +87,13 @@ const routes: CRUDRoute<ShowingSchemaFields>[] = [
         method: "delete",
         middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],
         handler: destroy
+    },
+    {
+        /** Cancellation/Removal of a scheduled showing. */
+        path: `/item/:_id/soft`,
+        method: "delete",
+        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema})],
+        handler: softDelete
     },
 ];
 

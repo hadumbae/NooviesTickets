@@ -24,7 +24,6 @@ export function useShowingDeleteMutation({hardDelete = false}: UseDeleteShowingC
     };
 
     const onSuccess = () => {
-        queryClient.invalidateQueries({queryKey: ShowingBaseQueryKeys.views, exact: false});
         queryClient.invalidateQueries({queryKey: ShowingBaseQueryKeys.crudList, exact: false});
     };
 
