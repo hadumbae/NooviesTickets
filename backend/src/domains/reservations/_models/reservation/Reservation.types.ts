@@ -17,6 +17,8 @@ type ReservationModelMeta = BaseModelWithSlug & ModelTimestamps & ModelSoftDelet
 type ReservationDateSchemaFields = {
     dateReserved: Date;
     datePaid?: Date | null;
+    dateRunning?: Date | null;
+    dateCompleted?: Date | null;
     dateCancelled?: Date | null;
     dateRefunded?: Date | null;
     dateExpired?: Date | null;

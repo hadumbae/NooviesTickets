@@ -14,6 +14,8 @@ import {AdminReservationBase} from "@/domains/reservations/_schema/model/admin-r
  */
 const DATE_MAP: Partial<Record<ReservationStatus, keyof ReservationBase>> = {
     PAID: "datePaid",
+    RUNNING: "dateRunning",
+    COMPLETED: "dateCompleted",
     CANCELLED: "dateCancelled",
     REFUNDED: "dateRefunded",
     EXPIRED: "dateExpired",

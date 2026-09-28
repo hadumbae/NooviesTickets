@@ -19,6 +19,8 @@ import {createSoftDeleteMiddleware} from "@/shared/_feat";
  */
 const REQUIRED_DATES_BY_STATUS: Partial<Record<ReservationStatus, keyof ReservationSchemaFields>> = {
     PAID: "datePaid",
+    RUNNING: "dateRunning",
+    COMPLETED: "dateCompleted",
     CANCELLED: "dateCancelled",
     REFUNDED: "dateRefunded",
     EXPIRED: "dateExpired",

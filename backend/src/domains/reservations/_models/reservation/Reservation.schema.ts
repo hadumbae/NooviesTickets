@@ -98,6 +98,8 @@ export const ReservationSchema = new Schema<
     /** Timestamps for various business lifecycle stages. */
     dateReserved: {type: Date, required: [true, "Required for reservation."]},
     datePaid: {type: Date},
+    dateRunning: {type: Date},
+    dateCompleted: {type: Date},
     dateCancelled: {type: Date},
     dateRefunded: {type: Date},
     dateExpired: {type: Date},

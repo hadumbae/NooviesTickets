@@ -6,6 +6,8 @@
 export const ReservationStatusConstant = [
     "RESERVED",
     "PAID",
+    "RUNNING",
+    "COMPLETED",
     "CANCELLED",
     "REFUNDED",
     "EXPIRED",

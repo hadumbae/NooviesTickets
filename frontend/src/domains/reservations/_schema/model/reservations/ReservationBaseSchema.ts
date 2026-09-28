@@ -12,6 +12,8 @@ import {ReservationUniqueCodeSchema} from "@/domains/reservations/_schema/model/
 const ReservationBaseDateSchema = z.object({
     dateReserved: ISO8601DateTimeSchema,
     datePaid: ISO8601DateTimeSchema.optional(),
+    dateRunning: ISO8601DateTimeSchema.optional(),
+    dateCompleted: ISO8601DateTimeSchema.optional(),
     dateCancelled: ISO8601DateTimeSchema.optional(),
     dateRefunded: ISO8601DateTimeSchema.optional(),
     dateExpired: ISO8601DateTimeSchema.optional(),
