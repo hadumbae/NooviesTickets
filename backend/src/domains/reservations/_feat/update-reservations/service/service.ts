@@ -22,9 +22,16 @@ import type {
 } from "@/domains/reservations/_feat/update-reservations/service/service.types";
 import {
     addReservationLifecycleJob,
+} from "@/domains/reservations/_feat/reservation-queues/lifecycle/addReservationLifecycleJob";
+import {
     removeReservationCancellationJob,
+} from "@/domains/reservations/_feat/reservation-queues/cancellation/removeReservationCancellationJob";
+import {
     removeReservationLifecycleJob
-} from "@/domains/reservations/_feat/reservation-queues";
+} from "@/domains/reservations/_feat/reservation-queues/lifecycle/removeReservationLifecycleJob";
+import {
+    clearReservationLifecycleQueue
+} from "@/domains/reservations/_feat/reservation-queues/lifecycle/clearReservationLifecycleQueue";
 
 /** Updates the administrative notes for a specific reservation. */
 export async function updateReservationNotes(
@@ -139,7 +146,7 @@ export async function cancelReservation(
     // --- QUEUE ---
 
     try {
-        await removeReservationLifecycleJob({_id: reservation._id, job: "payment_expiry"});
+        await clearReservationLifecycleQueue(reservation._id);
         await removeReservationCancellationJob({_id: reservation._id, job: "cancellation"});
     } catch (error) {
         throw createHttpError(500, "Reservation Updated, But Failed To Clear Queue");
@@ -185,7 +192,14 @@ export async function refundReservation(
     );
 
     if (!reservation) throw createHttpError(409, "Failed To Refund, Reservation Updated Mid-Operation");
-    await reservation.populate({path: "user", select: LeanUserQuerySelectFields})
+    await reservation.populate({path: "user", select: LeanUserQuerySelectFields});
+
+    try {
+        await clearReservationLifecycleQueue(reservation._id);
+        await removeReservationCancellationJob({_id: reservation._id, job: "cancellation"});
+    } catch (error) {
+        throw createHttpError(500, "Reservation Updated, But Failed To Clear Queue");
+    }
 
     return reservation;
 }

@@ -8,11 +8,14 @@ import type {ReservationDoc, ReservationSchemaFields} from "./Reservation.types.
 import {DateTime} from "luxon";
 import {generateReservationUniqueCode} from "@/domains/reservations/_feat/generate-reservation-code/index.js";
 import type {ReservationStatus} from "@noovies-tickets/common";
-import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
 import {generateSlug} from "@noovies-tickets/common";
+import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
 import type {PopulatedShowing} from "@/domains/showings/_models/showing/Showing.types";
 import {createReservedShowingSnapshot, reserveReservationSeats} from "@/domains/reservations/_feat/reserve-tickets";
 import {createSoftDeleteMiddleware} from "@/shared/_feat";
+import {
+    clearReservationLifecycleQueue
+} from "@/domains/reservations/_feat/reservation-queues/lifecycle/clearReservationLifecycleQueue";
 
 /**
  * Mapping of reservation statuses to their mandatory audit timestamp fields.
@@ -25,6 +28,14 @@ const REQUIRED_DATES_BY_STATUS: Partial<Record<ReservationStatus, keyof Reservat
     REFUNDED: "dateRefunded",
     EXPIRED: "dateExpired",
 } as const;
+
+const CLEAR_QUEUE_STATUS: ReservationStatus[] = [
+    "COMPLETED",
+    "CANCELLED",
+    "REFUNDED",
+    "EXPIRED",
+    "INVALID",
+] as const;
 
 /**
  * Orchestrates all document-level business logic and field initialization before validation.
@@ -104,6 +115,10 @@ ReservationSchema.post("save", async function (this: HydratedDocument<Reservatio
             {reservation: this._id},
             {reservation: null, status: "AVAILABLE"},
         );
+    }
+
+    if (CLEAR_QUEUE_STATUS.includes(this.status)) {
+        await clearReservationLifecycleQueue(this._id);
     }
 });
 

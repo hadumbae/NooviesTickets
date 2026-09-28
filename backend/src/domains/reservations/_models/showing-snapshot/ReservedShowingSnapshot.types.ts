@@ -17,7 +17,7 @@ export type ReservedShowingSnapshotSchemaFields = {
     ticketCount: number;
     selectedSeats?: ReservedSeatSnapshotSchemaFields[] | null;
     startTime: Date;
-    endTime?: Date | null;
+    endTime: Date;
     language: ISO6391LanguageCode;
     subtitleLanguages: ISO6391LanguageCode[];
     isSpecialEvent?: boolean;

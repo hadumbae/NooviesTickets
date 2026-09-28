@@ -3,22 +3,23 @@
  */
 
 import type {Request, Response} from "express";
-import isValidObjectId from "@/shared/_utils/mongoose/isValidObjectId";
 import {fetchRequestUserId} from "@/shared/_utils/request/fetchRequestUserId";
-import {cancelClientReservation, checkoutClientReservation} from "@/domains/reservations/_feat/update-client-reservations/services";
+import {
+    cancelClientReservation,
+    checkoutClientReservation
+} from "@/domains/reservations/_feat/update-client-reservations/services";
+import type {IDRouteConfig} from "@/shared/_schema";
 
 /**
  * Finalizes a pending reservation hold for a client.
  */
 export async function patchCheckoutClientReservation(req: Request, res: Response): Promise<Response> {
     const userID = fetchRequestUserId(req);
-
-    const {resID} = req.params;
-    const reservationID = isValidObjectId(resID);
+    const {_id} = req.parsedConfig as IDRouteConfig;
 
     const reservation = await checkoutClientReservation({
         userID,
-        reservationID,
+        reservationID: _id,
     });
 
     return res.status(200).json(reservation);
@@ -29,13 +30,11 @@ export async function patchCheckoutClientReservation(req: Request, res: Response
  */
 export async function patchCancelClientReservation(req: Request, res: Response,): Promise<Response> {
     const userID = fetchRequestUserId(req);
-
-    const {resID} = req.params;
-    const reservationID = isValidObjectId(resID);
+    const {_id} = req.parsedConfig as IDRouteConfig;
 
     const reservation = await cancelClientReservation({
         userID,
-        reservationID: reservationID
+        reservationID: _id,
     });
 
     return res.status(200).json(reservation);

@@ -10,6 +10,8 @@ import {
     patchCancelClientReservation,
     patchCheckoutClientReservation,
 } from "@/domains/reservations/_feat/update-client-reservations/controllers";
+import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
+import {IDRouteConfigSchema} from "@/shared/_schema";
 
 const router = Router();
 
@@ -17,8 +19,8 @@ const router = Router();
  * Completes checkout for an existing reservation.
  */
 router.patch(
-    "/checkout/:resID",
-    [isAuth],
+    "/checkout/:_id",
+    [isAuth, validateRequestConfig(({schema: IDRouteConfigSchema}))],
     asyncHandler(patchCheckoutClientReservation),
 );
 
@@ -26,8 +28,8 @@ router.patch(
  * Cancels an existing reservation.
  */
 router.patch(
-    "/cancel/:resID",
-    [isAuth],
+    "/cancel/:_id",
+    [isAuth, validateRequestConfig(({schema: IDRouteConfigSchema}))],
     asyncHandler(patchCancelClientReservation),
 );
 

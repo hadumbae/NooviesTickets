@@ -2,14 +2,15 @@
  * @fileoverview Mongoose schema definition for Reserved Showing snapshots.
  */
 
-import { Schema, type SchemaDefinitionProperty } from "mongoose";
-import type { ReservedShowingSnapshotSchemaFields } from "@/domains/reservations/_models/showing-snapshot/ReservedShowingSnapshot.types.js";
-import {ISO6391CodeConstant} from "@noovies-tickets/common";
-import { MovieSnapshotSchema } from "@/domains/movies/_models/movie-snapshot/MovieSnapshot.schema";
-import { ReservedSeatSnapshotSchema } from "@/domains/seatmaps/_models/seat-map-snapshot/ReservedSeatSnapshot.schema";
-import { TheatreScreenSnapshotSchema } from "@/domains/theatre-screens/_models/theatre-screen-snapshot";
+import {Schema, type SchemaDefinitionProperty} from "mongoose";
+import type {
+    ReservedShowingSnapshotSchemaFields
+} from "@/domains/reservations/_models/showing-snapshot/ReservedShowingSnapshot.types.js";
+import {ISO6391CodeConstant, ReservationTypeConstant} from "@noovies-tickets/common";
+import {MovieSnapshotSchema} from "@/domains/movies/_models/movie-snapshot/MovieSnapshot.schema";
+import {ReservedSeatSnapshotSchema} from "@/domains/seatmaps/_models/seat-map-snapshot/ReservedSeatSnapshot.schema";
+import {TheatreScreenSnapshotSchema} from "@/domains/theatre-screens/_models/theatre-screen-snapshot";
 import {TheatreSnapshotSchema} from "@/domains/theatres/_models/theatre-snapshot";
-import {ReservationTypeConstant} from "@noovies-tickets/common";
 
 /**
  * Reusable ISO 639-1 language field definition.
@@ -61,12 +62,12 @@ export const ReservedShowingSnapshotSchema =
 
         endTime: {
             type: Date,
-            default: null,
+            required: [true, "End time is required."],
             validate: {
-                validator: function (value: Date | null | undefined) {
-                    return !value || value > this.startTime;
+                validator: function (value: Date) {
+                    return value > this.startTime;
                 },
-                message: "End time must be later than start time.",
+                message: "End Time must be later than Start Time.",
             },
         },
 

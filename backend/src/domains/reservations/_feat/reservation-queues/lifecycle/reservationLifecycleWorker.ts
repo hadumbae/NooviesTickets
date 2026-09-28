@@ -2,34 +2,73 @@
  * @fileoverview BullMQ worker for processing reservation lifecycle background jobs.
  */
 
-import {Worker, type Job} from "bullmq";
+import {type Job, Worker} from "bullmq";
 import {redisConnection} from "@/config/redis";
 import {
     RESERVATION_LIFECYCLE_QUEUE_NAME
 } from "@/domains/reservations/_feat/reservation-queues/lifecycle/reservationLifecycleQueue";
 import type {ObjectIdString} from "@noovies-tickets/common";
 import {ReservationModel} from "@/domains/reservations";
+import {ShowingModel} from "@/domains/showings";
 
 /** Type representing available reservation lifecycle background job names. */
-export type ReservationLifecycleJobName = "payment_expiry";
+export type ReservationLifecycleJobName = "payment_expiry" | "showing_running" | "showing_completed";
 
 /** BullMQ worker instance that handles lifecycle events and expirations for reservations. */
 export const reservationLifecycleWorker = new Worker(
     RESERVATION_LIFECYCLE_QUEUE_NAME,
-    async ({data, name}: Job<{reservationId: ObjectIdString}, unknown, ReservationLifecycleJobName>) => {
+    async ({data, name}: Job<{ reservationId: ObjectIdString }, unknown, ReservationLifecycleJobName>) => {
         const {reservationId} = data;
 
-        const reservation =  await ReservationModel.findById(reservationId);
+        const reservation = await ReservationModel.findById(reservationId);
         if (!reservation) return;
 
-        const {status, expiresAt} = reservation;
+        const showing = await ShowingModel.findById(reservation.showing);
+        if (!showing) return;
 
-        if (name === "payment_expiry" && status == "RESERVED" && (Date.now() >= expiresAt.getTime())) {
+        const {status, expiresAt} = reservation;
+        const {startTime} = showing;
+
+        const now = Date.now();
+
+        if (
+            name === "payment_expiry" && status == "RESERVED" &&
+            (now >= expiresAt.getTime() || now >= startTime.getTime())
+        ) {
             reservation.status = "EXPIRED";
             reservation.dateExpired = new Date();
 
             await reservation.save();
             console.log(`[${RESERVATION_LIFECYCLE_QUEUE_NAME}] Reservation ${reservationId} -> EXPIRED`);
+            return;
+        }
+
+        if (name === "showing_running") {
+            if (status === "RESERVED") {
+                reservation.status = "EXPIRED";
+                reservation.dateExpired = new Date();
+
+                await reservation.save();
+                console.log(`[${RESERVATION_LIFECYCLE_QUEUE_NAME}] Reservation ${reservationId} -> EXPIRED`);
+                return;
+            }
+
+            if (status === "PAID") {
+                reservation.status = "RUNNING";
+                reservation.dateRunning = new Date();
+
+                await reservation.save();
+                console.log(`[${RESERVATION_LIFECYCLE_QUEUE_NAME}] Reservation ${reservationId} -> RUNNING`);
+                return;
+            }
+        }
+
+        if (name === "showing_completed" && status == "RUNNING") {
+            reservation.status = "COMPLETED";
+            reservation.dateCompleted = new Date();
+
+            await reservation.save();
+            console.log(`[${RESERVATION_LIFECYCLE_QUEUE_NAME}] Reservation ${reservationId} -> COMPLETED`);
             return;
         }
     },

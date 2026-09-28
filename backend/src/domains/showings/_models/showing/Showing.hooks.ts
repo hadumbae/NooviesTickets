@@ -19,6 +19,8 @@ import {generateSlug} from "@noovies-tickets/common";
 import {addShowingExpiryJob} from "@/domains/showings/_feat/showing-redis/service/addShowingExpiryJob";
 import {removeShowingExpiryJob} from "@/domains/showings/_feat/showing-redis/service/removeShowingExpiryJob";
 import createHttpError from "http-errors";
+import {setReservationRunningJob} from "@/domains/reservations/_feat/showing-lifecycle/setReservationRunningJob";
+import {setReservationCompletedJob} from "@/domains/reservations/_feat/showing-lifecycle/setReservationCompletedJob";
 
 ShowingSchema.pre("validate", {document: true}, async function () {
     if (this.isModified("theatre")) {
@@ -66,11 +68,15 @@ ShowingSchema.post("save", {document: true}, async function (doc: HydratedDocume
         if (doc.isModified("startTime") && doc.status !== "CANCELLED" && doc.status !== "COMPLETED") {
             await removeShowingExpiryJob({_id: doc._id, job: "start"});
             await addShowingExpiryJob({_id: doc._id, job: "start", time: doc.startTime});
+
+            await setReservationRunningJob({_id: doc._id, time: doc.startTime});
         }
 
         if (doc.isModified("endTime") && doc.status !== "CANCELLED" && doc.status !== "COMPLETED") {
             await removeShowingExpiryJob({_id: doc._id, job: "complete"});
             await addShowingExpiryJob({_id: doc._id, job: "complete", time: doc.endTime});
+
+            await setReservationCompletedJob({_id: doc._id, time: doc.endTime});
         }
     } catch (error) {
         throw createHttpError(500, "Showing Updated, But Failed To Update Queue");

@@ -16,7 +16,13 @@ import {
     assertReservationOwnership
 } from "@/domains/reservations/_feat/assert-reservations";
 import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
-import type {ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
+import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
+import createHttpError from "http-errors";
+import {
+    addReservationLifecycleJob,
+    removeReservationLifecycleJob
+} from "@/domains/reservations/_feat/reservation-queues";
+import {ShowingModel} from "@/domains/showings";
 
 /**
  * Transitions a reservation from a temporary hold (`RESERVED`) to a finalized `PAID` state.
@@ -25,7 +31,12 @@ import type {ReservationSchemaFields} from "@/domains/reservations/_models/reser
 export async function checkoutClientReservation(
     {userID, reservationID}: CheckoutClientReservationParams
 ): Promise<DocumentType<ReservationSchemaFields>> {
-    const reservation = await assertReservationExists(reservationID);
+    const reservation = await ReservationModel.findById(reservationID);
+    if (!reservation) throw createHttpError(404, "Reservation Not Found");
+
+    const showing = await ShowingModel.findById(reservation.showing).select("startTime endTime").lean();
+    if (!showing) throw createHttpError(500, "Reservation With Invalid Showing");
+    const {startTime, endTime} = showing;
 
     assertReservationOwnership({userID, reservation});
     assertReservationNotExpired(reservation);
@@ -43,6 +54,15 @@ export async function checkoutClientReservation(
     reservation.datePaid = new Date();
 
     await reservation.save();
+
+    try {
+        await removeReservationLifecycleJob({_id: reservation._id, job: "payment_expiry"});
+        await addReservationLifecycleJob({_id: reservation._id, job: "showing_running", time: startTime});
+        await addReservationLifecycleJob({_id: reservation._id, job: "showing_completed", time: endTime});
+    } catch (error: unknown) {
+        if (error instanceof Error) console.error("Reservation Lifecycle Queue Error: ", error.message ?? "UNKNOWN");
+        throw createHttpError(500, "Checked Out Reservation, Failed To Update Lifecycle Queue");
+    }
 
     return reservation;
 }
