@@ -9,7 +9,7 @@ import {
     type CurrentUserReservationQuerySorts,
     fetchPaginatedUserReservations,
 } from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations";
-import type {ClientReservationsRouteConfig} from "@/domains/reservations/_feat/fetch-client-reservations/schema";
+import type {ClientReservationsRouteConfig} from "@/domains/reservations/_feat/fetch-client-reservations/schemas";
 
 /** Controller that retrieves and returns a paginated list of reservations for the currently authenticated user. */
 export async function fetchReservationsForUser(req: Request, res: Response): Promise<Response> {

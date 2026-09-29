@@ -7,7 +7,8 @@ import type {PaginationReturns} from "@/shared/_types/pagination/PaginationRetur
 import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
 import {ReservationPopulatePaths} from "@/domains/reservations/_feat/query-population";
 import type {QueryPaginationParams} from "@/shared/_schema/request-query/QueryPaginationParamsSchema";
-import type {CurrentUserReservationQueryFilters, CurrentUserReservationQuerySorts} from "@/domains/reservations";
+import type {CurrentUserReservationQueryFilters} from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations/filterSchema";
+import type {CurrentUserReservationQuerySorts} from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations/sortSchema";
 
 /** Parameters for fetching paginated user reservations. */
 export type FetchPaginatedUserReservationsParams = {

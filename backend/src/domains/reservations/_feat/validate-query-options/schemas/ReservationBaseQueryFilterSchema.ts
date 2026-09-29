@@ -5,6 +5,7 @@
 import {z} from "zod";
 import {preprocessOptionalField, ReservationStatusSchema, ReservationTypeSchema} from "@noovies-tickets/common";
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
+import {UniqueCodeSchema} from "@/shared/_schema/codes/UniqueCodeSchema";
 
 /** Zod schema for validating the base query parameters of a reservation. */
 export const ReservationBaseQueryFilterSchema = z.object({
@@ -13,6 +14,7 @@ export const ReservationBaseQueryFilterSchema = z.object({
     showing: preprocessOptionalField(ObjectIdSchema),
     status: preprocessOptionalField(ReservationStatusSchema),
     reservationType: preprocessOptionalField(ReservationTypeSchema),
+    uniqueCode: preprocessOptionalField(UniqueCodeSchema),
 });
 
 /** Type definition for the base reservation query filters inferred from the Zod schema. */

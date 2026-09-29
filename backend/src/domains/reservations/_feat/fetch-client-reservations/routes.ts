@@ -6,14 +6,14 @@
 import {Router} from "express";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
-import {fetchReservationsForUser} from "@/domains/reservations/_feat/fetch-client-reservations/controllers";
+import {fetchReservationsForUser} from "@/domains/reservations/_feat/fetch-client-reservations/controller";
 import {parseQueryFilters, parseQuerySorts} from "@/shared/_feat";
 import {
     CurrentUserReservationQueryFilterSchema,
     CurrentUserReservationQuerySortSchema,
 } from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations";
+import {ClientReservationsRouteConfigSchema} from "@/domains/reservations/_feat/fetch-client-reservations/schemas";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
-import {ClientReservationsRouteConfigSchema} from "@/domains/reservations/_feat/fetch-client-reservations/schema";
 
 const router = Router();
 

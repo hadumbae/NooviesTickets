@@ -1,14 +1,3 @@
-import {
-    fetchPaginatedUserReservations,
-    type FetchPaginatedUserReservationsParams
-} from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations/fetchPaginatedUserReservations";
-
-export * from "./query-schema";
-
-export {
-    fetchPaginatedUserReservations,
-}
-
-export type {
-    FetchPaginatedUserReservationsParams,
-}
+export * from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations/filterSchema";
+export * from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations/sortSchema";
+export * from "@/domains/reservations/_feat/fetch-client-reservations/current-user-reservations/service";
