@@ -4,13 +4,11 @@
 
 import type {ControllerAsyncFunc} from "@/shared/_types/controllers/ControllerTypes";
 import type {Request, Response} from "express";
-import {
-    cancelReservation,
-    refundReservation,
-    resetReservationExpiry,
-    updateReservationNotes
-} from "@/domains/reservations/_feat/update-reservations/service";
 import type {IDRouteConfig} from "@/shared/_schema";
+import {updateReservationNotes} from "@/domains/reservations/_feat/update-reservations/update-reservation-notes";
+import {resetReservationExpiry} from "@/domains/reservations/_feat/update-reservations/reset-reservation-expiry";
+import {cancelReservation} from "@/domains/reservations/_feat/update-reservations/cancel-reservation";
+import {refundReservation} from "@/domains/reservations/_feat/update-reservations/refund-reservation";
 
 /** Handles the partial update of a reservation's administrative notes. */
 export const patchUpdateReservationNotes: ControllerAsyncFunc = async (
