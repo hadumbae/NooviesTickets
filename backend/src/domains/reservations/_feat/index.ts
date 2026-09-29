@@ -8,6 +8,7 @@ export * from "./generate-reservation-code";
 export * from "./model-lifecycle";
 export * from "./query-population";
 export * from "./reserve-tickets";
+export * from "./socket-io";
 export * from "./update-client-reservations";
 export * from "./update-reservations";
 export * from "./validate-query-options";

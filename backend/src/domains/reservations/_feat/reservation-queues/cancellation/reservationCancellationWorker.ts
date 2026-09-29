@@ -10,6 +10,7 @@ import type {ObjectIdString} from "@noovies-tickets/common";
 import {ReservationModel} from "@/domains/reservations";
 import {redisConnection} from "@/config/redis";
 import {removeReservationLifecycleJob} from "@/domains/reservations/_feat/reservation-queues";
+import {emitReservationStatusChanged} from "@/domains/reservations/_feat/socket-io";
 
 /** Type representing available reservation cancellation background job names. */
 export type ReservationCancellationJobName = "cancellation";
@@ -30,6 +31,12 @@ export const reservationCancellationWorker = new Worker(
             reservation.dateCancelled = new Date();
 
             await reservation.save();
+
+            emitReservationStatusChanged({
+                reservationId: reservation._id.toString(),
+                showingId: reservation.showing.toString(),
+                status: "CANCELLED",
+            });
 
             try {
                 await removeReservationLifecycleJob({_id: reservation._id, job: "payment_expiry"});

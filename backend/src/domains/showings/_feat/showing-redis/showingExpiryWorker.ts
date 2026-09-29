@@ -7,6 +7,7 @@ import {redisConnection} from "@/config/redis"
 import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model";
 import {SHOWING_EXPIRY_QUEUE_NAME} from "@/domains/showings/_feat/showing-redis/showingExpiryQueue";
 import type {ObjectIdString} from "@noovies-tickets/common";
+import {emitShowingStatusChanged} from "@/domains/showings/_feat/socket-io";
 
 /** BullMQ worker instance for managing showing state transitions based on scheduled expiry jobs. */
 export const showingExpiryWorker = new Worker(
@@ -22,6 +23,9 @@ export const showingExpiryWorker = new Worker(
             if (status !== "SCHEDULED" && status !== "SOLD_OUT") return;
             showing.status = "RUNNING";
             await showing.save();
+
+            emitShowingStatusChanged(showingId, "RUNNING");
+
             console.log(`[${SHOWING_EXPIRY_QUEUE_NAME}] Showing ${showingId} -> RUNNING`);
             return
         }
@@ -30,6 +34,9 @@ export const showingExpiryWorker = new Worker(
             if (status !== "RUNNING") return;
             showing.status = "COMPLETED";
             await showing.save();
+
+            emitShowingStatusChanged(showingId, "COMPLETED");
+
             console.log(`[${SHOWING_EXPIRY_QUEUE_NAME}] Showing ${showingId} -> COMPLETED`);
             return
         }

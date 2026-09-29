@@ -10,6 +10,7 @@ import {
 import type {ObjectIdString} from "@noovies-tickets/common";
 import {ReservationModel} from "@/domains/reservations";
 import {ShowingModel} from "@/domains/showings";
+import {emitReservationStatusChanged} from "@/domains/reservations/_feat/socket-io";
 
 /** Type representing available reservation lifecycle background job names. */
 export type ReservationLifecycleJobName = "payment_expiry" | "showing_running" | "showing_completed";
@@ -39,6 +40,13 @@ export const reservationLifecycleWorker = new Worker(
             reservation.dateExpired = new Date();
 
             await reservation.save();
+
+            emitReservationStatusChanged({
+                reservationId: reservation._id.toString(),
+                showingId: showing._id.toString(),
+                status: "EXPIRED",
+            });
+
             console.log(`[${RESERVATION_LIFECYCLE_QUEUE_NAME}] Reservation ${reservationId} -> EXPIRED`);
             return;
         }
@@ -49,6 +57,13 @@ export const reservationLifecycleWorker = new Worker(
                 reservation.dateExpired = new Date();
 
                 await reservation.save();
+
+                emitReservationStatusChanged({
+                    reservationId: reservation._id.toString(),
+                    showingId: showing._id.toString(),
+                    status: "EXPIRED",
+                });
+
                 console.log(`[${RESERVATION_LIFECYCLE_QUEUE_NAME}] Reservation ${reservationId} -> EXPIRED`);
                 return;
             }

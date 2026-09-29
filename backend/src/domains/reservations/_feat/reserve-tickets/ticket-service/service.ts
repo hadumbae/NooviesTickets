@@ -17,6 +17,7 @@ import {
 import {
     addReservationLifecycleJob
 } from "@/domains/reservations/_feat/reservation-queues/lifecycle/addReservationLifecycleJob";
+import {emitReservationStatusChanged} from "@/domains/reservations/_feat/socket-io";
 
 /** Parameters for the primary reservation service entry point. */
 export type ReserveTicketsParams = {
@@ -67,6 +68,12 @@ export async function reserveTickets(
 
         });
     }
+
+    emitReservationStatusChanged({
+        reservationId: reservation._id.toString(),
+        showingId: reservation.showing.toString(),
+        status: "RESERVED",
+    });
 
     return reservation as ReservationSchemaFields;
 }

@@ -3,6 +3,7 @@ export * from "./aggregation";
 export * from "./client-view-data";
 export * from "./showing-actions";
 export * from "./showing-redis";
+export * from "./socket-io";
 export * from "./crud";
 export * from "./fetch-showings";
 export * from "./query-population";
