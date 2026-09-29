@@ -6,21 +6,15 @@ import {
     type ReserveTicketPersistenceData,
     ReserveTicketPersistenceSchema
 } from "@/domains/reservations/_feat/reserve-tickets/schemas/persistenceSchema";
-import {
-    type ReservedShowingSnapshotInputData,
-    ReservedShowingSnapshotInputSchema
-} from "@/domains/reservations/_feat/reserve-tickets/schemas/snapshotInputSchema";
 
 
 export {
     ReserveTicketInputBaseSchema,
     ReserveTicketInputSchema,
     ReserveTicketPersistenceSchema,
-    ReservedShowingSnapshotInputSchema,
 }
 
 export type {
     ReserveTicketInputData,
     ReserveTicketPersistenceData,
-    ReservedShowingSnapshotInputData,
 }

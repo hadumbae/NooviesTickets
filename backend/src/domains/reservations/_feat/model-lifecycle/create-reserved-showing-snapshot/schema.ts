@@ -18,7 +18,7 @@ export const ReservedShowingSnapshotInputSchema = z.object({
     screen: TheatreScreenSnapshotInputSchema,
     selectedSeats: generateArraySchema(ReservedSeatSnapshotInputSchema).nullable().optional(),
     startTime: ValidDateInstanceSchema,
-    endTime: ValidDateInstanceSchema.nullable().optional(),
+    endTime: ValidDateInstanceSchema,
     language: ISO6391LanguageCodeSchema,
     subtitleLanguages: z.array(ISO6391LanguageCodeSchema).nonempty({message: "Must not be empty."}),
     isSpecialEvent: BooleanValueSchema.optional(),

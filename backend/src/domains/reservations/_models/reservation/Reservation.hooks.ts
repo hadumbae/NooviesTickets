@@ -11,7 +11,7 @@ import type {ReservationStatus} from "@noovies-tickets/common";
 import {generateSlug} from "@noovies-tickets/common";
 import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
 import type {PopulatedShowing} from "@/domains/showings/_models/showing/Showing.types";
-import {createReservedShowingSnapshot, reserveReservationSeats} from "@/domains/reservations/_feat/reserve-tickets";
+import {createReservedShowingSnapshot, reserveReservationSeats} from "@/domains/reservations/_feat/model-lifecycle";
 import {createSoftDeleteMiddleware} from "@/shared/_feat";
 import {
     clearReservationLifecycleQueue

@@ -9,7 +9,7 @@ import {InconsistentDataError} from "@/shared/_errors/InconsistentDataError";
 import {createMovieSnapshot} from "@/domains/movies/_feat/manage-snapshots/createMovieSnapshot";
 import type {ShowingSchemaFields} from "@/domains/showings/_models/showing/Showing.types";
 import {createReservedSeatSnapshot} from "@/domains/seatmaps/_feat/manage-snapshots/createReservedSeatSnapshot";
-import {ReservedShowingSnapshotInputSchema} from "@/domains/reservations/_feat/reserve-tickets/schemas";
+import {ReservedShowingSnapshotInputSchema} from "@/domains/reservations/_feat/model-lifecycle/create-reserved-showing-snapshot/schema";
 import {createTheatreScreenSnapshot} from "@/domains/theatre-screens/_feat/build-snapshot";
 import type {ReservationType} from "@noovies-tickets/common";
 import type {ReservedShowingSnapshotSchemaFields} from "@/domains/reservations/_models/showing-snapshot";

@@ -5,6 +5,7 @@ export * from "./crud";
 export * from "./fetch-client-reservations";
 export * from "./fetch-customer-reservations";
 export * from "./generate-reservation-code";
+export * from "./model-lifecycle";
 export * from "./query-population";
 export * from "./reserve-tickets";
 export * from "./update-client-reservations";
