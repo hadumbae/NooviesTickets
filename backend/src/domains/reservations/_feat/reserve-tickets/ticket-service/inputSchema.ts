@@ -4,9 +4,13 @@
 
 import {z} from "zod";
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
-import {generateArraySchema} from "@noovies-tickets/common";
-import {PositiveNumberSchema, ISO4217CurrencyCodeSchema} from "@noovies-tickets/common";
-import {ReservationTypeConstant, ReservationTypeSchema} from "@noovies-tickets/common";
+import {
+    generateArraySchema,
+    ISO4217CurrencyCodeSchema,
+    PositiveNumberSchema,
+    ReservationTypeConstant,
+    ReservationTypeSchema
+} from "@noovies-tickets/common";
 
 /** Base checkout submission schema providing shared structural validation. */
 export const ReserveTicketInputBaseSchema = z.object({
@@ -24,26 +28,24 @@ export const ReserveTicketInputBaseSchema = z.object({
 /**
  * Validation schema for 'GENERAL_ADMISSION' reservations.
  */
-const SubmitGeneralSchema =
-    ReserveTicketInputBaseSchema.extend({
-        reservationType: z.literal(ReservationTypeConstant[0]),
-        selectedSeating: z
-            .union([z.null(), z.undefined()], {
-                message: "Must be null or undefined.",
-            })
-            .optional(),
-    });
+const SubmitGeneralSchema = ReserveTicketInputBaseSchema.extend({
+    reservationType: z.literal(ReservationTypeConstant[0]),
+    selectedSeating: z
+        .union([z.null(), z.undefined()], {
+            message: "Must be null or undefined.",
+        })
+        .optional(),
+});
 
 /**
  * Validation schema for 'RESERVED_SEATS' reservations.
  */
-const SubmitReservedSchema =
-    ReserveTicketInputBaseSchema.extend({
-        reservationType: z.literal(ReservationTypeConstant[1]),
-        selectedSeating: generateArraySchema(ObjectIdSchema).min(1, {
-            message: "Must not be an empty array.",
-        }),
-    });
+const SubmitReservedSchema = ReserveTicketInputBaseSchema.extend({
+    reservationType: z.literal(ReservationTypeConstant[1]),
+    selectedSeating: generateArraySchema(ObjectIdSchema).min(1, {
+        message: "Must not be an empty array.",
+    }),
+});
 
 /** Final checkout submission schema utilizing a discriminated union. */
 export const ReserveTicketInputSchema = z.discriminatedUnion(

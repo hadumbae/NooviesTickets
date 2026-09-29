@@ -4,7 +4,7 @@
 
 import {z} from "zod";
 import {NonEmptyStringSchema, DateInstanceSchema, NonNegativeNumberSchema} from "@noovies-tickets/common";
-import {ReserveTicketInputSchema} from "@/domains/reservations/_feat/reserve-tickets/schemas";
+import {ReserveTicketInputSchema} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/inputSchema";
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 import {ReservationStatusSchema} from "@noovies-tickets/common";
 

@@ -1,4 +1,3 @@
-export * from "./controllers";
-export * from "./schemas";
+export * from "./controller";
 export * from "./routes";
 export * from "./ticket-service";

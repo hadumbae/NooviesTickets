@@ -2,23 +2,27 @@
  * @fileoverview Orchestration service for initiating and finalizing ticket reservations.
  */
 
+import {Types} from "mongoose";
 import {calculateFutureDate} from "@noovies-tickets/common";
-import {fetchPopulatedShowing} from "@/domains/showings/_feat/fetch-showings/fetchPopulatedShowing";
 import {BookingError} from "@/shared/_errors/reservations/BookingError";
-import type {
-    ReserveGeneralTicketData,
-    ReserveSeatTicketData,
-    ReserveTicketsParams
-} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/service.types";
-import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
-import type {SeatMapSchemaFields} from "@/domains/seatmaps/_models/seat-map/SeatMap.types";
-import {type ReserveTicketPersistenceData} from "@/domains/reservations/_feat/reserve-tickets/schemas";
-import {SeatModel} from "@/domains/seats/_models";
-import {saveTicketReservation} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/saveTicketReservation";
-import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
+import type {ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
+import type {ReserveTicketInputData} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/inputSchema";
+import type {ReserveTicketPersistenceData} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/persistenceSchema";
+import {
+    reserveGeneralAdmissionTickets
+} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/handlers/generalAdmissionHandler";
+import {
+    reserveSeatedTickets
+} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/handlers/reservedSeatsHandler";
 import {
     addReservationLifecycleJob
 } from "@/domains/reservations/_feat/reservation-queues/lifecycle/addReservationLifecycleJob";
+
+/** Parameters for the primary reservation service entry point. */
+export type ReserveTicketsParams = {
+    userID: Types.ObjectId;
+    inputData: ReserveTicketInputData;
+};
 
 /** Initiates a ticket reservation hold based on the provided type and identity context. */
 export async function reserveTickets(
@@ -38,9 +42,9 @@ export async function reserveTickets(
     const {reservationType} = persistenceData;
 
     if (reservationType === "GENERAL_ADMISSION") {
-        reservation = await ReserveHandlers.GENERAL_ADMISSION(persistenceData);
+        reservation = await reserveGeneralAdmissionTickets(persistenceData);
     } else if (reservationType === "RESERVED_SEATS") {
-        reservation = await ReserveHandlers.RESERVED_SEATS(persistenceData);
+        reservation = await reserveSeatedTickets(persistenceData);
     } else {
         throw new BookingError({
             statusCode: 409,
@@ -66,101 +70,3 @@ export async function reserveTickets(
 
     return reservation as ReservationSchemaFields;
 }
-
-/** Internal strategy handlers for specific reservation types. */
-const ReserveHandlers = {
-    /**
-     * Logic for General Admission (GA) bookings.
-     * @throws {BookingError} 409 - If total requested tickets exceed remaining screen capacity.
-     */
-    GENERAL_ADMISSION: async (data: ReserveGeneralTicketData): Promise<ReservationSchemaFields> => {
-        const {showing: showingID, ticketCount: seatsToReserve} = data;
-        const {ticketPrice, screen: {_id: screenID}} = await fetchPopulatedShowing(showingID);
-
-        const totalScreenSeats = await SeatModel.countDocuments({
-            screen: screenID,
-            layoutType: "SEAT",
-        });
-
-        if (totalScreenSeats === 0) {
-            throw new BookingError({
-                statusCode: 409,
-                errorCode: "ERR_SCREEN_FULL",
-                message: "There are no available seats.",
-            });
-        }
-
-        const reservedCheck = await ReservationModel.aggregate([
-            {$match: {showing: showingID, status: "PAID"}},
-            {$group: {_id: null, totalAmount: {$sum: "$ticketCount"}}},
-        ]);
-
-        const reservedSeats = reservedCheck[0]?.totalAmount ?? 0;
-        const hasSeats = totalScreenSeats >= reservedSeats + seatsToReserve;
-
-        if (!hasSeats) {
-            throw new BookingError({
-                statusCode: 409,
-                errorCode: "ERR_SCREEN_FULL",
-                message: "There are no available seats.",
-            });
-        }
-
-        data.pricePaid = ticketPrice * seatsToReserve;
-
-        return saveTicketReservation(data);
-    },
-
-    /**
-     * Logic for Reserved Seating bookings using MongoDB transactions.
-     * @throws {BookingError} 409 - If any requested seat is not 'AVAILABLE'.
-     */
-    RESERVED_SEATS: async (data: ReserveSeatTicketData): Promise<ReservationSchemaFields> => {
-        const {selectedSeating} = data;
-        const session = await SeatMapModel.startSession();
-        let seating: SeatMapSchemaFields[] = [];
-
-        try {
-            seating = await session.withTransaction(async () => {
-                const {modifiedCount: heldSeats} = await SeatMapModel.updateMany(
-                    {_id: {$in: selectedSeating}, status: "AVAILABLE"},
-                    {status: "PENDING"}
-                );
-
-                if (heldSeats !== selectedSeating.length) {
-                    await SeatMapModel.updateMany(
-                        {_id: {$in: selectedSeating}, status: "PENDING"},
-                        {status: "AVAILABLE"}
-                    );
-
-                    throw new BookingError({
-                        statusCode: 409,
-                        message: "Seat(s) already reserved.",
-                        errorCode: "ERR_SEAT_RESERVED",
-                    });
-                }
-
-                return SeatMapModel
-                    .find({_id: {$in: selectedSeating}, status: "PENDING"})
-                    .populate(["seat"])
-                    .lean();
-            });
-        } catch (error: unknown) {
-            if (error instanceof BookingError) throw error;
-            throw new BookingError({
-                statusCode: 500,
-                message: "An unknown error occurred trying to reserve seats.",
-                errorCode: "ERR_UNKNOWN_ERROR",
-            });
-        } finally {
-            await session.endSession();
-        }
-
-        data.pricePaid = seating
-            .map(({overridePrice, basePrice, priceMultiplier}) => overridePrice ?? basePrice * priceMultiplier)
-            .reduce((acc, cur) => acc + cur, 0);
-
-        return saveTicketReservation(data);
-    },
-};
-
