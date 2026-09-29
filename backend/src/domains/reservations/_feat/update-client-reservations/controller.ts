@@ -4,11 +4,9 @@
 
 import type {Request, Response} from "express";
 import {fetchRequestUserId} from "@/shared/_utils/request/fetchRequestUserId";
-import {
-    cancelClientReservation,
-    checkoutClientReservation
-} from "@/domains/reservations/_feat/update-client-reservations/services";
 import type {IDRouteConfig} from "@/shared/_schema";
+import {checkoutClientReservation} from "@/domains/reservations/_feat/update-client-reservations/checkout-client-reservation";
+import {cancelClientReservation} from "@/domains/reservations/_feat/update-client-reservations/cancel-client-reservation";
 
 /**
  * Finalizes a pending reservation hold for a client.

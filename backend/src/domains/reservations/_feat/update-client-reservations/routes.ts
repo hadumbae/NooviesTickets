@@ -9,7 +9,7 @@ import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {
     patchCancelClientReservation,
     patchCheckoutClientReservation,
-} from "@/domains/reservations/_feat/update-client-reservations/controllers";
+} from "@/domains/reservations/_feat/update-client-reservations/controller";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
 import {IDRouteConfigSchema} from "@/shared/_schema";
 
