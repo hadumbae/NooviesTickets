@@ -24,7 +24,7 @@ export const showingExpiryWorker = new Worker(
             showing.status = "RUNNING";
             await showing.save();
 
-            emitShowingStatusChanged(showingId, "RUNNING");
+            emitShowingStatusChanged(showing._id.toString(), showing.slug, "RUNNING");
 
             console.log(`[${SHOWING_EXPIRY_QUEUE_NAME}] Showing ${showingId} -> RUNNING`);
             return
@@ -35,7 +35,7 @@ export const showingExpiryWorker = new Worker(
             showing.status = "COMPLETED";
             await showing.save();
 
-            emitShowingStatusChanged(showingId, "COMPLETED");
+            emitShowingStatusChanged(showing._id.toString(), showing.slug, "COMPLETED");
 
             console.log(`[${SHOWING_EXPIRY_QUEUE_NAME}] Showing ${showingId} -> COMPLETED`);
             return

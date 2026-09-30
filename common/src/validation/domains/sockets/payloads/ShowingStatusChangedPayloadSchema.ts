@@ -3,8 +3,9 @@
  */
 
 import {z} from "zod";
-import {IDStringSchema} from "../../../schema/additional-strings/id-strings/IDStringSchema";
+import {SlugStringSchema} from "../../../../validation/schema";
 import {ZodEnumParamHandler} from "../../../schema/enums/handler/ZodEnumParamHandler";
+import {IDStringSchema} from "../../../schema/additional-strings/id-strings/IDStringSchema";
 
 /**
  * Subset of ShowingStatusConstant that clients need to react to in real time.
@@ -19,6 +20,7 @@ const BroadcastShowingStatusConstant = [
 /** Zod schema for the payload broadcast when a showing's status changes. */
 export const ShowingStatusChangedPayloadSchema = z.object({
     showingId: IDStringSchema,
+    showingSlug: SlugStringSchema,
     status: z.enum(BroadcastShowingStatusConstant, ZodEnumParamHandler({
         invalidType: "Must be a valid showing status string.",
         invalidValue: "Must be a valid broadcastable showing status."

@@ -14,6 +14,8 @@ import {
 import {SetReservationCodeForm, SetReservationCodeFormCard} from "@/views/admin/reservations/_feat";
 import {ReservationByCodePageHeader} from "@/views/admin/reservations/_pages/reservation-by-code/headers";
 import {ReservationByCodeDataContent} from "@/views/admin/reservations/_pages/reservation-by-code/data.tsx";
+import {useJoinReservationRoom} from "@/domains/reservations";
+import {FetchByCodeQueryKeys} from "@/domains/reservations/_feat/fetch-reservation-by-code/fetch";
 
 /** Props for the ReservationByCodePageContent component. */
 type ContentProps = {
@@ -27,6 +29,11 @@ export function ReservationByCodePageContent(
     {reservation, setTitle}: ContentProps
 ): ReactElement {
     const {values, setValues, activeOptions} = useFetchReservationByCodeQueryOptionsContext();
+
+    useJoinReservationRoom({
+        reservationId: reservation?._id ?? null,
+        additionalInvalidateKeys: [FetchByCodeQueryKeys.fetchByCode()],
+    });
 
     useEffect(() => {
         setTitle(reservation?.uniqueCode ?? "Invalid Reservation");

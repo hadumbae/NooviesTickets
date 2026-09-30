@@ -17,6 +17,7 @@ import {
 } from "@/views/client/users/my-reservation-page/mutations/MyReservationStatusActions.tsx";
 import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 import {PopulatedReservation} from "@/domains/reservations/_schema/model";
+import {useJoinReservationRoom} from "@/domains/reservations";
 import {ReactElement, useEffect} from "react";
 
 /** Props for the MyReservationPageContent component. */
@@ -32,6 +33,8 @@ export function MyReservationPageContent(
     {reservation, setTitle}: ContentProps
 ): ReactElement {
     const navigate = useLoggedNavigate();
+
+    useJoinReservationRoom({reservationId: reservation._id});
 
     useEffect(() => {
         setTitle(reservation.uniqueCode);

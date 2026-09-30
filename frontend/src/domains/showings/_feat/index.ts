@@ -5,6 +5,7 @@ export * from "./crud";
 export * from "./crud-hooks";
 export * from "./navigation";
 export * from "./showing-actions";
+export * from "./socket-io";
 export * from "./formatters";
 export * from "./submit-data";
 export * from "./submit-theatre-schedule-query";

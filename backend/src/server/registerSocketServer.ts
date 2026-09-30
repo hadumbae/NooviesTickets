@@ -52,10 +52,10 @@ export function getSocketServer(): Server {
 }
 
 /** Emits a socket event, with its payload type checked against the event name, to every socket in any of the given rooms. */
-export function emitToRooms<E extends SocketEvent>(
+export function emitToRooms<TEvent extends SocketEvent>(
     rooms: string[],
-    event: E,
-    payload: SocketEventPayloadMap[E],
+    event: TEvent,
+    payload: SocketEventPayloadMap[TEvent],
 ): void {
     getSocketServer().to(rooms).emit(event, payload);
 }

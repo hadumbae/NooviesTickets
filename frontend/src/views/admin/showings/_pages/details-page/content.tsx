@@ -22,6 +22,8 @@ import {
 } from "@/views/admin/showings/_comp";
 import {IconButton, PageHeader} from "@/views/shared/_comp";
 import {Ellipsis} from "lucide-react";
+import {useJoinShowingRoom} from "@/domains/showings";
+import {ShowingAdminViewDataQueryKeys} from "@/views/admin/showings/_feat/admin-view-data/fetch/queryKeys.ts";
 
 type ContentPage = ShowingDetailsViewData & {
     setTitle: (title: string) => void;
@@ -35,6 +37,11 @@ export function ShowingDetailsPageContent(
     const {name: theatreName} = theatre;
     const {name: screenName} = screen;
     const {title: movieTitle, releaseDate} = movie;
+
+    useJoinShowingRoom({
+        showingId: showing._id,
+        additionalInvalidateKeys: [ShowingAdminViewDataQueryKeys.showingDetails({slug: showingSlug})],
+    });
 
     useEffect(() => {
         setTitle(movie.title);

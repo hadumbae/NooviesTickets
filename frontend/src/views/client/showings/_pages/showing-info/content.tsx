@@ -11,6 +11,7 @@ import {ReservationType} from "@noovies-tickets/common";
 import {ShowingSelectorInfoCard} from "@/views/client/showings/_comp";
 import {ShowingInfoPageHeader} from "@/views/client/showings/_pages/showing-info/header.tsx";
 import {ReservationForm, ReservationFormView} from "@/views/client/reservations/_feat/reserve-ticket-form/form";
+import {useJoinShowingRoom} from "@/domains/showings";
 
 /** Props for the ShowingInfoPageContent component. */
 type ContentProps = {
@@ -27,6 +28,8 @@ export function ShowingInfoPageContent(
     const navigate = useLoggedNavigate();
 
     const {_id: showingID, movie: {_id: movieID, title: movieTitle}, theatre: {name: theatreName}, config: {canReserveSeats}} = showing;
+
+    useJoinShowingRoom({showingId: showingID});
 
     useEffect(() => {
         setTitle(`${movieTitle} • ${theatreName}`);

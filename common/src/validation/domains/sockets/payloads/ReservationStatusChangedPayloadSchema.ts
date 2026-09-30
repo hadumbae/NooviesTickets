@@ -5,6 +5,7 @@
 import {z} from "zod";
 import {IDStringSchema} from "../../../schema/additional-strings/id-strings/IDStringSchema";
 import {ZodEnumParamHandler} from "../../../schema/enums/handler/ZodEnumParamHandler";
+import {SlugStringSchema} from "../../../../validation/schema";
 
 /**
  * Subset of ReservationStatusConstant that clients need to react to in real time.
@@ -20,6 +21,7 @@ const BroadcastReservationStatusConstant = [
 /** Zod schema for the payload broadcast when a reservation's status changes. */
 export const ReservationStatusChangedPayloadSchema = z.object({
     reservationId: IDStringSchema,
+    reservationSlug: SlugStringSchema,
     showingId: IDStringSchema,
     status: z.enum(BroadcastReservationStatusConstant, ZodEnumParamHandler({
         invalidType: "Must be a valid reservation status string.",
