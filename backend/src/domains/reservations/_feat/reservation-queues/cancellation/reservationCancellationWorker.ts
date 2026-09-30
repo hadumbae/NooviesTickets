@@ -34,6 +34,7 @@ export const reservationCancellationWorker = new Worker(
 
             emitReservationStatusChanged({
                 reservationId: reservation._id.toString(),
+                reservationSlug: reservation.slug,
                 showingId: reservation.showing.toString(),
                 status: "CANCELLED",
             });

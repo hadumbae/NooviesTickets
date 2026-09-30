@@ -43,6 +43,7 @@ export const reservationLifecycleWorker = new Worker(
 
             emitReservationStatusChanged({
                 reservationId: reservation._id.toString(),
+                reservationSlug: reservation.slug,
                 showingId: showing._id.toString(),
                 status: "EXPIRED",
             });
@@ -60,6 +61,7 @@ export const reservationLifecycleWorker = new Worker(
 
                 emitReservationStatusChanged({
                     reservationId: reservation._id.toString(),
+                    reservationSlug: reservation.slug,
                     showingId: showing._id.toString(),
                     status: "EXPIRED",
                 });
@@ -73,6 +75,14 @@ export const reservationLifecycleWorker = new Worker(
                 reservation.dateRunning = new Date();
 
                 await reservation.save();
+
+                emitReservationStatusChanged({
+                    reservationId: reservation._id.toString(),
+                    reservationSlug: reservation.slug,
+                    showingId: showing._id.toString(),
+                    status: "RUNNING",
+                });
+
                 console.log(`[${RESERVATION_LIFECYCLE_QUEUE_NAME}] Reservation ${reservationId} -> RUNNING`);
                 return;
             }
@@ -83,6 +93,14 @@ export const reservationLifecycleWorker = new Worker(
             reservation.dateCompleted = new Date();
 
             await reservation.save();
+
+            emitReservationStatusChanged({
+                reservationId: reservation._id.toString(),
+                reservationSlug: reservation.slug,
+                showingId: showing._id.toString(),
+                status: "COMPLETED",
+            });
+
             console.log(`[${RESERVATION_LIFECYCLE_QUEUE_NAME}] Reservation ${reservationId} -> COMPLETED`);
             return;
         }

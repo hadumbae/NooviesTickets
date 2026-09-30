@@ -8,6 +8,7 @@ import {ObjectIdString, SocketEventPayloadMap} from "@noovies-tickets/common";
 import {useSocket} from "@/shared/_feat/socket-io/useSocket.ts";
 import {ReservationCRUDQueryKeys} from "@/domains/reservations/_feat/crud-hooks/queryKeys";
 
+/** Configuration options for the useJoinReservationRoom hook. */
 type HookConfig = {
     reservationId: ObjectIdString | null;
     additionalInvalidateKeys?: QueryKey[];
@@ -15,11 +16,7 @@ type HookConfig = {
 
 /**
  * Joins a reservation room via socket and invalidates relevant queries upon status change events.
- * `reservationId` may be `null` for pages that render before a reservation is resolved (e.g. an
- * admin lookup form) — the hook simply doesn't join until a real id is passed.
- * Pass `additionalInvalidateKeys` for any query key outside the reservation CRUD cache (e.g. the
- * current-user reservations list, fetch-by-code, or a customer-view hook) that should also be
- * refreshed when this reservation's status changes.
+ * Requires wrapping in a provider for the Socket IO context.
  */
 export function useJoinReservationRoom(
     {reservationId, additionalInvalidateKeys = []}: HookConfig
@@ -38,6 +35,7 @@ export function useJoinReservationRoom(
         socket.emit("join-reservation", reservationId);
 
         const handleStatusChanged = (payload: SocketEventPayloadMap["RESERVATION_STATUS_CHANGED"]) => {
+            console.log("[socket.io] received RESERVATION_STATUS_CHANGED", payload, "watching:", reservationId);
             if (payload.reservationId !== reservationId) return;
 
             queryClient.invalidateQueries({

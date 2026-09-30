@@ -8,6 +8,7 @@ import {QueryKey, useQueryClient} from "@tanstack/react-query";
 import {useEffect, useRef} from "react";
 import {ShowingCRUDQueryKeys} from "@/domains/showings";
 
+/** Configuration options for the useJoinShowingRoom hook. */
 type HookConfig = {
     showingId: ObjectIdString | null;
     additionalInvalidateKeys?: QueryKey[];
@@ -15,8 +16,6 @@ type HookConfig = {
 
 /**
  * Joins a showing room via socket and invalidates relevant queries upon status change events.
- * Pass `additionalInvalidateKeys` for any query key outside the showing CRUD cache (e.g. a
- * view-specific hook) that should also be refreshed when this showing's status changes.
  */
 export function useJoinShowingRoom(
     {showingId, additionalInvalidateKeys = []}: HookConfig
@@ -30,11 +29,12 @@ export function useJoinShowingRoom(
     additionalKeysRef.current = additionalInvalidateKeys;
 
     useEffect(() => {
-        if (!socket || showingId) return;
+        if (!socket || !showingId) return;
 
         socket.emit("join-showing", showingId);
 
         const handleStatusChanged = (payload: SocketEventPayloadMap["SHOWING_STATUS_CHANGED"]) => {
+            console.log("[socket.io] received SHOWING_STATUS_CHANGED", payload, "watching:", showingId);
             if (payload.showingId !== showingId) return;
 
             queryClient.invalidateQueries({

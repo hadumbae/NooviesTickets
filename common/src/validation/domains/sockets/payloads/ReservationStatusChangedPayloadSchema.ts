@@ -7,15 +7,12 @@ import {IDStringSchema} from "../../../schema/additional-strings/id-strings/IDSt
 import {ZodEnumParamHandler} from "../../../schema/enums/handler/ZodEnumParamHandler";
 import {SlugStringSchema} from "../../../../validation/schema";
 
-/**
- * Subset of ReservationStatusConstant that clients need to react to in real time.
- * Deliberately excludes statuses (e.g. PAID, RUNNING, COMPLETED, REFUNDED, INVALID)
- * that don't require a live UI update.
- */
 const BroadcastReservationStatusConstant = [
     "RESERVED",
     "CANCELLED",
     "EXPIRED",
+    "RUNNING",
+    "COMPLETED",
 ] as const;
 
 /** Zod schema for the payload broadcast when a reservation's status changes. */

@@ -20,19 +20,25 @@ export function SocketContextProvider(
     {children}: ProviderProps
 ): ReactElement {
     const {user} = useAuthContext();
+    const userId = user?._id;
+
     const [socket, setSocket] = useState<Socket | null>(null);
 
     useEffect(() => {
-        if (!user) return;
+        if (!userId) return;
 
         const instance = io(API_URL, {withCredentials: true});
         setSocket(instance);
+
+        instance.on("connect", () => console.log("[socket.io] connected", instance.id));
+        instance.on("connect_error", (error) => console.error("[socket.io] connect_error:", error.message));
+        instance.on("disconnect", (reason) => console.log("[socket.io] disconnected:", reason));
 
         return () => {
             instance.disconnect();
             setSocket(null);
         }
-    }, [user])
+    }, [userId])
 
     const values: SocketContextValues = {
         socket,

@@ -69,9 +69,15 @@ export async function reserveTickets(
         });
     }
 
+    // `reservation.showing` is populated by saveTicketReservation for the API response,
+    // so it's a full Showing document here, not a raw ObjectId — grab the `_id` off it
+    // when populated, falling back to the field itself otherwise.
+    const showingId = ((reservation.showing as any)._id ?? reservation.showing).toString();
+
     emitReservationStatusChanged({
         reservationId: reservation._id.toString(),
-        showingId: reservation.showing.toString(),
+        reservationSlug: reservation.slug,
+        showingId,
         status: "RESERVED",
     });
 
