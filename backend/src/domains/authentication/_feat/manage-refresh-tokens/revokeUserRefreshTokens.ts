@@ -3,14 +3,14 @@
  */
 
 import {Types} from "mongoose";
-import {RefreshTokenModel} from "@/domains/authentication";
+import {RefreshTokenModel} from "@/domains/authentication/_models/refresh-token/RefreshToken.model";
 
 type ClearConfig = {
     userId: Types.ObjectId;
 }
 
 /** Revokes all refresh tokens for a specified user ID. */
-export async function clearRefreshTokens(
+export async function revokeUserRefreshTokens(
     {userId}: ClearConfig,
 ): Promise<void> {
     await RefreshTokenModel.updateMany({user: userId}, {$set: {revoked: true}});

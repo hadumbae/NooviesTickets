@@ -3,7 +3,7 @@
  */
 
 import {Router} from "express";
-import {hasRefreshToken, isAdmin, isAuth} from "@/domains/authentication/_middleware";
+import {hasRefreshToken, isAdmin, isAuth, setRefreshToken} from "@/domains/authentication/_middleware";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler";
 import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateZodSchemaAsync} from "@/shared/_utils/schema/validators/validateZodSchemaAsync";
@@ -41,12 +41,13 @@ router.post(
 
 router.post(
     "/logout",
+    [setRefreshToken],
     asyncHandler(postLogoutUser),
 );
 
 router.post(
     "/refresh",
-    [isAuth, hasRefreshToken],
+    [hasRefreshToken],
     asyncHandler(postRefreshUserAuthentication),
 );
 

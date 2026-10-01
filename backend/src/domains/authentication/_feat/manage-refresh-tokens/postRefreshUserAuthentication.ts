@@ -6,11 +6,10 @@ import type {Request, Response} from 'express'
 import {
     updateUserAuthCredentials
 } from "@/domains/authentication/_feat/manage-refresh-tokens/updateUserAuthCredentials";
-import {fetchRequestUser} from "@/shared/_utils/request/fetchRequestUser";
-import {fetchRequestAuthentication} from "@/shared/_feat/request-data";
 import {convertToMilliseconds, getEnvVariables} from "@/shared/_feat";
 import {DateTime} from "luxon";
 import {fetchRequestIP} from "@/shared/_utils/request/fetchRequestIP";
+import createHttpError from "http-errors";
 
 /** Handles session token rotation and updates authentication cookies for the requesting user. */
 export async function postRefreshUserAuthentication(req: Request, res: Response) {
@@ -21,17 +20,17 @@ export async function postRefreshUserAuthentication(req: Request, res: Response)
         REQUIRE_SECURE_COOKIES,
     } = getEnvVariables();
 
-    const {refreshToken: incomingToken} = fetchRequestAuthentication(req);
     const ipAddress = fetchRequestIP(req);
+    const incomingToken = req.refreshToken;
 
-    const {user, issuedToken, authHash} = await updateUserAuthCredentials({
-        user: await fetchRequestUser(req),
-        incomingToken,
-        ipAddress
-    });
+    if (!incomingToken) {
+        throw createHttpError(401, "Missing refresh token.");
+    }
+
+    const {user, issuedToken, authHash} = await updateUserAuthCredentials({incomingToken, ipAddress});
 
     const refreshBy = DateTime.now().setZone("UTC").plus({minute: REFRESH_EXPIRY_DURATION}).toISO();
-    const refreshTokenLife =  convertToMilliseconds({value: REFRESH_TOKEN_LIFETIME, from: "days"});
+    const refreshTokenLife = convertToMilliseconds({value: REFRESH_TOKEN_LIFETIME, from: "days"});
     const authTokenLife = convertToMilliseconds({value: CREDENTIALS_EXPIRY_DURATION, from: "minutes"});
 
     return res

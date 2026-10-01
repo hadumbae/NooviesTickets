@@ -4,10 +4,11 @@
 
 import crypto from "crypto";
 import {Types} from "mongoose";
-import {RefreshTokenModel, type RefreshTokenSchemaFields} from "@/domains/authentication";
 import {DateTime} from "luxon";
-import {getEnvVariables} from "@/shared/_feat";
 import type {IpString} from "@noovies-tickets/common";
+import {getEnvVariables} from "@/shared/_feat/env/getEnvVariables";
+import {RefreshTokenModel} from "@/domains/authentication/_models/refresh-token/RefreshToken.model";
+import type {RefreshTokenSchemaFields} from "@/domains/authentication/_models/refresh-token/RefreshToken.types";
 
 type CreateConfig = {
     userIp?: IpString;

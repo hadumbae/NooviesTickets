@@ -8,11 +8,11 @@ import {Types} from "mongoose";
 import {type AuthTokenPayload, AuthTokenPayloadSchema} from "@/domains/authentication/_validation";
 
 /** Decodes and validates a JWT token, returning the embedded user payload and admin status. */
-export function decodeAuthToken(token: string): AuthTokenPayload {
+export function decodeAuthToken(token: string, options?: jwt.VerifyOptions): AuthTokenPayload {
     let decodedToken;
 
     try {
-        decodedToken = jwt.verify(token, process.env.JWT_SECRET!);
+        decodedToken = jwt.verify(token, process.env.JWT_SECRET!, options);
     } catch (e) {
         throw createHttpError(401, "Authorization failed: Token verification error.");
     }

@@ -1,3 +1,4 @@
+export * from "@/domains/authentication/_middleware/setRefreshToken";
 export * from "@/domains/authentication/_middleware/hasRefreshToken";
 export * from "@/domains/authentication/_middleware/isAuth";
 export * from "@/domains/authentication/_middleware/isAdmin";
