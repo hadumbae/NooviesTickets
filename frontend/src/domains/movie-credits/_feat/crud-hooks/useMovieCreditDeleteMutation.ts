@@ -23,7 +23,7 @@ export function useMovieCreditDeleteMutation(): UseMutationResult<void, unknown,
     };
 
     const onSuccess = () => {
-        queryClient.invalidateQueries({queryKey: MovieCreditCRUDQueryKeys.list, exact: false});
+        queryClient.invalidateQueries({queryKey: MovieCreditCRUDQueryKeys.list(), exact: false});
     };
 
     return useMutation({

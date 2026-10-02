@@ -8,7 +8,7 @@ import {Router} from "express";
 import {buildCRUDRoutes, type CRUDRoute} from "@/shared/_feat/generic-crud/routes";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
-import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
+import {buildAuthCRUDQueryStageMiddleware, buildUnsetFields} from "@/shared/_feat/middleware";
 import {
     create,
     destroy,
@@ -59,7 +59,7 @@ const routes: CRUDRoute<MovieCreditSchemaFields>[] = [
         /** Assignment of a new credit (person to movie relationship). */
         path: `/item`,
         method: "post",
-        middleware: [isAuth, isAdmin, validateZodSchema(MovieCreditInputSchema)],
+        middleware: [isAuth, isAdmin, validateZodSchema(MovieCreditInputSchema), ],
         handler: create
     },
     {
@@ -80,7 +80,13 @@ const routes: CRUDRoute<MovieCreditSchemaFields>[] = [
         /** Partial update of credit metadata (e.g., changing billing order or character name). */
         path: `/item/:_id`,
         method: "patch",
-        middleware: [isAuth, isAdmin, validateRequestConfig({schema: IDRouteConfigSchema}), validateZodSchema(MovieCreditInputSchema)],
+        middleware: [
+            isAuth,
+            isAdmin,
+            validateRequestConfig({schema: IDRouteConfigSchema}),
+            validateZodSchema(MovieCreditInputSchema),
+            buildUnsetFields({model: MovieCreditModel})
+        ],
         handler: update
     },
     {

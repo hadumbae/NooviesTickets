@@ -29,6 +29,11 @@ export function MovieEditPageContent(
     const successMessage = "Updated..";
     const errorMessage = "Failed to update. Please try again.";
 
+    const editData = {
+        ...movie,
+        releaseDate: movie.releaseDate?.toFormat("yyyy-MM-dd") ?? undefined,
+    }
+
     const onSuccess = (updatedMovie: Movie) => {
         navigate({
             to: `/admin/movies/get/${updatedMovie.slug}`,
@@ -51,7 +56,7 @@ export function MovieEditPageContent(
                 <Card>
                     <CardContent className="p-4">
                         <MovieSubmitForm
-                            editEntity={movie}
+                            editEntity={editData}
                             onSubmitSuccess={onSuccess}
                             successMessage={successMessage}
                             errorMessage={errorMessage}

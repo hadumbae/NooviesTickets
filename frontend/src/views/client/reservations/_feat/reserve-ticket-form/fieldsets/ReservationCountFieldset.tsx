@@ -6,8 +6,9 @@ import {HookFormInput} from "@/views/shared/_feat";
 import {Button} from "@/views/shared/_comp/ui/button.tsx";
 import {useFormContext} from "react-hook-form";
 import {ReservationType} from "@noovies-tickets/common";
-import {cn} from "@/shared/_feat";
+import {cn, useBaseFormContext} from "@/shared/_feat";
 import {ReactElement} from "react";
+import {AnimatedLoader} from "@/views/shared/_comp";
 
 /** Props for the ReservationCountFieldset component. */
 type FieldsetProps = {
@@ -23,6 +24,8 @@ export function ReservationCountFieldset(
     {reservationType, backToSeats}: FieldsetProps
 ): ReactElement {
     const {control, watch} = useFormContext();
+    const {isPending} = useBaseFormContext();
+
     const ticketCount = watch("ticketCount");
 
     return (
@@ -48,8 +51,8 @@ export function ReservationCountFieldset(
                     )
                 }
 
-                <Button variant="primary" type="submit" disabled={ticketCount <= 0}>
-                    Reserve
+                <Button variant="primary" type="submit" disabled={ticketCount <= 0 || isPending}>
+                    {isPending ? <AnimatedLoader /> : "Reserve"}
                 </Button>
             </section>
         </fieldset>

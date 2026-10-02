@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 import {cn} from "@/shared/_feat";
 import {PaginatedItems} from "@/shared/_types";
-import {generatePaginationSchema} from "@noovies-tickets/common";
+import {generatePaginationSchema, ObjectIdString} from "@noovies-tickets/common";
 import {PageSectionHeader} from "@/views/shared/_comp/page";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {EmptyArrayContainer} from "@/views/shared/_comp/text-display/EmptyArrayContainer.tsx";
@@ -18,6 +18,7 @@ import {MovieCreditDetails, MovieCreditDetailsSchema, useFetchPaginatedMovieCred
 /** Props for the MoviePeoplePageCreditSection component. */
 type SectionProps = {
     department: RoleTypeDepartment;
+    movieID: ObjectIdString;
     page: number;
     perPage: number;
     setPage: (page: number) => void;
@@ -26,13 +27,13 @@ type SectionProps = {
 
 /** Displays a paginated list of movie credits for a specific department within the movie people page. */
 export function MoviePeoplePageCreditSection(
-    {className, department, page, perPage, setPage}: SectionProps
+    {className, movieID, department, page, perPage, setPage}: SectionProps
 ): ReactElement {
     const query = useFetchPaginatedMovieCredits({
         schema: generatePaginationSchema(MovieCreditDetailsSchema),
         page,
         perPage,
-        queries: {department, sortByBillingOrder: 1},
+        queries: {movie: movieID, department, sortByBillingOrder: 1},
         config: {populate: true, virtuals: true},
     });
 

@@ -35,10 +35,12 @@ export function createFormSubmitHandler<TFormValues extends FieldValues, TForm e
         resetOnError
     }: FactoryConfig<TFormValues, TForm, TReturns>
 ) {
+    const resetForm = () => form.reset(resetValues ?? form.formState.defaultValues as DefaultValues<TFormValues>);
+
     return async (values: TForm) => {
         try {
             if (resetOnSubmit) {
-                form.reset(resetValues);
+                resetForm();
             }
 
             handleMutationCallback({
@@ -49,7 +51,7 @@ export function createFormSubmitHandler<TFormValues extends FieldValues, TForm e
             const data = await mutateAsync(values);
 
             if (resetOnSuccess) {
-                form.reset(resetValues);
+                resetForm();
             }
 
             handleMutationCallback({
@@ -60,7 +62,7 @@ export function createFormSubmitHandler<TFormValues extends FieldValues, TForm e
         } catch (error: unknown) {
             handleFormSubmitError({form, error, displayMessage: errorMessage});
             if (resetOnError) {
-                form.reset(resetValues);
+                resetForm();
             }
             onSubmitError?.(error);
         }

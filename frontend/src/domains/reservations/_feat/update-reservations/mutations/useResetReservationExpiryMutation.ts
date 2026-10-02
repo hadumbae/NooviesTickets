@@ -4,7 +4,7 @@
  */
 
 import {useMutation, UseMutationResult, useQueryClient} from "@tanstack/react-query";
-import {ObjectIdString} from "@noovies-tickets/common";
+import {HttpResponseError, ObjectIdString} from "@noovies-tickets/common";
 import {validateData} from "@/shared/_feat/validate-data/validateData.ts";
 
 import {AdminReservation, AdminReservationSchema} from "@/domains/reservations/_schema";
@@ -14,6 +14,7 @@ import {
     ReservationUpdateMutationKeys
 } from "@/domains/reservations/_feat/update-reservations/mutations/mutationKeys.ts";
 import {EmptyFormData} from "@/shared/_feat";
+import {toast} from "react-toastify";
 
 /** Props for the useResetReservationExpiryMutation hook. */
 export type UseResetReservationExpiryMutationConfig = {
@@ -45,9 +46,16 @@ export function useResetReservationExpiryMutation(
         queryClient.invalidateQueries({queryKey: FetchByCodeQueryKeys.fetchByCode(), exact: false});
     }
 
+    const onError = (error: unknown) => {
+        if (error instanceof HttpResponseError && error.statusCode === 500) {
+            toast.error(error.message);
+        }
+    }
+
     return useMutation({
         mutationKey: ReservationUpdateMutationKeys.expiry({reservationID}),
         mutationFn: resetExpiry,
         onSuccess,
+        onError,
     });
 }

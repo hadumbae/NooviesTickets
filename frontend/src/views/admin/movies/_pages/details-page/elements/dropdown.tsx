@@ -20,6 +20,7 @@ import {
     useIsUpdatingMovieBannerUIActions,
     useIsUpdatingMoviePosterUIActions
 } from "@/domains/movies/_ctx/ui";
+import {useIsDeletingUIContextActions} from "@/shared/_ctx/ui/IsDeletingUIContext.ts";
 
 /** Props for the MovieDetailsDropdown component. */
 type OptionProps = {
@@ -38,7 +39,7 @@ export function MovieDetailsDropdown(
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const navigate = useLoggedNavigate();
 
-    const {open: openIsDeleting} = useIsDeletingMoviePosterUIActions();
+    const {open: openIsDeleting} = useIsDeletingUIContextActions();
     const {open: openIsUpdatingPoster} = useIsUpdatingMoviePosterUIActions();
     const {open: openIsDeletingPoster} = useIsDeletingMoviePosterUIActions();
     const {open: openIsUpdatingBanner} = useIsUpdatingMovieBannerUIActions();

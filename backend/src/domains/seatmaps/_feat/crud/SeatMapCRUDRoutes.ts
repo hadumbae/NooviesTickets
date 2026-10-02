@@ -8,7 +8,7 @@ import {Router} from "express";
 import {buildCRUDRoutes, type CRUDRoute} from "@/shared/_feat/generic-crud/routes";
 import {isAuth} from "@/domains/authentication/_middleware/isAuth";
 import {isAdmin} from "@/domains/authentication/_middleware/isAdmin";
-import {parseRequestQuery} from "@/shared/_feat/middleware";
+import {buildAuthCRUDQueryStageMiddleware} from "@/shared/_feat/middleware";
 import {create, destroy, find, findById, paginated, update} from "@/shared/_feat/generic-crud/path-handlers";
 import {validateZodSchema} from "@/shared/_utils/schema/validators/validateZodSchema";
 import {validateRequestConfig} from "@/shared/_utils/schema/validators/validateRequestConfig";
@@ -18,12 +18,15 @@ import {aggregate} from "@/shared/_feat/generic-aggregate";
 import type {SeatMapSchemaFields} from "@/domains/seatmaps/_models/seat-map/SeatMap.types";
 import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
 import {SeatMapInputSchema} from "@/domains/seatmaps/_feat/validate-submit/SeatMapInputSchema";
-import {SeatMapRequestQuerySchema} from "@/domains/seatmaps/_feat/validate-query";
+import {SeatMapQueryMatchStageSchema, SeatMapQuerySortStageSchema} from "@/domains/seatmaps/_feat/validate-query";
 import {SeatMapPopulationPaths} from "@/domains/seatmaps/_feat/query-population";
 import {handleDuplicateIndex} from "@/domains/seatmaps/_models/seat-map/SeatMap.handlers";
 import {verifyReferencesExist} from "@/shared/_feat";
 import {SeatModel} from "@/domains/seats";
 import {ShowingModel} from "@/domains/showings";
+
+const matchSchema = SeatMapQueryMatchStageSchema;
+const sortSchema = SeatMapQuerySortStageSchema;
 
 const hasReferences = verifyReferencesExist({
     statusCode: 422,
@@ -41,20 +44,14 @@ const routes: CRUDRoute<SeatMapSchemaFields>[] = [
         /** Basic retrieval of seat mappings based on query filters (e.g., all seats for a specific showtime). */
         path: "/find",
         method: "get",
-        middleware: [
-            isAuth,
-            parseRequestQuery({schema: SeatMapRequestQuerySchema})
-        ],
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: find
     },
     {
         /** Paginated retrieval optimized for administrative inventory logs or large-scale seating audits. */
         path: "/paginated",
         method: "get",
-        middleware: [
-            isAuth,
-            parseRequestQuery({schema: SeatMapRequestQuerySchema})
-        ],
+        middleware: buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
         handler: paginated
     },
     {
@@ -102,7 +99,7 @@ const router: Router = buildCRUDRoutes<SeatMapSchemaFields>({
  */
 router.get(
     "/query",
-    [isAuth, parseRequestQuery({schema: SeatMapRequestQuerySchema})],
+    buildAuthCRUDQueryStageMiddleware({matchSchema, sortSchema}),
     asyncHandler(aggregate({model: SeatMapModel})),
 );
 

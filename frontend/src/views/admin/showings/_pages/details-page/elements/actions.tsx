@@ -33,6 +33,7 @@ export function ShowingDetailsPageActions(
                 setIsOpen={toggleDeleting}
                 onSubmitSuccess={() => navigateToIndex()}
                 successMessage="Removed."
+                hardDelete={false}
             />
         </div>
     );

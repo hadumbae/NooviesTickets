@@ -51,7 +51,13 @@ export function UploadPersonProfileImageFormPanel(
                     <div className={cn("space-y-4", className)}>
                         <HookFormFileInput name="profileImage" label="Profile Image"/>
 
-                        <Button form={formID} className="w-full" variant="primary" type="submit">
+                        <Button
+                            form={formID}
+                            className="w-full"
+                            variant="primary"
+                            type="submit"
+                            disabled={isPending}
+                        >
                             {isPending ? <AnimatedLoader/> : "Submit"}
                         </Button>
                     </div>

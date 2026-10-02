@@ -27,7 +27,6 @@ export function BrowseMovieMeta({movie, className}: SummaryProps): ReactElement 
         <div className={className}>
             <h2 className={cn(
                 "primary-text font-extrabold text-base",
-                "hover:underline hover:underline-offset-4",
             )}>
                 {title}
             </h2>

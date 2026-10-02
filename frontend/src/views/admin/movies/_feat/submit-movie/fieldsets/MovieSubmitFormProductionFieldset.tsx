@@ -9,7 +9,7 @@ import {Separator} from "@/views/shared/_comp/ui";
 import {cn, createFormFieldConfig, renderFields, useBaseFormContext} from "@/shared/_feat";
 import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
 import {HookFormCheckbox, HookFormInput} from "@/views/shared/_feat";
-import {HookFormMultiSelect, HookFormSelect} from "@/views/shared/_comp";
+import {HookFormSelect} from "@/views/shared/_comp";
 import {ISO3166Alpha2CountryOptions, ISO6391LanguageOptions} from "@/shared/_const";
 import {ConditionalRenderConfig} from "@/shared/_types/form/HookFormFieldsetConfigTypes.ts";
 
@@ -34,7 +34,7 @@ export function MovieSubmitFormProductionFieldset(
         }),
         field({
             key: "originalLanguage",
-            element: <HookFormMultiSelect
+            element: <HookFormSelect
                 name="originalLanguage"
                 label="Original Language"
                 options={ISO6391LanguageOptions}

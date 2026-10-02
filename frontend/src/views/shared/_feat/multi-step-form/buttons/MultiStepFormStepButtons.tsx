@@ -11,7 +11,7 @@ import {useMultiStepFormSetterContext} from "@/shared/_feat/multi-step-form/hook
  * Renders navigation and submission buttons for a wizard-style form.
  */
 export function MultiStepFormStepButtons(): ReactElement {
-    const {isLastStep, isFirstStep, changeStep, resetForm,} = useMultiStepFormSetterContext();
+    const {isLastStep, isFirstStep, changeStep, resetForm} = useMultiStepFormSetterContext();
 
     return (
         <div className="grid grid-cols-3 gap-4">

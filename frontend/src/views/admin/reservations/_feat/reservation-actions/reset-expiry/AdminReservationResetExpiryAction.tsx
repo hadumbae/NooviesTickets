@@ -25,14 +25,16 @@ export function AdminReservationResetExpiryAction(
     const [isOpen, setIsOpen] = useState(false);
 
     const isDisabled = status !== "RESERVED";
-    const subtext = isDisabled ? "Must Be A RESERVED Reservation" : expiresAt.toFormat("HH:mm:ss dd MMM, yyyy");
+    const subtext = isDisabled
+        ? "Must Be A RESERVED Reservation"
+        : "Can Reset If Three Days From Showing";
 
     return (
         <AdminReservationResetExpiryForm
             mutConfig={{reservationID: _id}}
             onSubmitSuccess={() => setIsOpen(false)}
             successMessage="Expiry Reset."
-            errorMessage="Failed to reset expiry. Please try again."
+            errorMessage="Failed to reset expiry. Check showing times."
         >
             <AdminReservationResetExpiryDialog
                 isOpen={isOpen}

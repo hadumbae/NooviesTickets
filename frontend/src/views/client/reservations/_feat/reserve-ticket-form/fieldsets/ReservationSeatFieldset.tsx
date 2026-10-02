@@ -30,6 +30,7 @@ export function ReservationSeatFieldset(
     }, [selectedSeating, setValue]);
 
     const ticketCount = watch("ticketCount");
+    console.log("Watched ID: ", showingID);
 
     return (
         <fieldset className="space-y-4">

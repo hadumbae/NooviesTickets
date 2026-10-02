@@ -87,7 +87,7 @@ ShowingSchema.pre(
     ["find", "findOne", "findOneAndUpdate"],
     {document: false, query: true},
     function (this: Query<any, TheatreScreenSchemaFields>, next: () => void) {
-        if (!this.mongooseOptions().getSoftDeleted) {
+        if (!this.getOptions().getSoftDeleted) {
             this.where({isDeleted: false, deletedAt: null});
         }
 

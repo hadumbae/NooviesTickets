@@ -81,6 +81,7 @@ export function SeatMapDetailsPanel({showing}: PanelProps): ReactElement {
                                 <SeatMapSubmitFormView
                                     className="p-4 default-card"
                                     screenForSeats={seatMapScreen}
+                                    disableFields={{seat: true, status: true}}
                                 />
                             </SeatMapSubmitForm>
                         )}

@@ -4,7 +4,6 @@
 
 import {ReactElement, useEffect} from "react";
 import {PageFlexWrapper, PageSectionHeader} from "@/views/shared/_comp/page";
-import {useLoggedNavigate} from "@/shared/_feat/navigation/useLoggedNavigate.ts";
 
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {ReservationType} from "@noovies-tickets/common";
@@ -12,6 +11,7 @@ import {ShowingSelectorInfoCard} from "@/views/client/showings/_comp";
 import {ShowingInfoPageHeader} from "@/views/client/showings/_pages/showing-info/header.tsx";
 import {ReservationForm, ReservationFormView} from "@/views/client/reservations/_feat/reserve-ticket-form/form";
 import {useJoinShowingRoom} from "@/domains/showings";
+import {useNavigate} from "react-router-dom";
 
 /** Props for the ShowingInfoPageContent component. */
 type ContentProps = {
@@ -25,9 +25,14 @@ type ContentProps = {
 export function ShowingInfoPageContent(
     {showing, setTitle}: ContentProps
 ): ReactElement {
-    const navigate = useLoggedNavigate();
+    const navigate = useNavigate();
 
-    const {_id: showingID, movie: {_id: movieID, title: movieTitle}, theatre: {name: theatreName}, config: {canReserveSeats}} = showing;
+    const {
+        _id: showingID,
+        movie: {_id: movieID, title: movieTitle},
+        theatre: {name: theatreName},
+        config: {canReserveSeats}
+    } = showing;
 
     useJoinShowingRoom({showingId: showingID});
 
@@ -39,14 +44,13 @@ export function ShowingInfoPageContent(
         : "GENERAL_ADMISSION";
 
     const navigateToReservations = () => {
-        navigate({
-            to: "/account/profile?activeTab=reservations",
-            level: "log",
-            component: ShowingInfoPageContent.name,
-            message: "User successfully reserved tickets; redirecting to dashboard.",
-        });
+        navigate("/account/reservations");
     };
 
+    console.log("Showing ID: ", showingID);
+
+    // 6ac00dff88d8d1ad7ec0ad4b
+    // 6a9749be3a247914d779b788
     return (
         <PageFlexWrapper>
             <ShowingInfoPageHeader showing={showing}/>

@@ -45,6 +45,7 @@ export function MoviePeoplePageContent(
 
                 <MoviePeoplePageCreditSection
                     className="md:col-span-2"
+                    movieID={movie._id}
                     department={department}
                     page={page}
                     perPage={perPage}

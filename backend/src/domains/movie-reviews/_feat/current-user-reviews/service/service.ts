@@ -75,17 +75,17 @@ export async function createMovieReviewForCurrentUser(
 ): Promise<MovieReviewSchemaFields> {
     const userReviewData = {...data, user: userID};
 
-    const doc = await handlePersistenceQuery({
+    return handlePersistenceQuery({
         query: () => MovieReviewModel.create(userReviewData),
         onDuplicateIndexError: handleMovieReviewDuplicateIndex,
     });
 
-    const query = populateQuery({
-        query: MovieReviewModel.findById(doc._id),
-        config: {...options, populatePaths: MovieReviewPopulatePaths},
-    });
+    // const query = populateQuery({
+    //     query: MovieReviewModel.findById(doc._id),
+    //     config: {...options, populatePaths: MovieReviewPopulatePaths},
+    // });
 
-    return query.orFail();
+    // return query.orFail();
 }
 
 /** Updates an existing movie review authored by the current user. */
@@ -116,7 +116,7 @@ export async function updateMovieReviewForCurrentUser(
 
     const updatedQuery = populateQuery({
         query: MovieReviewModel.findById(reviewID),
-        config: {...options, populatePaths: MovieReviewPopulatePaths}
+        // config: {...options, populatePaths: MovieReviewPopulatePaths}
     });
 
     return updatedQuery.orFail();
