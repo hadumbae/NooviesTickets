@@ -12,13 +12,14 @@ import {
     IDStringSchema,
     RoleTypeDescriptionSchema,
     RoleTypeNameSchema,
+    ZodDiscriminatedUnionParamHandler,
 } from "@noovies-tickets/common";
 import {AnyValues} from "@/shared/_types";
 
 /** Base validation schema containing shared fields for all role type forms. */
 const RoleTypeFormBaseSchema = z.object({
     _id: IDStringSchema.readonly().optional(),
-    roleName: RoleTypeNameSchema,
+    roleName: preprocessEmptyToUndefined(RoleTypeNameSchema),
     department: preprocessEmptyToUndefined(RoleTypeDepartmentSchema),
     description: preprocessEmptyToUndefined(RoleTypeDescriptionSchema).optional(),
 });
@@ -36,10 +37,14 @@ const RoleTypeFormCastSchema = RoleTypeFormBaseSchema.extend({
 });
 
 /** Discriminated union schema for validating role type form submissions based on the department field. */
-export const RoleTypeFormSchema = z.discriminatedUnion("department", [
-    RoleTypeFormCrewSchema,
-    RoleTypeFormCastSchema,
-]);
+export const RoleTypeFormSchema = z.discriminatedUnion(
+    "department",
+    [RoleTypeFormCrewSchema, RoleTypeFormCastSchema],
+    ZodDiscriminatedUnionParamHandler({
+        discriminator: "department",
+        invalidValue: "Must be `CAST` or `CREW`.",
+    }),
+);
 
 /** Represents the fully validated data for a role type submission. */
 export type RoleTypeFormData = z.infer<typeof RoleTypeFormSchema>;

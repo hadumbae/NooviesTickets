@@ -2,14 +2,15 @@
  * @fileoverview Utility for refreshing user session credentials and rotating refresh tokens.
  */
 
-import crypto from "crypto";
 import createHttpError from "http-errors";
-import {RefreshTokenModel} from "@/domains/authentication/_models/refresh-token";
+import {type RefreshTokenSchemaFields} from "@/domains/authentication/_models/refresh-token";
 import {generateAuthenticationPayload} from "@/domains/authentication/_feat/login-user";
 import {createRefreshToken} from "@/domains/authentication/_feat/manage-refresh-tokens/createRefreshToken";
 import type {IpString} from "@noovies-tickets/common";
-import type {AuthUserCredentials} from "@/domains/authentication";
-import {UserModel} from "@/domains/users";
+import type {AuthUserCredentials} from "@/domains/authentication/_validation/AuthUserCredentialsSchema";
+import {UserModel} from "@/domains/users/_models/user/User.model";
+import {validateStaleToken} from "@/domains/authentication/_feat/manage-refresh-tokens/validateStaleToken";
+import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 
 type UpdateConfig = {
     incomingToken: string;
@@ -17,6 +18,7 @@ type UpdateConfig = {
 }
 
 type UpdateReturns = AuthUserCredentials & {
+    refreshToken: DocumentType<RefreshTokenSchemaFields>
     issuedToken: string;
 }
 
@@ -24,15 +26,7 @@ type UpdateReturns = AuthUserCredentials & {
 export async function updateUserAuthCredentials(
     {ipAddress, incomingToken}: UpdateConfig
 ): Promise<UpdateReturns> {
-    const incomingHashed = crypto.createHash("sha256").update(incomingToken).digest("hex");
-
-    const staleToken = await RefreshTokenModel.findOne({tokenHash: incomingHashed});
-    if (!staleToken) throw createHttpError(401, "Invalid. Refresh Token Required.");
-
-    if (staleToken.revoked) {
-        await RefreshTokenModel.updateMany({family: staleToken.family}, {$set: {revoked: true}});
-        throw createHttpError(403, "Forbidden. Token Already Revoked.");
-    }
+    const staleToken = await validateStaleToken({token: incomingToken});
 
     const user = await UserModel.findById(staleToken.user).select("_id name email uniqueCode status roles");
     if (!user) throw createHttpError(403, "Forbidden. Unknown user.");
@@ -42,7 +36,7 @@ export async function updateUserAuthCredentials(
 
     const authData = generateAuthenticationPayload({user});
 
-    const {issuedToken} = await createRefreshToken({
+    const {issuedToken, refreshToken} = await createRefreshToken({
         userID: user._id,
         family: staleToken.family,
         userIp: ipAddress,
@@ -50,6 +44,7 @@ export async function updateUserAuthCredentials(
 
     return {
         ...authData,
+        refreshToken,
         issuedToken,
     }
 }

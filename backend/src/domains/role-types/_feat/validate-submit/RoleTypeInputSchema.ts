@@ -3,7 +3,13 @@
  */
 
 import {z} from "zod";
-import {NonEmptyStringSchema, RoleTypeDepartmentSchema, RoleTypeCastCategorySchema, RoleTypeCrewCategorySchema} from "@noovies-tickets/common";
+import {
+    NonEmptyStringSchema,
+    RoleTypeDepartmentSchema,
+    RoleTypeCastCategorySchema,
+    RoleTypeCrewCategorySchema,
+    ZodDiscriminatedUnionParamHandler,
+} from "@noovies-tickets/common";
 
 const RoleTypeBaseSchema = z.object({
     roleName: NonEmptyStringSchema.max(150, {message: "Max. 150 Chars"}),
@@ -25,6 +31,10 @@ const RoleTypeCastSchema = RoleTypeBaseSchema.extend({
 export const RoleTypeInputSchema = z.discriminatedUnion(
     "department",
     [RoleTypeCrewSchema, RoleTypeCastSchema],
+    ZodDiscriminatedUnionParamHandler({
+        discriminator: "department",
+        invalidValue: "Must be `CAST` or `CREW`.",
+    }),
 );
 
 /** Input data for creating or updating a role type. */

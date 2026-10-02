@@ -15,6 +15,13 @@ export default defineConfig({
                     name: "frontend",
                 },
             },
+            {
+                extends: "./backend/vitest.config.ts",
+                test: {
+                    name: "backend",
+                    root: "./backend",
+                },
+            },
         ],
     },
 });

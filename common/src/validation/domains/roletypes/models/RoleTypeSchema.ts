@@ -11,6 +11,7 @@ import {
     RoleTypeDepartmentSchema,
 } from "../fields";
 import {IDStringSchema} from "../../../schema/additional-strings/id-strings/IDStringSchema";
+import {ZodDiscriminatedUnionParamHandler} from "../../../schema/discriminated-unions";
 
 const RoleTypeBaseSchema = z.object({
     _id: IDStringSchema.readonly(),
@@ -33,6 +34,10 @@ const RoleTypeCastSchema = RoleTypeBaseSchema.extend({
 export const RoleTypeSchema = z.discriminatedUnion(
     "department",
     [RoleTypeCastSchema, RoleTypeCrewSchema],
+    ZodDiscriminatedUnionParamHandler({
+        discriminator: "department",
+        invalidValue: "Must be `CAST` or `CREW`.",
+    }),
 );
 
 /** Represents the inferred type for a cast or crew role entity. */

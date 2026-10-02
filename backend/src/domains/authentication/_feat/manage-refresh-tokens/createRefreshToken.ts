@@ -9,6 +9,8 @@ import type {IpString} from "@noovies-tickets/common";
 import {getEnvVariables} from "@/shared/_feat/env/getEnvVariables";
 import {RefreshTokenModel} from "@/domains/authentication/_models/refresh-token/RefreshToken.model";
 import type {RefreshTokenSchemaFields} from "@/domains/authentication/_models/refresh-token/RefreshToken.types";
+import {createRefreshTokenHash} from "@/domains/authentication/_feat/manage-refresh-tokens/createRefreshTokenHash";
+import type {DocumentType} from "@/shared/_types/mongoose/DocumentType";
 
 type CreateConfig = {
     userIp?: IpString;
@@ -17,7 +19,7 @@ type CreateConfig = {
 }
 
 type TokenReturns = {
-    refreshToken: RefreshTokenSchemaFields;
+    refreshToken: DocumentType<RefreshTokenSchemaFields>;
     issuedToken: string;
 }
 
@@ -27,8 +29,7 @@ export async function createRefreshToken(
 ): Promise<TokenReturns> {
     const {REFRESH_TOKEN_LIFETIME} = getEnvVariables();
 
-    const rawToken = crypto.randomBytes(32).toString("hex");
-    const tokenHash = crypto.createHash("sha256").update(rawToken).digest("hex");
+    const {tokenHash, rawToken} = createRefreshTokenHash();
     const tokenFamily = family ?? crypto.randomUUID();
     const expiresAt = DateTime.now().plus({day: REFRESH_TOKEN_LIFETIME}).toJSDate();
 

@@ -2,11 +2,11 @@
  * @fileoverview Utility for constructing and signing the authenticated user session payload and token.
  */
 
-import {AuthTokenPayloadSchema, type AuthUserCredentials} from "@/domains/authentication";
 import createHttpError from "http-errors";
-import jwt from "jsonwebtoken";
 import type {UserSchemaFields} from "@/domains/users";
-import {getEnvVariables} from "@/shared/_feat";
+import {AuthTokenPayloadSchema} from "@/domains/authentication/_validation/AuthTokenPayloadSchema";
+import {type AuthUserCredentials} from "@/domains/authentication/_validation/AuthUserCredentialsSchema";
+import {generateAuthenticationHash} from "@/domains/authentication/_feat/login-user/generateAuthenticationHash";
 
 type TokenConfig = {
     user: UserSchemaFields;
@@ -16,8 +16,6 @@ type TokenConfig = {
 export function generateAuthenticationPayload(
     {user: {_id, name, email, uniqueCode, status, roles}}: TokenConfig
 ): AuthUserCredentials {
-    const {CREDENTIALS_EXPIRY_DURATION} = getEnvVariables();
-
     const {data: payload, success} = AuthTokenPayloadSchema.safeParse({
         isAdmin: roles.includes("ADMIN"),
         user: {_id, name, email, uniqueCode, status, roles},
@@ -28,7 +26,7 @@ export function generateAuthenticationPayload(
         throw createHttpError(500, "Unable to generate credentials. Please try again.");
     }
 
-    const authHash = jwt.sign(payload, process.env.JWT_SECRET!, {expiresIn: `${CREDENTIALS_EXPIRY_DURATION}m`});
+    const authHash = generateAuthenticationHash({payload});
 
     return {
         ...payload,

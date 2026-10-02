@@ -2,6 +2,7 @@ export * from "./additional-strings";
 export * from "./booleans";
 export * from "./cloudinary";
 export * from "./date-time";
+export * from "./discriminated-unions";
 export * from "./enums";
 export * from "./errors";
 export * from "./images";

@@ -18,8 +18,14 @@ export const AuthUserSchema = z.object({
     name: UserPersonalNameSchema,
     email: UserEmailSchema,
     uniqueCode: UserUniqueCodeSchema,
-    roles: generateArraySchema(UserRoleSchema),
     status: UserStatusSchema,
+    roles: z
+        .array(UserRoleSchema, {required_error: "Required", invalid_type_error: "Must be an array of user roles."})
+        .min(1, "Must have at least one role.")
+        .refine((values) => values.includes("USER"), "Must include the 'USER' role."),
+}, {
+    required_error: "Required",
+    invalid_type_error: "Must be a valid auth user object.",
 });
 
 /** Represents an authenticated user entity derived from AuthUserSchema. */

@@ -8,6 +8,7 @@ import {Genre, GenreSchema} from "@noovies-tickets/common";
 import {create, update} from "@/domains/genres/_feat/crud";
 import {GenreFormData} from "@/domains/genres/_feat/submit-form/schema/GenreFormSchema.ts";
 import {GenreCRUDMutationKeys, GenreCRUDQueryKeys} from "@/domains/genres/_feat/crud-hooks/keys";
+import {GenreAdminViewDataQueryKeys} from "@/domains/genres";
 
 /**
  * Manages Genre persistence including validation, cache invalidation, and form error mapping.
@@ -37,6 +38,7 @@ export function useGenreDataSubmit(): UseMutationResult<Genre, unknown, GenreFor
 
     const onSuccess = async () => {
         queryClient.invalidateQueries({queryKey: GenreCRUDQueryKeys.all, exact: false});
+        queryClient.invalidateQueries({queryKey: GenreAdminViewDataQueryKeys.itemDetails(), exact: false});
     };
 
     return useMutation({

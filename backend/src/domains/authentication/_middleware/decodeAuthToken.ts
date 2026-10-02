@@ -13,7 +13,11 @@ export function decodeAuthToken(token: string, options?: jwt.VerifyOptions): Aut
 
     try {
         decodedToken = jwt.verify(token, process.env.JWT_SECRET!, options);
-    } catch (e) {
+    } catch (error) {
+        if (error instanceof Error) {
+            throw createHttpError(401, `Authorization failed, error: ${error.message}`);
+        }
+
         throw createHttpError(401, "Authorization failed: Token verification error.");
     }
 
