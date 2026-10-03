@@ -3,13 +3,13 @@
  */
 
 import { Types } from "mongoose";
-import type { SeatType } from "@noovies-tickets/common";
+import type { TheatreSeatType } from "@noovies-tickets/common";
 
 /** Schema fields for the ReservedSeatSnapshot model. */
 export type ReservedSeatSnapshotSchemaFields = {
     seatMap: Types.ObjectId;
     seatIdentifier: string;
-    seatType: SeatType;
+    seatType: TheatreSeatType;
     seatLabel?: string;
     pricePaid: number;
 }

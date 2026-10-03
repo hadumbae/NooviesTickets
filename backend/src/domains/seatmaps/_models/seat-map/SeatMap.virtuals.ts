@@ -4,7 +4,7 @@
 
 import {SeatMapSchema} from "@/domains/seatmaps/_models/seat-map/SeatMap.schema.js";
 import mongooseLeanVirtuals from "mongoose-lean-virtuals";
-import type {SeatSchemaFields} from "@/domains/seats/_models";
+import type {TheatreSeatSchemaFields} from "@/domains/theatre-seats/_models";
 
 SeatMapSchema.virtual("finalPrice").get(function () {
     if (this.overridePrice) {
@@ -16,7 +16,7 @@ SeatMapSchema.virtual("finalPrice").get(function () {
 
 SeatMapSchema.virtual("x").get(function () {
     if (this.seat && typeof this.seat === "object") {
-        return (this.seat as SeatSchemaFields).x;
+        return (this.seat as TheatreSeatSchemaFields).x;
     }
 
     return undefined;
@@ -24,7 +24,7 @@ SeatMapSchema.virtual("x").get(function () {
 
 SeatMapSchema.virtual("y").get(function () {
     if (this.seat && typeof this.seat === "object") {
-        return (this.seat as SeatSchemaFields).y;
+        return (this.seat as TheatreSeatSchemaFields).y;
     }
 
     return undefined;
@@ -32,7 +32,7 @@ SeatMapSchema.virtual("y").get(function () {
 
 SeatMapSchema.virtual("row").get(function () {
     if (this.seat && typeof this.seat === "object") {
-        return (this.seat as SeatSchemaFields).row;
+        return (this.seat as TheatreSeatSchemaFields).row;
     }
 
     return undefined;
@@ -40,7 +40,7 @@ SeatMapSchema.virtual("row").get(function () {
 
 SeatMapSchema.virtual("seatLabel").get(function () {
     if (this.seat && typeof this.seat === "object") {
-        return (this.seat as SeatSchemaFields).seatLabel ?? undefined;
+        return (this.seat as TheatreSeatSchemaFields).seatLabel ?? undefined;
     }
 
     return undefined;

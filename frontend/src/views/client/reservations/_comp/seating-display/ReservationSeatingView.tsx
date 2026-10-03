@@ -7,7 +7,7 @@ import {cn} from "@/shared/_feat";
 import {
     ReservationSeatingElement
 } from "@/views/client/reservations/_comp/seating-display/ReservationSeatingElement.tsx";
-import {useOrganisedSeatingForLayout} from "@/domains/seats/_feat/handle-seat-layout";
+import {useOrganisedSeatingForLayout} from "@/domains/theatre-seats/_feat/handle-seat-layout";
 import {ReactElement} from "react";
 
 import {SeatMapDetails} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSchema";

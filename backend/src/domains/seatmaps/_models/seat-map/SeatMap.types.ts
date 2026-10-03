@@ -5,12 +5,12 @@
 import {Types} from "mongoose";
 import type {SeatMapStatus} from "@noovies-tickets/common";
 import type {ShowingSchemaFields} from "@/domains/showings/_models/showing/Showing.types.js";
-import type {SeatSchemaFields} from "@/domains/seats/_models";
+import type {TheatreSeatSchemaFields} from "@/domains/theatre-seats/_models";
 
 /** Input data required to create or update a seat map entry. */
 export type SeatMapInputData = {
     showing: Types.ObjectId | ShowingSchemaFields;
-    seat: Types.ObjectId | SeatSchemaFields;
+    seat: Types.ObjectId | TheatreSeatSchemaFields;
     basePrice: number;
     priceMultiplier: number;
     overridePrice?: number;
@@ -25,5 +25,5 @@ export type SeatMapSchemaFields = SeatMapInputData & {
 
 /** A seat map document where the seat field is populated with full seat details. */
 export type SeatMapWithSeat = Omit<SeatMapSchemaFields, "seat"> & {
-    seat: SeatSchemaFields;
+    seat: TheatreSeatSchemaFields;
 }

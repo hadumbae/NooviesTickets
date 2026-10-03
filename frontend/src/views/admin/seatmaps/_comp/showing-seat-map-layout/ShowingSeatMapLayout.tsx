@@ -6,7 +6,7 @@ import {cn} from "@/shared/_feat";
 import {ReactElement} from "react";
 
 import {SeatMapDetails} from "@/domains/seatmaps";
-import {generateSeatElementRenderKey, useOrganisedSeatingForLayout} from "@/domains/seats";
+import {generateSeatElementRenderKey, useOrganisedSeatingForLayout} from "@/domains/theatre-seats";
 import {ShowingSeatMapElement} from "@/views/admin/seatmaps/_comp/showing-seat-map-layout/ShowingSeatMapElement.tsx";
 
 /** Props for the ShowingSeatMapLayout component. */

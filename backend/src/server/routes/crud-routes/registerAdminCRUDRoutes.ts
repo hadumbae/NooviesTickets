@@ -9,7 +9,7 @@ import type {RouteRegistration} from "../../registerRoutes.js";
 import {GenreCRUDRoutes} from "@/domains/genres/_feat/crud";
 import {PersonCRUDRoutes} from "@/domains/persons/_feat/crud";
 import {TheatreScreenCRUDRoutes} from "@/domains/theatre-screens/_feat/crud";
-import {SeatCRUDRoutes} from "@/domains/seats/_feat/crud";
+import {TheatreSeatCRUDRoutes} from "@/domains/theatre-seats/_feat/crud";
 import {TheatreCRUDRoutes} from "@/domains/theatres/_feat/crud";
 import {MovieCRUDRoutes} from "@/domains/movies/_feat/crud/MovieCRUDRoutes";
 import {RoleTypeCRUDRoutes} from "@/domains/role-types/_feat/crud";
@@ -30,7 +30,7 @@ const setupRoutes: RouteRegistration[] = [
     {path: "/api/v1/admin/genres/crud", router: GenreCRUDRoutes},
 
     {path: "/api/v1/admin/theatre-screens/crud", router: TheatreScreenCRUDRoutes},
-    {path: "/api/v1/admin/seats/crud", router: SeatCRUDRoutes},
+    {path: "/api/v1/admin/theatre-seats/crud", router: TheatreSeatCRUDRoutes},
     {path: "/api/v1/admin/theatres/crud", router: TheatreCRUDRoutes},
 
     {path: "/api/v1/admin/movies/crud", router: MovieCRUDRoutes},

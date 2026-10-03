@@ -6,8 +6,8 @@ import {ReactElement, useCallback} from "react";
 import {Button} from "@/views/shared/_comp/ui";
 import {useRequiredContext} from "@/shared/_feat/use-context/useRequiredContext.ts";
 
-import {SeatLayoutIconConstant} from "@/domains/seats";
-import {SeatLayoutNonSeatElement} from "@/views/admin/seats";
+import {TheatreSeatLayoutIconConstant} from "@/domains/theatre-seats";
+import {SeatLayoutNonSeatElement} from "@/views/admin/theatre-seats";
 import {SeatMapDetails, SeatMapDetailsPanelSetterContext} from "@/domains/seatmaps";
 
 /** Props for the ShowingSeatMapElement component. */
@@ -46,7 +46,7 @@ export function ShowingSeatMapElement({element}: ShowingSeatMapElementProps): Re
     }
 
     const {seat: {layoutType}} = element;
-    const Icon = SeatLayoutIconConstant[layoutType];
+    const Icon = TheatreSeatLayoutIconConstant[layoutType];
 
     return (
         <Button variant="link" className="p-1 hover:border hover:shadow" onClick={onClick}>

@@ -3,7 +3,7 @@
  */
 
 import {Schema} from "mongoose";
-import {SeatTypeConstant} from "@noovies-tickets/common";
+import {TheatreSeatTypeConstant} from "@noovies-tickets/common";
 import type {
     ReservedSeatSnapshotSchemaFields
 } from "@/domains/seatmaps/_models/seat-map-snapshot/ReservedSeatSnapshot.types.js";
@@ -28,7 +28,7 @@ export const ReservedSeatSnapshotSchema = new Schema<ReservedSeatSnapshotSchemaF
     /** Logical seat classification (e.g. regular, VIP, disabled). */
     seatType: {
         type: String,
-        enum: SeatTypeConstant,
+        enum: TheatreSeatTypeConstant,
         required: [true, "Seat Type is required."],
     },
 

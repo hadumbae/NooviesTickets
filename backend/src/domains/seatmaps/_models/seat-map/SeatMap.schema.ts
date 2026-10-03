@@ -16,7 +16,7 @@ export const SeatMapSchema = new Schema<SeatMapSchemaFields>({
 
     seat: {
         type: Schema.Types.ObjectId,
-        ref: "Seat",
+        ref: "TheatreSeat",
         required: [true, "Seat is required."],
     },
 

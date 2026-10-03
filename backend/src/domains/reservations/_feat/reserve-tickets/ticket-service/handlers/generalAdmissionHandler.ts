@@ -4,7 +4,7 @@
 
 import {fetchPopulatedShowing} from "@/domains/showings/_feat/fetch-showings/fetchPopulatedShowing";
 import {BookingError} from "@/shared/_errors/reservations/BookingError";
-import {SeatModel} from "@/domains/seats/_models";
+import {TheatreSeatModel} from "@/domains/theatre-seats/_models";
 import {ReservationModel, type ReservationSchemaFields} from "@/domains/reservations/_models/reservation";
 import type {ReserveTicketPersistenceData} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/persistenceSchema";
 import {saveTicketReservation} from "@/domains/reservations/_feat/reserve-tickets/ticket-service/saveTicketReservation";
@@ -20,7 +20,7 @@ export async function reserveGeneralAdmissionTickets(data: ReserveGeneralTicketD
     const {showing: showingID, ticketCount: seatsToReserve} = data;
     const {ticketPrice, screen: {_id: screenID}} = await fetchPopulatedShowing(showingID);
 
-    const totalScreenSeats = await SeatModel.countDocuments({
+    const totalScreenSeats = await TheatreSeatModel.countDocuments({
         screen: screenID,
         layoutType: "SEAT",
     });

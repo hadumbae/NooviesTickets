@@ -6,7 +6,7 @@
 import type {SlugString} from "@noovies-tickets/common";
 import type {TheatreWithVirtuals} from "@/domains/theatres/_models/theatre";
 import type {TheatreScreenSchemaFields} from "@/domains/theatre-screens/_models/theatre-screen";
-import type {SeatSchemaFields} from "@/domains/seats/_models";
+import type {TheatreSeatSchemaFields} from "@/domains/theatre-seats/_models";
 import type {ShowingSchemaFields} from "@/domains/showings";
 
 /**
@@ -24,6 +24,6 @@ export type FetchTheatreScreenDetailsViewDataConfig = {
 export type TheatreScreenDetailsViewData = {
     theatre: TheatreWithVirtuals;
     screen: TheatreScreenSchemaFields;
-    seats: SeatSchemaFields[];
+    seats: TheatreSeatSchemaFields[];
     recentShowings: ShowingSchemaFields[]
 };

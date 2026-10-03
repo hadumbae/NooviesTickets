@@ -4,12 +4,12 @@
 
 import {useRequiredContext} from "@/shared/_feat/use-context/useRequiredContext.ts";
 import {Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle,} from "@/views/shared/_comp/ui/sheet";
-import {formatSeatLabel} from "@/domains/seats/_feat/formatters";
+import {formatSeatLabel} from "@/domains/theatre-seats/_feat/formatters";
 import {convertToTitleCase} from "@/shared/_feat/formatters/convertToTitleCase.ts";
 import {ScrollArea} from "@/views/shared/_comp/ui/scroll-area.tsx";
 import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {ReactElement} from "react";
-import {SeatTypeLabelMap} from "@/domains/seats";
+import {TheatreSeatTypeLabelMap} from "@/domains/theatre-seats";
 
 import {SeatMapDetails} from "@/domains/seatmaps/_schema/model/SeatMapDetailsSchema";
 import {
@@ -49,7 +49,7 @@ export function SeatMapDetailsPanel({showing}: PanelProps): ReactElement {
     const editEntity = simplifySeatMapDetails(seatMap);
 
     const formattedStatus = convertToTitleCase(status);
-    const formattedSeatType = SeatTypeLabelMap[seatType];
+    const formattedSeatType = TheatreSeatTypeLabelMap[seatType];
 
     const sheetTitle = formatSeatLabel(seat);
     const sheetDescription = `${formattedSeatType} • ${formattedStatus}`;

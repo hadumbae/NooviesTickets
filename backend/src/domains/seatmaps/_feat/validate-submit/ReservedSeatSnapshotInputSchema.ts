@@ -3,7 +3,7 @@
  */
 
 import {z} from "zod";
-import {SeatTypeSchema} from "@noovies-tickets/common";
+import {TheatreSeatTypeSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 
@@ -11,7 +11,7 @@ import {ObjectIdSchema} from "@/shared/_schema/mongoose/ObjectIdSchema";
 export const ReservedSeatSnapshotInputSchema = z.object({
     seatMap: ObjectIdSchema,
     seatIdentifier: NonEmptyStringSchema.max(20, "Must be 20 characters or less."),
-    seatType: SeatTypeSchema,
+    seatType: TheatreSeatTypeSchema,
     pricePaid: PositiveNumberSchema,
     seatLabel: NonEmptyStringSchema.max(50, "Must be 50 characters or less.").optional(),
 });

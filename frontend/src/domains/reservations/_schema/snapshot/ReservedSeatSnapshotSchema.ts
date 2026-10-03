@@ -5,7 +5,7 @@
 
 import {IDStringSchema, PositiveNumberSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {SeatTypeSchema} from "@noovies-tickets/common";
+import {TheatreSeatTypeSchema} from "@noovies-tickets/common";
 import {z} from "zod";
 
 /**
@@ -14,7 +14,7 @@ import {z} from "zod";
 export const ReservedSeatSnapshotSchema = z.object({
     seatMap: IDStringSchema,
     seatIdentifier: NonEmptyStringSchema.max(20, "Must be 20 characters or less."),
-    seatType: SeatTypeSchema,
+    seatType: TheatreSeatTypeSchema,
     pricePaid: PositiveNumberSchema,
     seatLabel: NonEmptyStringSchema.max(50, "Must be 50 characters or less.").optional(),
 });

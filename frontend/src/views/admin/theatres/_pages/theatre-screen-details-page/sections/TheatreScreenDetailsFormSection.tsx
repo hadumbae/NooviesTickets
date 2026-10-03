@@ -5,8 +5,8 @@
 import {ReactElement, useState} from "react";
 import {PageSectionHeader} from "@/views/shared/_comp";
 import {Card, CardContent, Collapsible, CollapsibleContent, CollapsibleTrigger} from "@/views/shared/_comp/ui";
-import {SeatFormSubmitList, SeatSubmitForm, SeatSubmitFormActions, SeatSubmitFormView} from "@/views/admin/seats";
-import {SeatDetails, SeatFormData, SeatFormValues} from "@/domains/seats";
+import {TheatreSeatFormSubmitList, TheatreSeatSubmitForm, TheatreSeatSubmitFormActions, TheatreSeatSubmitFormView} from "@/views/admin/theatre-seats";
+import {TheatreSeatDetails, TheatreSeatFormData, TheatreSeatFormValues} from "@/domains/theatre-seats";
 import {HideFields} from "@/shared/_types";
 import {ObjectIdString} from "@noovies-tickets/common";
 import {ChevronDown, ChevronUp} from "lucide-react";
@@ -24,11 +24,11 @@ export function TheatreScreenDetailsFormSection(
     {screenID, theatreID}: SectionProps
 ): ReactElement {
     const [isCreating, setIsCreating] = useState<boolean>(false);
-    const [returnedSeating, setReturnedSeating] = useState<SeatDetails[]>([]);
+    const [returnedSeating, setReturnedSeating] = useState<TheatreSeatDetails[]>([]);
 
-    const presetValues: Partial<SeatFormData> = {screen: screenID, theatre: theatreID};
-    const hideFields: HideFields<SeatFormValues> = {screen: true, theatre: true};
-    const onSeatCreation = (seat: SeatDetails) => setReturnedSeating((prev: SeatDetails[]) => [...prev, seat]);
+    const presetValues: Partial<TheatreSeatFormData> = {screen: screenID, theatre: theatreID};
+    const hideFields: HideFields<TheatreSeatFormValues> = {screen: true, theatre: true};
+    const onSeatCreation = (seat: TheatreSeatDetails) => setReturnedSeating((prev: TheatreSeatDetails[]) => [...prev, seat]);
 
     return (
         <section className="space-y-4">
@@ -43,19 +43,19 @@ export function TheatreScreenDetailsFormSection(
                 </CollapsibleTrigger>
                 <CollapsibleContent className="pt-4">
                     <Card>
-                        <SeatSubmitForm presetValues={presetValues} onSubmitSuccess={onSeatCreation}>
+                        <TheatreSeatSubmitForm presetValues={presetValues} onSubmitSuccess={onSeatCreation}>
                             <CardContent className="p-4 space-y-4">
-                                <SeatSubmitFormView hideFields={hideFields}/>
-                                <SeatSubmitFormActions/>
+                                <TheatreSeatSubmitFormView hideFields={hideFields}/>
+                                <TheatreSeatSubmitFormActions/>
                             </CardContent>
-                        </SeatSubmitForm>
+                        </TheatreSeatSubmitForm>
                     </Card>
 
                     {returnedSeating.length > 0 && (
                         <section className="space-y-2">
                             <PageSectionHeader as="h2" text="Seats"/>
 
-                            <SeatFormSubmitList
+                            <TheatreSeatFormSubmitList
                                 returnedSeating={returnedSeating}
                                 setReturnedSeating={setReturnedSeating}
                             />

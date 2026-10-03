@@ -9,7 +9,7 @@ import type {VirtualPipelineStages} from "@/shared/_types";
 export const SeatMapVirtualPipelines: VirtualPipelineStages = [
     {
         $lookup: {
-            from: "seats",
+            from: "theatreseats",
             localField: "seat",
             foreignField: "_id",
             as: "refSeat",

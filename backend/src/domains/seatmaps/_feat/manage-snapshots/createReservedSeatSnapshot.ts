@@ -7,11 +7,11 @@ import type {SeatMapSchemaFields} from "@/domains/seatmaps/_models/seat-map/Seat
 import {ReservedSeatSnapshotInputSchema} from "@/domains/seatmaps/_feat/validate-submit/ReservedSeatSnapshotInputSchema";
 import {InconsistentDataError} from "@/shared/_errors/InconsistentDataError";
 import {ReservedSeatSnapshotModel} from "@/domains/seatmaps/_models/seat-map-snapshot/ReservedSeatSnapshot.model.js";
-import type {SeatSchemaFields} from "@/domains/seats/_models";
+import type {TheatreSeatSchemaFields} from "@/domains/theatre-seats/_models";
 import {generateArraySchema} from "@noovies-tickets/common";
 
 type SeatMapWithInfo = Omit<SeatMapSchemaFields, "seat"> & {
-    seat: SeatSchemaFields;
+    seat: TheatreSeatSchemaFields;
 };
 
 export async function createReservedSeatSnapshot(

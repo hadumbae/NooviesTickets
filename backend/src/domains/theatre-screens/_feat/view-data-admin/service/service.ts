@@ -7,7 +7,7 @@ import {TheatreModel, type TheatreWithVirtuals} from "@/domains/theatres/_models
 import {TheatreVirtualPopulationPaths} from "@/domains/theatres/_feat/crud";
 import createHttpError from "http-errors";
 import {TheatreScreenModel} from "@/domains/theatre-screens/_models/theatre-screen";
-import {SeatModel} from "@/domains/seats/_models";
+import {TheatreSeatModel} from "@/domains/theatre-seats/_models";
 import type {
     FetchTheatreScreenDetailsViewDataConfig,
     TheatreScreenDetailsViewData
@@ -37,7 +37,7 @@ export async function fetchTheatreScreenDetailsViewData(
         throw createHttpError(404, "TheatreScreen not found!");
     }
 
-    const seats = await SeatModel
+    const seats = await TheatreSeatModel
         .find({screen: screen._id})
         .populate(["screen", "theatre"])
         .lean();

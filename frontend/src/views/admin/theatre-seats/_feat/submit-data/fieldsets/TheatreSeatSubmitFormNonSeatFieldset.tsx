@@ -1,0 +1,70 @@
+/**
+ * @fileoverview Renders the form fields for non-seat elements such as aisles and stairs.
+ */
+
+import {ReactElement} from 'react';
+import {useFormContext} from "react-hook-form";
+import {cn} from "@/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui";
+import {HookFormInput} from "@/views/shared/_feat";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {TheatreSeatFormValues} from "@/domains/theatre-seats";
+
+type ViewProps = FormFieldsetProps<TheatreSeatFormValues> & {
+    isNestedView?: boolean;
+}
+
+/** Renders the non-seat fieldset containing row and coordinate inputs. */
+export function TheatreSeatSubmitFormNonSeatFieldset(
+    {disableFields, hideFields, isNestedView, className}: ViewProps
+): ReactElement {
+    const {control} = useFormContext();
+
+    return (
+        <fieldset className={cn("space-y-4", className)}>
+            <div>
+                <h3 className="fieldset-header">Seat</h3>
+                <Separator/>
+            </div>
+
+            <div className={cn("grid gap-2 grid-cols-3", isNestedView && "max-lg:grid-cols-2")}>
+                {
+                    !hideFields?.row &&
+                    <HookFormInput
+                        name="row"
+                        label="Row"
+                        control={control}
+                        classNames={{container: cn(isNestedView && "max-lg:col-span-2")}}
+                        disabled={disableFields?.row}
+                    />
+                }
+
+                {
+                    !hideFields?.x &&
+                    <HookFormInput
+                        name="x"
+                        label="X Coord."
+                        type="number"
+                        min={1}
+                        step={1}
+                        control={control}
+                        disabled={disableFields?.x}
+                    />
+                }
+
+                {
+                    !hideFields?.y &&
+                    <HookFormInput
+                        name="y"
+                        label="Y Coord."
+                        type="number"
+                        min={1}
+                        step={1}
+                        control={control}
+                        disabled={disableFields?.y}
+                    />
+                }
+            </div>
+        </fieldset>
+    );
+}

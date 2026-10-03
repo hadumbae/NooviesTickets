@@ -20,7 +20,7 @@ TheatreSchema.virtual("screenCount", {
  * Virtual: seatCount
  */
 TheatreSchema.virtual("seatCount", {
-    ref: "Seat",
+    ref: "TheatreSeat",
     localField: "_id",
     foreignField: "theatre",
     count: true,

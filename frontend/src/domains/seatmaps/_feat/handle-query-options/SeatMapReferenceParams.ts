@@ -5,7 +5,7 @@
 import {z} from "zod";
 import {IDStringSchema, PositiveNumberSchema, ShowingStatusSchema} from "@noovies-tickets/common";
 import {NonEmptyStringSchema} from "@noovies-tickets/common";
-import {SeatTypeSchema} from "@noovies-tickets/common";
+import {TheatreSeatTypeSchema} from "@noovies-tickets/common";
 
 /** Zod schema for validating seat map reference filter parameters. */
 export const SeatMapReferenceFilterSchema = z.object({
@@ -14,7 +14,7 @@ export const SeatMapReferenceFilterSchema = z.object({
     showingStatus: ShowingStatusSchema.optional(),
     seatRow: NonEmptyStringSchema.max(10, "Must be 10 characters or less.").optional(),
     seatNumber: PositiveNumberSchema.optional(),
-    seatType: SeatTypeSchema.optional(),
+    seatType: TheatreSeatTypeSchema.optional(),
 });
 
 /** Inferred TypeScript type for seat map reference parameters. */

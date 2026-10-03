@@ -1,0 +1,39 @@
+/**
+ * @fileoverview Header component for the seat-details panel.
+ */
+
+import {ReactElement} from "react";
+import {SheetDescription, SheetHeader, SheetTitle} from "@/views/shared/_comp/ui/sheet";
+import {buildString} from "@/shared/_feat/formatters/buildString.ts";
+import {TheatreSeatLayoutTypeLabelMap, TheatreSeatTypeLabelMap, useTheatreSeatPanelStateContext} from "@/domains/theatre-seats";
+
+/** Header component for the seat-details panel. */
+export function TheatreSeatContextPanelHeader(): ReactElement {
+    const {seat} = useTheatreSeatPanelStateContext();
+
+    if (!seat) throw new Error("Seat missing in component.");
+
+    const {row, x, y, layoutType} = seat;
+
+    if (layoutType !== "SEAT") {
+        return (
+            <SheetHeader className="space-y-0">
+                <SheetTitle className="text-[45px]">Row {row}</SheetTitle>
+                <SheetDescription>
+                    {TheatreSeatLayoutTypeLabelMap[layoutType]} • XY {x},{y}
+                </SheetDescription>
+            </SheetHeader>
+        );
+    }
+
+    const {seatNumber, seatType, seatLabel} = seat;
+    const titleString = `${row}${seatNumber}`;
+    const descString = buildString([TheatreSeatTypeLabelMap[seatType], `XY ${x},${y}`, seatLabel && `${seatLabel}`], " • ");
+
+    return (
+        <SheetHeader className="space-y-0">
+            <SheetTitle className="text-[45px]">{titleString}</SheetTitle>
+            <SheetDescription>{descString}</SheetDescription>
+        </SheetHeader>
+    );
+}

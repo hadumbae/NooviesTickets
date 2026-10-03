@@ -6,8 +6,8 @@ import {ReactElement} from "react";
 import {Separator} from "@/views/shared/_comp/ui/separator.tsx";
 
 import {SeatMapFormValues} from "@/domains/seatmaps";
-import {SeatQueryOptions} from "@/domains/seats";
-import {SeatHookFormSelect} from "@/views/admin/seats";
+import {TheatreSeatQueryOptions} from "@/domains/theatre-seats";
+import {TheatreSeatHookFormSelect} from "@/views/admin/theatre-seats";
 import {SeatMapStatusRadioGroup} from "@/views/admin/seatmaps/_feat/form-input";
 import {PageSectionHeader} from "@/views/shared/_comp/page";
 import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
@@ -22,7 +22,7 @@ type ViewProps = FormFieldsetProps<SeatMapFormValues> & {
 export function SeatMapSubmitFormDetailsFields(
     {className, disableFields, screen}: ViewProps
 ): ReactElement {
-    const seatFilters: SeatQueryOptions = {
+    const seatFilters: TheatreSeatQueryOptions = {
         screen,
         layoutType: "SEAT",
         sortByRow: 1,
@@ -38,7 +38,7 @@ export function SeatMapSubmitFormDetailsFields(
 
             <div className="grid grid-cols-1 gap-4">
                 {!disableFields?.seat && (
-                    <SeatHookFormSelect name="seat" label="Seat" filters={seatFilters}/>
+                    <TheatreSeatHookFormSelect name="seat" label="Seat" filters={seatFilters}/>
                 )}
 
                 {!disableFields?.status && (

@@ -1,0 +1,66 @@
+/**
+ * @fileoverview Fieldset component for rendering seat-specific inputs like type, pricing, and availability.
+ */
+
+import {ReactElement} from 'react';
+import {useFormContext} from "react-hook-form";
+import {cn} from "@/shared/_feat";
+import {Separator} from "@/views/shared/_comp/ui";
+import {HookFormCheckbox, HookFormInput} from "@/views/shared/_feat";
+import {FormFieldsetProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {TheatreSeatTypeHookFormSelect} from "@/views/admin/theatre-seats/_feat/form-inputs";
+import {TheatreSeatFormValues} from "@/domains/theatre-seats";
+
+type ViewProps = FormFieldsetProps<TheatreSeatFormValues> & {
+    isNestedView?: boolean;
+}
+
+/** Renders seat metadata fields such as type, price modifier, and availability status. */
+export function TheatreSeatSubmitFormSeatFieldset(
+    {disableFields, hideFields, isNestedView, className}: ViewProps,
+): ReactElement {
+    const {control} = useFormContext();
+
+    return (
+        <fieldset className={cn("space-y-4", className)}>
+            <div>
+                <h3 className="subsection-title">Seat</h3>
+                <Separator/>
+            </div>
+
+            <div className={cn("grid gap-2", isNestedView ? "grid-cols-1" : "grid-cols-2")}>
+                {
+                    !hideFields?.seatType &&
+                    <TheatreSeatTypeHookFormSelect
+                        name="seatType"
+                        label="Seat Type"
+                        disabled={disableFields?.seatType}
+                    />
+                }
+
+                {
+                    !hideFields?.priceMultiplier &&
+                    <HookFormInput
+                        name="priceMultiplier"
+                        label="Price Multiplier"
+                        type="number"
+                        min={0}
+                        step={0.01}
+                        control={control}
+                        disabled={disableFields?.priceMultiplier}
+                    />
+                }
+
+                {
+                    !hideFields?.isAvailable &&
+                    <HookFormCheckbox
+                        name="isAvailable"
+                        label="Is Available?"
+                        classNames={{container: cn(!isNestedView && "col-span-2")}}
+                        disabled={disableFields?.isAvailable}
+                    />
+                }
+            </div>
+        </fieldset>
+    );
+}

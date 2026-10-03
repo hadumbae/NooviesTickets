@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from "react";
-import {SeatDetails, SeatPanelContextProvider} from "@/domains/seats";
-import {ScreenSeatLayout, SeatContextPanel} from "@/views/admin/seats";
+import {TheatreSeatDetails, TheatreSeatPanelContextProvider} from "@/domains/theatre-seats";
+import {TheatreScreenSeatLayout, TheatreSeatContextPanel} from "@/views/admin/theatre-seats";
 import {EmptyArrayContainer, PageSectionHeader} from "@/views/shared/_comp";
 import {Card, CardContent, ScrollArea, ScrollBar} from "@/views/shared/_comp/ui";
 
 /** Props for the TheatreScreenDetailsLayoutSection component. */
 type SectionProps = {
-    seating: SeatDetails[];
+    seating: TheatreSeatDetails[];
 };
 
 /**
@@ -20,7 +20,7 @@ export function TheatreScreenDetailsLayoutSection(
     {seating}: SectionProps
 ): ReactElement {
     return (
-        <SeatPanelContextProvider>
+        <TheatreSeatPanelContextProvider>
             <section className="space-y-4">
                 <PageSectionHeader>Seat Layout</PageSectionHeader>
 
@@ -29,7 +29,7 @@ export function TheatreScreenDetailsLayoutSection(
                         seating.length > 0 ? (
                             <Card>
                                 <CardContent className="p-4">
-                                    <ScreenSeatLayout seating={seating}/>
+                                    <TheatreScreenSeatLayout seating={seating}/>
                                 </CardContent>
                             </Card>
                         ) : (
@@ -41,9 +41,9 @@ export function TheatreScreenDetailsLayoutSection(
                     }
 
                     <ScrollBar orientation="horizontal"/>
-                    <SeatContextPanel/>
+                    <TheatreSeatContextPanel/>
                 </ScrollArea>
             </section>
-        </SeatPanelContextProvider>
+        </TheatreSeatPanelContextProvider>
     );
 }

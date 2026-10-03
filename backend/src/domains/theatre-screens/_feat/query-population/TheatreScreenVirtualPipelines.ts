@@ -17,7 +17,7 @@ import type {VirtualPipelineStages} from "@/shared/_types";
 export const TheatreScreenVirtualPipelines: VirtualPipelineStages = [
     {
         $lookup: {
-            from: "seats",
+            from: "theatreseats",
             localField: "_id",
             foreignField: "screen",
             as: "vpSeats",

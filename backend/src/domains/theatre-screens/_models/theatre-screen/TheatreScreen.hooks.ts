@@ -18,7 +18,7 @@ import type { TheatreScreenSchemaFields } from "./TheatreScreen.types";
 import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model";
 import {generateSlug} from "@noovies-tickets/common";
 import {TheatreModel} from "@/domains/theatres/_models/theatre";
-import {SeatModel} from "@/domains/seats/_models";
+import {TheatreSeatModel} from "@/domains/theatre-seats/_models";
 
 /**
  * Document-level validation hook.
@@ -88,7 +88,7 @@ TheatreScreenSchema.post(
                 { screens: this._id },
                 { $pull: { screens: this._id } },
             ),
-            SeatModel.deleteMany({ screen: this._id }),
+            TheatreSeatModel.deleteMany({ screen: this._id }),
             ShowingModel.deleteMany({ screen: this._id }),
         ]);
     },
@@ -113,7 +113,7 @@ TheatreScreenSchema.post(
                 { screens: _id },
                 { $pull: { screens: _id } },
             ),
-            SeatModel.deleteMany({ screen: _id }),
+            TheatreSeatModel.deleteMany({ screen: _id }),
             ShowingModel.deleteMany({ screen: _id }),
         ]);
     },

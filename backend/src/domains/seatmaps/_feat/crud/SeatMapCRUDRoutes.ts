@@ -22,7 +22,7 @@ import {SeatMapQueryMatchStageSchema, SeatMapQuerySortStageSchema} from "@/domai
 import {SeatMapPopulationPaths} from "@/domains/seatmaps/_feat/query-population";
 import {handleDuplicateIndex} from "@/domains/seatmaps/_models/seat-map/SeatMap.handlers";
 import {verifyReferencesExist} from "@/shared/_feat";
-import {SeatModel} from "@/domains/seats";
+import {TheatreSeatModel} from "@/domains/theatre-seats";
 import {ShowingModel} from "@/domains/showings";
 
 const matchSchema = SeatMapQueryMatchStageSchema;
@@ -31,7 +31,7 @@ const sortSchema = SeatMapQuerySortStageSchema;
 const hasReferences = verifyReferencesExist({
     statusCode: 422,
     refs: [
-        {key: "seat", model: SeatModel},
+        {key: "seat", model: TheatreSeatModel},
         {key: "showing", model: ShowingModel},
     ]
 });

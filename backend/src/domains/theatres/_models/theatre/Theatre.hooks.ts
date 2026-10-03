@@ -10,7 +10,7 @@ import {TheatreScreenModel} from "@/domains/theatre-screens/_models/theatre-scre
 import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model";
 import type {TheatreSchemaFields} from "./Theatre.types";
 import {generateSlug} from "@noovies-tickets/common";
-import {SeatModel} from "@/domains/seats/_models";
+import {TheatreSeatModel} from "@/domains/theatre-seats/_models";
 
 /**
  * Pre-validation Hook: Slug Synchronization
@@ -59,7 +59,7 @@ const performCascadeCleanup = async (theatreId: any) => {
 
     await Promise.all([
         TheatreScreenModel.deleteMany({theatre: theatreId}),
-        SeatModel.deleteMany({theatre: theatreId}),
+        TheatreSeatModel.deleteMany({theatre: theatreId}),
         ShowingModel.deleteMany({theatre: theatreId}),
     ]);
 };

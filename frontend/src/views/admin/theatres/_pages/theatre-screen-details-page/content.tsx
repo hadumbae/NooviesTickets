@@ -12,7 +12,7 @@ import {
 
 import {TheatreScreenWithVirtuals} from "@/domains/theatre-screens/_schema/model";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
-import {SeatDetails} from "@/domains/seats/_schema/model";
+import {TheatreSeatDetails} from "@/domains/theatre-seats/_schema/model";
 import {PageHeader} from "@/views/shared/_comp";
 import {
     TheatreScreenDetailsFormSection,
@@ -27,7 +27,7 @@ import {ShowingDetails} from "@/domains/showings/_schema/showing/ShowingDetailsS
 type ContentProps = {
     theatre: TheatreDetails;
     screen: TheatreScreenWithVirtuals;
-    seats: SeatDetails[];
+    seats: TheatreSeatDetails[];
     recentShowings: ShowingDetails[];
     setTitle: (title: string) => void;
 };

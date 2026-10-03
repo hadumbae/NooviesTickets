@@ -3,7 +3,7 @@
  */
 
 import { ShowingPopulationPipelines } from "@/domains/showings/_feat/query-population/ShowingPopulationPipelines";
-import { SeatPopulationPipelines } from "@/domains/seats/_feat/aggregate";
+import { TheatreSeatPopulationPipelines } from "@/domains/theatre-seats/_feat/aggregate";
 import type {PopulationPipelineStages} from "@/shared/_types";
 
 /**
@@ -21,11 +21,11 @@ export const SeatMapPopulationPipelines: PopulationPipelineStages = [
     },
     {
         $lookup: {
-            from: "seats",
+            from: "theatreseats",
             localField: "seat",
             foreignField: "_id",
             as: "seat",
-            pipeline: SeatPopulationPipelines,
+            pipeline: TheatreSeatPopulationPipelines,
         },
     },
     {

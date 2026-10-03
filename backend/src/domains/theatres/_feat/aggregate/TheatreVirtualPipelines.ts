@@ -21,7 +21,7 @@ export const TheatreVirtualPipelines: PipelineStage[] = [
     },
     {
         $lookup: {
-            from: "seats",
+            from: "theatreseats",
             localField: "_id",
             foreignField: "theatre",
             as: "tempSeats",

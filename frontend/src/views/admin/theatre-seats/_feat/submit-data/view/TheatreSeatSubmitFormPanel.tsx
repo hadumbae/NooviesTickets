@@ -1,0 +1,88 @@
+/**
+ * @fileoverview Slide-over panel (Sheet) component for creating or editing seat entities.
+ */
+
+import {ReactElement, ReactNode} from "react";
+import {RotateCcw} from "lucide-react";
+import {useFormContext} from "react-hook-form";
+import {useBaseFormContext} from "@/shared/_feat/generic-form-context";
+import {UIOpenStateProps} from "@/shared/_types";
+import {FormViewProps} from "@/shared/_feat/submit-data/formTypes.ts";
+import {cn} from "@/shared/_feat/handle-ui/cn.ts";
+import {TheatreSeatFormValues} from "@/domains/theatre-seats/_feat/submit-data/schema/TheatreSeatFormSchema.ts";
+import {TheatreSeatSubmitFormView} from "@/views/admin/theatre-seats/_feat/submit-data/view/TheatreSeatSubmitFormView.tsx";
+import {
+    Button,
+    ScrollArea,
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger
+} from "@/views/shared/_comp/ui";
+
+/** Props for the TheatreSeatSubmitFormPanel component. */
+type PanelProps = UIOpenStateProps & FormViewProps<TheatreSeatFormValues> & {
+    children?: ReactNode;
+    isEditing?: boolean;
+};
+
+/**
+ * A side-sheet component that orchestrates the seat submission form.
+ */
+export function TheatreSeatSubmitFormPanel(
+    {children, isOpen, setIsOpen, disableFields, hideFields, isEditing, className}: PanelProps
+): ReactElement {
+
+    const {reset} = useFormContext();
+    const {formID, isPending} = useBaseFormContext();
+
+    const action = isEditing ? "Update" : "Create";
+    const sheetTitle = `${action} Seat`;
+    const sheetDescription = `${action} seats by submitting data.`;
+
+    return (
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+                {children ? children : <Button variant="outline">Open</Button>}
+            </SheetTrigger>
+            <SheetContent className="flex flex-col">
+                <SheetHeader>
+                    <SheetTitle>{sheetTitle}</SheetTitle>
+                    <SheetDescription>{sheetDescription}</SheetDescription>
+                </SheetHeader>
+
+                <ScrollArea className="flex-1 px-1">
+                    <div className={cn("space-y-4 pt-4", className)}>
+                        <TheatreSeatSubmitFormView
+                            disableFields={disableFields}
+                            hideFields={hideFields}
+                        />
+
+                        <div className="flex items-center space-x-2 pt-4">
+                            <Button
+                                form={formID}
+                                variant="primary"
+                                type="submit"
+                                className="flex-1"
+                                disabled={isPending}
+                            >
+                                {isPending ? "Submitting..." : "Submit"}
+                            </Button>
+
+                            <Button
+                                variant="secondary"
+                                type="button"
+                                disabled={isPending}
+                                onClick={() => reset()}
+                            >
+                                <RotateCcw className="h-4 w-4"/>
+                            </Button>
+                        </div>
+                    </div>
+                </ScrollArea>
+            </SheetContent>
+        </Sheet>
+    );
+}

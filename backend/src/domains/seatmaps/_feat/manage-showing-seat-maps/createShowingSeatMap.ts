@@ -4,7 +4,7 @@
 
 import {ShowingModel} from "@/domains/showings/_models/showing/Showing.model";
 import createHttpError from "http-errors";
-import {SeatModel} from "@/domains/seats/_models";
+import {TheatreSeatModel} from "@/domains/theatre-seats/_models";
 import {type AnyBulkWriteOperation, Types} from "mongoose";
 import type {SeatMapInputData} from "@/domains/seatmaps/_models/seat-map/SeatMap.types";
 import {SeatMapModel} from "@/domains/seatmaps/_models/seat-map/SeatMap.model";
@@ -28,7 +28,7 @@ export async function createShowingSeatMap({showingID}: ShowingConfig): Promise<
     // --- Fetch Seats ---
     const {_id: seatShowing, ticketPrice: seatBasePrice, theatre, screen} = showing;
 
-    const seats = await SeatModel.find({
+    const seats = await TheatreSeatModel.find({
         theatre,
         screen,
         layoutType: "SEAT",
