@@ -11,7 +11,7 @@ import type {PopulationPipelineStages} from "@/shared/_types";
 export const SeatPopulationPipelines: PopulationPipelineStages = [
     {
         $lookup: {
-            from: "screens",
+            from: "theatrescreens",
             localField: "screen",
             foreignField: "_id",
             as: "screen",

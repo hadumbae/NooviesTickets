@@ -12,7 +12,7 @@ import type {PipelineStage} from "mongoose";
 export const TheatreVirtualPipelines: PipelineStage[] = [
     {
         $lookup: {
-            from: "screens",
+            from: "theatrescreens",
             localField: "_id",
             foreignField: "theatre",
             as: "tempScreens",
