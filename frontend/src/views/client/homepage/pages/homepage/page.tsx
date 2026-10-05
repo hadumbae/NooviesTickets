@@ -10,7 +10,7 @@ import {QueryDataLoader} from "@/views/shared/_feat";
 
 export function HomePage(): ReactElement {
     useSetPageTitle({presetTitle: "Home"})
-    const country = getUserCountry({presetCountry: "NZ"});
+    const country = getUserCountry();
     const {data: queries} = ClientHomepageViewRouteConfigSchema.safeParse({country});
 
     const query = useFetchClientHomepageViewData({queries});

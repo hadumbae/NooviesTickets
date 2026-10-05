@@ -23,9 +23,7 @@ const SHOWINGS_PER_PAGE = 20;
 export const MovieInfoShowingsPage = () => {
     const {setTitle} = useSetPageTitle({presetTitle: "Movie Showings"});
 
-    const userCountry = getUserCountry({presetCountry: "NZ"});
-
-    console.log("User Country:", userCountry);
+    const userCountry = getUserCountry();
 
     const {slug} = useFetchByIdentifierRouteParams({
         schema: SlugRouteParamSchema,

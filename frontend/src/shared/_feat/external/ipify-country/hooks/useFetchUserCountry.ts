@@ -21,7 +21,7 @@ type CountryReturns = {
 export function useFetchUserCountry(): CountryReturns {
     const {fetched, setFetched, payload, setPayload} = useGetIpifyLocalStorageData();
 
-    const query = useFetchIPGeolocationData({options: {enabled: !fetched}});
+    const query = useFetchIPGeolocationData({options: {enabled: !fetched, throwOnError: false}});
 
     useEffect(() => {
         if (query.isSuccess && query.data) {

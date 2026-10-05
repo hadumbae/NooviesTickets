@@ -5,7 +5,6 @@
 import {Router} from "express";
 import asyncHandler from "@/shared/_utils/handlers/asyncHandler.js";
 import {fetchIpApiGeoData} from "../controllers/IpApiController.js";
-import {isAuth} from "@/domains/authentication/_middleware/isAuth.js";
 
 const router = Router();
 
@@ -13,12 +12,12 @@ const router = Router();
  * Retrieves geolocation data for the requesting IP.
  *
  * Middleware:
- * - `isAuth` – ensures the request is authenticated.
  * - `asyncHandler` – forwards async errors to Express error handling.
+ *
+ * Not auth-gated: relies on CORS to restrict browser-based callers to the configured frontend origin.
  */
 router.get(
     "/get-geolocation",
-    [isAuth],
     asyncHandler(fetchIpApiGeoData),
 );
 
