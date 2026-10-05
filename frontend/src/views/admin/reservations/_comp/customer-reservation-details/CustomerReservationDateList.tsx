@@ -19,6 +19,8 @@ const STATUS_VALUES: Record<ReservationStatus, number> = {
     "RESERVED": 1,
     "PAID": 2,
     "EXPIRED": 2,
+    "RUNNING": 2,
+    "COMPLETED": 2,
     "CANCELLED": 3,
     "REFUNDED": 4,
     "INVALID": 0,

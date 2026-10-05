@@ -23,6 +23,8 @@ type CardProps = {
 const COLOUR_CSS: Record<ReservationStatus, string> = {
     RESERVED: "bg-blue-400",
     PAID: "bg-green-400",
+    RUNNING: "bg-indigo-400",
+    COMPLETED: "bg-teal-400",
     EXPIRED: "bg-amber-400",
     CANCELLED: "bg-red-400",
     REFUNDED: "bg-cyan-400",

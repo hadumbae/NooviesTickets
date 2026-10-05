@@ -22,7 +22,7 @@ export function HttpResponseErrorDisplay(
     const {message, statusCode, url, errorCode} = error;
 
     const errorMessage = message ? message : undefined;
-    const statusMessage = statusTextOverride?.[statusCode];
+    const statusMessage = statusCode !== undefined ? statusTextOverride?.[statusCode] : undefined;
 
     Logger.error({
         error,

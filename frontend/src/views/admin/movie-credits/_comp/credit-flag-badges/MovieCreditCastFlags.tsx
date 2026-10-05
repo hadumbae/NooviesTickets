@@ -3,7 +3,8 @@
  */
 
 import {ReactElement} from "react";
-import {CastMovieCredit, MovieCreditDetailsCast, PersonCastCredit} from "@/domains/movie-credits";
+import {MovieCreditDetailsCast, PersonCastCredit} from "@/domains/movie-credits";
+import {CastMovieCredit} from "@noovies-tickets/common";
 import {Badge} from "@/views/shared/_comp/ui";
 import {cn} from "@/shared/_feat";
 
