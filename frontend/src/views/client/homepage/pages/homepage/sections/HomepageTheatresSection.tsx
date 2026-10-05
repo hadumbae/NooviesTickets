@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 import {Link} from "react-router-dom";
 import {TheatreDetails} from "@/domains/theatres/_schema/theatre/TheatreDetailsSchema.ts";
-import {PageSectionHeader} from "@/views/shared/_comp";
+import {EmptyArrayContainer, PageSectionHeader} from "@/views/shared/_comp";
 import {HomepageTheatreCard} from "@/views/client/homepage/_comp";
 
 /** Props for the HomepageTheatresSection component. */
@@ -21,13 +21,22 @@ export function HomepageTheatresSection(
         <section className="space-y-4">
             <PageSectionHeader text="Theatres Near You"/>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-                {theatres.map((theatre) => (
-                    <Link to={`/browse/theatres/${theatre.slug}`} key={theatre._id}>
-                        <HomepageTheatreCard theatre={theatre}/>
-                    </Link>
-                ))}
-            </div>
+            {
+                theatres.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                        {theatres.map((theatre) => (
+                            <Link to={`/browse/theatres/${theatre.slug}`} key={theatre._id}>
+                                <HomepageTheatreCard theatre={theatre}/>
+                            </Link>
+                        ))}
+                    </div>
+                ) : (
+                    <EmptyArrayContainer
+                        className="h-52 rounded-container-border"
+                        text="No Theatres Near You"
+                    />
+                )
+            }
         </section>
     );
 }

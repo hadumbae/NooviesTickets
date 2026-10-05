@@ -5,7 +5,7 @@
 import {ReactElement} from "react";
 import {Link} from "react-router-dom";
 import {ShowingSummary} from "@/domains/showings/_schema/showing/ShowingSummarySchema.ts";
-import {PageSectionHeader} from "@/views/shared/_comp";
+import {EmptyArrayContainer, PageSectionHeader} from "@/views/shared/_comp";
 import {HomepageShowingCard} from "@/views/client/homepage/_comp";
 
 /** Props for the HomepageUpcomingShowingsSection component. */
@@ -21,13 +21,22 @@ export function HomepageUpcomingShowingsSection(
         <section className="space-y-4">
             <PageSectionHeader text="Upcoming Showings"/>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
-                {showings.map((showing) => (
-                    <Link to={`/browse/showings/${showing.slug}`} key={showing._id}>
-                        <HomepageShowingCard showing={showing}/>
-                    </Link>
-                ))}
-            </div>
+            {
+                showings.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+                        {showings.map((showing) => (
+                            <Link to={`/browse/showings/${showing.slug}`} key={showing._id}>
+                                <HomepageShowingCard showing={showing}/>
+                            </Link>
+                        ))}
+                    </div>
+                ) : (
+                    <EmptyArrayContainer
+                        className="h-52 rounded-container-border"
+                        text="No Upcoming Showings"
+                    />
+                )
+            }
         </section>
     );
 }

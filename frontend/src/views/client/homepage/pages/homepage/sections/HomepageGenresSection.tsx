@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {GenreSummary} from "@/domains/genres/_schema/genre/GenreSummarySchema.ts";
-import {PageSectionHeader} from "@/views/shared/_comp";
+import {EmptyArrayContainer, PageSectionHeader} from "@/views/shared/_comp";
 import {HomepageFeaturedReviewList} from "@/views/client/homepage/_comp";
 
 /** Props for the HomepageGenresSection component. */
@@ -21,12 +21,19 @@ export function HomepageGenresSection(
             <PageSectionHeader text="Featured Genres"/>
 
             {
-                genres.map((genre) => (
-                    <HomepageFeaturedReviewList
-                        key={genre._id}
-                        genre={genre}
+                genres.length > 0 ? (
+                    genres.map((genre) => (
+                        <HomepageFeaturedReviewList
+                            key={genre._id}
+                            genre={genre}
+                        />
+                    ))
+                ) : (
+                    <EmptyArrayContainer
+                        className="h-52 rounded-container-border"
+                        text="Currently No Featured Genres"
                     />
-                ))
+                )
             }
         </section>
     );

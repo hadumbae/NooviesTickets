@@ -4,7 +4,7 @@
 
 import {ReactElement} from "react";
 import {ReservationSummary} from "@/domains/reservations/_schema/model/reservations/ReservationSummarySchema.ts";
-import {PageSectionHeader} from "@/views/shared/_comp";
+import {EmptyArrayContainer, PageSectionHeader} from "@/views/shared/_comp";
 import {HomepageReservationCard} from "@/views/client/homepage/_comp";
 
 /** Props for the HomepageYourReservationsSection component. */
@@ -20,11 +20,20 @@ export function HomepageYourReservationsSection(
         <section className="space-y-4">
             <PageSectionHeader text="Your Reservations"/>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-                {reservations.map((reservation) => (
-                    <HomepageReservationCard key={reservation._id} reservation={reservation}/>
-                ))}
-            </div>
+            {
+                reservations.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                        {reservations.map((reservation) => (
+                            <HomepageReservationCard key={reservation._id} reservation={reservation}/>
+                        ))}
+                    </div>
+                ): (
+                    <EmptyArrayContainer
+                        className="h-52 rounded-container-border"
+                        text="You Have No Reservations"
+                    />
+                )
+            }
         </section>
     );
 }

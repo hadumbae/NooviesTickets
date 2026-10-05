@@ -6,7 +6,7 @@ import {ReactElement, useEffect, useState} from "react";
 import {Carousel, CarouselApi, CarouselContent, CarouselItem} from "@/views/shared/_comp/ui";
 import {MovieSummary} from "@/domains/movies/_schema/movie/MovieSummarySchema.ts";
 import {HomepageMovieCard} from "@/views/client/homepage/_comp";
-import {PageSectionHeader} from "@/views/shared/_comp";
+import {EmptyArrayContainer, PageSectionHeader} from "@/views/shared/_comp";
 import {cn} from "@/shared/_feat";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -42,46 +42,55 @@ export function HomepageRecentSection(
         <section className="space-y-4">
             <PageSectionHeader text="Recent"/>
 
-            <div className="space-y-2">
-                <Carousel
-                    setApi={setAPI}
-                    opts={{align: "start", loop: true}}
-                    plugins={[Autoplay({delay: 8000, stopOnInteraction: true})]}
-                >
-                    <CarouselContent>
-                        {
-                            recentMovies.map((recentMovie) => (
-                                <CarouselItem key={recentMovie._id}>
-                                    <HomepageMovieCard
-                                        movie={recentMovie}
-                                        classNames={{image: "h-64"}}
-                                        showGenreBadges={true}
-                                    />
-                                </CarouselItem>
-                            ))
-                        }
-                    </CarouselContent>
-                </Carousel>
+            {
+                recentMovies.length > 0 ? (
+                    <div className="space-y-2">
+                        <Carousel
+                            setApi={setAPI}
+                            opts={{align: "start", loop: true}}
+                            plugins={[Autoplay({delay: 8000, stopOnInteraction: true})]}
+                        >
+                            <CarouselContent>
+                                {
+                                    recentMovies.map((recentMovie) => (
+                                        <CarouselItem key={recentMovie._id}>
+                                            <HomepageMovieCard
+                                                movie={recentMovie}
+                                                classNames={{image: "h-64"}}
+                                                showGenreBadges={true}
+                                            />
+                                        </CarouselItem>
+                                    ))
+                                }
+                            </CarouselContent>
+                        </Carousel>
 
-                <div className="flex justify-center items-center space-x-3">
-                    {
-                        scrollSnaps.map((_, index) => (
-                            <button
-                                key={index}
-                                type="button"
-                                onClick={() => api?.scrollTo(index)}
-                                aria-label={`Go to slide ${index + 1}`}
-                                className={cn(
-                                    "h-2 w-2 rounded-full transition-colors",
-                                    index === selectedIndex
-                                        ? "bg-black dark:bg-neutral-700"
-                                        : "bg-neutral-200 dark:bg-neutral-500"
-                                )}
-                            />
-                        ))
-                    }
-                </div>
-            </div>
+                        <div className="flex justify-center items-center space-x-3">
+                            {
+                                scrollSnaps.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        type="button"
+                                        onClick={() => api?.scrollTo(index)}
+                                        aria-label={`Go to slide ${index + 1}`}
+                                        className={cn(
+                                            "h-2 w-2 rounded-full transition-colors",
+                                            index === selectedIndex
+                                                ? "bg-black dark:bg-neutral-700"
+                                                : "bg-neutral-200 dark:bg-neutral-500"
+                                        )}
+                                    />
+                                ))
+                            }
+                        </div>
+                    </div>
+                ) : (
+                    <EmptyArrayContainer
+                        text="No Recent Movies"
+                        className="h-52 rounded-container-border"
+                    />
+                )
+            }
         </section>
     );
 }
