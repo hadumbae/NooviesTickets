@@ -2,6 +2,7 @@
  * @fileoverview Utility for performing standardized fetch requests with integrated parsing and error handling.
  */
 
+import Cookies from "js-cookie";
 import {FetchRequestReturns} from "@/shared/_types/request/FetchRequestReturns.ts";
 import {RequestMethod} from "@/shared/_types/request/RequestMethod.ts";
 import {handleBadResponse} from "@/shared/_feat/use-fetch-api/bad-response";
@@ -41,7 +42,7 @@ export async function handleFetchOperation<TReturns = unknown, TPayload = unknow
     const fetchConfig = {url, method, headers, body, signal};
     let response: Response = await executeFetch(fetchConfig);
 
-    if (response.status === 401 && isRefreshEligible(url)) {
+    if (response.status === 401 && isRefreshEligible(url) && Cookies.get("refreshBy")) {
         let refreshed = false;
 
         try {
