@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from "react";
-import {useFetchByIdentifierRouteParams, useParsedPaginationValue, useSetAdminPageTitle} from "@/shared/_feat";
-import {SlugRouteParamSchema} from "@/shared/_schemas";
-import {PageLoader} from "@/views/shared/_comp";
+import {useParsedPaginationValue, useSetAdminPageTitle} from "@/shared/_feat";
+import {SlugRouteParamObject} from "@/shared/_schemas";
 import {useFetchMovieWithShowings} from "@/domains/movies/_feat/admin-view-data";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {MovieShowingsPageContent} from "@/views/admin/movies/_pages/showings-page/content.tsx";
+import {useLoaderData} from "react-router-dom";
 
 const SHOWINGS_PER_PAGE = 10;
 
@@ -18,23 +18,15 @@ const SHOWINGS_PER_PAGE = 10;
 export function MovieShowingsPage(): ReactElement {
     const {setTitle} = useSetAdminPageTitle({presetTitle: "Movie Showings"});
 
-    const {slug} = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        errorTo: "/admin/movies",
-    }) ?? {};
+    const {slug} = useLoaderData<SlugRouteParamObject>();
 
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
 
     const query = useFetchMovieWithShowings({
-        slug: slug!,
+        slug,
         page,
         perPage: SHOWINGS_PER_PAGE,
-        options: {enabled: !!slug},
     });
-
-    if (!slug) {
-        return <PageLoader/>;
-    }
 
     return (
         <QueryDataLoader query={query}>

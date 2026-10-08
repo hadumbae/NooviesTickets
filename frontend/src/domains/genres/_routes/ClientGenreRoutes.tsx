@@ -5,6 +5,14 @@
 import {RouteObject} from "react-router-dom";
 import {BaseLayout} from "@/views/shared/_layout/base-layout/BaseLayout.tsx";
 import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
+import {buildRouteParamLoader} from "@/shared/_loaders";
+import {SlugRouteParamSchema} from "@/shared/_schemas";
+
+const slugLoader = buildRouteParamLoader({
+    schema: SlugRouteParamSchema,
+    redirectTo: "/browse/genres",
+    onErrorMessage: "Genre Not Found.",
+});
 
 /** Route configuration for genre-related pages within the client browse section. */
 export const ClientGenreRoutes: RouteObject[] = [
@@ -23,6 +31,7 @@ export const ClientGenreRoutes: RouteObject[] = [
             {
                 path: "/browse/genres/:slug",
                 errorElement: <ComponentErrorHandler/>,
+                loader: slugLoader,
                 lazy: async () => {
                     const {BrowseGenreInfoPage} = await import("@/views/client/genres/browse-genre-info");
                     return {Component: BrowseGenreInfoPage};

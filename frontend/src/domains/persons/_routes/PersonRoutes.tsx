@@ -5,6 +5,14 @@
 import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 import {RequireAdmin} from "@/views/shared/_feat/auth";
+import {buildRouteParamLoader} from "@/shared/_loaders";
+import {SlugRouteParamSchema} from "@/shared/_schemas";
+
+const slugLoader = buildRouteParamLoader({
+    schema: SlugRouteParamSchema,
+    redirectTo: "/admin/persons",
+    onErrorMessage: "Invalid Person Identifier.",
+});
 
 /**
  * Admin "Persons" route definitions.
@@ -36,6 +44,7 @@ export const PersonRoutes = [
             {
                 path: "/admin/persons/get/:slug",
                 errorElement: <ComponentErrorHandler/>,
+                loader: slugLoader,
                 lazy: async () => {
                     const {PersonDetailsPage} = await import("@/views/admin/persons/_pages/details-page");
                     const {

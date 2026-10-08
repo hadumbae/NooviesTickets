@@ -5,6 +5,14 @@
 import {RouteObject} from "react-router-dom";
 import {BaseLayout} from "@/views/shared/_layout/base-layout/BaseLayout.tsx";
 import {ComponentErrorHandler} from "@/views/shared/_feat/error/ComponentErrorHandler.tsx";
+import {buildRouteParamLoader} from "@/shared/_loaders";
+import {SlugRouteParamSchema} from "@/shared/_schemas";
+
+const slugLoader = buildRouteParamLoader({
+    schema: SlugRouteParamSchema,
+    redirectTo: "/browse/theatres",
+    onErrorMessage: "Invalid theatre.",
+});
 
 const routes: RouteObject[] = [
     {
@@ -29,6 +37,7 @@ const routes: RouteObject[] = [
             {
                 path: ":slug",
                 errorElement: <ComponentErrorHandler/>,
+                loader: slugLoader,
                 lazy: async () => {
                     const {TheatreInfoPage} = await import("@/views/client/theatres");
                     const {TheatreInfoQueryOptionsContextProvider} = await import("@/domains/theatres/_feat/handle-query-options/theatre-info/TheatreInfoQueryOptionsContext.ts");

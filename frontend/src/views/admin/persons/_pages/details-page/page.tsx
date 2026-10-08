@@ -3,12 +3,12 @@
  */
 
 import {ReactElement} from 'react';
-import {PageLoader} from "@/views/shared/_comp/page";
-import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {useSetAdminPageTitle} from "@/shared/_feat";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {PersonDetailsPageContent} from "@/views/admin/persons/_pages/details-page/content.tsx";
 import {PersonDetailsViewData, useFetchPersonDetailsViewData} from "@/domains/persons/_feat/admin-view-data";
+import {useLoaderData} from "react-router-dom";
 
 /**
  * Renders the person's detailed profile page using route parameters to fetch biographical and filmography data.
@@ -16,22 +16,12 @@ import {PersonDetailsViewData, useFetchPersonDetailsViewData} from "@/domains/pe
 export function PersonDetailsPage(): ReactElement {
     const {setTitle} = useSetAdminPageTitle({presetTitle: "Person Details"})
 
-    const routeParams = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        sourceComponent: PersonDetailsPage.name,
-        errorTo: "/admin/persons",
-        errorMessage: "Invalid Person Identifier."
-    });
+    const {slug} = useLoaderData<SlugRouteParamObject>();
 
     const query = useFetchPersonDetailsViewData({
-        slug: routeParams!.slug,
+        slug,
         limit: 5,
-        options: {enabled: !!routeParams?.slug},
     });
-
-    if (!routeParams?.slug) {
-        return <PageLoader/>;
-    }
 
     return (
         <QueryDataLoader query={query}>

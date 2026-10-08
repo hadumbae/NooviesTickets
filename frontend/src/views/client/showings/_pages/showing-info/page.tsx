@@ -3,40 +3,28 @@
  */
 
 import {ReactElement} from "react";
-import {
-    useFetchByIdentifierRouteParams, useSetPageTitle
-} from "@/shared/_feat";
-import {PageLoader} from "@/views/shared/_comp/page";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {useSetPageTitle} from "@/shared/_feat";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {QueryDataLoader} from "@/views/shared/_feat";
 
 import {ShowingInfoPageContent} from "@/views/client/showings/_pages/showing-info/content.tsx";
 import {ShowingDetails, ShowingDetailsSchema} from "@/domains/showings/_schema/showing/ShowingDetailsSchema.ts";
 import {useFetchShowingBySlug} from "@/domains/showings/_feat/crud-hooks/fetch/useFetchShowingBySlug.ts";
+import {useLoaderData} from "react-router-dom";
 
 /**
  * Entry point for the showing details view.
  */
 export function ShowingInfoPage(): ReactElement {
     const {setTitle} = useSetPageTitle({presetTitle: "Showing"});
-
-    const {slug} = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        sourceComponent: ShowingInfoPage.name,
-        errorTo: "/",
-        errorMessage: "Invalid Showing identifier.",
-    }) ?? {};
+    const {slug} = useLoaderData<SlugRouteParamObject>();
 
     const query = useFetchShowingBySlug({
-        slug: slug!,
+        slug,
         config: {populate: true, virtuals: true},
         schema: ShowingDetailsSchema,
         options: {enabled: !!slug},
     });
-
-    if (!slug) {
-        return <PageLoader/>;
-    }
 
     return (
         <QueryDataLoader query={query}>

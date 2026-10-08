@@ -4,6 +4,21 @@
 
 import {AdminLayout} from "@/views/shared/_layout/admin-layout/AdminLayout.tsx";
 import {RequireAdmin} from "@/views/shared/_feat/auth";
+import {buildRouteParamLoader} from "@/shared/_loaders";
+import {SlugRouteParamSchema} from "@/shared/_schemas";
+import {TheatreScreenDetailsRouteParamSchema} from "@/domains/theatre-screens";
+
+const slugLoader = buildRouteParamLoader({
+    schema: SlugRouteParamSchema,
+    redirectTo: "/admin/theatres",
+    onErrorMessage: "Invalid theatre identifier.",
+});
+
+const screenSlugLoader = buildRouteParamLoader({
+    schema: TheatreScreenDetailsRouteParamSchema,
+    redirectTo: "/admin/theatres",
+    onErrorMessage: "Failed to parse theatre and screen route parameters.",
+});
 
 /**
  * Defines the routing hierarchy for theatre management.
@@ -33,6 +48,7 @@ const routes = [
             },
             {
                 path: "get/:slug",
+                loader: slugLoader,
                 lazy: async () => {
                     const {TheatreDetailsPage} = await import("@/views/admin/theatres/_pages");
                     return {Component: TheatreDetailsPage};
@@ -40,6 +56,7 @@ const routes = [
             },
             {
                 path: "get/:slug/showings/create",
+                loader: slugLoader,
                 lazy: async () => {
                     const {TheatreShowingCreatePage} = await import("@/views/admin/theatres/_pages");
                     return {Component: TheatreShowingCreatePage};
@@ -47,6 +64,7 @@ const routes = [
             },
             {
                 path: "get/:slug/showings/list",
+                loader: slugLoader,
                 lazy: async () => {
                     const {TheatreShowingListPage} = await import("@/views/admin/theatres/_pages");
                     return {Component: TheatreShowingListPage};
@@ -54,6 +72,7 @@ const routes = [
             },
             {
                 path: "get/:theatreSlug/screen/:screenSlug",
+                loader: screenSlugLoader,
                 lazy: async () => {
                     const {TheatreScreenDetailsPage} = await import("@/views/admin/theatres/_pages");
                     const {

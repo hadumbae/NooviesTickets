@@ -3,11 +3,11 @@
  */
 
 import {ReactElement} from "react";
-import {PageLoader} from "@/views/shared/_comp/page";
-import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
+import {useSetAdminPageTitle} from "@/shared/_feat";
 import {QueryDataLoader} from "@/views/shared/_feat";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
+import {useLoaderData} from "react-router-dom";
 
 import {TheatreShowingListViewData, useFetchTheatreShowingListViewData} from "@/domains/theatres/_feat/admin-view-data";
 import {TheatreShowingListPageContent} from "@/views/admin/theatres/_pages/theatre-showings-list/content.tsx";
@@ -20,23 +20,14 @@ const SHOWINGS_PER_PAGE = 10;
 export function TheatreShowingListPage(): ReactElement {
     const {setTitle} = useSetAdminPageTitle({presetTitle: "Showings For Theatre"});
 
-    const {slug} = useFetchByIdentifierRouteParams({
-        errorTo: "/admin/theatres",
-        schema: SlugRouteParamSchema,
-        sourceComponent: TheatreShowingListPage.name,
-    }) ?? {};
+    const {slug} = useLoaderData<SlugRouteParamObject>();
 
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
 
     const query = useFetchTheatreShowingListViewData({
-        slug: slug!,
+        slug,
         queries: {page, perPage: SHOWINGS_PER_PAGE},
-        options: {enabled: !!slug}
     })
-
-    if (!slug) {
-        return <PageLoader/>;
-    }
 
     return (
         <QueryDataLoader query={query}>

@@ -3,9 +3,9 @@
  */
 
 import {ReactElement} from 'react';
-import {PageLoader} from "@/views/shared/_comp/page";
-import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {useSetAdminPageTitle} from "@/shared/_feat";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {useLoaderData} from "react-router-dom";
 import {
     QueryErrorBoundary
 } from "@/views/shared/_feat/error-boundary/query-error-fallback/boundary/QueryErrorBoundary.tsx";
@@ -31,23 +31,14 @@ const SHOWINGS_LIMIT = 10;
 export function TheatreDetailsPage(): ReactElement {
     const {setTitle} = useSetAdminPageTitle({presetTitle: "Theatre Details"})
 
-    const routeParams = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        errorTo: "/admin/theatres",
-        sourceComponent: TheatreDetailsPage.name,
-    });
+    const {slug} = useLoaderData<SlugRouteParamObject>();
 
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
 
     const query = useFetchTheatreDetailsViewData({
-        slug: routeParams?.slug ?? "",
+        slug,
         queries: {screenPage: page, screenPerPage: SCREENS_PER_PAGE, showingLimit: SHOWINGS_LIMIT},
-        options: {enabled: !!routeParams?.slug},
     });
-
-    if (!routeParams?.slug) {
-        return <PageLoader/>;
-    }
 
     return (
         <QueryErrorBoundary statusTextOverride={TheatreHttpStatusOverrideText}>

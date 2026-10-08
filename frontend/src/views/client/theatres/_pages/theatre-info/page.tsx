@@ -3,12 +3,10 @@
  */
 
 import {ReactElement} from "react";
-import {
-    useFetchByIdentifierRouteParams, useSetPageTitle
-} from "@/shared/_feat";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
-import {PageLoader} from "@/views/shared/_comp/page";
+import {useSetPageTitle} from "@/shared/_feat";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {QueryDataLoader} from "@/views/shared/_feat";
+import {useLoaderData} from "react-router-dom";
 
 import {useFetchTheatreInfoViewData, useTheatreInfoQueryOptionsContext} from "@/domains/theatres/_feat";
 import {TheatreInfoPageContent} from "@/views/client/theatres/_pages/theatre-info/content.tsx";
@@ -19,25 +17,15 @@ import {TheatreInfoPageContent} from "@/views/client/theatres/_pages/theatre-inf
 export function TheatreInfoPage(): ReactElement {
     const {setTitle} = useSetPageTitle({presetTitle: "Theatre Info"});
 
-    const {slug: theatreSlug} = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        errorTo: "/browse/theatres",
-        errorMessage: "Invalid theatre.",
-        sourceComponent: TheatreInfoPage.name,
-    }) ?? {};
+    const {slug: theatreSlug} = useLoaderData<SlugRouteParamObject>();
 
     const {values: {date}} = useTheatreInfoQueryOptionsContext();
 
     const query = useFetchTheatreInfoViewData({
-        theatreSlug: theatreSlug!,
+        theatreSlug,
         localDateString: date,
         queries: {limit: 3},
-        options: {enabled: !!theatreSlug}
     });
-
-    if (!theatreSlug) {
-        return <PageLoader/>;
-    }
 
     return (
         <QueryDataLoader query={query}>

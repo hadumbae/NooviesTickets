@@ -3,14 +3,14 @@
  */
 
 import {ReactElement} from "react";
-import {PageLoader} from "@/views/shared/_comp/page";
-import {useFetchByIdentifierRouteParams, useSetAdminPageTitle} from "@/shared/_feat";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {useSetAdminPageTitle} from "@/shared/_feat";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {
     QueryErrorBoundary
 } from "@/views/shared/_feat/error-boundary/query-error-fallback/boundary/QueryErrorBoundary.tsx";
 import {useFetchTheatreBySlug} from "@/domains/theatres/_feat/crud-hooks";
 import {QueryDataLoader} from "@/views/shared/_feat";
+import {useLoaderData} from "react-router-dom";
 
 import {Theatre, TheatreSchema} from "@noovies-tickets/common";
 import {TheatreHttpStatusOverrideText} from "@/domains/theatres/_const/TheatreHttpStatusOverrideText.ts";
@@ -22,21 +22,12 @@ import {TheatreShowingCreatePageContent} from "@/views/admin/theatres/_pages/the
 export function TheatreShowingCreatePage(): ReactElement {
     const {setTitle} = useSetAdminPageTitle({presetTitle: "Create Showing For Theatre"})
 
-    const {slug} = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        errorTo: "/admin/theatres",
-        sourceComponent: TheatreShowingCreatePage.name,
-    }) ?? {};
+    const {slug} = useLoaderData<SlugRouteParamObject>();
 
     const query = useFetchTheatreBySlug({
         schema: TheatreSchema,
-        slug: slug!,
-        options: {enabled: !!slug},
+        slug,
     });
-
-    if (!slug) {
-        return <PageLoader/>;
-    }
 
     return (
         <QueryErrorBoundary statusTextOverride={TheatreHttpStatusOverrideText}>

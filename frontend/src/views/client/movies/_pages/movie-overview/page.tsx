@@ -4,33 +4,19 @@
 
 import {ReactElement} from "react";
 
-import {
-    useFetchByIdentifierRouteParams, useSetPageTitle
-} from "@/shared/_feat";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
-import {PageLoader} from "@/views/shared/_comp/page";
+import {useSetPageTitle} from "@/shared/_feat";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {MovieInfoPageContent} from "@/views/client/movies/_pages/movie-overview/content.tsx";
 import {MovieInfoOverviewViewData, useFetchMovieInfoOverviewViewData} from "@/domains/movies/_feat/client-view-data";
 import {QueryDataLoader} from "@/views/shared/_feat";
+import {useLoaderData} from "react-router-dom";
 
 /** Loads data and renders the movie overview page. */
 export function MovieInfoPage(): ReactElement {
     const {setTitle} = useSetPageTitle({presetTitle: "Movie"});
 
-    const {slug} = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        errorTo: "/browse/movies",
-    }) ?? {};
-
-    const query = useFetchMovieInfoOverviewViewData({
-        slug: slug!,
-        queries: {reviewPage: 1, reviewPerPage: 3},
-        options: {enabled: !!slug},
-    });
-
-    if (!slug) {
-        return <PageLoader/>;
-    }
+    const {slug} = useLoaderData<SlugRouteParamObject>();
+    const query = useFetchMovieInfoOverviewViewData({slug, queries: {reviewPage: 1, reviewPerPage: 3}});
 
     return (
         <QueryDataLoader query={query}>

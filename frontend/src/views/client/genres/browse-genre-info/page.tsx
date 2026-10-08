@@ -4,15 +4,13 @@
  */
 
 import { ReactElement } from "react";
-import {
-    useFetchByIdentifierRouteParams, useSetPageTitle
-} from "@/shared/_feat";
-import { SlugRouteParamSchema } from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
-import { PageLoader } from "@/views/shared/_comp/page";
+import { useSetPageTitle } from "@/shared/_feat";
+import { SlugRouteParamObject } from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import { BrowseGenreInfoPageContent } from "@/views/client/genres/browse-genre-info/content.tsx";
 import { QueryDataLoader } from "@/views/shared/_feat";
 import { useFetchGenreWithMoviesViewData } from "@/domains/genres/_feat/client-view-data";
 import { useParsedPaginationValue } from "@/shared/_feat/fetch-pagination-search-params";
+import { useLoaderData } from "react-router-dom";
 
 /** Global constant defining the number of movie results per page. */
 const MOVIES_PER_PAGE = 10;
@@ -23,23 +21,14 @@ const MOVIES_PER_PAGE = 10;
 export function BrowseGenreInfoPage(): ReactElement {
     const { setTitle } = useSetPageTitle({ presetTitle: "Genre" });
 
-    const { slug } = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        errorTo: "/browse/genres",
-        errorMessage: "Genre Not Found.",
-    }) ?? {};
+    const { slug } = useLoaderData<SlugRouteParamObject>();
 
     const { value: page, setValue: setPage } = useParsedPaginationValue("page", 1);
 
     const query = useFetchGenreWithMoviesViewData({
-        slug: slug!,
+        slug,
         moviePagination: { page, perPage: MOVIES_PER_PAGE },
-        options: { enabled: !!slug }
     });
-
-    if (!slug) {
-        return <PageLoader />;
-    }
 
     return (
         <QueryDataLoader query={query}>

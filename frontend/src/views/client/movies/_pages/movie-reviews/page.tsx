@@ -3,16 +3,16 @@
  */
 
 import {ReactElement} from "react";
-import {PageLoader} from "@/views/shared/_comp/page";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
-import {
-    useFetchByIdentifierRouteParams, useSetPageTitle
-} from "@/shared/_feat";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
+import {useSetPageTitle} from "@/shared/_feat";
 import useParsedPaginationValue from "@/shared/_feat/fetch-pagination-search-params/hooks/useParsedPaginationValue.ts";
 
 import {MovieInfoReviewsPageContent} from "@/views/client/movies/_pages/movie-reviews/content.tsx";
 import {QueryDataLoader} from "@/views/shared/_feat";
-import {useFetchMovieInfoReviewsData} from "@/domains/movies/_feat/client-view-data/hooks/useFetchMovieInfoReviewsData.ts";
+import {
+    useFetchMovieInfoReviewsData
+} from "@/domains/movies/_feat/client-view-data/hooks/useFetchMovieInfoReviewsData.ts";
+import {useLoaderData} from "react-router-dom";
 
 /** Number of reviews displayed per page */
 const REVIEWS_PER_PAGE = 20;
@@ -21,25 +21,16 @@ const REVIEWS_PER_PAGE = 20;
 export function MovieInfoReviewsPage(): ReactElement {
     const {setTitle} = useSetPageTitle({presetTitle: "Movie Reviews"});
 
-    const params = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        errorTo: "/browse/movies",
-        errorMessage: "Failed to fetch movie. Please try again.",
-    });
-
+    const {slug} = useLoaderData<SlugRouteParamObject>();
     const {value: page, setValue: setPage} = useParsedPaginationValue("page", 1);
 
     const query = useFetchMovieInfoReviewsData({
-        slug: params!.slug!,
+        slug,
         queries: {
             reviewPage: page,
             reviewPerPage: REVIEWS_PER_PAGE,
         },
-        options: {enabled: !!params?.slug},
     });
-
-    if (!params?.slug) return <PageLoader/>;
-
 
     return (
         <QueryDataLoader query={query}>

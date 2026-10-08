@@ -2,9 +2,8 @@
  * @fileoverview Orchestrates route params and data fetching for movie showings.
  */
 
-import {getUserCountry, useFetchByIdentifierRouteParams, useSetPageTitle} from "@/shared/_feat";
-import {SlugRouteParamSchema} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
-import {PageLoader} from "@/views/shared/_comp/page";
+import {getUserCountry, useSetPageTitle} from "@/shared/_feat";
+import {SlugRouteParamObject} from "@/shared/_schemas/route/SlugRouteParamSchema.ts";
 import {useParsedSearchParams} from "@/shared/_feat/fetch-search-params";
 import {QueryDataLoader} from "@/views/shared/_feat";
 import {MovieInfoShowingsPageContent} from "@/views/client/movies/_pages/movie-showings/content.tsx";
@@ -13,6 +12,7 @@ import {
     ShowingsPageQueryStringSchema,
     useFetchMovieInfoShowingsData
 } from "@/domains/movies/_feat/client-view-data";
+import {useLoaderData} from "react-router-dom";
 
 /** Pagination limit for showing queries. */
 const SHOWINGS_PER_PAGE = 20;
@@ -25,11 +25,7 @@ export const MovieInfoShowingsPage = () => {
 
     const userCountry = getUserCountry();
 
-    const {slug} = useFetchByIdentifierRouteParams({
-        schema: SlugRouteParamSchema,
-        errorTo: "/browse/movies",
-        errorMessage: "Failed to fetch movie. Please try again.",
-    }) ?? {};
+    const {slug} = useLoaderData<SlugRouteParamObject>();
 
     const {
         searchParams: {near, page},
@@ -41,19 +37,9 @@ export const MovieInfoShowingsPage = () => {
     };
 
     const query = useFetchMovieInfoShowingsData({
-        slug: slug!,
-        options: {enabled: !!slug},
-        queries: {
-            near,
-            page: page ?? 1,
-            perPage: SHOWINGS_PER_PAGE,
-            country: userCountry,
-        },
+        slug,
+        queries: {near, page: page ?? 1, perPage: SHOWINGS_PER_PAGE, country: userCountry},
     });
-
-    if (!slug) {
-        return <PageLoader/>;
-    }
 
     return (
         <QueryDataLoader query={query}>
